@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+__pycache__/
+*.pyc
+.claude/settings.local.json
+.claude/kimi/
+scripts/desensitize_map.local.json
