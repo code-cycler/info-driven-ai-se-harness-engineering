@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已按设计套完成起草 + 全仓库同步(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿)**。
-> 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门)→ 远程仓库建立 + push(单向门;push 前 OD-1 三道门全绿 + OD-4 母本标注)。
+> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub**。
+> 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门);**OD-4 母本标注**(作者其他位置副本标「开发副本,以 v3 为准」,仓库外动作)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -51,7 +51,7 @@
 
 - ⏳ **脱敏语义人审**(OD-1 ②):机械脱敏已 0 命中,但「项目A/B/C」占位在归档问卷里的通顺度、上下文是否仍可识别个人——需人逐行复审关键文件(`skills/*/docs/questionnaires/archive/`、各 `DESIGN.md`)
 - ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](docs/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入
-- ⏳ **远程仓库建立 + push**(本地已在 `~/code/info-driven-ai-se-harness-engineering`)
+- ✅ **远程仓库建立 + push**(2026-07-29):[code-cycler/info-driven-ai-se-harness-engineering](https://github.com/code-cycler/info-driven-ai-se-harness-engineering),首次推送 2 个 commit(建仓全量 + long-running 工件);push 前 OD-1 三道门全绿(脚本 0 命中 / 语义人审已过 / 映射表外置)
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
 - ⏳ **skill 内容审校**:复制的 7 skill 是否完整;引擎副本漂移(OD-8)是否需在 skill 区 README 说明
 - ⏳ **可迁移性单点深钻**(可选):对 OD-2 逐 skill 盘 Claude Code 依赖,产出「理念 vs 执行依赖」清单(用 grill-with-docs)
