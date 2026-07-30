@@ -8,6 +8,32 @@
 
 ---
 
+## 快速上手:skill 使用流程一图
+
+本文阐述方法论内核;7 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
+
+```mermaid
+flowchart TD
+    A["💡 一个想法"] --> B["🏗️ /design-questionnaire<br/>多波次问卷生成设计<br/>→ VISION / HLD / LLD / ADR"]
+    B --> C["🔍 /grill-questionnaire<br/>8 维度对抗压测,找漏洞"]
+    C --> D["🐶 dogfood 自验<br/>(工具/流程类产物,嵌于各环节收尾)"]
+    D --> E["⚡ /long-running-agent<br/>跨会话实现 → feature_list 全绿"]
+    E --> F["📊 /retro-questionnaire<br/>复盘沉淀 + Action Items"]
+    F -.->|新想法 / 经验| A
+
+    G["🎯 /grill · /grill-with-docs<br/>实现期单点深钻(一问一答)"] -.->|任意环节插入| E
+    H["⚙️ /delegate<br/>纯执行决策下放(横切)"] -.-> B
+    H -.-> C
+    H -.-> E
+```
+
+- **触发方式**:Claude Code 中用斜杠命令(如 `/design-questionnaire`)或自然语言(如「帮我做设计」「压测这份设计」)。
+- **衔接协议**:design-Q 收尾主动提议 grill-Q;grill-Q 收尾提议 long-running——也可随时手动触发任意 skill(正交可插入,见 §4.3)。
+- **dogfood 不是独立 skill**,是嵌在各环节收尾的产物自验动作(见 §4.2 环节 3)。
+- 不必走完整闭环——每个 skill 都可单独取用,按任务类型裁剪见 §零「任务类型与流程适配」。
+
+---
+
 ## 零、适用场景
 
 ### 谁适合读这篇文档

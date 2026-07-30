@@ -4,6 +4,27 @@
 
 > ⚠️ **experimental · 个人维护 · 不保证响应**。这是一套个人开发经验的整理分享,不是官方框架。方法论与 skill 都在迭代中。欢迎 issue,但响应不保证。
 
+## 快速上手:skill 使用流程
+
+安装:把 `skills/<skill-name>/` 拷入(或软链)`~/.claude/skills/`(用户级,所有项目可用)或项目内 `.claude/skills/`,即可在 Claude Code 中以 `/skill-name` 或自然语言触发:
+
+```mermaid
+flowchart TD
+    A["💡 一个想法"] --> B["🏗️ /design-questionnaire<br/>多波次问卷生成设计<br/>→ VISION / HLD / LLD / ADR"]
+    B --> C["🔍 /grill-questionnaire<br/>8 维度对抗压测,找漏洞"]
+    C --> D["🐶 dogfood 自验<br/>(工具/流程类产物,嵌于各环节收尾)"]
+    D --> E["⚡ /long-running-agent<br/>跨会话实现 → feature_list 全绿"]
+    E --> F["📊 /retro-questionnaire<br/>复盘沉淀 + Action Items"]
+    F -.->|新想法 / 经验| A
+
+    G["🎯 /grill · /grill-with-docs<br/>实现期单点深钻(一问一答)"] -.->|任意环节插入| E
+    H["⚙️ /delegate<br/>纯执行决策下放(横切)"] -.-> B
+    H -.-> C
+    H -.-> E
+```
+
+衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入。各环节产物与触发时机详见 [methodology_v3](docs/methodology/methodology_v3.md) §4、§8.3。
+
 ## 这是什么
 
 一套面向 **1–5 人小团队 / 个人开发者** 的 AI native 开发方法论,以及把它落地为可执行流程的 **Claude Code skill 家族**。
