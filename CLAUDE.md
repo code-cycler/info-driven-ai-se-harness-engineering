@@ -97,7 +97,7 @@ grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插
 
 ## 关键文档导航
 
-- [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md) —— 方法论完整阐述(自包含,不依赖 skill 规格;[v2](docs/methodology/methodology_v2.md) 保留作历史版本)。**任何关于方法论主张的修改以此为 canonical(OD-4)。**
+- [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md) —— 方法论完整阐述(自包含,不依赖 skill 规格;[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本)。**任何关于方法论主张的修改以此为 canonical(OD-4)。**
 - [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 + 第一支柱术语分层(v3) / 5 环节 / Grill 家族 / skill 家族 / Claude Code 定位)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 9 条待决事项 + 重访触发条件。改任何"已决"事项前先查这里与 `docs/adr/`。
 - [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态。

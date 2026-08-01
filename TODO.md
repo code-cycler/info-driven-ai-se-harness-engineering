@@ -55,3 +55,30 @@
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
 - ⏳ **skill 内容审校**:复制的 7 skill 是否完整;引擎副本漂移(OD-8)是否需在 skill 区 README 说明
 - ⏳ **可迁移性单点深钻**(可选):对 OD-2 逐 skill 盘 Claude Code 依赖,产出「理念 vs 执行依赖」清单(用 grill-with-docs)
+
+### 🟢 行动前细节确认 skill(grill-Q W01 压测产出,2026-07-30)
+
+> 来源:[grill-preaction-confirm-skill-w01](docs/questionnaires/grill-preaction-confirm-skill-w01.md),15 题全答(11 勾选 + 4 自定义)。压测对象:复用 design-Q 引擎 + 阈值 ≤2→4 + preview 保留的行动前确认 skill 提案。
+> 核验时机:skill 创建完成时,核对其 DESIGN.md 是否含全部 15 题裁决 + dogfood 跳过理由;同步启动时核对 7→8 六处文件。
+
+- ✅ **创建新 skill**(2026-07-30):[skills/action-questionnaire/](skills/action-questionnaire/)——SKILL.md + 引擎副本×2(含 W00 节改 confirm-list)+ DESIGN.md(15 题裁决全录 + 被否决项 + 漂移声明 + dogfood 范围);脱敏门 0 命中。15 题裁决落实:① 独立新 skill;② 阈值 ≤4(经验估值待校准);③ preview 更名 confirm-list 改确认式;④ confirm-list 为主、正式题波兜底;⑤ 铁律 2 环境现实验证;⑥ 归档留痕 + 三条件升格;⑦ 非正式行动写操作默认确认;⑧ delegate 显式声明继承白名单才豁免;⑨ 隐式骨架六要素终止判据;⑩ 不嵌入 long-running、feature 级转出提醒;⑪ 1 轻量 dogfood 案例作同步门槛;⑫ 引擎第 4 份副本含 W00 节 + 有意分叉声明(OD-11)
+- ✅ **命名定 `action-questionnaire`**(2026-07-30,Q14 自定义「action *」解读为 action 前缀 + 问卷族后缀;改目录名双向门可逆)
+- ⏳ **canonical 同步(7→8)**:~~门槛 = 补 1 个轻量 dogfood 案例过关~~ **✅ 门槛已过(2026-07-31,action-Q 首案例,见下节🟡)**;同步范围 grep 实证 6 文件 7 处——methodology_v3(§快速上手/§8.3)、README×2、CLAUDE.md、CONTEXT.md、ADR-0003、OD-2 措辞;同步执行另起行动
+
+### 🟡 skill 家族生态位分析产出(action-Q 首次 dogfood,2026-07-30/31)
+
+> 来源:[confirm-skill-niche-overlap-w00](docs/questionnaires/archive/confirm-skill-niche-overlap-w00.md)。结论:7(+1) skill 无真重叠(三件套 = 连续体 + 交互轴分工);grill 家族不可替代性退守三残差(深依赖链 / 即时反馈偏好 / 零留痕)。
+> 本 dogfood 案例同时是上节「canonical 同步(7→8)」的门槛案例——D-1 回修完成 + DESIGN.md 记录后门槛过关。
+> 核验时机:F1–F4 下次修订对应文件时逐项核对;F6 以 grill-Q 压测完成清单为准。
+
+- ⏳ **F1 grill / grill-with-docs SKILL.md 路由表补 grill-Q**(pasted-plan 场景无路由;grill 的 supporting-info 仅对比 with-docs)——挂 OD-12(grill 处置重估时一并处理)
+- ✅ **F2 grill-Q description「同用途不同交互」措辞修订** —— 2026-08-01 被 R5 吸收执行(80/20 层位表述替换)
+- ✅ **F3 v3 §5.3 两族表落盘行拆分 grill vs with-docs** —— 2026-08-01 被 R2 吸收执行(落盘行拆分 + 「判断成本层位」行新增)
+- ✅ **F4 v3 §8.3 触发词表补「计划评审」裁决轴** —— 2026-08-01 被 R7 吸收执行(二八判据分流)
+- ⏳ **F6 重估 §5.2 / 合并 grill 家族** → 转 grill-Q 压测(W01 已生成);**2026-07-31 W01 作废**(用户裁决):「合并」框架被「grill-Q 原初设计意图(80/20 原则 + 忠于 with-docs 问卷化演进,减少判断成本)」取代,由「生态位区分」行动承接([confirm-grill-niche-distinguish-w00](docs/questionnaires/confirm-grill-niche-distinguish-w00.md))
+- ✅ **D-1 回修 action-Q PROCESSING-RULES 补充声明第四类**(2026-07-31 完成:解析规则 3 + FORMAT 规则 12 补「用户先验结论 → 待验证假设」;repo + 用户级双副本同步;头部分叉声明 #4 + DESIGN.md 有意分叉 #6;用户小波裁决「只改 action-Q」,canonical 未动)
+- ✅ **R1–R9 生态位区分文档修订(深度 A)**(2026-08-01,[confirm-grill-niche-doc-revisions-w00](docs/questionnaires/confirm-grill-niche-doc-revisions-w00.md) 全勾确认):80/20 判断成本原则落 v3(§5.2 保留段改写 / §5.3 两族表层位行+落盘行+选择原则 / §4.2 环节 2 层位与交接 / §8.3 触发词二八分流 / 附录 C 续行)+ CONTEXT Grill 家族节 + grill-Q & with-docs description 层位正名 + grill-Q DESIGN.md 原初原则补记;skill 三文件双副本同步;脱敏扫描发现 OD-4 既有真实名命中(见下,非本次引入)
+- ✅ **脱敏门修复(2026-08-01,用户授权选项①+③)**:OD-4 行 47 真名改占位 + tip 提交 amend(b16328e,信息+内容同修;OD-1/OD-12 随 amend 并入);提交内与工作区复扫均 0 命中。流程改进已落:OD-1 占位方案 ② 纳入「git 提交信息」人审(扫描盲区,本次即实例)
+- ✅ **脱敏语义人审(subagent×4 全文遍历,2026-08-01)**:🔴0 阻断;技术栈指纹(真实库名/内部 ADR 编号)4 处泛化、取证指针 1 处弱化、单字母「A」正字「作者」、ADR-0001 描述词 2 处删除;方法论 v2 移入 archive/ + 3 处断链修复
+- ⏳ **git author 身份决策**(人审遗留):已推送 5 提交携带作者邮箱(QQ 号)+ handle(handle 在脱敏映射表内);选项:接受现状 / 改 git config 止血未来提交 / 历史改写 + 强推(单向门级,破 fork/clone)。建议至少做 config 止血
+- ⏳ **已推送历史中的语义指纹**:skills 技术栈细节与 OD-7「另一公开项目」链已随首次推送公开(本轮已 fix-forward);历史是否改写与上一项一并决策

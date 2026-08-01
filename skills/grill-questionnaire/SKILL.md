@@ -1,6 +1,6 @@
 ---
 name: grill-questionnaire
-description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量问卷式压测。把 grill 一问一答的压测用途改为多波次 Markdown 问卷:用 8 个固定压测维度(未言明假设/单向门/替代方案/失败模式/盲点/可验证性/与现实矛盾/术语一致性)套到工件每条关键声明上,用户离线作答后,漏洞盲点进处理报告、可沉淀的决策风险术语落盘 CONTEXT / ADR / OPEN-DECISIONS。代码库绑定为默认(专找工件与既有代码/决策的矛盾),无项目上下文时降级为纯逻辑压测产出审阅报告。只产出发现,不替改工件。与 design-questionnaire(生成式)正交、与 grill / grill-with-docs(一问一答)同用途不同交互。触发:压测计划/审一下这份 ADR/挑挑这个设计的毛病/找漏洞/stress-test、"压测"、"审一下"、"挑毛病",以及 design-questionnaire 产设计草稿收尾后主动提议一次。Use when an existing plan/decision/architecture/ADR/design artifact should be stress-tested via a batched questionnaire instead of one-by-one Q&A.
+description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量问卷式压测。把 grill 一问一答的压测用途改为多波次 Markdown 问卷:用 8 个固定压测维度(未言明假设/单向门/替代方案/失败模式/盲点/可验证性/与现实矛盾/术语一致性)套到工件每条关键声明上,用户离线作答后,漏洞盲点进处理报告、可沉淀的决策风险术语落盘 CONTEXT / ADR / OPEN-DECISIONS。代码库绑定为默认(专找工件与既有代码/决策的矛盾),无项目上下文时降级为纯逻辑压测产出审阅报告。只产出发现,不替改工件。与 design-questionnaire(生成式)正交。层位(80/20 判断成本原则):grill-with-docs 的问卷化演进——80% 可预知的基础问题批量压测(人花 20% 时间);20% 关键深水区(依赖链深、需即时反馈)转 grill-with-docs 一问一答深钻(人花 80% 时间)。触发:压测计划/审一下这份 ADR/挑挑这个设计的毛病/找漏洞/stress-test、"压测"、"审一下"、"挑毛病",以及 design-questionnaire 产设计草稿收尾后主动提议一次。Use when an existing plan/decision/architecture/ADR/design artifact should be stress-tested via a batched questionnaire instead of one-by-one Q&A.
 ---
 
 <what-to-do>

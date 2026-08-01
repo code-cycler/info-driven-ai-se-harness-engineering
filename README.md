@@ -74,4 +74,4 @@ scripts/             脱敏检查等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论本身的完整阐述见 [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md)(v3 为 current;[v2](docs/methodology/methodology_v2.md) 保留作历史版本)。
+- 方法论本身的完整阐述见 [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md)(v3 为 current;[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本)。

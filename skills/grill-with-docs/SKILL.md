@@ -1,6 +1,6 @@
 ---
 name: grill-with-docs
-description: Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs, OPEN-DECISIONS.md) inline as decisions crystallise. When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan against their project's language and documented decisions.
+description: Deep-dive engine for the 20% critical questions (80/20 judgment-cost principle): one-by-one grilling for dependency-chained, not-yet-formed decisions that need immediate feedback — the layer grill-questionnaire's batched 80% layer hands deep-water points to. Challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs, OPEN-DECISIONS.md) inline as decisions crystallise. When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan point-by-point against their project's language and documented decisions.
 ---
 
 <what-to-do>

@@ -31,7 +31,7 @@
 - delegation-log **0 条**;dogfood 只跑了设计阶段(项目无代码目录),D1–D6 未遇出现场景。根因 = **决策面错位**:设计期判断负担在问卷作答(内容决策,不可下放),白名单覆盖实现期决策类——白名单尚未被真正测试,原样保留待实现期验证(「太保守」降级为次要观察项)。
 - 「触发流程不确定」属实:design-Q 全文 0 处 delegate 引用,dogfood 衔接靠 vision-w01 补充声明临时接线 → G9(契约化)、G10(放权时机)。
 - preview 全程零触发(「可选 + 模糊触发」)→ G6 superseded,迁移为 design-Q 强制步骤。
-- design-Q 无环境现实验证步骤(dogfood 实证:SFML 版本、字体路径迟至 grill 阶段才被迫修订)→ design-Q 增加环境验证子步骤。
+- design-Q 无环境现实验证步骤(dogfood 实证:某 GUI 库版本、资源路径迟至 grill 阶段才被迫修订)→ design-Q 增加环境验证子步骤。
 - **下轮度量四项**:每阶段判断轮次数(问卷波数×题数)、preview 预答率、delegation-log 条数(实现期)、逃生舱使用率。
 
 ## 待 dogfood 回答(round 3,实现期 + 边界事件)
