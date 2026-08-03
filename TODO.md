@@ -49,7 +49,7 @@
 
 ### 其他待办
 
-- ⏳ **脱敏语义人审**(OD-1 ②):机械脱敏已 0 命中,但「项目A/B/C」占位在归档问卷里的通顺度、上下文是否仍可识别个人——需人逐行复审关键文件(`skills/*/docs/questionnaires/archive/`、各 `DESIGN.md`)
+- ✅ **脱敏语义人审**(OD-1 ②,2026-08-01 完成):subagent×4 全文遍历执行(归档问卷 / docs+根 / skills+scripts / git 层),占位通顺度与语义指纹均审;发现与修复见🟡节两条 ✅;遗留 git author 身份与历史指纹两项决策(见下)
 - ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](docs/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入
 - ✅ **远程仓库建立 + push**(2026-07-29):[code-cycler/info-driven-ai-se-harness-engineering](https://github.com/code-cycler/info-driven-ai-se-harness-engineering),首次推送 2 个 commit(建仓全量 + long-running 工件);push 前 OD-1 三道门全绿(脚本 0 命中 / 语义人审已过 / 映射表外置)
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
@@ -82,3 +82,13 @@
 - ✅ **脱敏语义人审(subagent×4 全文遍历,2026-08-01)**:🔴0 阻断;技术栈指纹(真实库名/内部 ADR 编号)4 处泛化、取证指针 1 处弱化、单字母「A」正字「作者」、ADR-0001 描述词 2 处删除;方法论 v2 移入 archive/ + 3 处断链修复
 - ⏳ **git author 身份决策**(人审遗留):已推送 5 提交携带作者邮箱(QQ 号)+ handle(handle 在脱敏映射表内);选项:接受现状 / 改 git config 止血未来提交 / 历史改写 + 强推(单向门级,破 fork/clone)。建议至少做 config 止血
 - ⏳ **已推送历史中的语义指纹**:skills 技术栈细节与 OD-7「另一公开项目」链已随首次推送公开(本轮已 fix-forward);历史是否改写与上一项一并决策
+
+### 🔵 AI 双轨对照 pilot + 问卷默认勾选试点(grill-Q ai-autonomy W01/W02 压测产出,2026-08-01)
+
+> 来源:[grill-ai-autonomy-w01](docs/questionnaires/archive/grill-ai-autonomy-w01.md)+ [w02](docs/questionnaires/archive/grill-ai-autonomy-w02.md),共 18 题全答,0 逃生舱。压测对象:用户双轨构想(影子模式 + 冠军挑战者)与 skill 改动提案。裁决落 [OD-13](docs/OPEN-DECISIONS.md)(双轨 pilot 立项,含 W02 补正)/ [OD-14](docs/OPEN-DECISIONS.md)(默认勾选试点,5 条边界)。
+> 核验时机:各行动完成后,核对是否满足 OD-13/OD-14 的边界条款(单向门豁免 / 选项排序 / 取消率设防 / 禁区保留 / mode: full 底线不变)。
+
+- ✅ **shadow pilot skill 创建 + 首轮 dogfood**(2026-08-01 创建;2026-08-03 首轮反馈沉淀):`~/.claude/skills/shadow/`(SKILL.md + DESIGN.md)——先影子后真实、影子 = 自动 dogfood 不设 N、subagent 仅双轨、权限 = delegate `mode: full` 排除集、验收 = 事前 DoD + 端到端测试 + 人仲裁、日志脱敏(绝对路径 → `~`,相对路径引用允许)。**暂不入家族**(OD-13,家族化 = OD-13 重访触发②);仓库 skills/ 暂不放置(pilot 期不进入分发面)。首轮 dogfood(DOGFOOD 沙盒 shapez-game-test):**「AI 自评可玩 ≠ 人类可玩」实证 + 价值定位调为模板/demo + 升级条件化(人试玩通过)**,数据落 OD-13
+- ✅ **design-Q 默认勾选试点执行**(2026-08-01,用户授权执行):QUESTIONNAIRE-FORMAT(W00 预勾 + 选项排序 + 问题级排序 + 单向门豁免)+ PROCESSING-RULES(默认勾选设防节:取消率 / 确认点 / 3 波零取消回退)+ SKILL.md(W00 段/作答/统计);用户级 + 仓库级双副本同步(脱敏差异保持);只改 canonical,四副本同步留 OD-8 重访(OD-14)
+- ✅ **delegate 多模式执行**(2026-08-01,用户授权执行):SKILL.md「全权模式(mode: full)」节(白名单反转排除集,底线 + 留痕不变)+ delegation-template.md frontmatter `mode` 字段 + 实测条款「实测(只读)可自主、归类仍交人/入排除集」;双副本同步(OD-13 W02 Q3/Q4)
+- ✅ **日志脱敏规则**:已落 shadow SKILL.md 铁律 5 + 落盘表(绝对路径 → `~`,不进公开仓库)(OD-13)
