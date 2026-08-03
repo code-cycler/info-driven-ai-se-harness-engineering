@@ -29,3 +29,12 @@
 - **2026-07-24 引擎同步(无漂移)**:PROCESSING-RULES 降风险协议 step 1 + 落盘映射——双向门逃生舱改为「采用推荐项 + 进 OD 标注」。来源:grill-Q dogfood W01 补充声明(design-Q DESIGN.md D22)。本副本已同步,与 canonical 一致。
 - **2026-07-27 引擎漂移(本 skill 不同步,声明为设计)**:design-Q canonical 演进——preview 拆独立 W00 波(勾=采纳/留空=不采纳、无 🤔)。本 skill(retro-Q)**不使用 preview**(复盘问卷题量小、通常一波,且题型是反思原因假设清单,不适合 yes/no 默认值预答),故不同步该引擎改动;FORMAT/RULES 副本维持 2026-07-24 版本。项目B dogfood Q5-A 判定:复盘场景 preview 价值不抵复杂度。三方协议下,此漂移**声明为设计**(非遗漏)。
 - **2026-07-25 引擎修改(design-Q dogfood 发起,本副本暂未同步)**:design-Q 在 QUESTIONNAIRE-FORMAT 增加「preview 预答层」规范(文件结构模板 + 规则 13)、PROCESSING-RULES 增加 preview 预答解析与处理报告统计行。来源:delegate × design-Q dogfood round 1(宿主项目某 dogfood 问卷)。先只在 design-Q 生效(dogfood 验证中),验证有效后回同步——**声明:此漂移为设计**。
+
+## 引擎同步记录(2026-08-03)
+
+- **预勾选开关化 + 选项排序统一**(OD-14 修订,用户裁决,action-Q 确认清单 confirm-pregou-switch-w00 全确认):
+  - 预勾选 = **opt-in 开关,默认关**——仅当用户启动 skill 时明确说「预勾选」才预勾推荐选项;未启用时全部 `[ ]`;
+  - **选项排序(非推荐在前 → 逃生舱倒数第二 → 推荐最后)= 默认行为,不依赖开关**;
+  - **单向门题(发布/删除/花钱/脱敏)永不预勾**;预勾设防(取消率 / 确认点 / 3 波零取消警告)开关开启时适用;
+  - 本 skill 与 design-Q / grill-Q / retro-Q / action-Q **四份副本同步**(OD-8 重访触发①命中);问题级排序仅 design-Q 保留。
+- **实测与调研前置标准流程**(2026-08-03,action-Q 确认清单 confirm-testing-preflight-w00 全确认):SKILL.md「生成问卷」前新增标准步骤「实测与调研前置」(调研现状 / 不假设 / 多实测 / 多获取信息 / 及时保存);retro-Q 版为「调研与核实前置」(五源读取的补齐);既有铁律段(环境现实现证 / 先验证再出题 / 先核实再列清单)保留引用。
