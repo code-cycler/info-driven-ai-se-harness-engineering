@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub**。
-> 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门);**OD-4 母本标注**(作者其他位置副本标「开发副本,以 v3 为准」,仓库外动作)。
+> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成)**。
+> 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门);**repo 级 design-Q 正式设计**;其余见下(CONTRIBUTING + issue 模板 OD-3 / git author 身份决策 等)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -44,7 +44,7 @@
   - ✅ 双靶子:vibe coding 主叙事限 §一 + 立论挂接点,传统 SDLC 原位保留为对照(grill-with-docs 压测定案)
 - ✅ **CONTEXT.md 同步**(ADR-0004 决策 3,2026-07-29):第一支柱换 ADR-0005 定义版;8 术语分层清单落盘
 - ✅ **README.md / 项目 CLAUDE.md 开篇同步**(2026-07-29):双支柱表述与 v3 一致;另修复 CLAUDE.md 两处——导航节 v2→v3 链接、脱敏映射真实名复述(脱敏门 2 命中 → 0)
-- ⏳ **OD-4 母本同步**:v3 发布后,作者其他位置副本标注"开发副本,以 v3 为准"(仓库外动作,push 时执行)
+- ✅ **OD-4 母本同步**(2026-08-01 执行,commit b16328e):作者另外两个仓库副本均已标注「开发副本,以 v3 为准」(仓库外动作)
 - ✅ **v3 起草驱动方式抉择**(2026-07-29):design-Q 设计套 + long-running-agent 起草 + grill-with-docs 压测 P0 章节大纲,未裸写;**遗留可选质量门:grill-Q 压测 v3 成稿**
 
 ### 其他待办
@@ -63,7 +63,7 @@
 
 - ✅ **创建新 skill**(2026-07-30):[skills/action-questionnaire/](skills/action-questionnaire/)——SKILL.md + 引擎副本×2(含 W00 节改 confirm-list)+ DESIGN.md(15 题裁决全录 + 被否决项 + 漂移声明 + dogfood 范围);脱敏门 0 命中。15 题裁决落实:① 独立新 skill;② 阈值 ≤4(经验估值待校准);③ preview 更名 confirm-list 改确认式;④ confirm-list 为主、正式题波兜底;⑤ 铁律 2 环境现实验证;⑥ 归档留痕 + 三条件升格;⑦ 非正式行动写操作默认确认;⑧ delegate 显式声明继承白名单才豁免;⑨ 隐式骨架六要素终止判据;⑩ 不嵌入 long-running、feature 级转出提醒;⑪ 1 轻量 dogfood 案例作同步门槛;⑫ 引擎第 4 份副本含 W00 节 + 有意分叉声明(OD-11)
 - ✅ **命名定 `action-questionnaire`**(2026-07-30,Q14 自定义「action *」解读为 action 前缀 + 问卷族后缀;改目录名双向门可逆)
-- ⏳ **canonical 同步(7→8)**:~~门槛 = 补 1 个轻量 dogfood 案例过关~~ **✅ 门槛已过(2026-07-31,action-Q 首案例,见下节🟡)**;同步范围 grep 实证 6 文件 7 处——methodology_v3(§快速上手/§8.3)、README×2、CLAUDE.md、CONTEXT.md、ADR-0003、OD-2 措辞;同步执行另起行动
+- ✅ **canonical 同步(7→8)**(2026-08-03,confirm-canonical-sync-7to8-w00 全确认执行):门槛 2026-07-31 已过(action-Q 首案例,见下节🟡);6 文件 7 处全部落地——methodology_v3(§快速上手/§8.3 分类表加「确认」行)、README×2、CLAUDE.md、CONTEXT.md、ADR-0003、OD-2 计数重测(Ask 18 / sub 4);连带修订:CLAUDE.md 状态节刷新至 2026-08-03、OD-13 触发②「第 8 个」措辞、README/v3/CLAUDE 三处 mermaid 图补 action-Q 节点
 
 ### 🟡 skill 家族生态位分析产出(action-Q 首次 dogfood,2026-07-30/31)
 

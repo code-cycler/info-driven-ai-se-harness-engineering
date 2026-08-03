@@ -10,7 +10,7 @@
 
 ## 快速上手:skill 使用流程一图
 
-本文阐述方法论内核;7 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
+本文阐述方法论内核;8 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
 
 ```mermaid
 flowchart TD
@@ -25,10 +25,11 @@ flowchart TD
     H["⚙️ /delegate<br/>纯执行决策下放(横切)"] -.-> B
     H -.-> C
     H -.-> E
+    I["📋 /action-questionnaire<br/>行动前细节确认(轻量前奏)"] -.->|进入实现前| E
 ```
 
 - **触发方式**:Claude Code 中用斜杠命令(如 `/design-questionnaire`)或自然语言(如「帮我做设计」「压测这份设计」)。
-- **衔接协议**:design-Q 收尾主动提议 grill-Q;grill-Q 收尾提议 long-running——也可随时手动触发任意 skill(正交可插入,见 §4.3)。
+- **衔接协议**:design-Q 收尾主动提议 grill-Q;grill-Q 收尾提议 long-running——也可随时手动触发任意 skill(正交可插入,见 §4.3);action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。
 - **dogfood 不是独立 skill**,是嵌在各环节收尾的产物自验动作(见 §4.2 环节 3)。
 - 不必走完整闭环——每个 skill 都可单独取用,按任务类型裁剪见 §零「任务类型与流程适配」。
 
@@ -712,6 +713,7 @@ Skill 家族是方法论的执行体,按用途分类:
 
 | 类别     | skill                   | 触发时机          | 典型场景                                   |
 | ---------- | ------------------------- | ------------------- | -------------------------------------------- |
+| **确认** | action-questionnaire    | 非正式行动前细节确认 | "对齐一下"、"确认细节"、"preflight"、开始多文件写操作前 |
 | **生成** | design-questionnaire    | 新项目/新功能设计 | "帮我做设计"、"初始化项目设计"             |
 | **压测** | grill-questionnaire     | 压测已有工件      | "压测这份 ADR"、"审一下这个设计"、"找漏洞"、计划评审(可离线批量) |
 | **复盘** | retro-questionnaire     | 阶段/项目复盘     | "复盘这个阶段"、"这次哪里做得不好"         |

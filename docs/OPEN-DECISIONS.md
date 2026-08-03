@@ -24,7 +24,7 @@
 - **问题**:主张「在 Claude Code 上实践了 skill,但方法论可迁移」。然而 skill 强依赖 Claude Code 机制(AskUserQuestion / subagent / SKILL.md 加载),实际未在其他工具验证。
 - **推迟原因**:经验缺口——没有在 Cursor / Cline / 其他 LLM CLI 上试跑过。
 - **当前占位方案**:README 表述为「方法论理念工具无关、可迁移;skill 直接运行依赖 Claude Code 的三项机制——AskUserQuestion、subagent、SKILL.md;迁移到其他工具需适配」。
-- **依赖边界已盘**:7 个核心 skill 的 SKILL.md 中,AskUserQuestion 出现 9 处、subagent 6 处——这两项 + SKILL.md frontmatter 触发是主要依赖。
+- **依赖边界已盘**:8 个核心 skill 的 SKILL.md 中,AskUserQuestion 出现 18 处、subagent 4 处(2026-08-03 重测,含 action-questionnaire)——这两项 + SKILL.md frontmatter 触发是主要依赖。
 - **可逆性**:双向门(README 措辞)。
 - **重访触发条件**:① 有用户在其他工具适配成功 / 失败反馈;② 有人尝试移植;③ 出现「装不上」issue。
 
@@ -129,7 +129,7 @@
 ## OD-13(已决)AI 双轨对照 pilot 立项(影子 + 冠军挑战者)
 
 - **问题**:「AI 建议 90% 都对,但只有 10% 是重要决策,人生产力未完全解放;给 AI 全部决策权又怕解空间不含正确解法」——是否新增「AI 全权自治」skill,在合适决策节点双分支(AI 全权 vs 人主导)比对复盘?对应系统工程/运筹学现成模型:shadow mode + champion-challenger。
-- **决策**(2026-08-01,grill-Q ai-autonomy W01 压测;**W02 补正**):**立项,但暂不入 skill 家族**(家族仍 7 个,CLAUDE.md「7 个核心 skill」表述不动),dogfood 先行。要点:
+- **决策**(2026-08-01,grill-Q ai-autonomy W01 压测;**W02 补正**):**立项,但暂不入 skill 家族**(家族仍 7 个,CLAUDE.md「7 个核心 skill」表述不动;2026-08-03 修订:家族已随 action-Q 入库更新为 8 个,canonical 同步完成——「表述不动」指不因 shadow 而改,本裁决「shadow 不入家族」不变),dogfood 先行。要点:
   - 执行形态:**先影子后真实**(W02 Q1);**影子 = 自动 dogfood,常态化运行,不设 N 限制**(W02 Q1 自定义——影子每次任务都跑,持续积累比对数据);真实执行按需升级,升级判据 = 影子数据支持时;subagent 判断仅用于影子 / 冠军挑战者双轨模式,常规模式保留人的决策权
   - 权限底线:保留 delegate 禁区 + **发布 / 付费 / 对外传播 / 删除数据四类永不自动执行**;**delegate 多模式已定**(W02 Q3):delegation.md 新增 `mode: full` 开关,开启时白名单语义反转为「未列禁区即默认可执行」,底线与留痕(delegation-log)不变
   - **delegate 新纪律条款候选**(W02 Q4 采纳):「AI 先实测(只读)可自主;实测后的决策归类仍交人,或归入全权模式排除集」——解决「AI 先实测再判定」与「AI 无自分类权」的张力,条款落地待修订授权
@@ -144,7 +144,7 @@
   - **升级仲裁(2026-08-03 用户裁决):升级真实执行条件化**——人类实际试玩通过才升级,不无条件下发;
   - 脱敏:本仓库记录中绝对路径隐藏为 `~`,允许相对路径引用(DOGFOOD 沙盒子项目名可写)。
 - **可逆性**:双向门(不入家族、试点可撤、命名未定(Q14 选 C))
-- **重访触发条件**:① 影子自动 dogfood 数据持续积累——首轮已出(2026-08-03),价值定位已调;下一节点 = 人类试玩验收通过后的真实执行决策,或 30 天无新价值产出;② 决定是否家族化(第 8 个 skill)或废弃;③ delegate `mode: full` 首次真实执行后,按 delegation-log 汇总回顾。
+- **重访触发条件**:① 影子自动 dogfood 数据持续积累——首轮已出(2026-08-03),价值定位已调;下一节点 = 人类试玩验收通过后的真实执行决策,或 30 天无新价值产出;② 决定是否家族化(新增为家族成员,现家族 8 个)或废弃;③ delegate `mode: full` 首次真实执行后,按 delegation-log 汇总回顾。
 
 ---
 

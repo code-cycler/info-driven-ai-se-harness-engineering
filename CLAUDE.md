@@ -34,7 +34,7 @@ python3 scripts/desensitize.py . --exclude docs/methodology
 
 ## skill 家族协作架构（核心 big picture）
 
-7 个 skill 不是孤立的,构成 **5 环节闭环 + 横切**。理解它们的衔接协议才能正确编辑任一 skill:
+8 个 skill 不是孤立的,构成 **5 环节闭环 + 横切**。理解它们的衔接协议才能正确编辑任一 skill:
 
 ```
 design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-running ──> retro
@@ -44,13 +44,14 @@ design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-ru
    └────────── delegate(横切:任意环节下放纯执行决策)────────────────────┘
 
 grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插入
+action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前奏可任意插入
 ```
 
 **三族 skill 的交互模式**(方法论 §5.3,改动一族的机制要对齐另一族):
 
 | 族 | skill | 交互 | 落盘 |
 |---|---|---|---|
-| 批量问卷族 | design-Q / grill-Q / retro-Q | 多波次 Markdown 问卷,离线作答 | 阶段文档 / ADR / OD / CONTEXT |
+| 批量问卷族 | design-Q / grill-Q / retro-Q / action-Q(确认式) | 多波次 Markdown 问卷,离线作答 | 阶段文档 / ADR / OD / CONTEXT(action-Q:归档 confirm-*) |
 | 单点深钻族 | grill / grill-with-docs | 一问一答,逐轮 `AskUserQuestion` | grill 纯对话默认不写文件;with-docs 写 CONTEXT/ADR/OD |
 | 约束系统 | long-running-agent | 落盘文件驱动(feature_list + progress) | `.claude/feature_list.json` 等 |
 
@@ -91,9 +92,14 @@ grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插
 
 仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](docs/design/VISION.md) / [HLD_v2](docs/design/hld_v2.md) / [LLD_v2](docs/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
 
-**下一步主线([TODO.md](TODO.md))**:grill-Q 压测 v3 成稿(可选质量门)→ 远程仓库建立 + push(单向门:push 前 OD-1 三道门全绿 + OD-4 母本标注)。注意:本仓库**自身**的 repo 级 design-Q(对仓库定位 / skill 家族的设计)仍未跑——design-Q / grill-Q / retro-Q 各自目录内的 `docs/` 是 dogfood 产物,不构成本仓库自身的设计文档。
+**2026-07-30 至 08-03 增量**:
+- 2026-07-30/31:action-questionnaire 创建(15 题压测裁决 + 首次 dogfood 案例)→ **2026-08-01 入库**(第 8 个 skill)+ 生态位分析 confirm ×2;
+- 2026-08-01:80/20 判断成本原则落盘 v3 / CONTEXT / skill description(909c030)、远程仓库建立并首次推送([code-cycler/info-driven-ai-se-harness-engineering](https://github.com/code-cycler/info-driven-ai-se-harness-engineering),d2252ae)、OD-4 母本标注执行(b16328e)、脱敏语义人审完成(909c030)、OD-12 新增;
+- 2026-08-03:OD-13 影子 pilot 首轮数据 + OD-14 预勾开关化修订 + OD-8 重访记录(1f0fd12);**canonical 同步(7→8)完成**(本行动,confirm-canonical-sync-7to8-w00 全确认)。
 
-待办关键项:脱敏语义人审(OD-1 ②)、OD-4 母本标注、远程仓库建立、CONTRIBUTING + issue 模板(OD-3)。
+**下一步主线([TODO.md](TODO.md))**:grill-Q 压测 v3 成稿(可选质量门)→ repo 级 design-Q 正式设计 → CONTRIBUTING + issue 模板(OD-3)→ git author 身份决策。注意:本仓库**自身**的 repo 级 design-Q(对仓库定位 / skill 家族的设计)仍未跑——design-Q / grill-Q / retro-Q 各自目录内的 `docs/` 是 dogfood 产物,不构成本仓库自身的设计文档。
+
+待办关键项:CONTRIBUTING + issue 模板(OD-3)、git author 身份决策、repo 级 design-Q 正式设计。
 
 ## 关键文档导航
 

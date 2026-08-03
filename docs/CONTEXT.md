@@ -37,7 +37,7 @@
 
 ## skill 家族
 
-方法论的可执行载体,7 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate。本仓库为其唯一 source of truth([ADR-0001](adr/0001-source-of-truth.md))。
+方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)。本仓库为其唯一 source of truth([ADR-0001](adr/0001-source-of-truth.md))。
 
 ## Claude Code(在本仓库的定位)
 
