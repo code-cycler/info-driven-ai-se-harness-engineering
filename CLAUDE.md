@@ -71,6 +71,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 | skill | 产物落点(均落**宿主项目**,非本仓库) |
 |---|---|
+| action-Q | 确认结果 → 问卷归档 `docs/questionnaires/archive/`(只移不删);满足 ADR 三条件 → `docs/adr/`;单向门/重大风险/存疑假设 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
 | design-Q | VISION / `docs/design/` HLD·LLD / `docs/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `docs/questionnaires/<stage>-w<NN>.md` → 处理后归档 `archive/` |
 | grill-Q | 发现 → `CONTEXT`/`adr`/`OPEN-DECISIONS`;**工件修订建议只进处理报告,绝不替改工件** |
 | retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `docs/questionnaires/retro-<主题>-w<NN>.md` |
