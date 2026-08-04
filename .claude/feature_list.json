@@ -61,9 +61,9 @@
         "practical_v1.md 补 action-Q 机制论述(§八 skill 使用时机附近:确认式问卷机制说明)",
         "grep 验证:导航链接目标存在"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-04T11:30:00+08:00",
+      "notes": "导航 4 处(CONTEXT:15/README:27·79/CLAUDE:107)+ practical action-Q 机制论述(候选③消项)"
     },
     {
       "id": "F005",

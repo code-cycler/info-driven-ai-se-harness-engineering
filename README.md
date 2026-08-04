@@ -24,7 +24,7 @@ flowchart TD
     I["📋 /action-questionnaire<br/>行动前细节确认(轻量前奏)"] -.->|进入实现前| E
 ```
 
-衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见 [methodology_v3](docs/methodology/methodology_v3.md) §4、§8.3。
+衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§4](docs/methodology/methodology_v3.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
 
 ## 这是什么
 
@@ -76,4 +76,4 @@ scripts/             脱敏检查等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论本身的完整阐述见 [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md)(v3 为 current;[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本)。
+- 方法论完整阐述拆为三块([ADR-0007](docs/adr/0007-methodology-three-way-split.md)):[methodology_v3.md](docs/methodology/methodology_v3.md)(方法论 · 怎么做,自包含)/ [philosophy_v1.md](docs/methodology/philosophy_v1.md)(哲学 · 为什么)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);v3 为 current,[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。

@@ -12,7 +12,7 @@
 
 ## 第一支柱术语分层(v3)
 
-第一支柱相关术语的层级归属(详见 [methodology_v3 §2.1 / §1.2 / §5.1](methodology/methodology_v3.md)):
+第一支柱相关术语的层级归属(详见方法论文件 [§2.1 / §5.1](methodology/methodology_v3.md)、哲学文件 [§1.2](methodology/philosophy_v1.md)):
 
 - **信息断层** = 返工的根源框架,分两类:人与人断层(由 AI 替代角色解决)、人与 AI 断层(由问答对齐解决);返工是其可见症状。
 - **信息流转** = 过程模型:上下文进入模型,模型产出结果,结果沉淀为新的信息。
@@ -38,6 +38,16 @@
 ## skill 家族
 
 方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)。本仓库为其唯一 source of truth([ADR-0001](adr/0001-source-of-truth.md))。
+
+## 方法论文档三块(ADR-0007)
+
+methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分设计定稿 2026-08-03/04,详见 [ADR-0007](adr/0007-methodology-three-way-split.md) 与 [HLD](design/hld-methodology-separation.md)):
+
+- **方法论文件** = 「怎么做」的完整阐述(流程 / 方法 / 规范;§零/§二/§三/§四/§五/§七主体/§九/§十/§十一/§十二等);**canonical 成员**,保留「独立成文/自包含」主张。
+- **哲学文件** = 「为什么」的阐述(失败模式与信息断层 / 人机分工 / 元原则;§一/§六);**canonical 成员**(属「方法论主张」)。
+- **实操文件** = 「怎么用」的操作指南(skill 使用时机 / 工具规范 / 上下文管理操作链;快速上手/§八/附录 A·B/§7.4-7.6);**非 canonical**,修订走轻量流程(小步 commit,免 OD-4 母本同步、免四处锁定检查)。
+
+「方法论」一词拆分后双重含义:总称(方法论体系)vs 三块之一(方法论文件)——文档表述用「方法论文件」指具体文件,「方法论」默认指总称。
 
 ## Claude Code(在本仓库的定位)
 

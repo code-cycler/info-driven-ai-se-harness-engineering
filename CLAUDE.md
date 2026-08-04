@@ -104,7 +104,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 ## 关键文档导航
 
-- [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md) —— 方法论完整阐述(自包含,不依赖 skill 规格;[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本)。**任何关于方法论主张的修改以此为 canonical(OD-4)。**
+- 方法论三块(ADR-0007):[methodology_v3.md](docs/methodology/methodology_v3.md)(方法论 · 怎么做,自包含)+ [philosophy_v1.md](docs/methodology/philosophy_v1.md)(哲学 · 为什么)+ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical);[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。**任何关于方法论主张(方法论 + 哲学文件)的修改以此为 canonical(OD-4);实操文件修订走轻量流程。**
 - [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 + 第一支柱术语分层(v3) / 5 环节 / Grill 家族 / skill 家族 / Claude Code 定位)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 9 条待决事项 + 重访触发条件。改任何"已决"事项前先查这里与 `docs/adr/`。
 - [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态。
