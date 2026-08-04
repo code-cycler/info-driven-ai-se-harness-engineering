@@ -55,6 +55,8 @@
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
 - ⏳ **skill 内容审校**:复制的 7 skill 是否完整;引擎副本漂移(OD-8)是否需在 skill 区 README 说明
 - ⏳ **可迁移性单点深钻**(可选):对 OD-2 逐 skill 盘 Claude Code 依赖,产出「理念 vs 执行依赖」清单(用 grill-with-docs)
+- ⏳ **methodology_v3 三块拆分执行**(2026-08-03 设计定稿,2026-08-04 压测修订,ADR-0007 + [HLD](docs/design/hld-methodology-separation.md) 同步清单):三文件迁移(methodology_v3.md / philosophy_v1.md / practical_v1.md,内容不丢)+ 方法论文件加问题引子段 + 全量 grep 跨文件 § 引用改造 + §7.4-7.6 迁移实操(方法论论述保留)+ 实操文件补 action-Q 机制论述(候选③消项)+ 导航 3 处(CONTEXT:15 §1.2 / README:27 §8.3 / README:79 表述)+ 拆分回归 DoD 脚本化(grep 内容存在性 + 断链检查)+ 脱敏门 0 命中 + 人审;**验收信号(压测 Q10):拆分落地后首次实操文件修订走轻量流程(免 OD-4/四处锁定)成功走通**
+- ⏳ **引擎副本 §8.8 旧锚点漂移处置**(ADR-0007 知识发现,2026-08-03):三份 QUESTIONNAIRE-FORMAT(grill-Q:83 / design-Q:131 / retro-Q:82)引「方法论 §8.8」为 v2 旧锚点,v3 已无此节——更新为 v3 对应节或改为不标节号
 
 ### 🟢 行动前细节确认 skill(grill-Q W01 压测产出,2026-07-30)
 

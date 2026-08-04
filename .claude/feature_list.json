@@ -77,9 +77,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(仓库既有 docs: 前缀约定)+ claude-progress.txt 更新"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "验收信号(压测 Q10):拆分落地后首次实操文件修订走轻量流程成功走通——另行观察"
+      "passes": true,
+      "last_tested": "2026-08-04T12:00:00+08:00",
+      "notes": "回归 DoD 全绿(章节 22 项/核心子串 14 项/链接 81 个 0 问题)+ 脱敏门 0 命中 + 提交完成;验收信号(首次实操轻量修订)另行观察"
     }
   ]
 }
