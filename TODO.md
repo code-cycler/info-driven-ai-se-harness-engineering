@@ -1,7 +1,7 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成)**。
+> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成);2026-08-04 methodology_v3 三块拆分完成(ADR-0007,long-running 实现,回归 DoD 全绿)**。
 > 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门);**repo 级 design-Q 正式设计**;其余见下(CONTRIBUTING + issue 模板 OD-3 / git author 身份决策 等)。
 
 ## 已完成(2026-07-28 建仓)
@@ -55,7 +55,7 @@
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
 - ⏳ **skill 内容审校**:复制的 7 skill 是否完整;引擎副本漂移(OD-8)是否需在 skill 区 README 说明
 - ⏳ **可迁移性单点深钻**(可选):对 OD-2 逐 skill 盘 Claude Code 依赖,产出「理念 vs 执行依赖」清单(用 grill-with-docs)
-- ⏳ **methodology_v3 三块拆分执行**(2026-08-03 设计定稿,2026-08-04 压测修订,ADR-0007 + [HLD](docs/design/hld-methodology-separation.md) 同步清单):三文件迁移(methodology_v3.md / philosophy_v1.md / practical_v1.md,内容不丢)+ 方法论文件加问题引子段 + 全量 grep 跨文件 § 引用改造 + §7.4-7.6 迁移实操(方法论论述保留)+ 实操文件补 action-Q 机制论述(候选③消项)+ 导航 3 处(CONTEXT:15 §1.2 / README:27 §8.3 / README:79 表述)+ 拆分回归 DoD 脚本化(grep 内容存在性 + 断链检查)+ 脱敏门 0 命中 + 人审;**验收信号(压测 Q10):拆分落地后首次实操文件修订走轻量流程(免 OD-4/四处锁定)成功走通**
+- ✅ **methodology_v3 三块拆分执行**(2026-08-04 完成,ADR-0007 + [HLD](docs/design/hld-methodology-separation.md),long-running-agent 驱动):三文件迁移(methodology_v3.md 678 行 / philosophy_v1.md / practical_v1.md,28 块回归验证内容不丢)+ 问题引子段 + 17 处跨文件 § 引用改造 + §7.4-7.6 移实操 + action-Q 机制论述(候选③消项)+ 导航 4 处 + 回归 DoD 全绿(章节 22 项/核心子串 14 项/链接 81 个)+ 脱敏门 0 命中;**验收信号(压测 Q10):拆分落地后首次实操文件修订走轻量流程(免 OD-4/四处锁定)成功走通——待观察**
 - ⏳ **引擎副本 §8.8 旧锚点漂移处置**(ADR-0007 知识发现,2026-08-03):三份 QUESTIONNAIRE-FORMAT(grill-Q:83 / design-Q:131 / retro-Q:82)引「方法论 §8.8」为 v2 旧锚点,v3 已无此节——更新为 v3 对应节或改为不标节号
 
 ### 🟢 行动前细节确认 skill(grill-Q W01 压测产出,2026-07-30)
