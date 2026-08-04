@@ -1,90 +1,85 @@
 {
-  "project_name": "methodology_v3 文档(按 docs/design 设计套落地)",
-  "created_at": "2026-07-29T15:00:00+08:00",
-  "source_of_truth": "docs/design/VISION.md + hld_v2.md + lld_v2.md + ADR-0004/0005/0006;feature 从 LLD_v2 L1 阶段拆分(P0-P4)反推",
+  "project_name": "methodology_v3 三块拆分(方法论/哲学/实操相互独立)",
+  "created_at": "2026-08-04T09:00:00+08:00",
+  "source_of_truth": "docs/design/hld-methodology-separation.md + docs/adr/0007-methodology-three-way-split.md + 归档问卷(feature-methodology-separation-hld-w00 / grill-methodology-separation-w01);坍缩为 hld 无 LLD,features 从 HLD 同步清单反推",
   "features": [
     {
       "id": "F001",
       "category": "functional",
       "priority": "high",
-      "description": "P0 章节顺序设计:设计 v3 新章节结构(彻底重排,主线 vibe coding 失败 → 机制层 → 双支柱 → 落地),定锚点重写映射(v2 章节 → v3 章节)",
+      "description": "三文件创建 + 章节迁移:methodology_v3.md / philosophy_v1.md / practical_v1.md 落盘;章节按去向表迁移——哲学 = §一/§六/元原则;实操 = 快速上手/§7.4-7.6/§八/附录 A·B;方法论 = 其余(内容不删不丢)",
       "steps": [
-        "基于 ADR-0006 主线 + HLD_v2/LLD_v2 改写点,起草 v3 章节大纲与 v2→v3 映射表",
-        "提交用户审查(P0 DoD:章节结构经审)——AI 不替人决策",
-        "用户批准后定稿,锚点重写映射随之确定"
+        "Python 按 ## 标题精确切分 methodology_v3.md 章节块",
+        "组装 philosophy_v1.md(新头部 + §一 + §六 + 元原则)、practical_v1.md(新头部 + 快速上手 + §7.4-7.6 + §八 + 附录 A·B)、methodology_v3.md(原头部 + 方法论章节,删迁移章节)",
+        "grep 验证:各迁移章节标题与关键内容在新文件存在;方法论文件剩余章节完整",
+        "回归检查:切分前后各块内容逐字节一致(脚本 diff 每块)"
       ],
       "passes": true,
-      "last_tested": "2026-07-29T15:20:00+08:00",
-      "notes": "经 grill-with-docs 压测 5 问全定案(2026-07-29):①骨架保留+立论章重构即彻底(ADR-0006 主线与 v2 骨架同构)②§1.3 决策等待留§一 ③双靶子配比:vibe 限§一+§2.1/§5.1 挂接点 ④新 4 条失败模式全进§十一 ⑤采纳微调:§十二+背景缺失自查、附录C续 v2→v3 行。锚点映射:骨架同序,近乎恒等(v2§2→v3§二/§4→§四/§5.3→§5.3),仅文件名 v2→v3 + 章名措辞变"
+      "last_tested": "2026-08-04T10:10:00+08:00",
+      "notes": "三文件拆分完成:methodology_v3.md 678 行 / philosophy_v1.md 144 行 / practical_v1.md 190 行;28 块逐块回归验证全过(内容不丢);§7.4-7.6 已按压测 Q5-B 移实操文件;§七 跳号(7.3→7.7)待 F002 加说明"
     },
     {
       "id": "F002",
       "category": "functional",
       "priority": "high",
-      "description": "P1 主文立论重写:新建 docs/methodology/methodology_v3.md 的文件头(完整谱系 v1→v2→v3)+ §零(vibe coding 首要)+ §一(vibe coding 失败模式,两类断层)+ §二(§2.1 机制层重组 + 双支柱)",
+      "description": "文件头标注与衔接:methodology_v3.md 文件头加拆分说明 + 三文件链接(独立成文主张保留);开头加「问题引子」段(压测 Q4,3-5 行 vibe coding 失败叙事摘要 + 链接哲学文件 §一);§七 加 §7.4-7.6 迁移说明(跳号衔接)",
       "steps": [
-        "文件头写「v3 相对 v2 演进」+ 完整谱系(v1 单支柱 → v2 双支柱 → v3 补机制层)+ 推导链(本意→v2 工程化措辞→立论偏离→grill-Q W01→v3)",
-        "§零 加 vibe coding 为首要治理对象,传统 SDLC 降为次要对照",
-        "§一 重定位为 vibe coding 失败模式开篇(背景交代不全→AI 自作主张→幻觉),整合两类信息断层(人与人→AI 替代角色;人与 AI→问答对齐),返工=共同症状;v2 §1.1 决策等待内容保留为对照",
-        "§2.1 机制层重组:DoD-1 因果句开篇(ADR-0005 完整版标准措辞)→ 三层立论模型表(含因果方向列,Q1)→ 有效上下文度量层(保留 120k/400k)→ 过载对策引用",
-        "§2.1 四必含 grep 验证:DoD-1 因果句 / 三层表(含因果方向)/ 120k|400k / 过载对策引用",
-        "§2.1 回归 DoD grep:原「有效上下文」「120k」「400k」「双支柱」关键句仍在 v3"
+        "methodology_v3.md 文件头追加拆分说明(ADR-0007 引用 + 三文件导航)",
+        "§零 前加「问题引子」段(3-5 行 + 链接哲学文件 §一 全文)",
+        "§七 开头加一行「§7.4-7.6 已移至实操文件」衔接说明",
+        "grep 验证:拆分说明/问题引子/衔接说明存在"
       ],
-      "passes": true,
-      "last_tested": "2026-07-29T15:45:00+08:00",
-      "notes": "P1 完成(2026-07-29):docs/methodology/methodology_v3.md 已建。四必含 grep 全过:DoD-1 因果句×1(§2.1 blockquote 可独立引用)、三层表含「层(因果方向 ↓)」、120k×5/400k×5、过载对策引用×1;回归 grep 全过:有效上下文×9/120k/400k/双支柱×4;标准措辞完整版在 §2.1 开篇 blockquote(核心子串×1)。文件头完整谱系+推导链已写"
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
     },
     {
       "id": "F003",
       "category": "functional",
       "priority": "high",
-      "description": "P2 立论挂接:v3 的 §5.1((a)(b) 盲区)/ §6.2(人与人断层挂 AI 替代角色)/ §7.6(过载对策链 design-Q 沉淀 → /compact)/ §十一(新立论失败模式 4 条)/ 附录 C(术语演进表续 v3 行)",
+      "description": "跨文件引用改造:全量 grep 核对 v3 内 55 处 § 引用,指向哲学(§一/§六/§1.2/§6.x)/实操(§8.3/§7.4-7.6/快速上手)的改跨文件相对链接;拆完跑断链检查兜底(压测 Q2)",
       "steps": [
-        "§5.1 补 (a)(b) 盲区小节:(a) 知道没写 → preview/问卷捕获;(b) 自己也不知道 → grill 对抗逼出;原「不替决策/帮看清决策」作引子",
-        "§6.2 挂接:AI 替代传统角色 = 解决人与人之间断层",
-        "§7.6 补过载对策链:先 design-Q 等 skill 沉淀决策落盘 → 再 /compact 压缩;明确「过载≠缺失是两个环节」",
-        "§十一 常见误区加 4 条:① 三层误读(读成同级)② 双靶子失衡 ③ (a)(b) 混淆(用错机制)④ 标准句脱节",
-        "附录 C 术语演进表续 v3 行(机制层/度量层/症状层、vibe coding、(a)(b) 盲区、信息真空)",
-        "回归 DoD 人审 + 关键概念 grep:v2 有效立论(第二支柱/5 环节/Grill 两族/信息生命周期/需求执行规范/元原则)在 v3 均有着落,内容不丢",
-        "挂接点无断链:检查 v3 内部交叉引用(§x.y)全部有效"
+        "grep -n '§' 三文件全量列出 § 引用",
+        "逐处判定同文件 or 跨文件,跨文件引用改为相对 Markdown 链接 + 节锚点(如 §1.2 → [§1.2](philosophy_v1.md#12-两类信息断层))",
+        "§2.1 对 §7.6(过载对策链)的引用改指向实操文件锚点",
+        "断链检查:提取三文件全部 [text](path#anchor) 链接,验证目标文件与锚点存在"
       ],
-      "passes": true,
-      "last_tested": "2026-07-29T15:50:00+08:00",
-      "notes": "P2 完成(2026-07-29,与 P1 同稿写入,DoD 分开验证):§5.1 (a)(b) 盲区×4、§6.2 人与人断层挂接×1、§7.6 过载对策链「先沉淀,再压缩」×1、§十一 新 4 条各×2、§十二 背景缺失自查×2、附录 C v2→v3 续表×1、附录 D 来源表已同步新章名。回归 grep:第二支柱/5 环节/信息生命周期/需求执行规范/元原则/dogfood/delegate/逃生舱/决策分层/OD 全部在。内部 § 引用 Python 校验:全部有效(§5=章级引用、v1 §6.5=历史豁免)。desensitize 0 命中(提前跑)。另:§8.2 ~120k/~400k 统一为「约」措辞(防波浪号渲染)"
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
     },
     {
       "id": "F004",
       "category": "functional",
-      "priority": "medium",
-      "description": "P3 CONTEXT 同步:完整术语清单(断层/流转/有效上下文/背景缺失 + 信息真空别名 + vibe coding + 三层模型 + (a)(b) 盲区)+ 第一支柱定义版措辞(ADR-0005)+ 方法论链接锚点重写为 v3",
+      "priority": "high",
+      "description": "导航更新(压测 Q1 修正 3 处 + canonical 表述)+ action-Q 机制论述:CONTEXT:15 的 §1.2 → 哲学文件链接、README:27 的 §8.3 → 实操文件链接、README:79「完整阐述」表述微调、CLAUDE.md:107 canonical 表述更新;实操文件补 action-Q 机制论述(#7 候选③消项)",
       "steps": [
-        "CONTEXT 第一支柱换定义版(纯定义,删对策「故用问答…」,守纯术语表)",
-        "补完整术语清单,各标层级:信息断层=可见症状 / 信息流转=过程模型 / 有效上下文=质量度量 / 背景缺失=幻觉根因 / 信息真空=背景缺失的形象别名 / vibe coding=首要治理场景 / 机制层·度量层·症状层=三层立论模型 / (a)(b) 盲区=背景缺失两类",
-        "CONTEXT 内 methodology_v2 链接锚点全部重写指向 v3",
-        "grep 验证核心子串「对抗 AI 在信息真空中的幻觉式自作主张决策」出现在 CONTEXT",
-        "人审:CONTEXT 与 v3 正文用词一致(无 D8 冲突)"
+        "CONTEXT.md:15 引用改(§2.1/§5.1 方法论文件 + §1.2 哲学文件链接)",
+        "README.md:27 引用改(§4 方法论文件 + §8.3 实操文件链接)",
+        "README.md:79 「方法论本身的完整阐述」改为三文件并述",
+        "CLAUDE.md:107 canonical 表述更新(方法论+哲学 canonical,实操非 canonical)",
+        "practical_v1.md 补 action-Q 机制论述(§八 skill 使用时机附近:确认式问卷机制说明)",
+        "grep 验证:导航链接目标存在"
       ],
-      "passes": true,
-      "last_tested": "2026-07-29T15:55:00+08:00",
-      "notes": "P3 完成(2026-07-29):CONTEXT 第一支柱换 ADR-0005 定义版(核心子串×1,对策句未入,守纯术语表);新增「第一支柱术语分层(v3)」节,8 术语全部落盘并标层级;§二/§四/§5.3 三处 methodology_v2 链接全部重写指向 v3,无残留"
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
     },
     {
       "id": "F005",
       "category": "functional",
-      "priority": "medium",
-      "description": "P4 README/CLAUDE 同步 + 发布七步:定义版措辞同步、锚点全量重写+校验、desensitize 0 命中、OD-4 母本标注提醒、v2 标历史版本、完整性检查",
+      "priority": "high",
+      "description": "拆分回归 DoD 脚本化 + 发布门:grep 各章关键内容(标题 + 核心子串)在新文件存在性 + 链接断链检查全绿 + 脱敏门 0 命中 + 人审 + 提交(压测 Q3)",
       "steps": [
-        "README 第一支柱表述换定义版(ADR-0005),methodology 链接改指 v3",
-        "项目 CLAUDE.md 第一支柱表述换定义版,methodology_v2 链接改指 v3",
-        "全仓库锚点校验:grep 所有 methodology_v2 引用与 § 锚点,逐一核对有效(脚本 + 人审)",
+        "grep 回归:各章标题在对应文件存在(§零-§十二/元原则/附录 A-D/快速上手)",
+        "grep 回归:核心子串抽查(双支柱/机制层/有效上下文/120k/400k/design-Q/action-Q 等)不丢",
+        "链接检查:三文件 + CONTEXT/README/CLAUDE 的全部相对链接目标存在",
         "python3 scripts/desensitize.py . 0 命中",
-        "提醒用户 OD-4:作者其他位置母本标注「开发副本,以 v3 为准」(仓库外动作,提醒即可)",
-        "v2 文件头加「历史版本,以 v3 为 current」一行",
-        "全局 DoD 完整性检查:LLD L4 五项全绿(章节完整性人审 / 标准措辞 grep / desensitize / 术语一致 / §2.1 回归)"
+        "git commit(仓库既有 docs: 前缀约定)+ claude-progress.txt 更新"
       ],
-      "passes": true,
-      "last_tested": "2026-07-29T16:10:00+08:00",
-      "notes": "P4 完成(2026-07-29):README/CLAUDE 定义版+链接 v3;v2 文件头标历史;锚点全量校验(残留 v2 引用均为有意历史标注);脱敏全仓库 0 命中(顺手修复 CLAUDE.md 复述映射表真实名 2 处——改写为泛化描述并加警示);标准措辞核心子串四处 grep 各×1;全局 DoD 五项全绿;另修复连带陈旧:OD-4 占位方案改 v3 canonical(标注动作留作 push 时用户执行)、CLAUDE.md 仓库状态节、CONTEXT 导航描述、TODO.md 销项。遗留用户侧动作:OD-4 母本标注(仓库外)、git 首次提交与 push(单向门,用户定夺)"
+      "passes": false,
+      "last_tested": null,
+      "notes": "验收信号(压测 Q10):拆分落地后首次实操文件修订走轻量流程成功走通——另行观察"
     }
   ]
 }
