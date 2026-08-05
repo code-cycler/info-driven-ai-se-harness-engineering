@@ -5,14 +5,14 @@
 
 ## 双支柱
 
-方法论的核心理念,相乘缺一为零(详见 [methodology_v3 §二](methodology/methodology_v3.md)):
+方法论的核心理念,相乘缺一为零(详见 [methodology_v4 §二](methodology/methodology_v4.md)):
 
 - **第一支柱 · 以信息为核心**:与 AI 协作的本质是信息流转;瓶颈在有效上下文的质与量,以及对抗 AI 在信息真空中的幻觉式自作主张决策。
 - **第二支柱 · 驾驭工程 = AI × 软件工程**:AI 是加速器,软件工程纪律(设计先行 / TDD / Code Review / ADR / 复盘)是骨架。
 
 ## 第一支柱术语分层(v3)
 
-第一支柱相关术语的层级归属(详见方法论文件 [§2.1 / §5.1](methodology/methodology_v3.md)、哲学文件 [§1.2](methodology/philosophy_v1.md)):
+第一支柱相关术语的层级归属(详见方法论文件 [§2.1 / §5.1](methodology/methodology_v4.md)、哲学文件 [§1.2](methodology/philosophy_v4.md)):
 
 - **信息断层** = 返工的根源框架,分两类:人与人断层(由 AI 替代角色解决)、人与 AI 断层(由问答对齐解决);返工是其可见症状。
 - **信息流转** = 过程模型:上下文进入模型,模型产出结果,结果沉淀为新的信息。
@@ -42,15 +42,15 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 ## 5 环节闭环
 
-开发工作流主路径(详见 [methodology_v3 §四](methodology/methodology_v3.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
+开发工作流主路径(详见 [methodology_v4 §四](methodology/methodology_v4.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
 
 ## Grill 家族
 
-决策引擎,分两族(详见 [methodology_v3 §5.3](methodology/methodology_v3.md)):
+决策引擎,分两族(详见 [methodology_v4 §5.3](methodology/methodology_v4.md)):
 
 - **批量问卷族**:design-Q / grill-Q / retro-Q(多波次问卷,离线作答)。
 - **单点深钻族**:grill / grill-with-docs(一问一答,逐轮等待)。
-- **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族 = 80% 可预知的基础问题层,人以 20% 时间高速处理;单点深钻族 = 20% 关键问题层(依赖链深 / 决策未成形 / 需即时反馈),人投 80% 时间深钻。两族是同一判断成本优化系统的两个层位,经「深水区转单点深钻 / 结晶成工件复压」双向交接(见 [methodology_v3 §5.2](methodology/methodology_v3.md))。
+- **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族 = 80% 可预知的基础问题层,人以 20% 时间高速处理;单点深钻族 = 20% 关键问题层(依赖链深 / 决策未成形 / 需即时反馈),人投 80% 时间深钻。两族是同一判断成本优化系统的两个层位,经「深水区转单点深钻 / 结晶成工件复压」双向交接(见 [methodology_v4 §5.2](methodology/methodology_v4.md))。
 
 ## skill 家族
 

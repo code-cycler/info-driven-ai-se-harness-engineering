@@ -54,9 +54,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "canonical 修改(方法论+哲学)遵守 OD-4:作者其他位置副本标注「开发副本,以 v4 为准」在 P6 发布门执行;对称化增量 = 只补机制层(压测 Q5)"
+      "passes": true,
+      "last_tested": "2026-08-05T18:00:00+08:00",
+      "notes": "P3 完成:methodology_v4.md(文件头谱系/§零 受众收窄/§2.2 机制层对称化(无护栏→劣化)/§2.3 表述/§4.2 路径/附录 C v3→v4 表/尾部 v4 摘要)+ philosophy_v4.md(§一 人因/§六 软工/§七 运筹学新节/元原则)+ v3 归档(archive/ 标历史)+ 全库 v4 链接(CLAUDE/CONTEXT/README/practical;归档问卷历史叙述保留)+ 受众表述一致(README/CLAUDE 改);回归:章节 42/核心子串全在/断链仅豁免项/脱敏门 0;注意:附录 C 表格语法用 | 分隔符与 Markdown 表格冲突(P4 前需检查渲染)"
     },
     {
       "id": "F004",

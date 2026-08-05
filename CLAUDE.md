@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 这是什么仓库
 
-`info-driven-ai-se-harness-engineering` 是一套面向 1–5 人小团队的 **AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体**。不是可构建的代码项目——**没有 build / test / lint 工具链**。仓库内容全部是 Markdown 文档 + skill 配置 + 一个 Python 脱敏脚本。
+`info-driven-ai-se-harness-engineering` 是一套面向个人开发者的 **AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体**。不是可构建的代码项目——**没有 build / test / lint 工具链**。仓库内容全部是 Markdown 文档 + skill 配置 + 一个 Python 脱敏脚本。
 
-两大支柱（详见 [docs/methodology/methodology_v3.md](docs/methodology/methodology_v3.md)）：
+两大支柱（详见 [docs/methodology/methodology_v4.md](docs/methodology/methodology_v4.md)）：
 1. **以信息为核心** —— 与 AI 协作的本质是信息流转；瓶颈在有效上下文的质与量，以及对抗 AI 在信息真空中的幻觉式自作主张决策。
 2. **驾驭工程 = AI × 软件工程** —— AI 是加速器，工程纪律（设计先行 / TDD / ADR / 复盘）是骨架。
 
@@ -91,7 +91,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 ## 当前仓库状态（递归:方法论要用于自身设计）
 
-仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](harness/design/VISION.md) / [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
+仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](harness/design/VISION.md) / [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/archive/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
 
 **2026-07-30 至 08-03 增量**:
 - 2026-07-30/31:action-questionnaire 创建(15 题压测裁决 + 首次 dogfood 案例)→ **2026-08-01 入库**(第 8 个 skill)+ 生态位分析 confirm ×2;
@@ -104,7 +104,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 ## 关键文档导航
 
-- 方法论三块(ADR-0007):[methodology_v3.md](docs/methodology/methodology_v3.md)(方法论 · 怎么做,自包含)+ [philosophy_v1.md](docs/methodology/philosophy_v1.md)(哲学 · 为什么)+ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical);[v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。**任何关于方法论主张(方法论 + 哲学文件)的修改以此为 canonical(OD-4);实操文件修订走轻量流程。**
+- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)+ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(哲学 · 为什么)+ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical);[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。**任何关于方法论主张(方法论 + 哲学文件)的修改以此为 canonical(OD-4);实操文件修订走轻量流程。**
 - [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 + 第一支柱术语分层(v3) / 5 环节 / Grill 家族 / skill 家族 / Claude Code 定位)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 9 条待决事项 + 重访触发条件。改任何"已决"事项前先查这里与 `docs/adr/`。
 - [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态。
