@@ -2,44 +2,48 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## 这是什么仓库
+## 仓库定位
 
-`info-driven-ai-se-harness-engineering` 是一套面向个人开发者的 **AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体**。不是可构建的代码项目——**没有 build / test / lint 工具链**。仓库内容全部是 Markdown 文档 + skill 配置 + 一个 Python 脱敏脚本。
+`info-driven-ai-se-harness-engineering` 是一套面向**个人开发者**的 **AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体**。不是可构建的代码项目——**没有 build / test / lint 工具链**。仓库内容全部是 Markdown 文档 + skill 配置 + 一个 Python 脱敏脚本。
 
-两大支柱（详见 [docs/methodology/methodology_v4.md](docs/methodology/methodology_v4.md)）：
-1. **以信息为核心** —— 与 AI 协作的本质是信息流转；瓶颈在有效上下文的质与量，以及对抗 AI 在信息真空中的幻觉式自作主张决策。
-2. **驾驭工程 = AI × 软件工程** —— AI 是加速器，工程纪律（设计先行 / TDD / ADR / 复盘）是骨架。
+两大支柱(相乘,缺一为零,完整立论见 [methodology_v4.md](docs/methodology/methodology_v4.md)):
+1. **以信息为核心** —— 信息流转;瓶颈在有效上下文的质与量 + 对抗 AI 在信息真空中的幻觉式自作主张决策。
+2. **驾驭工程 = AI × 软件工程** —— AI 是加速器,工程纪律是骨架(v4 补机制层:「无护栏 → AI 产出悄悄劣化」)。
 
-## 双 License（编辑前必须知道分区）
+## 规范优先级
+
+文档冲突时按此裁决(**唯一权威处**,不复制到其他文件;冲突必显式说明,不静默选择):
+
+> **方法论主张(方法论 + 哲学文件,canonical)> ADR > CONTEXT 术语 > skill 规格(SKILL.md + DESIGN.md 同层)> 实操文件**
+
+协调注:ADR 中的术语定义以 CONTEXT 为准——ADR 记决策(含历史措辞),CONTEXT 记活术语。
+
+## 关键文档导航
+
+- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(怎么做,canonical)+ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(为什么,canonical)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 为历史母本。
+- [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 / 第一支柱术语分层 / 术语治理 / Grill 家族 / skill 家族)。
+- [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 待决事项 + 重访触发。改"已决"事项前先查这里与 `docs/adr/`。
+- [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分。
+- [harness/design/](harness/design/) 与 [harness/questionnaires/](harness/questionnaires/) —— **AI 流程产物**(设计文档套 / 归档问卷),与项目文件 docs/ 物理分离(三区模型)。
+- 唯一工具命令:脱敏检查 `python3 scripts/desensitize.py .`(发布前 DoD 要求 0 命中;映射表本地 gitignored;push 前三道门 = 脚本 0 命中 + 语义人审 + 脱敏报告,见 [OD-1](docs/OPEN-DECISIONS.md);**不要在 .md 中复述映射表里的真实名**)。
+
+## 双 License(编辑前必须知道分区)
 
 | 区域 | License | 文件 |
 |---|---|---|
 | 方法论文字 | **CC-BY 4.0** | [docs/methodology/](docs/methodology/)、[docs/LICENSE](docs/LICENSE) |
 | skill 配置 / 代码 | **MIT** | [skills/](skills/)、[scripts/](scripts/)、根 [LICENSE](LICENSE) |
 
-改文章走署名转载语义；改 skill / 脚本是 MIT 自由复用。分区不要混（ADR-0002）。
+改文章走署名转载语义;改 skill / 脚本是 MIT 自由复用。分区不要混(ADR-0002)。
 
-## 唯一的工具命令:脱敏检查
+## skill 家族协作
 
-仓库内容已脱敏（ADR-0001 + OD-1）。`scripts/desensitize.py` 是发布门槛脚本:
-
-```bash
-python3 scripts/desensitize.py .                  # check 全仓库(发布前 DoD 要求 0 命中)
-python3 scripts/desensitize.py skills docs --apply # 按映射表执行替换
-python3 scripts/desensitize.py . --exclude docs/methodology
-```
-
-- 映射表(真实项目名 → 「项目A/B/C…」、真实用户路径 → `~`)在**本地文件** `scripts/desensitize_map.local.json`(gitignored 不入库;2026-07-29 起外置,防映射本身随仓库泄漏)。仓库内脚本默认空映射,公开克隆者运行为无害空转。**这些「项目A/B/C」是脱敏占位,不是真实项目名**——编辑时不要当真名对待,也不要无意中引入真实项目名 / 路径 / 人名;**也不要在 .md 文档中复述映射表里的真实名**(脚本只扫 .md,复述即泄漏)。
-- **push 前三道门全绿**(OD-1):① 脚本 0 命中;② 人逐行复审语义信息;③ 脱敏报告。push 后内容被 fork / 缓存不可真正撤回——这是单向门。
-
-## skill 家族协作架构（核心 big picture）
-
-8 个 skill 不是孤立的,构成 **5 环节闭环 + 横切**。理解它们的衔接协议才能正确编辑任一 skill:
+8 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§5.3](docs/methodology/methodology_v4.md#53-两族-grill) 与各 SKILL.md「主流程」末尾):
 
 ```
 design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-running ──> retro
    │                         │                        │              │
-   生成式设计                  对抗式压测(D1–D8)         跨会话实现       复盘
+   生成式设计                  对抗式压测(D1–D8)       跨会话实现       复盘
    │                         │                        │              │
    └────────── delegate(横切:任意环节下放纯执行决策)────────────────────┘
 
@@ -47,38 +51,20 @@ grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插
 action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前奏可任意插入
 ```
 
-**三族 skill 的交互模式**(方法论 §5.3,改动一族的机制要对齐另一族):
+**落盘路径速查**(产物均落**宿主项目**):
 
-| 族 | skill | 交互 | 落盘 |
-|---|---|---|---|
-| 批量问卷族 | design-Q / grill-Q / retro-Q / action-Q(确认式) | 多波次 Markdown 问卷,离线作答 | 阶段文档 / ADR / OD / CONTEXT(action-Q:归档 confirm-*) |
-| 单点深钻族 | grill / grill-with-docs | 一问一答,逐轮 `AskUserQuestion` | grill 纯对话默认不写文件;with-docs 写 CONTEXT/ADR/OD |
-| 约束系统 | long-running-agent | 落盘文件驱动(feature_list + progress) | `.claude/feature_list.json` 等 |
-
-**衔接协议**(在各 SKILL.md 的"主流程"末尾,改一个 skill 的衔接点要同步另一端):
-- design-Q 收尾 → 提议 grill-Q 压测;grill-Q 收尾 → 提议 long-running。
-- 问卷处理中发现"单点深水区"→ 建议用户对该点单独跑 grill-with-docs。
-
-## skill 内部结构与"引擎漂移"（编辑 skill 时必读）
-
-每个 skill 目录结构:`SKILL.md`(带 `<what-to-do>` / `<supporting-info>` 区块 + YAML frontmatter) + 骨架文件(`*-SKELETONS.md`) + `DESIGN.md`(设计决策 + dogfood 记录) + 可选 `docs/`(retro 有完整 VISION/HLD/归档问卷)。
-
-**引擎副本漂移(OD-8,方法论「常见误区 #17」的活体证据)**:`QUESTIONNAIRE-FORMAT.md` 与 `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q 三个 skill **各持一份副本**(均自标「design-Q 引擎复用件」),diff 证实已漂移。
-- **改一方要考量三方**,在对应 `DESIGN.md` 声明漂移关系。
-- **禁止擅自统一 / 抽取共享文件**——这是已决项(保留现状,统一不在价值主线)。
-
-## 落盘路径速查（skill 产物落在哪）
-
-| skill | 产物落点(均落**宿主项目**,非本仓库) |
+| skill | 产物落点 |
 |---|---|
-| action-Q | 确认结果 → 问卷归档 `harness/questionnaires/archive/`(只移不删);满足 ADR 三条件 → `docs/adr/`;单向门/重大风险/存疑假设 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
-| design-Q | VISION / `harness/design/` HLD·LLD / `docs/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `harness/questionnaires/<stage>-w<NN>.md` → 处理后归档 `archive/` |
+| action-Q | 确认结果 → 问卷归档 `harness/questionnaires/archive/`(只移不删);ADR 三条件 → `docs/adr/`;单向门/重大风险 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
+| design-Q | VISION / `harness/design/` HLD·LLD / `docs/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `harness/questionnaires/<stage>-w<NN>.md` → 归档 `archive/` |
 | grill-Q | 发现 → `CONTEXT`/`adr`/`OPEN-DECISIONS`;**工件修订建议只进处理报告,绝不替改工件** |
 | retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `harness/questionnaires/retro-<主题>-w<NN>.md` |
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 
-## 编辑本仓库的铁律（与全家族 skill 对齐）
+**引擎副本漂移(OD-8,编辑 skill 时必读)**:`QUESTIONNAIRE-FORMAT.md` / `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q 各持一份副本(已漂移)——改一方考量三方,在对应 `DESIGN.md` 声明漂移关系;**禁止擅自统一 / 抽取共享文件**(已决项)。
+
+## 编辑本仓库的铁律
 
 这些是方法论自身反复强调、违反即产出劣化的纪律:
 
@@ -86,25 +72,13 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 2. **即时沉淀,不批处理** —— 处理完即刻写文件,不攒到末尾。
 3. **原始信息不丢失** —— 已用问卷 `archive/`(只移不删);废弃文件归 `waste/` 不直接删除。
 4. **先验证再写** —— 引用进文档 / 问卷的事实(尤其"代码 vs 文档"矛盾、外部依赖能否真正跑通)必须核实原文,不凭转述。
-5. **文件版本命名** —— `_v1` / `_v2` 递增,禁 `final` / `new` / `copy`(全局 `~/.claude/CLAUDE.md` 已规定,本仓库同样适用)。
+5. **文件版本命名** —— `_v1` / `_v2` 递增,禁 `final` / `new` / `copy`。
 6. **不一致的设计文档比没有更危险** —— 实现与文档脱节时先更新文档。
 
-## 当前仓库状态（递归:方法论要用于自身设计）
+## 仓库状态
 
-仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](harness/design/VISION.md) / [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/archive/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
+**2026-08-05:repo 级设计完成,落地执行中**——design-Q 三阶段 + grill-Q 压测 12 项回灌(设计套 [harness/design/repo/](harness/design/repo/));方法论 + 哲学升 **v4**(受众收窄个人 / 第二支柱机制层对称化 / 哲学三学科化(人因/软工/运筹));harness 区物理分离(docs/design/ + docs/questionnaires/ 迁入);术语治理(8 术语全保留 + 新词三条件门槛)。落地执行 P1–P4 完成(P1 迁移 / P2 术语 / P3 v4 / P4 入口),**P5(P5 ADR-0008/0009/0010)与 P6(发布门 + dogfood)待执行**,见 [TODO.md](TODO.md)。
 
-**2026-07-30 至 08-03 增量**:
-- 2026-07-30/31:action-questionnaire 创建(15 题压测裁决 + 首次 dogfood 案例)→ **2026-08-01 入库**(第 8 个 skill)+ 生态位分析 confirm ×2;
-- 2026-08-01:80/20 判断成本原则落盘 v3 / CONTEXT / skill description(909c030)、远程仓库建立并首次推送([code-cycler/info-driven-ai-se-harness-engineering](https://github.com/code-cycler/info-driven-ai-se-harness-engineering),d2252ae)、OD-4 母本标注执行(b16328e)、脱敏语义人审完成(909c030)、OD-12 新增;
-- 2026-08-03:OD-13 影子 pilot 首轮数据 + OD-14 预勾开关化修订 + OD-8 重访记录(1f0fd12);**canonical 同步(7→8)完成**(本行动,confirm-canonical-sync-7to8-w00 全确认)。
+历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移。
 
-**下一步主线([TODO.md](TODO.md))**:grill-Q 压测 v3 成稿(可选质量门)→ repo 级 design-Q 正式设计 → CONTRIBUTING + issue 模板(OD-3)→ git author 身份决策。注意:本仓库**自身**的 repo 级 design-Q(对仓库定位 / skill 家族的设计)仍未跑——design-Q / grill-Q / retro-Q 各自目录内的 `docs/` 是 dogfood 产物,不构成本仓库自身的设计文档。
-
-待办关键项:CONTRIBUTING + issue 模板(OD-3)、git author 身份决策、repo 级 design-Q 正式设计。
-
-## 关键文档导航
-
-- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)+ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(哲学 · 为什么)+ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical);[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。**任何关于方法论主张(方法论 + 哲学文件)的修改以此为 canonical(OD-4);实操文件修订走轻量流程。**
-- [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 + 第一支柱术语分层(v3) / 5 环节 / Grill 家族 / skill 家族 / Claude Code 定位)。
-- [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 9 条待决事项 + 重访触发条件。改任何"已决"事项前先查这里与 `docs/adr/`。
-- [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态。
+下一步主线([TODO.md](TODO.md)):P5 ADR-0008/0009/0010 → P6 发布门 + dogfood;CONTRIBUTING + issue 模板(OD-3);git author 身份决策。
