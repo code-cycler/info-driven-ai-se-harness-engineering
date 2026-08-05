@@ -1,4 +1,38 @@
 ================================================================================
+SESSION: 005
+时间: 2026-08-05T16:30:00+08:00
+================================================================================
+
+## 完成的任务(repo 级设计落地 · P1 完成)
+- F001(P1) harness 区迁移:git mv docs/design/ + docs/questionnaires/ → harness/(rename 识别);129 处字符串替换 + 相对链接重算(harness/ 20 文件 + docs/adr + CONTEXT + TODO + v2)
+- skill 落盘路径同步:design-Q/grill-Q/retro-Q/action-Q/long-running 的 SKILL.md/DESIGN.md + CLAUDE.md 落盘速查表(docs/questionnaires → harness/questionnaires)
+- 误替换还原:retro/grill skill 自己目录引用(docs/design、docs/questionnaires)vs 宿主项目落盘路径(harness/questionnaires)区分
+- 断链修复:96 → 7 处豁免(3 中文短语笔误 + 3 CONTEXT-FORMAT 示例 + 1 file://);methodology_v3 2 处 GitHub 锚点单/双连字符存量笔误修复
+- 豁免登记:methodology_v3 §4.2 路径文字(并入 P3);脱敏门 0 命中
+
+## 修改的文件
+- harness/design/、harness/questionnaires/ 整体迁入;docs/ 剩 CONTEXT/OPEN-DECISIONS/adr/methodology/LICENSE
+- 44 个引用方文件路径更新;8 skill 规格路径同步
+
+## Git 提交
+- 2bce357 repo 级设计完成(设计套 + 问卷 ×7 + feature_list)
+- cb68950 P1 harness 区迁移 + 链接改造 + skill 路径同步
+
+## 遇到的问题
+- git mv 目标父目录不存在报 No such file 错——先 mkdir harness/ 再 git mv
+- 相对链接重算脚本正则 bug(仅匹配前缀,实际 0 处重算)——改为语义映射 + 逐文件 Edit
+- 字符串替换误伤 skill 自己目录引用(./docs/...)——还原 + 文字/链接一致性修复
+- GitHub 锚点规则:★ 移除后双空格 → 双连字符,存量链接单连字符 → 修复
+- Bash 分类器间歇不可用——Edit 工具完成批量链接修复
+
+## 下一步计划
+- F002(P2) 术语判定表 + CONTEXT 更新 + ADR-0005 同步
+- F003(P3) 方法论 + 哲学 v4 内容修订 + v3 归档
+- F004(P4) 入口改造(CLAUDE.md/AGENTS.md/README)
+- F005(P5) ADR-0008/0009/0010
+- F006(P6) 发布门 + dogfood
+
+================================================================================
 SESSION: 004
 时间: 2026-08-04T12:00:00+08:00
 ================================================================================
