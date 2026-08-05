@@ -1,6 +1,6 @@
 # 以信息为核心的 Claude Code AI Native 开发经验 v2
 
-> ⚠️ **历史版本**:以 [methodology_v3](../methodology_v3.md) 为 current(2026-07-29 起)。本文件保留作历史母本。
+> ⚠️ **历史版本**:以 [methodology_v3](methodology_v3.md) 为 current 的历史母本(2026-07-29 至 2026-08-05);当前 current 为 [methodology_v4](../methodology_v4.md)。本文件保留作历史母本。
 >
 > **v2 相对 v1 的演进**:v1 写于 Grill 一问一答时代;v2 是经多个真实项目实践后的升级(项目背景已脱敏)——方法论已沉淀为可执行的 skill 家族(design-Q / grill-Q / retro-Q / long-running-agent / delegate),流程从线性 6 阶段升级为 5 环节闭环 + 横切,核心理念从单支柱升级为双支柱。v1 保留作历史母本(未收入本仓库),本文件自 v3 发布起转为历史版本。
 >
