@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成);2026-08-04 methodology_v3 三块拆分完成(ADR-0007,long-running 实现,回归 DoD 全绿)**。
-> 下一步主线:**grill-Q 压测 v3 成稿**(可选质量门);**repo 级 design-Q 正式设计**;其余见下(CONTRIBUTING + issue 模板 OD-3 / git author 身份决策 等)。
+> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成);2026-08-04 methodology_v3 三块拆分完成(ADR-0007,long-running 实现,回归 DoD 全绿);2026-08-05 repo 级 design-Q 完成**(参考「项目A」架构,vision→hld→lld 全流程,设计套落 harness 区暂存 docs/design/repo/)**。
+> 下一步主线:**repo 级设计落地执行(P1–P6,见下)**;**grill-Q 压测 v3 成稿**(可选质量门);其余见下(CONTRIBUTING + issue 模板 OD-3 / git author 身份决策 等)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -48,6 +48,19 @@
 - ✅ **v3 起草驱动方式抉择**(2026-07-29):design-Q 设计套 + long-running-agent 起草 + grill-with-docs 压测 P0 章节大纲,未裸写;**遗留可选质量门:grill-Q 压测 v3 成稿**
 
 ### 其他待办
+
+- ⏳ **术语全面审计(B 方案)**(2026-08-05,repo 级设计 vision Q4 自定义入档):v4 术语折中审计落地后执行——逐术语判定保留/合并/删除/换学科标准词,CONTEXT 重写,方法论全文 + skill 规格同步(人因工程/软件工程/运筹学学科对接)
+
+### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](docs/design/repo/LLD.md))
+
+> 来源:repo 级 design-Q(vision→hld→lld 全流程,参考「项目A」架构;设计套 = VISION/HLD/LLD + 问卷 4 份)。规格见 [docs/design/repo/](docs/design/repo/)。建议 long-running-agent 或手动按阶段推进,每阶段 DoD = 脱敏门 0 命中 + 断链 0 + 方法论内容不丢。
+
+- ⏳ **P1 harness 区迁移 + 链接改造**:docs/design/ + docs/questionnaires/ → harness/(git mv,镜像迁移);全部引用方更新;grep 旧路径 0 残留
+- ⏳ **P2 术语判定表 + CONTEXT 更新**:8 术语逐词判定(保留/合并/换学科词/删除)+ 新词三条件门槛
+- ⏳ **P3 方法论 + 哲学 v4 内容修订**:§零 受众收窄个人 / §2.2 第二支柱机制层对称化 / 哲学学科化(§一 人因、§六 软工、新增运筹节)/ 全文术语替换
+- ⏳ **P4 实操同步 + 入口**:实操文件受众联动处轻量同步 + CLAUDE.md 瘦身(规范优先级节新增)+ AGENTS.md 创建 + README 更新
+- ⏳ **P5 ADR + 归档**:ADR-0008(v4 立论重构)/ 0009(入口与规范优先级)/ 0010(术语治理策略)+ v3 移 archive/ + 文件头谱系
+- ⏳ **P6 发布门 + dogfood**:OD-4 母本同步 + 脱敏门 + 语义人审;产物期 dogfood(实操文件轻量修订任务)
 
 - ✅ **脱敏语义人审**(OD-1 ②,2026-08-01 完成):subagent×4 全文遍历执行(归档问卷 / docs+根 / skills+scripts / git 层),占位通顺度与语义指纹均审;发现与修复见🟡节两条 ✅;遗留 git author 身份与历史指纹两项决策(见下)
 - ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](docs/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入

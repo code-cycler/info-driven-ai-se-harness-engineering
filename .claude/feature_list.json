@@ -1,85 +1,111 @@
 {
-  "project_name": "methodology_v3 三块拆分(方法论/哲学/实操相互独立)",
-  "created_at": "2026-08-04T09:00:00+08:00",
-  "source_of_truth": "docs/design/hld-methodology-separation.md + docs/adr/0007-methodology-three-way-split.md + 归档问卷(feature-methodology-separation-hld-w00 / grill-methodology-separation-w01);坍缩为 hld 无 LLD,features 从 HLD 同步清单反推",
+  "project_name": "repo 级设计落地:方法论 v4 + 架构治理(harness 物理分离)",
+  "created_at": "2026-08-05T15:00:00+08:00",
+  "source_of_truth": "docs/design/repo/LLD.md(P1–P6)+ VISION.md + HLD.md(已含 grill-Q 压测 12 项回灌);features 从 LLD 阶段拆分与 DoD 反推",
   "features": [
     {
       "id": "F001",
       "category": "functional",
       "priority": "high",
-      "description": "三文件创建 + 章节迁移:methodology_v3.md / philosophy_v1.md / practical_v1.md 落盘;章节按去向表迁移——哲学 = §一/§六/元原则;实操 = 快速上手/§7.4-7.6/§八/附录 A·B;方法论 = 其余(内容不删不丢)",
+      "description": "P1 harness 区迁移 + 链接改造 + skill 落盘路径同步:git mv docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/;全部引用方路径更新(42 文件基线);5 skill 规格(design-Q/grill-Q/retro-Q/action-Q/long-running 的 SKILL.md + DESIGN.md)+ CLAUDE.md 落盘速查表路径同步;方法论 §4.2 路径引用断链豁免登记(并入 P3 一并改)",
       "steps": [
-        "Python 按 ## 标题精确切分 methodology_v3.md 章节块",
-        "组装 philosophy_v1.md(新头部 + §一 + §六 + 元原则)、practical_v1.md(新头部 + 快速上手 + §7.4-7.6 + §八 + 附录 A·B)、methodology_v3.md(原头部 + 方法论章节,删迁移章节)",
-        "grep 验证:各迁移章节标题与关键内容在新文件存在;方法论文件剩余章节完整",
-        "回归检查:切分前后各块内容逐字节一致(脚本 diff 每块)"
+        "git mv docs/design harness/design && git mv docs/questionnaires harness/questionnaires",
+        "grep -rl 'docs/design\\|docs/questionnaires' 全库列出引用方,逐文件更新为 harness/ 路径(豁免项:methodology_v3.md §4.2 表格路径引用——登记豁免,并入 P3)",
+        "5 skill 规格路径同步:design-Q/grill-Q/retro-Q/action-Q SKILL.md 写问卷与归档路径 + long-running SKILL.md 读归档路径 + 各 DESIGN.md 提及处",
+        "CLAUDE.md 落盘路径速查表更新(questionnaires/design 产物落点)",
+        "grep 'docs/design\\|docs/questionnaires' 全库 0 命中(豁免清单除外)",
+        "grep 'docs/questionnaires' skills/ 0 命中(skill 规格无旧路径残留)",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git log 验证 git mv 历史保留(rename 可追踪)",
+        "git commit(docs: 前缀)"
       ],
-      "passes": true,
-      "last_tested": "2026-08-04T10:10:00+08:00",
-      "notes": "三文件拆分完成:methodology_v3.md 678 行 / philosophy_v1.md 144 行 / practical_v1.md 190 行;28 块逐块回归验证全过(内容不丢);§7.4-7.6 已按压测 Q5-B 移实操文件;§七 跳号(7.3→7.7)待 F002 加说明"
+      "passes": false,
+      "last_tested": null,
+      "notes": "设计套现处 docs/design/repo/,P1 迁移后移至 harness/design/repo/(本文件 source_of_truth 路径随 P1 更新)"
     },
     {
       "id": "F002",
       "category": "functional",
       "priority": "high",
-      "description": "文件头标注与衔接:methodology_v3.md 文件头加拆分说明 + 三文件链接(独立成文主张保留);开头加「问题引子」段(压测 Q4,3-5 行 vibe coding 失败叙事摘要 + 链接哲学文件 §一);§七 加 §7.4-7.6 迁移说明(跳号衔接)",
+      "description": "P2 术语判定表 + CONTEXT 更新 + ADR-0005 同步:8 术语逐词判定表(保留/合并/换学科词/删除)落 CONTEXT;新词引入三条件门槛(学科无对应 + 方法论必需 + 定义清晰)落 CONTEXT;ADR-0005 四处一致核心子串同步修订(保留原措辞作历史)",
       "steps": [
-        "methodology_v3.md 文件头追加拆分说明(ADR-0007 引用 + 三文件导航)",
-        "§零 前加「问题引子」段(3-5 行 + 链接哲学文件 §一 全文)",
-        "§七 开头加一行「§7.4-7.6 已移至实操文件」衔接说明",
-        "grep 验证:拆分说明/问题引子/衔接说明存在"
+        "8 术语逐词判定(信息断层/信息流转/有效上下文/背景缺失/信息真空/机制层/度量层/症状层 + vibe coding/(a)(b)盲区)按判定方向出表",
+        "判定表 + 新词门槛写入 CONTEXT(术语唯一源)",
+        "ADR-0005 核心子串对照判定结果,被替换词同步修订(原措辞留历史)",
+        "grep 验证:CONTEXT 判定表存在 + ADR-0005 修订完成",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git commit(docs: 前缀)"
       ],
-      "passes": true,
-      "last_tested": "2026-08-04T10:30:00+08:00",
-      "notes": "文件头拆分说明 + 问题引子段 + §七 跳号说明已加"
+      "passes": false,
+      "last_tested": null,
+      "notes": "判定方向 = 压测 Q4:替换有学科标准对应且语义重叠者,保留无学科对应或学科词语义偏移者;长期全面审计(B 方案)在 TODO"
     },
     {
       "id": "F003",
       "category": "functional",
       "priority": "high",
-      "description": "跨文件引用改造:全量 grep 核对 v3 内 55 处 § 引用,指向哲学(§一/§六/§1.2/§6.x)/实操(§8.3/§7.4-7.6/快速上手)的改跨文件相对链接;拆完跑断链检查兜底(压测 Q2)",
+      "description": "P3 方法论 + 哲学 v4 内容修订:方法论文件升 v4(§零 受众彻底收窄个人 + 机制内容保留重述为个人 × AI + §2.2 第二支柱机制层对称化(只补机制层不建度量/症状层)+ 全文术语替换 + 附录 C 更新 + §4.2 路径引用一并改);哲学文件升 v4(§一 人因视角 + §六 软工视角 + 新增运筹学视角节);v3 → archive/",
       "steps": [
-        "grep -n '§' 三文件全量列出 § 引用",
-        "逐处判定同文件 or 跨文件,跨文件引用改为相对 Markdown 链接 + 节锚点(如 §1.2 → [§1.2](philosophy_v1.md#12-两类信息断层))",
-        "§2.1 对 §7.6(过载对策链)的引用改指向实操文件锚点",
-        "断链检查:提取三文件全部 [text](path#anchor) 链接,验证目标文件与锚点存在"
+        "方法论文件:文件头谱系更新(v1→v2→v3→v4 演进链 + v4 推导)+ §零 受众改写(个人,团队删/一句带过)+ §2.2 补机制层立论(护栏机制显性化)+ 全文术语按 P2 判定表替换 + 附录 C 加 v3→v4 行 + §4.2 路径引用更新(承接 P1 豁免)",
+        "哲学文件:文件头谱系更新 + §一 显式人因工程视角 + §六 软件工程视角 + 新增运筹学视角节(决策成本/双轨对照);保持章节号(锚点稳定)",
+        "v3 移入 docs/methodology/archive/(沿 v2 先例)+ 归档链接改造清单执行(P1 工具链复用)",
+        "回归:章节清单 22 项 + 核心子串 grep 14 项(按新术语更新子串)+ 链接断链 0",
+        "受众表述全库一致(grep 无残留团队表述,DoD-5)",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git commit(docs: 前缀)"
       ],
-      "passes": true,
-      "last_tested": "2026-08-04T11:00:00+08:00",
-      "notes": "17 处跨文件 § 引用改造完成(v1 历史引用与 v3 变更摘要不动);30 链接断链检查 0 问题;修复 1 处缺闭合括号(L50)"
+      "passes": false,
+      "last_tested": null,
+      "notes": "canonical 修改(方法论+哲学)遵守 OD-4:作者其他位置副本标注「开发副本,以 v4 为准」在 P6 发布门执行;对称化增量 = 只补机制层(压测 Q5)"
     },
     {
       "id": "F004",
       "category": "functional",
       "priority": "high",
-      "description": "导航更新(压测 Q1 修正 3 处 + canonical 表述)+ action-Q 机制论述:CONTEXT:15 的 §1.2 → 哲学文件链接、README:27 的 §8.3 → 实操文件链接、README:79「完整阐述」表述微调、CLAUDE.md:107 canonical 表述更新;实操文件补 action-Q 机制论述(#7 候选③消项)",
+      "description": "P4 入口改造:CLAUDE.md 瘦身(6 节结构:定位压缩 + 规范优先级节(含协调注)+ 导航收敛 + skill 家族压缩 + 铁律 + 状态)+ AGENTS.md 零内容路由创建 + README 更新(文档入口表/仓库结构/受众表述)",
       "steps": [
-        "CONTEXT.md:15 引用改(§2.1/§5.1 方法论文件 + §1.2 哲学文件链接)",
-        "README.md:27 引用改(§4 方法论文件 + §8.3 实操文件链接)",
-        "README.md:79 「方法论本身的完整阐述」改为三文件并述",
-        "CLAUDE.md:107 canonical 表述更新(方法论+哲学 canonical,实操非 canonical)",
-        "practical_v1.md 补 action-Q 机制论述(§八 skill 使用时机附近:确认式问卷机制说明)",
-        "grep 验证:导航链接目标存在"
+        "CLAUDE.md 重构为 6 节:方法论摘要压缩指向方法论文件;新增规范优先级节(排序 + 冲突处理 + 协调注);关键文档导航收敛(harness/ 新路径);skill 家族压缩指向方法论 §5.3",
+        "AGENTS.md 创建(零内容路由:<30 行,读 CLAUDE.md + 链接 + 启动顺序,不放清单/表)",
+        "README 更新:受众表述(个人开发者)+ 文档入口表 + 仓库结构(三区模型)+ 安装说明(术语版本注,P6 发布说明)",
+        "grep 验证:规范优先级节存在 + AGENTS.md 无清单/表 + README 无旧受众表述",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git commit(docs: 前缀)"
       ],
-      "passes": true,
-      "last_tested": "2026-08-04T11:30:00+08:00",
-      "notes": "导航 4 处(CONTEXT:15/README:27·79/CLAUDE:107)+ practical action-Q 机制论述(候选③消项)"
+      "passes": false,
+      "last_tested": null,
+      "notes": "AGENTS.md 零内容路由 = 压测 Q10;实操文件术语联动(若有)已在 P3 处理,本阶段不预设实操步(压测 Q9)"
     },
     {
       "id": "F005",
       "category": "functional",
       "priority": "high",
-      "description": "拆分回归 DoD 脚本化 + 发布门:grep 各章关键内容(标题 + 核心子串)在新文件存在性 + 链接断链检查全绿 + 脱敏门 0 命中 + 人审 + 提交(压测 Q3)",
+      "description": "P5 ADR + 归档:ADR-0008 方法论 v4 立论重构(升 v4 + 受众收窄 + 第二支柱对称化)/ ADR-0009 仓库入口与规范优先级(AGENTS.md + 规范优先级 + 三区模型)/ ADR-0010 术语治理策略(折中审计 + 新词门槛);ADR-0005 更新(记修订历史)",
       "steps": [
-        "grep 回归:各章标题在对应文件存在(§零-§十二/元原则/附录 A-D/快速上手)",
-        "grep 回归:核心子串抽查(双支柱/机制层/有效上下文/120k/400k/design-Q/action-Q 等)不丢",
-        "链接检查:三文件 + CONTEXT/README/CLAUDE 的全部相对链接目标存在",
+        "ADR-0008/0009/0010 三份落地(背景/决策/替代方案/后果,循既有 ADR 格式)",
+        "ADR-0005 更新:术语替换后的四处一致子串修订 + 原措辞历史保留",
+        "grep 验证:三份 ADR 存在 + ADR-0005 修订完成",
         "python3 scripts/desensitize.py . 0 命中",
-        "git commit(仓库既有 docs: 前缀约定)+ claude-progress.txt 更新"
+        "git commit(docs: 前缀)"
       ],
-      "passes": true,
-      "last_tested": "2026-08-04T12:00:00+08:00",
-      "notes": "回归 DoD 全绿(章节 22 项/核心子串 14 项/链接 81 个 0 问题)+ 脱敏门 0 命中 + 提交完成;验收信号(首次实操轻量修订)另行观察"
+      "passes": false,
+      "last_tested": null,
+      "notes": "ADR 拆分理由 = 压测 Q5:三类决策独立演进便于单独重访"
+    },
+    {
+      "id": "F006",
+      "category": "functional",
+      "priority": "high",
+      "description": "P6 发布门 + dogfood:OD-4 母本同步(作者其他位置副本标注「开发副本,以 v4 为准」,仓库外)+ 脱敏门 + 语义人审 + README 发布说明(术语版本注);产物期 dogfood = 实操文件一次真实轻量修订任务(验收 = 用户实际执行 + AI 记录)",
+      "steps": [
+        "OD-4 母本同步:其他位置副本标注(仓库外动作,用户配合)+ 证据记录",
+        "脱敏门 0 命中 + 语义人审(含 git 提交信息)通过",
+        "README 发布说明:术语版本注(v4 新术语 vs v3)+ 变更摘要",
+        "dogfood:实操文件一次真实轻量修订任务按新规范走通(用户执行/观察,AI 记录结果与差异)",
+        "git commit(docs: 前缀)+ claude-progress.txt 更新"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "dogfood 验收 = 用户实际执行(压测 Q11,OD-13 教训);发布 = 单向门,由用户决策何时 push"
     }
   ]
 }
