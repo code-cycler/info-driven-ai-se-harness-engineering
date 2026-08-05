@@ -36,13 +36,13 @@ description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(�
   3. **多获取信息**:读取中发现的额外事实(未记录的问题、偏离、遗留)一并记入问卷出题依据;
   4. **及时保存信息**:证据与发现立即写入问卷 / retro 文档,不攒到处理时。
 
-2. **生成 retro 问卷**:按 [RETRO-SKELETONS.md](./RETRO-SKELETONS.md) 出题,格式按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md),写到宿主项目 `docs/questionnaires/retro-<主题>-w<NN>.md`。本波问题数 ≤ 2 时不生成文件,直接 AskUserQuestion 提问(小波阈值)。
+2. **生成 retro 问卷**:按 [RETRO-SKELETONS.md](./RETRO-SKELETONS.md) 出题,格式按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md),写到宿主项目 `harness/questionnaires/retro-<主题>-w<NN>.md`。本波问题数 ≤ 2 时不生成文件,直接 AskUserQuestion 提问(小波阈值)。
 3. **用户作答**:文件编辑为主;对话速答逐字转写进问卷文件。用户宣布「答完了」之前不解析。
 4. **处理落盘**(按 [PROCESSING-RULES.md](./PROCESSING-RULES.md)):
    - retro 文档:宿主项目 `docs/retro/<主题>_vN.md`(_vN 递增,禁 final/new/copy),结构 = 四节 + Action Items
    - 行动项 → 宿主项目 `TODO.md`(问题 → 行动 → 核验时机)
    - 处理报告(对话内)
-   - 问卷归档 `docs/questionnaires/archive/`,尾部附处理报告摘要
+   - 问卷归档 `harness/questionnaires/archive/`,尾部附处理报告摘要
 5. **终止**:一份 retro 通常一波完成;答案引出的新问题按「再无可盘问的信息」判断是否出补充波。
 
 </what-to-do>

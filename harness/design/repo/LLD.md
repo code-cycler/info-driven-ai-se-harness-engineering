@@ -9,7 +9,7 @@
 
 | 阶段 | 目标 | 关键动作 | DoD |
 |---|---|---|---|
-| **P1** | harness 区迁移 + 链接改造 | `git mv` docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/;全部引用方更新 + **skill 落盘路径同步(5 skill 规格 + CLAUDE.md 落盘速查表)** + **方法论 §4.2 路径引用断链豁免登记(并入 P3 一并改)** | 统一回归三项 + P1 专项 |
+| **P1** | harness 区迁移 + 链接改造 | `git mv` harness/design/ → harness/design/、harness/questionnaires/ → harness/questionnaires/;全部引用方更新 + **skill 落盘路径同步(5 skill 规格 + CLAUDE.md 落盘速查表)** + **方法论 §4.2 路径引用断链豁免登记(并入 P3 一并改)** | 统一回归三项 + P1 专项 |
 | **P2** | 术语判定表 + CONTEXT 更新 | 8 术语逐词判定表落 CONTEXT;新词三条件门槛落 CONTEXT + **ADR-0005 四处一致核心子串同步修订(保留原措辞作历史,压测 Q2)** | 统一回归三项 + 术语表完整 |
 | **P3** | 方法论 + 哲学 v4 内容修订 | §零 受众(个人,机制内容保留重述为个人 × AI)+ §2.2 第二支柱机制层对称化(**只补机制层,不建度量/症状层**)/ 哲学学科化(§一 人因、§六 软工、新增运筹节)/ 全文术语替换 / 附录 C 更新 | 统一回归三项 + 受众表述全库一致(DoD-5) |
 | **P4** | 入口改造 | **实操术语联动(若有,已并入 P3 处理)** + CLAUDE.md 瘦身(规范优先级节含协调注)+ AGENTS.md 零内容路由创建 + README 更新 | 统一回归三项 + 入口收敛(DoD-2) |
@@ -22,12 +22,12 @@
 
 ```
 harness/
-├── design/              # ← docs/design/ 整体迁入
+├── design/              # ← harness/design/ 整体迁入
 │   ├── VISION.md        # methodology v3 设计套(文件头标注归属)
 │   ├── hld_v1.md / hld_v2.md / hld-methodology-separation.md
 │   ├── lld_v1.md / lld_v2.md
 │   └── repo/            # 本次 repo 级设计套(VISION/HLD/LLD)
-└── questionnaires/      # ← docs/questionnaires/ 整体迁入
+└── questionnaires/      # ← harness/questionnaires/ 整体迁入
     └── archive/         # 已处理问卷(含本次 4 份 feature-repo-design-*)
 ```
 
@@ -76,8 +76,8 @@ harness/
 
 | 旧路径 | 新路径 | 引用方 |
 |---|---|---|
-| docs/design/** | harness/design/** | CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引 / 本项目设计产物 |
-| docs/questionnaires/** | harness/questionnaires/** | 同上 |
+| harness/design/** | harness/design/** | CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引 / 本项目设计产物 |
+| harness/questionnaires/** | harness/questionnaires/** | 同上 |
 
 引用格式:相对路径;方法论三块 § 互引沿用现有约定(17 处跨文件 § 引用先例,ADR-0007)。
 
@@ -92,7 +92,7 @@ harness/
 ### P1 迁移专项
 
 - harness/ 区文件齐备,docs/ 原位置无残留(grep 无旧路径)
-- 引用全更新(grep docs/design、docs/questionnaires 全库 0 命中;豁免项除外——见下)
+- 引用全更新(grep 旧路径 design/questionnaires 全库 0 命中;豁免项除外——见下)
 - **5 skill 规格无旧路径残留**(design-Q / grill-Q / retro-Q / action-Q / long-running 的 SKILL.md + DESIGN.md)
 - **断链豁免清单登记**:方法论 §4.2 路径引用(并入 P3 一并改)——豁免项显式登记,不静默
 - git mv 历史保留(git log 可追踪)

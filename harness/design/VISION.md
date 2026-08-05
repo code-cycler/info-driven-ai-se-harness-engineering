@@ -1,7 +1,7 @@
 # VISION · methodology_v3
 
 > 来源:design-questionnaire vision 阶段 W00(2026-07-29,17/17 全采纳预答)。
-> 上游决策:[ADR-0004](../adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。
+> 上游决策:[ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。
 > 本文件 = v3 设计的构想层;章节结构设计见 HLD,章节级改写规格见 LLD(后续阶段产出)。
 
 ## 目标与受众 (V1)
@@ -49,7 +49,7 @@ v3 §1 或 §2.1 以 **vibe coding 失败场景**为开篇引子(背景交代不
 - **旧框架不被否定**:三层叠加(返工=症状层 / 有效上下文=度量层 / AI 幻觉决策=机制层),旧框架挂机制层下,读者不觉被否定。
 - **章节锚点稳定**:v3 保持 v2 章节编号,机制层用小节(§2.1.x)而非重排,避免 CONTEXT/README/CLAUDE 锚点失效。
 - **OD-4 母本同步**:v3 发布检查清单纳入「作者其他位置副本标注'开发副本,以 v3 为准'」。
-- **脱敏(OD-1)**:v3 新增内容(尤其 vibe coding 场景若举例)发布前 [scripts/desensitize.py](../scripts/desensitize.py) 0 命中 + 人审;「项目A/B/C」占位沿用。
+- **脱敏(OD-1)**:v3 新增内容(尤其 vibe coding 场景若举例)发布前 [scripts/desensitize.py](../../scripts/desensitize.py) 0 命中 + 人审;「项目A/B/C」占位沿用。
 
 ## 动机与推导 (V6)
 

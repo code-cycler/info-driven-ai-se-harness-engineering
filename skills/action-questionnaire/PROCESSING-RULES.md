@@ -32,7 +32,7 @@
 
 | 答案类型 | 落盘目标 |
 |---|---|
-| 确认结果(常规) | 问卷归档(`docs/questionnaires/archive/`,只移不删)为唯一常规留痕 |
+| 确认结果(常规) | 问卷归档(`harness/questionnaires/archive/`,只移不删)为唯一常规留痕 |
 | 术语定义类 | CONTEXT.md(纯术语表,不放决策与实现细节) |
 | 满足 ADR 三条件的决策 | docs/adr/NNNN-<slug>.md(编号顺延现有)。**确认中揪出的决策照常记录,不因「非正式行动」而免记** |
 | 🤔 逃生舱(单向门) | docs/OPEN-DECISIONS.md |
@@ -75,7 +75,7 @@ ADR 三条件(缺一不写):难逆转 + 缺上下文会让人困惑 + 经过真�
 
 ## 归档
 
-1. 处理报告输出且用户无异议 → 问卷 status:`processed` → `archived`,移入 `docs/questionnaires/archive/`,文件名不变。
+1. 处理报告输出且用户无异议 → 问卷 status:`processed` → `archived`,移入 `harness/questionnaires/archive/`,文件名不变。
 2. 归档前在文件尾部追加处理报告摘要(落盘文件链接列表);**行动完成后把执行结果摘要一并追加**,保证单文件可回溯。
 3. 只移不删。
 4. 提问波(≤4 题,未生成问卷文件)的问答与处理摘要,追加到最近一份归档问卷尾部,标注「提问波」。

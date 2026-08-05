@@ -21,12 +21,12 @@ status: archived
 
 ### 目标
 
-- [X]  **1 行动定义**：本次「根据最近的更新，更新各个文档」= 执行 [TODO.md](TODO.md) 🟢 节已实证的 **「canonical 同步(7→8)」**——门槛已过（2026-07-31 action-Q 首案例），同步范围 grep 实证 6 文件 7 处，TODO 明载「同步执行另起行动」，本次即为该行动。〔文档：TODO.md 🟢 节「canonical 同步(7→8)」；用户本次请求〕
+- [X]  **1 行动定义**：本次「根据最近的更新，更新各个文档」= 执行 [TODO.md](../../../TODO.md) 🟢 节已实证的 **「canonical 同步(7→8)」**——门槛已过（2026-07-31 action-Q 首案例），同步范围 grep 实证 6 文件 7 处，TODO 明载「同步执行另起行动」，本次即为该行动。〔文档：TODO.md 🟢 节「canonical 同步(7→8)」；用户本次请求〕
 - [X]  **2 数量表述统一**：各 canonical 文档「7 个核心 skill」→「8 个核心 skill」，action-questionnaire 为第 8 个（skills/ 目录实测 8 个：action-Q / delegate / design-Q / grill / grill-Q / grill-with-docs / long-running / retro-Q）。OD-13「家族仍 7 个」是 2026-08-01 对 **shadow** 的裁决（shadow 不入家族），不构成 action-Q 不入家族的依据；OD-13 重访触发②「第 8 个 skill」与同步后数量冲突，处理见边界条目 12。〔代码：`ls skills/`；文档：TODO.md 🟢 节、OPEN-DECISIONS.md OD-13〕
 
 ### 输入
 
-- [X]  **3 同步素材**：action-Q 的家族定位取 [skills/action-questionnaire/SKILL.md](skills/action-questionnaire/SKILL.md)「与家族的分工」表（确认式问卷 / 轻量前奏 / 非正式行动写操作前触发）+ DESIGN.md（15 题裁决）；不新造内容。〔文档：action-Q SKILL.md、DESIGN.md〕
+- [X]  **3 同步素材**：action-Q 的家族定位取 [skills/action-questionnaire/SKILL.md](../../../skills/action-questionnaire/SKILL.md)「与家族的分工」表（确认式问卷 / 轻量前奏 / 非正式行动写操作前触发）+ DESIGN.md（15 题裁决）；不新造内容。〔文档：action-Q SKILL.md、DESIGN.md〕
 - [X]  **4 命中清单（已 grep 核实）**：`7 个核心`表述分布在 —— CLAUDE.md:37（「7 个 skill 不是孤立的」）、README.md:47（表格标题）+ 65（仓库结构）、CONTEXT.md:40（skill 家族节）、ADR-0003:13（「7 个核心方法论 skill」）、v3:13（「7 个 Claude Code skill 是它的执行体」）+ §8.3 分类表（无 action-Q 行）、OPEN-DECISIONS.md:27（OD-2 依赖计数）。〔实测：`grep -rn "7 个核心|7 个 skill|7 个方法论"`〕
 
 ### 输出

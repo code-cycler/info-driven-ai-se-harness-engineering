@@ -1,8 +1,8 @@
 # VISION · repo 级设计(参考「项目A」优化哲学与架构)
 
 > 来源:design-questionnaire vision 阶段 W00 + W01(2026-08-05;W00 采纳 13 / 留空 6,补充声明方向修正;W01 12 题作答,含两处推翻推荐的激进选择);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。
-> 上游决策:[ADR-0007](../adr/0007-methodology-three-way-split.md)(三块拆分)、[OD-4](../OPEN-DECISIONS.md)(母本标注)、[OD-1](../OPEN-DECISIONS.md)(脱敏门)。
-> 本文件 = repo 级设计(仓库自身定位与架构)的构想层;架构方案见 HLD,落地规格见 LLD(后续阶段产出)。**与 docs/design/ 下 methodology v3 设计套(VISION.md / hld_v2 / lld_v2)无关**,后者是方法论 v3 的构建设计。
+> 上游决策:[ADR-0007](../../../docs/adr/0007-methodology-three-way-split.md)(三块拆分)、[OD-4](../../../docs/OPEN-DECISIONS.md)(母本标注)、[OD-1](../../../docs/OPEN-DECISIONS.md)(脱敏门)。
+> 本文件 = repo 级设计(仓库自身定位与架构)的构想层;架构方案见 HLD,落地规格见 LLD(后续阶段产出)。**与 harness/design/ 下 methodology v3 设计套(VISION.md / hld_v2 / lld_v2)无关**,后者是方法论 v3 的构建设计。
 
 ## 目标与受众 (V1)
 
@@ -26,7 +26,7 @@
 3. 术语审计(折中档)+ 新词引入门槛 + **ADR-0005 四处一致子串同步修订**(压测 Q2);全面审计(B 方案)记入 TODO
 4. 哲学文件按学科视角重构(人因:为何信息真空;软工:为何纪律是护栏;运筹:决策成本与双轨对照)
 5. 架构:显式规范优先级声明(只写一处)+ 入口收敛 + AGENTS.md 路由式引入
-6. 设计产物落 `docs/design/repo/`(新建独立目录,不覆盖 methodology v3 设计套)
+6. 设计产物落 `harness/design/repo/`(新建独立目录,不覆盖 methodology v3 设计套)
 
 ### 不做什么(scope 边界)
 

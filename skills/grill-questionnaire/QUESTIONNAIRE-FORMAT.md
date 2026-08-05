@@ -7,12 +7,12 @@
 
 ## 文件约定
 
-- 活动问卷目录:`docs/questionnaires/`(懒创建,首次生成问卷时才建)
+- 活动问卷目录:`harness/questionnaires/`(懒创建,首次生成问卷时才建)
 - 命名:
   - init 模式:`<stage>-w<NN>.md`(stage ∈ `vision` | `hld` | `lld`;NN 从 01 递增)
   - feature 模式:`feature-<slug>-<stage>-w<NN>.md`(slug 为功能短名,kebab-case)
   - 同 wave 超题量拆子波:`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`
-- 归档:处理完毕移入 `docs/questionnaires/archive/`,文件名不变,只移不删
+- 归档:处理完毕移入 `harness/questionnaires/archive/`,文件名不变,只移不删
 
 ## frontmatter(必填)
 

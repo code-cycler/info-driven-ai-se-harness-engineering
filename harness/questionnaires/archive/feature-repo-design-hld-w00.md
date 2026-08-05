@@ -17,7 +17,7 @@ status: processed
 > - 本波**不用 🤔**(yes/no 二选一,无中间态);真定不了 → 留空即可,转 W01 深究
 > - 若"大体同意但要改一两处" → 留空,转 W01 时在深究题里给自定义值
 >
-> 默认来源标注于〔〕。上游 = [repo 级 VISION](../design/repo/VISION.md)(2026-08-05 落盘)。
+> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../design/repo/VISION.md)(2026-08-05 落盘)。
 
 ## 决策默认值清单
 
@@ -27,7 +27,7 @@ status: processed
 - [X]  **2 规范优先级的排序** = 方法论主张(方法论+哲学文件,canonical)> ADR > CONTEXT 术语 > skill 规格(SKILL.md)> 实操文件;冲突时按序裁决,并**必须显式说明冲突,不静默选择**(参照「项目A」L2 优先模式)。〔VISION DoD-1 + 项目A 实测〕
 - [X]  **3 AGENTS.md 引入形态** = 路由式入口(短文件,启动顺序 + 规范优先级引用 + Codex 专属约束 <50 行),**不复制 CLAUDE.md/docs 规则**;服务 Codex 收录与 GitHub 规范,Claude Code 会话仍走 CLAUDE.md。〔VISION W00 #11 已采纳 + 项目A 实测〕
 - [X]  **4 CLAUDE.md 调整幅度** = 适度瘦身:方法论摘要压缩指向方法论文件、导航收敛到「规范优先级 + 关键文档导航」两节;**不**大幅重写(自动加载的摘要价值保留)。〔现状已核实:CLAUDE.md 9.5KB 含方法论摘要 + skill 家族 + 铁律 + 状态 + 导航〕
-- [ ]  **5 docs 布局** = 不目录级重排;仅新增 docs/design/repo/(vision 已定)+ README「仓库结构」节更新。〔VISION W00 #17 已采纳〕
+- [ ]  **5 docs 布局** = 不目录级重排;仅新增 harness/design/repo/(vision 已定)+ README「仓库结构」节更新。〔VISION W00 #17 已采纳〕
 - [X]  **6 内容修订的落点映射** = 方法论文件:§零 受众改写(彻底收窄个人)/ §2.2 第二支柱机制层(对称化)/ 附录 C 术语演进表更新 / 全文术语替换;哲学文件:学科视角重构;实操文件:受众联动处轻量同步(§8.3 等)。〔已核实三块章节结构:§零/§2.2/附录 C 存在,§8.3 skill 时机表存在〕
 
 ### H2 技术选型(文档机制)
@@ -59,6 +59,6 @@ status: processed
 ## 处理报告摘要(hld W00,2026-08-05)
 
 - **preview 统计**:勾选采纳 13 / 留空不采纳 1(#5 docs 布局)/ 转 W01 深究 1;取消默认率 1/14 = 7.1%。
-- **#5 深究 → Q1 自定义**(见 hld W01 处理):「harness 依赖文件与项目文件分开, docs默认是项目文件, harness文件单独存放」——经小波澄清裁决为**物理目录分离**(docs/questionnaires/ + docs/design/ 移入 harness 区)。
-- **落盘**:HLD 已按 W00 采纳项 + 分区模型落 [docs/design/repo/HLD.md](../design/repo/HLD.md)。
+- **#5 深究 → Q1 自定义**(见 hld W01 处理):「harness 依赖文件与项目文件分开, docs默认是项目文件, harness文件单独存放」——经小波澄清裁决为**物理目录分离**(harness/questionnaires/ + harness/design/ 移入 harness 区)。
+- **落盘**:HLD 已按 W00 采纳项 + 分区模型落 [harness/design/repo/HLD.md](../../design/repo/HLD.md)。
 - **逃生舱**:0。

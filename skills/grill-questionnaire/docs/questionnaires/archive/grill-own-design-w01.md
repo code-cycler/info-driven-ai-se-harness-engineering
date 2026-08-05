@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 grill W01 · 自压测 grill-questionnaire 的 DESIGN.md(dogfood)
 
-> 工件:[../../DESIGN.md](../../DESIGN.md)(grill-Q 自己的设计决策记录)
+> 工件:[../../DESIGN.md](../../../DESIGN.md)(grill-Q 自己的设计决策记录)
 > 用 grill-Q 压测它自己的设计——8 维度套到 G1–G8 + 维度集 + DoD 上。一个「压测已有工件」的 skill 压测自己的设计,是最直接的自检。
 >
 > 填写规则:

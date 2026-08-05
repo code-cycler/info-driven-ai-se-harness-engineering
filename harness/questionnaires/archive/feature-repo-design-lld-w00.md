@@ -17,14 +17,14 @@ status: processed
 > - 本波**不用 🤔**(yes/no 二选一,无中间态);真定不了 → 留空即可,转 W01 深究
 > - 若"大体同意但要改一两处" → 留空,转 W01 时在深究题里给自定义值
 >
-> 默认来源标注于〔〕。上游 = [repo 级 VISION](VISION.md) + [HLD](HLD.md)(2026-08-05)。
+> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../design/repo/VISION.md) + [HLD](../../design/repo/HLD.md)(2026-08-05)。
 
 ## 决策默认值清单
 
 ### L1 阶段拆分
 
 - [X]  **1 阶段划分** = 6 阶段(各阶段可独立交付/验证):
-  - **P1 harness 区迁移 + 链接改造**(docs/design/ + docs/questionnaires/ → harness/ 区;引用方全部更新;回归验证)
+  - **P1 harness 区迁移 + 链接改造**(harness/design/ + harness/questionnaires/ → harness/ 区;引用方全部更新;回归验证)
   - **P2 术语判定表 + CONTEXT 更新**(8 术语逐词判定;内容修订的前置——v4 写作要用新术语)
   - **P3 方法论 + 哲学 v4 内容修订**(§零 受众 / §2.2 第二支柱对称化 / 哲学学科化 / 全文术语替换)
   - **P4 实操文件轻量同步 + 入口**(实操受众联动处 + CLAUDE.md 瘦身 + AGENTS.md + README)
@@ -36,7 +36,7 @@ status: processed
 ### L2 详细设计
 
 - [X]  **3 harness 区目录名** = 根级 `harness/`(与 docs/ 同级,直观,非隐藏目录)。〔推断——重点核对:或偏好其他名(.claude/ 下 / tools/ / artifacts/)?〕
-- [X]  **4 harness 区内结构** = 镜像迁移保持子结构:`harness/design/`(含 methodology-v3 设计套 + repo 设计套)+ `harness/questionnaires/`(含 archive/);不重组。〔现状已核实:docs/design/ 6 文件 + docs/questionnaires/archive/ 18 问卷〕
+- [X]  **4 harness 区内结构** = 镜像迁移保持子结构:`harness/design/`(含 methodology-v3 设计套 + repo 设计套)+ `harness/questionnaires/`(含 archive/);不重组。〔现状已核实:harness/design/ 6 文件 + harness/questionnaires/archive/ 18 问卷〕
 - [X]  **5 迁移方式** = `git mv`(保留文件历史);迁移后原位置不留占位文件。〔推断——git mv 保历史,滚动引用由链接改造处理〕
 - [X]  **6 v4 文件头谱系格式** = 沿 v3 惯例:版本谱系行 + v4 演进推导链 + 三块拆分说明(更新为 v4);「本文独立成文」声明保留。〔已核实:v3 文件头结构〕
 - [X]  **7 AGENTS.md 内容骨架** = 5 节(<50 行):项目状态一句话 / 启动顺序(读 CLAUDE.md → 按改动选读)/ 规范优先级引用(链接不复制)/ Codex 专属约束(少量)/ 按改动选读表(3–5 行)。〔HLD 1.3 + 项目A 实测〕
@@ -45,7 +45,7 @@ status: processed
 
 ### L3 接口规格
 
-- [X]  **10 路径契约** = docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/;**全部引用方更新**(CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引 / 本项目设计产物自身)。〔HLD 落地动作 2〕
+- [X]  **10 路径契约** = harness/design/ → harness/design/、harness/questionnaires/ → harness/questionnaires/;**全部引用方更新**(CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引 / 本项目设计产物自身)。〔HLD 落地动作 2〕
 - [X]  **11 交叉引用格式** = 方法论三块 § 互引 + 规范优先级链接引用沿用现有约定;新路径一律相对路径。〔已核实:17 处跨文件 § 引用先例,ADR-0007〕
 
 ### L4 DoD
@@ -68,6 +68,6 @@ status: processed
 ## 处理报告摘要(lld W00,2026-08-05)
 
 - **preview 统计**:勾选采纳 16 / 留空 0 / 转 W01 0;取消默认率 0%。全采纳 → 无需 W01。
-- **落盘**:[docs/design/repo/LLD.md](../design/repo/LLD.md)(L1 六阶段 P1–P6 / L2 详细设计 / L3 路径契约 / L4 DoD / L5 依赖预估)。
+- **落盘**:[harness/design/repo/LLD.md](../../design/repo/LLD.md)(L1 六阶段 P1–P6 / L2 详细设计 / L3 路径契约 / L4 DoD / L5 依赖预估)。
 - **逃生舱**:0。
 - **覆盖度**:L1–L5 骨架全覆盖,动态盲点清零 → 设计流程终止,收尾。

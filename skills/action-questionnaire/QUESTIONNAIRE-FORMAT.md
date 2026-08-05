@@ -8,11 +8,11 @@
 
 ## 文件约定
 
-- 活动问卷目录:`docs/questionnaires/`(懒创建,首次生成问卷时才建)
+- 活动问卷目录:`harness/questionnaires/`(懒创建,首次生成问卷时才建)
 - 命名:
   - `confirm-<slug>-w<NN>.md`(slug 为行动短名,kebab-case;NN 从 00 递增,**w00 = confirm-list 独立波**,w01 起为正式题波)
   - 同 wave 超题量拆子波:`confirm-<slug>-w<NN>a.md`、`…b.md`
-- 归档:处理完毕移入 `docs/questionnaires/archive/`,文件名不变,只移不删
+- 归档:处理完毕移入 `harness/questionnaires/archive/`,文件名不变,只移不删
 
 ## frontmatter(必填)
 

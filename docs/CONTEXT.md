@@ -41,7 +41,7 @@
 
 ## 方法论文档三块(ADR-0007)
 
-methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分设计定稿 2026-08-03/04,详见 [ADR-0007](adr/0007-methodology-three-way-split.md) 与 [HLD](design/hld-methodology-separation.md)):
+methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分设计定稿 2026-08-03/04,详见 [ADR-0007](adr/0007-methodology-three-way-split.md) 与 [HLD](../harness/design/hld-methodology-separation.md)):
 
 - **方法论文件** = 「怎么做」的完整阐述(流程 / 方法 / 规范;§零/§二/§三/§四/§五/§七主体/§九/§十/§十一/§十二等);**canonical 成员**,保留「独立成文/自包含」主张。
 - **哲学文件** = 「为什么」的阐述(失败模式与信息断层 / 人机分工 / 元原则;§一/§六);**canonical 成员**(属「方法论主张」)。

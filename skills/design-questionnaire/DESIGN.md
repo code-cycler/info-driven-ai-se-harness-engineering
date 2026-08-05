@@ -28,7 +28,7 @@ grill / grill-with-docs 一问一答,每问都要等一轮 LLM 输出,项目启�
 | D8 | 问题来源 | 阶段固定骨架(优先)+ 动态盲点(探索发现) | 骨架保证纪律不缺项;盲点保证结合项目实际 |
 | D9 | 探索与验证 | 按需 1–3 个 Explore subagent 收集事实清单,主 agent 关键点验证(引用进问卷的事实逐条核实原文) | 否决全量复核(违背效率初衷)与不验证(幻觉污染落盘文档) |
 | D10 | 作答方式 | 问卷文件是唯一事实源;默认编辑文件,也接受对话速答逐字转写 | 否决仅文件(长问卷繁琐)与仅对话(转写失真、看不到全貌) |
-| D11 | 归档 | `docs/questionnaires/archive/`,文件名不变,尾部附处理报告摘要,只移不删 | 原始信息不丢失;git 可 diff;单文件可回溯 |
+| D11 | 归档 | `harness/questionnaires/archive/`,文件名不变,尾部附处理报告摘要,只移不删 | 原始信息不丢失;git 可 diff;单文件可回溯 |
 | D12 | 命名 | design-questionnaire(与 retro-questionnaire 构成 -questionnaire 家族) | 否决 grill-questionnaire(体现机制不体现目的)与 init-design(不体现问卷机制) |
 
 ### dogfood 修订(2026-07-23,retro-questionnaire vision W1/W2 实跑产出)

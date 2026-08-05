@@ -6,7 +6,7 @@
 
 ## 背景
 
-[HLD#1](../design/hld_v1.md) 原定 v3「保 v2 编号 + 小节注入」(锚点稳定)。grill-Q W01 [Q3](../questionnaires/archive/grill-methodology-v3-design-w01.md) 压测:第三选项「彻底重排」被隐含否决、理由不充分——v3 是 canonical 立论重构,章节顺序应服务新立论(机制层先行 + 双靶子);保编号让 v3 背 v2 章节顺序包袱。窗口期(v2 未广泛引用,VISION#16)正是重排成本最低时。用户定夺选「彻底重排」。
+[HLD#1](../../harness/design/hld_v1.md) 原定 v3「保 v2 编号 + 小节注入」(锚点稳定)。grill-Q W01 [Q3](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测:第三选项「彻底重排」被隐含否决、理由不充分——v3 是 canonical 立论重构,章节顺序应服务新立论(机制层先行 + 双靶子);保编号让 v3 背 v2 章节顺序包袱。窗口期(v2 未广泛引用,VISION#16)正是重排成本最低时。用户定夺选「彻底重排」。
 
 ## 决策
 
@@ -25,4 +25,4 @@
 - (−) 锚点全量重写:CONTEXT/README/CLAUDE 所有方法论链接重写;LLD P4 发布清单加「锚点全量重写」步骤。
 - (−) v3 章节顺序需重新设计(P1 首个任务),增加 P1 工作量。
 - (−) [ADR-0004](0004-methodology-v3-hallucination-thesis.md) / [ADR-0005](0005-pillar-standard-wording.md) 中「保锚点」相关表述需同步(锚点不再保,改全重写)。
-- (−) HLD#1/#10、LLD#13 等「锚点稳定 / 结构不变」条款全部失效,已升 [HLD_v2](../design/hld_v2.md) / [LLD_v2](../design/lld_v2.md) 修订。
+- (−) HLD#1/#10、LLD#13 等「锚点稳定 / 结构不变」条款全部失效,已升 [HLD_v2](../../harness/design/hld_v2.md) / [LLD_v2](../../harness/design/lld_v2.md) 修订。

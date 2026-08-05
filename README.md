@@ -63,7 +63,7 @@ flowchart TD
 docs/methodology/    方法论文章(CC-BY 4.0)
 docs/adr/            架构决策记录
 docs/OPEN-DECISIONS  待决事项 + 重访触发
-docs/questionnaires/ 归档问卷(脱敏示例)
+harness/questionnaires/ 归档问卷(脱敏示例)
 skills/              8 个核心方法论 skill(MIT)
 scripts/             脱敏检查等工具
 ```

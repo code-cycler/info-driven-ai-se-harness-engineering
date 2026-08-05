@@ -222,7 +222,7 @@ status: archived
 
 ## 处理报告摘要(2026-07-30 归档)
 
-- 落盘:Q6=A → [docs/OPEN-DECISIONS.md](../../OPEN-DECISIONS.md) OD-11(已决,第 4 份引擎副本分叉治理);Q13=A + 工件修订建议 → [TODO.md](../../../TODO.md)「🟢 行动前细节确认 skill」块
+- 落盘:Q6=A → [docs/OPEN-DECISIONS.md](../../../docs/OPEN-DECISIONS.md) OD-11(已决,第 4 份引擎副本分叉治理);Q13=A + 工件修订建议 → [TODO.md](../../../TODO.md)「🟢 行动前细节确认 skill」块
 - 无 ADR:15 题决策均属未来 skill 的工件输入(grill-Q 不替建工件)
 - 答案分布:★采纳 11(Q1–Q7、Q10、Q13、Q15)/ 自定义 4(Q8、Q9、Q11、Q14)/ 逃生舱 0
 - 异常:Q8/Q11/Q14 仅自定义按自定义解析;Q12=C × Q13=A 组合矛盾 → 提问波解决;Q14「action *」疑 Markdown 吞字 → TODO 记命名待确认(倾向 `action-questionnaire`)

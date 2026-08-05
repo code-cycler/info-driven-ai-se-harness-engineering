@@ -6,7 +6,7 @@
 
 ## 背景
 
-[HLD #11](../design/hld_v1.md) 定第一支柱标准措辞句,v3 §2.1 + CONTEXT + README + CLAUDE 四处原样复用;HLD #14 原判为「lld 落地细节,不立 ADR」。grill-Q W01 压测两点:
+[HLD #11](../../harness/design/hld_v1.md) 定第一支柱标准措辞句,v3 §2.1 + CONTEXT + README + CLAUDE 四处原样复用;HLD #14 原判为「lld 落地细节,不立 ADR」。grill-Q W01 压测两点:
 
 - **Q2**:标准句四处锁定 + 对外引用,改一处须同步四处、旧句残留不可撤——锁定效应被低估,满足 ADR 三条件(难逆转 + 会困惑 + 真权衡)。
 - **Q12**:标准句含对策「故用问答逐步对齐需求」,原样放进 CONTEXT 违反「纯术语表」规则(grill-with-docs:CONTEXT devoid of implementation details, a glossary and nothing else)。
@@ -34,4 +34,4 @@
 - (+) CONTEXT 守住纯术语表;v3 §2.1 保留完整推导;README/CLAUDE 简洁。
 - (+) Q8 的 DoD grep 改为匹配**核心定义子串**(「对抗 AI 在信息真空中的幻觉式自作主张决策」,不含对策/加粗),字面匹配更可靠。
 - (−) 「四处一致」从字面一致降为**语义一致**,DoD 脚本须匹配核心子串而非全句。
-- (−) [HLD #11](../design/hld_v1.md) 需按本 ADR 修订(进 TODO);LLD #12 DoD 脚本按"核心子串"重写。
+- (−) [HLD #11](../../harness/design/hld_v1.md) 需按本 ADR 修订(进 TODO);LLD #12 DoD 脚本按"核心子串"重写。

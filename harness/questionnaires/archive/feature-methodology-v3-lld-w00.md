@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 lld W00 · Preview(methodology_v3 分阶段实现规格)
 
-> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) + [HLD](../../design/hld_v1.md) + [ADR-0004](../../adr/0004-methodology-v3-hallucination-thesis.md) 已定结构,lld 落地为逐节改写规格 + 可脚本化 DoD。
+> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) + [HLD](../../design/hld_v1.md) + [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md) 已定结构,lld 落地为逐节改写规格 + 可脚本化 DoD。
 > lld 不裁剪(feature 模式:每阶段 DoD 加「不破坏现有功能」回归)。
 >
 > **作答规则**:勾 `[x]` = 采纳(按默认落盘 LLD);留空 = 转 W01 深究;不用 🤔。
@@ -53,6 +53,6 @@ status: archived
 ## 处理报告摘要(2026-07-29 归档)
 
 - **preview 结果**:14/14 全采纳,0 留空,0 转 W01,无 🤔。补充声明空。
-- **落盘**:L1-L5 实现规格 → [docs/design/lld_v1.md](../../../design/lld_v1.md)。
+- **落盘**:L1-L5 实现规格 → [harness/design/lld_v1.md](../../../harness/design/lld_v1.md)。
 - **阶段判定**:骨架 L1-L5 全覆盖,无留空项 → 不出 W01,lld 一次过。
 - **里程碑**:设计三阶段(vision / hld / lld)全部完成,design-questionnaire 进入收尾。

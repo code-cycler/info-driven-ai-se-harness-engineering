@@ -8,7 +8,7 @@ status: archived
 # 问卷 grill W01 · 压测 methodology 三块拆分设计(HLD + ADR-0007)
 
 > **本波是压测问卷**(绿地子模式:项目存在但无代码,D7「现实」= 既有文档/ADR/约束;D1–D8 全开)。
-> 压测对象:[docs/design/hld-methodology-separation.md](../../design/hld-methodology-separation.md)(16 条决策)+ [docs/adr/0007-methodology-three-way-split.md](../../adr/0007-methodology-three-way-split.md)。
+> 压测对象:[harness/design/hld-methodology-separation.md](../../design/hld-methodology-separation.md)(16 条决策)+ [docs/adr/0007-methodology-three-way-split.md](../../../docs/adr/0007-methodology-three-way-split.md)。
 > 出题基于:D1–D8 八维度 × 工件 16 条关键声明;动态盲点(压测读取中发现)。
 >
 > **填写规则**:
@@ -99,7 +99,7 @@ status: archived
 
 ## Q8. 历史设计文档的 v3 章节引用处置   [落盘: 处理报告(记录)]
 
-<出题依据:docs/design/(VISION/hld_v1/v2/lld_v1/v2)与 ADR-0004 等历史文档含 v3 章节文字引用(如 hld_v2「两类断层整合进 §一」、ADR-0004「§2.1 一句」)。§一 移哲学、§2.1 留方法论——历史文档引用为章节名文字(非链接),拆分后章节名仍存在(只是文件不同)>
+<出题依据:harness/design/(VISION/hld_v1/v2/lld_v1/v2)与 ADR-0004 等历史文档含 v3 章节文字引用(如 hld_v2「两类断层整合进 §一」、ADR-0004「§2.1 一句」)。§一 移哲学、§2.1 留方法论——历史文档引用为章节名文字(非链接),拆分后章节名仍存在(只是文件不同)>
 
 - [X]  A. 历史文档不更新(章节名引用无链接、拆分后章节名仍在,语境自明;历史记录保留原文——同「历史裁决原文保留」原则) ★推荐
 - [ ]  B. 历史文档也同步更新(标注章节新位置) —— 违背历史记录保留原则,工作量大收益低
@@ -145,7 +145,7 @@ status: archived
 - lld_v2 L4 回归 DoD 先例(「v2 有效内容不丢」grep 验证)—— 探索报告 + lld_v2 文件
 - HLD 被否决项汇总 8 项 / ADR-0007 替代方案 6 项(均无分批拆分)—— 落盘文件核实
 - CLAUDE.md:107(「任何关于方法论主张的修改以此为 canonical(OD-4)」)—— grep 实测
-- docs/design/ 历史文档含 v3 章节文字引用(hld_v2「两类断层整合进 §一」等)—— 探索报告
+- harness/design/ 历史文档含 v3 章节文字引用(hld_v2「两类断层整合进 §一」等)—— 探索报告
 
 ---
 

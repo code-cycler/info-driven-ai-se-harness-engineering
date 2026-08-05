@@ -30,11 +30,11 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 | G5 | 触发 | 手动为主 + design-Q 收尾后主动提议一次 | 手动:用户「压测/审一下/挑毛病」+ 指向工件。主动:仅 design-Q 产设计草稿收尾时提议一次,接上 write→review 闭环。不做「任何不可逆实现前」的泛化主动提议(太吵且难判定) | Q5 |
 | G6 | 波次与终止 | 单次完整压测 + 按需补波;终止 = 8 维度全覆盖 + 工件关键声明逐条审视 + 盲点清零 + 逃生舱进 OD | 对标 retro-Q。工件有限,一轮把 8 维度套到工件每条关键声明;题量超 15 拆子波;仅当答案引出新漏洞/新盲点时出补充波。否决 design-Q 式多波循环(工件有限时易注水,且无阶段闸门可过) | Q6 |
 | G7 | 引擎复用 | 沿用 D18:复制两份 + 三方 drift 声明,design-Q 为 canonical | 引擎至今仅 dogfood 改过一次(D13–D19),retro 副本与原件只差一行标记,漂移可控。否决「重构共享引擎目录」(跨 skill 相对引用在 Claude Code 按需加载下断裂风险,D18 否决过;且要回改 retro 副本)。双向门,不达 ADR 门槛 | Q7 |
-| G8 | 文件结构 | SKILL.md + GRILL-SKELETON.md(独立成文)+ 引擎副本两份 + DESIGN.md;问卷 `docs/questionnaires/grill-<slug>-w<NN>.md`(slug=工件短名),归档同目录 | 与 design-Q(STAGE-SKELETONS)/ retro-Q(RETRO-SKELETONS)家族一致,骨架独立成文。否决「骨架内联进 SKILL.md」(与家族不一致,SKILL.md 变长) | Q8 |
+| G8 | 文件结构 | SKILL.md + GRILL-SKELETON.md(独立成文)+ 引擎副本两份 + DESIGN.md;问卷 `harness/questionnaires/grill-<slug>-w<NN>.md`(slug=工件短名),归档同目录 | 与 design-Q(STAGE-SKELETONS)/ retro-Q(RETRO-SKELETONS)家族一致,骨架独立成文。否决「骨架内联进 SKILL.md」(与家族不一致,SKILL.md 变长) | Q8 |
 
 ### dogfood 修订(2026-07-24,自压测 DESIGN.md)
 
-用 grill-Q 压测自己的 DESIGN.md(8 维度套 G1–G8)。问卷归档于 [docs/questionnaires/archive/grill-own-design-w01.md](./docs/questionnaires/archive/grill-own-design-w01.md)。抓出 8 个缺口 + 1 条补充声明,全部已落盘。
+用 grill-Q 压测自己的 DESIGN.md(8 维度套 G1–G8)。问卷归档于 [grill-own-design-w01.md](./docs/questionnaires/archive/grill-own-design-w01.md)。抓出 8 个缺口 + 1 条补充声明,全部已落盘。
 
 | # | 决策 | 结论 | 来源 |
 |---|---|---|---|
@@ -87,7 +87,7 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 - [x] GRILL-SKELETON.md 含 D1–D8 维度 + 出题方向 + 落盘映射 + 两模式说明
 - [x] 引擎副本含三方 drift 标记注释
 - [x] 全局 CLAUDE.md 与 项目A CLAUDE.md(+ AGENTS.md 同步)家族表加 grill-questionnaire 行
-- [x] dogfood:2026-07-24 自压测——用 grill-Q 压测自己的 DESIGN.md,问卷归档 [docs/questionnaires/archive/grill-own-design-w01.md](./docs/questionnaires/archive/grill-own-design-w01.md),抓出 8 缺口 + 1 补充声明,修订见 D22/D23
+- [x] dogfood:2026-07-24 自压测——用 grill-Q 压测自己的 DESIGN.md,问卷归档 [grill-own-design-w01.md](./docs/questionnaires/archive/grill-own-design-w01.md),抓出 8 缺口 + 1 补充声明,修订见 D22/D23
 
 ## 已知风险
 

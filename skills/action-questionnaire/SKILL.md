@@ -55,7 +55,7 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
 
 - 按 [PROCESSING-RULES.md](./PROCESSING-RULES.md) 逐题解析(含异常:单选多勾、必答未答、条件题误答)。
 - 落盘(本波处理完即刻):
-  - **确认结果** → 问卷归档为唯一常规留痕(`docs/questionnaires/archive/`,只移不删);后续会话可重新加载。
+  - **确认结果** → 问卷归档为唯一常规留痕(`harness/questionnaires/archive/`,只移不删);后续会话可重新加载。
   - **满足 ADR 三条件的决策** → `docs/adr/`(确认中揪出的决策照常记录,不因「非正式行动」而免记)。
   - **单向门/重大风险/存疑假设** → `docs/OPEN-DECISIONS.md`(必填重访触发条件)。
   - **术语冲突** → `CONTEXT.md`。

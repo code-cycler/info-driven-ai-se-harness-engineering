@@ -1,8 +1,8 @@
 # HLD_v2 · methodology_v3(全局设计 · grill-Q 压测后修订)
 
-> 本文件是 [HLD_v1](hld_v1.md) 的修订版(2026-07-29,grill-Q v3-design [W01](../questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 用户定夺彻底重排)。
+> 本文件是 [HLD_v1](hld_v1.md) 的修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 用户定夺彻底重排)。
 > 修订来源逐条标注(Qn / ADR)。**v1 保留作压测前快照**(信息不丢失)。
-> 上游:[VISION](VISION.md) + [ADR-0004](../adr/0004-methodology-v3-hallucination-thesis.md) + [ADR-0005](../adr/0005-pillar-standard-wording.md)(标准措辞) + [ADR-0006](../adr/0006-v3-chapter-restructure.md)(章节重排)。
+> 上游:[VISION](VISION.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md) + [ADR-0005](../../docs/adr/0005-pillar-standard-wording.md)(标准措辞) + [ADR-0006](../../docs/adr/0006-v3-chapter-restructure.md)(章节重排)。
 
 ## H1 文档架构
 
@@ -65,10 +65,10 @@
 ## H4 发布流程
 
 ### 发布清单(#12 · Q3 加锚点全重写)
-~~v1:六步~~ → **七步**:① 写 v3 → ② 同步 CONTEXT/README/CLAUDE(定义版措辞)→ ③ **锚点全量重写 + 校验**(Q3 新增)→ ④ [desensitize.py](../scripts/desensitize.py) 0 命中 → ⑤ OD-4 母本标注 → ⑥ v2 标历史 → ⑦ 完整性检查。
+~~v1:六步~~ → **七步**:① 写 v3 → ② 同步 CONTEXT/README/CLAUDE(定义版措辞)→ ③ **锚点全量重写 + 校验**(Q3 新增)→ ④ [desensitize.py](../../scripts/desensitize.py) 0 命中 → ⑤ OD-4 母本标注 → ⑥ v2 标历史 → ⑦ 完整性检查。
 
 ### 发布时机(#13,保留)
 v3 写完即发布(窗口期)。
 
 ## H5 架构决策识别(#14 · 修订)
-~~v1:不新增 ADR~~ → **新增 [ADR-0005](../adr/0005-pillar-standard-wording.md)(标准措辞)+ [ADR-0006](../adr/0006-v3-chapter-restructure.md)(章节重排)**。其余结构决策双向门,记本文档。
+~~v1:不新增 ADR~~ → **新增 [ADR-0005](../../docs/adr/0005-pillar-standard-wording.md)(标准措辞)+ [ADR-0006](../../docs/adr/0006-v3-chapter-restructure.md)(章节重排)**。其余结构决策双向门,记本文档。

@@ -49,7 +49,7 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 
 - 问题来源 = **固定压测维度**([GRILL-SKELETON.md](./GRILL-SKELETON.md) D1–D8,代码库模式全开;纯逻辑模式只开 D1–D6)+ **工件驱动具体化**(把维度套到工件的具体声明上,不得照抄维度名)+ **动态盲点**(读取中发现的矛盾/未定义边界、上轮答案引出的新漏洞)。
 - 格式严格按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
-- 写到 `docs/questionnaires/grill-<slug>-w<NN>.md`(slug = 工件短名,kebab-case;NN 从 01 递增),frontmatter `stage: grill`,status: pending。目录懒创建。
+- 写到 `harness/questionnaires/grill-<slug>-w<NN>.md`(slug = 工件短名,kebab-case;NN 从 01 递增),frontmatter `stage: grill`,status: pending。目录懒创建。
 - 题量:每波 10–15 题;超出拆子波(`grill-<slug>-w<NN>a.md`、`…b.md`)。
 - **小波阈值**:若本波问题数 ≤ 2,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
 
@@ -68,7 +68,7 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 - 纯逻辑模式:全部发现写审阅报告入 `~/notes/`(遵 `~/CLAUDE.md` 命名规范),不写项目 CONTEXT/ADR/OD。
 - 🤔 逃生舱 → 降风险协议,绝不重问。
 - 输出**处理报告**(对话内,格式见 PROCESSING-RULES.md):每题去向、新增/更新文件、异常处理、逃生舱处置、下一波候选、覆盖度(8 维度 + 工件关键声明审视情况)。
-- 用户无异议 → 问卷 status: processed → archived,移入 `docs/questionnaires/archive/`,尾部附处理报告摘要。
+- 用户无异议 → 问卷 status: processed → archived,移入 `harness/questionnaires/archive/`,尾部附处理报告摘要。
 
 ### 5. 循环与终止
 

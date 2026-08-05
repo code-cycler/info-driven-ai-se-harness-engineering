@@ -71,10 +71,10 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 | skill | 产物落点(均落**宿主项目**,非本仓库) |
 |---|---|
-| action-Q | 确认结果 → 问卷归档 `docs/questionnaires/archive/`(只移不删);满足 ADR 三条件 → `docs/adr/`;单向门/重大风险/存疑假设 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
-| design-Q | VISION / `docs/design/` HLD·LLD / `docs/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `docs/questionnaires/<stage>-w<NN>.md` → 处理后归档 `archive/` |
+| action-Q | 确认结果 → 问卷归档 `harness/questionnaires/archive/`(只移不删);满足 ADR 三条件 → `docs/adr/`;单向门/重大风险/存疑假设 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
+| design-Q | VISION / `harness/design/` HLD·LLD / `docs/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `harness/questionnaires/<stage>-w<NN>.md` → 处理后归档 `archive/` |
 | grill-Q | 发现 → `CONTEXT`/`adr`/`OPEN-DECISIONS`;**工件修订建议只进处理报告,绝不替改工件** |
-| retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `docs/questionnaires/retro-<主题>-w<NN>.md` |
+| retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `harness/questionnaires/retro-<主题>-w<NN>.md` |
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 
@@ -91,7 +91,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 
 ## 当前仓库状态（递归:方法论要用于自身设计）
 
-仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](docs/design/VISION.md) / [HLD_v2](docs/design/hld_v2.md) / [LLD_v2](docs/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
+仓库 2026-07-28 建仓;**2026-07-29 methodology_v3 完成**:design-Q 设计套([VISION](harness/design/VISION.md) / [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md))+ grill-Q 两轮压测(ADR-0004/5/6)→ grill-with-docs 压测 P0 章节大纲 → long-running-agent 起草 [methodology_v3](docs/methodology/methodology_v3.md) 并全仓库同步(CONTEXT / README / CLAUDE 定义版措辞、v2 标历史、脱敏门 0 命中)。工件:[.claude/feature_list.json](.claude/feature_list.json) 全绿。
 
 **2026-07-30 至 08-03 增量**:
 - 2026-07-30/31:action-questionnaire 创建(15 题压测裁决 + 首次 dogfood 案例)→ **2026-08-01 入库**(第 8 个 skill)+ 生态位分析 confirm ×2;

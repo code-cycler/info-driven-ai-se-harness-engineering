@@ -51,7 +51,7 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 - **preview(每阶段强制,独立 wave 0)**:每阶段先生成一份独立的 **W00 preview 问卷**(`<stage>-w00.md`),**不与 W01 同出**。preview = 决策默认值清单,一要点一行 = 本阶段将盘问的决策点 + AI 默认倾向 + 来源;每条**预勾与否由 opt-in 开关决定**(2026-08-03 起,默认关:用户启动本 skill 时明确说「预勾选」才预勾 `[x]`,勾 = 采纳默认按默认落盘;未启用时全部 `[ ]` 人逐条作答),**取消勾选(留空)= 不采纳**(该要点转入 W01 单独拷问);**单向门要点永不预勾**(发布/删除/花钱/脱敏,强制显式勾选)。W00 **不用 🤔**(yes/no 二选一,无中间态;真定不了即取消勾选转 W01);底部「补充声明」栏保留。W01 正式题 = W00 留空(不采纳)要点的深究 + 不适合 yes/no 的开放型骨架必答项(多选/方向题)。格式见 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)「文件结构(§ W00 preview 问卷模板)」;解析见 [PROCESSING-RULES.md](./PROCESSING-RULES.md)。后续波次(W02+)由缺口驱动,不再出 preview。
 - 问题来源 = **阶段骨架**([STAGE-SKELETONS.md](./STAGE-SKELETONS.md) 当前阶段的未覆盖必问项,优先) + **动态盲点**(探索发现的矛盾/冲突/未定义边界、上轮回答引出的新问题)。
 - 格式严格按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
-- 写到 `docs/questionnaires/<stage>-w<NN>.md`(feature 模式:`feature-<slug>-<stage>-w<NN>.md`),status: pending。目录懒创建。
+- 写到 `harness/questionnaires/<stage>-w<NN>.md`(feature 模式:`feature-<slug>-<stage>-w<NN>.md`),status: pending。目录懒创建。
 - 题量:每波 10–15 题;超出拆子波(`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`)。
 - **小波阈值**:若本波问题数 ≤ 2,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问题、答案、处理结果逐字记入处理报告,摘要追加到最近一份归档问卷尾部。
 
@@ -69,7 +69,7 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 - 🤔 逃生舱 → 降风险协议,绝不重问。
 - 输出**处理报告**(对话内,格式见 PROCESSING-RULES.md):每题去向、新增/更新的文件、异常处理、逃生舱处置、下一波候选、本阶段覆盖度。
 - 每阶段 W00 的处理报告必须含 preview 统计(勾选采纳数、取消勾选不采纳数、转 W01 正式题数)+ 取消默认率(opt-in 开关开启时,见 PROCESSING-RULES.md「预勾设防」);阶段覆盖清单必须检查 W00 存在性——无 W00 的阶段视为流程缺口。
-- 用户无异议 → 问卷 status: processed → archived,移入 `docs/questionnaires/archive/`。
+- 用户无异议 → 问卷 status: processed → archived,移入 `harness/questionnaires/archive/`。
 
 ### 5. 循环与终止
 

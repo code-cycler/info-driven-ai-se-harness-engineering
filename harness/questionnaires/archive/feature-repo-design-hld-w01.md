@@ -13,12 +13,12 @@ status: processed
 
 ## Q1. docs 布局的处理方式(#5 留空深究)   [落盘: HLD#架构]
 
-> 出题依据:W00 #5「不目录级重排,仅新增 docs/design/repo/ + README 结构节更新」被留空,留空原因不明——可能不满意「不重排」,也可能另有考虑。需要明示。
+> 出题依据:W00 #5「不目录级重排,仅新增 harness/design/repo/ + README 结构节更新」被留空,留空原因不明——可能不满意「不重排」,也可能另有考虑。需要明示。
 
-- [ ]  A. 维持默认(不重排)—— 仅新增 docs/design/repo/ + README「仓库结构」节更新;缺点:现有 docs/ 根下平铺(adr/ design/ methodology/ questionnaires/)可能继续混放设计产物
+- [ ]  A. 维持默认(不重排)—— 仅新增 harness/design/repo/ + README「仓库结构」节更新;缺点:现有 docs/ 根下平铺(adr/ design/ methodology/ questionnaires/)可能继续混放设计产物
 - [ ]  B. 目录级重排—— 按用途重组 docs/(如 repo 级设计产物与 methodology v3 设计套分目录管理更彻底);缺点:链接大面积失效,回归成本高(81 链接检查 + 锚点)
 - [ ]  🤔 我定不了 → 推迟/降风险
-- [ ]  C. ★推荐 —— 部分重排:仅将 docs/design/ 下的方法论 v3 设计套标注归属(文件头加「methodology v3 设计套」),新增 docs/design/repo/ 放 repo 级设计,不做目录移动。理由:移动 = 链接成本,标注 = 防混淆;留空原因若另有他意请写自定义
+- [ ]  C. ★推荐 —— 部分重排:仅将 harness/design/ 下的方法论 v3 设计套标注归属(文件头加「methodology v3 设计套」),新增 harness/design/repo/ 放 repo 级设计,不做目录移动。理由:移动 = 链接成本,标注 = 防混淆;留空原因若另有他意请写自定义
 
 - ✍️ 自定义: __________将harness依赖文件与项目文件分开，docs默认是项目文件，harness文件单独存放
 
@@ -87,9 +87,9 @@ status: processed
 - **作答**:Q2/Q3/Q4/Q5 采纳推荐;Q1 自定义(非选项)——「将harness依赖文件与项目文件分开,docs默认是项目文件,harness文件单独存放」。
 - **小波澄清(AskUserQuestion,2 轮)**:
   - 澄清① 分置形态:**物理目录分离**(否决「职责分离」推荐选项);
-  - 澄清② 分离范围(多选):**docs/questionnaires/ + docs/design/** 移入 harness 区;skills/ scripts/ .claude/ 根级入口不移动。
-- **裁决**:文件分区三区模型(项目文件区 docs/ / harness 依赖区 新目录 / 根级入口与产物),见 [HLD 1.1](../design/repo/HLD.md)。
-- **落盘**:[docs/design/repo/HLD.md](../design/repo/HLD.md)(H1 分区 + 规范优先级 + 入口布局 + v4 落点映射 / H2 选型 + 被否决项 / H3 契约 / H4 发布 / H5 ADR-0008~0010 + 落地动作清单 10 项)。
+  - 澄清② 分离范围(多选):**harness/questionnaires/ + harness/design/** 移入 harness 区;skills/ scripts/ .claude/ 根级入口不移动。
+- **裁决**:文件分区三区模型(项目文件区 docs/ / harness 依赖区 新目录 / 根级入口与产物),见 [HLD 1.1](../../design/repo/HLD.md)。
+- **落盘**:[harness/design/repo/HLD.md](../../design/repo/HLD.md)(H1 分区 + 规范优先级 + 入口布局 + v4 落点映射 / H2 选型 + 被否决项 / H3 契约 / H4 发布 / H5 ADR-0008~0010 + 落地动作清单 10 项)。
 - **ADR**:识别三条(0008 v4 立论重构 / 0009 入口与规范优先级 / 0010 术语治理),落盘于 lld 阶段执行。
 - **逃生舱**:0。
 - **下一波**:无(骨架 H1–H5 全覆盖)→ 过阶段闸门。

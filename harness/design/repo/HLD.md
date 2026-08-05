@@ -1,6 +1,6 @@
 # HLD · repo 级设计(v4 内容修订 + 架构治理)
 
-> 来源:design-questionnaire hld 阶段 W00(14 条,13 采纳 / 1 留空)+ W01(5 题:Q1 自定义「harness 依赖文件与项目文件分开」,Q2–Q5 采纳推荐)+ 小波澄清(物理分离范围 = docs/questionnaires/ + docs/design/);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。
+> 来源:design-questionnaire hld 阶段 W00(14 条,13 采纳 / 1 留空)+ W01(5 题:Q1 自定义「harness 依赖文件与项目文件分开」,Q2–Q5 采纳推荐)+ 小波澄清(物理分离范围 = harness/questionnaires/ + harness/design/);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。
 > 上游:[repo 级 VISION](VISION.md)(2026-08-05)。本文 = 架构方案;落地规格见 LLD,详细决策按 H5 落 ADR。
 
 ## H1 系统架构(文档体系)
@@ -17,7 +17,7 @@
 
 分区规则:**内容与决策 = 项目文件;AI 流程产物(设计文档、问卷)= harness 文件;执行体与工具 = 根级产物**。CLAUDE.md / AGENTS.md 因工具约定(Claude Code / Codex 自动加载)必须留仓库根,物理不移动,只做职责分类(瘦身 + 路由化)。
 
-**迁移动作**:docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/;涉及引用链接全面改造(lld 列清单)。**skill 落盘路径随迁移同步**(压测 Q1:design-Q / grill-Q / retro-Q 写问卷 + action-Q 归档 + long-running 读归档——5 skill 的 SKILL.md/DESIGN.md 路径字符串 + CLAUDE.md 落盘速查表更新;路径替换是规格同步,skill 行为逻辑不变)。
+**迁移动作**:harness/design/ → harness/design/、harness/questionnaires/ → harness/questionnaires/;涉及引用链接全面改造(lld 列清单)。**skill 落盘路径随迁移同步**(压测 Q1:design-Q / grill-Q / retro-Q 写问卷 + action-Q 归档 + long-running 读归档——5 skill 的 SKILL.md/DESIGN.md 路径字符串 + CLAUDE.md 落盘速查表更新;路径替换是规格同步,skill 行为逻辑不变)。
 
 ### 1.2 规范优先级声明
 
@@ -81,8 +81,8 @@
 
 ## 落地动作清单(hld → lld 输入)
 
-1. 建 harness 区目录(最终名 lld 定),迁移 docs/design/ + docs/questionnaires/
-2. 链接改造清单(引用 docs/design/、docs/questionnaires/ 的全部文档:CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引)+ **skill 落盘路径同步**(5 skill 规格 + CLAUDE.md 落盘速查表,压测 Q1)
+1. 建 harness 区目录(最终名 lld 定),迁移 harness/design/ + harness/questionnaires/
+2. 链接改造清单(引用 harness/design/、harness/questionnaires/ 的全部文档:CLAUDE.md / README / TODO / ADR / CONTEXT / 方法论三块 / skill DESIGN.md / 归档问卷互引)+ **skill 落盘路径同步**(5 skill 规格 + CLAUDE.md 落盘速查表,压测 Q1)
 3. 方法论文件 + 哲学文件 v4 内容修订(§零 重述 / §2.2 机制层 / 附录 C / 术语替换 / 学科化)
 4. 实操文件术语联动(若有,并入 P3)——不预设受众步(压测 Q9)
 5. CLAUDE.md 瘦身 + 规范优先级节(含协调注)+ 导航收敛;AGENTS.md 零内容路由创建;README 更新

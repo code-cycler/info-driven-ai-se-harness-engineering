@@ -52,7 +52,7 @@ status: archived
 
 ## 四、下一步
 
-1. 归档本文件(只移不删,已入 docs/questionnaires/archive/)。
+1. 归档本文件(只移不删,已入 harness/questionnaires/archive/)。
 2. 转 design-Q:调用 design-questionnaire skill,输入 = 本记录 + 行动描述 + 「项目A」参考面。
 3. design-Q 完成后,方法论/仓库架构修订遵守 OD-4 母本标注与 ADR 体系。
 

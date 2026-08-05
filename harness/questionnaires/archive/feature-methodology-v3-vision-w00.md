@@ -8,7 +8,7 @@ status: archived
 # 问卷 vision W00 · Preview(methodology_v3 决策默认值 yes/no 速答)
 
 > **本波是 preview 预答层**(独立 wave 0):把 AI 有明确默认倾向的决策点逐条列出,人只做 yes/no 速答。
-> **上下文**:承接 grill-Q W01 → [ADR-0004](../../adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。多数默认值 = 沿用 ADR-0004 已定方向;少数 = ADR 未覆盖的 vision 维度(受众/scope 边界/v2 去留/章节锚点/脱敏/推导叙事),AI 据 exploration 给倾向。
+> **上下文**:承接 grill-Q W01 → [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。多数默认值 = 沿用 ADR-0004 已定方向;少数 = ADR 未覆盖的 vision 维度(受众/scope 边界/v2 去留/章节锚点/脱敏/推导叙事),AI 据 exploration 给倾向。
 >
 > **作答规则**:
 >
@@ -49,7 +49,7 @@ status: archived
 - [X]  **12 风险化解·旧框架不被否定**:v3 不是用"幻觉"推翻"返工/有效上下文",而是**三层叠加**(返工=症状层 / 有效上下文=度量层 / AI幻觉决策=机制层),旧框架挂在机制层下,读者不会觉得被否定 〔ADR-0004 洞察2 + grill-Q Q3〕
 - [X]  **13 约束·章节锚点稳定**:v3 尽量**保持 v2 章节编号**(§1/§2/§4/§5...),新增机制层用小节(如 §2.1.x)而非重排,避免 CONTEXT/README/CLAUDE 的 §2/§4/§5.3 锚点大面积失效 〔exploration 锚点依赖〕
 - [X]  **14 约束·OD-4 母本同步**:v3 发布检查清单纳入「作者其他位置副本标注'开发副本,以 v3 为准'」〔OD-4 + ADR-0004 后果〕
-- [X]  **15 约束·脱敏(OD-1)**:v3 新增内容(尤其 vibe coding 场景若举例)发布前跑 [scripts/desensitize.py](../../scripts/desensitize.py) **0 命中** + 人审;「项目A/B/C」占位沿用 〔OD-1〕
+- [X]  **15 约束·脱敏(OD-1)**:v3 新增内容(尤其 vibe coding 场景若举例)发布前跑 [scripts/desensitize.py](../../../scripts/desensitize.py) **0 命中** + 人审;「项目A/B/C」占位沿用 〔OD-1〕
 
 ### V6 动机与推导(feature 必答)
 
@@ -65,6 +65,6 @@ status: archived
 ## 处理报告摘要(2026-07-29 归档)
 
 - **preview 结果**:17/17 全采纳,0 留空,0 转 W01,无 🤔。
-- **落盘**:V1-V6 全章节 → [docs/design/VISION.md](../../../design/VISION.md);补充声明(skill 分发洁净约束)→ [OPEN-DECISIONS OD-10](../../../OPEN-DECISIONS.md)。
+- **落盘**:V1-V6 全章节 → [harness/design/VISION.md](../../../harness/design/VISION.md);补充声明(skill 分发洁净约束)→ [OPEN-DECISIONS OD-10](../../../docs/OPEN-DECISIONS.md)。
 - **阶段判定**:骨架 V1-V6 全覆盖,无留空项 → 不出 W01,vision 轻量化一次过。
 - **下一阶段**:hld(v3 章节结构 / 第一支柱重构方案 / 双靶子叙事架构 / 4 文件同步关系)。

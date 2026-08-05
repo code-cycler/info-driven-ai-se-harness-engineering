@@ -2,7 +2,7 @@
 
 - 日期:2026-08-03
 - 状态:accepted
-- 来源:design-questionnaire hld 阶段 W00([feature-methodology-separation-hld-w00](../questionnaires/archive/feature-methodology-separation-hld-w00.md)),16 条 15 采纳 + 1 用户先验结论
+- 来源:design-questionnaire hld 阶段 W00([feature-methodology-separation-hld-w00](../../harness/questionnaires/archive/feature-methodology-separation-hld-w00.md)),16 条 15 采纳 + 1 用户先验结论
 
 ## 背景
 
@@ -41,4 +41,4 @@ methodology_v3 是单文件混编(哲学/方法论/实操三类内容共存),"�
 
 ## 实施指引
 
-详见 [HLD](../design/hld-methodology-separation.md) 同步清单;实现期细节(章节级迁移、文件头措辞)边做边调,决策即时落盘。
+详见 [HLD](../../harness/design/hld-methodology-separation.md) 同步清单;实现期细节(章节级迁移、文件头措辞)边做边调,决策即时落盘。

@@ -68,7 +68,7 @@ status: archived
 
 ## 处理报告摘要(2026-07-23)
 
-- 落盘:Q1–Q4 → [../design/hld_v1.md](../design/hld_v1.md)(架构/选型/接口契约/部署运维)
+- 落盘:Q1–Q4 → [../design/hld_v1.md](../../design/hld_v1.md)(架构/选型/接口契约/部署运维)
 - 新增文件:docs/design/hld_v1.md
 - 异常:无(无单选多勾、必答题全答)
 - 逃生舱:无

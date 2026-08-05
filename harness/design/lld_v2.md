@@ -1,8 +1,8 @@
 # LLD_v2 · methodology_v3(分阶段实现规格 · grill-Q 压测后修订)
 
-> 本文件是 [LLD_v1](lld_v1.md) 修订版(2026-07-29,grill-Q v3-design [W01](../questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 彻底重排)。
+> 本文件是 [LLD_v1](lld_v1.md) 修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 彻底重排)。
 > 修订来源标注(Qn / ADR)。**v1 保留作快照**。
-> 上游:[VISION](VISION.md) + [HLD_v2](hld_v2.md) + [ADR-0004](../adr/0004-methodology-v3-hallucination-thesis.md) / [0005](../adr/0005-pillar-standard-wording.md) / [0006](../adr/0006-v3-chapter-restructure.md)。
+> 上游:[VISION](VISION.md) + [HLD_v2](hld_v2.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md) / [0005](../../docs/adr/0005-pillar-standard-wording.md) / [0006](../../docs/adr/0006-v3-chapter-restructure.md)。
 
 ## L1 阶段拆分
 
@@ -55,7 +55,7 @@
 ### 全局 DoD(实现期跑)
 1. **v3 章节完整性**:v3 章节覆盖新立论全部要点(人审 + 章节清单核对)。
 2. **标准措辞一致**:grep 核心子串「对抗 AI 在信息真空中的幻觉式自作主张决策」出现在 v3§2.1 + CONTEXT + README + CLAUDE(Q8:用子串不用全句,避加粗干扰)。
-3. **[desensitize.py](../scripts/desensitize.py) 0 命中**。
+3. **[desensitize.py](../../scripts/desensitize.py) 0 命中**。
 4. **术语用法一致**:四术语 + 新术语在 v3 + CONTEXT 层级定义一致。
 5. **§2.1 回归 DoD**(Q4 新增):grep 确认原「有效上下文」「120k」「400k」「双支柱」关键句仍在 v3 §2.1(防重组误删)。
 

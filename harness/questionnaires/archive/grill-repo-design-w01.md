@@ -7,7 +7,7 @@ status: processed
 ---
 # 问卷 grill W01 · repo 级设计套压测(8 维度)
 
-> **压测对象**:[VISION](../design/repo/VISION.md) + [HLD](../design/repo/HLD.md) + [LLD](../design/repo/LLD.md)(2026-08-05 产出)。
+> **压测对象**:[VISION](../../design/repo/VISION.md) + [HLD](../../design/repo/HLD.md) + [LLD](../../design/repo/LLD.md)(2026-08-05 产出)。
 > **模式**:代码库绑定(绿地子模式——纯文档仓库,D7 的「现实」= 既有文档/ADR/约束,未对照代码)。
 > **维度**:D1 未言明假设 / D2 单向门 / D3 替代方案 / D4 失败模式 / D5 可验证性 / D6 盲点 / D7 与现实矛盾 / D8 术语一致性。
 >
@@ -15,7 +15,7 @@ status: processed
 
 ## Q1. skill 落盘路径与迁移冲突(重大发现,D6/D7)   [处理报告]
 
-> 出题依据:**实测 42 个文件引用 docs/design 或 docs/questionnaires**,其中 5 个 skill 的 SKILL.md/DESIGN.md 把 `docs/questionnaires/` 定义为运行时落盘路径(design-Q / grill-Q / retro-Q 写问卷、归档 `docs/questionnaires/archive/`、action-Q 归档、long-running 读归档)。P1 迁移后 skill 规格必须改路径——这是**机制级变更**(skill 运行时写文件的目标),与 HLD「skill 内部机制不动、仅措辞级同步」边界直接冲突。
+> 出题依据:**实测 42 个文件引用 docs/design 或 docs/questionnaires**,其中 5 个 skill 的 SKILL.md/DESIGN.md 把 `harness/questionnaires/` 定义为运行时落盘路径(design-Q / grill-Q / retro-Q 写问卷、归档 `harness/questionnaires/archive/`、action-Q 归档、long-running 读归档)。P1 迁移后 skill 规格必须改路径——这是**机制级变更**(skill 运行时写文件的目标),与 HLD「skill 内部机制不动、仅措辞级同步」边界直接冲突。
 
 - [ ]  A. 缩小迁移—— questionnaires/ 不迁(只迁 design/),skill 落盘路径不动;缺点:分区不彻底,「AI 流程产物」仍混在 docs/
 - [X]  B. 承认机制级变更—— 迁移时同步改 5 个 skill 的 SKILL.md/DESIGN.md 路径 + CLAUDE.md 落盘速查表,并修订 HLD 边界措辞;缺点:动 skill 规格,与 OD-8「保留现状」精神需声明
@@ -41,7 +41,7 @@ status: processed
 
 ## Q3. P1 迁移动 canonical 方法论文件(P1/P3 分层冲突,D7)   [处理报告]
 
-> 出题依据:methodology_v3 §4.2(188-189 行)表格引用 `docs/design/ HLD` / `docs/design/ LLD`。P1 迁移要改方法论文件路径引用 = 动 canonical(OD-4 母本同步负担);而 P3 内容修订也要大改方法论文件——同一文件两轮修改。
+> 出题依据:methodology_v3 §4.2(188-189 行)表格引用 `harness/design/ HLD` / `harness/design/ LLD`。P1 迁移要改方法论文件路径引用 = 动 canonical(OD-4 母本同步负担);而 P3 内容修订也要大改方法论文件——同一文件两轮修改。
 
 - [ ]  A. P1 就改方法论路径引用—— 机械替换算措辞级,免母本同步;缺点:P1/P3 两轮动 canonical,母本同步两次
 - [ ]  B. 方法论路径引用并入 P3 一并改—— P1 迁移期间方法论 §4.2 链接暂时失效(过渡期可接受);缺点:断链期存在

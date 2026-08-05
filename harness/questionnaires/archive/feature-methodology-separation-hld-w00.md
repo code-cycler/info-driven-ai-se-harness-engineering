@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 hld W00 · Preview(methodology_v3 方法论/哲学/实操相互独立——全局设计决策默认值)
 
-> **本波是 preview 预答层**(独立 wave 0)。上下文:methodology_v3 全文(已读)+ 探索事实(v2/v3 结构 diff、CONTEXT/README/CLAUDE 锚点清单、skill 文档「方法论 §」引用清单、55 处 § 交叉引用统计)+ 先例([ADR-0006](methodology_v3 章节重排)、[ADR-0005](标准措辞四处锁定)、[ADR-0004](机制层立论)、上一轮 [hld W00](archive/feature-methodology-v3-hld-w00.md) 骨架 H1-H5)。
+> **本波是 preview 预答层**(独立 wave 0)。上下文:methodology_v3 全文(已读)+ 探索事实(v2/v3 结构 diff、CONTEXT/README/CLAUDE 锚点清单、skill 文档「方法论 §」引用清单、55 处 § 交叉引用统计)+ 先例([ADR-0006](methodology_v3 章节重排)、[ADR-0005](标准措辞四处锁定)、[ADR-0004](机制层立论)、上一轮 [hld W00](feature-methodology-v3-hld-w00.md) 骨架 H1-H5)。
 > hld feature 裁剪:H1=拆分架构(拆哪些文件、各章去向);H2=组织与格式选型(含被否决项);H3=文档间链接与术语契约;H4=发布与修订流程;H5=架构决策识别。
 >
 > **作答规则**:
@@ -79,10 +79,10 @@ status: archived
 **#11 处置(用户先验结论)**:留空 + 补充声明给出明确结论「不做篇幅的限制」——非不确定项,按用户先验结论直接落盘 HLD #11(不设篇幅限制,预估值仅参考不作约束),不出 W01。
 
 **落盘**:
-- [docs/design/hld-methodology-separation.md](docs/design/hld-methodology-separation.md) —— 16 条全落 H1-H5 + 同步清单 + 被否决项汇总
-- [docs/adr/0007-methodology-three-way-split.md](docs/adr/0007-methodology-three-way-split.md) —— 拆分立 ADR(#16)
-- [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) OD-4 —— canonical 成员扩展注记(方法论+哲学为 canonical,实操非 canonical;历史原文保留)
-- [TODO.md](TODO.md) —— 行动项 ×2:拆分执行(ADR-0007 + HLD 同步清单)、§8.8 旧锚点漂移处置
+- [harness/design/hld-methodology-separation.md](../../../harness/design/hld-methodology-separation.md) —— 16 条全落 H1-H5 + 同步清单 + 被否决项汇总
+- [docs/adr/0007-methodology-three-way-split.md](../../../docs/adr/0007-methodology-three-way-split.md) —— 拆分立 ADR(#16)
+- [docs/OPEN-DECISIONS.md](../../../docs/OPEN-DECISIONS.md) OD-4 —— canonical 成员扩展注记(方法论+哲学为 canonical,实操非 canonical;历史原文保留)
+- [TODO.md](../../../TODO.md) —— 行动项 ×2:拆分执行(ADR-0007 + HLD 同步清单)、§8.8 旧锚点漂移处置
 
 **发现(记录,另行处置)**:引擎副本 QUESTIONNAIRE-FORMAT ×3(grill-Q:83 / design-Q:131 / retro-Q:82)引「方法论 §8.8」为 v2 旧锚点,v3 已无此节——既有漂移非本次引入,挂 TODO 行动项。
 

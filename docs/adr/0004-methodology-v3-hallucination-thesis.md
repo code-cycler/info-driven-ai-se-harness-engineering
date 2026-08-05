@@ -2,7 +2,7 @@
 
 - 日期:2026-07-29
 - 状态:accepted
-- 来源:grill-questionnaire 压测 methodology_v2([W01](../questionnaires/archive/grill-methodology-v2-w01.md)),D7(与作者本意矛盾)核心发现
+- 来源:grill-questionnaire 压测 methodology_v2([W01](../../harness/questionnaires/archive/grill-methodology-v2-w01.md)),D7(与作者本意矛盾)核心发现
 
 ## 背景
 
@@ -33,7 +33,7 @@ grill-Q W01 压测 methodology_v2 §1.2(信息断层→返工)、§2.1(以信息
 ## 替代方案(被否决项)
 
 - **a. v2 原地订正**(不升 v3):否决——偏离非纯"表述不全",是**机制层整层缺失**(Q3=A);且 v2 刚发布(2026-07),订正不足以标记这次立论演进,会让读者误以为 v2 立论本就完整。
-- **c. v2 不动,单写「vibe coding 失败模式」专题补充文**:否决——会**分裂 canonical**(方法论第一支柱表述两处不一),违反 [ADR-0001](0001-source-of-truth) 单一事实源。
+- **c. v2 不动,单写「vibe coding 失败模式」专题补充文**:否决——会**分裂 canonical**(方法论第一支柱表述两处不一),违反 [ADR-0001](0001-source-of-truth.md) 单一事实源。
 
 ## 后果
 

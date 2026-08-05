@@ -57,7 +57,7 @@ status: processed
 
 ### 动态盲点
 
-- [X]  **17 repo 级设计文档落点** = 现有 docs/design/ 被 methodology v3 设计套占用(VISION.md / hld_v1-2 / lld_v1-2 / hld-methodology-separation.md)。repo 级产物默认**新建独立目录**(如 docs/design/repo/),**不覆盖**现有 VISION.md;现有设计套标注「methodology v3 设计套」防混淆。〔已核实:docs/design/ 文件清单〕
+- [X]  **17 repo 级设计文档落点** = 现有 harness/design/ 被 methodology v3 设计套占用(VISION.md / hld_v1-2 / lld_v1-2 / hld-methodology-separation.md)。repo 级产物默认**新建独立目录**(如 harness/design/repo/),**不覆盖**现有 VISION.md;现有设计套标注「methodology v3 设计套」防混淆。〔已核实:harness/design/ 文件清单〕
 - [X]  **18 Hallmark pre-emit critique 文档头标记**(「项目A」特色:P5 H5 E5 S5 R5 V5 自我审查注释)= 默认**不引入**——本仓库已有脱敏门 + 语义人审 + grill-Q 压测覆盖其功能,引入徒增编辑负担。〔项目A 实测 + 推断〕
 - [X]  **19 「按改动选读」表**(「项目A」AGENTS.md 特色)= 默认**收敛进 CLAUDE.md 导航节**(现状已有雏形:关键文档导航节),不单独成文件。〔项目A 实测 + 现状已核实〕
 

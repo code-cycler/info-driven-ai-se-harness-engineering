@@ -42,4 +42,4 @@
 
 - retro 文档:宿主项目 `docs/retro/<主题>_vN.md`(_vN 递增,禁 final/new/copy)
 - 行动项:宿主项目 `TODO.md`
-- 问卷归档:宿主项目 `docs/questionnaires/archive/`(尾部附处理报告摘要)
+- 问卷归档:宿主项目 `harness/questionnaires/archive/`(尾部附处理报告摘要)

@@ -36,7 +36,7 @@
 - **ADR**:满足三条件的决策(D2 单向门、D3 补齐的替代方案)→ `docs/adr/NNNN-<slug>.md`。
 - **OPEN-DECISIONS**:单向门风险(D2)、重大风险(D4)、存疑假设(D1)→ `docs/OPEN-DECISIONS.md`(必填重访触发条件)。
 - **CONTEXT**:术语冲突(D8)→ `CONTEXT.md`(纯术语表)。
-- **归档**:已处理问卷移入 `docs/questionnaires/archive/`,文件名不变,尾部附处理报告摘要,只移不删。
+- **归档**:已处理问卷移入 `harness/questionnaires/archive/`,文件名不变,尾部附处理报告摘要,只移不删。
 
 > 维度集来源:2026-07-24 grill-with-docs 设计定稿(SKILL.md G3,DESIGN.md G3)。维度可随实践增减(增减属双向门,在 DESIGN.md 记一笔)。
 > **安全无单独维度**:由 D1(安全假设)+ D4(安全失败模式)+ D5(安全盲点)交叉覆盖;安全关键设计的题在出题依据标「需人逐行审查」(安全非问卷能解,dogfood Q6)。

@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 hld W00 · Preview(methodology_v3 全局设计决策默认值)
 
-> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) 已落盘 + [ADR-0004](../../adr/0004-methodology-v3-hallucination-thesis.md) + exploration(v2 全文结构 + 4 文件锚点依赖)。
+> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) 已落盘 + [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md) + exploration(v2 全文结构 + 4 文件锚点依赖)。
 > hld feature 裁剪:H1=文档架构(改哪些章节/行为);H2=文档组织与格式选型(含被否决项);H3=文档间链接与术语契约;H4=发布流程;H5=ADR 识别。
 >
 > **作答规则**:
@@ -56,7 +56,7 @@ status: archived
 ## 处理报告摘要(2026-07-29 归档)
 
 - **preview 结果**:14/14 全采纳,0 留空,0 转 W01,无 🤔。
-- **补遗修正**:#4 (a)(b) 盲区——(a) 由 preview/Q 机制捕获、(b) 由 grill 逼出,两者都重要分工不同 → 写入 [hld_v1.md](../../../design/hld_v1.md) H1#4(含 preview vs grill 机制分工回扣)。
-- **落盘**:H1-H5 全局设计 → [docs/design/hld_v1.md](../../../design/hld_v1.md)。
+- **补遗修正**:#4 (a)(b) 盲区——(a) 由 preview/Q 机制捕获、(b) 由 grill 逼出,两者都重要分工不同 → 写入 [hld_v1.md](../../../harness/design/hld_v1.md) H1#4(含 preview vs grill 机制分工回扣)。
+- **落盘**:H1-H5 全局设计 → [harness/design/hld_v1.md](../../../harness/design/hld_v1.md)。
 - **阶段判定**:骨架 H1-H5 全覆盖,无留空项 → 不出 W01。
 - **下一阶段**:lld(章节级改写规格:§2.1/§1.2/§5.1/§零 逐节怎么改 + CONTEXT 四术语条目格式 + DoD 脚本化)。

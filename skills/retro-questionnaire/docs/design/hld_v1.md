@@ -20,7 +20,7 @@
 
 职责边界:SKILL.md 只管触发与流程编排(阶段 DoD 核验后主动提议 / 用户手动);RETRO-SKELETONS.md 承载全部 retro 特有内容;引擎两文件与 design-questionnaire 同构。
 
-**作用对象**:retro 作用于「宿主项目」(被复盘的项目)。出题依据从宿主项目读取,retro 文档落盘宿主项目 `docs/retro/`,行动项写宿主项目 `TODO.md`,已用问卷归档宿主项目 `docs/questionnaires/archive/`——不落在 skill 目录。
+**作用对象**:retro 作用于「宿主项目」(被复盘的项目)。出题依据从宿主项目读取,retro 文档落盘宿主项目 `docs/retro/`,行动项写宿主项目 `TODO.md`,已用问卷归档宿主项目 `harness/questionnaires/archive/`——不落在 skill 目录。
 
 数据流:五源读取(见接口契约)→ 生成 retro 问卷 → 用户作答 → 落盘 retro 文档 + TODO.md → 问卷归档。
 

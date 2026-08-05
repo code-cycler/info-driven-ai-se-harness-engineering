@@ -1,16 +1,16 @@
 {
   "project_name": "repo 级设计落地:方法论 v4 + 架构治理(harness 物理分离)",
   "created_at": "2026-08-05T15:00:00+08:00",
-  "source_of_truth": "docs/design/repo/LLD.md(P1–P6)+ VISION.md + HLD.md(已含 grill-Q 压测 12 项回灌);features 从 LLD 阶段拆分与 DoD 反推",
+  "source_of_truth": "harness/design/repo/LLD.md(P1–P6)+ VISION.md + HLD.md(已含 grill-Q 压测 12 项回灌);features 从 LLD 阶段拆分与 DoD 反推",
   "features": [
     {
       "id": "F001",
       "category": "functional",
       "priority": "high",
-      "description": "P1 harness 区迁移 + 链接改造 + skill 落盘路径同步:git mv docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/;全部引用方路径更新(42 文件基线);5 skill 规格(design-Q/grill-Q/retro-Q/action-Q/long-running 的 SKILL.md + DESIGN.md)+ CLAUDE.md 落盘速查表路径同步;方法论 §4.2 路径引用断链豁免登记(并入 P3 一并改)",
+      "description": "P1 harness 区迁移 + 链接改造 + skill 落盘路径同步:git mv 完成(docs/design/ → harness/design/、docs/questionnaires/ → harness/questionnaires/,已执行);全部引用方路径更新(44 文件基线,129 处);5 skill 规格(design-Q/grill-Q/retro-Q/action-Q/long-running 的 SKILL.md + DESIGN.md)+ CLAUDE.md 落盘速查表路径同步(已执行);方法论 §4.2 路径引用断链豁免登记(并入 P3 一并改)",
       "steps": [
-        "git mv docs/design harness/design && git mv docs/questionnaires harness/questionnaires",
-        "grep -rl 'docs/design\\|docs/questionnaires' 全库列出引用方,逐文件更新为 harness/ 路径(豁免项:methodology_v3.md §4.2 表格路径引用——登记豁免,并入 P3)",
+        "git mv docs/design harness/design && git mv docs/questionnaires harness/questionnaires(已执行,harness/ 目录已建)",
+        "grep -rl 'docs/design\\|docs/questionnaires' 全库列出引用方,逐文件更新为 harness/ 路径(豁免项:methodology_v3.md §4.2 表格路径引用——登记豁免,并入 P3;已执行 129 处替换 + 相对链接重算)",
         "5 skill 规格路径同步:design-Q/grill-Q/retro-Q/action-Q SKILL.md 写问卷与归档路径 + long-running SKILL.md 读归档路径 + 各 DESIGN.md 提及处",
         "CLAUDE.md 落盘路径速查表更新(questionnaires/design 产物落点)",
         "grep 'docs/design\\|docs/questionnaires' 全库 0 命中(豁免清单除外)",
@@ -19,9 +19,9 @@
         "git log 验证 git mv 历史保留(rename 可追踪)",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "设计套现处 docs/design/repo/,P1 迁移后移至 harness/design/repo/(本文件 source_of_truth 路径随 P1 更新)"
+      "passes": true,
+      "last_tested": "2026-08-05T16:30:00+08:00",
+      "notes": "P1 完成:harness/design/ + harness/questionnaires/ 迁移(git mv 识别 rename)+ 129 处字符串替换 + 相对链接重算;豁免登记 = methodology_v3 §4.2 路径文字(并入 P3)+ 7 处非路径目标(3 中文短语笔误 + 3 CONTEXT-FORMAT 示例 + 1 file://);修复 2 处 GitHub 锚点单/双连字符存量笔误(methodology_v3 §8.3/§7.5 链接);retro/grill skill 误替换还原(自己目录 vs 宿主项目区分);脱敏门 0 命中"
     },
     {
       "id": "F002",
