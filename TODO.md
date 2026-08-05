@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29,long-running-agent 驱动,P0 经 grill-with-docs 压测定稿);仓库已首次推送至 GitHub;action-questionnaire 已入库(第 8 个 skill,2026-08-03 canonical 同步完成);2026-08-04 methodology_v3 三块拆分完成(ADR-0007,long-running 实现,回归 DoD 全绿);2026-08-05 repo 级 design-Q 完成**(参考「项目A」架构,vision→hld→lld 全流程,设计套落 harness 区暂存 harness/design/repo/)**。
-> 下一步主线:**repo 级设计落地执行(P1–P6,见下)**;**grill-Q 压测 v3 成稿**(可选质量门);其余见下(CONTRIBUTING + issue 模板 OD-3 / git author 身份决策 等)。
+> 当前状态:**methodology_v3 已发布(2026-07-29);action-questionnaire 已入库(2026-08-03);2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计完成 + v4 落地 P1–P5 完成**(方法论 + 哲学升 v4(受众收窄 / 第二支柱机制层 / 三学科化)、harness 区物理分离、术语治理、ADR-0008/0009/0010、入口改造)**。P6(发布门 + dogfood)待执行**。
+> 下一步主线:**P6 发布门**(OD-4 母本同步(用户配合)+ 语义人审 + dogfood(用户验收));CONTRIBUTING + issue 模板(OD-3);git author 身份决策;grill-Q 压测 v4 成稿(可选)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -53,14 +53,14 @@
 
 ### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](harness/design/repo/LLD.md))
 
-> 来源:repo 级 design-Q(vision→hld→lld 全流程,参考「项目A」架构;设计套 = VISION/HLD/LLD + 问卷 4 份)。规格见 [harness/design/repo/](harness/design/repo/)。建议 long-running-agent 或手动按阶段推进,每阶段 DoD = 脱敏门 0 命中 + 断链 0 + 方法论内容不丢。
+> 来源:repo 级 design-Q(vision→hld→lld 全流程,参考「项目A」架构;设计套 = VISION/HLD/LLD + 问卷 4 份)。规格见 [harness/design/repo/](harness/design/repo/)。P1–P5 已由 long-running 执行(commit: cb68950 / cb04faf / 9686a61 / 1e2ee28 / 6bd7aed),每阶段 DoD 全绿(脱敏 0 / 断链仅豁免 / 内容不丢)。
 
-- ⏳ **P1 harness 区迁移 + 链接改造**:harness/design/ + harness/questionnaires/ → harness/(git mv,镜像迁移);全部引用方更新;grep 旧路径 0 残留
-- ⏳ **P2 术语判定表 + CONTEXT 更新**:8 术语逐词判定(保留/合并/换学科词/删除)+ 新词三条件门槛
-- ⏳ **P3 方法论 + 哲学 v4 内容修订**:§零 受众收窄个人 / §2.2 第二支柱机制层对称化 / 哲学学科化(§一 人因、§六 软工、新增运筹节)/ 全文术语替换
-- ⏳ **P4 实操同步 + 入口**:实操文件受众联动处轻量同步 + CLAUDE.md 瘦身(规范优先级节新增)+ AGENTS.md 创建 + README 更新
-- ⏳ **P5 ADR + 归档**:ADR-0008(v4 立论重构)/ 0009(入口与规范优先级)/ 0010(术语治理策略)+ v3 移 archive/ + 文件头谱系
-- ⏳ **P6 发布门 + dogfood**:OD-4 母本同步 + 脱敏门 + 语义人审;产物期 dogfood(实操文件轻量修订任务)
+- ✅ **P1 harness 区迁移 + 链接改造**(2026-08-05):docs/design/ + docs/questionnaires/ → harness/(git mv);129 处字符串替换 + 相对链接重算;5 skill 落盘路径同步;断链 96 → 7 豁免
+- ✅ **P2 术语判定表 + CONTEXT 更新**(2026-08-05):8 术语全保留(学科参照注记)+ 新词三条件门槛;ADR-0005 核查无替换无需修订
+- ✅ **P3 方法论 + 哲学 v4 内容修订**(2026-08-05):§零 受众收窄个人 / §2.2 机制层对称化(无护栏 → 劣化)/ 哲学三学科化(§一 人因、§六 软工、§七 运筹新节)/ v3 归档 archive/ / 全库 v4 链接
+- ✅ **P4 实操同步 + 入口**(2026-08-05):CLAUDE.md 瘦身 6 节(规范优先级唯一权威处)+ AGENTS.md 零内容路由 + README 三区模型与发布说明;实操文件无受众表述无需改(压测 Q9)
+- ✅ **P5 ADR + 归档**(2026-08-05):ADR-0008/0009/0010 落地;v3 移 archive/ + 谱系更新
+- ⏳ **P6 发布门 + dogfood**(待用户动作):① OD-4 母本同步——作者其他位置副本标注「开发副本,以 v4 为准」(仓库外,用户配合);② 语义人审(含 git 提交信息,OD-1 ②);③ dogfood——实操文件一次真实轻量修订任务按新规范走通(**验收 = 用户实际执行**,压测 Q11)
 
 - ✅ **脱敏语义人审**(OD-1 ②,2026-08-01 完成):subagent×4 全文遍历执行(归档问卷 / docs+根 / skills+scripts / git 层),占位通顺度与语义指纹均审;发现与修复见🟡节两条 ✅;遗留 git author 身份与历史指纹两项决策(见下)
 - ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](docs/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入
