@@ -120,13 +120,13 @@ If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The ma
 ├── src/
 │   ├── ordering/
 │   │   ├── CONTEXT.md
-│   │   └── docs/adr/                 ← context-specific decisions
+│   │   └── harness/adr/                 ← context-specific decisions
 │   └── billing/
 │       ├── CONTEXT.md
-│       └── docs/adr/
+│       └── harness/adr/
 ```
 
-Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `docs/adr/` exists, create it when the first ADR is needed. If no `docs/OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol.
+Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `harness/adr/` exists, create it when the first ADR is needed. If no `docs/OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol.
 
 ## During the session
 

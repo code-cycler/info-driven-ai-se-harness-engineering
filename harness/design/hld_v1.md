@@ -1,7 +1,7 @@
 # HLD · methodology_v3(全局设计)
 
 > 来源:design-Q hld 阶段 W00(2026-07-29,14/14 全采纳 + #4 补遗修正)。
-> 上游:[VISION](VISION.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md)。
+> 上游:[VISION](VISION.md) + [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md)。
 > 本文件 = v3 全局设计;章节级改写规格见 LLD(后续阶段产出)。
 
 ## H1 文档架构(v3 各章怎么改)
@@ -106,4 +106,4 @@ v3 写完即发布(窗口期,v2 未广泛引用),不攒批次。
 
 ## H5 架构决策识别(#14)
 
-**hld 不新增 ADR**。理由:章节结构(保编号 + 小节)是双向门(可回退);v2 共存策略已在 VISION / OD-4;标准措辞是 lld 落地细节。结构决策记本文档即可。主干单向门(升 v3、立论重构)已被 [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md) 覆盖。若 lld 阶段冒出新单向门,再单立 ADR。
+**hld 不新增 ADR**。理由:章节结构(保编号 + 小节)是双向门(可回退);v2 共存策略已在 VISION / OD-4;标准措辞是 lld 落地细节。结构决策记本文档即可。主干单向门(升 v3、立论重构)已被 [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md) 覆盖。若 lld 阶段冒出新单向门,再单立 ADR。

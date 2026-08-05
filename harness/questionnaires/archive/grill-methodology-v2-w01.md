@@ -203,7 +203,7 @@ status: archived
 
 - **模式**:绿地代码库绑定(D7 对照作者本意,未对照代码)。
 - **落盘**:
-  - Q2/Q2.1/Q9(单向门决策:升 v3 + 第一支柱立论重构)→ [docs/adr/0004-methodology-v3-hallucination-thesis.md](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md)
+  - Q2/Q2.1/Q9(单向门决策:升 v3 + 第一支柱立论重构)→ [harness/adr/0004-methodology-v3-hallucination-thesis.md](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md)
   - 全部工件修订建议(methodology_v3 改法 / CONTEXT 同步 / README·CLAUDE.md 同步 / OD-4 母本同步)→ [TODO.md](../../../TODO.md)「methodology_v3 起草工作包」
 - **异常**:Q4 单选多勾(A+C)——A(靶子错位)与 C(双靶子)为"诊断→处方"递进,非冲突,合并解读并入 ADR-0004 决策 2。
 - **✍️ 自定义处置**:

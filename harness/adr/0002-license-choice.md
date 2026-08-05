@@ -23,4 +23,4 @@
 - (+) 文字可署名转载、skill 可自由复用,各得其所。
 - (+) skill 的 MIT 与常见 harness / agent 项目协议一致,降低复用摩擦。
 - (−) 混合协议需 README 明确分区。
-- (−) skill 引擎副本(QUESTIONNAIRE-FORMAT / PROCESSING-RULES 自标「design-Q 引擎复用件」)版权:本仓库作者原创,MIT 化无障碍(见 [OD-8](../OPEN-DECISIONS.md))。
+- (−) skill 引擎副本(QUESTIONNAIRE-FORMAT / PROCESSING-RULES 自标「design-Q 引擎复用件」)版权:本仓库作者原创,MIT 化无障碍(见 [OD-8](../../docs/OPEN-DECISIONS.md))。

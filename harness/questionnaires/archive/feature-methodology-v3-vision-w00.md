@@ -8,7 +8,7 @@ status: archived
 # 问卷 vision W00 · Preview(methodology_v3 决策默认值 yes/no 速答)
 
 > **本波是 preview 预答层**(独立 wave 0):把 AI 有明确默认倾向的决策点逐条列出,人只做 yes/no 速答。
-> **上下文**:承接 grill-Q W01 → [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。多数默认值 = 沿用 ADR-0004 已定方向;少数 = ADR 未覆盖的 vision 维度(受众/scope 边界/v2 去留/章节锚点/脱敏/推导叙事),AI 据 exploration 给倾向。
+> **上下文**:承接 grill-Q W01 → [ADR-0004](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。多数默认值 = 沿用 ADR-0004 已定方向;少数 = ADR 未覆盖的 vision 维度(受众/scope 边界/v2 去留/章节锚点/脱敏/推导叙事),AI 据 exploration 给倾向。
 >
 > **作答规则**:
 >

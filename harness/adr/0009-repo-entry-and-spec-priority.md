@@ -10,9 +10,9 @@ CLAUDE.md 9.5KB 承载方法论摘要 + skill 家族 + 铁律 + 状态 + 导航(
 
 ## 决策
 
-1. **三区物理分离模型**:
-   - **项目文件区** `docs/`:方法论三块(方法论 + 哲学 + 实操)、CONTEXT、OPEN-DECISIONS、adr/、LICENSE。
-   - **harness 依赖区** `harness/`(AI 流程产物):design/(设计文档套 + repo 级设计套)、questionnaires/(归档问卷)。
+1. **三区物理分离模型**(2026-08-05 修订:用户裁决 adr/ 亦移入 harness):
+   - **项目文件区** `docs/`:方法论三块(方法论 + 哲学 + 实操)、CONTEXT、OPEN-DECISIONS、LICENSE。
+   - **harness 依赖区** `harness/`(决策记录 + AI 流程产物):adr/(架构决策记录,2026-08-05 移入)、design/(设计文档套 + repo 级设计套)、questionnaires/(归档问卷)。
    - **根级入口与产物**:CLAUDE.md / AGENTS.md / README(工具约定必须留根,只做路由)+ skills/ scripts/ .claude/。
 2. **规范优先级声明(CLAUDE.md「规范优先级」节,唯一权威处,不复制到其他文件)**:
    **方法论主张(方法论 + 哲学文件,canonical)> ADR > CONTEXT 术语 > skill 规格(SKILL.md + DESIGN.md 同层)> 实操文件**。冲突按序裁决,且必须显式说明,不静默选择。协调注:ADR 中的术语定义以 CONTEXT 为准(ADR 记决策,CONTEXT 记活术语)。

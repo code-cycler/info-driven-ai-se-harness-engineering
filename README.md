@@ -61,14 +61,14 @@ flowchart TD
 
 ```
 docs/methodology/    方法论文章(CC-BY 4.0)——v4 为 current
-docs/CONTEXT.md      术语表 / docs/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
+docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
 harness/design/      AI 流程产物:设计文档套(repo 级 + methodology v3 设计套)
 harness/questionnaires/ 归档问卷(脱敏示例)
 skills/              8 个核心方法论 skill(MIT)
 scripts/             脱敏检查等工具
 ```
 
-分区规则:**内容与决策 = 项目文件(docs/);AI 流程产物(设计文档、问卷)= harness 文件;执行体与工具(skills/ scripts/)= 根级产物**。入口文件(CLAUDE.md / AGENTS.md / README)因工具约定留在仓库根,只做路由。
+分区规则:**内容 = 项目文件(docs/);决策记录与流程产物(ADR / 设计文档 / 问卷)= harness 文件;执行体与工具(skills/ scripts/)= 根级产物**。入口文件(CLAUDE.md / AGENTS.md / README)因工具约定留在仓库根,只做路由。
 
 ## License
 
@@ -87,4 +87,4 @@ scripts/             脱敏检查等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论完整阐述拆为三块([ADR-0007](docs/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(哲学 · 为什么)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);v4 为 current,[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。
+- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(哲学 · 为什么)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);v4 为 current,[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。

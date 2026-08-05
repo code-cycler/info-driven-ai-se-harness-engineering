@@ -1,7 +1,7 @@
 # LLD · methodology_v3(分阶段实现规格)
 
 > 来源:design-Q lld 阶段 W00(2026-07-29,14/14 全采纳)。
-> 上游:[VISION](VISION.md) + [HLD](hld_v1.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md)。
+> 上游:[VISION](VISION.md) + [HLD](hld_v1.md) + [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md)。
 > 本文件 = v3 实现规格,交实现期(long-running-agent)按 P1–P4 执行。
 
 ## L1 阶段拆分(4 阶段,各自独立可验证)

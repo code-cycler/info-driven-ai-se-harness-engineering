@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 lld W00 · Preview(methodology_v3 分阶段实现规格)
 
-> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) + [HLD](../../design/hld_v1.md) + [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md) 已定结构,lld 落地为逐节改写规格 + 可脚本化 DoD。
+> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) + [HLD](../../design/hld_v1.md) + [ADR-0004](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md) 已定结构,lld 落地为逐节改写规格 + 可脚本化 DoD。
 > lld 不裁剪(feature 模式:每阶段 DoD 加「不破坏现有功能」回归)。
 >
 > **作答规则**:勾 `[x]` = 采纳(按默认落盘 LLD);留空 = 转 W01 深究;不用 🤔。

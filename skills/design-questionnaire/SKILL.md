@@ -64,7 +64,7 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 ### 4. 处理与落盘
 
 - 按 [PROCESSING-RULES.md](./PROCESSING-RULES.md) 逐题解析(含异常:单选多勾、必答未答、条件题误答)。
-- 逐题落盘:阶段文档 / CONTEXT.md / docs/adr/ / docs/OPEN-DECISIONS.md,**本波处理完即刻写**。行动项(处理报告/复盘产出)写入 `<项目根>/TODO.md`(格式:问题 → 行动 → 核验时机)。
+- 逐题落盘:阶段文档 / CONTEXT.md / harness/adr/ / docs/OPEN-DECISIONS.md,**本波处理完即刻写**。行动项(处理报告/复盘产出)写入 `<项目根>/TODO.md`(格式:问题 → 行动 → 核验时机)。
 - 生成新问卷、阶段闸门、DoD 核验、新会话恢复时,先读 TODO.md。
 - 🤔 逃生舱 → 降风险协议,绝不重问。
 - 输出**处理报告**(对话内,格式见 PROCESSING-RULES.md):每题去向、新增/更新的文件、异常处理、逃生舱处置、下一波候选、本阶段覆盖度。

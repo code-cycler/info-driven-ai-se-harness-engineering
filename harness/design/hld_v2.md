@@ -2,7 +2,7 @@
 
 > 本文件是 [HLD_v1](hld_v1.md) 的修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 用户定夺彻底重排)。
 > 修订来源逐条标注(Qn / ADR)。**v1 保留作压测前快照**(信息不丢失)。
-> 上游:[VISION](VISION.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md) + [ADR-0005](../../docs/adr/0005-pillar-standard-wording.md)(标准措辞) + [ADR-0006](../../docs/adr/0006-v3-chapter-restructure.md)(章节重排)。
+> 上游:[VISION](VISION.md) + [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md) + [ADR-0005](../../harness/adr/0005-pillar-standard-wording.md)(标准措辞) + [ADR-0006](../../harness/adr/0006-v3-chapter-restructure.md)(章节重排)。
 
 ## H1 文档架构
 
@@ -71,4 +71,4 @@
 v3 写完即发布(窗口期)。
 
 ## H5 架构决策识别(#14 · 修订)
-~~v1:不新增 ADR~~ → **新增 [ADR-0005](../../docs/adr/0005-pillar-standard-wording.md)(标准措辞)+ [ADR-0006](../../docs/adr/0006-v3-chapter-restructure.md)(章节重排)**。其余结构决策双向门,记本文档。
+~~v1:不新增 ADR~~ → **新增 [ADR-0005](../../harness/adr/0005-pillar-standard-wording.md)(标准措辞)+ [ADR-0006](../../harness/adr/0006-v3-chapter-restructure.md)(章节重排)**。其余结构决策双向门,记本文档。

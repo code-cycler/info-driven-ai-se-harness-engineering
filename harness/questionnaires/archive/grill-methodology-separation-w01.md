@@ -8,7 +8,7 @@ status: archived
 # 问卷 grill W01 · 压测 methodology 三块拆分设计(HLD + ADR-0007)
 
 > **本波是压测问卷**(绿地子模式:项目存在但无代码,D7「现实」= 既有文档/ADR/约束;D1–D8 全开)。
-> 压测对象:[harness/design/hld-methodology-separation.md](../../design/hld-methodology-separation.md)(16 条决策)+ [docs/adr/0007-methodology-three-way-split.md](../../../docs/adr/0007-methodology-three-way-split.md)。
+> 压测对象:[harness/design/hld-methodology-separation.md](../../design/hld-methodology-separation.md)(16 条决策)+ [harness/adr/0007-methodology-three-way-split.md](../../../harness/adr/0007-methodology-three-way-split.md)。
 > 出题基于:D1–D8 八维度 × 工件 16 条关键声明;动态盲点(压测读取中发现)。
 >
 > **填写规则**:

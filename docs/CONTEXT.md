@@ -1,6 +1,6 @@
 # CONTEXT — 术语表
 
-> 纯术语表:只放概念定义,不放决策(见 [docs/adr/](adr/))与实现细节。
+> 纯术语表:只放概念定义,不放决策(见 [harness/adr/](../harness/adr/))与实现细节。
 > 首次创建:2026-07-28。
 
 ## 双支柱
@@ -54,11 +54,11 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 ## skill 家族
 
-方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)。本仓库为其唯一 source of truth([ADR-0001](adr/0001-source-of-truth.md))。
+方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md))。
 
 ## 方法论文档三块(ADR-0007)
 
-methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分设计定稿 2026-08-03/04,详见 [ADR-0007](adr/0007-methodology-three-way-split.md) 与 [HLD](../harness/design/hld-methodology-separation.md)):
+methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分设计定稿 2026-08-03/04,详见 [ADR-0007](../harness/adr/0007-methodology-three-way-split.md) 与 [HLD](../harness/design/hld-methodology-separation.md)):
 
 - **方法论文件** = 「怎么做」的完整阐述(流程 / 方法 / 规范;§零/§二/§三/§四/§五/§七主体/§九/§十/§十一/§十二等);**canonical 成员**,保留「独立成文/自包含」主张。
 - **哲学文件** = 「为什么」的阐述(失败模式与信息断层 / 人机分工 / 元原则;§一/§六);**canonical 成员**(属「方法论主张」)。

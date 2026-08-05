@@ -3,7 +3,11 @@ SESSION: 005
 时间: 2026-08-05T16:30:00+08:00
 ================================================================================
 
-## 完成的任务(repo 级设计落地 · P1 完成)
+## 完成的任务(repo 级设计落地 · P1–P6 全部提交,2026-08-05)
+- **P1–P6 全部落地并提交**(cb68950 / cb04faf / 9686a61 / 1e2ee28 / 3b4e88d / 6bd7aed / 473d389):
+  - P1 harness 迁移 + 链接改造 + skill 落盘路径同步;P2 术语判定表(8 术语全保留 + 新词门槛);P3 方法论 + 哲学 v4(受众收窄 / 第二支柱机制层 / 三学科化)+ v3 归档;P4 入口改造(CLAUDE.md 瘦身 6 节 + AGENTS.md 零内容路由 + README 三区模型);P5 ADR-0008/0009/0010;P6 AI 侧(README 发布说明 + TODO 销项)
+  - 每阶段 DoD 全绿:脱敏门 0 / 断链仅 7 豁免项(3 中文短语笔误 + 3 CONTEXT-FORMAT 示例 + 1 file://)/ 方法论内容不丢(章节 42 / 核心子串全在)
+- **P6 待用户动作**(仓库外):① OD-4 母本同步(其他位置副本标注「开发副本,以 v4 为准」);② 语义人审(含 git 提交信息);③ dogfood(实操文件一次真实轻量修订任务,用户实际执行/观察,AI 记录)
 - F001(P1) harness 区迁移:git mv docs/design/ + docs/questionnaires/ → harness/(rename 识别);129 处字符串替换 + 相对链接重算(harness/ 20 文件 + docs/adr + CONTEXT + TODO + v2)
 - skill 落盘路径同步:design-Q/grill-Q/retro-Q/action-Q/long-running 的 SKILL.md/DESIGN.md + CLAUDE.md 落盘速查表(docs/questionnaires → harness/questionnaires)
 - 误替换还原:retro/grill skill 自己目录引用(docs/design、docs/questionnaires)vs 宿主项目落盘路径(harness/questionnaires)区分

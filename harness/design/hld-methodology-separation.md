@@ -1,7 +1,7 @@
 # HLD · methodology_v3 方法论/哲学/实操相互独立(全局设计 · hld W00 全采纳)
 
 > 来源:design-questionnaire feature 模式 hld 阶段 W00([问卷](../../harness/questionnaires/archive/feature-methodology-separation-hld-w00.md),2026-08-03,16 条:15 采纳 + 1 用户先验结论,0 逃生舱,0 转 W01)。
-> 上游:[ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md)(机制层立论)/ [ADR-0005](../../docs/adr/0005-pillar-standard-wording.md)(四处锁定)/ [ADR-0006](../../docs/adr/0006-v3-chapter-restructure.md)(章节重排先例)/ [OD-4](../../docs/OPEN-DECISIONS.md)(canonical 母本)/ [ADR-0002](../../docs/adr/0002-license-choice.md)(License 分区)。
+> 上游:[ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md)(机制层立论)/ [ADR-0005](../../harness/adr/0005-pillar-standard-wording.md)(四处锁定)/ [ADR-0006](../../harness/adr/0006-v3-chapter-restructure.md)(章节重排先例)/ [OD-4](../../docs/OPEN-DECISIONS.md)(canonical 母本)/ [ADR-0002](../../harness/adr/0002-license-choice.md)(License 分区)。
 > 本次为**结构拆分非立论演进**:v3 立论内容不动,只把单文件拆为三块独立文件。实现期细节边做边调(坍缩为 hld),本文件为全局设计。
 
 ## H1 拆分架构
@@ -93,7 +93,7 @@
 
 被否决:三文件全 canonical(实操修订触发母本同步,独立改进落空)。
 
-**连带**:OD-4 表述更新(canonical 从「methodology_v3」扩展为「方法论+哲学文件,实操非 canonical」),见 [ADR-0007](../../docs/adr/0007-methodology-three-way-split.md) 与 OD-4 修订注记。
+**连带**:OD-4 表述更新(canonical 从「methodology_v3」扩展为「方法论+哲学文件,实操非 canonical」),见 [ADR-0007](../../harness/adr/0007-methodology-three-way-split.md) 与 OD-4 修订注记。
 
 ### #10 License 边界(采纳 · ADR-0002 不触发修订)
 
@@ -140,7 +140,7 @@
 
 ### #16 拆分立 ADR + OD-4 修订(采纳)
 
-**决策**:立 [ADR-0007](../../docs/adr/0007-methodology-three-way-split.md)(拆分是结构性变更:文档身份/版本线/canonical 归属/引用契约变化,满足 ADR 三条件——v3 已公开被引用难逆转、缺上下文会困惑、真实权衡;ADR-0006 先例)+ **OD-4 表述修订**(canonical 从「methodology_v3」扩展为「方法论+哲学文件,实操非 canonical」)。
+**决策**:立 [ADR-0007](../../harness/adr/0007-methodology-three-way-split.md)(拆分是结构性变更:文档身份/版本线/canonical 归属/引用契约变化,满足 ADR 三条件——v3 已公开被引用难逆转、缺上下文会困惑、真实权衡;ADR-0006 先例)+ **OD-4 表述修订**(canonical 从「methodology_v3」扩展为「方法论+哲学文件,实操非 canonical」)。
 
 ## 同步清单(实现期执行,细节边做边调)
 

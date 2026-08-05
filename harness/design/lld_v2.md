@@ -2,7 +2,7 @@
 
 > 本文件是 [LLD_v1](lld_v1.md) 修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 彻底重排)。
 > 修订来源标注(Qn / ADR)。**v1 保留作快照**。
-> 上游:[VISION](VISION.md) + [HLD_v2](hld_v2.md) + [ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md) / [0005](../../docs/adr/0005-pillar-standard-wording.md) / [0006](../../docs/adr/0006-v3-chapter-restructure.md)。
+> 上游:[VISION](VISION.md) + [HLD_v2](hld_v2.md) + [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md) / [0005](../../harness/adr/0005-pillar-standard-wording.md) / [0006](../../harness/adr/0006-v3-chapter-restructure.md)。
 
 ## L1 阶段拆分
 

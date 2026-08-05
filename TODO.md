@@ -18,12 +18,12 @@
 ### 🟠 v3 设计修订项(grill-Q v3-design W01 产出)
 
 > 来源:grill-Q 压测 v3 设计套(VISION/HLD/LLD),12 题全采纳。挖出设计期盲点,回灌 HLD/LLD。
-> ✅ **已执行(2026-07-29)**:9 项修订全部落 [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md);Q2+Q12 → [ADR-0005](docs/adr/0005-pillar-standard-wording.md);Q3 章节策略 → **彻底重排**,[ADR-0006](docs/adr/0006-v3-chapter-restructure.md)。归档问卷 [grill-methodology-v3-design-w01](harness/questionnaires/archive/grill-methodology-v3-design-w01.md)。
+> ✅ **已执行(2026-07-29)**:9 项修订全部落 [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md);Q2+Q12 → [ADR-0005](harness/adr/0005-pillar-standard-wording.md);Q3 章节策略 → **彻底重排**,[ADR-0006](harness/adr/0006-v3-chapter-restructure.md)。归档问卷 [grill-methodology-v3-design-w01](harness/questionnaires/archive/grill-methodology-v3-design-w01.md)。
 > ✅ **已落地(2026-07-29,long-running 会话 001)**:9 项随 v3 起草全部实现并 DoD 验证(grep 证据见 `.claude/claude-progress.txt`)。
 
-- ✅ **HLD#11 标准措辞按 [ADR-0005](docs/adr/0005-pillar-standard-wording.md) 修订**:定义版(CONTEXT/README/CLAUDE)+ 完整版(v3§2.1),核心子串四处 grep 一致
+- ✅ **HLD#11 标准措辞按 [ADR-0005](harness/adr/0005-pillar-standard-wording.md) 修订**:定义版(CONTEXT/README/CLAUDE)+ 完整版(v3§2.1),核心子串四处 grep 一致
 - ✅ **HLD#9 三层立论模型表加因果方向**(Q1):v3 §2.1 表头「层(因果方向 ↓)」+ ↓导致/↓表现 行
-- ✅ **HLD#1 章节策略**(Q3):**结论 = 彻底重排**(用户定夺,见 [ADR-0006](docs/adr/0006-v3-chapter-restructure.md));v3 章节按新立论重排,锚点全量重写
+- ✅ **HLD#1 章节策略**(Q3):**结论 = 彻底重排**(用户定夺,见 [ADR-0006](harness/adr/0006-v3-chapter-restructure.md));v3 章节按新立论重排,锚点全量重写
 - ✅ **LLD 加 §2.1 改写回归 DoD**(Q4):LLD_v2 L4 已加;v3 grep 验证「有效上下文/120k/400k/双支柱」全在
 - ✅ **LLD#7 v3 文件头写完整谱系**(Q5):v1 单支柱 → v2 双支柱 → v3 补机制层 + 推导链
 - ✅ **LLD 补 §十一 失败模式表更新**(Q6):v3 §十一 #19–22(三层误读 / 双靶子失衡 / (a)(b) 混淆 / 标准句脱节)
@@ -33,7 +33,7 @@
 
 ### 🔴 methodology_v3 起草工作包(grill-Q W01 产出 · ADR-0004)
 
-> 来源:grill-Q 压测 methodology_v2([W01](harness/questionnaires/archive/grill-methodology-v2-w01.md)),D7 核心发现——第一支柱立论实质偏离作者本意,「AI 幻觉式决策」机制层缺席。详见 [ADR-0004](docs/adr/0004-methodology-v3-hallucination-thesis.md)。
+> 来源:grill-Q 压测 methodology_v2([W01](harness/questionnaires/archive/grill-methodology-v2-w01.md)),D7 核心发现——第一支柱立论实质偏离作者本意,「AI 幻觉式决策」机制层缺席。详见 [ADR-0004](harness/adr/0004-methodology-v3-hallucination-thesis.md)。
 > ⚠️ **实现规格以 [LLD_v2](harness/design/lld_v2.md) 为准**(P0 章节设计 → P1–P4,5 阶段);本块为 ADR-0004 时期的初始拆分,章节策略已升级为彻底重排(ADR-0006)。
 
 - ✅ **升 methodology_v3,补全第一支柱机制层**(ADR-0004 决策 1,2026-07-29 完成):
@@ -63,7 +63,7 @@
 - ⏳ **P6 发布门 + dogfood**(待用户动作):① OD-4 母本同步——作者其他位置副本标注「开发副本,以 v4 为准」(仓库外,用户配合);② 语义人审(含 git 提交信息,OD-1 ②);③ dogfood——实操文件一次真实轻量修订任务按新规范走通(**验收 = 用户实际执行**,压测 Q11)
 
 - ✅ **脱敏语义人审**(OD-1 ②,2026-08-01 完成):subagent×4 全文遍历执行(归档问卷 / docs+根 / skills+scripts / git 层),占位通顺度与语义指纹均审;发现与修复见🟡节两条 ✅;遗留 git author 身份与历史指纹两项决策(见下)
-- ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](docs/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入
+- ⏳ **design-questionnaire 正式设计**:vision → HLD → LLD。本批 [ADR](harness/adr/) / [OD](docs/OPEN-DECISIONS.md) 作输入
 - ✅ **远程仓库建立 + push**(2026-07-29):[code-cycler/info-driven-ai-se-harness-engineering](https://github.com/code-cycler/info-driven-ai-se-harness-engineering),首次推送 2 个 commit(建仓全量 + long-running 工件);push 前 OD-1 三道门全绿(脚本 0 命中 / 语义人审已过 / 映射表外置)
 - ⏳ **CONTRIBUTING + issue 模板**(OD-3):experimental 维护声明落地
 - ⏳ **skill 内容审校**:复制的 7 skill 是否完整;引擎副本漂移(OD-8)是否需在 skill 区 README 说明

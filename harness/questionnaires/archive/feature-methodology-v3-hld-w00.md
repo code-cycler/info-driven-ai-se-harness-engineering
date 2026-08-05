@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 hld W00 · Preview(methodology_v3 全局设计决策默认值)
 
-> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) 已落盘 + [ADR-0004](../../../docs/adr/0004-methodology-v3-hallucination-thesis.md) + exploration(v2 全文结构 + 4 文件锚点依赖)。
+> **本波是 preview 预答层**(独立 wave 0)。上下文:[VISION](../../design/VISION.md) 已落盘 + [ADR-0004](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md) + exploration(v2 全文结构 + 4 文件锚点依赖)。
 > hld feature 裁剪:H1=文档架构(改哪些章节/行为);H2=文档组织与格式选型(含被否决项);H3=文档间链接与术语契约;H4=发布流程;H5=ADR 识别。
 >
 > **作答规则**:

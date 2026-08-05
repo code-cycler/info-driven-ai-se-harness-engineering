@@ -1,7 +1,7 @@
 # VISION · methodology_v3
 
 > 来源:design-questionnaire vision 阶段 W00(2026-07-29,17/17 全采纳预答)。
-> 上游决策:[ADR-0004](../../docs/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。
+> 上游决策:[ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md)(升 v3 + 第一支柱立论重构)。
 > 本文件 = v3 设计的构想层;章节结构设计见 HLD,章节级改写规格见 LLD(后续阶段产出)。
 
 ## 目标与受众 (V1)

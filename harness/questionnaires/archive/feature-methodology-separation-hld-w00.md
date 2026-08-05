@@ -80,7 +80,7 @@ status: archived
 
 **落盘**:
 - [harness/design/hld-methodology-separation.md](../../../harness/design/hld-methodology-separation.md) —— 16 条全落 H1-H5 + 同步清单 + 被否决项汇总
-- [docs/adr/0007-methodology-three-way-split.md](../../../docs/adr/0007-methodology-three-way-split.md) —— 拆分立 ADR(#16)
+- [harness/adr/0007-methodology-three-way-split.md](../../../harness/adr/0007-methodology-three-way-split.md) —— 拆分立 ADR(#16)
 - [docs/OPEN-DECISIONS.md](../../../docs/OPEN-DECISIONS.md) OD-4 —— canonical 成员扩展注记(方法论+哲学为 canonical,实操非 canonical;历史原文保留)
 - [TODO.md](../../../TODO.md) —— 行动项 ×2:拆分执行(ADR-0007 + HLD 同步清单)、§8.8 旧锚点漂移处置
 

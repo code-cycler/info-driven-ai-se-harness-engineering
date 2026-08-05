@@ -49,7 +49,7 @@ Created lazily — only when the first decision is deferred via the de-risk prot
 | Doc | Holds | Settled? |
 |-----|-------|----------|
 | `CONTEXT.md` | the glossary — what terms *mean* | n/a (definitions) |
-| `docs/adr/` | decisions that are *made* and worth remembering | yes — closed |
+| `harness/adr/` | decisions that are *made* and worth remembering | yes — closed |
 | `docs/OPEN-DECISIONS.md` | decisions that are *not yet made* | **no — open** |
 
-A row migrates from `OPEN-DECISIONS.md` to `docs/adr/` when it's finally settled. `CONTEXT.md` is orthogonal: it never holds decisions, only language.
+A row migrates from `OPEN-DECISIONS.md` to `harness/adr/` when it's finally settled. `CONTEXT.md` is orthogonal: it never holds decisions, only language.
