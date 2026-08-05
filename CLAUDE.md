@@ -23,7 +23,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(怎么做,canonical)+ [philosophy_v4.md](docs/methodology/philosophy_v4.md)(为什么,canonical)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[v3](docs/methodology/archive/methodology_v3.md) 与 [v2](docs/methodology/archive/methodology_v2.md) 为历史母本。
 - [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 / 第一支柱术语分层 / 术语治理 / Grill 家族 / skill 家族)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 待决事项 + 重访触发。改"已决"事项前先查这里与 `docs/adr/`。
-- [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分。
+- [docs/adr/](docs/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分 / 0008–0010 v4 落地(立论重构 / 入口与规范优先级 / 术语治理)。
 - [harness/design/](harness/design/) 与 [harness/questionnaires/](harness/questionnaires/) —— **AI 流程产物**(设计文档套 / 归档问卷),与项目文件 docs/ 物理分离(三区模型)。
 - 唯一工具命令:脱敏检查 `python3 scripts/desensitize.py .`(发布前 DoD 要求 0 命中;映射表本地 gitignored;push 前三道门 = 脚本 0 命中 + 语义人审 + 脱敏报告,见 [OD-1](docs/OPEN-DECISIONS.md);**不要在 .md 中复述映射表里的真实名**)。
 
