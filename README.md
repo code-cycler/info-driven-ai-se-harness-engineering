@@ -77,6 +77,11 @@ scripts/             脱敏检查等工具
 
 ## 发布说明
 
+### skill 演进(2026-08-07,design-Q 规格整理)
+
+- **落盘路径配置化**:design-Q + grill-Q/retro-Q/action-Q 四 skill 的问卷/ADR 落盘路径改为配置化(方案 R:CLAUDE.md 声明优先 → 默认 `harness/` → 落盘前确认);CONTEXT/OPEN-DECISIONS/TODO 为项目固有文件,路径不动。
+- **design-Q 骨架增强**:HLD/LLD 判别法则(phase-invariant vs incremental + 两句判别问句)+ 反简化最小必含(H1–H5/L1–L5 共 10 项,约束内容非仅结构)+ 坍缩分档。仅 design-Q 骨架,不扩散到 grill/retro/action。
+
 ### v4(2026-08-05)
 
 - **方法论 + 哲学升 v4**:受众收窄为**个人开发者**;第二支柱补机制层立论(「无护栏 → AI 产出悄悄劣化」);哲学文件学科化(人因工程 / 软件工程 / 运筹学三视角)。

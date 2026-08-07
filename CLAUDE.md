@@ -51,7 +51,7 @@ grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插
 action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前奏可任意插入
 ```
 
-**落盘路径速查**(产物均落**宿主项目**):
+**落盘路径速查**(产物均落**宿主项目**;本表 = 本仓库落盘声明,skill 据此识别落盘根——方案 R:声明命中 → 默认 `harness/` → 落盘前确认;其他项目按各自 CLAUDE.md 声明或默认 `harness/`):
 
 | skill | 产物落点 |
 |---|---|
@@ -62,7 +62,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 
-**引擎副本漂移(OD-8,编辑 skill 时必读)**:`QUESTIONNAIRE-FORMAT.md` / `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q 各持一份副本(已漂移)——改一方考量三方,在对应 `DESIGN.md` 声明漂移关系;**禁止擅自统一 / 抽取共享文件**(已决项)。
+**引擎副本漂移(OD-8,编辑 skill 时必读)**:`QUESTIONNAIRE-FORMAT.md` / `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q / **action-Q** 各持一份副本(已漂移)——改一方考量**四方**,在对应 `DESIGN.md` 声明漂移关系;**禁止擅自统一 / 抽取共享文件**(已决项)。
 
 ## 编辑本仓库的铁律
 
@@ -78,6 +78,8 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 ## 仓库状态
 
 **2026-08-05:repo 级设计完成,落地执行中**——design-Q 三阶段 + grill-Q 压测 12 项回灌(设计套 [harness/design/repo/](harness/design/repo/));方法论 + 哲学升 **v4**(受众收窄个人 / 第二支柱机制层对称化 / 哲学三学科化(人因/软工/运筹));harness 区物理分离(docs/design/ + docs/questionnaires/ 迁入);术语治理(8 术语全保留 + 新词三条件门槛)。落地执行 P1–P4 完成(P1 迁移 / P2 术语 / P3 v4 / P4 入口),**P5(P5 ADR-0008/0009/0010)与 P6(发布门 + dogfood)待执行**,见 [TODO.md](TODO.md)。
+
+**2026-08-07:design-Q skill 规格整理(skill-spec-revamp)完成**——落盘路径配置化(方案 R:CLAUDE.md 声明 → 默认 `harness/` → 落盘前确认;design-Q/grill-Q/retro-Q/action-Q 四 skill 沿用同一根)+ HLD/LLD 判别法则 + 反简化最小必含(改动 2/3 仅 design-Q 骨架,不扩散);落地 8 skill 文件(F007–F010 全 passes:true,见 [.claude/feature_list.json](.claude/feature_list.json)),设计套 [harness/design/skill-spec-revamp/](harness/design/skill-spec-revamp/)。
 
 历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移。
 

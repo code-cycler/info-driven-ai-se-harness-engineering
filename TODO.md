@@ -107,3 +107,20 @@
 - ✅ **design-Q 默认勾选试点执行**(2026-08-01,用户授权执行):QUESTIONNAIRE-FORMAT(W00 预勾 + 选项排序 + 问题级排序 + 单向门豁免)+ PROCESSING-RULES(默认勾选设防节:取消率 / 确认点 / 3 波零取消回退)+ SKILL.md(W00 段/作答/统计);用户级 + 仓库级双副本同步(脱敏差异保持);只改 canonical,四副本同步留 OD-8 重访(OD-14)
 - ✅ **delegate 多模式执行**(2026-08-01,用户授权执行):SKILL.md「全权模式(mode: full)」节(白名单反转排除集,底线 + 留痕不变)+ delegation-template.md frontmatter `mode` 字段 + 实测条款「实测(只读)可自主、归类仍交人/入排除集」;双副本同步(OD-13 W02 Q3/Q4)
 - ✅ **日志脱敏规则**:已落 shadow SKILL.md 铁律 5 + 落盘表(绝对路径 → `~`,不进公开仓库)(OD-13)
+
+### 🟣 design-Q skill 规格整理(grill-Q skill-spec-revamp W01 压测产出,2026-08-06)
+
+> 来源:[grill-skill-spec-revamp-w01](harness/questionnaires/archive/grill-skill-spec-revamp-w01.md),11 题(9 认定/部分认定 + 1 不认定 Q9 + 0 逃生舱)。压测对象:design-Q skill 规格整理设计套([VISION](harness/design/skill-spec-revamp/VISION.md) / [HLD](harness/design/skill-spec-revamp/HLD.md) / [LLD](harness/design/skill-spec-revamp/LLD.md))。D1–D8 全覆盖(D3 预审:HLD H2 被否决项充分)。9 项为**设计套(工件)修订建议**——修订完善后进 long-running 实现(P1–P4)。
+> 核验时机:设计套修订执行后逐项核对;long-running 实现前设计套须含全部修订。
+> **✅ 9 项全执行(2026-08-06/08-07)**:Q3/Q5/Q6/Q1+Q10/Q2/Q4/Q8/Q11 → [LLD](harness/design/skill-spec-revamp/LLD.md)(重写整合,🔧 标注)+ [HLD](harness/design/skill-spec-revamp/HLD.md)/[VISION](harness/design/skill-spec-revamp/VISION.md)(Q6 回灌);下述各项 ⏳ 已随本次执行落地(等价 ✅)。**✅ Q7(retro 落点 + 路径区分)grill-with-docs 深钻定案**——retro 文档项目固有 docs/retro/、落盘根边界 = design/questionnaires/adr 三件、skill 内部 vs 宿主路径区分规则,结论落 LLD 2.6。
+
+- ⏳ **Q3 long-running 改动遗漏**(D5+D7,认定):LLD 补 long-running SKILL.md 改动(§5.3 读归档问卷路径配置化)+ HLD/LLD 对齐——long-running 确读归档(已核实 §5.3),非仅 .claude/feature_list
+- ⏳ **Q5 P3 diff 0 vs OD-8**(D4+D7,认定):LLD P3 DoD 界定「diff 0 仅指落盘映射节,不含各副本有意分叉区(action-Q 小波阈值/confirm-list、grill-Q stage 标记)」——防 P3 执行破坏 OD-8
+- ⏳ **Q6 无 CLAUDE.md 项目**(D5,认定):方案 R SKILL.md 路径决定第 1 步加「CLAUDE.md 不存在则跳过声明识别,直接默认 harness/ + 落盘前确认」
+- ⏳ **Q7 retro 落点 + 路径区分**(D5+D7,认定 + 耦合项):① retro 复盘文档落点归属定(项目固有 docs/retro/ 还是 harness/);② 四副本同步规则补「只改宿主项目落盘路径,skill 自己 SKILL.md/DESIGN.md 引用的 skill 目录内部 docs/ 不动」——**建议转 grill-with-docs 单点深钻(用户标注耦合项)**
+- ⏳ **Q1+Q10 声明关键词漏读**(D1+D2,部分认定):SKILL.md 关键词清单标注「非穷举,确认点兜底」+ 落盘前确认提示「未命中声明,将用默认 harness/(显示命中/未命中哪条关键词)」
+- ⏳ **Q2 最小必含形式主义**(D1,部分认定):STAGE-SKELETONS 头部反简化声明强调「约束内容非仅结构(可被实现期直接执行,非占位/非『见后』)」
+- ⏳ **Q4 确认疲劳**(D4,部分认定):每波处理报告顶部标注「落盘根 = X(首次确认于 Wnn)」,用户每波可见可纠
+- ⏳ **Q8 机制回归可验证性**(D6,部分认定):机制回归补可脚本化子检查(生成测试问卷后 grep frontmatter 字段齐全 / grep 🤔 逃生舱每题在位),人跑 + 脚本核
+- ⏳ **Q11 落盘根定义显式化**(D8,部分认定):「落盘根」在 design-Q PROCESSING-RULES 落盘映射节显式定义(已隐含),四副本同步扩散;不进 CONTEXT(skill 机制词)
+- ✅ **Q9 P4 跨项目验证**(D6,不认定):L5 已说「临时沙盒」,执行时自定即可,无需 LLD 细化

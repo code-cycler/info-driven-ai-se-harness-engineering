@@ -1,4 +1,56 @@
 ================================================================================
+SESSION: 007
+时间: 2026-08-07T19:30:00+08:00
+================================================================================
+
+## 完成的任务(skill-spec-revamp 实现 P2 + P3 + P4 · 全完成,2026-08-07)
+- **F008 P2 design-Q 路径配置化完成**:~/.claude/skills/design-questionnaire/ 四文件改——① SKILL.md 第2步新增「确定落盘根」子步(方案 R:声明优先→默认→确认,🔧含无CLAUDE.md分支/关键词非穷举/确认提示/处理报告根标注)+ 第4步落盘配置化根 + 第4步归档路径 + 项目固有文件(CONTEXT/OPEN-DECISIONS/TODO)路径不动;② PROCESSING-RULES.md 落盘映射表 docs/→`<根>` + 落盘根显式定义(Q11)+ 处理报告模板 + 归档节;③ QUESTIONNAIRE-FORMAT.md 文件约定节路径配置化;④ DESIGN.md 新增 D23-D26(均双向门)+ OD-8 引擎同步记录(含 Q5 仅映射节 diff 0 / Q7 retro项目固有+路径区分 / 判别法则不扩散)
+- **F009 P3 四副本 + long-running 同步完成**:grill-Q/retro-Q/action-Q 三副本 PROCESSING-RULES 落盘映射节 + 落盘根定义(与 canonical diff 0)+ SKILL 路径决定/落盘字符串 + QUESTIONNAIRE-FORMAT 文件约定 + GRILL-SKELETON/RETRO-SKELETONS 落盘指引;三副本 DESIGN.md 追加 skill-spec-revamp 同步节;long-running §5.3 读归档问卷路径配置化;🔧 design-Q canonical 落盘根定义改为通用措辞(去 design-Q 绑定 → 四副本 diff 0);🔧 Q5 仅映射节同步(各副本分叉区保留);🔧 Q7 retro docs/retro/ 项目固有不动 + skill 内部 ./docs 引用不动
+- **F010 P4 dogfood 自检完成(三关全过)**:① LLD 自检表全 ✓(12 处);② 机制回归 grep(design-Q QUESTIONNAIRE-FORMAT frontmatter 15/🤔 7/★ 3,规则在位);③ 跨项目落盘:本仓库 CLAUDE.md 声明命中 harness/(关键词命中)+ /tmp 无 CLAUDE.md 沙盒懒创建 harness/questionnaires/ + 测试问卷 frontmatter 5 字段 + 🤔=1 + ★=1,跑完即弃。**skill-spec-revamp P1-P4 全部完成(F007-F010 passes:true)**
+
+## 修改的文件
+- ~/.claude/skills/design-questionnaire/(P2:SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT/DESIGN;P3:PROCESSING-RULES 落盘根定义改通用措辞)
+- ~/.claude/skills/grill-questionnaire/(P3:PROCESSING-RULES/SKILL/QUESTIONNAIRE-FORMAT/GRILL-SKELETON/DESIGN)
+- ~/.claude/skills/retro-questionnaire/(P3:PROCESSING-RULES/SKILL/QUESTIONNAIRE-FORMAT/RETRO-SKELETONS/DESIGN;docs/retro/ 与 ./docs 内部引用 Q7 不动)
+- ~/.claude/skills/action-questionnaire/(P3:PROCESSING-RULES/SKILL/QUESTIONNAIRE-FORMAT/DESIGN)
+- ~/.claude/skills/long-running-agent/(P3:SKILL §5.3 归档路径配置化)
+- .claude/feature_list.json(F008 + F009 passes:true)
+
+## 遇到的问题
+- F008/F009/F010 三 feature 的 notes 字段相同(都是 "skill-spec-revamp LLD P1-P4"),改 F008 passes 时用 steps 特征项「DESIGN.md D23-D26 在位」锚定避免误匹配
+- 机制回归:P2 仅改路径字符串,未动问卷格式/preview/逃生舱/小波阈值/opt-in 开关机制,天然通过(Q8 脚本化子检查留 P4)
+
+## 下一步计划
+- **skill-spec-revamp P1-P4 全部完成**(F007-F010 passes:true)——三组改动(路径配置化 / HLD-LLD 判别 / 反简化最小必含)落地 8 skill 全局生效
+- 回 repo 主线 TODO:P6 剩余(语义人审含 git 提交信息 + dogfood 用户验收)+ CONTRIBUTING/issue 模板(OD-3)+ git author 身份决策;可选:本次 skill 改动的 git 提交(用户决策何时提交 ~/.claude/skills 改动——本仓库 git 不追踪 ~/.claude/,属用户全局环境)
+
+================================================================================
+SESSION: 006
+时间: 2026-08-07T18:00:00+08:00
+================================================================================
+
+## 完成的任务(skill-spec-revamp 设计 + 实现 P1,2026-08-06/07)
+- **design-Q 三阶段设计完成**:vision/hld/lld 三件套 + grill-Q 压测(11 题,9 项修订回灌)+ grill-with-docs Q7 深钻(retro 文档项目固有 docs/retro/ + 落盘根边界三件 + skill 内部 vs 宿主路径区分)→ 设计套 harness/design/skill-spec-revamp/(VISION/HLD/LLD,含最小必含自检 dogfood 通过)
+- **F007 P1 骨架改造完成**:~/.claude/skills/design-questionnaire/STAGE-SKELETONS.md 重写——①「HLD/LLD 判别法则」节(phase-invariant vs incremental + 两句判别问句 + 职责不重叠)② 反简化声明(约束内容非仅结构,grill-Q Q2)③ 每项「最小必含 + 产出形态」子块(H1–H5 + L1–L5 共 10 项)④「阶段坍缩与最小必含分档」节(三档表 + 不免除声明);DoD grep 全绿
+
+## 修改的文件
+- `~/.claude/skills/design-questionnaire/STAGE-SKELETONS.md`(P1 重写,用户级 skill 全局生效)
+- harness/design/skill-spec-revamp/(VISION/HLD/LLD + 9 项 grill-Q 修订 🔧 标注)
+- harness/questionnaires/archive/(design-Q vision/hld/lld × 6 + grill × 1)
+- .claude/feature_list.json(F007–F010 追加,F007 passes:true)
+- TODO.md(🟣 节 9 项全 ✅)
+
+## 遇到的问题
+- 设计期发现 skill 规格(docs/)与项目实践(harness/)脱节 + hld_v1/v2 简化实证 + HLD/LLD 职责重叠 → 三组改动设计
+- grill-Q 压测抓 9 项(Q3 long-running 遗漏/Q5 diff 范围/Q6 无 CLAUDE.md 等全回灌)
+- Q7 耦合项(retro 落点 + 路径区分)grill-with-docs 单点深钻定案
+
+## 下一步计划
+- **F008 P2** design-Q 路径配置化(SKILL 第 2/4 步 + PROCESSING-RULES 落盘映射 + QUESTIONNAIRE-FORMAT 文件约定 + DESIGN D23–D26)
+- **F009 P3** 四副本(grill/retro/action PROCESSING-RULES 仅映射节 + SKILL 路径 + QUESTIONNAIRE-FORMAT + DESIGN 记录)+ long-running §5.3 归档路径配置化;skill 内部 ./docs 不动
+- **F010 P4** dogfood 自检(LLD 对照新骨架 + /tmp 无 harness/ 沙盒 + 机制回归 grep)
+
+================================================================================
 SESSION: 005
 时间: 2026-08-05T16:30:00+08:00
 ================================================================================

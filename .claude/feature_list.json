@@ -106,6 +106,62 @@
       "passes": false,
       "last_tested": null,
       "notes": "P6 AI 侧完成:README 发布说明(v4 变更 + 术语版本注)+ TODO 销项 P1–P5;待用户动作 = ① OD-4 母本同步(其他位置副本标注「开发副本,以 v4 为准」,仓库外)② 语义人审(含 git 提交信息)③ dogfood(实操文件一次真实轻量修订任务,用户实际执行/观察,AI 记录)——验收 = 用户执行(压测 Q11,OD-13 教训);发布 = 单向门,由用户决策何时 push"
+    },
+    {
+      "id": "F007",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 骨架改造:design-Q STAGE-SKELETONS.md:头部「HLD/LLD 判别法则」节(定义+两句问句+职责不重叠) + 反简化声明(约束内容非仅结构) + 每项「最小必含+产出形态」子块(H1-H5/L1-L5) + 「坍缩分档」节替换现有坍缩节",
+      "steps": [
+        "grep 三节标题(判别法则/最小必含/分档)在位",
+        "人审结构 + 最小必含子项齐(H1-H5/L1-L5)"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T18:00:00+08:00",
+      "notes": "P1 完成:STAGE-SKELETONS.md 判别法则+反简化(内容约束)+最小含子块(H1-H5/L1-L5 10项)+分档节;DoD grep 全绿(四节在位/子项10-10/判别问句/反简化)"
+    },
+    {
+      "id": "F008",
+      "category": "functional",
+      "priority": "high",
+      "description": "P2 design-Q 路径配置化:design-Q SKILL.md 第2/4步路径决定(声明→默认→确认,含无CLAUDE.md/关键词非穷举/确认提示/处理报告根标注) + PROCESSING-RULES.md 落盘映射表配置化(<根>+落盘根定义) + QUESTIONNAIRE-FORMAT.md 文件约定 + DESIGN.md D23-D26",
+      "steps": [
+        "grep docs/questionnaires|docs/design|docs/adr 在 design-Q 三文件 0 命中",
+        "路径决定含无CLAUDE.md分支+确认提示",
+        "DESIGN.md D23-D26 在位"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T19:30:00+08:00",
+      "notes": "P2 完成:SKILL 第2步路径决定子步(声明→默认→确认,🔧含无CLAUDE.md/关键词非穷举/确认提示/处理报告根标注)+第4步落盘配置化根+项目固有文件路径不动;PROCESSING-RULES 落盘映射表 <根>+落盘根定义(Q11);QUESTIONNAIRE-FORMAT 文件约定;DESIGN D23-D26+OD-8同步。DoD:三文件 docs/questionnaires|docs/design|docs/adr 0命中 + 路径决定含无CLAUDE.md分支(SKILL:56)+非穷举(55)+确认提示(58)+处理报告根标注(59) + 落盘根定义(PROCESSING-RULES:28) + D23-D26(DESIGN:99-102)。SKILL:35 docs/索引=探索读路径非落盘,合法(Q7路径区分);机制回归:P2仅改路径字符串未动格式/preview/逃生舱/小波阈值/opt-in,天然通过(Q8脚本化子检查留P4)"
+    },
+    {
+      "id": "F009",
+      "category": "functional",
+      "priority": "high",
+      "description": "P3 四副本+long-running 同步:grill/retro/action 的 PROCESSING-RULES.md 落盘映射节(仅映射节,不含分叉区,OD-8) + SKILL.md 路径字符串 + QUESTIONNAIRE-FORMAT.md + 各 DESIGN.md 记录;long-running SKILL.md §5.3 读归档路径配置化;skill 内部 ./docs 引用不动",
+      "steps": [
+        "四副本落盘映射节与 canonical diff 0(仅映射节)",
+        "long-running §5.3 归档路径配置化",
+        "四副本 DESIGN.md 有同步记录",
+        "skill 内部 ./docs 引用未误改"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T20:30:00+08:00",
+      "notes": "P3 完成:grill/retro/action 三副本 PROCESSING-RULES 落盘映射节+落盘根定义(diff 0)+SKILL 路径决定/落盘+QUESTIONNAIRE-FORMAT+GRILL-SKELETON/RETRO-SKELETONS;三副本 DESIGN 追加同步节;long-running §5.3 配置化;🔧 design-Q canonical 落盘根定义改通用措辞(四副本 diff 0)。DoD:运行时文件 docs/questionnaires|design|adr 0命中(retro SKILL:54=Q7 保留的 ./docs 内部引用,合法)+ 四副本落盘根定义关键句各=1(diff 0)+ long-running §5.3 配置化 + 三副本 DESIGN 同步节各=1 + design-Q D23-D26=4 + skill 内部 ./docs 保留(grill1/retro2)+ retro docs/retro/ 未动(SKILL2/RETRO-SKELETONS1/DESIGN2)"
+    },
+    {
+      "id": "F010",
+      "category": "functional",
+      "priority": "high",
+      "description": "P4 dogfood 自检:本次 LLD 对照新骨架最小必含自检 + 跨项目落盘验证(本仓库 harness/ + /tmp 无harness/沙盒) + 机制回归子检查(grep frontmatter/逃生舱)",
+      "steps": [
+        "LLD 自检表全 ✓",
+        "/tmp 沙盒懒创建 harness/ 且有确认提示",
+        "测试问卷 grep frontmatter 字段齐全 + 🤔 每题在位"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T21:00:00+08:00",
+      "notes": "P4 完成:dogfood 自检三关全过。① LLD 自检表全 ✓(12 处 ✓);② 机制回归 grep(design-Q QUESTIONNAIRE-FORMAT frontmatter 字段 15 处 / 🤔 7 处 / ★推荐 3 处,规则在位);③ 跨项目落盘:本仓库 CLAUDE.md 声明命中 harness/(关键词 harness 区/落盘速查)+ /tmp 无 CLAUDE.md 沙盒懒创建 harness/questionnaires/ 成功 + 测试问卷 frontmatter 5 字段 + 🤔=1 + ★=1,跑完即弃。skill-spec-revamp P1-P4 全部完成(F007-F010 passes:true)。"
     }
   ]
 }
