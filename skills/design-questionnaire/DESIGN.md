@@ -87,3 +87,22 @@ grill / grill-with-docs 一问一答,每问都要等一轮 LLM 输出,项目启�
   - **单向门题(发布/删除/花钱/脱敏)永不预勾**;预勾设防(取消率 / 确认点 / 3 波零取消警告)开关开启时适用;
   - 本 skill 与 design-Q / grill-Q / retro-Q / action-Q **四份副本同步**(OD-8 重访触发①命中);问题级排序仅 design-Q 保留。
 - **实测与调研前置标准流程**(2026-08-03,action-Q 确认清单 confirm-testing-preflight-w00 全确认):SKILL.md「生成问卷」前新增标准步骤「实测与调研前置」(调研现状 / 不假设 / 多实测 / 多获取信息 / 及时保存);retro-Q 版为「调研与核实前置」(五源读取的补齐);既有铁律段(环境现实现证 / 先验证再出题 / 先核实再列清单)保留引用。
+
+## skill-spec-revamp 修订(2026-08-06/07,design-Q 三组改动)
+
+> 来源:design-questionnaire 三阶段设计(vision/hld/lld)+ grill-Q 压测(11 题,9 项回灌)+ grill-with-docs Q7 深钻。设计套 `harness/design/skill-spec-revamp/`(VISION/HLD/LLD)。🔧 HLD/LLD 判别法则 + 最小必含仅 design-Q 骨架,不扩散到 retro/grill/action(改动 2/3 边界)。
+
+### 新增决策(均双向门,可回退;难逆转性不足 ADR 三条件,记本 DESIGN.md)
+
+| # | 决策 | 结论 | 出处 |
+|---|---|---|---|
+| D23 | 落盘路径配置化(方案 R) | 默认 `harness/` + CLAUDE.md 声明覆盖(关键词非穷举)+ 落盘前确认(首次 + 结构变化)+ 无 CLAUDE.md 跳过默认;落盘根边界 = 通用三件(design/ + questionnaires/ + adr/),CONTEXT/OPEN-DECISIONS/TODO 项目固有路径不动 **(2026-08-07 superseded:方案 R 已放弃,回归硬编码 `harness/`,见 ADR-0011)** | hld W01 + vision W01 Q2=C + 🔧 grill-Q Q1/Q4/Q6/Q10/Q11 |
+| D24 | HLD/LLD 判别法则 | phase-invariant(HLD)vs incremental(LLD)+ 两句判别问句 + 职责不重叠;落 STAGE-SKELETONS.md 头部节 | hld W01 Q2=A |
+| D25 | 最小必含 + 产出形态 | 每项骨架加「最小必含」子项(约束内容非仅结构,防简化)+ 「产出形态」标注;H1–H5 + L1–L5 共 10 项;坍缩档不免除最小必含 | hld W01 Q3(10 项全量)+ Q4(形态非强制)+ 🔧 grill-Q Q2 |
+| D26 | 全局生效 | 改 `~/.claude/skills/` 全局生效(所有项目下次调用);不跨域立 ADR | vision W01 Q2=C |
+
+### 引擎同步记录(OD-8 重访触发①命中)
+
+- **2026-08-06 落盘路径配置化同步**:design-Q canonical(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定)改后,**四副本(grill-Q / retro-Q / action-Q)落盘映射节同步**(🔧 Q5:仅落盘映射节 diff 0,不含各副本有意分叉区——action-Q 小波阈值 ≤4 / confirm-list;grill-Q stage 标记;retro 骨架);**long-running SKILL.md §5.3 读归档问卷路径配置化**(🔧 Q3)。
+- 🔧 **Q7 深钻结论(2026-08-07 grill-with-docs)**:retro 文档落点 = 项目固有 `docs/retro/`(不纳入落盘根配置化);四副本同步只改「描述宿主项目落盘路径」的字符串,**不改** skill 自身目录内部相对引用(判据:`./docs/...` 指 skill 内部 vs `docs/...` 描述宿主)。
+- HLD/LLD 判别法则 + 最小必含 = design-Q 专属,**不扩散**到 retro/grill/action 骨架(改动 2/3 边界硬约束)。

@@ -1,5 +1,7 @@
 # VISION · design-Q skill 规格整理(落盘路径配置化 + HLD/LLD 职责区分 + 防简化)
 
+> ⚠️ **2026-08-07 状态更新**:本文「落盘路径配置化(方案 R)」部分**已放弃**([ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)),回归硬编码 `harness/`;**骨架改造(F007:HLD/LLD 判别法则 + 最小必含 + 分档)部分保留**并已回灌仓库。撤销执行见 [feature-skills-harness-consistency/](../feature-skills-harness-consistency/)。
+
 > 来源:design-questionnaire vision 阶段 W00(15 条,采纳 13 / 留空 2)+ W01(2 题:Q1 自定义「harness 文件与项目文件解耦」→ AskUserQuestion 澄清为方案 R;Q2 采纳 C)+ Q1.1 由 R 推导 = D。2026-08-06。
 > 上游决策:[OD-8](../../../docs/OPEN-DECISIONS.md)(引擎副本漂移治理)、[hld_v1/v2 + lld_v1/v2](../hld_v1.md)(简化输出反面案例)、[repo/HLD + repo/LLD](../repo/HLD.md)(完整输出正面案例)、design-Q [DESIGN.md](../../../../.claude/skills/design-questionnaire/DESIGN.md)(D1–D22 决策先例)。
 > 本文件 = skill 规格整理的构想层;架构方案见 HLD,落地规格见 LLD(后续阶段产出)。**本次设计产物自身须满足新「最小必含」标准(dogfood,见 V3/V4)**。

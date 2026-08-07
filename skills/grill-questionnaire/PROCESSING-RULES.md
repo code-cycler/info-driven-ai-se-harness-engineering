@@ -26,16 +26,18 @@
 
 所有落盘**本波处理完即刻执行**,不批处理。目标文件不存在时懒创建;命名沿用项目既有约定(如 `_vN` 版本规则)。
 
+> grill-Q 注:下表 vision/hld/lld 行为 design-Q 词汇,本 skill 不产生阶段题(见本文件首部分叉声明)。
+
 | 答案类型 | 落盘目标 |
 |---|---|
-| vision 阶段题 | VISION.md(位置按项目现状:根目录或 docs/) |
-| hld 阶段题 | harness/design/ 的 HLD 文档 |
-| lld 阶段题 | harness/design/ 的 LLD 文档 |
-| 术语定义类 | CONTEXT.md(纯术语表,不放决策与实现细节) |
-| 满足 ADR 三条件的决策 | harness/adr/NNNN-<slug>.md(编号顺延现有) |
-| 🤔 逃生舱(单向门) | docs/OPEN-DECISIONS.md |
+| vision 阶段题 | `harness/design/` 的 VISION.md |
+| hld 阶段题 | `harness/design/` 的 HLD 文档 |
+| lld 阶段题 | `harness/design/` 的 LLD 文档 |
+| 术语定义类 | CONTEXT.md(项目固有,路径不动;纯术语表,不放决策与实现细节) |
+| 满足 ADR 三条件的决策 | `harness/adr/NNNN-<slug>.md`(编号顺延现有) |
+| 🤔 逃生舱(单向门) | OPEN-DECISIONS.md(项目固有,路径不动) |
 | 🤔 逃生舱(双向门) | 采用 ★推荐项 **且进 OD 标注**(标「双向门 / 采用推荐项 X / provisional」+ 重访触发条件)。采用推荐项也留痕,不再「不进 OD」——2026-07-24 dogfood 补充声明(逃生舱采用推荐项也要进 OD,信息不丢失优先) |
-| 行动项(处理报告 / 复盘产出) | `<项目根>/TODO.md`(问题 → 行动 → 核验时机;懒创建) |
+| 行动项(处理报告 / 复盘产出) | `<项目根>/TODO.md`(项目固有,路径不动;问题 → 行动 → 核验时机;懒创建) |
 
 ADR 三条件(缺一不写):难逆转 + 缺上下文会让人困惑 + 经过真实权衡。
 

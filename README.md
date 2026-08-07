@@ -79,7 +79,7 @@ scripts/             脱敏检查等工具
 
 ### skill 演进(2026-08-07,design-Q 规格整理)
 
-- **落盘路径配置化**:design-Q + grill-Q/retro-Q/action-Q 四 skill 的问卷/ADR 落盘路径改为配置化(方案 R:CLAUDE.md 声明优先 → 默认 `harness/` → 落盘前确认);CONTEXT/OPEN-DECISIONS/TODO 为项目固有文件,路径不动。
+- **落盘路径回归硬编码 `harness/`**(2026-08-07 撤销方案 R,看 [ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)):design-Q + grill-Q/retro-Q/action-Q + long-running 的问卷/ADR 落盘路径**一律硬编码 `项目根/harness/`**(design/ + questionnaires/ + adr/);CONTEXT/OPEN-DECISIONS/TODO 为项目固有文件,路径不动。
 - **design-Q 骨架增强**:HLD/LLD 判别法则(phase-invariant vs incremental + 两句判别问句)+ 反简化最小必含(H1–H5/L1–L5 共 10 项,约束内容非仅结构)+ 坍缩分档。仅 design-Q 骨架,不扩散到 grill/retro/action。
 
 ### v4(2026-08-05)

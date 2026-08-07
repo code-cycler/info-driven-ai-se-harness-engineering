@@ -38,3 +38,15 @@
   - **单向门题(发布/删除/花钱/脱敏)永不预勾**;预勾设防(取消率 / 确认点 / 3 波零取消警告)开关开启时适用;
   - 本 skill 与 design-Q / grill-Q / retro-Q / action-Q **四份副本同步**(OD-8 重访触发①命中);问题级排序仅 design-Q 保留。
 - **实测与调研前置标准流程**(2026-08-03,action-Q 确认清单 confirm-testing-preflight-w00 全确认):SKILL.md「生成问卷」前新增标准步骤「实测与调研前置」(调研现状 / 不假设 / 多实测 / 多获取信息 / 及时保存);retro-Q 版为「调研与核实前置」(五源读取的补齐);既有铁律段(环境现实现证 / 先验证再出题 / 先核实再列清单)保留引用。
+
+## skill-spec-revamp 同步记录(2026-08-06/07,OD-8 重访触发①)
+
+> ⚠️ **2026-08-07 superseded**:本节记录的方案 R(落盘路径配置化)已放弃,回归硬编码 `harness/`(见 ADR-0011)。本节内容为历史叙述保留(原始信息不丢失铁律),**不再有效**——其中描述的 `<根>` / `<落盘根>` 配置化机制已撤销,PROCESSING-RULES / SKILL / QUESTIONNAIRE-FORMAT / RETRO-SKELETONS 已回硬编码 `harness/`。Q7 retro 文档落点 `docs/retro/` 不变(项目固有,本就独立于方案 R 边界);skill 内部 `./docs/...` 引用不动。
+>
+> 历史背景:方案 R 于 2026-08-07 在 `~/.claude/skills/` 落地,但本仓库 `skills/`(发布镜像)从未同步方案 R——仓库版一直在硬编码状态。ADR-0011 决定撤销运行版方案 R、回归硬编码后,两边状态一致(均硬编码 `harness/`)。以下为运行版当时的同步记录,保留作历史。
+
+- **落盘路径配置化同步(仅运行版 `~/.claude/skills/` 曾落地)**:运行版本 skill(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定 + RETRO-SKELETONS 问卷归档)曾与 design-Q canonical 同步——路径配置化为 `<根>` / `<落盘根>`,四 skill(design-Q / grill-Q / retro-Q / action-Q)沿用同一根约定(方案 R)。
+- 🔧 **Q7 retro 文档项目固有**:retro 文档落点 = `docs/retro/`(项目阶段历史档案,人读、长期保存),**不纳入落盘根配置化**(落盘根边界 = 通用三件 design/ + questionnaires/ + adr/);SKILL.md / RETRO-SKELETONS / 本 DESIGN 决策索引的 `docs/retro/` 保持不动。
+- 🔧 **Q7 路径区分**:本 skill DESIGN.md / SKILL.md 内 `[docs/...](./docs/...)` 为 skill 自身目录内部引用(VISION / hld_v1 / 归档问卷),**不动**;配置化只改「描述宿主项目落盘路径」的字符串。
+- 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0;retro-Q 有意分叉区(RETRO-SKELETONS 四节骨架 / 不使用 preview / 调研与核实前置五源)原样保留。
+- HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 retro-Q(RETRO-SKELETONS 是方法论四节 + Action Items,性质不同)。

@@ -75,3 +75,12 @@
   - **单向门题(发布/删除/花钱/脱敏)永不预勾**;预勾设防(取消率 / 确认点 / 3 波零取消警告)开关开启时适用;
   - 本 skill 与 design-Q / grill-Q / retro-Q / action-Q **四份副本同步**(OD-8 重访触发①命中);问题级排序仅 design-Q 保留。
 - **实测与调研前置标准流程**(2026-08-03,action-Q 确认清单 confirm-testing-preflight-w00 全确认):SKILL.md「生成问卷」前新增标准步骤「实测与调研前置」(调研现状 / 不假设 / 多实测 / 多获取信息 / 及时保存);retro-Q 版为「调研与核实前置」(五源读取的补齐);既有铁律段(环境现实现证 / 先验证再出题 / 先核实再列清单)保留引用。
+
+## skill-spec-revamp 同步记录(2026-08-06/07,OD-8 重访触发①)
+
+> **2026-08-07 superseded**:本节描述的「落盘路径配置化(方案 R)」同步已随 ADR-0011 放弃——action-Q 落盘路径回归硬编码 `harness/`(见 SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。本节文字保留作历史叙述;末条「HLD/LLD 判别法则不扩散」与路径无关,继续有效。
+
+- **落盘路径配置化同步**:本 skill(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定)已与 design-Q canonical 同步——路径配置化为 `<根>` / `<落盘根>`,四 skill(design-Q / grill-Q / retro-Q / action-Q)沿用同一根约定(方案 R)。
+- 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0(路径 + 落盘根定义机制一致);action-Q 有意分叉区(小波阈值 ≤4 / confirm-list 语义 / 无阶段文档 / 补充声明第四类)原样保留。
+- 🔧 **Q7 路径区分**:本 DESIGN.md 内 dogfood 案例叙述出现的 `harness/questionnaires/archive/...` 为**历史案例记录**(2026-07-31 dogfood 归档问卷路径,非运行时落盘指令),保留为历史叙述;配置化只改「描述宿主项目落盘路径」的运行时字符串(SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。
+- HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 action-Q(本 skill 无内容骨架,隐式六要素 confirm-list)。

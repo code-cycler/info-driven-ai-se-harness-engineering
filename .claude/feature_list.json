@@ -118,7 +118,7 @@
       ],
       "passes": true,
       "last_tested": "2026-08-07T18:00:00+08:00",
-      "notes": "P1 完成:STAGE-SKELETONS.md 判别法则+反简化(内容约束)+最小含子块(H1-H5/L1-L5 10项)+分档节;DoD grep 全绿(四节在位/子项10-10/判别问句/反简化)"
+      "notes": "P1 完成:STAGE-SKELETONS.md 判别法则+反简化(内容约束)+最小含子块(H1-H5/L1-L5 10项)+分档节;DoD grep 全绿(四节在位/子项10-10/判别问句/反简化)；保留、已回灌仓库(2026-08-07,ADR-0011 后,F007 骨架与方案 R 无关)"
     },
     {
       "id": "F008",
@@ -130,9 +130,9 @@
         "路径决定含无CLAUDE.md分支+确认提示",
         "DESIGN.md D23-D26 在位"
       ],
-      "passes": true,
-      "last_tested": "2026-08-07T19:30:00+08:00",
-      "notes": "P2 完成:SKILL 第2步路径决定子步(声明→默认→确认,🔧含无CLAUDE.md/关键词非穷举/确认提示/处理报告根标注)+第4步落盘配置化根+项目固有文件路径不动;PROCESSING-RULES 落盘映射表 <根>+落盘根定义(Q11);QUESTIONNAIRE-FORMAT 文件约定;DESIGN D23-D26+OD-8同步。DoD:三文件 docs/questionnaires|docs/design|docs/adr 0命中 + 路径决定含无CLAUDE.md分支(SKILL:56)+非穷举(55)+确认提示(58)+处理报告根标注(59) + 落盘根定义(PROCESSING-RULES:28) + D23-D26(DESIGN:99-102)。SKILL:35 docs/索引=探索读路径非落盘,合法(Q7路径区分);机制回归:P2仅改路径字符串未动格式/preview/逃生舱/小波阈值/opt-in,天然通过(Q8脚本化子检查留P4)"
+      "passes": false,
+      "last_tested": null,
+      "notes": "P2 完成:SKILL 第2步路径决定子步(声明→默认→确认,🔧含无CLAUDE.md/关键词非穷举/确认提示/处理报告根标注)+第4步落盘配置化根+项目固有文件路径不动;PROCESSING-RULES 落盘映射表 <根>+落盘根定义(Q11);QUESTIONNAIRE-FORMAT 文件约定;DESIGN D23-D26+OD-8同步。DoD:三文件 docs/questionnaires|docs/design|docs/adr 0命中 + 路径决定含无CLAUDE.md分支(SKILL:56)+非穷举(55)+确认提示(58)+处理报告根标注(59) + 落盘根定义(PROCESSING-RULES:28) + D23-D26(DESIGN:99-102)。SKILL:35 docs/索引=探索读路径非落盘,合法(Q7路径区分);机制回归:P2仅改路径字符串未动格式/preview/逃生舱/小波阈值/opt-in,天然通过(Q8脚本化子检查留P4)；⚠️ 方案 R 已于 2026-08-07 放弃(ADR-0011),本 feature 撤销"
     },
     {
       "id": "F009",
@@ -145,9 +145,9 @@
         "四副本 DESIGN.md 有同步记录",
         "skill 内部 ./docs 引用未误改"
       ],
-      "passes": true,
-      "last_tested": "2026-08-07T20:30:00+08:00",
-      "notes": "P3 完成:grill/retro/action 三副本 PROCESSING-RULES 落盘映射节+落盘根定义(diff 0)+SKILL 路径决定/落盘+QUESTIONNAIRE-FORMAT+GRILL-SKELETON/RETRO-SKELETONS;三副本 DESIGN 追加同步节;long-running §5.3 配置化;🔧 design-Q canonical 落盘根定义改通用措辞(四副本 diff 0)。DoD:运行时文件 docs/questionnaires|design|adr 0命中(retro SKILL:54=Q7 保留的 ./docs 内部引用,合法)+ 四副本落盘根定义关键句各=1(diff 0)+ long-running §5.3 配置化 + 三副本 DESIGN 同步节各=1 + design-Q D23-D26=4 + skill 内部 ./docs 保留(grill1/retro2)+ retro docs/retro/ 未动(SKILL2/RETRO-SKELETONS1/DESIGN2)"
+      "passes": false,
+      "last_tested": null,
+      "notes": "P3 完成:grill/retro/action 三副本 PROCESSING-RULES 落盘映射节+落盘根定义(diff 0)+SKILL 路径决定/落盘+QUESTIONNAIRE-FORMAT+GRILL-SKELETON/RETRO-SKELETONS;三副本 DESIGN 追加同步节;long-running §5.3 配置化;🔧 design-Q canonical 落盘根定义改通用措辞(四副本 diff 0)。DoD:运行时文件 docs/questionnaires|design|adr 0命中(retro SKILL:54=Q7 保留的 ./docs 内部引用,合法)+ 四副本落盘根定义关键句各=1(diff 0)+ long-running §5.3 配置化 + 三副本 DESIGN 同步节各=1 + design-Q D23-D26=4 + skill 内部 ./docs 保留(grill1/retro2)+ retro docs/retro/ 未动(SKILL2/RETRO-SKELETONS1/DESIGN2)；⚠️ 方案 R 已于 2026-08-07 放弃(ADR-0011),本 feature 撤销"
     },
     {
       "id": "F010",
@@ -159,9 +159,96 @@
         "/tmp 沙盒懒创建 harness/ 且有确认提示",
         "测试问卷 grep frontmatter 字段齐全 + 🤔 每题在位"
       ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "P4 完成:dogfood 自检三关全过。① LLD 自检表全 ✓(12 处 ✓);② 机制回归 grep(design-Q QUESTIONNAIRE-FORMAT frontmatter 字段 15 处 / 🤔 7 处 / ★推荐 3 处,规则在位);③ 跨项目落盘:本仓库 CLAUDE.md 声明命中 harness/(关键词 harness 区/落盘速查)+ /tmp 无 CLAUDE.md 沙盒懒创建 harness/questionnaires/ 成功 + 测试问卷 frontmatter 5 字段 + 🤔=1 + ★=1,跑完即弃。skill-spec-revamp P1-P4 全部完成(F007-F010 passes:true)。；⚠️ 方案 R 已于 2026-08-07 放弃(ADR-0011),本 feature 撤销"
+    },
+    {
+      "id": "F011",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 立 ADR-0011(放弃方案 R 决策):背景/决策/替代/后果;三条件论证在 HLD ADR 识别节",
+      "steps": [
+        "ADR-0011 落 harness/adr/0011-abandon-plan-r-hardcode-harness.md",
+        "决策记录完整(背景/决策/替代方案/后果)",
+        "python3 scripts/desensitize.py . 0 命中"
+      ],
       "passes": true,
-      "last_tested": "2026-08-07T21:00:00+08:00",
-      "notes": "P4 完成:dogfood 自检三关全过。① LLD 自检表全 ✓(12 处 ✓);② 机制回归 grep(design-Q QUESTIONNAIRE-FORMAT frontmatter 字段 15 处 / 🤔 7 处 / ★推荐 3 处,规则在位);③ 跨项目落盘:本仓库 CLAUDE.md 声明命中 harness/(关键词 harness 区/落盘速查)+ /tmp 无 CLAUDE.md 沙盒懒创建 harness/questionnaires/ 成功 + 测试问卷 frontmatter 5 字段 + 🤔=1 + ★=1,跑完即弃。skill-spec-revamp P1-P4 全部完成(F007-F010 passes:true)。"
+      "last_tested": "2026-08-07T22:30:00+08:00",
+      "notes": "P1 完成:ADR-0011 落盘(放弃方案 R 回归硬编码 harness/,保留 F007 骨架,固有文件不动)。DoD——ADR 存在 + 决策完整 + 脱敏门 0。附带:修正 HLD/LLD/2 份归档问卷 9 处真实名(lens-core/c-games/cpp-games→占位),action-Q/design-Q 流程引入的 OD-1 违规,已清。"
+    },
+    {
+      "id": "F012",
+      "category": "functional",
+      "priority": "high",
+      "description": "P2 仓库 skills/ 回灌:从 ~/.claude 合并非路径改动(F007 骨架 + dogfood 修订),路径保持硬编码 harness/,真实名→占位脱敏",
+      "steps": [
+        "逐文件 diff 仓库 vs ~/.claude,按 LLD 判定规则分类(撤销/回灌/脱敏)",
+        "回灌 F007 骨架(design-Q STAGE-SKELETONS 判别法则/最小必含/分档)+ dogfood 修订,脱敏",
+        "仓库 skills/ grep「落盘根|<根>|确定落盘|声明命中」0 命中",
+        "F007 grep「判别法则|最小必含|分档」>0",
+        "python3 scripts/desensitize.py . 0 命中"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T23:30:00+08:00",
+      "notes": "P2 完成:回灌 F007(design-Q STAGE-SKELETONS 判别法则/最小必含/分档,19 处)+ design-Q 两边对齐;delegate/grill-Q/retro-Q 剩余差异确认为脱敏差(HLD D4 保留);grill-with-docs ~/.claude 版补 P1 迁移漏改(docs/adr/→harness/adr/)"
+    },
+    {
+      "id": "F013",
+      "category": "functional",
+      "priority": "high",
+      "description": "P3 ~/.claude/skills/ 撤销方案 R:design-Q/grill-Q/retro-Q/action-Q 落盘映射 <根>→harness/ + SKILL 确定落盘根子步删除 + QUESTIONNAIRE-FORMAT + long-running §5.3 + design-Q DESIGN D23/D26;保留真实名",
+      "steps": [
+        "~/.claude grep「落盘根|<根>|确定落盘|声明命中」定位方案 R 残留",
+        "逐文件撤销路径配置化→硬编码 harness/",
+        "~/.claude grep 方案 R 关键词 0 命中",
+        "F007/dogfood 保留"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T23:30:00+08:00",
+      "notes": "P3 完成:design/grill/retro/action 四 skill + long-running 的 ~/.claude 版撤销方案 R(删确定落盘根子步 + 落盘映射 <根>→harness/ + DESIGN superseded 标注),F007/dogfood 保留;两边 grep 方案 R 配置化 0"
+    },
+    {
+      "id": "F014",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P4 feature_list 标注:F008/F009/F010 标「方案 R 已放弃,撤销」+ passes 改回 false(不删 notes);F007 标「保留、已回灌」",
+      "steps": [
+        "F008/F009/F010 passes: true→false + 撤销标注",
+        "F007 notes 加「保留、已回灌」",
+        "历史 notes 留存"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T23:30:00+08:00",
+      "notes": "P4 完成:F008/09/10 passes→false + 撤销标注(ADR-0011);F007 标保留已回灌;历史 notes 留存"
+    },
+    {
+      "id": "F015",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P5 skill-spec-revamp 设计文档标注:LLD/HLD/VISION 顶部加「路径配置化(方案 R)部分 2026-08-07 放弃,回归硬编码;骨架(F007)部分保留」,不删",
+      "steps": [
+        "harness/design/skill-spec-revamp/ 三文件顶部加标注",
+        "标注在位 grep"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T23:30:00+08:00",
+      "notes": "P5 完成:skill-spec-revamp 三件(LLD/HLD/VISION)顶部「方案 R 放弃/骨架保留」标注在位(发现已存在,验证内容正确)"
+    },
+    {
+      "id": "F016",
+      "category": "functional",
+      "priority": "high",
+      "description": "P6 同步验证 + 脱敏门:仓库 skills/ vs ~/.claude/skills/ 全量 diff 仅剩脱敏差异;脱敏门 0;8 skill 路径硬编码 harness/",
+      "steps": [
+        "全量 diff 仓库 vs ~/.claude(8 skill)",
+        "diff 仅脱敏差异(真实名/占位),无内容分歧",
+        "python3 scripts/desensitize.py . 0 命中",
+        "8 skill 路径硬编码 harness/ grep 确认"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-07T23:30:00+08:00",
+      "notes": "P6 完成:8 skill 差异仅脱敏差(HLD D4 允许)+ grill-with-docs 迁移差已修 + 脱敏门 0 + 8 skill 路径硬编码 harness/"
     }
   ]
 }

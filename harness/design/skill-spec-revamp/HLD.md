@@ -1,5 +1,7 @@
 # HLD · design-Q skill 规格整理(架构方案)
 
+> ⚠️ **2026-08-07 状态更新**:本文「落盘路径配置化(方案 R)」部分**已放弃**([ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)),回归硬编码 `harness/`;**骨架改造(F007)部分保留**并已回灌仓库。撤销执行见 [feature-skills-harness-consistency/](../feature-skills-harness-consistency/)。
+
 > 来源:design-questionnaire hld 阶段 W00(10 条,采纳 9 / 留空 1)+ W01(5 题:Q1=D 不立 ADR / Q2=A 判别法则默认表述 / Q3 最小必含表 10 项全量采纳 / Q4=A 建议形态非强制 / Q5=A 分档)。2026-08-06。
 > 上游:[VISION](VISION.md)(2026-08-06)。本文 = 三组改动的架构方案;落地规格见 LLD,详细决策按 H5 落 design-Q DESIGN.md。
 > **dogfood 声明**:本 HLD 自身按新骨架(改动 2/3)写——含 H1–H5 每项「最小必含」子项 + 产出形态,末尾附最小必含自检。即改动 3 的第一次实战。

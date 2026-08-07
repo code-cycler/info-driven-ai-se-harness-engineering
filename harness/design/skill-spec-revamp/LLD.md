@@ -1,5 +1,7 @@
 # LLD · design-Q skill 规格整理(分阶段落地规格)
 
+> ⚠️ **2026-08-07 状态更新**:本文「落盘路径配置化(方案 R)」部分(§2.2/§2.3/§2.4/§2.6 落盘根相关)**已放弃**([ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)),回归硬编码 `harness/`;**骨架改造(F007:判别法则 + 最小必含 + 分档)部分保留**并已回灌仓库。撤销执行见 [feature-skills-harness-consistency/](../feature-skills-harness-consistency/)。
+
 > 来源:design-questionnaire lld 阶段 W00(10 条全采纳)+ W01(5 题草案全采纳)。2026-08-06。
 > **🔧 grill-Q 压测后修订(2026-08-06/08-07)**:8 项认定/部分认定发现回灌(Q3 long-running 遗漏 / Q5 P3 diff 范围 / Q6 无 CLAUDE.md / Q1+Q10 关键词漏读 / Q2 形式主义 / Q4 确认疲劳 / Q8 机制回归 / Q11 落盘根定义);Q7(retro 落点 + 路径区分)经 grill-with-docs 单点深钻定案(retro 文档项目固有 docs/retro/ + 落盘根边界三件 + skill 内部 vs 宿主路径区分规则),结论落 2.6。修订处标 🔧。
 > 上游:[VISION](VISION.md) + [HLD](HLD.md)。本文 = 落地规格;执行时每阶段按 DoD 验证,全部完成后走 dogfood 自检 + 衔接实现期。

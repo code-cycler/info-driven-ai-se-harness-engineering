@@ -1,4 +1,44 @@
 ================================================================================
+SESSION: 008
+时间: 2026-08-07T22:30:00+08:00
+================================================================================
+
+## 完成的任务(撤销方案 R + 重建 skills/ 一致性 · design-Q 规划 + P1)
+- **审查发现 → action-Q 对齐 → design-Q 规划 → long-running 执行** 全链路走通
+- **action-Q**:对齐现状(confirm-skill-harness-sink-w00)+ ~/ 路径反引号规范落全局 CLAUDE.md + 边界确认(仅 harness 三件)+ 走法(design-Q→long-running)
+- **design-Q hld**:W00 D1–D8 全采纳 → HLD.md(同步策略/边界/同步契约/ADR 候选)
+- **design-Q lld**:LLD.md(P1–P6 执行批次 + 判定规则 + DoD);坍缩 vision 省
+- **P1 立 ADR-0011 完成**:放弃方案 R 回归硬编码 `harness/`(保留 F007 骨架、固有文件不动);ADR-0011 落盘
+- **脱敏门修正**:action-Q/design-Q 流程在 HLD/LLD/2 份归档问卷误写真实名(lens-core/c-games/cpp-games)9 处→占位,脱敏门回归 0(OD-1)
+
+- **P2-P6 全完成(2026-08-07)**:P2 回灌 F007(design-Q STAGE-SKELETONS 判别法则/最小必含/分档,19 处)+ design-Q 两边对齐;P3 ~/.claude 5 skill(design/grill/retro/action)+ long-running 撤销方案 R(删确定落盘根子步 + 落盘映射 `<根>`→`harness/` + DESIGN superseded 标注),F007/dogfood 保留;P4 feature_list F008/09/10 标撤销(passes→false)、F007 标保留已回灌;P5 skill-spec-revamp 三件(LLD/HLD/VISION)顶部标注(发现已存在,验证内容正确);P6 同步验证:8 skill 差异仅脱敏差(HLD D4 允许)+ grill-with-docs ~/.claude 补 P1 迁移漏改(docs/adr/→harness/adr/)+ 脱敏门 0
+
+## 修改的文件
+- skills/{action,design,grill-questionnaire,retro-questionnaire,long-running-agent}/(方案 R 撤销,~/.claude + 仓库两边对齐)
+- ~/.claude/skills/grill-with-docs/(P1 迁移补改 docs/adr/→harness/adr/)
+- skills/delegate/templates/delegation-template.md(EntityKind 脱敏)
+- skills/design-questionnaire/DESIGN.md(D26 误标去 superseded,~/.claude + 仓库)
+- harness/questionnaires/archive/confirm-skill-harness-sink-w00.md、feature-skills-harness-consistency-hld-w00.md(归档)
+- harness/design/feature-skills-harness-consistency/HLD.md、LLD.md(新增)
+- harness/adr/0011-abandon-plan-r-hardcode-harness.md(新增,P1)
+- harness/design/feature-skills-harness-consistency/HLD.md、LLD.md(新增 + 脱敏修正)
+- harness/questionnaires/archive/confirm-skill-harness-sink-w00.md(归档 + 脱敏修正)
+- harness/questionnaires/archive/feature-skills-harness-consistency-hld-w00.md(归档 + 脱敏修正)
+- .claude/feature_list.json(追加 F011–F016,F011 passes:true)
+- 全局 `~/.claude/CLAUDE.md`(~/ 路径反引号规范,非本仓库 git)
+
+## Git 提交
+- (待用户指示提交)
+
+## 遇到的问题
+- **action-Q/design-Q 流程的脱敏疏漏**:引用 `~/.claude` 真实名作审查证据时,误写进仓库 .md(9 处),被 P1 脱敏门拦截。教训:仓库 .md 里提 `~/.claude` 真实标识一律用占位。
+- **feature_list F007–F010 passes 标记曾误导**:对应 `~/.claude` 版非仓库版(P1 已立 ADR-0011,P4 将标撤销)。
+
+## 下一步计划
+- 全部完成(P1-P6,feature_list F011-F016 passes:true)
+- 待用户:git 提交(未 commit);OD-1 语义人审(含 git 提交信息);delegate 等 skill 既有内容漂移(若有非脱敏修订)单独评估
+
+================================================================================
 SESSION: 007
 时间: 2026-08-07T19:30:00+08:00
 ================================================================================
