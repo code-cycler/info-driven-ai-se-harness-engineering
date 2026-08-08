@@ -188,3 +188,23 @@
 - **预期职责**:① harness 组织规则权威化(分层定义 + 归属判据 + 命名规范);② 迁移工具/流程(目录重组 + 相对链接重算 + 断链回归);③ 布局合规校验(命名正则 / ADR 编号连续 / 归档位置);④ 演进记录(组织变更留痕)。
 - **可逆性**:双向门(立项可撤;skill 未入库分发前可改)。
 - **重访触发条件**:① 用户确认启动 doctor-for-harness 设计(design-Q 或手动);② harness 再发生迁移(如分层落地)时,校验规则先行;③ 与 OD-10(skill 分发洁净)一并评估。
+
+---
+
+## OD-16 harness 分层可选档(questionnaires/adr)重访触发
+
+- **问题**:ADR-0013 可选档(questionnaires/ 新归档入子目录 + adr/ 分层)标 TBD,无重访触发条件——归档平铺膨胀(questionnaires/archive 已 30+ 文件)到什么程度才做?无量化信号,等于永久悬置或随机决策。
+- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/grill-doctor-harness-w01.md) Q5(2026-08-08,全认定)。
+- **当前占位方案**:可选档维持 TBD,归档平铺;新归档按 feature/主题建子目录(HARNESS-RULES 第四节),存量不挪。
+- **可逆性**:双向门(归档组织可演进)。
+- **重访触发条件**:① `harness/questionnaires/archive/` 文件数 > 50;② 某 feature 归档问卷 > 10 份;③ 归档检索实际困难(用户反馈)。满足任一 → 重估可选档(子目录化存量)。
+
+---
+
+## OD-17 doctor-harness「演进是常态」假设的使用率验证
+
+- **问题**:VISION Q1 动机「演进是常态 → 立治理 skill」。但本仓库(方法论仓库)harness 演进低频(repo/v4/skill-spec-revamp/doctor-harness 共 4 次 feature 级设计,跨数周)。若跨项目也无持续使用,doctor-harness 可能沦为「一次性迁移工具 + 静态文档」,与「治理 skill 常态职责」定位张力。
+- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/grill-doctor-harness-w01.md) Q9(2026-08-08,认定存疑假设)。
+- **当前占位方案**:doctor-harness 已入库家族(第 9 个,F020),按治理 skill 定位;约束最小可用(只做规则/迁移/校验/留痕四件)。
+- **可逆性**:双向门(可退回「迁移工具 + 静态文档」定位)。
+- **重访触发条件**:① doctor-harness 连续 3 个月零使用(类 OD-12 grill「使用率边缘化」先例);② 仅本仓库使用,无跨项目使用反馈;③ harness 组织长期稳定无演进。满足任一 → 重估定位(降级为工具或归档)。

@@ -142,3 +142,16 @@
 - ⏳ **harness 分层迁移执行**(2026-08-08,ADR-0013):doctor-for-harness 设计完成后执行——必做档 design/ 按 feature 聚合 + 可选档 TBD;一次性迁移 + 断链回归 + 校验脚本验证;DoD 见 [ADR-0013](harness/adr/0013-harness-layering-migration.md)
 - ⏳ **harness 分层落地**(2026-08-08,用户裁决):harness 文件严格归 `harness/` 父级 + 子文件夹分层(design/<feature>/、archive/<feature>/ 等),**不污染项目根**;含规格同步(各 SKILL.md 落盘路径)+ 迁移(相对链接重算 + 断链回归,照 harness 迁移先例)
 - ⏳ **格式反馈落地**(2026-08-08,用户裁决):单波次上限 10、直接问答(小波阈值)上限 3——修订 grill-Q QUESTIONNAIRE-FORMAT「题量每波 10–15」→ 上限 10 + 小波阈值 ≤2 → ≤3;四副本同步评估(OD-8)
+
+### 🟠 doctor-for-harness 设计套压测(grill-Q doctor-harness W01 产出,2026-08-08)
+
+> 来源:[grill-doctor-harness-w01](harness/questionnaires/grill-doctor-harness-w01.md),10 题全认定(A)。压测对象:doctor-harness 设计套(VISION/HLD/LLD + ADR-0012/13)。可沉淀项已落 [OD-16](docs/OPEN-DECISIONS.md)(可选档重访)/ [OD-17](docs/OPEN-DECISIONS.md)(使用率验证)。下述 8 项为**工件修订建议**,由人授权执行(grill-Q 不替改工件)。
+> 核验时机:修订执行后逐项核对;dogfood 实证回灌后核对 ADR-0013 措辞。
+
+- ⏳ **Q1+Q8 校验脚本补 design/ report 模式**:harness-check.py 加 check_design_layout(列 design/ 文件清单 + 标注裸放/子目录,不判对错);HLD 选型表补 report 模式作被否决/采纳记录
+- ⏳ **Q2 LLD「四节」→「五节」**:LLD 三处(行 13/22/62)+ DoD grep 同步实际 5 节
+- ⏳ **Q3 ADR-0013/LLD 措辞回灌 F019 实证**:补「F019 实证:design/ 已天然分层,本次迁移实为确认 + 归档链接修复」,消除「重组」与「确认」落差
+- ⏳ **Q4 豁免清单同步义务**:harness-check.py 顶部注释「豁免清单须与 HARNESS-RULES 第三节同步」+ doctor-harness DESIGN.md 记同步义务
+- ⏳ **Q6 HARNESS-RULES 归属校验归属明示**:第二节补「pwd 校验由各 skill 落盘前执行,doctor-harness 只提供判据」+ 标注待 dogfood(多项目场景触发)
+- ⏳ **Q7 dogfood 通过定义**:doctor-harness DESIGN.md 补「dogfood 通过 = 用 HARNESS-RULES + harness-check + MIGRATION-FLOW 完整走通真实 harness 场景」(F019 符合)
+- ⏳ **Q10 HARNESS-RULES 补「布局合规」定义**:第五节补「布局合规 = 命名/ADR编号/归档位置三检查(脚本可查)+ 分层(人工判据,脚本 report)」
