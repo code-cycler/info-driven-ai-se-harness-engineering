@@ -6,7 +6,7 @@ status: processed
 ---
 # 压测问卷 · skill-spec-revamp 设计套 W01
 
-> **工件**:[VISION](../design/skill-spec-revamp/VISION.md) + [HLD](../design/skill-spec-revamp/HLD.md) + [LLD](../design/skill-spec-revamp/LLD.md)(2026-08-06 design-Q 产出)。
+> **工件**:[VISION](../../design/skill-spec-revamp/VISION.md) + [HLD](../../design/skill-spec-revamp/HLD.md) + [LLD](../../design/skill-spec-revamp/LLD.md)(2026-08-06 design-Q 产出)。
 > **模式**:代码库绑定(本仓库有 CONTEXT/ADR/docs 体系);绿地子模式(纯设计期,无代码)——D7「现实」= 工件内部一致性 + 设计 vs 既有约束(CONTEXT/ADR/OD/既有 skill 文件)。
 > **范围**:三组改动(落盘路径配置化方案 R / HLD-LLD 判别法则 / 防简化最小必含)的设计套。
 >
@@ -150,6 +150,6 @@ status: processed
 - **认定漏洞(A)**:Q3 long-running 改动遗漏(D5+D7,HLD/LLD 不一致)/ Q5 P3 diff 0 vs OD-8(D4+D7)/ Q6 无 CLAUDE.md 项目(D5)/ Q7 retro 落点 + 路径区分(D5+D7,**耦合项 → 建议 grill-with-docs 单点深钻**)
 - **部分认定(C)**:Q1+Q10 声明关键词漏读(D1+D2)/ Q2 最小必含形式主义(D1)/ Q4 确认疲劳(D4)/ Q8 机制回归可验证性(D6)/ Q11 落盘根定义显式化(D8)
 - **不认定(B)**:Q9 P4 跨项目验证(L5「临时沙盒」已够,执行时自定)
-- **落盘**:9 项**工件修订建议** → [TODO.md](../../TODO.md) 🟣 节(⏳ 待执行);**0 ADR**(均双向门,难逆转性不足)/ **0 OD** / **0 CONTEXT**(Q11 C 判定 skill 机制词不进 CONTEXT)
+- **落盘**:9 项**工件修订建议** → [TODO.md](../../../TODO.md) 🟣 节(⏳ 待执行);**0 ADR**(均双向门,难逆转性不足)/ **0 OD** / **0 CONTEXT**(Q11 C 判定 skill 机制词不进 CONTEXT)
 - **grill-Q 铁律守**:只产出发现,未替改设计套(VISION/HLD/LLD 原样);修订由人授权发起
 - **覆盖度**:工件关键声明(方案 R 机制/判别法则/最小必含/骨架归属/四副本同步/不立 ADR/dogfood/4 阶段)均经 ≥1 维度审视
