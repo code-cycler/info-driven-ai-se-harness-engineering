@@ -1,7 +1,7 @@
 # VISION · doctor-for-harness
 
-> 来源:design-questionnaire feature 模式 vision 阶段 W00(2026-08-08,20/20 全采纳预答)+ [W01](../../questionnaires/archive/feature-doctor-harness-vision-w01.md)(10/10 全采纳 ★推荐)。
-> 上游决策:[OD-15](../../../docs/OPEN-DECISIONS.md)(立项)+ [ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)(硬编码 harness/)+ 压测 [grill-harness-file-mgmt-w01](../../questionnaires/archive/grill-harness-file-mgmt-w01.md)(14 题,用户裁决)。
+> 来源:design-questionnaire feature 模式 vision 阶段 W00(2026-08-08,20/20 全采纳预答)+ [W01](../../questionnaires/archive/doctor-harness/feature-doctor-harness-vision-w01.md)(10/10 全采纳 ★推荐)。
+> 上游决策:[OD-15](../../../docs/OPEN-DECISIONS.md)(立项)+ [ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)(硬编码 harness/)+ 压测 [grill-harness-file-mgmt-w01](../../questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md)(14 题,用户裁决)。
 > 本文件 = doctor-for-harness 的构想层;架构设计见 HLD,落地规格见 LLD(后续阶段产出)。
 
 ## 目标

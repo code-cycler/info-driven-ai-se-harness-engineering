@@ -6,7 +6,7 @@
 
 ## 背景
 
-[HLD#1](../../harness/design/hld_v1.md) 原定 v3「保 v2 编号 + 小节注入」(锚点稳定)。grill-Q W01 [Q3](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测:第三选项「彻底重排」被隐含否决、理由不充分——v3 是 canonical 立论重构,章节顺序应服务新立论(机制层先行 + 双靶子);保编号让 v3 背 v2 章节顺序包袱。窗口期(v2 未广泛引用,VISION#16)正是重排成本最低时。用户定夺选「彻底重排」。
+[HLD#1](../../harness/design/hld_v1.md) 原定 v3「保 v2 编号 + 小节注入」(锚点稳定)。grill-Q W01 [Q3](../../harness/questionnaires/archive/methodology/grill-methodology-v3-design-w01.md) 压测:第三选项「彻底重排」被隐含否决、理由不充分——v3 是 canonical 立论重构,章节顺序应服务新立论(机制层先行 + 双靶子);保编号让 v3 背 v2 章节顺序包袱。窗口期(v2 未广泛引用,VISION#16)正是重排成本最低时。用户定夺选「彻底重排」。
 
 ## 决策
 

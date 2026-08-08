@@ -45,7 +45,7 @@ flowchart TD
 - **skill 直接运行依赖 Claude Code** 的三项机制:`AskUserQuestion`(批量问卷提问 / 逃生舱)、`subagent`(并行核实)、`SKILL.md` 加载。迁移到其他工具(Cursor / Cline 等)需适配这三项(详见 [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) OD-2)。
 - 本方法论**在 Claude Code 上实践验证**;其他工具的适配尚未实测,欢迎反馈。
 
-## 8 个核心 skill
+## 9 个核心 skill
 
 | skill | 用途 |
 |---|---|
@@ -56,16 +56,17 @@ flowchart TD
 | [`retro-questionnaire`](skills/retro-questionnaire/) | 阶段 / 项目复盘 |
 | [`long-running-agent`](skills/long-running-agent/) | 跨会话长项目约束系统 |
 | [`delegate`](skills/delegate/) | 决策下放治理(试点) |
+| [`doctor-harness`](skills/doctor-harness/) | harness 演进治理(分层 / 迁移 / 校验 / 留痕) |
 
 ## 仓库结构(三区模型)
 
 ```
 docs/methodology/    方法论文章(CC-BY 4.0)——v4 为 current
 docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
-harness/design/      AI 流程产物:设计文档套(repo 级 + methodology v3 设计套)
-harness/questionnaires/ 归档问卷(脱敏示例)
-skills/              8 个核心方法论 skill(MIT)
-scripts/             脱敏检查等工具
+harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录:repo/ doctor-harness/ skill-spec-revamp/ 等)
+harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
+skills/              9 个核心方法论 skill(MIT)
+scripts/             脱敏检查 / harness 校验等工具
 ```
 
 分区规则:**内容 = 项目文件(docs/);决策记录与流程产物(ADR / 设计文档 / 问卷)= harness 文件;执行体与工具(skills/ scripts/)= 根级产物**。入口文件(CLAUDE.md / AGENTS.md / README)因工具约定留在仓库根,只做路由。
@@ -76,6 +77,12 @@ scripts/             脱敏检查等工具
 - `skills/` `scripts/`(配置 / 代码): **MIT**(见 [LICENSE](LICENSE))
 
 ## 发布说明
+
+### skill 演进(2026-08-08,doctor-harness 第 9 个 skill)
+
+- **harness 演进治理 skill 上线**:组织 harness 区(分层 / 迁移 / 校验 / 留痕),规则权威 [HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md)(ADR-0012/0013);校验脚本 [scripts/harness-check.py](scripts/harness-check.py)(命名正则 / ADR 编号连续 / 归档位置三检查)。
+- **归档子目录化**:41 份归档问卷按 feature/主题迁入 `harness/questionnaires/archive/` 下 10 个子目录,附 [README 索引](harness/questionnaires/archive/README.md)。
+- **格式反馈落地**:问卷单波次上限 10、小波(直接问答)阈值 3,四副本(design-Q / grill-Q / retro-Q / action-Q)统一;新增 [MIGRATION-FLOW](skills/doctor-harness/MIGRATION-FLOW.md) 迁移流程文档。
 
 ### skill 演进(2026-08-07,design-Q 规格整理)
 

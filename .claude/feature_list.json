@@ -279,9 +279,9 @@
         "接口验证:python3 scripts/harness-check.py ./harness + --json",
         "git commit(feat: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-08T15:35:00+08:00",
+      "notes": "P2 完成:scripts/harness-check.py(三检查:命名正则/ADR 编号连续/归档位置 + --json)。现状跑 0 违规(误报门成立);临时违规样本实测报出 4 条(命名不符/跳号/归档位置),接口 exit 0/1 正常"
     },
     {
       "id": "F019",
@@ -298,9 +298,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "可选档(questionnaires/adr)标 TBD,不在此阶段执行"
+      "passes": true,
+      "last_tested": "2026-08-08T15:45:00+08:00",
+      "notes": "P3 完成:design/ 现状核对照 ADR-0012 判定句已天然分层(methodology 裸放 + feature 子目录),无需物理挪文件;修复本次归档引入的 9 处层级链接(../→../../,feature-doctor-harness-vision-w01/grill-harness-file-mgmt-w01/grill-skill-spec-revamp-w01);存量 3 处中文短语豁免(历史遗留);harness-check 0 违规 + 脱敏门 0 + SKILL.md 引用无影响"
     },
     {
       "id": "F020",
@@ -313,9 +313,9 @@
         "CLAUDE.md 家族图 + CONTEXT skill 家族节 + 落盘速查表同步第 9 个(家族表述,迁移验证通过后落)",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "家族表述 pending:先 dogfood 后入家族,迁移验证通过后落(OD-15 重访触发②)"
+      "passes": true,
+      "last_tested": "2026-08-08T16:00:00+08:00",
+      "notes": "P4 完成:仓库 skills/doctor-harness/ 四件套(SKILL/DESIGN/HARNESS-RULES/CHANGELOG)+ ~/.claude 双副本 diff 0(仅脱敏差);家族表述同步第 9 个(CLAUDE.md 家族图 + 落盘速查表 + CONTEXT 家族节);脱敏门 0 + harness-check 0 违规"
     }
   ]
 }

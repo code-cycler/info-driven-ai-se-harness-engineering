@@ -1,3 +1,70 @@
+## 完成的任务(格式反馈 + MIGRATION-FLOW)
+- **MIGRATION-FLOW 文档沉淀**:skills/doctor-harness/MIGRATION-FLOW.md(7 步:设计新布局→挪文件→链接重算→断链回归→跑校验→规格同步→留痕 + 先例表 + DoD);SKILL.md 第 2 步改为引用独立文档;同步 ~/.claude
+- **格式反馈落地**(grill-Q 压测补充声明用户裁决):题量四副本「每波 10–15」→ 上限 10;小波阈值 design/grill/retro ≤2 → ≤3、action-Q ≤4 → ≤3(四份统一,OD-11 有意分叉修订);同步四份 SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT/DESIGN + ~/.claude 双副本;commit 630fe85
+
+## Git 提交
+- 630fe85: feat: 格式反馈落地 + MIGRATION-FLOW
+
+## 下一步计划
+- 全部完成:doctor-for-harness 设计 + 实现(F017-F020)+ 格式反馈 + MIGRATION-FLOW
+- 后续可选:grill-Q 压测 doctor-for-harness 设计套;分层迁移 dogfood 复盘;TODO 销项
+
+================================================================================
+## 完成的任务(P2–P4,doctor-for-harness 实现)
+- **F018(P2)完成**:scripts/harness-check.py(三检查:命名正则 / ADR 编号连续 / 归档位置 + --json)。现状 0 违规(误报门成立);临时违规样本实测报出 4 条(命名/跳号/归档);接口 exit 0/1 正常;commit c6293fc
+- **F019(P3)完成**:design/ 现状核对照 ADR-0012 判定句已天然分层(methodology 裸放 + feature 子目录),无需物理挪文件;修复本次归档引入的 9 处层级链接(../→../../,feature-doctor-harness-vision-w01/grill-harness-file-mgmt-w01/grill-skill-spec-revamp-w01);存量 3 处中文短语豁免(历史遗留);harness-check 0 违规 + 脱敏门 0;commit 5a0221a
+- **F020(P4)完成**:仓库 skills/doctor-harness/ 四件套(SKILL/DESIGN/HARNESS-RULES/CHANGELOG)+ ~/.claude 双副本 diff 0;家族表述同步第 9 个(CLAUDE.md 家族图 + 落盘速查表 + CONTEXT 家族节);脱敏门 0 + harness-check 0 违规;commit 7fe5bc0
+
+## 修改的文件(P2–P4)
+- scripts/harness-check.py(新增,F018)
+- skills/doctor-harness/{SKILL,DESIGN,HARNESS-RULES,CHANGELOG}.md(新增,F017/F020)
+- ~/.claude/skills/doctor-harness/(双副本同步)
+- CLAUDE.md(家族图 + 落盘速查表,9 个)
+- docs/CONTEXT.md(skill 家族节,9 个)
+- harness/questionnaires/archive/{grill-harness-file-mgmt-w01,grill-skill-spec-revamp-w01,feature-doctor-harness-vision-w01}.md(层级链接修复)
+
+## Git 提交
+- c6293fc: feat: doctor-for-harness P2 校验脚本
+- 5a0221a: docs: doctor-for-harness P3 分层迁移
+- 7fe5bc0: docs: doctor-for-harness P4 双副本+家族
+
+## 下一步计划
+- 会话结束检查:git 整洁 + 全部 F017–F020 passes:true + 汇报用户
+- 待用户确认:家族表述第 9 个已落(pending 已转 done);分层迁移 dogfood 验证通过 → doctor-for-harness 家族身份正式确认
+
+================================================================================
+================================================================================
+SESSION: 009
+时间: 2026-08-08T15:30:00+08:00
+================================================================================
+
+## 完成的任务(doctor-for-harness 设计 + P1 规则权威)
+- **design-Q 全流程**:vision W00(20/20)+ W01(10 全采纳 ★推荐)+ hld W00(12/14 + #13/#14 转 W01)+ lld W00(14/14)——设计套 harness/design/doctor-harness/{VISION,HLD,LLD}.md
+- **ADR-0012/0013 立**(hld W01 裁定):分层规则 + 迁移执行决策
+- **P1(F017)完成**:HARNESS-RULES.md 起草(四节:分层/归属/命名+豁免/归档)+ 6 skill SKILL.md 加「分层见 HARNESS-RULES.md」引用句;DoD 全绿(引用句在位 + 脱敏门 0);commit 6788f89
+
+## 修改的文件
+- harness/design/doctor-harness/{VISION,HLD,LLD}.md(新增,设计套)
+- harness/adr/0012-harness-layering-rule.md、0013-harness-layering-migration.md(新增)
+- skills/doctor-harness/HARNESS-RULES.md(新增)
+- skills/{design,grill,retro,action}-questionnaire/SKILL.md、long-running-agent/SKILL.md、grill-with-docs/SKILL.md(引用句)
+- harness/questionnaires/archive/feature-doctor-harness-{vision-w00,vision-w01,hld-w00,lld-w00}.md(归档)
+- docs/OPEN-DECISIONS.md(OD-15 立项 + 更新)
+- TODO.md(🟤 节 + 迁移行动项)
+
+## Git 提交
+- 6788f89: docs: doctor-for-harness P1 规则权威——HARNESS-RULES.md 起草 + 6 skill SKILL.md 加引用句
+
+## 遇到的问题
+- 读问卷用 grep 小写 [x] 漏匹配大写 [X]、Read 缓存误报未变化——处理问卷以 cat 直接读文件字节为准
+- 出题时漏 ✍️ 自定义行(违反 FORMAT 规则 4)→ 用户指出后批量补上,教训记入归档摘要
+
+## 下一步计划
+- F018(P2 校验脚本):scripts/harness-check.py 实现 + 现状跑通
+- F019(P3 分层迁移):design/ 重组 + 链接重算 + 断链回归
+- F020(P4 双副本同步 + 家族表述)
+
+================================================================================
 ================================================================================
 SESSION: 008
 时间: 2026-08-07T22:30:00+08:00

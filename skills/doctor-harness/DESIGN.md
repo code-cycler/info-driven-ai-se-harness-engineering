@@ -5,7 +5,7 @@
 
 ## 起源(2026-08-08)
 
-压测 [grill-harness-file-mgmt-w01](../../harness/questionnaires/archive/grill-harness-file-mgmt-w01.md) 发现:harness 文件管理规格「简单未考虑实际情况」——无层次化设计、feature/子项目无单独文件夹、边缘与实际工程场景未覆盖。用户裁决(补充声明):harness 文件**严格**归 `harness/` 父级 + 子文件夹分层,不污染项目根;设计 skill 处理演进。立项 [OD-15](../../docs/OPEN-DECISIONS.md)。
+压测 [grill-harness-file-mgmt-w01](../../harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md) 发现:harness 文件管理规格「简单未考虑实际情况」——无层次化设计、feature/子项目无单独文件夹、边缘与实际工程场景未覆盖。用户裁决(补充声明):harness 文件**严格**归 `harness/` 父级 + 子文件夹分层,不污染项目根;设计 skill 处理演进。立项 [OD-15](../../docs/OPEN-DECISIONS.md)。
 
 ## 关键决策记录(W00/W01 全采纳)
 

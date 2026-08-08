@@ -2,7 +2,7 @@
 
 - 日期:2026-07-29
 - 状态:accepted
-- 来源:grill-questionnaire 压测 methodology_v2([W01](../../harness/questionnaires/archive/grill-methodology-v2-w01.md)),D7(与作者本意矛盾)核心发现
+- 来源:grill-questionnaire 压测 methodology_v2([W01](../../harness/questionnaires/archive/methodology/grill-methodology-v2-w01.md)),D7(与作者本意矛盾)核心发现
 
 ## 背景
 

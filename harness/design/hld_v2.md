@@ -1,6 +1,6 @@
 # HLD_v2 · methodology_v3(全局设计 · grill-Q 压测后修订)
 
-> 本文件是 [HLD_v1](hld_v1.md) 的修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 用户定夺彻底重排)。
+> 本文件是 [HLD_v1](hld_v1.md) 的修订版(2026-07-29,grill-Q v3-design [W01](../../harness/questionnaires/archive/methodology/grill-methodology-v3-design-w01.md) 压测 12 题全采纳 + Q3 用户定夺彻底重排)。
 > 修订来源逐条标注(Qn / ADR)。**v1 保留作压测前快照**(信息不丢失)。
 > 上游:[VISION](VISION.md) + [ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md) + [ADR-0005](../../harness/adr/0005-pillar-standard-wording.md)(标准措辞) + [ADR-0006](../../harness/adr/0006-v3-chapter-restructure.md)(章节重排)。
 

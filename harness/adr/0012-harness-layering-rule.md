@@ -10,7 +10,7 @@ harness 文件管理规格(ADR-0011 硬编码 `项目根/harness/`)只定义了�
 - `harness/design/` 下:子目录(`repo/`、`skill-spec-revamp/`、`feature-skills-harness-consistency/`)与裸放文件(`VISION.md`、`hld_v2.md`、`lld_v2.md`、`hld-methodology-separation.md`)共存;
 - 规格(SKILL.md「阶段文档 → `harness/design/`」)未声明子目录机制,新会话 agent 无法从规格判断新 feature 该建目录还是裸放。
 
-压测源头:[grill-harness-file-mgmt-w01](../questionnaires/archive/grill-harness-file-mgmt-w01.md)(2026-08-08 Q2/Q3 认定「规格缺失层次化规则,现状已混用」)。用户裁决:harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**。
+压测源头:[grill-harness-file-mgmt-w01](../questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md)(2026-08-08 Q2/Q3 认定「规格缺失层次化规则,现状已混用」)。用户裁决:harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**。
 
 ## 决策
 

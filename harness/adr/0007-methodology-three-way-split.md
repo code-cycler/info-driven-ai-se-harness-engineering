@@ -2,7 +2,7 @@
 
 - 日期:2026-08-03
 - 状态:accepted
-- 来源:design-questionnaire hld 阶段 W00([feature-methodology-separation-hld-w00](../../harness/questionnaires/archive/feature-methodology-separation-hld-w00.md)),16 条 15 采纳 + 1 用户先验结论
+- 来源:design-questionnaire hld 阶段 W00([feature-methodology-separation-hld-w00](../../harness/questionnaires/archive/methodology/feature-methodology-separation-hld-w00.md)),16 条 15 采纳 + 1 用户先验结论
 
 ## 背景
 

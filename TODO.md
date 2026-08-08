@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29);action-questionnaire 已入库(2026-08-03);2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计完成 + v4 落地 P1–P5 完成**(方法论 + 哲学升 v4(受众收窄 / 第二支柱机制层 / 三学科化)、harness 区物理分离、术语治理、ADR-0008/0009/0010、入口改造)**。P6(发布门 + dogfood)待执行**。
-> 下一步主线:**P6 发布门**(OD-4 母本同步(用户配合)+ 语义人审 + dogfood(用户验收));CONTRIBUTING + issue 模板(OD-3);git author 身份决策;grill-Q 压测 v4 成稿(可选)。
+> 当前状态:**methodology_v3 已发布(2026-07-29);action-questionnaire 已入库(2026-08-03);2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计完成 + v4 落地 P1–P5 完成**(方法论 + 哲学升 v4(受众收窄 / 第二支柱机制层 / 三学科化)、harness 区物理分离、术语治理、ADR-0008/0009/0010、入口改造)**;2026-08-08 doctor-for-harness 完成(第 9 个 skill)+ harness 治理落地(分层/校验/迁移)+ 格式反馈 + 归档子目录化**。P6(发布门 + dogfood)待执行。
+> 下一步主线:**P6 发布门**(语义人审 + dogfood(用户验收));CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案);grill-Q 压测 v4 成稿(可选)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -18,7 +18,7 @@
 ### 🟠 v3 设计修订项(grill-Q v3-design W01 产出)
 
 > 来源:grill-Q 压测 v3 设计套(VISION/HLD/LLD),12 题全采纳。挖出设计期盲点,回灌 HLD/LLD。
-> ✅ **已执行(2026-07-29)**:9 项修订全部落 [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md);Q2+Q12 → [ADR-0005](harness/adr/0005-pillar-standard-wording.md);Q3 章节策略 → **彻底重排**,[ADR-0006](harness/adr/0006-v3-chapter-restructure.md)。归档问卷 [grill-methodology-v3-design-w01](harness/questionnaires/archive/grill-methodology-v3-design-w01.md)。
+> ✅ **已执行(2026-07-29)**:9 项修订全部落 [HLD_v2](harness/design/hld_v2.md) / [LLD_v2](harness/design/lld_v2.md);Q2+Q12 → [ADR-0005](harness/adr/0005-pillar-standard-wording.md);Q3 章节策略 → **彻底重排**,[ADR-0006](harness/adr/0006-v3-chapter-restructure.md)。归档问卷 [grill-methodology-v3-design-w01](harness/questionnaires/archive/methodology/grill-methodology-v3-design-w01.md)。
 > ✅ **已落地(2026-07-29,long-running 会话 001)**:9 项随 v3 起草全部实现并 DoD 验证(grep 证据见 `.claude/claude-progress.txt`)。
 
 - ✅ **HLD#11 标准措辞按 [ADR-0005](harness/adr/0005-pillar-standard-wording.md) 修订**:定义版(CONTEXT/README/CLAUDE)+ 完整版(v3§2.1),核心子串四处 grep 一致
@@ -33,7 +33,7 @@
 
 ### 🔴 methodology_v3 起草工作包(grill-Q W01 产出 · ADR-0004)
 
-> 来源:grill-Q 压测 methodology_v2([W01](harness/questionnaires/archive/grill-methodology-v2-w01.md)),D7 核心发现——第一支柱立论实质偏离作者本意,「AI 幻觉式决策」机制层缺席。详见 [ADR-0004](harness/adr/0004-methodology-v3-hallucination-thesis.md)。
+> 来源:grill-Q 压测 methodology_v2([W01](harness/questionnaires/archive/methodology/grill-methodology-v2-w01.md)),D7 核心发现——第一支柱立论实质偏离作者本意,「AI 幻觉式决策」机制层缺席。详见 [ADR-0004](harness/adr/0004-methodology-v3-hallucination-thesis.md)。
 > ⚠️ **实现规格以 [LLD_v2](harness/design/lld_v2.md) 为准**(P0 章节设计 → P1–P4,5 阶段);本块为 ADR-0004 时期的初始拆分,章节策略已升级为彻底重排(ADR-0006)。
 
 - ✅ **升 methodology_v3,补全第一支柱机制层**(ADR-0004 决策 1,2026-07-29 完成):
@@ -73,7 +73,7 @@
 
 ### 🟢 行动前细节确认 skill(grill-Q W01 压测产出,2026-07-30)
 
-> 来源:[grill-preaction-confirm-skill-w01](harness/questionnaires/archive/grill-preaction-confirm-skill-w01.md),15 题全答(11 勾选 + 4 自定义)。压测对象:复用 design-Q 引擎 + 阈值 ≤2→4 + preview 保留的行动前确认 skill 提案。
+> 来源:[grill-preaction-confirm-skill-w01](harness/questionnaires/archive/preaction-confirm/grill-preaction-confirm-skill-w01.md),15 题全答(11 勾选 + 4 自定义)。压测对象:复用 design-Q 引擎 + 阈值 ≤2→4 + preview 保留的行动前确认 skill 提案。
 > 核验时机:skill 创建完成时,核对其 DESIGN.md 是否含全部 15 题裁决 + dogfood 跳过理由;同步启动时核对 7→8 六处文件。
 
 - ✅ **创建新 skill**(2026-07-30):[skills/action-questionnaire/](skills/action-questionnaire/)——SKILL.md + 引擎副本×2(含 W00 节改 confirm-list)+ DESIGN.md(15 题裁决全录 + 被否决项 + 漂移声明 + dogfood 范围);脱敏门 0 命中。15 题裁决落实:① 独立新 skill;② 阈值 ≤4(经验估值待校准);③ preview 更名 confirm-list 改确认式;④ confirm-list 为主、正式题波兜底;⑤ 铁律 2 环境现实验证;⑥ 归档留痕 + 三条件升格;⑦ 非正式行动写操作默认确认;⑧ delegate 显式声明继承白名单才豁免;⑨ 隐式骨架六要素终止判据;⑩ 不嵌入 long-running、feature 级转出提醒;⑪ 1 轻量 dogfood 案例作同步门槛;⑫ 引擎第 4 份副本含 W00 节 + 有意分叉声明(OD-11)
@@ -82,7 +82,7 @@
 
 ### 🟡 skill 家族生态位分析产出(action-Q 首次 dogfood,2026-07-30/31)
 
-> 来源:[confirm-skill-niche-overlap-w00](harness/questionnaires/archive/confirm-skill-niche-overlap-w00.md)。结论:7(+1) skill 无真重叠(三件套 = 连续体 + 交互轴分工);grill 家族不可替代性退守三残差(深依赖链 / 即时反馈偏好 / 零留痕)。
+> 来源:[confirm-skill-niche-overlap-w00](harness/questionnaires/archive/_misc/confirm-skill-niche-overlap-w00.md)。结论:7(+1) skill 无真重叠(三件套 = 连续体 + 交互轴分工);grill 家族不可替代性退守三残差(深依赖链 / 即时反馈偏好 / 零留痕)。
 > 本 dogfood 案例同时是上节「canonical 同步(7→8)」的门槛案例——D-1 回修完成 + DESIGN.md 记录后门槛过关。
 > 核验时机:F1–F4 下次修订对应文件时逐项核对;F6 以 grill-Q 压测完成清单为准。
 
@@ -90,9 +90,9 @@
 - ✅ **F2 grill-Q description「同用途不同交互」措辞修订** —— 2026-08-01 被 R5 吸收执行(80/20 层位表述替换)
 - ✅ **F3 v3 §5.3 两族表落盘行拆分 grill vs with-docs** —— 2026-08-01 被 R2 吸收执行(落盘行拆分 + 「判断成本层位」行新增)
 - ✅ **F4 v3 §8.3 触发词表补「计划评审」裁决轴** —— 2026-08-01 被 R7 吸收执行(二八判据分流)
-- ⏳ **F6 重估 §5.2 / 合并 grill 家族** → 转 grill-Q 压测(W01 已生成);**2026-07-31 W01 作废**(用户裁决):「合并」框架被「grill-Q 原初设计意图(80/20 原则 + 忠于 with-docs 问卷化演进,减少判断成本)」取代,由「生态位区分」行动承接([confirm-grill-niche-distinguish-w00](harness/questionnaires/archive/confirm-grill-niche-distinguish-w00.md))
+- ⏳ **F6 重估 §5.2 / 合并 grill 家族** → 转 grill-Q 压测(W01 已生成);**2026-07-31 W01 作废**(用户裁决):「合并」框架被「grill-Q 原初设计意图(80/20 原则 + 忠于 with-docs 问卷化演进,减少判断成本)」取代,由「生态位区分」行动承接([confirm-grill-niche-distinguish-w00](harness/questionnaires/archive/_misc/confirm-grill-niche-distinguish-w00.md))
 - ✅ **D-1 回修 action-Q PROCESSING-RULES 补充声明第四类**(2026-07-31 完成:解析规则 3 + FORMAT 规则 12 补「用户先验结论 → 待验证假设」;repo + 用户级双副本同步;头部分叉声明 #4 + DESIGN.md 有意分叉 #6;用户小波裁决「只改 action-Q」,canonical 未动)
-- ✅ **R1–R9 生态位区分文档修订(深度 A)**(2026-08-01,[confirm-grill-niche-doc-revisions-w00](harness/questionnaires/archive/confirm-grill-niche-doc-revisions-w00.md) 全勾确认):80/20 判断成本原则落 v3(§5.2 保留段改写 / §5.3 两族表层位行+落盘行+选择原则 / §4.2 环节 2 层位与交接 / §8.3 触发词二八分流 / 附录 C 续行)+ CONTEXT Grill 家族节 + grill-Q & with-docs description 层位正名 + grill-Q DESIGN.md 原初原则补记;skill 三文件双副本同步;脱敏扫描发现 OD-4 既有真实名命中(见下,非本次引入)
+- ✅ **R1–R9 生态位区分文档修订(深度 A)**(2026-08-01,[confirm-grill-niche-doc-revisions-w00](harness/questionnaires/archive/_misc/confirm-grill-niche-doc-revisions-w00.md) 全勾确认):80/20 判断成本原则落 v3(§5.2 保留段改写 / §5.3 两族表层位行+落盘行+选择原则 / §4.2 环节 2 层位与交接 / §8.3 触发词二八分流 / 附录 C 续行)+ CONTEXT Grill 家族节 + grill-Q & with-docs description 层位正名 + grill-Q DESIGN.md 原初原则补记;skill 三文件双副本同步;脱敏扫描发现 OD-4 既有真实名命中(见下,非本次引入)
 - ✅ **脱敏门修复(2026-08-01,用户授权选项①+③)**:OD-4 行 47 真名改占位 + tip 提交 amend(b16328e,信息+内容同修;OD-1/OD-12 随 amend 并入);提交内与工作区复扫均 0 命中。流程改进已落:OD-1 占位方案 ② 纳入「git 提交信息」人审(扫描盲区,本次即实例)
 - ✅ **脱敏语义人审(subagent×4 全文遍历,2026-08-01)**:🔴0 阻断;技术栈指纹(真实库名/内部 ADR 编号)4 处泛化、取证指针 1 处弱化、单字母「A」正字「作者」、ADR-0001 描述词 2 处删除;方法论 v2 移入 archive/ + 3 处断链修复
 - ⏳ **git author 身份决策**(人审遗留):已推送 5 提交携带作者邮箱(QQ 号)+ handle(handle 在脱敏映射表内);选项:接受现状 / 改 git config 止血未来提交 / 历史改写 + 强推(单向门级,破 fork/clone)。建议至少做 config 止血
@@ -100,7 +100,7 @@
 
 ### 🔵 AI 双轨对照 pilot + 问卷默认勾选试点(grill-Q ai-autonomy W01/W02 压测产出,2026-08-01)
 
-> 来源:[grill-ai-autonomy-w01](harness/questionnaires/archive/grill-ai-autonomy-w01.md)+ [w02](harness/questionnaires/archive/grill-ai-autonomy-w02.md),共 18 题全答,0 逃生舱。压测对象:用户双轨构想(影子模式 + 冠军挑战者)与 skill 改动提案。裁决落 [OD-13](docs/OPEN-DECISIONS.md)(双轨 pilot 立项,含 W02 补正)/ [OD-14](docs/OPEN-DECISIONS.md)(默认勾选试点,5 条边界)。
+> 来源:[grill-ai-autonomy-w01](harness/questionnaires/archive/ai-autonomy/grill-ai-autonomy-w01.md)+ [w02](harness/questionnaires/archive/ai-autonomy/grill-ai-autonomy-w02.md),共 18 题全答,0 逃生舱。压测对象:用户双轨构想(影子模式 + 冠军挑战者)与 skill 改动提案。裁决落 [OD-13](docs/OPEN-DECISIONS.md)(双轨 pilot 立项,含 W02 补正)/ [OD-14](docs/OPEN-DECISIONS.md)(默认勾选试点,5 条边界)。
 > 核验时机:各行动完成后,核对是否满足 OD-13/OD-14 的边界条款(单向门豁免 / 选项排序 / 取消率设防 / 禁区保留 / mode: full 底线不变)。
 
 - ✅ **shadow pilot skill 创建 + 首轮 dogfood**(2026-08-01 创建;2026-08-03 首轮反馈沉淀):`~/.claude/skills/shadow/`(SKILL.md + DESIGN.md)——先影子后真实、影子 = 自动 dogfood 不设 N、subagent 仅双轨、权限 = delegate `mode: full` 排除集、验收 = 事前 DoD + 端到端测试 + 人仲裁、日志脱敏(绝对路径 → `~`,相对路径引用允许)。**暂不入家族**(OD-13,家族化 = OD-13 重访触发②);仓库 skills/ 暂不放置(pilot 期不进入分发面)。首轮 dogfood(DOGFOOD 沙盒 shapez-game-test):**「AI 自评可玩 ≠ 人类可玩」实证 + 价值定位调为模板/demo + 升级条件化(人试玩通过)**,数据落 OD-13
@@ -110,7 +110,7 @@
 
 ### 🟣 design-Q skill 规格整理(grill-Q skill-spec-revamp W01 压测产出,2026-08-06)
 
-> 来源:[grill-skill-spec-revamp-w01](harness/questionnaires/archive/grill-skill-spec-revamp-w01.md),11 题(9 认定/部分认定 + 1 不认定 Q9 + 0 逃生舱)。压测对象:design-Q skill 规格整理设计套([VISION](harness/design/skill-spec-revamp/VISION.md) / [HLD](harness/design/skill-spec-revamp/HLD.md) / [LLD](harness/design/skill-spec-revamp/LLD.md))。D1–D8 全覆盖(D3 预审:HLD H2 被否决项充分)。9 项为**设计套(工件)修订建议**——修订完善后进 long-running 实现(P1–P4)。
+> 来源:[grill-skill-spec-revamp-w01](harness/questionnaires/archive/skill-spec-revamp/grill-skill-spec-revamp-w01.md),11 题(9 认定/部分认定 + 1 不认定 Q9 + 0 逃生舱)。压测对象:design-Q skill 规格整理设计套([VISION](harness/design/skill-spec-revamp/VISION.md) / [HLD](harness/design/skill-spec-revamp/HLD.md) / [LLD](harness/design/skill-spec-revamp/LLD.md))。D1–D8 全覆盖(D3 预审:HLD H2 被否决项充分)。9 项为**设计套(工件)修订建议**——修订完善后进 long-running 实现(P1–P4)。
 > 核验时机:设计套修订执行后逐项核对;long-running 实现前设计套须含全部修订。
 > **✅ 9 项全执行(2026-08-06/08-07)**:Q3/Q5/Q6/Q1+Q10/Q2/Q4/Q8/Q11 → [LLD](harness/design/skill-spec-revamp/LLD.md)(重写整合,🔧 标注)+ [HLD](harness/design/skill-spec-revamp/HLD.md)/[VISION](harness/design/skill-spec-revamp/VISION.md)(Q6 回灌);下述各项 ⏳ 已随本次执行落地(等价 ✅)。**✅ Q7(retro 落点 + 路径区分)grill-with-docs 深钻定案**——retro 文档项目固有 docs/retro/、落盘根边界 = design/questionnaires/adr 三件、skill 内部 vs 宿主路径区分规则,结论落 LLD 2.6。
 
@@ -127,7 +127,7 @@
 
 ### ⚪ design-Q 未验证假设生命周期管理(2026-08-07,action-Q 确认)
 
-> 来源:[confirm-design-q-unverified-assumptions-w00](harness/questionnaires/archive/confirm-design-q-unverified-assumptions-w00.md)(W00 15 条确认 + 小波:复用前重验扩散到 action-Q)。缺口:design-Q 验证纪律锚定「出题时」,构想 / 需求随问卷演进,早期未实测信息可能在下一阶段成为规划支撑。机制已落:design-Q SKILL.md §1(台账 + 复用前重验)+ §5(闸门汇报)+ DESIGN.md D27–D30;action-Q SKILL.md 第 1 步(复用前重验)+ DESIGN.md 扩散记录;双副本同步。
+> 来源:[confirm-design-q-unverified-assumptions-w00](harness/questionnaires/archive/_misc/confirm-design-q-unverified-assumptions-w00.md)(W00 15 条确认 + 小波:复用前重验扩散到 action-Q)。缺口:design-Q 验证纪律锚定「出题时」,构想 / 需求随问卷演进,早期未实测信息可能在下一阶段成为规划支撑。机制已落:design-Q SKILL.md §1(台账 + 复用前重验)+ §5(闸门汇报)+ DESIGN.md D27–D30;action-Q SKILL.md 第 1 步(复用前重验)+ DESIGN.md 扩散记录;双副本同步。
 > 核验时机:后续真实 design-Q 流程中 dogfood——核对台账落点(处理报告节)与闸门汇报是否如规格运转;机制覆盖度不足或形式主义冒头时回修订。
 
 - ✅ **机制落盘**(2026-08-07):design-Q + action-Q SKILL.md / DESIGN.md 双副本同步完成
@@ -135,17 +135,17 @@
 
 ### 🟤 harness 文件管理规格压测(grill-Q harness-file-mgmt W01 产出,2026-08-08)
 
-> 来源:[grill-harness-file-mgmt-w01](harness/questionnaires/grill-harness-file-mgmt-w01.md),14 题(用户以补充声明定向,未逐题勾选)。压测对象:skill 家族 harness 文件管理规格(ADR-0011 硬编码 + 各 SKILL.md 落盘路径)。**用户裁决(补充声明)**:① harness 文件严格归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**;② 设计 doctor-for-harness skill 处理演进中的文件迁移/规范;③ 格式反馈:单波次上限 10、直接问答上限 3。
-> 立项见 [OD-15](docs/OPEN-DECISIONS.md)。核验时机:doctor-for-harness 设计启动时核对 OD-15 职责清单;格式反馈落地后核对波次/问答上限。
+> 来源:[grill-harness-file-mgmt-w01](harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md),14 题(用户以补充声明定向,未逐题勾选)。压测对象:skill 家族 harness 文件管理规格(ADR-0011 硬编码 + 各 SKILL.md 落盘路径)。**用户裁决(补充声明)**:① harness 文件严格归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**;② 设计 doctor-for-harness skill 处理演进中的文件迁移/规范;③ 格式反馈:单波次上限 10、直接问答上限 3。
+> 立项见 [OD-15](docs/OPEN-DECISIONS.md)。核验时机:✅ 4 项全部执行,逐项核对落地。
 
-- 🔵 **doctor-for-harness skill 设计**(2026-08-08,用户裁决:先做设计):处理 harness 演进(文件迁移 / 规范权威化 / 迁移工具 / 布局校验);立项 [OD-15](docs/OPEN-DECISIONS.md);**设计已启动(design-Q),分层落地作为其第一个治理任务**
-- ⏳ **harness 分层迁移执行**(2026-08-08,ADR-0013):doctor-for-harness 设计完成后执行——必做档 design/ 按 feature 聚合 + 可选档 TBD;一次性迁移 + 断链回归 + 校验脚本验证;DoD 见 [ADR-0013](harness/adr/0013-harness-layering-migration.md)
-- ⏳ **harness 分层落地**(2026-08-08,用户裁决):harness 文件严格归 `harness/` 父级 + 子文件夹分层(design/<feature>/、archive/<feature>/ 等),**不污染项目根**;含规格同步(各 SKILL.md 落盘路径)+ 迁移(相对链接重算 + 断链回归,照 harness 迁移先例)
-- ⏳ **格式反馈落地**(2026-08-08,用户裁决):单波次上限 10、直接问答(小波阈值)上限 3——修订 grill-Q QUESTIONNAIRE-FORMAT「题量每波 10–15」→ 上限 10 + 小波阈值 ≤2 → ≤3;四副本同步评估(OD-8)
+- ✅ **doctor-for-harness skill 设计**(2026-08-08,commit 7310dd0):设计套 VISION/HLD/LLD + ADR-0012/0013 + OD-15 更新;分层落地作为其第一个治理任务
+- ✅ **harness 分层迁移执行**(2026-08-08,F019,commit 5a0221a):design/ 已天然分层(ADR-0012 判定句确认),本次实为确认 + 归档链接修复(9 处层级链接 + 3 处豁免)
+- ✅ **harness 分层落地**(2026-08-08,commit c825e75):41 份归档按 feature/主题迁入 10 子目录(methodology/repo-design/skill-spec-revamp/doctor-harness/skills-harness-consistency/ai-autonomy/preaction-confirm/merge-grill-family/harness-file-mgmt/_misc)+ [archive/README.md](harness/questionnaires/archive/README.md) 索引;HARNESS-RULES 第四节「存量不挪」→「允许整批迁移」;断链回归 0 新增 + harness-check 0 违规
+- ✅ **格式反馈落地**(2026-08-08,commit 630fe85):单波次上限 10、小波阈值 ≤3 四副本统一(OD-11 分叉修订)+ MIGRATION-FLOW 迁移流程文档
 
 ### 🟠 doctor-for-harness 设计套压测(grill-Q doctor-harness W01 产出,2026-08-08)
 
-> 来源:[grill-doctor-harness-w01](harness/questionnaires/grill-doctor-harness-w01.md),10 题全认定(A)。压测对象:doctor-harness 设计套(VISION/HLD/LLD + ADR-0012/13)。可沉淀项已落 [OD-16](docs/OPEN-DECISIONS.md)(可选档重访)/ [OD-17](docs/OPEN-DECISIONS.md)(使用率验证)。下述 7 项**工件修订建议已全部执行**(2026-08-08,用户授权,commit 2629e2f)。
+> 来源:[grill-doctor-harness-w01](harness/questionnaires/archive/doctor-harness/grill-doctor-harness-w01.md),10 题全认定(A)。压测对象:doctor-harness 设计套(VISION/HLD/LLD + ADR-0012/13)。可沉淀项已落 [OD-16](docs/OPEN-DECISIONS.md)(可选档重访)/ [OD-17](docs/OPEN-DECISIONS.md)(使用率验证)。下述 7 项**工件修订建议已全部执行**(2026-08-08,用户授权,commit 2629e2f)。
 > 核验时机:✅ 已执行,逐项核对落地。
 
 - ✅ **Q1+Q8 校验脚本补 design/ report 模式**:harness-check.py 加 report_design_layout(列裸放/子目录现状,不判对错);HLD 选型表补 report 被否决项

@@ -83,6 +83,8 @@ doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 del
 
 **2026-08-07:design-Q skill 规格整理(skill-spec-revamp)→ 撤销方案 R**:骨架增强(HLD/LLD 判别法则 + 反简化最小必含 + 坍缩分档,仅 design-Q)**保留并回灌**;落盘路径配置化(方案 R)**已放弃**([ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)),**回归硬编码 `项目根/harness/`**(design/ + questionnaires/ + adr/);两套 skill(skills/ 与 `~/.claude/skills/`)已重建一致(仅脱敏差),设计套 [harness/design/skill-spec-revamp/](harness/design/skill-spec-revamp/)。
 
-历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移。
+**2026-08-08:doctor-for-harness 完成(第 9 个 skill)+ harness 治理落地**:分层规则权威化([HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md),ADR-0012/0013)+ 校验脚本 [scripts/harness-check.py](scripts/harness-check.py)(命名/ADR 编号/归档位置三检查);设计套压测 10 题全认定 + 7 项工件修订执行;格式反馈落地(单波次上限 10 / 小波阈值 3 四副本统一);**归档子目录化**(41 份按 feature/主题迁入 10 子目录 + [archive/README.md](harness/questionnaires/archive/README.md) 索引);MIGRATION-FLOW 迁移流程沉淀。
 
-下一步主线([TODO.md](TODO.md)):P5 ADR-0008/0009/0010 → P6 发布门 + dogfood;CONTRIBUTING + issue 模板(OD-3);git author 身份决策。
+历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill)。
+
+下一步主线([TODO.md](TODO.md)):P6 发布门(语义人审 + dogfood 用户验收);CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。

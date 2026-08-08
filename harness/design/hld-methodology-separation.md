@@ -1,6 +1,6 @@
 # HLD · methodology_v3 方法论/哲学/实操相互独立(全局设计 · hld W00 全采纳)
 
-> 来源:design-questionnaire feature 模式 hld 阶段 W00([问卷](../../harness/questionnaires/archive/feature-methodology-separation-hld-w00.md),2026-08-03,16 条:15 采纳 + 1 用户先验结论,0 逃生舱,0 转 W01)。
+> 来源:design-questionnaire feature 模式 hld 阶段 W00([问卷](../../harness/questionnaires/archive/methodology/feature-methodology-separation-hld-w00.md),2026-08-03,16 条:15 采纳 + 1 用户先验结论,0 逃生舱,0 转 W01)。
 > 上游:[ADR-0004](../../harness/adr/0004-methodology-v3-hallucination-thesis.md)(机制层立论)/ [ADR-0005](../../harness/adr/0005-pillar-standard-wording.md)(四处锁定)/ [ADR-0006](../../harness/adr/0006-v3-chapter-restructure.md)(章节重排先例)/ [OD-4](../../docs/OPEN-DECISIONS.md)(canonical 母本)/ [ADR-0002](../../harness/adr/0002-license-choice.md)(License 分区)。
 > 本次为**结构拆分非立论演进**:v3 立论内容不动,只把单文件拆为三块独立文件。实现期细节边做边调(坍缩为 hld),本文件为全局设计。
 

@@ -24,7 +24,7 @@
 - **问题**:主张「在 Claude Code 上实践了 skill,但方法论可迁移」。然而 skill 强依赖 Claude Code 机制(AskUserQuestion / subagent / SKILL.md 加载),实际未在其他工具验证。
 - **推迟原因**:经验缺口——没有在 Cursor / Cline / 其他 LLM CLI 上试跑过。
 - **当前占位方案**:README 表述为「方法论理念工具无关、可迁移;skill 直接运行依赖 Claude Code 的三项机制——AskUserQuestion、subagent、SKILL.md;迁移到其他工具需适配」。
-- **依赖边界已盘**:8 个核心 skill 的 SKILL.md 中,AskUserQuestion 出现 18 处、subagent 4 处(2026-08-03 重测,含 action-questionnaire)——这两项 + SKILL.md frontmatter 触发是主要依赖。
+- **依赖边界已盘**:8 个核心 skill 的 SKILL.md 中,AskUserQuestion 出现 18 处、subagent 4 处(2026-08-03 重测,含 action-questionnaire)——这两项 + SKILL.md frontmatter 触发是主要依赖。(2026-08-08 补注:doctor-harness 第 9 个 skill 的 SKILL.md 无 AskUserQuestion / subagent 依赖,纯脚本 + 文档校验,不影响上述计数结论)
 - **可逆性**:双向门(README 措辞)。
 - **重访触发条件**:① 有用户在其他工具适配成功 / 失败反馈;② 有人尝试移植;③ 出现「装不上」issue。
 
@@ -175,36 +175,33 @@
 
 ---
 
-## OD-15(拟立项)doctor-for-harness skill——harness 演进治理
+## OD-15(已完成)doctor-for-harness skill——harness 演进治理
 
 - **问题**:harness 文件管理规格(ADR-0011 硬编码 + 各 SKILL.md 落盘路径)是**静态平铺**设计(design/ + questionnaires/ + adr/ 三件,文件前缀区分),未覆盖:
   - **层次化**:design/ 无 feature 聚合目录(现状 repo/、skill-spec-revamp/ 子目录 vs VISION.md/hld_v2.md 裸放混用,规格未定义何时建目录);
   - **子项目边界**:多子项目仓库的 harness 归属判据缺失;
   - **演进治理**:目录结构 / 命名规范 / 归档组织随项目生命周期进化,现无专门机制处理「迁移 + 规范 + 校验」。
-  - 压测来源:[grill-harness-file-mgmt-w01](../harness/questionnaires/grill-harness-file-mgmt-w01.md)(2026-08-08,14 题全认/委托)。
-- **推迟原因**:新 skill 立项需走设计流程(design-Q);当前压测刚产出方向,未进入设计。
-- **2026-08-08 更新(压测收尾用户裁决)**:用户选择「先做 doctor-for-harness 设计」——**设计已启动**,分层落地作为该 skill 的第一个治理任务(先设计再迁移)。
-- **当前占位方案**:**用户裁决(2026-08-08,压测补充声明)**——harness 文件**严格**归 `harness/` 父级,父级下建子文件夹分层,**不污染项目目录结构**;doctor-for-harness skill 负责演进中的文件迁移、各类规范与校验。
-- **预期职责**:① harness 组织规则权威化(分层定义 + 归属判据 + 命名规范);② 迁移工具/流程(目录重组 + 相对链接重算 + 断链回归);③ 布局合规校验(命名正则 / ADR 编号连续 / 归档位置);④ 演进记录(组织变更留痕)。
-- **可逆性**:双向门(立项可撤;skill 未入库分发前可改)。
-- **重访触发条件**:① 用户确认启动 doctor-for-harness 设计(design-Q 或手动);② harness 再发生迁移(如分层落地)时,校验规则先行;③ 与 OD-10(skill 分发洁净)一并评估。
+  - 压测来源:[grill-harness-file-mgmt-w01](../harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md)(2026-08-08,14 题全认/委托)。
+- **落地(2026-08-08)**:doctor-for-harness 设计(design-Q 套件 + ADR-0012/0013)+ 实现(F017–F020,commit c6293fc/5a0221a/7fe5bc0)+ 入库家族第 9 个;HARNESS-RULES 权威化 + 校验脚本 harness-check.py + 归档子目录化(41 份)。原「推迟原因」与「预期职责」均已兑现。
+- **可逆性**:双向门(skill 未分发前可改)。
+- **重访触发条件**:① harness 再发生迁移时,校验规则先行;② 与 OD-10(skill 分发洁净)一并评估;③ 见 OD-17(使用率验证)。
 
 ---
 
 ## OD-16 harness 分层可选档(questionnaires/adr)重访触发
 
 - **问题**:ADR-0013 可选档(questionnaires/ 新归档入子目录 + adr/ 分层)标 TBD,无重访触发条件——归档平铺膨胀(questionnaires/archive 已 30+ 文件)到什么程度才做?无量化信号,等于永久悬置或随机决策。
-- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/grill-doctor-harness-w01.md) Q5(2026-08-08,全认定)。
-- **当前占位方案**:可选档维持 TBD,归档平铺;新归档按 feature/主题建子目录(HARNESS-RULES 第四节),存量不挪。
+- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/archive/doctor-harness/grill-doctor-harness-w01.md) Q5(2026-08-08,全认定)。
+- **当前占位方案**(2026-08-08 更新):**questionnaires 可选档已执行**——归档子目录化落地:41 份存量按 feature/主题迁入 10 子目录 + [archive/README.md](../harness/questionnaires/archive/README.md) 索引(commit c825e75;HARNESS-RULES 第四节「存量不挪」→「允许整批迁移」)。**adr/ 分层仍 TBD**(现 13 份,暂不需分层)。
 - **可逆性**:双向门(归档组织可演进)。
-- **重访触发条件**:① `harness/questionnaires/archive/` 文件数 > 50;② 某 feature 归档问卷 > 10 份;③ 归档检索实际困难(用户反馈)。满足任一 → 重估可选档(子目录化存量)。
+- **重访触发条件**:① `harness/questionnaires/archive/` 文件数 > 50;② 某 feature 归档问卷 > 10 份;③ 归档检索实际困难(用户反馈);④ adr/ 文件数 > 15。满足任一 → 重估更深层分层(如 adr/ 分层)。
 
 ---
 
 ## OD-17 doctor-harness「演进是常态」假设的使用率验证
 
 - **问题**:VISION Q1 动机「演进是常态 → 立治理 skill」。但本仓库(方法论仓库)harness 演进低频(repo/v4/skill-spec-revamp/doctor-harness 共 4 次 feature 级设计,跨数周)。若跨项目也无持续使用,doctor-harness 可能沦为「一次性迁移工具 + 静态文档」,与「治理 skill 常态职责」定位张力。
-- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/grill-doctor-harness-w01.md) Q9(2026-08-08,认定存疑假设)。
+- **来源**:[grill-doctor-harness-w01](../harness/questionnaires/archive/doctor-harness/grill-doctor-harness-w01.md) Q9(2026-08-08,认定存疑假设)。
 - **当前占位方案**:doctor-harness 已入库家族(第 9 个,F020),按治理 skill 定位;约束最小可用(只做规则/迁移/校验/留痕四件)。
 - **可逆性**:双向门(可退回「迁移工具 + 静态文档」定位)。
 - **重访触发条件**:① doctor-harness 连续 3 个月零使用(类 OD-12 grill「使用率边缘化」先例);② 仅本仓库使用,无跨项目使用反馈;③ harness 组织长期稳定无演进。满足任一 → 重估定位(降级为工具或归档)。
