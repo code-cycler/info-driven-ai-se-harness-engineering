@@ -84,3 +84,7 @@
 - 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0(路径 + 落盘根定义机制一致);action-Q 有意分叉区(小波阈值 ≤4 / confirm-list 语义 / 无阶段文档 / 补充声明第四类)原样保留。
 - 🔧 **Q7 路径区分**:本 DESIGN.md 内 dogfood 案例叙述出现的 `harness/questionnaires/archive/...` 为**历史案例记录**(2026-07-31 dogfood 归档问卷路径,非运行时落盘指令),保留为历史叙述;配置化只改「描述宿主项目落盘路径」的运行时字符串(SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。
 - HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 action-Q(本 skill 无内容骨架,隐式六要素 confirm-list)。
+
+## 复用前重验扩散(2026-08-07,design-Q 未验证假设生命周期管理 D30)
+
+> 来源:design-Q confirm-list(confirm-design-q-unverified-assumptions-w00 小波裁决:用户选「扩散到 action-Q」)。design-Q 台账 + 阶段闸门汇报**不扩散**(本 skill 无阶段概念、无跨波演进);仅「复用前重验」扩散——confirm-list 引用之前确认过但从未实测的信息时,先重验再列入。落 SKILL.md 第 1 步;与有意分叉 #6(用户先验结论 → 待验证假设)衔接:复用前重验把「先验结论」从「分析中显式检验」前移到「列入清单前重验」。

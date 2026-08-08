@@ -106,3 +106,15 @@ grill / grill-with-docs 一问一答,每问都要等一轮 LLM 输出,项目启�
 - **2026-08-06 落盘路径配置化同步**:design-Q canonical(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定)改后,**四副本(grill-Q / retro-Q / action-Q)落盘映射节同步**(🔧 Q5:仅落盘映射节 diff 0,不含各副本有意分叉区——action-Q 小波阈值 ≤4 / confirm-list;grill-Q stage 标记;retro 骨架);**long-running SKILL.md §5.3 读归档问卷路径配置化**(🔧 Q3)。
 - 🔧 **Q7 深钻结论(2026-08-07 grill-with-docs)**:retro 文档落点 = 项目固有 `docs/retro/`(不纳入落盘根配置化);四副本同步只改「描述宿主项目落盘路径」的字符串,**不改** skill 自身目录内部相对引用(判据:`./docs/...` 指 skill 内部 vs `docs/...` 描述宿主)。
 - HLD/LLD 判别法则 + 最小必含 = design-Q 专属,**不扩散**到 retro/grill/action 骨架(改动 2/3 边界硬约束)。
+
+## 未验证假设生命周期管理(2026-08-07,action-Q 确认清单 confirm-design-q-unverified-assumptions-w00)
+
+> 来源:action-Q confirm-list(W00 15 条确认 + 小波裁决「复用前重验扩散到 action-Q」)。双向门,难逆转性不足 ADR 三条件,记本 DESIGN.md 不立 ADR。
+> 缺口:验证纪律(铁律5 / 环境现实现证 / 实测前置)全部锚定「出题时」;构想 / 需求随问卷演进,早期未实测信息可能在下一阶段成为规划支撑,无跨波台账、闸门不查下阶段依赖。本次补「生命周期管理」,不推翻既有纪律。
+
+| # | 决策 | 结论 |
+|---|---|---|
+| D27 | 未验证假设台账 | 每波处理时从三处收集(出题依据标注 + 用户回答引出 + 上波遗留)进台账,跨波追踪,记录假设 / 出处(问卷+题号)/ 涉及阶段 / 状态(pending / verified / stale);落点 = 每波处理报告「未验证假设台账」节(随归档问卷尾部留存);只跟踪影响后续规划的信息,防形式主义 |
+| D28 | 复用前重验 | 信息成为下一阶段文档规划基础前,先实测 / 核实原文;无法验证 → 显式标注「未验证 + 将作为 X 的规划基础」提交用户确认或走降风险协议,不静默采用 |
+| D29 | 阶段闸门汇报 | 闸门出示覆盖清单时,一并出示「下一阶段将依赖的未验证信息」清单(来源:台账) |
+| D30 | 扩散 action-Q | 「复用前重验」扩散到 action-Q confirm-list(引用之前确认过但从未实测的信息时,先重验再列入);台账 + 闸门汇报不扩散(action-Q 无阶段概念)——action-Q DESIGN.md 另行记录 |
