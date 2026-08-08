@@ -116,3 +116,9 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 - 🔧 **Q7 路径区分**:本 skill DESIGN.md / SKILL.md 内 `[docs/...](./docs/...)` 为 skill 自身目录内部引用(归档问卷 / 设计文档),**不动**;配置化只改「描述宿主项目落盘路径」的字符串。
 - HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 grill-Q(GRILL-SKELETON 是固定压测维度 D1–D8,性质不同)。
 - **2026-08-07 撤销**:方案 R 已放弃(ADR-0011),上述路径配置化(`<根>` / `<落盘根>`)已撤销,PROCESSING-RULES / SKILL / QUESTIONNAIRE-FORMAT / GRILL-SKELETON 落盘路径回归硬编码 `harness/`(四 skill 同步)。本节作为历史叙述保留。
+
+## dogfood 教训:✍️ 自定义行反复遗漏(2026-08-08,grill-doctor-harness 压测)
+
+> 缺口:FORMAT 规则 4「✍️自定义每题必有」是散文规则,**无出题后强制自检**,导致出题 agent 两次遗漏(design-Q vision W01 + grill-Q doctor-harness W01,均 10 题全漏 ✍️ 自定义行)。用户两次指出。
+> 回修:① 四副本 FORMAT 规则 4 加「出题后自检」(grep 🤔 数 == ✍️ 数);② grill-Q SKILL.md 第 2 步加「出题自检(强制)」子条,给可执行命令。机制回归可脚本化(FORMAT 规则 12「Markdown 排版」同源的「可检查 DoD」思路)。
+> 四副本同步(OD-8 重访触发①)。双向门,可回退。

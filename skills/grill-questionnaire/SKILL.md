@@ -52,6 +52,7 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 - 写到 `harness/questionnaires/grill-<slug>-w<NN>.md`(slug = 工件短名,kebab-case;NN 从 01 递增),frontmatter `stage: grill`,status: pending。目录懒创建。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
 - 题量:每波上限 10 题(2026-08-08 用户裁决收紧,原 10–15);超出拆子波(`grill-<slug>-w<NN>a.md`、`…b.md`)。
 - **小波阈值**:若本波问题数 ≤ 3,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱;上限 3 = 2026-08-08 用户裁决,原 ≤2);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
+- **出题自检(强制,防遗漏)**:生成问卷后必须 grep 核对「每题要件齐全」——① 🤔 逃生舱数 = 题数;② ✍️ 自定义行数 = 题数(每题 🤔 后必跟 ✍️ 自定义,FORMAT 规则 4,曾两次遗漏的 dogfood 教训);③ ★ 推荐至多每题一个。计数不等 = 问卷残缺,补齐后再交付用户。命令:`grep -c '🤔 我定不了' <问卷>` 与 `grep -c '✍️ 自定义: ____' <问卷>` 应相等且 = 题数。
 
 ### 3. 用户作答
 
