@@ -124,3 +124,21 @@
 - ⏳ **Q8 机制回归可验证性**(D6,部分认定):机制回归补可脚本化子检查(生成测试问卷后 grep frontmatter 字段齐全 / grep 🤔 逃生舱每题在位),人跑 + 脚本核
 - ⏳ **Q11 落盘根定义显式化**(D8,部分认定):「落盘根」在 design-Q PROCESSING-RULES 落盘映射节显式定义(已隐含),四副本同步扩散;不进 CONTEXT(skill 机制词)
 - ✅ **Q9 P4 跨项目验证**(D6,不认定):L5 已说「临时沙盒」,执行时自定即可,无需 LLD 细化
+
+### ⚪ design-Q 未验证假设生命周期管理(2026-08-07,action-Q 确认)
+
+> 来源:[confirm-design-q-unverified-assumptions-w00](harness/questionnaires/archive/confirm-design-q-unverified-assumptions-w00.md)(W00 15 条确认 + 小波:复用前重验扩散到 action-Q)。缺口:design-Q 验证纪律锚定「出题时」,构想 / 需求随问卷演进,早期未实测信息可能在下一阶段成为规划支撑。机制已落:design-Q SKILL.md §1(台账 + 复用前重验)+ §5(闸门汇报)+ DESIGN.md D27–D30;action-Q SKILL.md 第 1 步(复用前重验)+ DESIGN.md 扩散记录;双副本同步。
+> 核验时机:后续真实 design-Q 流程中 dogfood——核对台账落点(处理报告节)与闸门汇报是否如规格运转;机制覆盖度不足或形式主义冒头时回修订。
+
+- ✅ **机制落盘**(2026-08-07):design-Q + action-Q SKILL.md / DESIGN.md 双副本同步完成
+- ⏳ **dogfood 验证**:首次真实 design-Q 流程走新机制(台账收集 → 闸门汇报),核对可执行性
+
+### 🟤 harness 文件管理规格压测(grill-Q harness-file-mgmt W01 产出,2026-08-08)
+
+> 来源:[grill-harness-file-mgmt-w01](harness/questionnaires/grill-harness-file-mgmt-w01.md),14 题(用户以补充声明定向,未逐题勾选)。压测对象:skill 家族 harness 文件管理规格(ADR-0011 硬编码 + 各 SKILL.md 落盘路径)。**用户裁决(补充声明)**:① harness 文件严格归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**;② 设计 doctor-for-harness skill 处理演进中的文件迁移/规范;③ 格式反馈:单波次上限 10、直接问答上限 3。
+> 立项见 [OD-15](docs/OPEN-DECISIONS.md)。核验时机:doctor-for-harness 设计启动时核对 OD-15 职责清单;格式反馈落地后核对波次/问答上限。
+
+- 🔵 **doctor-for-harness skill 设计**(2026-08-08,用户裁决:先做设计):处理 harness 演进(文件迁移 / 规范权威化 / 迁移工具 / 布局校验);立项 [OD-15](docs/OPEN-DECISIONS.md);**设计已启动(design-Q),分层落地作为其第一个治理任务**
+- ⏳ **harness 分层迁移执行**(2026-08-08,ADR-0013):doctor-for-harness 设计完成后执行——必做档 design/ 按 feature 聚合 + 可选档 TBD;一次性迁移 + 断链回归 + 校验脚本验证;DoD 见 [ADR-0013](harness/adr/0013-harness-layering-migration.md)
+- ⏳ **harness 分层落地**(2026-08-08,用户裁决):harness 文件严格归 `harness/` 父级 + 子文件夹分层(design/<feature>/、archive/<feature>/ 等),**不污染项目根**;含规格同步(各 SKILL.md 落盘路径)+ 迁移(相对链接重算 + 断链回归,照 harness 迁移先例)
+- ⏳ **格式反馈落地**(2026-08-08,用户裁决):单波次上限 10、直接问答(小波阈值)上限 3——修订 grill-Q QUESTIONNAIRE-FORMAT「题量每波 10–15」→ 上限 10 + 小波阈值 ≤2 → ≤3;四副本同步评估(OD-8)
