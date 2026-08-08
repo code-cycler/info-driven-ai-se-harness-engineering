@@ -11,7 +11,7 @@
 | # | 问题 | 裁决 | 落实位置 |
 |---|---|---|---|
 | Q1 | 独立新 skill vs 扩展现有 | 独立新 skill | 本目录;被否决项见下节 |
-| Q2 | 问卷族 × §5.2 一问一答保留场景 | 不矛盾:阈值 ≤4 兜小波,≥5 题批量省串行 | SKILL.md 第 2 步小波阈值 |
+| Q2 | 问卷族 × §5.2 一问一答保留场景 | 不矛盾:阈值 ≤3 兜小波(2026-08-08 由 ≤4 收紧),≥4 题批量省串行 | SKILL.md 第 2 步小波阈值 |
 | Q3 | 阈值 4 的依据 | 经验估值,双向门,待真实使用数据校准(design-Q 的 ≤2 亦如此来) | PROCESSING-RULES.md 头部分叉声明 |
 | Q4 | preview × 阈值涌现形态 | 预期形态:confirm-list 为主、正式题波兜底,反形式主义 | SKILL.md 第 2 步;FORMAT 文件结构节 |
 | Q5 | 环境现实验证 | 含:涉代码事实/外部依赖先核实,证据入出题依据 | SKILL.md 铁律 2 + 第 1 步;FORMAT 规则 7 |
@@ -43,7 +43,7 @@
 
 1. W00 = confirm-list(细节确认清单),语义:决策默认值+AI 默认倾向(生成式)→ 行动细节+AI 的理解(确认式);要点数建议 10–25 → 5–20。
 2. 命名 `confirm-<slug>-w<NN>.md`,stage 恒 `confirm`,mode 恒 `feature`。
-3. 小波阈值 ≤2 → **≤4**(经验估值,待真实数据校准)。
+3. 小波阈值 ≤2 → **≤4**(2026-08-08 用户裁决**收紧为 ≤3**,与四副本统一;原经验估值待真实数据校准)。
 4. 落盘无阶段文档;常规留痕 = 归档问卷。
 5. 规则 7 强化:涉代码事实/外部依赖必须附核实证据(本 skill 铁律 2 的格式侧落地)。
 6. 补充声明第四类「用户先验结论 → 待验证假设(分析中显式检验,不预设为结论,处理报告标注)」——2026-07-31 dogfood D-1 回修,落实于 PROCESSING-RULES 解析规则 3 + FORMAT 规则 12;**仅本副本**(2026-07-31 用户小波裁决「只改 action-Q」,canonical 跟进与否由 design-Q 上下文另决)。
@@ -81,7 +81,7 @@
 > **2026-08-07 superseded**:本节描述的「落盘路径配置化(方案 R)」同步已随 ADR-0011 放弃——action-Q 落盘路径回归硬编码 `harness/`(见 SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。本节文字保留作历史叙述;末条「HLD/LLD 判别法则不扩散」与路径无关,继续有效。
 
 - **落盘路径配置化同步**:本 skill(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定)已与 design-Q canonical 同步——路径配置化为 `<根>` / `<落盘根>`,四 skill(design-Q / grill-Q / retro-Q / action-Q)沿用同一根约定(方案 R)。
-- 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0(路径 + 落盘根定义机制一致);action-Q 有意分叉区(小波阈值 ≤4 / confirm-list 语义 / 无阶段文档 / 补充声明第四类)原样保留。
+- 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0(路径 + 落盘根定义机制一致);action-Q 有意分叉区(小波阈值 ≤3(2026-08-08 由 ≤4 收紧) / confirm-list 语义 / 无阶段文档 / 补充声明第四类)原样保留。
 - 🔧 **Q7 路径区分**:本 DESIGN.md 内 dogfood 案例叙述出现的 `harness/questionnaires/archive/...` 为**历史案例记录**(2026-07-31 dogfood 归档问卷路径,非运行时落盘指令),保留为历史叙述;配置化只改「描述宿主项目落盘路径」的运行时字符串(SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。
 - HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 action-Q(本 skill 无内容骨架,隐式六要素 confirm-list)。
 

@@ -1,6 +1,6 @@
 ---
 name: action-questionnaire
-description: 非正式行动前的批量细节确认——把 AI 对行动细节的理解提取为「细节确认清单(confirm-list)」问卷,用户离线核对后解析留痕,对齐信息以规避 AI 在信息真空中的幻觉式自作主张。复用 design-questionnaire 引擎(preview 改 confirm-list 语义、小波阈值 ≤4),默认 preview 清单为主、正式题波兜底。与设计期 skill 的分工:本 skill 管与设计无关的通用非正式行动;行动升级到 feature 级(值得 feature 记录、改方向、多文件结构性变更)时提醒转 design-Q / grill-Q / long-running 等专用 skill。触发:"动手前对齐一下"、"确认下细节"、"preflight"、开始一个多文件/多决策/涉外部依赖的非正式写操作前。Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
+description: 非正式行动前的批量细节确认——把 AI 对行动细节的理解提取为「细节确认清单(confirm-list)」问卷,用户离线核对后解析留痕,对齐信息以规避 AI 在信息真空中的幻觉式自作主张。复用 design-questionnaire 引擎(preview 改 confirm-list 语义、小波阈值 ≤3(2026-08-08 由 ≤4 收紧)),默认 preview 清单为主、正式题波兜底。与设计期 skill 的分工:本 skill 管与设计无关的通用非正式行动;行动升级到 feature 级(值得 feature 记录、改方向、多文件结构性变更)时提醒转 design-Q / grill-Q / long-running 等专用 skill。触发:"动手前对齐一下"、"确认下细节"、"preflight"、开始一个多文件/多决策/涉外部依赖的非正式写操作前。Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
 ---
 
 <what-to-do>
@@ -44,8 +44,8 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
 
 - **confirm-list(默认首波,独立 wave 0)**:生成 `confirm-<slug>-w00.md`——细节确认清单,一要点一行 = 细节点 + AI 的理解 + 来源。每条 `[ ]`:**勾 `[x]` = 理解正确**(按该理解执行)、**留空 = 理解有误或要改**(转正式题深究,或按小波阈值直接问)。W00 **不用 🤔**(对/不对二选一,无中间态);底部「补充声明」栏保留。格式见 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
 - **正式题波(W01+,兜底)**:**preview 为主、正式题波为兜底是本 skill 的预期形态**——多数确认流程 = W00 清单 + 小波直接问,W01 问卷文件很少出现;不为「用上问卷文件」而硬出题(反形式主义)。W01 = W00 留空要点的深究 + 不适合 yes/no 的开放型确认项。
-- **小波阈值**:若正式题数 ≤ 4,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
-- 题量:正式题波每波 10–15 题,超出拆子波;confirm-list 不受此限(要点数建议 5–20,行动轻量故从简)。
+- **小波阈值**:若正式题数 ≤ 3,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱;上限 3 = 2026-08-08 用户裁决,原有意分叉 ≤4 收紧);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
+- 题量:正式题波每波上限 10 题(2026-08-08 用户裁决收紧,原 10–15),超出拆子波;confirm-list 不受此限(要点数建议 5–20,行动轻量故从简)。
 
 ### 3. 用户作答
 
@@ -93,7 +93,7 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
 <supporting-info>
 
 - 问卷格式规范(引擎副本,design-Q 为 canonical;本 skill 有意分叉:confirm-list 语义 + 要点数建议 5–20):[QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)
-- 解析与落盘规则(引擎副本,有意分叉:小波阈值 ≤4):[PROCESSING-RULES.md](./PROCESSING-RULES.md)
+- 解析与落盘规则(引擎副本,有意分叉:小波阈值 ≤3,2026-08-08 由 ≤4 收紧):[PROCESSING-RULES.md](./PROCESSING-RULES.md)
 - 本 skill 设计决策记录(15 题压测裁决 + 被否决项 + 引擎漂移声明):[DESIGN.md](./DESIGN.md)
 
 </supporting-info>

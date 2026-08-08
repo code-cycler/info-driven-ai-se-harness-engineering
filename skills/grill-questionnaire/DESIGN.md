@@ -71,7 +71,7 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 
 - frontmatter:mode / wave / stage(此处 stage 固定 `grill`)/ created / status
 - 每题:选项数不限 + ★推荐(附理由,至多一个)+ 🤔 逃生舱 + ✍️ 自定义 + [落盘:] 提示
-- 浅分支内联限 1 层;题量每波 10–15 题,超量拆子波;≤2 题走 AskUserQuestion(小波阈值,引擎规则)
+- 浅分支内联限 1 层;题量每波上限 10 题(2026-08-08 收紧,原 10–15),超量拆子波;≤3 题走 AskUserQuestion(小波阈值,引擎规则)
 
 ## 落盘映射(详见 PROCESSING-RULES.md · 引擎副本 + GRILL-SKELETON.md 维度落盘)
 

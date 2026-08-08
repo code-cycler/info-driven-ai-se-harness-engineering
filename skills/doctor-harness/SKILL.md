@@ -33,15 +33,9 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 
 ### 2. 迁移流程(重组 + 断链回归)
 
-有目录重组需求时(如本次分层落地),执行:
+有目录重组需求时(如本次分层落地),执行 [MIGRATION-FLOW.md](./MIGRATION-FLOW.md) 的 7 步流程:
 
-1. **设计新布局**:按 HARNESS-RULES.md 判定句逐条核对现有文件归属;
-2. **挪文件**:git mv 保持历史;只移不删;
-3. **相对链接重算**:grep 受影响文件(尤其归档问卷跨目录引用)修正层级;
-4. **断链回归**:全库相对链接检查(grep + 脚本),本次引入断链必须 0;
-5. **跑校验**:`python3 scripts/harness-check.py` 0 违规;
-6. **规格同步**:若 SKILL.md 引用路径变化则同步;
-7. **留痕**:迁移记录入 CHANGELOG。
+1. **设计新布局**(判定句逐条核对归属)→ 2. **挪文件**(git mv 只移不删)→ 3. **相对链接重算**(归档问卷层级)→ 4. **断链回归**(本次引入 0)→ 5. **跑校验**(harness-check.py 0 违规)→ 6. **规格同步**(SKILL.md 引用)→ 7. **留痕**(CHANGELOG)。
 
 ### 3. 布局合规校验
 
@@ -68,6 +62,7 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 <supporting-info>
 
 - harness 组织权威规则(唯一 source):[HARNESS-RULES.md](./HARNESS-RULES.md)
+- 目录迁移执行流程:[MIGRATION-FLOW.md](./MIGRATION-FLOW.md)
 - 演进变更记录:[CHANGELOG.md](./CHANGELOG.md)
 - 校验脚本:`python3 scripts/harness-check.py`(仓库 `scripts/`,与 desensitize.py 并列)
 - 本 skill 设计决策记录:[DESIGN.md](./DESIGN.md) + 设计套 `harness/design/doctor-harness/`(VISION/HLD/LLD)

@@ -56,8 +56,8 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 - 问题来源 = **阶段骨架**([STAGE-SKELETONS.md](./STAGE-SKELETONS.md) 当前阶段的未覆盖必问项,优先) + **动态盲点**(探索发现的矛盾/冲突/未定义边界、上轮回答引出的新问题)。
 - 格式严格按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
 - 写到 `harness/questionnaires/<stage>-w<NN>.md`(feature 模式:`feature-<slug>-<stage>-w<NN>.md`),status: pending。目录懒创建。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
-- 题量:每波 10–15 题;超出拆子波(`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`)。
-- **小波阈值**:若本波问题数 ≤ 2,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问题、答案、处理结果逐字记入处理报告,摘要追加到最近一份归档问卷尾部。
+- 题量:每波上限 10 题(2026-08-08 用户裁决收紧,原 10–15);超出拆子波(`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`)。
+- **小波阈值**:若本波问题数 ≤ 3,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱;上限 3 = 2026-08-08 用户裁决,原 ≤2);问题、答案、处理结果逐字记入处理报告,摘要追加到最近一份归档问卷尾部。
 
 ### 3. 用户作答
 
