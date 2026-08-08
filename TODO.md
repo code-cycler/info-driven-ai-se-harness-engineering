@@ -145,13 +145,13 @@
 
 ### 🟠 doctor-for-harness 设计套压测(grill-Q doctor-harness W01 产出,2026-08-08)
 
-> 来源:[grill-doctor-harness-w01](harness/questionnaires/grill-doctor-harness-w01.md),10 题全认定(A)。压测对象:doctor-harness 设计套(VISION/HLD/LLD + ADR-0012/13)。可沉淀项已落 [OD-16](docs/OPEN-DECISIONS.md)(可选档重访)/ [OD-17](docs/OPEN-DECISIONS.md)(使用率验证)。下述 8 项为**工件修订建议**,由人授权执行(grill-Q 不替改工件)。
-> 核验时机:修订执行后逐项核对;dogfood 实证回灌后核对 ADR-0013 措辞。
+> 来源:[grill-doctor-harness-w01](harness/questionnaires/grill-doctor-harness-w01.md),10 题全认定(A)。压测对象:doctor-harness 设计套(VISION/HLD/LLD + ADR-0012/13)。可沉淀项已落 [OD-16](docs/OPEN-DECISIONS.md)(可选档重访)/ [OD-17](docs/OPEN-DECISIONS.md)(使用率验证)。下述 7 项**工件修订建议已全部执行**(2026-08-08,用户授权,commit 2629e2f)。
+> 核验时机:✅ 已执行,逐项核对落地。
 
-- ⏳ **Q1+Q8 校验脚本补 design/ report 模式**:harness-check.py 加 check_design_layout(列 design/ 文件清单 + 标注裸放/子目录,不判对错);HLD 选型表补 report 模式作被否决/采纳记录
-- ⏳ **Q2 LLD「四节」→「五节」**:LLD 三处(行 13/22/62)+ DoD grep 同步实际 5 节
-- ⏳ **Q3 ADR-0013/LLD 措辞回灌 F019 实证**:补「F019 实证:design/ 已天然分层,本次迁移实为确认 + 归档链接修复」,消除「重组」与「确认」落差
-- ⏳ **Q4 豁免清单同步义务**:harness-check.py 顶部注释「豁免清单须与 HARNESS-RULES 第三节同步」+ doctor-harness DESIGN.md 记同步义务
-- ⏳ **Q6 HARNESS-RULES 归属校验归属明示**:第二节补「pwd 校验由各 skill 落盘前执行,doctor-harness 只提供判据」+ 标注待 dogfood(多项目场景触发)
-- ⏳ **Q7 dogfood 通过定义**:doctor-harness DESIGN.md 补「dogfood 通过 = 用 HARNESS-RULES + harness-check + MIGRATION-FLOW 完整走通真实 harness 场景」(F019 符合)
-- ⏳ **Q10 HARNESS-RULES 补「布局合规」定义**:第五节补「布局合规 = 命名/ADR编号/归档位置三检查(脚本可查)+ 分层(人工判据,脚本 report)」
+- ✅ **Q1+Q8 校验脚本补 design/ report 模式**:harness-check.py 加 report_design_layout(列裸放/子目录现状,不判对错);HLD 选型表补 report 被否决项
+- ✅ **Q2 LLD「四节」→「五节」**:LLD 三处 + DoD grep 同步
+- ✅ **Q3 ADR-0013/LLD 回灌 F019 实证**:补「design/ 已天然分层,本次实为确认 + 归档链接修复」
+- ✅ **Q4 豁免清单同步义务**:harness-check.py EXEMPT_PREFIXES 注释 + HARNESS-RULES 第三节
+- ✅ **Q6 HARNESS-RULES 归属校验归属明示**:第二节补「各 skill 落盘前执行,doctor-harness 只给判据」
+- ✅ **Q7 dogfood 通过定义**:doctor-harness DESIGN.md 补定义(F019 符合)
+- ✅ **Q10 HARNESS-RULES 补「布局合规」定义**:第五节补(脚本可查三检查 + 分层人工判据)
