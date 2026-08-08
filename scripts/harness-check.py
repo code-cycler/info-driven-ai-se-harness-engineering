@@ -39,6 +39,8 @@ NAME_PATTERNS = {
 }
 
 # 已知豁免(存量已偏离,不清扫;HARNESS-RULES.md 三节豁免清单)
+# ⚠️ 同步义务(grill-Q Q4 回灌):本 EXEMPT_PREFIXES 须与 HARNESS-RULES.md 第三节「豁免清单」保持一致;
+#    文档新增豁免项时,务必同步更新此处,避免规则权威与校验执行漂移。
 EXEMPT_PREFIXES = ("feature-skill-", "feature-skills-")
 
 ADR_RE = re.compile(r"^(\d{4})-[a-z0-9-]+\.md$")
@@ -91,6 +93,30 @@ def check_archive_location(qroot: Path, violations: list) -> None:
                 violations.append(f"{p.relative_to(qroot.parent)}: status 为 processed/archived 但未在 archive/")
 
 
+def report_design_layout(ddir: Path, violations: list) -> None:
+    """④ design/ 分层报告模式(grill-Q Q1/Q8 回灌):列出 design/ 下裸放文件与子目录现状,
+    供人按 ADR-0012 判定句核对(可独立引用/冲突 → 子目录;全局 → 裸放)。不判定对错(分层需语义判断)。
+    作为 informational 报告,不计入 violations,单独打印。"""
+    if not ddir.is_dir():
+        return
+    layout = {"裸放": [], "子目录": []}
+    for p in sorted(ddir.iterdir()):
+        if p.name.startswith('.'):
+            continue
+        if p.is_dir():
+            files = [f.name for f in p.iterdir() if f.is_file() and f.suffix == '.md']
+            layout["子目录"].append(f"  {p.name}/ ({len(files)} md: {', '.join(files[:5])}{'…' if len(files) > 5 else ''})")
+        elif p.suffix == '.md':
+            layout["裸放"].append(f"  {p.name}")
+    print(f"[design/ 分层报告 — 人工核对 ADR-0012 判定句]")
+    print(f"  裸放({len(layout['裸放'])}):")
+    for f in layout["裸放"]:
+        print(f)
+    print(f"  子目录({len(layout['子目录'])}):")
+    for d in layout["子目录"]:
+        print(d)
+
+
 def collect(harness_root: Path) -> list:
     violations = []
     check_naming(harness_root / "questionnaires", violations)
@@ -118,6 +144,8 @@ def main():
     else:
         for v in violations:
             print(v)
+        # design/ 分层报告(人工核对,不计违规;grill-Q Q1/Q8)
+        report_design_layout(root / "design", violations)
 
     # exit 0(违规存在也 0,人读输出决定;目录不存在才 exit 1)
 

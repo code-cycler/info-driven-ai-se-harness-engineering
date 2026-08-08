@@ -10,7 +10,7 @@
 
 | 阶段 | 目标 | 关键动作 | 独立 DoD |
 |---|---|---|---|
-| **P1 规则权威** | HARNESS-RULES.md 起草 + SKILL.md 引用 | 起草四节规则 + 各 skill SKILL.md 加「分层见 HARNESS-RULES.md」 | grep 规则文档在位 + SKILL.md 引用句 |
+| **P1 规则权威** | HARNESS-RULES.md 起草 + SKILL.md 引用 | 起草五节规则(分层定义/归属判据/命名规范/归档规则/布局合规校验)+ 各 skill SKILL.md 加「分层见 HARNESS-RULES.md」 | grep 规则文档在位(五节标题)+ SKILL.md 引用句 |
 | **P2 校验脚本** | scripts/harness-check.py 实现 + 现状跑通 | 单文件三检查函数 + 接口 | 脚本对现状跑出真实违规 / 无违规 0 输出 |
 | **P3 分层迁移** | 本仓库 design/ 重组 + 链接重算 + 断链回归 | 必做档 design/ 按 feature 聚合 + 相对链接重算 | design/ 重组完成 + 断链 0 新增 |
 | **P4 双副本 + 家族** | 仓库 + ~/.claude 同步 + 家族表述 | 双副本同步 + CLAUDE.md/CONTEXT 第 9 个表述 | 双副本 diff 0(仅脱敏差)+ 家族表述同步 |
@@ -19,7 +19,7 @@
 
 ### 2.1 HARNESS-RULES.md 结构(P1)
 
-四节:
+五节:
 
 1. **分层定义**:design/<feature>/ 判定句(feature 级设计 = 会被独立引用 / 与其它 feature 冲突 → 建子目录)+ 裸放规则(全局/单文件设计裸放根下);
 2. **归属判据**一句:子模块有独立 CLAUDE.md / git / 发布边界 → 子模块根建自己的 harness/;否则归主根;
@@ -59,9 +59,9 @@ MIGRATION-FLOW(SKILL.md 节或独立):设计新布局 → 挪文件(必做档 de
 
 ### 各阶段 DoD
 
-- **P1**:HARNESS-RULES.md 在位(grep 四节标题)+ 各 skill SKILL.md 引用句在位;
+- **P1**:HARNESS-RULES.md 在位(grep 五节标题:分层定义/归属判据/命名规范/归档规则/布局合规校验)+ 各 skill SKILL.md 引用句在位;
 - **P2**:脚本对当前仓库跑出真实违规(ADR 编号跳号 / 命名偏离 / 归档位置);无违规时 0 输出(误报门);`--json` 可用;
-- **P3**:必做档 design/ 重组完成(methodology 裸放保留、feature 系列已建目录保留、逐条核对归属);相对链接全部重算;断链回归 0 新增;SKILL.md 引用同步;可选档(questionnaires/adr)标 TBD;
+- **P3**:必做档 design/ 重组完成(methodology 裸放保留、feature 系列已建目录保留、逐条核对归属);相对链接全部重算;断链回归 0 新增;SKILL.md 引用同步;可选档(questionnaires/adr)标 TBD;**F019 实证:design/ 已天然分层,无需物理重组,本次实为确认 + 9 处归档链接修复**(grill-Q Q3 回灌);
 - **P4**:两套副本 diff 0(仅脱敏差);CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表同步第 9 个(pending——先 dogfood 后入家族,迁移验证通过后落)。
 
 ## L5 依赖与预估

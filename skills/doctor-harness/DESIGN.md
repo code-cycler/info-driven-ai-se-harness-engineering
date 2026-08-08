@@ -38,4 +38,6 @@
 
 ## 家族身份状态
 
-**pending**:先 dogfood 后入家族(OD-15 重访触发②)。分层迁移已验证通过(F019 passes:true),家族表述同步「第 9 个」待用户确认后落地(CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表)。
+**done**:先 dogfood 后入家族(OD-15 重访触发②)。F020 已同步「第 9 个」(CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表)。
+
+**「dogfood 通过」定义**(grill-Q Q7 回灌):= 用 doctor-harness 的 HARNESS-RULES(判定句核对)+ harness-check(脚本校验)+ MIGRATION-FLOW(迁移流程)完整走通一次真实 harness 场景。F019 分层迁移符合:用了规则核对归属 + 脚本校验 0 违规 + 链接重算断链回归 → dogfood 通过 → 入家族合理。

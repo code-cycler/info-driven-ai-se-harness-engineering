@@ -22,7 +22,7 @@
 
 - 默认:单仓库场景归主根 `项目根/harness/`;
 - 多子项目仓库:子模块满足上面任一条件才独立建 harness,否则与主项目共用;
-- 落盘前轻量校验(pwd 是否在含 harness/ 的项目根),防工作目录错位误落。
+- 落盘前轻量校验(pwd 是否在含 harness/ 的项目根),防工作目录错位误落。**归属校验由各 skill 落盘前执行**(grill-Q Q6 回灌:doctor-harness 只提供判据,不提供校验工具);多项目场景的真实落地待 dogfood(触发时各 skill 补 pwd 检查)。
 
 ## 三、命名规范(questionnaires/)
 
@@ -50,3 +50,5 @@
 ## 五、布局合规校验
 
 `python3 scripts/harness-check.py [harness_root]` 检查:问卷命名正则 / ADR 编号连续(0001 起无跳号)/ 归档位置(processed/archived 问卷在 archive/)。违规清单输出,0 违规时无输出。分层迁移后跑 0 违规 + 0 断链。
+
+**「布局合规」定义**(grill-Q Q10 回灌):= 命名/ADR 编号/归档位置三检查(**脚本可查**,harness-check.py 覆盖)+ design/ 分层(**人工判据**,脚本 report 模式列出供人审,见第六节)。分层判定句需语义判断(可独立引用/冲突),非纯格式,故脚本不强校验分层对错,只报告现状。
