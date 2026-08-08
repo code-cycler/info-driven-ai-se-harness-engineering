@@ -6,7 +6,7 @@ status: archived
 ---
 # 压测问卷 · skill 家族 harness 文件管理规格 W01
 
-> **工件**:skill 家族的「harness 文件管理规格」——各 skill SKILL.md 的落盘路径句 + [ADR-0011](../../adr/0011-abandon-plan-r-hardcode-harness.md)(硬编码 `harness/`)+ 各 DESIGN.md 相关决策(design-Q D11/D23、skill-spec-revamp LLD 2.6 落盘根边界)。
+> **工件**:skill 家族的「harness 文件管理规格」——各 skill SKILL.md 的落盘路径句 + [ADR-0011](../../../adr/0011-abandon-plan-r-hardcode-harness.md(硬编码 `harness/`)+ 各 DESIGN.md 相关决策(design-Q D11/D23、skill-spec-revamp LLD 2.6 落盘根边界)。
 > **模式**:代码库绑定(本仓库有 CONTEXT/ADR/docs 体系)。D7「现实」= 仓库实际文件组织(`harness/` 现状)+ 既有决策(ADR-0011 / ADR-0009 三区模型/OD-8)。
 > **触发**:用户指出「当前 skill 做的 harness 文件管理比较简单,没有考虑实际情况——层次化设计、feature 级别或子项目没有单独文件夹、边缘场景与实际工程场景」。
 >
@@ -170,8 +170,8 @@ status: archived
   2. **新需求**:设计 doctor-for-harness skill,处理 harness 演进中的文件迁移与规范;
   3. **核心裁决**:harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根。
 - **落盘**:
-  - **OD-15**(新立项):doctor-for-harness skill——harness 演进治理(组织规则权威化 / 迁移工具 + 断链回归 / 布局校验 / 演进留痕)→ [OPEN-DECISIONS.md](../../../docs/OPEN-DECISIONS.md)
-  - **TODO 🟤 节**:doctor-for-harness 立项 + harness 分层落地 + 格式反馈落地(→ [TODO.md](../../../TODO.md))
+  - **OD-15**(新立项):doctor-for-harness skill——harness 演进治理(组织规则权威化 / 迁移工具 + 断链回归 / 布局校验 / 演进留痕)→ [OPEN-DECISIONS.md](../../../../docs/OPEN-DECISIONS.md
+  - **TODO 🟤 节**:doctor-for-harness 立项 + harness 分层落地 + 格式反馈落地(→ [TODO.md](../../../../TODO.md)
   - **0 ADR**(分层=目录组织,双向门可逆;难逆转性不足 ADR 三条件)/ **0 CONTEXT**(无新术语冲突——「harness 父级」沿用既有词)
 - **grill-Q 铁律守**:只产出发现 + 用户裁决,未替改工件;harness 分层/doctor-for-harness 落地由人授权发起
 - **覆盖度**:D1–D8 全开;工件关键声明(S1–S7)均被 14 题覆盖,用户裁决统一收束至「分层 + 立项」方向当前问卷偏长，将单波次上限调整为10个，直接问答上限调整为不多于3个；针对harness工程一直进化的现状，有必要设计一个doctor-for-harness skill，处理演进过程中文件迁移、各类规范等问题；harness文件严格放入harness父级文件夹，在父级文件夹下建立子文件夹，不污染项目目录结构

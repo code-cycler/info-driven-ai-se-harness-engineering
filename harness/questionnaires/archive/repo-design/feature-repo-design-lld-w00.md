@@ -17,7 +17,7 @@ status: processed
 > - 本波**不用 🤔**(yes/no 二选一,无中间态);真定不了 → 留空即可,转 W01 深究
 > - 若"大体同意但要改一两处" → 留空,转 W01 时在深究题里给自定义值
 >
-> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../design/repo/VISION.md) + [HLD](../../design/repo/HLD.md)(2026-08-05)。
+> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../../design/repo/VISION.md + [HLD](../../../design/repo/HLD.md(2026-08-05)。
 
 ## 决策默认值清单
 
@@ -68,6 +68,6 @@ status: processed
 ## 处理报告摘要(lld W00,2026-08-05)
 
 - **preview 统计**:勾选采纳 16 / 留空 0 / 转 W01 0;取消默认率 0%。全采纳 → 无需 W01。
-- **落盘**:[harness/design/repo/LLD.md](../../design/repo/LLD.md)(L1 六阶段 P1–P6 / L2 详细设计 / L3 路径契约 / L4 DoD / L5 依赖预估)。
+- **落盘**:[harness/design/repo/LLD.md](../../../design/repo/LLD.md(L1 六阶段 P1–P6 / L2 详细设计 / L3 路径契约 / L4 DoD / L5 依赖预估)。
 - **逃生舱**:0。
 - **覆盖度**:L1–L5 骨架全覆盖,动态盲点清零 → 设计流程终止,收尾。

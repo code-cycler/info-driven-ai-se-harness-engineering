@@ -6,7 +6,7 @@ status: archived
 ---
 # 压测问卷 · doctor-for-harness 设计套 W01
 
-> **工件**:[VISION](../design/doctor-harness/VISION.md) + [HLD](../design/doctor-harness/HLD.md) + [LLD](../design/doctor-harness/LLD.md) + [ADR-0012](../adr/0012-harness-layering-rule.md) + [ADR-0013](../adr/0013-harness-layering-migration.md)。
+> **工件**:[VISION](../../design/doctor-harness/VISION.md + [HLD](../../design/doctor-harness/HLD.md + [LLD](../../design/doctor-harness/LLD.md + [ADR-0012](../../adr/0012-harness-layering-rule.md + [ADR-0013](../../adr/0013-harness-layering-migration.md。
 > **模式**:代码库绑定(绿地子模式变体——设计期文档 + 已实现脚本/skill,可对照 F017–F020 实现)。D7「现实」= 实现现状(scripts/harness-check.py + skills/doctor-harness/ + F019 迁移记录)。
 > **范围**:doctor-for-harness 设计套完整性 + 设计 vs 实现一致性。
 >
@@ -146,7 +146,7 @@ status: archived
 ## 处理报告摘要(2026-08-08 · grill W01 → archived)
 
 - **10 题**:全 A(认定漏洞),0 部分认定,0 不认定,0 逃生舱;D1–D8 全覆盖。
-- **可沉淀项落盘**:[OD-16](../../docs/OPEN-DECISIONS.md)(可选档重访触发)/ [OD-17](../../docs/OPEN-DECISIONS.md)(doctor-harness 使用率验证,类 OD-12);0 ADR(均为双向门/文档修订)。
-- **工件修订建议**(8 项)→ [TODO.md](../../TODO.md) 🟠 节(Q1+Q8 脚本 report/Q2 LLD 节数/Q3 措辞实证/Q4 豁免同步/Q6 归属校验/Q7 dogfood 定义/Q10 布局合规定义)。
+- **可沉淀项落盘**:[OD-16](../../../../docs/OPEN-DECISIONS.md(可选档重访触发)/ [OD-17](../../../../docs/OPEN-DECISIONS.md(doctor-harness 使用率验证,类 OD-12);0 ADR(均为双向门/文档修订)。
+- **工件修订建议**(8 项)→ [TODO.md](../../../TODO.md 🟠 节(Q1+Q8 脚本 report/Q2 LLD 节数/Q3 措辞实证/Q4 豁免同步/Q6 归属校验/Q7 dogfood 定义/Q10 布局合规定义)。
 - **dogfood 副产出**:本波出题两次漏 ✍️ 自定义行 → 回修 FORMAT 规则 4 + grill-Q SKILL 出题自检(commit d12425d)。
 - **覆盖度**:D1(Q9)D2(Q7 入家族门槛)D3(Q8)D4(Q4/Q6)D5(Q1/Q5)D6(Q7)D7(Q1/Q2/Q3/Q6)D8(Q10)全开;工件关键声明(四职责/分层规则/迁移/校验/家族身份)均经审视。

@@ -17,7 +17,7 @@ status: processed
 > - 本波**不用 🤔**(yes/no 二选一,无中间态);真定不了 → 留空即可,转 W01 深究
 > - 若"大体同意但要改一两处" → 留空,转 W01 时在深究题里给自定义值
 >
-> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../design/repo/VISION.md)(2026-08-05 落盘)。
+> 默认来源标注于〔〕。上游 = [repo 级 VISION](../../../design/repo/VISION.md(2026-08-05 落盘)。
 
 ## 决策默认值清单
 
@@ -60,5 +60,5 @@ status: processed
 
 - **preview 统计**:勾选采纳 13 / 留空不采纳 1(#5 docs 布局)/ 转 W01 深究 1;取消默认率 1/14 = 7.1%。
 - **#5 深究 → Q1 自定义**(见 hld W01 处理):「harness 依赖文件与项目文件分开, docs默认是项目文件, harness文件单独存放」——经小波澄清裁决为**物理目录分离**(harness/questionnaires/ + harness/design/ 移入 harness 区)。
-- **落盘**:HLD 已按 W00 采纳项 + 分区模型落 [harness/design/repo/HLD.md](../../design/repo/HLD.md)。
+- **落盘**:HLD 已按 W00 采纳项 + 分区模型落 [harness/design/repo/HLD.md](../../../design/repo/HLD.md。
 - **逃生舱**:0。

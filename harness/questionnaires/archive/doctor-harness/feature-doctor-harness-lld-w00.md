@@ -19,7 +19,7 @@ status: archived
 >
 > 默认来源标注于〔〕。
 >
-> **设计背景**(供作答参考):doctor-for-harness 的 vision + hld 已定稿([VISION](../design/doctor-harness/VISION.md) + [HLD](../design/doctor-harness/HLD.md),W00/W01 全采纳 + [ADR-0012](../../adr/0012-harness-layering-rule.md) / [ADR-0013](../../adr/0013-harness-layering-migration.md))。本阶段 = 分阶段实现规格:拆几个阶段、每步做什么、DoD 怎么验。已核实:两套 skill 位置(仓库 `skills/` + `~/.claude/skills/`)、命名模式 confirm/feature/grill/retro 齐备、现存 feature-skill-* vs feature-skills-* 近似前缀(作豁免清单)。
+> **设计背景**(供作答参考):doctor-for-harness 的 vision + hld 已定稿([VISION](../../design/doctor-harness/VISION.md + [HLD](../../design/doctor-harness/HLD.md,W00/W01 全采纳 + [ADR-0012](../../../adr/0012-harness-layering-rule.md / [ADR-0013](../../../adr/0013-harness-layering-migration.md)。本阶段 = 分阶段实现规格:拆几个阶段、每步做什么、DoD 怎么验。已核实:两套 skill 位置(仓库 `skills/` + `~/.claude/skills/`)、命名模式 confirm/feature/grill/retro 齐备、现存 feature-skill-* vs feature-skills-* 近似前缀(作豁免清单)。
 
 ## 决策默认值清单
 
@@ -61,5 +61,5 @@ status: archived
 ## 处理报告摘要(W00,2026-08-08)
 
 - **preview 统计**:勾选采纳 14 / 留空不采纳 0 / 转 W01 正式题 0;取消默认率 0/14 = 0%。
-- **落盘**:LLD [`harness/design/doctor-harness/LLD.md`](../../design/doctor-harness/LLD.md)(新建,14 条采纳落盘);无新增 ADR(ADR-0012/0013 已在 hld 阶段立)。
+- **落盘**:LLD [`harness/design/doctor-harness/LLD.md`](../../../design/doctor-harness/LLD.md(新建,14 条采纳落盘);无新增 ADR(ADR-0012/0013 已在 hld 阶段立)。
 - **下一阶段**:lld 收尾——覆盖清单 + 阶段闸门 + 设计完成清单(dogfood/压测/实现衔接提议)。

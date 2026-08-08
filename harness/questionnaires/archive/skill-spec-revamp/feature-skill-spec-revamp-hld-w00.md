@@ -23,7 +23,7 @@ status: processed
 
 ### H1 系统架构(skill 文件改动地图)
 
-- [X]  **1 改动落点文件清单**:design-Q 改 4 个文件——① [STAGE-SKELETONS.md](../../../../.claude/skills/design-questionnaire/STAGE-SKELETONS.md)(改动 2/3:判别法则 + 最小必含 + 产出形态 + 分档);② [SKILL.md](../../../../.claude/skills/design-questionnaire/SKILL.md)(改动 1:路径决定逻辑,3 处 docs/ 字符串);③ [PROCESSING-RULES.md](../../../../.claude/skills/design-questionnaire/PROCESSING-RULES.md)(改动 1:落盘映射表 docs/ → 配置化根);④ [DESIGN.md](../../../../.claude/skills/design-questionnaire/DESIGN.md)(记决策 D23+)。四副本同步 = grill-Q / retro-Q / action-Q 的 PROCESSING-RULES.md(落盘映射)+ SKILL.md(路径字符串) 〔探索确认漂移面;改动 2/3 骨架仅 design-Q 有,改动 1 路径四份都有〕
+- [X]  **1 改动落点文件清单**:design-Q 改 4 个文件——① [STAGE-SKELETONS.md](../../../../../.claude/skills/design-questionnaire/STAGE-SKELETONS.md(改动 2/3:判别法则 + 最小必含 + 产出形态 + 分档);② [SKILL.md](../../../../../.claude/skills/design-questionnaire/SKILL.md(改动 1:路径决定逻辑,3 处 docs/ 字符串);③ [PROCESSING-RULES.md](../../../../../.claude/skills/design-questionnaire/PROCESSING-RULES.md(改动 1:落盘映射表 docs/ → 配置化根);④ [DESIGN.md](../../../../../.claude/skills/design-questionnaire/DESIGN.md(记决策 D23+)。四副本同步 = grill-Q / retro-Q / action-Q 的 PROCESSING-RULES.md(落盘映射)+ SKILL.md(路径字符串) 〔探索确认漂移面;改动 2/3 骨架仅 design-Q 有,改动 1 路径四份都有〕
 - [X]  **2 骨架(STAGE-SKELETONS.md)新结构 = 四块**:① 头部新增「HLD/LLD 判别法则」节(定义 + 判别问句);② 每项加「最小必含」子项清单(硬约束);③ 每项加「产出形态」建议(表格/清单/契约/图);④ 坍缩档分档(完整三阶段全量 / 坍缩 hld / 坍缩 lld 精简)。现有骨架表(vision/hld/lld 三表)保留,四块作为增强层叠加 〔VISION 改动 2/3;lld_v2「§2.1 四必含」先例;repo/HLD 正面密度〕
 
 ### H2 技术选型(方案 R 的 skill 机制)

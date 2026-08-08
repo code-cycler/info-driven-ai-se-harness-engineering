@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 grill W01 · methodology_v3 设计套压测
 
-> **压测对象(artifact)**:v3 设计套——[VISION](../../design/VISION.md) + [HLD](../../design/hld_v1.md) + [LLD](../../design/lld_v1.md) + [ADR-0004](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md)。
+> **压测对象(artifact)**:v3 设计套——[VISION](../../../design/VISION.md + [HLD](../../../design/hld_v1.md + [LLD](../../../design/lld_v1.md + [ADR-0004](../../../../harness/adr/0004-methodology-v3-hallucination-thesis.md。
 > **目标**:找 v3 设计**自身**的新盲点(非再压 v2)。v2 的立论偏离已被 ADR-0004 解决;本轮压的是"v3 设计会不会引入新问题"。
 > **模式**:绿地代码库绑定(无代码)。D7「现实」= v2 现状 + ADR-0004 + 作者本意;D1–D8 全开。
 > **核心怀疑(D7 内部一致性)**:LLD 同时把 §7.6 列入「P2 改写」、把 §7 列入「回归 DoD 结构不变」——§7.6 是 §7 子节,自相矛盾。
@@ -192,8 +192,8 @@ status: archived
 
 - **结果**:12/12 全采纳(全选★推荐),0 留空,0 异常,无 🤔。补充声明空。
 - **落盘**:
-  - Q2(标准句单向门)+ Q12(含对策违反纯术语表)合并 → [ADR-0005](../../../harness/adr/0005-pillar-standard-wording.md)(标准措辞四处锁定 + 定义版/完整版拆分)。
-  - Q1/Q3-Q11(设计盲点回灌 HLD/LLD)→ [TODO.md](../../../TODO.md)「v3 设计修订项」(9 项,先决于 v3 起草)。
+  - Q2(标准句单向门)+ Q12(含对策违反纯术语表)合并 → [ADR-0005](../../../../harness/adr/0005-pillar-standard-wording.md(标准措辞四处锁定 + 定义版/完整版拆分)。
+  - Q1/Q3-Q11(设计盲点回灌 HLD/LLD)→ [TODO.md](../../../../TODO.md「v3 设计修订项」(9 项,先决于 v3 起草)。
 - **模式**:绿地代码库绑定,D1-D8 全开,D7 抓出 LLD §7.6 vs §7 内部矛盾(Q9)。
 - **关键修订**:Q9(LLD#13 回归 DoD 措辞)、Q4(§2.1 改写补回归 DoD)、Q3(章节策略重权衡,结论待定)。
 - **未替改工件**:VISION/HLD/LLD/CONTEXT 均未直接改,修订挂 TODO 待人授权。

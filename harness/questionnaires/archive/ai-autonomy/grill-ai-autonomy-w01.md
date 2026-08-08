@@ -184,6 +184,6 @@ status: archived
 ## 处理报告摘要(归档附注)
 
 - 2026-08-01,14 题全答(11 勾选 + 2 自定义 + Q8「都做」自定义),**0 逃生舱**。
-- 落盘:[OD-13](../../../docs/OPEN-DECISIONS.md)(AI 双轨对照 pilot 立项:影子 + 冠军挑战者,暂不入家族)+ [OD-14](../../../docs/OPEN-DECISIONS.md)(design-Q 默认勾选试点:预授权定性 + 四条边界)+ [TODO.md](../../../TODO.md) 🔵 节。
+- 落盘:[OD-13](../../../../docs/OPEN-DECISIONS.md(AI 双轨对照 pilot 立项:影子 + 冠军挑战者,暂不入家族)+ [OD-14](../../../../docs/OPEN-DECISIONS.md(design-Q 默认勾选试点:预授权定性 + 四条边界)+ [TODO.md](../../../../TODO.md 🔵 节。
 - 关键自定义:Q1 选项排序对抗默认效应(非推荐前 / 逃生舱倒数第二 / 推荐最后);Q5「无法实测」判据定义;Q9 delegate 多模式;Q12 新增 skill 但暂不入家族、dogfood 先行。
 - 动态盲点 4 个 → [w02](grill-ai-autonomy-w02.md)。基于Q5，delegate的纪律需要重新讨论；在~/code/DOGFOOD/ 项目下做dogfood，脱敏做隐藏绝对路径

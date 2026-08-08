@@ -19,7 +19,7 @@ status: archived
 >
 > 默认来源标注于〔〕。
 >
-> **设计背景**(供作答参考):doctor-for-harness 的 vision 已定稿([VISION](../design/doctor-harness/VISION.md),W00 20 条 + W01 10 条全采纳)。本阶段 = 架构设计:分层规则 / 归属判据 / 校验机制 / 模块划分 / 接口契约 / ADR 识别。已核实:44 处 SKILL.md/引擎 harness 路径句、ADR 0001–0011 连续、2026-08-05 迁移先例(96 断链 → 7 豁免)。
+> **设计背景**(供作答参考):doctor-for-harness 的 vision 已定稿([VISION](../../design/doctor-harness/VISION.md,W00 20 条 + W01 10 条全采纳)。本阶段 = 架构设计:分层规则 / 归属判据 / 校验机制 / 模块划分 / 接口契约 / ADR 识别。已核实:44 处 SKILL.md/引擎 harness 路径句、ADR 0001–0011 连续、2026-08-05 迁移先例(96 断链 → 7 豁免)。
 
 ## 决策默认值清单
 
@@ -61,6 +61,6 @@ status: archived
 ## 处理报告摘要(W00,2026-08-08)
 
 - **preview 统计**:勾选采纳 12 / 留空不采纳 2(#13 #14)/ 转 W01 正式题 2;取消默认率 2/14 = 14.3%。
-- **落盘**:HLD [`harness/design/doctor-harness/HLD.md`](../../design/doctor-harness/HLD.md)(新建,12 条采纳落盘;#13/#14 标「待 W01」);无 ADR。
+- **落盘**:HLD [`harness/design/doctor-harness/HLD.md`](../../../design/doctor-harness/HLD.md(新建,12 条采纳落盘;#13/#14 标「待 W01」);无 ADR。
 - **读取教训**:grep `[x]` 小写未匹配用户大写 `[X]`、Read 缓存误报未变化——处理问卷以**cat 直接读文件字节**为准,不以 grep/Read 缓存结论作废用户编辑。
 - **下一波**:W01 = #13 #14 深究(分层规则 / 迁移行动项是否 ADR)+ 若引出的开放题。

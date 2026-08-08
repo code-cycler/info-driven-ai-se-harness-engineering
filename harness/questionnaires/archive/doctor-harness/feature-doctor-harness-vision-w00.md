@@ -19,7 +19,7 @@ status: archived
 >
 > 默认来源标注于〔〕。
 >
-> **设计背景**(供作答参考):doctor-for-harness 立项于 [OD-15](../../docs/OPEN-DECISIONS.md)(压测 [grill-harness-file-mgmt-w01](../../questionnaires/archive/grill-harness-file-mgmt-w01.md) 产出,2026-08-08)。用户裁决:harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**;doctor-for-harness 处理 harness 演进中的文件迁移、规范权威化、迁移工具、布局校验。**第一个治理任务 = harness 分层落地**(本仓库现状 design/ 子目录 + 裸放混用,先设计再迁移)。
+> **设计背景**(供作答参考):doctor-for-harness 立项于 [OD-15](../../../docs/OPEN-DECISIONS.md(压测 [grill-harness-file-mgmt-w01](../../../questionnaires/archive/grill-harness-file-mgmt-w01.md 产出,2026-08-08)。用户裁决:harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,**不污染项目根**;doctor-for-harness 处理 harness 演进中的文件迁移、规范权威化、迁移工具、布局校验。**第一个治理任务 = harness 分层落地**(本仓库现状 design/ 子目录 + 裸放混用,先设计再迁移)。
 
 ## 决策默认值清单
 
@@ -68,5 +68,5 @@ status: archived
 
 - **preview 统计**:勾选采纳 20 / 留空不采纳 0 / 转 W01 正式题 0;取消默认率 0/20 = 0%(对话速答「全部采纳」)。
 - **补充声明解读**:无补充内容。
-- **落盘**:VISION [`harness/design/doctor-harness/VISION.md`](../../design/doctor-harness/VISION.md)(新建,20 条默认全采纳落盘);无 ADR(设计期,分层 ADR 待迁移涉链接时补);无 OD 升格(OD-15 已在位)。
+- **落盘**:VISION [`harness/design/doctor-harness/VISION.md`](../../../design/doctor-harness/VISION.md(新建,20 条默认全采纳落盘);无 ADR(设计期,分层 ADR 待迁移涉链接时补);无 OD 升格(OD-15 已在位)。
 - **下一波**:W01 = 无留空深究项,出**开放型骨架必答项**(V6 动机/推导 + 分层方案形态 + 归属判据细则 + 校验脚本 DoD 具体化 + 家族身份确认 + 迁移边界)。

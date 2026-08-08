@@ -7,7 +7,7 @@ status: archived
 ---
 # 问卷 grill W01 · methodology_v2「信息」立论是否偏离作者本意
 
-> **压测对象(artifact)**:[docs/methodology/methodology_v2.md](../../../docs/methodology/archive/methodology_v2.md)
+> **压测对象(artifact)**:[docs/methodology/methodology_v2.md](../../../../docs/methodology/archive/methodology_v2.md
 > **压测聚焦块**:§1.2(信息断层→返工)、§2.1(以信息为核心/有效上下文)、§5.1(Grill 不替决策)三块的**立论连贯性**。非全文压测;其他章节(§4 工作流 / §6 分工等)本次不审。
 > **模式**:绿地代码库绑定(纯文档仓库无代码)。D7 的"现实" = **作者本意**(见下)+ 既有 CONTEXT/ADR 约束;D7 不对照代码,处理报告将注明。
 > **作者本意(本次压测的参照系,用户 ARGUMENTS 给出)**:传统 vibe coding 中**背景信息交代不全** → AI **自以为是、自作主张决策** → **幻觉** → 故方法论采用**问答方式逐步对齐需求**。
@@ -156,7 +156,7 @@ status: archived
 
 ## Q10. (D7 与 CONTEXT 约束的矛盾) 若本意成立,CONTEXT.md 第一支柱定义要不要随之更新?   [落盘: CONTEXT 修订建议 + 工件修订建议]
 
-出题依据:[CONTEXT.md](../../../docs/CONTEXT.md) 第一支柱定义为「与 AI 协作的本质是信息流转,瓶颈是有效上下文的质和量」。若按作者本意,第一支柱的核心不只是"上下文质量",还有"对抗 AI 在信息真空中的幻觉式决策"。CONTEXT 是术语表(纯定义),若方法论立论变,术语表定义应同步。
+出题依据:[CONTEXT.md](../../../../docs/CONTEXT.md 第一支柱定义为「与 AI 协作的本质是信息流转,瓶颈是有效上下文的质和量」。若按作者本意,第一支柱的核心不只是"上下文质量",还有"对抗 AI 在信息真空中的幻觉式决策"。CONTEXT 是术语表(纯定义),若方法论立论变,术语表定义应同步。
 
 - [X]  A. 要更新——第一支柱定义补上"对抗 AI 幻觉式决策"这一机制层,与"有效上下文质量"并列(质量是度量,防幻觉是目的)  ★推荐 —— CONTEXT 是 canonical 术语源,若 v2 立论补全,CONTEXT 必须同步,否则术语表与正文再次脱节(§7.3 不一致文档比没有更危险)
 - [ ]  B. 不更新——CONTEXT 是稳定的术语锚点,不应随每次立论微调而变;"有效上下文"已足够
@@ -203,8 +203,8 @@ status: archived
 
 - **模式**:绿地代码库绑定(D7 对照作者本意,未对照代码)。
 - **落盘**:
-  - Q2/Q2.1/Q9(单向门决策:升 v3 + 第一支柱立论重构)→ [harness/adr/0004-methodology-v3-hallucination-thesis.md](../../../harness/adr/0004-methodology-v3-hallucination-thesis.md)
-  - 全部工件修订建议(methodology_v3 改法 / CONTEXT 同步 / README·CLAUDE.md 同步 / OD-4 母本同步)→ [TODO.md](../../../TODO.md)「methodology_v3 起草工作包」
+  - Q2/Q2.1/Q9(单向门决策:升 v3 + 第一支柱立论重构)→ [harness/adr/0004-methodology-v3-hallucination-thesis.md](../../../../harness/adr/0004-methodology-v3-hallucination-thesis.md
+  - 全部工件修订建议(methodology_v3 改法 / CONTEXT 同步 / README·CLAUDE.md 同步 / OD-4 母本同步)→ [TODO.md](../../../../TODO.md「methodology_v3 起草工作包」
 - **异常**:Q4 单选多勾(A+C)——A(靶子错位)与 C(双靶子)为"诊断→处方"递进,非冲突,合并解读并入 ADR-0004 决策 2。
 - **✍️ 自定义处置**:
   - Q1 ✍️(返工含两类断层:人与人 / 人与AI)→ 修正 Q1 结论(非纯降格,需区分两类),写进 ADR 背景 + TODO §1.2。

@@ -7,9 +7,9 @@ status: archived
 ---
 # 问卷 vision W01 · doctor-for-harness 开放题
 
-> **工件**:[VISION](../../design/doctor-harness/VISION.md)(W00 20 条全采纳落盘)。
+> **工件**:[VISION](../../../design/doctor-harness/VISION.md(W00 20 条全采纳落盘)。
 > **本波是 W00 之后的正式题波**:W00 无留空项,故本波 = 开放型骨架必答项(V6 动机 + 骨架需具体化的决策点),不适合 yes/no 速答,逐题拷问。
-> **前置探索**:已核实——家族 8 个 skill 表述(CLAUDE.md + CONTEXT);压测 [grill-harness-file-mgmt-w01](../../questionnaires/archive/grill-harness-file-mgmt-w01.md) 的 14 题发现;ADR-0011 硬编码;2026-08-05 harness 迁移先例(96 断链 → 7 豁免);现状 harness/design/ 子目录与裸放混用(repo/、skill-spec-revamp/、feature-skills-harness-consistency/ 是目录;VISION.md、hld_v2.md、lld_v2.md、hld-methodology-separation.md 裸放)。
+> **前置探索**:已核实——家族 8 个 skill 表述(CLAUDE.md + CONTEXT);压测 [grill-harness-file-mgmt-w01](../../../questionnaires/archive/grill-harness-file-mgmt-w01.md 的 14 题发现;ADR-0011 硬编码;2026-08-05 harness 迁移先例(96 断链 → 7 豁免);现状 harness/design/ 子目录与裸放混用(repo/、skill-spec-revamp/、feature-skills-harness-consistency/ 是目录;VISION.md、hld_v2.md、lld_v2.md、hld-methodology-separation.md 裸放)。
 >
 > **填写规则**:
 >
