@@ -249,6 +249,73 @@
       "passes": true,
       "last_tested": "2026-08-07T23:30:00+08:00",
       "notes": "P6 完成:8 skill 差异仅脱敏差(HLD D4 允许)+ grill-with-docs 迁移差已修 + 脱敏门 0 + 8 skill 路径硬编码 harness/"
+    },
+    {
+      "id": "F017",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 规则权威:doctor-for-harness HARNESS-RULES.md 起草(四节:分层定义 / 归属判据 / 命名规范+豁免 / 归档规则)+ 各 skill SKILL.md 加「分层见 HARNESS-RULES.md」引用句。规格:harness/design/doctor-harness/LLD.md L2.1 + ADR-0012",
+      "steps": [
+        "起草 HARNESS-RULES.md(四节,内容按 LLD 2.1 + ADR-0012 决策)",
+        "落 skills/doctor-harness/HARNESS-RULES.md(新 skill 目录)",
+        "各 skill(design/grill/retro/action SKILL.md)加「分层见 HARNESS-RULES.md」引用句(不内联复制)",
+        "grep HARNESS-RULES.md 在位 + 各 SKILL.md 引用句在位(DoD)",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git commit(docs: 前缀)"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-08T15:30:00+08:00",
+      "notes": "P1 完成:HARNESS-RULES.md 起草(四节:分层定义/归属判据/命名规范+豁免/归档规则)+ 6 个 SKILL.md(design/grill/retro/action/long-running/grill-with-docs)加「分层见 HARNESS-RULES.md」引用句;DoD 全绿(引用句在位 + 脱敏门 0)"
+    },
+    {
+      "id": "F018",
+      "category": "functional",
+      "priority": "high",
+      "description": "P2 校验脚本:scripts/harness-check.py 实现(三检查:命名正则 / ADR 编号连续 / 归档位置)+ 对当前仓库跑通(现状核实:ADR 0001–0011 连续、feature-skill-* vs feature-skills-* 豁免、归档全在 archive/)。规格:LLD L2.2 + L3 + L4 P2",
+      "steps": [
+        "实现 scripts/harness-check.py(主函数扫描 harness_root + 三检查函数,纯标准库 pathlib/re)",
+        "实现 --json 可选输出",
+        "对当前仓库跑:输出真实违规或无违规 0 输出(误报门)",
+        "接口验证:python3 scripts/harness-check.py ./harness + --json",
+        "git commit(feat: 前缀)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F019",
+      "category": "functional",
+      "priority": "high",
+      "description": "P3 分层迁移(必做档):本仓库 harness/design/ 按 ADR-0012 规则重组(methodology 系列裸放保留、feature 系列已建目录保留、逐条核对归属)+ 相对链接重算 + 断链回归 0 新增 + SKILL.md 引用同步;可选档(questionnaires/adr)标 TBD。规格:ADR-0013",
+      "steps": [
+        "按 ADR-0012 判定句逐条核对 harness/design/ 现有文件归属(裸放 vs 子目录)",
+        "design/ 重组完成(必做档,methodology 裸放保留 + feature 系列已建目录保留)",
+        "相对链接全部重算(grep 相对链接 + 修正)",
+        "断链回归 0 新增(参照 2026-08-05 迁移先例方法)",
+        "SKILL.md 引用同步(若引用路径变化)",
+        "跑 harness-check.py 验证 0 违规 + 0 断链(DoD)",
+        "python3 scripts/desensitize.py . 0 命中",
+        "git commit(docs: 前缀)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "可选档(questionnaires/adr)标 TBD,不在此阶段执行"
+    },
+    {
+      "id": "F020",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P4 双副本同步 + 家族表述:仓库 skills/doctor-harness/ 与 ~/.claude/skills/doctor-harness/ 同步(diff 0 仅脱敏差);CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表同步第 9 个(pending——先 dogfood 后入家族,迁移验证通过后落)。规格:LLD L1 P4 + VISION Q9",
+      "steps": [
+        "仓库 skills/doctor-harness/ 全套文件就位(SKILL.md + DESIGN.md + HARNESS-RULES.md)",
+        "复制到 ~/.claude/skills/doctor-harness/,diff 0(仅脱敏差)",
+        "CLAUDE.md 家族图 + CONTEXT skill 家族节 + 落盘速查表同步第 9 个(家族表述,迁移验证通过后落)",
+        "git commit(docs: 前缀)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "家族表述 pending:先 dogfood 后入家族,迁移验证通过后落(OD-15 重访触发②)"
     }
   ]
 }

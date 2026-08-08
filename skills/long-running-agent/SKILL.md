@@ -170,7 +170,7 @@ feature_list.json 不存在时,先创建它:
 
 **会话上下文可能被压缩(Claude Code `/compact`)而丢失设计期决策细节**。本 skill 不依赖会话上下文重建项目认知,而是从落盘文件:
 
-- **有 design-Q 产物**:读 VISION / HLD / LLD + `harness/questionnaires/archive/` 归档问卷,从 LLD 阶段拆分反推 feature_list 的 features。
+- **有 design-Q 产物**:读 VISION / HLD / LLD + `harness/questionnaires/archive/` 归档问卷,从 LLD 阶段拆分反推 feature_list 的 features。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
 - **无 design-Q 产物**:读 claude-progress.txt + feature_list.json + git log,从历史会话与代码现状重建。
 
 机制自洽:无论上下文是否被压缩,落盘文件都是 source of truth。

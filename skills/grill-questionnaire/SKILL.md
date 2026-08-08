@@ -49,7 +49,7 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 
 - 问题来源 = **固定压测维度**([GRILL-SKELETON.md](./GRILL-SKELETON.md) D1–D8,代码库模式全开;纯逻辑模式只开 D1–D6)+ **工件驱动具体化**(把维度套到工件的具体声明上,不得照抄维度名)+ **动态盲点**(读取中发现的矛盾/未定义边界、上轮答案引出的新漏洞)。
 - 格式严格按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
-- 写到 `harness/questionnaires/grill-<slug>-w<NN>.md`(slug = 工件短名,kebab-case;NN 从 01 递增),frontmatter `stage: grill`,status: pending。目录懒创建。
+- 写到 `harness/questionnaires/grill-<slug>-w<NN>.md`(slug = 工件短名,kebab-case;NN 从 01 递增),frontmatter `stage: grill`,status: pending。目录懒创建。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
 - 题量:每波 10–15 题;超出拆子波(`grill-<slug>-w<NN>a.md`、`…b.md`)。
 - **小波阈值**:若本波问题数 ≤ 2,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
 

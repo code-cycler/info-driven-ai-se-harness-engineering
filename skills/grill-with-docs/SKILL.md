@@ -126,7 +126,7 @@ If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The ma
 │       └── harness/adr/
 ```
 
-Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `harness/adr/` exists, create it when the first ADR is needed. If no `docs/OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol.
+Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `harness/adr/` exists, create it when the first ADR is needed. If no `docs/OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol. Harness file layering rules: see `HARNESS-RULES.md` (doctor-harness authoritative spec — do not inline-copy).
 
 ## During the session
 
