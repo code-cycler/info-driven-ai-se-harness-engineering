@@ -38,7 +38,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## skill 家族协作
 
-8 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§5.3](docs/methodology/methodology_v4.md#53-两族-grill) 与各 SKILL.md「主流程」末尾):
+9 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§5.3](docs/methodology/methodology_v4.md#53-两族-grill) 与各 SKILL.md「主流程」末尾):
 
 ```
 design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-running ──> retro
@@ -49,6 +49,7 @@ design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-ru
 
 grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插入
 action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前奏可任意插入
+doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 delegate
 ```
 
 **落盘路径速查**(产物均落**宿主项目** `项目根/harness/`,硬编码不配置化——方案 R 已于 2026-08-07 放弃、回归硬编码,见 [ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)):
@@ -61,6 +62,7 @@ action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前
 | retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `harness/questionnaires/retro-<主题>-w<NN>.md` |
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
+| doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕);规则权威 `skills/doctor-harness/HARNESS-RULES.md`;校验 `scripts/harness-check.py` |
 
 **引擎副本漂移(OD-8,编辑 skill 时必读)**:`QUESTIONNAIRE-FORMAT.md` / `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q / **action-Q** 各持一份副本(已漂移)——改一方考量**四方**,在对应 `DESIGN.md` 声明漂移关系;**禁止擅自统一 / 抽取共享文件**(已决项)。
 

@@ -54,7 +54,7 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 ## skill 家族
 
-方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md))。
+方法论的可执行载体,9 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md))。
 
 ## 方法论文档三块(ADR-0007)
 
