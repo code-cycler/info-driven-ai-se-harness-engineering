@@ -1,5 +1,5 @@
 ================================================================================
-SESSION: philosophy_v5 起草(P1+P2+P4)
+SESSION: philosophy_v5 起草(P1-P5 + git commit 530d0f4)
 时间: 2026-08-10T23:00:00+08:00
 ================================================================================
 
@@ -7,19 +7,26 @@ SESSION: philosophy_v5 起草(P1+P2+P4)
 - P1 philosophy_v5 顶部学科声明改四(+安全科学第五视角)+ 诚实标注 [F021 passes]
 - P2 §八 新增「安全科学视角:去 AI 黑盒」(三层次 + 正交 + 三风险 + 统合对策 + 弹性边界 + V&V 缺口)[F022 passes]
 - P4 元原则失败模式表「盲目信任 AI」扩展为「盲目信任 AI / 黑盒信任劫持」(一行两源)[F024 passes]
+- P3 方法论 §2.2 加 STAMP 注脚 + §十一 加黑盒信任劫持注脚(指向 philosophy_v5 §八)[F023 passes]
+- P5 v4→archive + v5→canonical + 链接全仓更新(methodology/AGENTS/CONTEXT/practical)+ 双向引用闭环 [F025 passes]
 
 ## 修改的文件
 - docs/methodology/philosophy_v5.md: 新建(v4 全文 + 顶部改四 + §八 新增 + 元原则表合并)
 - harness/design/philosophy-v5/LLD.md: DoD 术语一致化(「结果不可独立验证」→「产出正确性不可独立验证」,与 §八/CONTEXT 一致)
-- .claude/feature_list.json: 追加 F021-F026(F021/F022/F024 passes=True)
+- .claude/feature_list.json: 追加 F021-F026(F021-F025 passes=True,F026 OD-4 仓库外 false)
+- docs/methodology/methodology_v4.md: §2.2 STAMP 注脚 + §十一 黑盒注脚 + philosophy 链接 v4→v5
+- docs/methodology/archive/philosophy_v4.md: v4 移 archive(历史母本)
+- AGENTS.md / docs/CONTEXT.md / practical_v1.md: philosophy 链接 v4→v5
 
 ## 遇到的问题
 - DoD 术语不一致:LLD grep 清单写「结果不可独立验证」,但 §八 8.1 + CONTEXT AI 黑盒节用「产出正确性不可独立验证」(更精确)。修 LLD DoD 清单与实现对齐(D8 一致),重跑 DoD 全 ✅
 
+## Git 提交
+- 530d0f4: feat(philosophy) v4→v5——安全科学第五学科视角 + 去 AI 黑盒锚点(23 文件,1602 插入)
+
 ## 下一步计划
-- F023 P3:方法论 §2.2 加 STAMP 注脚 + §十一 加黑盒信任劫持注脚(§八 引用闭环)
-- F025 P5:v4→archive + v5→canonical + 链接(发布门 OD-1 + grep philosophy_v4 全仓引用)
-- F026 P6:OD-4 母本同步(仓库外,作者执行)
+- F026 P6 OD-4 母本同步(仓库外):作者其他位置 philosophy 副本标注「开发副本,以 v5 为准」
+- push 前过 OD-1 发布门:脱敏脚本 0(已✓) + 语义人审(含 git 提交信息) + 脱敏报告
 
 ================================================================================
 
