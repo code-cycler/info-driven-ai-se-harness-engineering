@@ -7,7 +7,7 @@
 
 | 子目录 | 内容 | 份数 |
 |---|---|---|
-| `methodology/` | methodology v2/v3 设计 + 三块拆分 + 压测 | 7 |
+| `methodology/` | methodology v2/v3 设计 + 三块拆分 + 哲学 v4 压测(W01+W02)+ 学科挂接压测 | 10 |
 | `repo-design/` | repo 级设计(repo 级设计落地) | 6 |
 | `skill-spec-revamp/` | design-Q skill 规格整理(方案 R + 骨架改造) | 7 |
 | `doctor-harness/` | doctor-for-harness 设计套 + 压测 | 5 |
@@ -17,6 +17,7 @@
 | `merge-grill-family/` | grill 家族合并压测(作废框架) | 1 |
 | `harness-file-mgmt/` | harness 文件管理规格压测 | 1 |
 | `_misc/` | confirm 散件(非单一 feature 归属的行动确认) | 10 |
+| `philosophy-v5/` | philosophy_v5 design-Q(feature,vision/hld/lld)+设计压测 | 4 |
 
 ## 检索说明
 

@@ -2,7 +2,7 @@
 
 > 方法论三块拆分([ADR-0007](../../harness/adr/0007-methodology-three-way-split.md))产物之一:**实操文件**——「怎么用」的操作指南(skill 使用时机 / 工具规范 / 上下文操作链)。v1 起线(2026-08-04)。
 > **非 canonical**:修订走轻量流程(小步 commit,免 OD-4 母本同步、免四处锁定检查)。
-> 三块关系:方法论 = [methodology_v3.md](methodology_v4.md)(怎么做);哲学 = [philosophy_v1.md](philosophy_v4.md)(为什么);实操 = 本文件(怎么用)。
+> 三块关系:方法论 = [methodology_v3.md](methodology_v4.md)(怎么做);哲学 = [philosophy_v5.md](philosophy_v5.md)(为什么);实操 = 本文件(怎么用)。
 > 章节编号沿用 v3(快速上手 / §7.4-7.6 / §八 / 附录 A·B)。
 
 ## 快速上手:skill 使用流程一图

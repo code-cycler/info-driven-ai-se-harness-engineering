@@ -1,3 +1,28 @@
+================================================================================
+SESSION: philosophy_v5 起草(P1+P2+P4)
+时间: 2026-08-10T23:00:00+08:00
+================================================================================
+
+## 完成的任务
+- P1 philosophy_v5 顶部学科声明改四(+安全科学第五视角)+ 诚实标注 [F021 passes]
+- P2 §八 新增「安全科学视角:去 AI 黑盒」(三层次 + 正交 + 三风险 + 统合对策 + 弹性边界 + V&V 缺口)[F022 passes]
+- P4 元原则失败模式表「盲目信任 AI」扩展为「盲目信任 AI / 黑盒信任劫持」(一行两源)[F024 passes]
+
+## 修改的文件
+- docs/methodology/philosophy_v5.md: 新建(v4 全文 + 顶部改四 + §八 新增 + 元原则表合并)
+- harness/design/philosophy-v5/LLD.md: DoD 术语一致化(「结果不可独立验证」→「产出正确性不可独立验证」,与 §八/CONTEXT 一致)
+- .claude/feature_list.json: 追加 F021-F026(F021/F022/F024 passes=True)
+
+## 遇到的问题
+- DoD 术语不一致:LLD grep 清单写「结果不可独立验证」,但 §八 8.1 + CONTEXT AI 黑盒节用「产出正确性不可独立验证」(更精确)。修 LLD DoD 清单与实现对齐(D8 一致),重跑 DoD 全 ✅
+
+## 下一步计划
+- F023 P3:方法论 §2.2 加 STAMP 注脚 + §十一 加黑盒信任劫持注脚(§八 引用闭环)
+- F025 P5:v4→archive + v5→canonical + 链接(发布门 OD-1 + grep philosophy_v4 全仓引用)
+- F026 P6:OD-4 母本同步(仓库外,作者执行)
+
+================================================================================
+
 ## 完成的任务(格式反馈 + MIGRATION-FLOW)
 - **MIGRATION-FLOW 文档沉淀**:skills/doctor-harness/MIGRATION-FLOW.md(7 步:设计新布局→挪文件→链接重算→断链回归→跑校验→规格同步→留痕 + 先例表 + DoD);SKILL.md 第 2 步改为引用独立文档;同步 ~/.claude
 - **格式反馈落地**(grill-Q 压测补充声明用户裁决):题量四副本「每波 10–15」→ 上限 10;小波阈值 design/grill/retro ≤2 → ≤3、action-Q ≤4 → ≤3(四份统一,OD-11 有意分叉修订);同步四份 SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT/DESIGN + ~/.claude 双副本;commit 630fe85

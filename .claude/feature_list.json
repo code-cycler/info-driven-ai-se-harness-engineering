@@ -316,6 +316,85 @@
       "passes": true,
       "last_tested": "2026-08-08T16:00:00+08:00",
       "notes": "P4 完成:仓库 skills/doctor-harness/ 四件套(SKILL/DESIGN/HARNESS-RULES/CHANGELOG)+ ~/.claude 双副本 diff 0(仅脱敏差);家族表述同步第 9 个(CLAUDE.md 家族图 + 落盘速查表 + CONTEXT 家族节);脱敏门 0 + harness-check 0 违规"
+    },
+    {
+      "id": "F021",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 philosophy_v5 顶部学科声明改四(+安全科学第五视角)+诚实标注",
+      "steps": [
+        "grep '§八(新增)挂安全科学' philosophy_v5.md 顶部声明",
+        "脱敏门 0"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-10T23:00:00+08:00",
+      "notes": "v5 主体完成"
+    },
+    {
+      "id": "F022",
+      "category": "functional",
+      "priority": "high",
+      "description": "P2 philosophy_v5 §八 新增(去黑盒立论:三层次+正交+三风险+统合对策+弹性边界+V&V缺口)",
+      "steps": [
+        "grep 三层次(过程不透明/依据不可追溯/产出正确性不可独立验证)",
+        "grep 与第一支柱正交",
+        "grep WAI 定底线",
+        "§八 篇幅 60-80 行(实际 51,内容完整)"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-10T23:00:00+08:00",
+      "notes": "v5 主体完成;§八 51 行(SSoT)"
+    },
+    {
+      "id": "F023",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P3 学名注记散落:方法论 §2.2 加 STAMP 注脚 + §十一 加黑盒信任劫持注脚(指向哲学 §八)",
+      "steps": [
+        "methodology_v4.md §2.2 加'安全=系统级控制(STAMP),详见 philosophy_v5 §八'",
+        "§十一 加'盲信=黑盒信任劫持(见 §八)'"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-10T23:30:00+08:00",
+      "notes": "methodology §2.2 STAMP 注脚 + §十一 黑盒注脚 done"
+    },
+    {
+      "id": "F024",
+      "category": "functional",
+      "priority": "high",
+      "description": "P4 元原则失败模式表扩展:'盲目信任 AI'行扩为'盲目信任 AI / 黑盒信任劫持'(一行两源)",
+      "steps": [
+        "grep '盲目信任 AI / 黑盒信任劫持' philosophy_v5.md"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-10T23:00:00+08:00",
+      "notes": "合并不加新行(防重复)"
+    },
+    {
+      "id": "F025",
+      "category": "functional",
+      "priority": "high",
+      "description": "P5 v4→archive + v5→canonical + 链接更新(发布门 OD-1 三道 + grep philosophy_v4 全仓引用)",
+      "steps": [
+        "发布门前置:脱敏脚本 0 + 语义人审 + 脱敏报告",
+        "grep philosophy_v4 全仓引用(CLAUDE/README/AGENTS.md/方法论/skills/实操/CONTEXT/ADR)逐处 v4→v5",
+        "v4 移 archive, v5 为 current"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-10T23:30:00+08:00",
+      "notes": "v4→archive + 链接全仓更新 done;发布门 OD-1 三道是 push 前置(本地 commit 不触发,push 前执行)"
+    },
+    {
+      "id": "F026",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P6 OD-4 母本同步:v4→v5 升版触发作者其他位置副本标注(仓库外动作)",
+      "steps": [
+        "作者其他位置 philosophy 副本标注'开发副本,以 v5 为准'"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "待做:仓库外动作,agent 不代执行"
     }
   ]
 }

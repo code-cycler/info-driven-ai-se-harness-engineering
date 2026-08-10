@@ -155,3 +155,64 @@
 - ✅ **Q6 HARNESS-RULES 归属校验归属明示**:第二节补「各 skill 落盘前执行,doctor-harness 只给判据」
 - ✅ **Q7 dogfood 通过定义**:doctor-harness DESIGN.md 补定义(F019 符合)
 - ✅ **Q10 HARNESS-RULES 补「布局合规」定义**:第五节补(脚本可查三检查 + 分层人工判据)
+
+### ✅ 哲学 v4 系统工程视角压测修订包(grill-Q philosophy-v4 W01 产出,2026-08-10,已执行)
+
+> 来源:[grill-philosophy-v4-w01](harness/questionnaires/archive/methodology/grill-philosophy-v4-w01.md),10 题(9 题选 C 推荐 + Q7 澄清为「新开精简小节」),0 逃生舱。压测对象:哲学 v4(canonical),从运筹学 / 人因工程 / 软件工程三学科视角压测。**10 项哲学修订建议已全部执行(用户授权,2026-08-10)**:philosophy_v4.md 8 处 + methodology_v4.md 2 处(§2.1 两套尺度 + §5.2 题量同步);CONTEXT 学科注记 2 处;无新增 ADR/OD(Q9 复用 OD-13)。验证:旧措辞全改 / 新增内容在位 / 脱敏门 0 命中 / 历史 archive 母本不动。
+> 核验时机:✅ 已执行;遗留 = OD-4 母本同步(见下)。
+
+- ✅ **Q1 80/20 降格表述**(运筹/D1):哲学 §7.1「运筹学注脚」→「经验启发式(类 Pareto,非定理,无量化模型)」+ 诚实标注事后补述
+- ✅ **Q2「决策并行化」措辞精确化**(运筹/D7+D8):哲学 §1.3「决策本身被并行化」→「减少 LLM 串行往返;判断仍逐题串行」
+- ✅ **Q3「规划成本可忽略」软化带阈值**(运筹/D1+D4):核心论断 →「相对返工通常较小,但随深度边际递增,过阈值产生形式主义」
+- ✅ **Q4 情境意识 / 心智模型拆分双挂**(人因/D8):哲学 §一 拆分双挂;CONTEXT 学科注记已落
+- ✅ **Q5 有效上下文两套尺度**(人因/D1):methodology §2.1 + CONTEXT 区分 token 尺度 vs 人认知负荷,标注不可换算
+- ✅ **Q6 返工归因加限定 + 被否决项**(软工/D1+D3):哲学 §1.2「信息断层是主要归因」+ 被否决归因(AI 能力边界 / 需求漂移 / 集成意外)
+- ✅ **Q7 AI 能力天花板盲点**(软工/D5,澄清为「新开精简小节」):哲学 §一 新增 §1.4「信息流转框架的边界:AI 能力天花板」
+- ✅ **Q8 题量数字修正(确凿)**(软工/D7):哲学 §1.3 + 失败模式表「10–15」→「上限 10」+ methodology §5.2 同步(历史 archive 母本不动)
+- ✅ **Q9 shadow 双轨 pilot 状态标注**(运筹/D4):哲学 §7.2 加「状态注:pilot 阶段,首轮实证 AI 自评 ≠ 人类可用,价值待定,非已验证方法」
+- ✅ **Q10 核心论断代理指标 + 学科挂接诚实标注**(软工/D6):核心论断补代理指标(返工率 / 工时作 retro 自评项)+ 顶部学科挂接标注阐述性借用非经验证
+- ⏳ **OD-4 母本同步(仓库外动作,待用户执行)**:W01 + W02 两批 v4 内部修订(未升 v5,共 philosophy 15 处 + methodology 3 处 + CONTEXT 2 处),作者其他位置的 v4 副本内容与本仓库 v4 漂移;需重审 OD-4 策略——同步改副本 或 接受漂移至 v5。属仓库外动作,agent 不代执行。
+
+### ✅ 哲学 v4 压测 W02(§六分工表 + §6.2,2026-08-10,已执行)
+
+> 来源:[grill-philosophy-v4-w02](harness/questionnaires/archive/methodology/grill-philosophy-v4-w02.md),8 题全选 C,0 逃生舱。补压 W01 未审视的 §六分工表 + §6.2 AI 替代角色。**8 项已全部执行**(用户授权):philosophy 7 处 + methodology §十 1 处。无新增 ADR/OD/CONTEXT(Q2 复用 delegate/OD-13,Q5/Q7 指向 §七 + delegate)。验证:8 处在位 / 脱敏 0 / harness-check 0 违规。
+> 核验时机:✅ 已执行;OD-4 母本同步并入上一节同一条(本批同属 v4 内部修订)。
+
+- ✅ **W02-Q1 代码审查签字权**(软工/D1+D7):分工表代码审查行 人✅签字权 / AI✅辅助发现问题 + 图例脚注
+- ✅ **W02-Q2 白名单单向门风险**(软工/D2):分工表后加「误纳入单向门类(删除/发布/付费/对外传播)+ 禁区清单防线(见 delegate/OD-13)」
+- ✅ **W02-Q3 上下文管理拆分**(人因/D1+D8):分工表行拆「决定给人✅ / 执行(检索·压缩·加载)给 AI✅」
+- ✅ **W02-Q4 分工表图例脚注**(软工/D6):✅主导 / 辅助 / 执行 / 审阅 / 签字权 最小操作定义
+- ✅ **W02-Q5 §6.2 红利来源精确化**(运筹/D1+D5):「消除人际等待与传递失真 vs 单人多任务」+ 单人串行约束
+- ✅ **W02-Q6 §6.2 被否决项**(软工/D3):补「保留人工角色 / 部分替代(关键判断仍人)」
+- ✅ **W02-Q7 §6.2 单人认知负荷代价**(人因/D4):「判断密度全压单人 → 对策 80/20 分层 + delegate 下放」
+- ✅ **W02-Q8 §十「1–2 人」→ 个人开发者**(软工/D7,确凿):与 v4 受众收窄同步
+
+### 🔶 哲学 v5 立论重构(grill-Q discipline-mapping W01 补充声明,2026-08-10)
+
+> 来源:[grill-discipline-mapping-w01](harness/questionnaires/archive/methodology/grill-discipline-mapping-w01.md) **补充声明**:用户提议「开新版哲学文件(philosophy_v5)+ 安全科学升支柱级 + 强调去 AI 黑盒」。这超出 grill-Q(压测)范围,是 **design-Q 级(生成式立论设计)**。grill-Q W01 的 10 项决策(分层策略 / 机制判据 / CONTEXT 学科地图 / OD 回顾)已落 [ADR-0014](harness/adr/0014-discipline-mapping-strategy.md) + [CONTEXT「项目学科地图」节](docs/CONTEXT.md) + [OD-18](docs/OPEN-DECISIONS.md);Q1 哲学挂接 + Q3 元原则注记等哲学正文修订**不在 v4 落地,转 v5**。
+> 核验时机:v5 design-Q 设计套产出后,按 P3(类比 v3→v4)执行。
+
+- ✅ **grill-with-docs 深钻「去 AI 黑盒」立论锚点完成**(2026-08-10,6 点结晶):① 黑盒=三层次(过程不透明 / 依据不可追溯 / 结果不可独立验证);② 与第一支柱正交(独立维度);③ 风险=三坏后果(潜伏沉积 / 失控放大 / 信任劫持);④ 对策=统合已有可审计装置 + 形式化 V&V 缺口留 [OD-19](docs/OPEN-DECISIONS.md);⑤ 度=弹性边界(WAI 定底线 / WAD 留空间);⑥ 过程模型术语冲突=区分命名(STAMP 用全称「安全控制过程模型」)。结晶落 [CONTEXT「AI 黑盒」节](docs/CONTEXT.md) + [OD-19](docs/OPEN-DECISIONS.md)。
+
+### 🔷 philosophy_v5 design-Q(feature-philosophy-v5,2026-08-10 进行中)
+
+> 来源:grill-Q discipline-mapping + grill-with-docs 去黑盒深钻 → design-Q v5。设计套 [harness/design/philosophy-v5/](harness/design/philosophy-v5/)。完整档 vision→hld→lld。
+> 核验时机:各阶段闸门 + v5 起草后 DoD。
+
+- ✅ **vision 阶段完成**:W00 全采纳(15/15)+ W01 小波(2 题);[VISION](harness/design/philosophy-v5/VISION.md) 落盘
+- ✅ **hld 阶段完成**:W00 全采纳(16/16);[HLD](harness/design/philosophy-v5/HLD.md) 落盘 + [ADR-0015](harness/adr/0015-deblackbox-anchor.md)(去黑盒独立锚点)
+- ✅ **lld 阶段完成**:W00 全采纳(12/12);[LLD](harness/design/philosophy-v5/LLD.md) 落盘(起草 6 步 P1–P6 + §八 七小节 + DoD)
+- ✅ **设计套压测完成**(grill-Q philosophy-v5-design W01):10 题全 C;10 项设计套修订执行(HLD 4 + LLD 6,write→review 闭环);归档 [grill-philosophy-v5-design-w01](harness/questionnaires/archive/philosophy-v5/grill-philosophy-v5-design-w01.md)
+- ⏳ **起草 philosophy_v5**(转 long-running-agent):LLD P1–P6(feature_list 管理);**触发** `/long-running-agent`,从 [设计套](harness/design/philosophy-v5/) 重建 feature_list
+
+### 🔶 三文件层级化治理(宪法→基本法→地方法)— v5 后单独立项
+
+> 来源:philosophy-v5 vision W01 小波补充声明(2026-08-10)。三文件规模不对称:方法论 704 行(基本法)远超哲学 186(宪法)+ 实操 192(地方法);实操停 v1。用户裁决:先内容审计 + 单独立项(不进 v5)。
+> 核验时机:v5 完成后立项。
+
+- ⏳ **方法论 704 行内容审计**:派 subagent 审计越界 / 冗余(哪些跑到实操 / 哲学范畴、哪些重复),据审计定瘦身
+- ⏳ **三文件层级规则**:明确每层职责边界(宪法=原则 / 为什么;基本法=框架 / 怎么做;地方法=操作 / 怎么用),禁止越界
+- ⏳ **实操 v1 升版**:与哲学 / 方法论版本对齐(v1→v?)
+- ⏳ **立项方式**:v5 后 grill-Q(压测三文件结构)或 design-Q(治理设计)
+- ⏳ **philosophy_v5 立论重构**(深钻结晶后):① 安全科学作为**第五学科视角**进哲学顶部挂接(与软工 / 运筹并列,不改双支柱结构);② 「去 AI 黑盒」立论(深钻结论);③ v4→v5 升版(OD-4 母本同步、canonical 切换、CONTEXT / 方法论 / CLAUDE 链接更新,类比 v3→v4 repo 级设计 P3)
+- ✅ **「第五支柱」已澄清(2026-08-10)**:= **第五学科视角**(安全科学进哲学顶部学科挂接,非第三支柱,不改双支柱结构)
