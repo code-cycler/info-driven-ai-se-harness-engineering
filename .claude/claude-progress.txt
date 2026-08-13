@@ -1,4 +1,39 @@
 ================================================================================
+SESSION: grill-Q philosophy-v5 成稿压测 W01 修订落地 + feature_list 状态校正
+时间: 2026-08-13T09:25:00+08:00
+================================================================================
+
+## 完成的任务
+- grill-Q philosophy-v5 W01 处理完毕(10 题:Q1 选 A 推翻推荐改名「第四学科视角」;Q2–Q10 全 C;0 逃生舱)——修订 11 项全部执行(用户授权「立即执行全部」)
+- 「第五学科视角」→「第四学科视角」全仓更名(Q1 用户裁决:原名计数口径与 ADR-0015「学科数 3→4」矛盾)
+- philosophy_v5 §八 修订:L3 双向精确化(oracle 存在但常 AI 自写 = 嵌套黑盒)/「黑盒被制衡,未被完全打开」/ retro 抽查代理指标 / WAD 跨主体限定(含幻觉补全风险)/ 信任劫持循环承认 + 缓解组合 / 装置清单补 retro + long-running / §八 引言补 ADR-0014·0015 链接 / WAI-WAD 全称 +「WAI–WAD 缝隙」/「致灾」语境映射(单向门事故)
+- CONTEXT 同步:改名 4 处(含更名留痕)+ WAI/WAD 全称注记 + L3 定义 + 对策方向;ADR-0015/0014 更名注记(原文保留);CLAUDE.md 5 处 + README 2 处改名
+- 问卷归档 archive/philosophy-v5/(尾部处理报告摘要);TODO 修订包块全 ✅ + 卫生销项(「起草 v5」⏳→✅,P6 = OD-4 母本同步仍 ⏳)
+- feature_list 状态校正:F002/F004/F005(2026-08-05 已完成,passes 漏翻)→ true,复核证据记 notes
+
+## 修改的文件
+- docs/methodology/philosophy_v5.md: 9 处(改名 ×2 + §八 修订 ×7)
+- docs/CONTEXT.md: 改名 + WAI/WAD 注记 + L3 / 对策方向同步
+- harness/adr/0015-deblackbox-anchor.md / 0014-discipline-mapping-strategy.md: 更名注记
+- CLAUDE.md / README.md / TODO.md: 改名 + 修订包 + 卫生销项
+- harness/questionnaires/archive/philosophy-v5/grill-philosophy-v5-w01.md: 归档(新)
+- .claude/feature_list.json: F002/F004/F005 状态校正
+
+## 验证
+- living 文档旧名「第五学科视角」0 残留(CONTEXT 留痕与 TODO 历史条除外);新名 13 处在位;脱敏门 0 命中;harness-check exit=0;新增 ADR/OD 链接在位;feature_list JSON 合法(21/26 passes)
+
+## Git 提交
+- 4cc7c4b: docs(philosophy): grill-Q v5 成稿压测 W01 修订落地(8 文件,+224/-28)
+- 本 commit: chore(long-running) 状态校正 + progress
+
+## 下一步计划
+- F026 P6 OD-4 母本同步(仓库外,feature 原注「agent 不代执行」)——待用户决定执行方式
+- push 前 OD-1 发布门:脱敏脚本 0(✓)+ 语义人审(含 git 提交信息)+ 脱敏报告——发布 = 单向门,由用户决策
+- 其余 false 项:F006(发布门 + dogfood,验收 = 用户执行)、F008/09/10(方案 R 撤销标注保留)
+
+================================================================================
+
+================================================================================
 SESSION: philosophy_v5 起草(P1-P5 + git commit 530d0f4)
 时间: 2026-08-10T23:00:00+08:00
 ================================================================================

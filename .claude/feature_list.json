@@ -36,9 +36,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "判定方向 = 压测 Q4:替换有学科标准对应且语义重叠者,保留无学科对应或学科词语义偏移者;长期全面审计(B 方案)在 TODO"
+      "passes": true,
+      "last_tested": "2026-08-13T09:20:00+08:00",
+      "notes": "判定方向 = 压测 Q4:替换有学科标准对应且语义重叠者,保留无学科对应或学科词语义偏移者;长期全面审计(B 方案)在 TODO | 2026-08-13 状态校正:2026-08-05 已完成(TODO repo 级设计块 ✅),passes 漏翻;复核证据:CONTEXT 术语治理节判定表 + 新词门槛在位、ADR-0005 核查无替换无需修订、脱敏门 0"
     },
     {
       "id": "F003",
@@ -71,9 +71,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "AGENTS.md 零内容路由 = 压测 Q10;实操文件术语联动(若有)已在 P3 处理,本阶段不预设实操步(压测 Q9)"
+      "passes": true,
+      "last_tested": "2026-08-13T09:20:00+08:00",
+      "notes": "AGENTS.md 零内容路由 = 压测 Q10;实操文件术语联动(若有)已在 P3 处理,本阶段不预设实操步(压测 Q9) | 2026-08-13 状态校正:2026-08-05 已完成,passes 漏翻;复核证据:AGENTS.md 零内容路由在位、CLAUDE.md 规范优先级节在位、README 受众「个人开发者」在位、脱敏门 0"
     },
     {
       "id": "F005",
@@ -87,9 +87,9 @@
         "python3 scripts/desensitize.py . 0 命中",
         "git commit(docs: 前缀)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "ADR 拆分理由 = 压测 Q5:三类决策独立演进便于单独重访"
+      "passes": true,
+      "last_tested": "2026-08-13T09:20:00+08:00",
+      "notes": "ADR 拆分理由 = 压测 Q5:三类决策独立演进便于单独重访 | 2026-08-13 状态校正:2026-08-05 已完成,passes 漏翻;复核证据:ADR-0008/0009/0010 三份在位 + ADR-0005 在位、脱敏门 0"
     },
     {
       "id": "F006",
