@@ -80,7 +80,7 @@ scripts/             脱敏检查 / harness 校验等工具
 
 ### v5(2026-08-11,philosophy 立论重构)
 
-- **哲学文件升 v5**:新增 **§八 安全科学视角:去 AI 黑盒**(第五学科视角;黑盒三层次定义 + 与第一支柱正交 + 三风险 + 统合已有可审计装置对策 + 弹性边界 WAI/WAD);顶部学科挂接扩为四(人因 / 软工 / 运筹 / 安全科学);元原则失败模式表加「黑盒信任劫持」。v4 归 archive。
+- **哲学文件升 v5**:新增 **§八 安全科学视角:去 AI 黑盒**(第四学科视角;黑盒三层次定义 + 与第一支柱正交 + 三风险 + 统合已有可审计装置对策 + 弹性边界 WAI/WAD);顶部学科挂接扩为四(人因 / 软工 / 运筹 / 安全科学);元原则失败模式表加「黑盒信任劫持」。v4 归 archive。
 - **学科挂接分层**([ADR-0014](harness/adr/0014-discipline-mapping-strategy.md)):哲学正文只挂「立论核心学科」,CONTEXT「项目学科地图」承载全景(系统工程 / CM / QMS / PM / KM / 认知科学 + 安全 / 可靠性 / 韧性术语三分)。
 - **完整 write→review→implement 闭环**:grill-Q philosophy-v4(W01/W02,18 处修订)→ discipline-mapping → grill-with-docs(去黑盒 6 点结晶)→ design-Q(VISION/HLD/LLD + [ADR-0015](harness/adr/0015-deblackbox-anchor.md))→ 设计套压测(10 项修订)→ long-running 起草(commit 530d0f4)。
 
@@ -105,4 +105,4 @@ scripts/             脱敏检查 / harness 校验等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v5.md](docs/methodology/philosophy_v5.md)(哲学 · 为什么,v5 加安全科学第五视角)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v5 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。
+- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v5.md](docs/methodology/philosophy_v5.md)(哲学 · 为什么,v5 加安全科学第四视角)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v5 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。

@@ -203,7 +203,25 @@
 - ✅ **hld 阶段完成**:W00 全采纳(16/16);[HLD](harness/design/philosophy-v5/HLD.md) 落盘 + [ADR-0015](harness/adr/0015-deblackbox-anchor.md)(去黑盒独立锚点)
 - ✅ **lld 阶段完成**:W00 全采纳(12/12);[LLD](harness/design/philosophy-v5/LLD.md) 落盘(起草 6 步 P1–P6 + §八 七小节 + DoD)
 - ✅ **设计套压测完成**(grill-Q philosophy-v5-design W01):10 题全 C;10 项设计套修订执行(HLD 4 + LLD 6,write→review 闭环);归档 [grill-philosophy-v5-design-w01](harness/questionnaires/archive/philosophy-v5/grill-philosophy-v5-design-w01.md)
-- ⏳ **起草 philosophy_v5**(转 long-running-agent):LLD P1–P6(feature_list 管理);**触发** `/long-running-agent`,从 [设计套](harness/design/philosophy-v5/) 重建 feature_list
+- ✅ **起草 philosophy_v5 完成**(2026-08-11,long-running,commit 530d0f4):LLD P1–P5 落地(顶部声明 / §八 新增 / §2.2·§十一 注脚 / 元原则表 / canonical 切换);**P6 = OD-4 母本同步(仓库外)仍 ⏳**,见文件头「下一步主线」
+
+### 🔶 grill-Q philosophy-v5 成稿压测修订包(2026-08-13,**已全部执行**)
+
+> 来源:[grill-philosophy-v5-w01](harness/questionnaires/grill-philosophy-v5-w01.md)(10 题:Q1 选 A 改名「第四学科视角」,Q2–Q10 全 C;0 逃生舱;补充声明「关键术语采用中英文」= 修订句中学科关键术语中英文并置)。2026-08-13 用户授权全部执行。
+> 核验(2026-08-13 执行后):living 文档旧名 0 残留(留痕/历史记录除外)+ 脱敏门 0 命中 + harness-check 0(exit=0)+ 新增 ADR/OD 链接目标在位。
+
+- ✅ **Q1 改名包「第五 → 第四学科视角」**(用户选 A,推翻推荐 C):philosophy_v5 顶部 + §8.2;ADR-0015 文首更名注记(原文保留);ADR-0014 v5 待定节注记;CLAUDE.md 5 处;README 2 处;CONTEXT 4 处;**设计套(harness/design/philosophy-v5/)与归档问卷 4 份 = 历史原貌不改**
+- ✅ **Q2 §8.1 L3 双向精确化**:客观裁决源(oracle:编译 / 测试 / E2E)存在但常 AI 自写(嵌套黑盒,OD-13 实证);判断类产出只能人审;CONTEXT L3 定义同步
+- ✅ **Q3 §8.4「黑盒被打开」→「黑盒被制衡,未被完全打开」**(L1 零对策 + 留痕 = AI 自陈);CONTEXT 对策方向同步
+- ✅ **Q4 §8.5 末补最小代理指标**(retro 抽查决策依据可重建性,与 §一 同级)
+- ✅ **Q5 §8.5 补 WAD 跨主体限定句**(AI 灵活调整含幻觉补全风险;WAD 仅限纯执行 / 可逆;批量留痕 = 有界潜伏窗口,retro 收口)
+- ✅ **Q6 §8.3 信任劫持条补循环承认 + 缓解组合**(80/20 压成本 + WAI 底线 + retro 复核;底线 creep 靠 retro 识别)
+- ✅ **Q7 §8.4 装置清单补 retro 复盘 + long-running 留痕**(CONTEXT 对策方向同步)
+- ✅ **Q8 §八 引言补 ADR-0014/0015 链接行**(立锚决策与被否决项可追溯)
+- ✅ **Q9 WAI/WAD 全称**:CONTEXT 注记 + §8.5 首现带全称(Work-As-Imagined / Work-As-Done)+「弥合 WAD 缝隙」→「弥合 WAI–WAD 缝隙」
+- ✅ **Q10 §8.3「致灾」语境映射**(= 单向门事故:误删 / 误发布 / 付费 / 外泄)+「dysfunctional 交互致灾」→「系统层交互失控致灾」
+- ✅ **TODO 卫生**:「起草 philosophy_v5」改 ✅(P1–P5 落地,P6 = OD-4 母本同步仍 ⏳ 见文件头);「三文件」块内重复条目销项改 ✅
+- 观察项(仅记录):① 设计压测 Q4 示例「元原则表点名 Reason 潜伏条件」实际未执行(现为合并行、已指向 §八,可辩护);② methodology §5.2 标题「一问一达」疑为「答」typo(属方法论工件,改会破锚点,转方法论修订时一并评估)
 
 ### 🔶 三文件层级化治理(宪法→基本法→地方法)— v5 后单独立项
 
@@ -214,5 +232,5 @@
 - ⏳ **三文件层级规则**:明确每层职责边界(宪法=原则 / 为什么;基本法=框架 / 怎么做;地方法=操作 / 怎么用),禁止越界
 - ⏳ **实操 v1 升版**:与哲学 / 方法论版本对齐(v1→v?)
 - ⏳ **立项方式**:v5 后 grill-Q(压测三文件结构)或 design-Q(治理设计)
-- ⏳ **philosophy_v5 立论重构**(深钻结晶后):① 安全科学作为**第五学科视角**进哲学顶部挂接(与软工 / 运筹并列,不改双支柱结构);② 「去 AI 黑盒」立论(深钻结论);③ v4→v5 升版(OD-4 母本同步、canonical 切换、CONTEXT / 方法论 / CLAUDE 链接更新,类比 v3→v4 repo 级设计 P3)
+- ✅ **philosophy_v5 立论重构**(2026-08-11 完成,commit 530d0f4;与上行「起草 philosophy_v5」同义,历史重复条目销项):① 安全科学作为**第四学科视角**(时称「第五」,2026-08-13 更名)进哲学顶部挂接;② 「去 AI 黑盒」立论;③ v4→v5 升版(OD-4 母本同步仍 ⏳,见文件头「下一步主线」)
 - ✅ **「第五支柱」已澄清(2026-08-10)**:= **第五学科视角**(安全科学进哲学顶部学科挂接,非第三支柱,不改双支柱结构)

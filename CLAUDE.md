@@ -20,10 +20,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 关键文档导航
 
-- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(怎么做,canonical)+ [philosophy_v5.md](docs/methodology/philosophy_v5.md)(为什么,canonical;v5 加安全科学第五学科视角「去 AI 黑盒」§八)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[methodology_v3/v2](docs/methodology/archive/) 与 [philosophy_v4](docs/methodology/archive/philosophy_v4.md) 为历史母本。
-- [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 / 第一支柱术语分层 / 术语治理 / **项目学科地图 + AI 黑盒(v5 第五学科视角锚点)** / Grill 家族 / skill 家族)。
+- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(怎么做,canonical)+ [philosophy_v5.md](docs/methodology/philosophy_v5.md)(为什么,canonical;v5 加安全科学第四学科视角「去 AI 黑盒」§八)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[methodology_v3/v2](docs/methodology/archive/) 与 [philosophy_v4](docs/methodology/archive/philosophy_v4.md) 为历史母本。
+- [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 / 第一支柱术语分层 / 术语治理 / **项目学科地图 + AI 黑盒(v5 第四学科视角锚点)** / Grill 家族 / skill 家族)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 待决事项 + 重访触发。改"已决"事项前先查这里与 `harness/adr/`。
-- [harness/adr/](harness/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分 / 0008–0010 v4 落地 / 0011 硬编码 harness / 0012–0013 doctor-harness 分层 / **0014 学科挂接分层策略 / 0015 去黑盒第五学科视角独立锚点(v5)**。
+- [harness/adr/](harness/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分 / 0008–0010 v4 落地 / 0011 硬编码 harness / 0012–0013 doctor-harness 分层 / **0014 学科挂接分层策略 / 0015 去黑盒第四学科视角独立锚点(v5)**。
 - [harness/design/](harness/design/) 与 [harness/questionnaires/](harness/questionnaires/) —— **AI 流程产物**(设计文档套 / 归档问卷),与项目文件 docs/ 物理分离(三区模型)。
 - 唯一工具命令:脱敏检查 `python3 scripts/desensitize.py .`(发布前 DoD 要求 0 命中;映射表本地 gitignored;push 前三道门 = 脚本 0 命中 + 语义人审 + 脱敏报告,见 [OD-1](docs/OPEN-DECISIONS.md);**不要在 .md 中复述映射表里的真实名**)。
 
@@ -85,8 +85,8 @@ doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 del
 
 **2026-08-08:doctor-for-harness 完成(第 9 个 skill)+ harness 治理落地**:分层规则权威化([HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md),ADR-0012/0013)+ 校验脚本 [scripts/harness-check.py](scripts/harness-check.py)(命名/ADR 编号/归档位置三检查);设计套压测 10 题全认定 + 7 项工件修订执行;格式反馈落地(单波次上限 10 / 小波阈值 3 四副本统一);**归档子目录化**(41 份按 feature/主题迁入 10 子目录 + [archive/README.md](harness/questionnaires/archive/README.md) 索引);MIGRATION-FLOW 迁移流程沉淀。
 
-**2026-08-11:philosophy_v4 → v5 立论重构完成(安全科学第五学科视角 + 去 AI 黑盒锚点)**——经完整 write→review→implement 闭环:grill-Q philosophy-v4(W01/W02,18 处修订)→ discipline-mapping([ADR-0014](harness/adr/0014-discipline-mapping-strategy.md) 学科挂接分层)→ grill-with-docs(去黑盒 6 点结晶,落 [CONTEXT AI 黑盒节](docs/CONTEXT.md) + [OD-19](docs/OPEN-DECISIONS.md))→ design-Q philosophy-v5([VISION/HLD/LLD](harness/design/philosophy-v5/) + [ADR-0015](harness/adr/0015-deblackbox-anchor.md))→ 设计套压测(10 项修订)→ long-running 起草(P1-P5,commit 530d0f4);v4 归 archive,v5 为 current canonical。新增 [OD-18](docs/OPEN-DECISIONS.md)(学科挂接回顾)/ [OD-19](docs/OPEN-DECISIONS.md)(形式化 V&V 缺口);v5 §八「去 AI 黑盒」(三层次 + 正交第一支柱 + 三风险 + 统合对策 + 弹性边界)。
+**2026-08-11:philosophy_v4 → v5 立论重构完成(安全科学第四学科视角 + 去 AI 黑盒锚点)**——经完整 write→review→implement 闭环:grill-Q philosophy-v4(W01/W02,18 处修订)→ discipline-mapping([ADR-0014](harness/adr/0014-discipline-mapping-strategy.md) 学科挂接分层)→ grill-with-docs(去黑盒 6 点结晶,落 [CONTEXT AI 黑盒节](docs/CONTEXT.md) + [OD-19](docs/OPEN-DECISIONS.md))→ design-Q philosophy-v5([VISION/HLD/LLD](harness/design/philosophy-v5/) + [ADR-0015](harness/adr/0015-deblackbox-anchor.md))→ 设计套压测(10 项修订)→ long-running 起草(P1-P5,commit 530d0f4);v4 归 archive,v5 为 current canonical。新增 [OD-18](docs/OPEN-DECISIONS.md)(学科挂接回顾)/ [OD-19](docs/OPEN-DECISIONS.md)(形式化 V&V 缺口);v5 §八「去 AI 黑盒」(三层次 + 正交第一支柱 + 三风险 + 统合对策 + 弹性边界)。
 
-历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第五视角)。
+历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角)。
 
 下一步主线([TODO.md](TODO.md)):**philosophy_v5 F026 OD-4 母本同步(仓库外)+ push 前 OD-1 发布门**;三文件层级化治理(宪法→基本法→地方法,方法论 704 行臃肿审计 + 实操升版)单独立项;CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。

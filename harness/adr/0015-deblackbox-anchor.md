@@ -2,6 +2,7 @@
 
 > 状态:accepted(2026-08-10,design-Q philosophy-v5 hld W00 #15 采纳)
 > 决策日期:2026-08-10
+> **更名注记(2026-08-13)**:「第五学科视角」更名「**第四学科视角**」——原命名计数口径从未落盘,与本 ADR「后果」节「学科数 3→4」矛盾;grill-Q philosophy-v5 W01 Q1 用户裁决全仓改名(否决「保留第五 + 补口径注记」方案)。本文原文(含标题)保留历史措辞不改;living 文档(philosophy_v5 / CONTEXT / CLAUDE / README)已同步新名。
 
 ## 背景
 
