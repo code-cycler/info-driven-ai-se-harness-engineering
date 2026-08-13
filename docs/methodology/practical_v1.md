@@ -2,7 +2,7 @@
 
 > 方法论三块拆分([ADR-0007](../../harness/adr/0007-methodology-three-way-split.md))产物之一:**实操文件**——「怎么用」的操作指南(skill 使用时机 / 工具规范 / 上下文操作链)。v1 起线(2026-08-04)。
 > **非 canonical**:修订走轻量流程(小步 commit,免 OD-4 母本同步、免四处锁定检查)。
-> 三块关系:方法论 = [methodology_v3.md](methodology_v4.md)(怎么做);哲学 = [philosophy_v5.md](philosophy_v5.md)(为什么);实操 = 本文件(怎么用)。
+> 三块关系:方法论 = [methodology_v4.md](methodology_v4.md)(怎么做);哲学 = [philosophy_v6.md](philosophy_v6.md)(为什么);实操 = 本文件(怎么用)。
 > 章节编号沿用 v3(快速上手 / §7.4-7.6 / §八 / 附录 A·B)。
 
 ## 快速上手:skill 使用流程一图
@@ -141,7 +141,21 @@ Skill 家族是方法论的执行体,按用途分类:
 - **Web Search / Web Fetch**:查最新文档、API 参考、技术调研
 - **IDE 集成**:VS Code 诊断、Notebook 代码执行
 
-**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill/grill-with-docs。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §5.2/§5.3](methodology_v4.md#52-演进说明从一问一达到批量问卷))。
+**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill/grill-with-docs。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §5.2/§5.3](methodology_v4.md#52-演进说明从一问一答到批量问卷))。
+
+#### L3 独立验证最低分流
+
+哲学 §8.1 / §8.4 的 L3 原则落到操作层时,按以下最低边界执行;具体采样频率、风险阈值与项目 DoD 可再收紧:
+
+| 情形 | 最低独立验证 |
+| --- | --- |
+| AI 自写 oracle / 测试 | 人审测试本身,确认测试没有把同一错误当成正确答案 |
+| 用户可玩产物 | 人类实际试玩或验收,不能只接受 AI 自评「可用」 |
+| 单向门操作(删除 / 发布 / 付费 / 对外传播) | 人审并确认后执行,再核对实际结果 |
+| 普通代码且有独立 oracle | 运行客观测试,并按风险做人审;oracle 若由 AI 自写,升级到第一行 |
+| 纯执行且可逆事项 | 可抽样复核;抽样规则应在行动前或对应 DoD 中声明 |
+
+这张表是最低分流,不替代具体项目的测试策略、dogfood 验收或 long-running DoD。
 
 ### 8.4 权限管理
 
