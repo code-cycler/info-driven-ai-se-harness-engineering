@@ -87,6 +87,8 @@ doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 del
 
 **2026-08-11:philosophy_v4 → v5 立论重构完成(安全科学第四学科视角 + 去 AI 黑盒锚点)**——经完整 write→review→implement 闭环:grill-Q philosophy-v4(W01/W02,18 处修订)→ discipline-mapping([ADR-0014](harness/adr/0014-discipline-mapping-strategy.md) 学科挂接分层)→ grill-with-docs(去黑盒 6 点结晶,落 [CONTEXT AI 黑盒节](docs/CONTEXT.md) + [OD-19](docs/OPEN-DECISIONS.md))→ design-Q philosophy-v5([VISION/HLD/LLD](harness/design/philosophy-v5/) + [ADR-0015](harness/adr/0015-deblackbox-anchor.md))→ 设计套压测(10 项修订)→ long-running 起草(P1-P5,commit 530d0f4);v4 归 archive,v5 为 current canonical。新增 [OD-18](docs/OPEN-DECISIONS.md)(学科挂接回顾)/ [OD-19](docs/OPEN-DECISIONS.md)(形式化 V&V 缺口);v5 §八「去 AI 黑盒」(三层次 + 正交第一支柱 + 三风险 + 统合对策 + 弹性边界)。
 
+**2026-08-13:grill-Q philosophy-v5 成稿压测 W01 闭环 + 发布门推送**——压测 10 题(Q1 用户裁决更名「第五→第四学科视角」:全仓同步 + ADR-0015/0014 更名注记;Q2–Q10 全 C:§八 修订 9 处——嵌套黑盒 / 黑盒被制衡 / retro 抽查代理指标 / WAD 跨主体限定 / 信任劫持循环 / 装置补 retro+long-running / ADR 链接 / WAI-WAD 全称 / 致灾语境映射),全部执行并验证(脱敏 0 / harness-check 0);OD-1 三道过后推送(7853792..f93cc8b,2 commits);F026 OD-4 母本同步用户仓库外执行销项;feature_list 校正(F002/F004/F005 补 passes)。**剩 dogfood(F006 唯一剩余)**。
+
 历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角)。
 
-下一步主线([TODO.md](TODO.md)):**philosophy_v5 F026 OD-4 母本同步(仓库外)+ push 前 OD-1 发布门**;三文件层级化治理(宪法→基本法→地方法,方法论 704 行臃肿审计 + 实操升版)单独立项;CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
+下一步主线([TODO.md](TODO.md)):**dogfood(用户验收,F006 唯一剩余)**;三文件层级化治理(宪法→基本法→地方法,方法论 704 行臃肿审计 + 实操升版)单独立项;CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
