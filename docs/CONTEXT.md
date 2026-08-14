@@ -2,17 +2,19 @@
 
 > 纯术语表:只放概念定义,不放决策(见 [harness/adr/](../harness/adr/))与实现细节。
 > 首次创建:2026-07-28。
+>
+> **规范导航(2026-08-14,grill-Q methodology-improvement W01 Q10)**:文档冲突裁决的规范优先级唯一权威处 = [CLAUDE.md](../../CLAUDE.md)(方法论主张 > ADR > CONTEXT 术语 > skill 规格 > 实操文件),此处不复制。本表只补 CLAUDE.md 未覆盖的一层:**设计套内层级裁决——HLD 契约(接口契约 / 全局选型 / 模块边界)优先于 LLD 细节;LLD 与之冲突时以 HLD 为准,改契约必须走 [ADR-0021](../harness/adr/0021-design-implementation-deviation-governance.md) 治理性偏差路径**(W01 Q1 裁决;规格落地随 design-Q 数字层级改造一并写入,见 TODO 对应立项块)。
 
 ## 双支柱
 
-方法论的核心理念,相乘缺一为零(详见 [methodology_v4 §二](methodology/methodology_v4.md)):
+方法论的核心理念,相乘缺一为零(详见 [methodology_v5 §二](methodology/methodology_v5.md)):
 
 - **第一支柱 · 以信息为核心**:与 AI 协作的本质是信息流转;瓶颈在有效上下文的质与量,以及对抗 AI 在信息真空中的幻觉式自作主张决策。
 - **第二支柱 · 驾驭工程 = AI × 软件工程**:AI 是加速器,软件工程纪律(设计先行 / TDD / Code Review / ADR / 复盘)是骨架。
 
 ## 第一支柱术语分层(v3)
 
-第一支柱相关术语的层级归属(详见方法论文件 [§2.1 / §5.1](methodology/methodology_v4.md)、哲学文件 [§1.2](methodology/philosophy_v7.md)):
+第一支柱相关术语的层级归属(详见方法论文件 [§2.1 / §5.1](methodology/methodology_v5.md)、哲学文件 [§1.2](methodology/philosophy_v7.md)):
 
 - **信息断层** = 返工的根源框架,分两类:人与人断层(由 AI 替代角色解决)、人与 AI 断层(由问答对齐解决);返工是其可见症状。
 - **信息流转** = 过程模型:上下文进入模型,模型产出结果,结果沉淀为新的信息。
@@ -106,29 +108,29 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 > 安全科学作第四学科视角的立论锚点;v7 继承并扩展了该挂接([philosophy_v7 §四](methodology/philosophy_v7.md#四安全科学视角去-ai-黑盒))。深钻来源:grill-with-docs「去 AI 黑盒」单点深钻(2026-08-10,6 点结晶)。
 
-- **AI 黑盒** = AI 不透明的三层次合一(①②③ = 哲学 §4.1 的 L1/L2/L3,2026-08-13 W02 Q4 注记):① **决策过程不透明**(推理链不可见);② **决策依据不可追溯**(为什么选 X 不选 Y 无留痕);③ **产出正确性不可独立验证**(功能正确性有客观裁决源但常由 AI 自写——嵌套黑盒;判断类产出只能人审,详见 [philosophy_v7 §4.1](methodology/philosophy_v7.md#41-什么是-ai-黑盒))。
+- **AI 黑盒** = AI 不透明的三个相互独立、可叠加的维度(①②③ = 哲学 §4.1 的 L1/L2/L3,2026-08-14 grill-Q philosophy-v7 W01 Q5):① **决策过程不透明**(推理链不可见);② **决策依据不可追溯**(为什么选 X 不选 Y 无留痕);③ **产出正确性不可独立验证**(功能正确性有客观裁决源但常由 AI 自写——嵌套黑盒;判断类产出只能人审,详见 [philosophy_v7 §4.1](methodology/philosophy_v7.md#41-什么是-ai-黑盒))。任一维度的留痕或验证都不能替代另外两个维度的证据。
 - **与第一支柱正交**:第一支柱治「AI 决策**错**」(信息维度,对策=给信息);去黑盒治「AI 决策**过程不可见**」(审计维度,对策=留痕/可追溯)。两者独立——信息给够仍可能黑盒,过程留痕仍可能决策错。够格作第四学科视角独立锚点。
 - **黑盒风险(三坏后果)**:潜伏沉积(可靠性,Reason 潜伏条件)+ 失控放大(安全,STAMP 系统层失控)+ 信任劫持(人因,黑盒→放弃审查→盲信)。
-- **对策方向**:统合项目已定义/可用的审计装置(delegation-log / ADR / 归档问卷 / Code Review 人审 / dogfood 留痕 / 脱敏门 / harness-check / retro 复盘 / long-running 留痕)为「对抗黑盒」立论——黑盒被制衡而非完全打开(L1 推理链无对策,留痕 = AI 自陈理由);各装置是否启用、是否经过 dogfood 验证需分别核实;形式化 V&V 缺口(结果可独立验证)留 [OD-19](OPEN-DECISIONS.md)。
+- **对策方向**:统合项目审计装置为「对抗黑盒」立论——黑盒被制衡而非完全打开(L1 推理链无对策,留痕 = AI 自陈理由);装置状态按「规范已定义 / 执行体可调用 / 本仓库已实测 / 下游项目需接入」四类核实,不再用无状态的「已定义/可用」概括;形式化 V&V 缺口(结果可独立验证)留 [OD-19](OPEN-DECISIONS.md)。
 - **度(弹性边界)**:WAI 定底线(关键 / 单向门 / 安全类强制留痕),WAD 只在执行细节上留空间;已发生的自主决策仍须即时留痕,批量或事后记录仅限非自主决策或预先声明的抽样——避免去黑盒退化为文档形式主义(元原则失败模式)。
 
 > **「过程模型」术语冲突**:本表「信息流转 = 过程模型」(上下文→模型→结果→新信息)保留;STAMP 的 process model 用全称「**安全控制过程模型**」(Leveson 三构造之一:控制器对被控系统的内部表征,模型不准→控制失效)区分,两者不同义。
 
 ## 5 环节闭环
 
-开发工作流主路径(详见 [methodology_v4 §四](methodology/methodology_v4.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
+开发工作流主路径(详见 [methodology_v5 §四](methodology/methodology_v5.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
 
 ## Grill 家族
 
-决策引擎,分两族(详见 [methodology_v4 §5.3](methodology/methodology_v4.md)):
+决策引擎,分两族(详见 [methodology_v5 §4.3](methodology/methodology_v5.md)):
 
 - **批量问卷族**:design-Q / grill-Q / retro-Q / action-Q(多波次问卷,离线作答;action-Q = confirm-list 确认式分叉,复用引擎族属不变——2026-08-13 grill-Q philosophy-v5 W02 Q3 补录,对齐哲学 §7.1 成员集)。
 - **单点深钻族**:grill / grill-with-docs(一问一答,逐轮等待)。
-- **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族 = 80% 可预知的基础问题层,人以 20% 时间高速处理;单点深钻族 = 20% 关键问题层(依赖链深 / 决策未成形 / 需即时反馈),人投 80% 时间深钻。两族是同一判断成本优化系统的两个层位,经「深水区转单点深钻 / 结晶成工件复压」双向交接(见 [methodology_v4 §5.2](methodology/methodology_v4.md))。
+- **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族处理可预知、可离线的基础问题;单点深钻族处理依赖链深、决策未成形、需即时反馈或必须绑定现实证据的关键问题。80/20 是路由启发式,不是时间配额或统计结论;四项分流判据与交接见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02) / [§5.2](methodology/methodology_v5.md#42-演进说明从一问一答到批量问卷)。
 
 ## skill 家族
 
-方法论的可执行载体,9 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md))。
+方法论的可执行载体,9 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md));唯一入口路由、输入 / 输出 / 决策权 / 禁止越界 / 交接条件见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02)。
 
 ## 方法论文档三块(ADR-0007)
 
@@ -155,13 +157,17 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 - **规范要求** = 方法论规定应当遵守的边界,不等于已经执行或验证。
 - **启发式** = 用于指导判断的经验规则或类比,不等于统计结论或学科实证。
 - **试点** = 已开始有限范围探索,结果仍需按预设条件复核,不等于稳定机制。
+- **暂定** = 设计或接口已写出但显式标注待定,下游不得依赖其长期兼容;与「试点」的区别:试点是流程机制在跑,暂定是产物内容本身未定(2026-08-14 grill-Q methodology-improvement W01 Q10 引入,参照 同级对标仓库 暂定设计标记)。
 - **已验证** = 有明确的脚本、实测、dogfood 或人审证据支持的具体断言;必须能指向证据入口。
 - **未验证** = 已提出但当前没有足够证据支持的断言或装置能力。
 - **已知缺口** = 已明确承认尚无系统化对策或独立证据的部分。
+- **审计装置状态四分法(v7 W01)** = 「规范已定义 / 执行体可调用 / 本仓库已实测 / 下游项目需接入」;四类分别回答应不应该有、能不能调用、当前仓库是否跑通过、采用项目还需补什么,不能互相冒充。
 
 这些状态词只用于核心主张和审计装置清单。**本仓库的证据范围**是文档/skill 的执行一致性与过程治理,不是下游项目开发效率或质量因果关系的证明;下游效果须由采用项目自行进行 dogfood / retro 验证。状态治理与验证卡见 [ADR-0016](../harness/adr/0016-method-claim-assurance-contract.md)。
 
 **统一主张状态模板(v7)**:核心主张和审计装置按「**主张 → 适用范围 → 当前状态 → 最小证据 → 失效信号 → 重访条件**」组织。该顺序是审计路径,不是要求每条正文都增加表格;哲学保留原则,验证卡、实测记录和具体状态落在实操或 `harness/` 区。
+
+**风险触发证据前置(v7 W02)**:涉及工具行为、代码行为、外部依赖或不可逆动作的主张,必须附原始来源或可复现命令与输出;无法核实时标为“未验证”。低风险可逆动作可带状态继续,高风险或单向门动作暂停并请求人确认。测试通过、skill 已运行或文档已存在,均不能单独推出下游效果或整体正确性。
 
 ## Claude Code(在本仓库的定位)
 

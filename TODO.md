@@ -2,7 +2,7 @@
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
 > 当前状态:**methodology_v3 已发布(2026-07-29);action-questionnaire 已入库(2026-08-03);2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计完成 + v4 落地 P1–P5 完成**(方法论 + 哲学升 v4(受众收窄 / 第二支柱机制层 / 三学科化)、harness 区物理分离、术语治理、ADR-0008/0009/0010、入口改造)**;2026-08-08 doctor-for-harness 完成(第 9 个 skill)+ harness 治理落地(分层/校验/迁移)+ 格式反馈 + 归档子目录化**。P6 发布门已执行(2026-08-13 推送 7853792..f93cc8b,OD-1 三道过);**dogfood 待执行**。
-> 下一步主线:**dogfood**(实操文件一次真实轻量修订任务,用户验收);三文件层级化治理(单独立项);CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
+> 下一步主线(2026-08-14 grill-Q methodology-improvement W01 裁决):**① dogfood 最优先**(Q7-A 冻结新机制新增;执行场 = 全局实验 skill + DOGFOOD 实测 + 本项目 backup,见 [OD-24](docs/OPEN-DECISIONS.md);先消歧两个 dogfood 定义);**② design-Q 数字层级改造立项**(Q3-A,走 design-Q 完整流程);③ 方法论 704 行内容审计(Q4-B,据审计证据裁决 OD-20);~~④ 方法论修订包~~ **✅ 已执行(2026-08-14,用户授权「立即执行全部」)**:升 [methodology_v5](docs/methodology/methodology_v5.md)(章节连续化 + §4.3 补 action-Q + §5.3 时序纪律)+ CLAUDE.md 图补 action-Q 节点 + 全库引用审查(v4 归 archive;ADR/归档问卷历史原貌不改);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -158,7 +158,7 @@
 
 ### ✅ 哲学 v4 系统工程视角压测修订包(grill-Q philosophy-v4 W01 产出,2026-08-10,已执行)
 
-> 来源:[grill-philosophy-v4-w01](harness/questionnaires/archive/methodology/grill-philosophy-v4-w01.md),10 题(9 题选 C 推荐 + Q7 澄清为「新开精简小节」),0 逃生舱。压测对象:哲学 v4(canonical),从运筹学 / 人因工程 / 软件工程三学科视角压测。**10 项哲学修订建议已全部执行(用户授权,2026-08-10)**:philosophy_v4.md 8 处 + methodology_v4.md 2 处(§2.1 两套尺度 + §5.2 题量同步);CONTEXT 学科注记 2 处;无新增 ADR/OD(Q9 复用 OD-13)。验证:旧措辞全改 / 新增内容在位 / 脱敏门 0 命中 / 历史 archive 母本不动。
+> 来源:[grill-philosophy-v4-w01](harness/questionnaires/archive/methodology/grill-philosophy-v4-w01.md),10 题(9 题选 C 推荐 + Q7 澄清为「新开精简小节」),0 逃生舱。压测对象:哲学 v4(canonical),从运筹学 / 人因工程 / 软件工程三学科视角压测。**10 项哲学修订建议已全部执行(用户授权,2026-08-10)**:philosophy_v4.md 8 处 + methodology_v5.md 2 处(§2.1 两套尺度 + §5.2 题量同步);CONTEXT 学科注记 2 处;无新增 ADR/OD(Q9 复用 OD-13)。验证:旧措辞全改 / 新增内容在位 / 脱敏门 0 命中 / 历史 archive 母本不动。
 > 核验时机:✅ 已执行;遗留 = OD-4 母本同步(见下)。
 
 - ✅ **Q1 80/20 降格表述**(运筹/D1):哲学 §7.1「运筹学注脚」→「经验启发式(类 Pareto,非定理,无量化模型)」+ 诚实标注事后补述
@@ -263,9 +263,9 @@
 > 来源:philosophy-v5 vision W01 小波补充声明(2026-08-10)。三文件规模不对称:方法论 704 行(基本法)远超哲学 186(宪法)+ 实操 192(地方法);实操停 v1。用户裁决:先内容审计 + 单独立项(不进 v5)。
 > 核验时机:v5 完成后立项。
 
-- ⏳ **方法论 704 行内容审计**:派 subagent 审计越界 / 冗余(哪些跑到实操 / 哲学范畴、哪些重复),据审计定瘦身
+- ⏳ **方法论 704 行内容审计**:派 subagent 审计越界 / 冗余(哪些跑到实操 / 哲学范畴、哪些重复),据审计定瘦身(**2026-08-14 W01 Q4-B 裁决 = 优先执行**,据审计证据裁决 OD-20;与 design-Q 数字层级改造联动——两者都指向分层结构)
 - ⏳ **三文件层级规则**:明确每层职责边界(宪法=原则 / 为什么;基本法=框架 / 怎么做;地方法=操作 / 怎么用),禁止越界
-- ⏳ **实操 v1 升版**:与哲学 / 方法论版本对齐(v1→v?)
+- ⏳ **实操 v1 按需轻量修订**:非 canonical、非版本对齐(OD-21 裁决;2026-08-14 W01 Q6 措辞修正,原「与哲学/方法论版本对齐」表述过时)
 - ⏳ **立项方式**:v5 后 grill-Q(压测三文件结构)或 design-Q(治理设计)
 - ✅ **philosophy_v5 立论重构**(2026-08-11 完成,commit 530d0f4;与上行「起草 philosophy_v5」同义,历史重复条目销项):① 安全科学作为**第四学科视角**(时称「第五」,2026-08-13 更名)进哲学顶部挂接;② 「去 AI 黑盒」立论;③ v4→v5 升版(OD-4 母本同步仍 ⏳,见文件头「下一步主线」)
 - ✅ **「第五支柱」已澄清(2026-08-10)**:= **第五学科视角**(安全科学进哲学顶部学科挂接,非第三支柱,不改双支柱结构)
@@ -336,3 +336,53 @@
 - ✅ **最小切片边界**:前三行学科治理映射获得进入/退出模板;代理指标只作反思提示,不新增测量契约或自动验收门;完整 Level 1/2/3 继续由 [OD-20](docs/OPEN-DECISIONS.md) 管理。
 - ✅ **双文件治理**:哲学与 methodology_v4 作为 canonical 对等双文件,各自演进并相互交叉审查;实操保留为非 canonical,见 [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) / [OD-21](docs/OPEN-DECISIONS.md)。
 - ⏳ **后续验证**:首批方法不变量、验证卡与前三行模板的 dogfood 证据仍待建立;执行窗口 = 首轮方法论 dogfood / retro。
+
+### ✅ grill-Q philosophy-v7 W01(2026-08-14,处理完成;W02 动态压测)
+
+> 来源:[grill-philosophy-v7-w01](harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w01.md)。10 题全选 C,0 逃生舱,0 自定义,0 单选冲突。W01 结论:保留哲学立论,但把证据、状态、不可裁剪边界和双文件交叉挑战转成最小可核验治理动作;正文修订已由 W02 收尾授权并执行。
+
+- ✅ **Q5 术语收口**:CONTEXT 将「AI 黑盒三层次合一」改为「三个相互独立、可叠加的不透明维度」,明确任一维度的证据不能替代另外两个维度。
+- ✅ **Q9 治理决策**:新增 [ADR-0019](harness/adr/0019-methodology-nonnegotiable-guardrails.md),确定四项不可裁剪核心:人承担判断与最终确认、单向门先停并留痕、L3 独立验证、冲突不得静默覆盖。
+- ✅ **Q10 双文件边界**:[ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md)补充「方法论自包含 = 可独立执行流程与操作规范」判据,纳入后续交叉审查。
+- ✅ **Q1**:已在哲学 §1.3 建立 `MC-01` 信息断层 → 返工最小验证卡,包含适用范围、返工定义、基线 / 窗口、反例和重访条件;卡片与证据模板见 [方法论治理最小切片](harness/design/methodology-governance/LLD.md),仍待下游 dogfood。
+- ✅ **Q2**:哲学 §2.2 已将「AI 替代角色」收窄为结构化执行 / 等待链,明确不替代目标、风险、验收、接口、责任和签字权。
+- ✅ **Q3**:哲学 §3.1 与方法论 §4.3.1 已增加最小路由表,按依赖链、即时反馈、可逆性 / 风险、现实绑定和能否离线分流;80/20 已明确不是时间配额。
+- ✅ **Q6**:哲学 §4.4 已盘点审计装置四类状态,为每类给出本仓库最小证据入口和下游接入缺口。
+- ✅ **Q7**:已建立 `MC-02` 判断权、`MC-03` L3 assurance、`MC-04` canonical 交叉挑战三张首批验证卡,并接入覆盖矩阵;首轮 dogfood / retro 仍待执行。
+- ✅ **Q8**:ADR-0018 与治理最小切片已定义双文件交叉挑战最小记录,包含变更类型、受影响主张 / 引用 / skill、唯一权威、证据状态、缺口和回退 / 重访条件。
+- ✅ **补充声明动态问题**:已由 W02 处理;结论与后续行动见下节。
+
+### ✅ grill-Q philosophy-v7 W02(2026-08-14,处理完成;正文修订已执行;无 W03)
+
+> 来源:[grill-philosophy-v7-w02](harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md)。10 题全答,0 自定义;Q3 选择逃生舱,按降风险协议暂采推荐方案;无新增补充声明。本轮覆盖 W01 提出的 skill 生态、设计-实现偏差、delegate 控制、证据前置、测试强度和边缘失败模式。
+
+- ✅ **Q1/Q2/Q10**:保留九个 skill,先建立每个 skill 的最小生态位卡、四项不可裁剪核心及高风险路径的最小覆盖矩阵、跨 skill 最小契约;暂不新增第十个总控 skill。已记录 [ADR-0020](harness/adr/0020-cross-skill-minimum-governance-contract.md)。
+- ✅ **Q3**:保留现有命名,先用唯一权威路由表补偿歧义;已按逃生舱协议写入临时开放决策 [OD-22](docs/OPEN-DECISIONS.md),重复误触发证据出现后再重命名。
+- ✅ **Q4**:局部实现优化允许在实现记录 / retro 留痕;改变目标、约束、风险、接口或验收的偏差必须暂停不可逆动作、更新 canonical 设计并重新交叉挑战。已记录 [ADR-0021](harness/adr/0021-design-implementation-deviation-governance.md)。
+- ✅ **Q5/Q6**:delegate 保持 opt-in / 默认关闭,先做 1–2 类低风险可逆 pilot,定义使用、收回、纠正、日志完整度信号并进行故障注入 / 撤销演练;已记录 [OD-23](docs/OPEN-DECISIONS.md)。
+- ✅ **Q7**:已把“工具 / 代码行为 / 外部依赖 / 不可逆动作”的风险触发证据前置纳入方法论 §4.3.2 与 CONTEXT;未核实事实标记未验证,高风险动作暂停。
+- ✅ **Q8**:已将风险分层最低 assurance 写入哲学 §4.1 / §4.4 与方法论 §9.3.1,并同步 [OD-19](docs/OPEN-DECISIONS.md):测试证据标范围,AI oracle 人审,可玩产物 / 单向门人试玩或确认,高风险或反例信号再升级。
+- ✅ **Q9**:已在方法论 §4.3.2 与哲学 §4.6.3 建立设计、压测、dogfood / 测试、retro 间的最低失败模式交接;未覆盖边界必须显式标注并回灌为规则或验证卡。
+- ✅ **收尾**:W01/W02 已覆盖 D1–D8、原始关键声明与动态盲点;用户选择”1”后已执行本轮 canonical 正文修订与治理最小切片,不再生成 W03。剩余工作仅是首轮真实案例 dogfood / retro 验证,不能以文档存在替代验证。
+
+### 🔴 design-Q 数字层级改造立项(grill-Q methodology-improvement W01 Q3-A,2026-08-14)
+
+> 来源:[grill-methodology-improvement-w01](harness/questionnaires/grill-methodology-improvement-w01.md) Q3 选 A(推翻推荐 B)+ 自定义:「将 hld、lld 改造成数字层级,第 0 层 design、第 1 层 design、第 2 层 design……根据实际项目动态调整,这样也符合原先探索设计的初衷」+ 补充声明:「考量将方法论改造为可动态调节的,这正是 design Q 改造的动机,面向大小长短项目/任务均能动态适配,同一任务中也能动态调整」。参照系 = 同级对标仓库(Level 1/2/3 为三阅读视角、可独立维护,非时间阶段)。
+> **执行路径(补充声明 + [OD-24](docs/OPEN-DECISIONS.md))**:改造落全局 `~/.claude/skills/`(实验版)→ 同级 DOGFOOD 项目实测 → 验证后回灌本项目 skills/(backup 稳定基线)。**本块为生成式立项入口——规格设计须走 design-questionnaire 完整流程**(vision→hld→lld),不由 grill-Q 代设计。
+> 设计输入(同问卷已裁决,并入改造设计):
+
+- ⏳ **Q1-C 契约优先裁决规则**:设计套内 HLD 契约(接口契约/全局选型/模块边界)优先于 LLD 细节;数字层级下的对应规则(「上层契约优先于下层细节」)在设计中定型,冲突走 [ADR-0021](harness/adr/0021-design-implementation-deviation-governance.md) 治理性偏差路径
+- ⏳ **Q2-C 阶段回退协议**:任一阶段发现上游前提失效 → 暂停 → 标注失效项(作废/仍有效)→ 回上游补波 → 重过闸门;已归档问卷不动,回退事实记处理报告
+- ⏳ **Q10③ 设计产物不变量编号**:契约节可引用稳定 ID(与 lens I1-I12、本仓库 MC 卡同构)
+- ⏳ **坍缩档重构**:数字层级按项目动态调整层数(第 0 层起),取代固定三档坍缩;小项目少层、大项目多层、同一任务中途可增层
+- ⏳ **doctor-harness 范围拓展(待细化)**:补充声明提出「需要拓展 doctor 任务范围」——初步指向数字层级设计文档的布局校验;具体范围在 design-Q 立项时盘问,不预设
+> 核验时机:design-Q 设计套产出后压测(grill-Q);改造版 DOGFOOD 实测通过(OD-24 回灌)后销项。
+
+### 🟠 dogfood 最优先 + 定义消歧(grill-Q methodology-improvement W01 Q7-A,2026-08-14)
+
+> 来源:同上 Q7 选 A(冻结新机制新增,F006 dogfood 设最优先)+ 补充声明执行场裁决(全局实验 skill + DOGFOOD 实测 + 本项目 backup = [OD-24](docs/OPEN-DECISIONS.md))。
+> **冻结边界(Q7-A)**:除确凿修正(Q5/Q6)与已裁决立项(design-Q 改造 / Q9 裁定 / Q10 落盘)外,新增治理机制一律降级「待 dogfood 后评估」。
+
+- ⏳ **dogfood 定义消歧(动态盲点)**:现存两个定义——① F006 原定义 = 实操文件一次真实轻量修订任务(用户验收,repo 设计压测 Q11);② [methodology-governance LLD L5](harness/design/methodology-governance/LLD.md) = 一个真实低风险可回退案例走完五环节 + MC-01～04 逐卡填证据。两者范围不同;**执行前裁决:一次 dogfood 同时覆盖(实操修订作为五环节案例载体)还是分两次跑**
+- ⏳ **F006 dogfood 执行**:DOGFOOD 项目实测;涉 design-Q 改造则以改造后全局实验版承载;逐卡填 MC-01～04 证据入口;retro 按 L5 DoD 三种结论(证据支持 / 保持未验证 / 发现失效进恢复路径)收口
+> 核验时机:dogfood 完成后逐卡核验证据入口;「冻结边界」自即日起生效,retro 复核冻结是否被执行。

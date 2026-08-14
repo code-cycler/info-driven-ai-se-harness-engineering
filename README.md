@@ -26,7 +26,7 @@ flowchart TD
 
 **canonical 主路径**:design-Q → grill-Q → dogfood → long-running → retro-Q;retro-Q 也可在任意环节作为横切复盘插入。
 
-衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§4](docs/methodology/methodology_v4.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
+衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§4](docs/methodology/methodology_v5.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
 
 ## 这是什么
 
@@ -63,7 +63,7 @@ flowchart TD
 ## 仓库结构(三区模型)
 
 ```
-docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v4 + philosophy_v7 为 current
+docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v5 + philosophy_v7 为 current
 docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
 harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录:repo/ doctor-harness/ skill-spec-revamp/ 等)
 harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
@@ -119,4 +119,4 @@ scripts/             脱敏检查 / harness 校验等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(哲学 · 为什么,v7 连续章节与双文件治理)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v7 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [philosophy_v5](docs/methodology/archive/philosophy_v5.md) / [philosophy_v6](docs/methodology/archive/philosophy_v6.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。
+- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v5.md](docs/methodology/methodology_v5.md)(方法论 · 怎么做,自包含)/ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(哲学 · 为什么,v7 连续章节与双文件治理)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v7 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [philosophy_v5](docs/methodology/archive/philosophy_v5.md) / [philosophy_v6](docs/methodology/archive/philosophy_v6.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。

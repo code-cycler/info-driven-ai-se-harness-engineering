@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `info-driven-ai-se-harness-engineering` 是一套面向**个人开发者**的 **AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体**。不是可构建的代码项目——**没有 build / test / lint 工具链**。仓库内容全部是 Markdown 文档 + skill 配置 + 一个 Python 脱敏脚本。
 
-两大支柱(相乘,缺一为零,完整立论见 [methodology_v4.md](docs/methodology/methodology_v4.md)):
+两大支柱(相乘,缺一为零,完整立论见 [methodology_v5.md](docs/methodology/methodology_v5.md)):
 1. **以信息为核心** —— 信息流转;瓶颈在有效上下文的质与量 + 对抗 AI 在信息真空中的幻觉式自作主张决策。
 2. **驾驭工程 = AI × 软件工程** —— AI 是加速器,工程纪律是骨架(v4 补机制层:「无护栏 → AI 产出悄悄劣化」)。
 
@@ -20,7 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 关键文档导航
 
-- 方法论三块(ADR-0007):[methodology_v4.md](docs/methodology/methodology_v4.md)(怎么做,canonical)+ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(为什么,canonical;v7 连续章节、历史编号兼容与双文件交叉治理)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[methodology_v3/v2](docs/methodology/archive/) 与 [philosophy_v4/v5/v6](docs/methodology/archive/) 为历史母本。
+- 方法论三块(ADR-0007):[methodology_v5.md](docs/methodology/methodology_v5.md)(怎么做,canonical)+ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(为什么,canonical;v7 连续章节、历史编号兼容与双文件交叉治理)+ [practical_v1.md](docs/methodology/practical_v1.md)(怎么用,非 canonical 轻量修订);[methodology_v3/v2](docs/methodology/archive/) 与 [philosophy_v4/v5/v6](docs/methodology/archive/) 为历史母本。
 - [docs/CONTEXT.md](docs/CONTEXT.md) —— 纯术语表(双支柱 / 第一支柱术语分层 / 术语治理 / **项目学科地图 + AI 黑盒(v7 第四学科视角锚点)** / Grill 家族 / skill 家族)。
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 待决事项 + 重访触发。改"已决"事项前先查这里与 `harness/adr/`。
 - [harness/adr/](harness/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分 / 0008–0010 v4 落地 / 0011 硬编码 harness / 0012–0013 doctor-harness 分层 / **0014 学科挂接分层策略 / 0015 去黑盒第四学科视角独立锚点(v5)**。
@@ -38,18 +38,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## skill 家族协作
 
-9 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§5.3](docs/methodology/methodology_v4.md#53-两族-grill) 与各 SKILL.md「主流程」末尾):
+9 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§5.3](docs/methodology/methodology_v5.md#43-两族-grill) 与各 SKILL.md「主流程」末尾):
 
-```
-design-Q ──(收尾提议)──> grill-Q ──(收尾提议)──> long-running ──> retro
-   │                         │                        │              │
-   生成式设计                  对抗式压测(D1–D8)       跨会话实现       复盘
-   │                         │                        │              │
-   └────────── delegate(横切:任意环节下放纯执行决策)────────────────────┘
-
-grill / grill-with-docs = 实现期单点深钻(一问一答),正交可任意插入
-action-questionnaire = 非正式行动前的细节确认(confirm-list),轻量前奏可任意插入
-doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 delegate
+```mermaid
+flowchart LR
+    DQ["design-Q<br/>生成式设计"] -->|收尾提议| GQ["grill-Q<br/>对抗式压测(D1–D8)"]
+    GQ -->|收尾提议| LR["long-running<br/>跨会话实现"]
+    LR --> RETRO["retro<br/>复盘"]
+    RETRO -.->|新需求/经验| DQ
+    DEL["delegate(横切:任意环节下放纯执行决策)"] -.-> DQ
+    AQ["action-Q(横切:任意环节前轻量前奏<br/>confirm-list 细节确认)"] -.-> DQ
+    GW["grill / grill-with-docs<br/>(实现期单点深钻,一问一答,正交可任意插入)"] -.-> DQ
+    DH["doctor-harness(harness 演进治理<br/>分层/迁移/校验/留痕,横切如 delegate)"] -.-> DQ
 ```
 
 **落盘路径速查**(产物均落**宿主项目** `项目根/harness/`,硬编码不配置化——方案 R 已于 2026-08-07 放弃、回归硬编码,见 [ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)):
@@ -76,6 +76,7 @@ doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 del
 4. **先验证再写** —— 引用进文档 / 问卷的事实(尤其"代码 vs 文档"矛盾、外部依赖能否真正跑通)必须核实原文,不凭转述。
 5. **文件版本命名** —— `_v1` / `_v2` 递增,禁 `final` / `new` / `copy`。
 6. **不一致的设计文档比没有更危险** —— 实现与文档脱节时先更新文档。
+7. **流程图统一用 mermaid**(2026-08-14 用户裁决)—— 全仓库流程 / 架构 / 协作关系图一律 mermaid 代码块,禁 ASCII 字符画图(Git 可 diff、渲染器直出);存量 ASCII 图随所在文件下次修订时替换,skills/ 双副本文件随同步窗口统一处理。
 
 ## 仓库状态
 
@@ -90,6 +91,8 @@ doctor-harness = harness 演进治理(分层/迁移/校验/留痕),横切如 del
 **2026-08-13:philosophy_v6 升级完成(结构过渡 + 方法论治理闭环 + 学科治理路线图)**——在 v5 基础上新增全文阅读路线与章节过渡;§8.6 明确为「方法论自身的治理闭环」,加入主张状态模板与「学科 → 治理机制 → 最小产物 → 进入条件」映射;v5 归 archive,v6 随后曾为 current canonical,现由 v7 接替。治理深度仍遵守最小治理切片边界,完整 Level 1/2/3 由 [OD-20](docs/OPEN-DECISIONS.md) 管理。
 
 **2026-08-14:philosophy_v7 升级完成(连续章节 + 双文件交叉治理)**——在 v6 基础上建立哲学独立阅读入口,将正文统一为 §一至§五并保留旧编号兼容映射;补 harness 术语边界、current 已知缺口状态、前三学科最小进入/退出模板与代理指标反思边界;哲学 + 方法论成为 canonical 对等双文件,由 [ADR-0017](harness/adr/0017-philosophy-section-compatibility.md) / [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) 记录治理契约。v6 归 archive,v7 为 current canonical。
+
+**2026-08-14:methodology_v5 升级完成(章节连续化 + 契约优先 + action-Q 入族)**——grill-Q methodology-improvement W01 压测(10 题,压测对象 = 哲学 v7 + 方法论 v4 + design-Q 规格,参照 同级对标仓库 治理)产出:① 正文连续编号 §零至§九(v4 映射表在文件顶部,ADR-0017 兼容策略复用)+ 全库引用审查;② §4.3 两族表补 action-Q(修 W02 Q3 漏改)+ CLAUDE.md 协作图补节点;③ §5.3 补「时序纪律」(契约层变更先更新 canonical 设计再动工,ADR-0021 通用化);CONTEXT 补规范导航(含设计套「契约优先」裁决)与「暂定」状态词、ADR-0020 补生态位卡载体裁定、新增 OD-24(全局实验/项目 backup/DOGFOOD 实测双副本策略)。**同轮立项**:design-Q 数字层级改造(Q3-A,第 0/1/2…层动态层级)、dogfood 最优先 + 定义消歧(Q7-A,冻结新机制新增)、方法论 704 行审计优先(Q4-B)——见 [TODO.md](TODO.md)。v4 归 archive。
 
 **2026-08-13:grill-Q philosophy-v5 成稿压测 W01 闭环 + 发布门推送**——压测 10 题(Q1 用户裁决更名「第五→第四学科视角」:全仓同步 + ADR-0015/0014 更名注记;Q2–Q10 全 C:§八 修订 9 处——嵌套黑盒 / 黑盒被制衡 / retro 抽查代理指标 / WAD 跨主体限定 / 信任劫持循环 / 装置补 retro+long-running / ADR 链接 / WAI-WAD 全称 / 致灾语境映射),全部执行并验证(脱敏 0 / harness-check 0);OD-1 三道过后推送(7853792..f93cc8b,2 commits);F026 OD-4 母本同步用户仓库外执行销项;feature_list 校正(F002/F004/F005 补 passes)。**剩 dogfood(F006 唯一剩余)**。
 
