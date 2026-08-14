@@ -10,7 +10,7 @@
 
 ## 指向 docs 的链接
 
-- 方法论三块:[methodology_v4.md](docs/methodology/methodology_v4.md) / [philosophy_v6.md](docs/methodology/philosophy_v6.md) / [practical_v1.md](docs/methodology/practical_v1.md)
+- 方法论三块:[methodology_v4.md](docs/methodology/methodology_v4.md) / [philosophy_v7.md](docs/methodology/philosophy_v7.md) / [practical_v1.md](docs/methodology/practical_v1.md)
 - 术语表:[docs/CONTEXT.md](docs/CONTEXT.md) / 决策记录:[harness/adr/](harness/adr/) / 待决事项:[docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md)
 - AI 流程产物:[harness/design/](harness/design/) / [harness/questionnaires/](harness/questionnaires/)
 

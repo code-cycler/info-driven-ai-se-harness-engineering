@@ -63,7 +63,7 @@ flowchart TD
 ## 仓库结构(三区模型)
 
 ```
-docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v4 + philosophy_v6 为 current
+docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v4 + philosophy_v7 为 current
 docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
 harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录:repo/ doctor-harness/ skill-spec-revamp/ 等)
 harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
@@ -84,7 +84,13 @@ scripts/             脱敏检查 / harness 校验等工具
 
 - **哲学文件升 v6**:在 v5 的安全科学第四学科视角与「去 AI 黑盒」基础上,补全文阅读路线与章节过渡;§8.6 明确为「方法论自身的治理闭环」,加入统一主张状态模板与学科治理路线图。
 - **治理进化路径**:将系统/需求工程、认识论与测量科学、配置管理/QMS、认知科学/HCI、知识管理/组织学习、信息安全/威胁建模、形式化方法、控制论/决策理论映射到治理机制、最小产物与进入条件;不把它们变成个人项目的强制流程。
-- **版本处置**:v5 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本,v6 成为 current canonical。
+- **版本处置**:v5 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本,v6 曾成为 current canonical,现由 v7 接替并一并归档。
+
+### v7(2026-08-14,哲学独立文章与双文件治理)
+
+- **哲学文件升 v7**:正文统一为连续章节 §一至§五,增加独立阅读入口,保留 v3 旧章节映射、兼容别名 / 重定向说明与历史问卷/ADR 回溯;补方法论 harness 与运行时 harness 的术语边界。
+- **治理边界诚实化**:补 current 已知缺口状态、前三学科最小进入/退出模板,并将返工与去黑盒代理指标明确为反思提示而非效果验证或自动验收门。
+- **版本处置**:v6 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本,v7 成为 current canonical;哲学与 methodology_v4 按 [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) 作为对等 canonical 双文件交叉治理。
 
 ### v5(2026-08-11,philosophy 立论重构)
 
@@ -113,4 +119,4 @@ scripts/             脱敏检查 / harness 校验等工具
 ## 备注
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
-- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v6.md](docs/methodology/philosophy_v6.md)(哲学 · 为什么,v6 治理进化)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v6 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [philosophy_v5](docs/methodology/archive/philosophy_v5.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。
+- 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v4.md](docs/methodology/methodology_v4.md)(方法论 · 怎么做,自包含)/ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(哲学 · 为什么,v7 连续章节与双文件治理)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v4 + philosophy_v7 为 current,[philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [philosophy_v5](docs/methodology/archive/philosophy_v5.md) / [philosophy_v6](docs/methodology/archive/philosophy_v6.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) 保留作历史版本。

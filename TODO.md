@@ -246,7 +246,7 @@
 > 来源:[grill-philosophy-v5-w03](harness/questionnaires/archive/philosophy-v5/grill-philosophy-v5-w03.md),10 题全答,0 逃生舱,0 自定义。焦点:W02 执行后的跨文件冲突、概念边界与当前工作树发布状态。用户于 2026-08-13 授权执行全部修订。
 > 核验(2026-08-13 执行后):Q1–Q10 修订项已落 living 文档;脱敏 0 命中;harness-check exit=0;旧活措辞清零。问卷处理摘要已归档。
 
-- ✅ **Q1 OD-4 canonical 口径收口**:当时占位方案改为 methodology_v4 + philosophy_v5;历史拆分叙述降为历史裁决;重访触发更新为任一 canonical 成员升版、母本变化或同步策略变化。当前 canonical 哲学文件已由 v6 接替,见本文件「philosophy_v6」条目。
+- ✅ **Q1 OD-4 canonical 口径收口**:当时占位方案改为 methodology_v4 + philosophy_v5;历史拆分叙述降为历史裁决;重访触发更新为任一 canonical 成员升版、母本变化或同步策略变化。当前 canonical 哲学文件后来由 v6 接替,现已由 v7 接替;见本文件对应版本条目。
 - ✅ **Q2 五环节衔接统一**(用户选 B,非推荐 C):统一为 `design-Q → grill-Q → dogfood → long-running → retro-Q`,同时保留 retro 可任意插入的横切说明,同步 methodology / CONTEXT / README。
 - ✅ **Q3 WAD 留痕边界**:哲学 §8.5 改为执行路径可灵活,但已发生的自主决策不得延迟留痕;批量或事后记录仅限非自主决策或预先声明的抽样。
 - ✅ **Q4 审计装置状态诚实化**:哲学 §8.4 将「项目已有」改为「项目已定义/可用」,并区分启用与 dogfood 验证状态。
@@ -292,7 +292,7 @@
 
 ### ✅ philosophy_v6 · 哲学治理进化升级(2026-08-13)
 
-> 来源:基于 v5 的结构评审与用户授权。v5 保留为历史版本,[philosophy_v6](docs/methodology/philosophy_v6.md) 成为 current canonical;本次不复制同级对标仓库的完整 Level 1/2/3,继续遵守 ADR-0016 与 OD-20 的最小治理切片边界。
+> 来源:基于 v5 的结构评审与用户授权。v5 保留为历史版本,[philosophy_v6](docs/methodology/archive/philosophy_v6.md) 曾成为 current canonical,后由 v7 接替;本次不复制同级对标仓库的完整 Level 1/2/3,继续遵守 ADR-0016 与 OD-20 的最小治理切片边界。
 
 - ✅ **行文主线**:顶部补「信息断层 → 返工 → 分工 → 判断资源配置 → 黑盒治理 → 方法论治理」阅读路线;§一→§六、§六→§七、§七→§八、§8.5→§8.6 补过渡句。
 - ✅ **治理对象澄清**:§8.6 更名为「方法论自身的治理闭环:从主张到证据」,明确前文治理 AI 执行不透明,本节治理方法论漂移、误读与伪验证。
@@ -300,3 +300,39 @@
 - ✅ **学科治理映射**:新增系统/需求工程、认识论/测量科学、配置管理/QMS、认知科学/HCI、知识管理/组织学习、信息安全/威胁建模、形式化方法、控制论/决策理论的「学科 → 治理机制 → 最小产物 → 进入条件」路线图;明确不是八个强制流程。
 - ✅ **版本与入口**:AGENTS、CLAUDE、README、methodology_v4、practical_v1、CONTEXT、OPEN-DECISIONS 已切换 v6;v5 移入 `docs/methodology/archive/`。
 - ⏳ **后续验证**:首批 6–10 条方法不变量和验证卡仍待建立;先执行系统/需求工程、认识论/测量科学、配置管理/QMS 三行最小切片;核验时机 = 首轮方法论 dogfood / retro。信息安全、形式化方法、控制论等按风险与数据触发。
+
+### 🔶 grill-Q philosophy-v6 W01(2026-08-14,已答;W02 澄清中)
+
+> 来源:[grill-philosophy-v6-w01](harness/questionnaires/archive/philosophy-v6/grill-philosophy-v6-w01.md)。本轮 10 题已作答,无逃生舱,但 Q9 单选多勾;同时发现问卷自身多题存在「选项正文」与「★推荐理由」语义错位,受影响题不作猜测,统一转 W02 重出。原始问卷已处理并归档,答复与处理摘要保留原貌。
+
+- **Q1 明确方向**:用户选择 v7 起将哲学正文改为连续独立编号,同时保留旧章节映射与兼容锚点;兼容策略细节受 Q8 题面歧义影响,转 W02 澄清。
+- **Q2–Q8、Q10**:虽有勾选,但推荐项的理由与对应选项正文不一致,无法确认用户采纳的是选项正文还是理由指向的另一选项;不静默解释,逐题转 W02 正确题面重出。
+- **Q9**:A、B 同时勾选,属于单选冲突,转 W02 澄清「路线图保留」与「前三行增加进入/退出模板」二者是否合并。
+- **补充声明**:用户提出「收窄到哲学与方法论,让两者各自演进又相互挑战」。已新增 [OD-21](docs/OPEN-DECISIONS.md),暂不删除、合并或重命名实操文件;W02 新增该结构治理契约题。
+- **问卷质量行动**:W02 重出题目时修正推荐项与理由错位;后续出题自检需同时检查「推荐标记所在选项」与「推荐理由描述的方案」一致。
+
+### ✅ grill-Q philosophy-v6 W02(2026-08-14,处理完成;正文修订已授权并执行)
+
+> 来源:[grill-philosophy-v6-w02](harness/questionnaires/archive/philosophy-v6/grill-philosophy-v6-w02.md)。10 题全答,0 逃生舱,0 自定义,0 单选冲突。W01 的题面歧义已逐题澄清,本轮覆盖 D1–D8 与动态双文件治理议题;不再生成 W03。
+
+- ✅ **Q1**:哲学 v7 顶部补「论证骨架与跨文件入口」,不复制方法论正文。
+- ✅ **Q2**:增加判断性决策 / 纯执行类决策的最小判别表与反例;基础术语已存在于 CONTEXT,本轮已补判别契约。
+- ✅ **Q3**:采用最小方法级状态协议;已补入 [ADR-0016](harness/adr/0016-method-claim-assurance-contract.md) 的实施边界,不建完整状态机或恢复 API。
+- ✅ **Q4**:首批不变量与验证卡在建立前标为「目标治理能力 / 未验证」;不以 ADR 接受替代能力验证。
+- ✅ **Q5**:保留无阈值代理指标作为反思提示,暂不新增测量契约,不把哲学变成度量规范。
+- ✅ **Q6**:在哲学 §4.6 首次比较同级仓库的位置增加 harness 术语边界。
+- ✅ **Q7**:v7 连续编号保留历史映射、兼容别名 / 重定向说明,历史问卷与 ADR 不重写;已记录 [ADR-0017](harness/adr/0017-philosophy-section-compatibility.md)。
+- ✅ **Q8**:前三类学科治理映射增加最小进入 / 退出模板;具体行动仍待首批治理切片执行。
+- ✅ **Q9**:哲学 v7 增加 current 状态注,允许带已知缺口,并区分目标治理、未验证、反思提示与开放问题。
+- ✅ **Q10**:采用哲学 + 方法论 canonical 对等双文件,各自演进且每次 canonical 修订要求另一方交叉审查或 grill-Q 一致性检查;实操保留为非 canonical,已记录 [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) 与 [OD-21](docs/OPEN-DECISIONS.md)。
+- ✅ **用户授权后修订包**:用户选择“1”后已全部执行:哲学 v7 连续编号与跨文件导航;CONTEXT 最小判别表与例子;§4.6 harness 边界;v7 current 已知缺口状态说明;前三行学科治理进入 / 退出模板;代理指标反思边界;入口文档与历史文件归档。
+
+### ✅ philosophy_v7 · 哲学连续章节与双文件交叉治理(2026-08-14)
+
+> 来源:grill-Q philosophy-v6 W01/W02;用户选择“1”授权执行全部修订。v6 已移入 `docs/methodology/archive/`,W01/W02 已移入 `harness/questionnaires/archive/philosophy-v6/`。
+
+- ✅ **连续章节与独立入口**:正文统一为 §一至§五;顶部保留旧 v3 → v7 映射、跨文件阅读路线与 [ADR-0017](harness/adr/0017-philosophy-section-compatibility.md) 兼容策略。
+- ✅ **治理边界与状态诚实化**:§4.6 增加方法论 harness / 运行时 harness 边界;方法不变量与验证卡标为目标治理/未验证;current 明确不等于全部已验证。
+- ✅ **最小切片边界**:前三行学科治理映射获得进入/退出模板;代理指标只作反思提示,不新增测量契约或自动验收门;完整 Level 1/2/3 继续由 [OD-20](docs/OPEN-DECISIONS.md) 管理。
+- ✅ **双文件治理**:哲学与 methodology_v4 作为 canonical 对等双文件,各自演进并相互交叉审查;实操保留为非 canonical,见 [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) / [OD-21](docs/OPEN-DECISIONS.md)。
+- ⏳ **后续验证**:首批方法不变量、验证卡与前三行模板的 dogfood 证据仍待建立;执行窗口 = 首轮方法论 dogfood / retro。

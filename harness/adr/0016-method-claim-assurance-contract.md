@@ -14,6 +14,7 @@ grill-Q W04 进一步确认:本项目需要吸收这种结构化优点,但不把
 1. **方法不变量**:抽取 6–10 条核心方法不变量。每条至少记录:稳定 ID、主张、适用范围、违反症状、最小证据、例外边界和唯一权威文件。详细操作仍归 skill / 实操层。
 2. **最小验证卡**:每条核心主张建立验证卡,至少包含:主张、适用范围、反例、代理指标、独立证据、阈值或重访条件。哲学保留原则,卡片与实测记录落在实操或 `harness/` 区。
 3. **失败处理骨架**:发现矛盾或审查缺口后,按「标记影响范围 → 暂停不可逆动作 → 保留事实与副作用 → 选择性恢复或回滚 → 复盘并更新规范」处理。各 skill 定义具体状态和动作。
+   - **实施补充(2026-08-14,W02 Q3)**:方法级最小状态协议使用「疑似失效 → 暂停采用 → 已知缺口 / 临时占位 → 恢复验证」这组状态语义;状态变化必须能指向处理报告、验证卡、ADR / OD 或其他最小证据入口。具体动作仍由对应 skill 定义,不在哲学中建立统一状态机或恢复 API。
 4. **核心主张变更清单**:修改 canonical 主张或不可逆治理边界前,列出唯一权威、受影响引用/skill、是否改变不变量、所需验证、当前/已提交/已发布状态。普通局部措辞修订不强制套用完整清单。
 5. **证据边界**:本仓库的脚本、文档检查和 skill dogfood 只能证明相应过程在本仓库中的执行状态;不能单独证明下游项目的开发效率、质量或因果效果。下游效果由采用项目的 dogfood / retro 验证。
 
@@ -33,4 +34,4 @@ grill-Q W04 进一步确认:本项目需要吸收这种结构化优点,但不把
 ## 关联
 
 - 来源:[grill-philosophy-v5-w04](../questionnaires/archive/philosophy-v5/grill-philosophy-v5-w04.md) Q2–Q6/Q8/Q10(2026-08-13)。
-- 相关:[ADR-0009](0009-repo-entry-and-spec-priority.md)(入口与规范优先级)、[ADR-0012](0012-harness-layering-rule.md)(harness 分层规则)、[OD-19](../../docs/OPEN-DECISIONS.md)(形式化 V&V 缺口)、[OD-20](../../docs/OPEN-DECISIONS.md)(文档分层深度)。
+- 相关:[ADR-0009](0009-repo-entry-and-spec-priority.md)(入口与规范优先级)、[ADR-0012](0012-harness-layering-rule.md)(harness 分层规则)、[ADR-0017](0017-philosophy-section-compatibility.md)(哲学章节连续化与历史兼容)、[ADR-0018](0018-canonical-dual-challenge-governance.md)(哲学 / 方法论双文件交叉挑战)、[OD-19](../../docs/OPEN-DECISIONS.md)(形式化 V&V 缺口)、[OD-20](../../docs/OPEN-DECISIONS.md)(文档分层深度)。
