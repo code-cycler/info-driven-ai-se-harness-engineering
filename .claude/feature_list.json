@@ -480,9 +480,9 @@
         "description 补触发词(准备模式/执行模式/多 worktree)",
         "六节改动 grep 核验"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-16T14:00:00+08:00",
+      "notes": "全局版 SKILL.md 六处:description(单默认+双模式+SendMessage 触发词)/§5.3 反推 LN 制(最低构建语义层+L0 兜底)/§5.4 停点两分支/§5.5 新节(准备:任务包五字段+人确认;执行:后台 agent 各驻 worktree+SendMessage+合并三层防线+线程回退)/三禁令限定式 provisional。断言全过,grep 12 处锚点。"
     },
     {
       "id": "F033",

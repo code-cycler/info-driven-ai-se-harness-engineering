@@ -1,0 +1,70 @@
+--- harness/design/designq-digital-levels/global-backup/long-running-agent/SKILL.md	2026-08-16 00:29:28
++++ /Users/miao/.claude/skills/long-running-agent/SKILL.md	2026-08-16 03:47:50
+@@ -1,6 +1,6 @@
+ ---
+ name: long-running-agent
+-description: "长时间运行、跨多会话复杂项目的约束系统。增量工作(一次只处理一个功能)、feature_list.json 功能列表、claude-progress.txt 进度记录、端到端测试验证(只有通过测试才标记 passes:true)、Git 整洁状态、约定式提交。触发:多会话/长周期项目、需要 feature_list 跟踪、长期工程任务、跨上下文窗口的工作、design-questionnaire LLD 收尾后衔接实现期。Use when a project enters long-running implementation spanning multiple sessions / context windows, or after design-questionnaire LLD hands off to implementation."
++description: "长时间运行、跨多会话复杂项目的约束系统。增量工作、feature_list.json 功能列表、claude-progress.txt 进度记录、端到端测试验证(只有通过测试才标记 passes:true)、Git 整洁状态、约定式提交。默认单 agent 一次一个功能;拓展能力:准备模式(规划并行线程+任务包,人审查确认)与执行模式(多 worktree 并行,优先用 Claude Code 原生多 agent 相互通信:主会话 spawn 后台 agent 各驻 worktree + SendMessage 通信)。触发:多会话/长周期项目、需要 feature_list 跟踪、长期工程任务、跨上下文窗口的工作、design-questionnaire 层级设计(LN)收尾停点后衔接实现期、准备模式、执行模式、多 worktree 并行。Use when a project enters long-running implementation spanning multiple sessions / context windows, or after design-questionnaire hands off (single or multi-worktree modes)."
+ ---
+ 
+ # long-running-agent (长时间运行代理约束系统)
+@@ -170,24 +170,35 @@
+ 
+ **会话上下文可能被压缩(Claude Code `/compact`)而丢失设计期决策细节**。本 skill 不依赖会话上下文重建项目认知,而是从落盘文件:
+ 
+-- **有 design-Q 产物**:读 VISION / HLD / LLD + `harness/questionnaires/archive/` 归档问卷,从 LLD 阶段拆分反推 feature_list 的 features。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
++- **有 design-Q 产物(LN 制,2026-08-16 P5)**:读层文件(`L0-vision-*` 恒在 + 各层)+ `harness/questionnaires/archive/` 归档问卷。**feature 反推规则**:从「最低**构建语义层**」(L2-build 或自声明的构建/阶段内容层)的阶段拆分反推;无构建层(单层交付)→ 从 L0 验收标准逐条反推(L0 写法约束「验收按可独立验证条目写」为此保证)。旧 VISION/HLD/LLD 三件 = L0/L1/L2 别名,同规则。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
+ - **无 design-Q 产物**:读 claude-progress.txt + feature_list.json + git log,从历史会话与代码现状重建。
+ 
+ 机制自洽:无论上下文是否被压缩,落盘文件都是 source of truth。
+ 
+ ### 5.4 与 design-questionnaire 的衔接
+ 
+-design-Q 在 LLD 阶段收尾、grill-questionnaire 压测之后,会提议触发本 skill(衔接实现期)。衔接时:
++design-Q 在末层收尾、grill-questionnaire 压测之后,经**多线程停点询问**后触发本 skill(衔接实现期,2026-08-16 P5 更新)。停点两分支:
+ 
+-- design-Q 产出的 VISION / HLD / LLD 是 feature_list 的 source of truth。
++- 单线程分支 → 直接进入实现(本文默认路径);多线程分支 → 进入**准备模式**(见 §5.5)。
++- design-Q 产出的层文件(LN)是 feature_list 的 source of truth。
+ - 用户可拒绝衔接,随后随时手动调用本 skill(见 §7 触发契约)。
+ 
+-## 6. 增量工作原则
++### 5.5 准备模式与执行模式(多线程拓展能力,2026-08-16 P5)
+ 
+-### 一次只处理一个功能
++> 定位:**默认 = 单 agent**(本 skill 主体路径,一次一个功能);多 worktree 多 agent = **拓展能力**,可选启用;实现优先用 **Claude Code 原生多 agent 相互通信**——主会话作协调者(spawn 后台 agent 各驻一个 worktree;SendMessage 派发任务包与线程间通信;task-notification 收完成信号);人开多个独立会话是合法 fallback。**模式切换由人确认,AI 不自行开工。**
+ 
+-**必须严格遵守**:
++**准备模式**(不动代码):从层文件重建 feature_list → 规划并行线程(每 worktree 一个 feature 分支 + 任务包)→ **停,人审查确认开工哪些线程**。任务包 schema(每包五字段):线程名/分支、范围(L0 验收锚点)、DoD、依赖与其他线程的边界、禁止越界项。
+ 
++**执行模式**(多 worktree):人确认后,主会话 spawn 后台 agent 各驻 worktree 按任务包实现;主会话只做进度汇总与**合并顺序**管理。**代码级合并冲突三层防线**:① 准备模式任务包尽量按模块边界切线程(源头减少同文件交叉);② 合并顺序按依赖链串行(上游线程先并);③ 真冲突(git merge 冲突)停在该线程,人裁定后继续——不预设文件所有权,不承诺零冲突。
++
++**线程失败回退**:单 worktree 回滚不影响其他线程;其任务包标「失败/回退」进处理报告,feature_list 对应项回 false。
++
++## 6. 增量工作原则
++
++### 一次只处理一个功能(限定式,2026-08-16 P5 修订 provisional)
++
++**单 worktree 会话内**一次只处理一个功能;多 worktree 并行仅在执行模式 + 人确认的任务包边界内(§5.5)。**必须严格遵守**:
++
+ ```
+ [OK] 正确
+ 1. 选一个功能 → 完整实现 → 编写并运行测试 → 通过则更新状态 → 提交 → 下一个
+@@ -264,7 +275,7 @@
+ | 未测试就标记 passes:true | 产生不可靠的功能状态 |
+ | 跳过失败的测试 | 隐藏潜在问题 |
+ | 删除功能项以减少工作量 | 功能永久丢失 |
+-| 一次处理多个功能 | 容易产生半成品代码 |
++| 单 worktree 会话内一次处理多个功能(多 worktree 并行须在执行模式 + 人确认任务包边界内,§5.5) | 容易产生半成品代码 |
+ 
+ ## 9. 失败模式与恢复
+ 
+@@ -327,7 +338,7 @@
+ **这是长时间运行项目的核心规则,必须严格遵守:**
+ 
+ - 任何时候都不跳过会话启动流程
+-- 任何时候都不一次处理多个功能
++- 任何时候都不在单 worktree 会话内一次处理多个功能(多 worktree 并行 = 执行模式 + 人确认任务包边界,provisional:多 worktree 首次真实使用时复核措辞)
+ - 任何时候都不未测试就标记完成
+ - 任何时候都不留下不整洁的代码状态
+ - 必须始终为下一会话留下清晰的工件
