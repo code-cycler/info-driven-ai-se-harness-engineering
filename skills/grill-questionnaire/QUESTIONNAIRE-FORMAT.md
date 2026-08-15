@@ -1,7 +1,7 @@
 # 问卷格式规范(design-questionnaire 引擎 · 复用件)
 
 > ⚠️ 本文件是 design-questionnaire 引擎的副本(2026-07-24 复制)。design-Q 为 canonical;另有 retro-questionnaire、grill-questionnaire 两份副本,共三份。修改需考量三方同步,漂移需声明(见三处 DESIGN.md)。
-> 本 skill 的问卷 frontmatter `stage` 固定取 `grill`(引擎模板里的 vision|hld|lld 是 design-Q 的词汇,本 skill 不用)。
+> 本 skill 的问卷 frontmatter `stage` 固定取 `grill`(引擎模板里的 LN 层名(L0-vision 等,旧 vision/hld/lld 为别名)是 design-Q 的词汇,本 skill 不用)。
 
 > 本文件与 [PROCESSING-RULES.md](./PROCESSING-RULES.md) 共同构成问卷引擎。后续 skill(如 retro-questionnaire)复用这两个文件,只换自己的骨架模板。
 
@@ -9,7 +9,7 @@
 
 - 活动问卷目录:`harness/questionnaires/`(懒创建,首次生成问卷时才建)
 - 命名:
-  - init 模式:`<stage>-w<NN>.md`(stage ∈ `vision` | `hld` | `lld`;NN 从 01 递增)
+  - init 模式:`<stage>-w<NN>.md`(stage ∈ LN 层名(`L0-vision` | `L1-contract` | `L2-build` | 自声明;旧 vision/hld/lld 为别名);NN 从 01 递增)
   - feature 模式:`feature-<slug>-<stage>-w<NN>.md`(slug 为功能短名,kebab-case)
   - 同 wave 超题量拆子波:`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`
 - 归档:处理完毕移入 `harness/questionnaires/archive/`,文件名不变,只移不删
@@ -20,13 +20,15 @@
 ---
 mode: init | feature
 wave: 1
-stage: vision | hld | lld
+stage: L0-vision | L1-contract | L2-build | <自声明层名>  # design-Q LN 制;旧 vision/hld/lld 为别名
 created: YYYY-MM-DD
 status: pending | answered | processed | archived
 ---
 ```
 
 status 流转:`pending`(已生成待作答)→ `answered`(用户答完待解析)→ `processed`(已落盘待归档)→ `archived`(已归档)。
+
+作废分支(2026-08-14 增补):`pending`/`answered` → `superseded`(未答完即被问卷外路径取代,作废)→ 按 HARNESS-RULES.md 第四节归档(status 改 `archived` + 尾部作废注记,只移不删)。
 
 ## 文件结构(模板)
 

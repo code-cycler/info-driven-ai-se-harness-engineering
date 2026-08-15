@@ -8,7 +8,7 @@
 
 - 活动问卷目录:`harness/questionnaires/`(懒创建,首次生成问卷时才建)
 - 命名:
-  - init 模式:`<stage>-w<NN>.md`(stage ∈ `vision` | `hld` | `lld`;NN 从 01 递增)
+  - init 模式:`<stage>-w<NN>.md`(stage ∈ LN 层名(`L0-vision` | `L1-contract` | `L2-build` | 自声明;旧 vision/hld/lld 为别名);NN 从 01 递增)
   - feature 模式:`feature-<slug>-<stage>-w<NN>.md`(slug 为功能短名,kebab-case)
   - 同 wave 超题量拆子波:`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`
 - 归档:处理完毕移入 `harness/questionnaires/archive/`,文件名不变,只移不删
@@ -19,13 +19,15 @@
 ---
 mode: init | feature
 wave: 1
-stage: vision | hld | lld
+stage: L0-vision | L1-contract | L2-build | <自声明层名>  # design-Q LN 制;旧 vision/hld/lld 为别名
 created: YYYY-MM-DD
 status: pending | answered | processed | archived
 ---
 ```
 
 status 流转:`pending`(已生成待作答)→ `answered`(用户答完待解析)→ `processed`(已落盘待归档)→ `archived`(已归档)。
+
+作废分支(2026-08-14 增补):`pending`/`answered` → `superseded`(未答完即被问卷外路径取代,作废)→ 按 HARNESS-RULES.md 第四节归档(status 改 `archived` + 尾部作废注记,只移不删)。
 
 ## 文件结构(模板)
 

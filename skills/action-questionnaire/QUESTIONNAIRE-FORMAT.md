@@ -28,6 +28,8 @@ status: pending | answered | processed | archived
 
 status 流转:`pending`(已生成待作答)→ `answered`(用户答完待解析)→ `processed`(已落盘待归档)→ `archived`(已归档)。
 
+作废分支(2026-08-14 增补):`pending`/`answered` → `superseded`(未答完即被问卷外路径取代,作废)→ 按 HARNESS-RULES.md 第四节归档(status 改 `archived` + 尾部作废注记,只移不删)。
+
 ## 文件结构
 
 每次确认 = **W00(confirm-list,独立问卷)+ W01+(正式题波,兜底)** 两类文件,**分开交付**。**预期形态:多数确认只有 W00 + 小波直接问,W01 文件很少出现**——preview 为主、正式题波为兜底,不为出问卷而出题(反形式主义)。

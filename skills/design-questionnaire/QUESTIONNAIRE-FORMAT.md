@@ -6,7 +6,7 @@
 
 - 活动问卷目录:`harness/questionnaires/`(懒创建,首次生成问卷时才建)
 - 命名:
-  - init 模式:`<stage>-w<NN>.md`(stage ∈ `vision` | `hld` | `lld`;NN 从 00 递增,**w00 = preview 独立波**,w01 起为正式题波)
+  - init 模式:`<stage>-w<NN>.md`(stage ∈ LN 层名(`L0-vision` | `L1-contract` | `L2-build` | 自声明;旧 vision/hld/lld 为别名);NN 从 00 递增,**w00 = preview 独立波**,w01 起为正式题波)
   - feature 模式:`feature-<slug>-<stage>-w<NN>.md`(slug 为功能短名,kebab-case;w00 同理为 preview)
   - 同 wave 超题量拆子波:`<stage>-w<NN>a.md`、`<stage>-w<NN>b.md`
 - 归档:处理完毕移入 `harness/questionnaires/archive/`,文件名不变,只移不删
@@ -17,7 +17,7 @@
 ---
 mode: init | feature
 wave: 0             # 0 = preview 独立波;1+ = 正式题波
-stage: vision | hld | lld
+stage: L0-vision | L1-contract | L2-build | <自声明层名>  # design-Q LN 制;旧 vision/hld/lld 为别名
 created: YYYY-MM-DD
 status: pending | answered | processed | archived
 ---
@@ -37,7 +37,7 @@ status 流转:`pending`(已生成待作答)→ `answered`(用户答完待解析)
 ---
 mode: init
 wave: 0
-stage: vision | hld | lld
+stage: L0-vision | L1-contract | L2-build | <自声明层名>  # design-Q LN 制;旧 vision/hld/lld 为别名
 created: YYYY-MM-DD
 status: pending
 ---
@@ -72,7 +72,7 @@ status: pending
 ---
 mode: init | feature
 wave: 1
-stage: vision | hld | lld
+stage: L0-vision | L1-contract | L2-build | <自声明层名>  # design-Q LN 制;旧 vision/hld/lld 为别名
 created: YYYY-MM-DD
 status: pending
 ---
