@@ -1,6 +1,6 @@
 --- harness/design/designq-digital-levels/global-backup/doctor-harness/HARNESS-RULES.md	2026-08-16 00:29:28
-+++ /Users/miao/.claude/skills/doctor-harness/HARNESS-RULES.md	2026-08-16 01:41:28
-@@ -62,4 +62,54 @@
++++ /Users/miao/.claude/skills/doctor-harness/HARNESS-RULES.md	2026-08-16 01:45:24
+@@ -62,4 +62,62 @@
  
  - 项目已建 `harness/` 的:**OPEN-DECISIONS.md / TODO.md / CONTEXT.md 归 `harness/` 根**;ADR 归 `harness/adr/`(懒创建,0001 起编号)。治理文件是 harness 内部组织形态,不污染项目根 `docs/`(与 ADR-0011/0012 同一精神)。
  - 项目无 `harness/` 的:沿用各 skill 原约定(grill-with-docs:`docs/OPEN-DECISIONS.md` 或 CONTEXT 旁)。
@@ -44,6 +44,14 @@
 +4. **人确认成档**:直生产物 + 待补清单交人审查确认;成档后如需深化,转 design-Q 从对应层续走问卷。
 +
 +与主流程的关系:有设计文档(基本设计/散落决策)→ 走五步主流程(语义映射);只有构想 → 走直生模式。两条路径共用 DoD(标完即成档)与铁律(不代写)。
++
++**存量治理文件迁移**(2026-08-16 补,存量改造场景常见形态——项目已有部分治理文件但无 harness/ 区):
++
++- 已有 `CONTEXT.md`(在项目根或 docs/):整体迁 `harness/` 根(第六节),内容不改;
++- 已有 `docs/adr/`(或同类 ADR 目录):**整体迁入 `harness/adr/`,保留原编号与内容**——不重编号、不改写正文;与第六节「0001 起编号」的关系:新建 ADR 续存量最大号递增,不与存量冲突;
++- 已有 OPEN-DECISIONS / TODO / 复盘文档:迁 `harness/` 根(第六节),路径变化后修复引用断链(MIGRATION-FLOW 第 3 步)。
++
++**自包含大文档的映射策略**(2026-08-16 补):单份设计文档同时含构想 + 架构 + 模块/实现细节(v0.x 演化型自包含文档)时,二选一由人定:① **单文件多节形态**——文档按 LN 节结构重组(原文件保留不删,移入 `design/<feature>/` 并在头部导览标注层对应关系);② **拆层多文件**——按章语义拆到 L0/L1/L2 多文件(原文件移 `design/<feature>/legacy/` 或标 superseded 留档)。判据:文档是否仍被频繁整体修订(是 → ① 保整体;否 → ② 利于层独立演进)。
 +
 +**旧档迁移映射表**(VISION/HLD/LLD 旧三件 → LN 新制;存量套迁移与存量改造共用):
 +
