@@ -7,7 +7,7 @@
 
 ## 快速上手:skill 使用流程一图
 
-本文阐述方法论内核;8 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
+本文阐述方法论内核;9 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
 
 ```mermaid
 flowchart TD
@@ -26,8 +26,8 @@ flowchart TD
 ```
 
 - **触发方式**:Claude Code 中用斜杠命令(如 `/design-questionnaire`)或自然语言(如「帮我做设计」「压测这份设计」)。
-- **衔接协议**:design-Q 收尾主动提议 grill-Q;grill-Q 收尾提议 long-running——也可随时手动触发任意 skill(正交可插入,见[方法论文件 §4.3](methodology_v5.md#33-方法论可任意插入));action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。
-- **dogfood 不是独立 skill**,是嵌在各环节收尾的产物自验动作(见[方法论文件 §4.2](methodology_v5.md#32-环节详解)环节 3)。
+- **衔接协议**:design-Q 收尾主动提议 grill-Q;grill-Q 收尾提议 long-running——也可随时手动触发任意 skill(正交可插入,见[方法论文件 §3.3](methodology_v5.md#33-方法论可任意插入));action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。
+- **dogfood 不是独立 skill**,是嵌在各环节收尾的产物自验动作(见[方法论文件 §3.2](methodology_v5.md#32-环节详解)环节 3)。
 - 不必走完整闭环——每个 skill 都可单独取用,按任务类型裁剪见[方法论文件 §零](methodology_v5.md#零适用场景)「任务类型与流程适配」。
 
 ---
@@ -74,7 +74,7 @@ AI 编程会话不会无限延续——上下文会满、注意力会衰减、�
 
 **何时主动开新会话**:上下文接近有效上限(200k 模型约 120k,1m 模型约 400k);对话主题根本性变化;AI 出现明显幻觉或遗忘早期指令。
 
-**过载对策链:先沉淀,再压缩** ★ v3——/compact 压缩的是会话上下文,压缩可能丢失设计期决策细节。所以正确顺序是:**先用 design-Q 等 skill 把决策沉淀落盘(VISION / ADR / CONTEXT / 归档问卷),再 /compact**。沉淀之后,压缩丢的只是过程,不是决策——新会话从落盘文件重建即可(见下文恢复清单)。注意这与[方法论文件 §2.1](methodology_v5.md#11-第一支柱以信息为核心)的"背景缺失"是两个环节:缺失的对策是问答对齐(补),过载的对策是沉淀 + 压缩(存了再压),二者不矛盾。
+**过载对策链:先沉淀,再压缩** ★ v3——/compact 压缩的是会话上下文,压缩可能丢失设计期决策细节。所以正确顺序是:**先用 design-Q 等 skill 把决策沉淀落盘(VISION / ADR / CONTEXT / 归档问卷),再 /compact**。沉淀之后,压缩丢的只是过程,不是决策——新会话从落盘文件重建即可(见下文恢复清单)。注意这与[方法论文件 §1.1](methodology_v5.md#11-第一支柱以信息为核心)的"背景缺失"是两个环节:缺失的对策是问答对齐(补),过载的对策是沉淀 + 压缩(存了再压),二者不矛盾。
 
 **新会话恢复清单**(按顺序喂给 AI):
 
@@ -84,7 +84,7 @@ AI 编程会话不会无限延续——上下文会满、注意力会衰减、�
 4. 当前 Git diff 或未完成的任务清单(feature_list.json)
 5. 一句话:上次做到哪了、这次要继续做什么
 
-**长项目优先用 long-running-agent**:跨会话恢复从"手动喂清单"升级为"从落盘文件重建"(feature_list.json + claude-progress.txt + 归档问卷),不依赖会话上下文,更抗失忆。见[方法论文件 §4.2](methodology_v5.md#32-环节详解)环节 5。
+**长项目优先用 long-running-agent**:跨会话恢复从"手动喂清单"升级为"从落盘文件重建"(feature_list.json + claude-progress.txt + 归档问卷),不依赖会话上下文,更抗失忆。见[方法论文件 §3.2](methodology_v5.md#32-环节详解)环节 5。
 
 **中断时立即做**:把当前进度写成 3–5 行"会话快照"(做到哪、还剩什么、下一步),落地为 Markdown;未提交的变更提交或 stash 并记录。
 
@@ -131,6 +131,7 @@ Skill 家族是方法论的执行体,按用途分类:
 | **长期** | long-running-agent      | 跨会话长项目      | 多会话项目、跨上下文窗口的工作             |
 | **下放** | delegate                | 决策下放(试点)    | 纯执行类决策密集时                         |
 | **单点** | grill / grill-with-docs | 实现期单点二义性  | "这个技术选型合理吗?"、绑代码库的设计评审、计划评审(逐点即时深钻) |
+| **治理** | doctor-harness          | harness 区布局/迁移/校验 | "这个文件放哪"、harness 组织混乱需要治理(2026-08-08 入库第 9 个) |
 | **审查** | code-review 类          | 提交前/阶段性审查 | 审查当前 diff                              |
 
 **action-Q 机制说明**(2026-08-04 补):action-questionnaire 是**确认式问卷(confirm-list)**——非正式行动(多文件写操作 / 涉外部依赖)开始前,AI 把对行动细节的理解写成清单,人核对(勾 = 理解正确、留空 = 纠正)后执行,对齐信息以规避 AI 在信息真空中的幻觉式自作主张决策(方法论文件 [§2.1](methodology_v5.md#11-第一支柱以信息为核心)机制层的直接对策,(a) 类盲区捕获器)。它是轻量前奏,不进设计期流程;feature 级行动升级转 design-Q / grill-Q / long-running。
@@ -141,7 +142,7 @@ Skill 家族是方法论的执行体,按用途分类:
 - **Web Search / Web Fetch**:查最新文档、API 参考、技术调研
 - **IDE 集成**:VS Code 诊断、Notebook 代码执行
 
-**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill/grill-with-docs。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §5.2/§5.3](methodology_v5.md#42-演进说明从一问一答到批量问卷))。
+**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill/grill-with-docs。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §4.2/§4.3](methodology_v5.md#42-演进说明从一问一答到批量问卷))。
 
 #### L3 独立验证最低分流
 
