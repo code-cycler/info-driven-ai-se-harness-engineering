@@ -395,6 +395,124 @@
       "passes": true,
       "last_tested": "2026-08-13T09:34:00+08:00",
       "notes": "仓库外动作,agent 不代执行——2026-08-13 用户仓库外执行并手动标记 passes(副本标注「开发副本,以 v5 为准」)"
+    },
+    {
+      "id": "F027",
+      "category": "functional",
+      "priority": "high",
+      "description": "P0 双向同步:全局⇄项目三 skill 分类同步(通用改进 4 文件;doctor DESIGN 路径差=宿主适配、CHANGELOG=用户私有日志 含真实名,不同步防脱敏事故);复验剩余差仅豁免类",
+      "steps": [
+        "执行三方向同步:全局→项目(design-Q FORMAT superseded 增补 + doctor HARNESS-RULES 三处增补);项目→全局(long-running SKILL.md HARNESS-RULES 引用句)",
+        "diff -rq 三 skill 复验:剩余差异 = 豁免三类(脱敏差/宿主适配差/私有日志),逐文件列豁免清单",
+        "LLD F027 DoD 措辞同步修正(「两侧一致」→「分类一致 + 豁免清单显式」)"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-16T11:30:00+08:00",
+      "notes": "分类同步完成:全局→项目(FORMAT superseded 增补含格式空行 + HARNESS-RULES 三处增补);项目→全局(long-running HARNESS-RULES 引用句)。复验:design-Q 全一致 / long-running 全一致 / doctor 剩 DESIGN+CHANGELOG 两豁免文件。脱敏 0 + harness-check 0。LLD P0 DoD 已按执行现实修正(分类一致+豁免清单,CHANGELOG 单向防火墙)。"
+    },
+    {
+      "id": "F028",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 backup:同步后全局版三 skill 目录 diff 存档至 harness/design/designq-digital-levels/global-backup/",
+      "steps": [
+        "生成三 skill 全量 patch(diff -u)存 global-backup/",
+        "存档清单 md(文件×patch 对应表)",
+        "补丁可回滚性核对(patch --check 反向可应用)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F029",
+      "category": "functional",
+      "priority": "high",
+      "description": "P2 doctor 拓展先行(用户优先测试):HARNESS-RULES 增补六/七节+旧档迁移映射表;SKILL.md 触发词;harness-check.py LN 校验+存量豁免",
+      "steps": [
+        "HARNESS-RULES 全局版增补:六、层级设计文档规则(LN 命名/布局/豁免);七、存量结构改造流程(盘点→映射→标待补→人确认);附旧档迁移映射表",
+        "doctor SKILL.md 触发词补「层级改造/迁移/存量规范化」",
+        "项目 scripts/harness-check.py:LN 命名正则校验 + L0 缺失提示 + 存量 VISION/HLD/LLD 豁免",
+        "grep 锚点核验 + harness-check 对 LN 样例(临时目录)通过",
+        "用户优先能力测试:存量改造/迁移映射小案例(用户验收)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F030",
+      "category": "functional",
+      "priority": "high",
+      "description": "P3 design-Q 主改造:STAGE-SKELETONS 四部分重写 + SKILL.md 定模/层闸门/L0 自检/收尾停点链",
+      "steps": [
+        "STAGE-SKELETONS 全文重写:总则(混合制+命名+形态)/最小必含总览表/模板库(L0-vision 含自检节与写法约束+L1-contract+L2-build+自声明)/协议集五件(⑤双签);头部导览块;旧术语别名注记",
+        "SKILL.md:§0 层数判定(最小1层+自检);§2 W00 按形态分派;§5 层闸门(重开只重受影响层)+收尾停点链(压测→多线程必停→衔接)",
+        "反简化核对:总览表逐行核对模板内容非占位",
+        "grep 核验:导览块/自检节/停点/别名各锚点在位"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F031",
+      "category": "functional",
+      "priority": "high",
+      "description": "P4 引擎四副本同步:stage 枚举改层名语义+命名 LN 制,四 skill FORMAT/PROCESSING 各两处",
+      "steps": [
+        "四 skill 的 QUESTIONNAIRE-FORMAT:stage 枚举注释扩层名 + 命名规则补 LN 制",
+        "PROCESSING-RULES 若含 stage 词汇同步",
+        "四副本 grep 一致性核验 + OD-8 联动记录(各 DESIGN.md 引擎同步记录节)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F032",
+      "category": "functional",
+      "priority": "high",
+      "description": "P5 long-running 双模式:单 agent 默认+多 agent 拓展(Claude Code SendMessage 通信);任务包 schema;反推规则 LN 制;三禁令限定式 provisional",
+      "steps": [
+        "SKILL.md:§3 任务包字段规范;§5.3 反推规则(最低构建语义层+L0 兜底);§5.4 停点衔接;新增准备/执行模式节(单默认/多拓展+合并三层防线)",
+        "§6/§8/§10 三处禁令限定式改写(provisional 标注)",
+        "description 补触发词(准备模式/执行模式/多 worktree)",
+        "六节改动 grep 核验"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F033",
+      "category": "functional",
+      "priority": "high",
+      "description": "P6 装载+DOGFOOD 双案例:改造文件替换全局版;案例1 小(2层)+案例2 中(3层含插层)",
+      "steps": [
+        "装载:改造文件替换全局版+变更清单记录",
+        "DOGFOOD 案例1(小,2 层):产生 LN 产物+L0 自检真实触发留痕+人确认可用",
+        "DOGFOOD 案例2(中,3 层含一次动态插层):同三要素",
+        "过程信号即时留痕(处理报告/TODO)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F034",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P7 回灌+收尾:全局→项目合并(脱敏差);OD-24 关闭;ADR-0022 落盘;retro-Q",
+      "steps": [
+        "回灌:全局版变更合并回项目版(施加脱敏差)",
+        "harness-check exit=0 + 脱敏 0 命中",
+        "OD-24 该轮关闭 + TODO 销项",
+        "ADR-0022(层级制改造)落盘 + retro-Q 完成(含过程信号汇总)"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
     }
   ]
 }

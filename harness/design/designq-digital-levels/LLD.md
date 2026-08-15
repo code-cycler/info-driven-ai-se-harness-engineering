@@ -10,7 +10,7 @@
 
 | 阶段 | 内容 | 依赖 | DoD(可验证) |
 |---|---|---|---|
-| **P0 双向同步** | 全局⇄项目三 skill 双向同步(全局版 2026-08-14 增补回灌项目版;项目版领先句推全局版) | — | `diff -rq` 三 skill 两侧一致(仅脱敏差豁免) |
+| **P0 双向同步** | 全局⇄项目三 skill **分类同步**(通用改进双向同步;豁免差不同步) | — | 同步后 `diff -rq` 剩余差**仅豁免类**并具豁免清单(执行修正 2026-08-16:① doctor DESIGN.md = 宿主适配路径差,各自正确;② doctor CHANGELOG.md = 用户跨项目私有日志含真实名,**单向防火墙禁止全局→项目**,防脱敏事故;「两侧完全一致」原判据不现实) |
 | **P1 backup** | 同步后全局版三 skill 目录 diff 存档至本 feature `global-backup/` | P0 | 三套 patch 齐全 + 存档清单 |
 | **P2 doctor 拓展先行** ⭐(用户优先测试) | HARNESS-RULES 增补(层级规则/存量改造/迁移映射表)+ SKILL.md 触发词 + harness-check.py(LN 校验 + 豁免清单) | P0/P1 | grep 锚点核验 + harness-check 对 LN 样例通过 + **用户优先测试 doctor 能力**(存量改造/迁移映射小案例) |
 | **P3 design-Q 主改造** | STAGE-SKELETONS 四部分重写 + SKILL.md(定模/层闸门/L0 自检/收尾停点链) | P0/P1(P2 的 LN 命名规范已在 HLD 定案,不阻塞) | 反简化核对 + 模板库五件齐全 + 停点链 grep |
