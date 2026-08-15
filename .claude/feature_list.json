@@ -420,9 +420,9 @@
         "存档清单 md(文件×patch 对应表)",
         "补丁可回滚性核对(patch --check 反向可应用)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-16T11:45:00+08:00",
+      "notes": "global-backup/ 落盘:三 skill 通用文件全量快照(逐文件 diff 核对与全局版一致)+ README 清单(sha256)+ EXEMPT-fingerprints(doctor CHANGELOG 私有日志含真实名不入库,指纹记录,且不在 P2-P5 改造范围)。回滚 = 逐文件 cp 回全局。形式比 patch 更直接可回滚。"
     },
     {
       "id": "F029",

@@ -1,4 +1,36 @@
 ================================================================================
+SESSION: 实现期启动——F027 P0 双向同步 + F028 P1 backup(会话 01)
+时间: 2026-08-16T11:50:00+08:00
+================================================================================
+
+## 完成的任务
+- F027(P0 双向同步)✅:分类同步——全局→项目(design-Q FORMAT superseded 增补 + doctor HARNESS-RULES 三处 2026-08-14 增补);项目→全局(long-running 引用句)。复验:design-Q/long-running 两侧一致;doctor 剩 DESIGN(宿主适配路径差)+ CHANGELOG(用户私有日志含真实名,单向防火墙)两豁免。**执行修正**:LLD P0 DoD「两侧完全一致」→「分类一致 + 豁免清单显式」(原文判据不现实,ADR-0021 局部优化留痕)
+- F028(P1 backup)✅:global-backup/ 三 skill 通用文件全量快照(diff 核对一致)+ README(sha256 清单)+ EXEMPT-fingerprints(CHANGELOG 不入库)
+- feature_list 追加 F027–F034(LLD 八阶段反推,P2 doctor 优先序)
+
+## 修改的文件
+- skills/design-questionnaire/QUESTIONNAIRE-FORMAT.md: superseded 作废分支增补(全局→项目同步)
+- skills/doctor-harness/HARNESS-RULES.md: 三处增补同步(活跃区子目录/superseded 处置/布局合规)
+- ~/.claude/skills/long-running-agent/SKILL.md: HARNESS-RULES 引用句(项目→全局,仓库外)
+- harness/design/designq-digital-levels/global-backup/: 新建(三 skill 快照+清单+指纹)
+- harness/design/designq-digital-levels/LLD.md: P0 DoD 措辞修正
+- .claude/feature_list.json: F027–F034 追加;F027/F028 passes:true
+
+## Git 提交
+- 80a18c3: feat(long-running): F027 P0 双向同步完成
+- 本 commit:F028 backup + progress
+
+## 遇到的问题
+- P0 原 DoD「diff -rq 两侧一致」在 doctor CHANGELOG(用户跨项目私有日志,含真实项目名)处不可行——同步进项目版 = 脱敏事故。修正为分类同步 + 单向防火墙(全局→项目禁止私有日志),已回写 LLD
+- design-Q FORMAT 同步残留一个空行差(全局版增补行前空行),补齐后一致
+
+## 下一步计划
+- F029(P2 doctor 拓展先行,用户优先测试):HARNESS-RULES 增补六/七节 + 旧档迁移映射表;SKILL.md 触发词;harness-check.py LN 校验 + 存量豁免;完成后请用户做能力测试(存量改造/迁移映射小案例)
+- 其后:F030 design-Q 主改造 → F031 引擎四副本 → F032 long-running → F033 DOGFOOD → F034 回灌
+
+================================================================================
+
+================================================================================
 SESSION: 发布门执行——推送 2 commits + F026 用户销项
 时间: 2026-08-13T09:34:00+08:00
 ================================================================================
