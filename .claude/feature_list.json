@@ -436,9 +436,9 @@
         "grep 锚点核验 + harness-check 对 LN 样例(临时目录)通过",
         "用户优先能力测试:存量改造/迁移映射小案例(用户验收)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-16T12:40:00+08:00",
+      "notes": "AI 侧(HARNESS-RULES 七/八节+迁移映射表+SKILL 触发词⑤⑥+harness-check LN 校验,五场景自测过)+ 用户独立会话实测外部项目(存量改造场景:自包含设计文档+CONTEXT+ADR,测试前补强存量治理文件迁移与大文档映射策略,patch 脱敏检查过)——用户裁决「验收通过」。commits: 5469903/3f841ac/df74491/61e8f59。"
     },
     {
       "id": "F030",
@@ -451,9 +451,9 @@
         "反简化核对:总览表逐行核对模板内容非占位",
         "grep 核验:导览块/自检节/停点/别名各锚点在位"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-16T13:10:00+08:00",
+      "notes": "全局版 STAGE-SKELETONS 全文重写(97 行四部分+导览+反形式主义声明)+ SKILL.md 五处(§0 层数判定/§2 W00 分派/§5 层闸门+重开+停点链/desc/supporting-info)。反简化核对:四模板最小必含全具体非占位,自声明层含防减配条款。grep 锚点:SKILL 9 处 + 骨架 19 处。"
     },
     {
       "id": "F031",
