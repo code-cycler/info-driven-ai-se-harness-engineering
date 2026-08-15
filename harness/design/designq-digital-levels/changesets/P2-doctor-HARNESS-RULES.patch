@@ -1,0 +1,51 @@
+--- harness/design/designq-digital-levels/global-backup/doctor-harness/HARNESS-RULES.md	2026-08-16 00:29:28
++++ /Users/miao/.claude/skills/doctor-harness/HARNESS-RULES.md	2026-08-16 00:33:38
+@@ -62,4 +62,45 @@
+ 
+ - 项目已建 `harness/` 的:**OPEN-DECISIONS.md / TODO.md / CONTEXT.md 归 `harness/` 根**;ADR 归 `harness/adr/`(懒创建,0001 起编号)。治理文件是 harness 内部组织形态,不污染项目根 `docs/`(与 ADR-0011/0012 同一精神)。
+ - 项目无 `harness/` 的:沿用各 skill 原约定(grill-with-docs:`docs/OPEN-DECISIONS.md` 或 CONTEXT 旁)。
+-- 各 skill 文档不内联复制本条路径,引用「治理文件归属见 HARNESS-RULES.md」。
+\ No newline at end of file
++- 各 skill 文档不内联复制本条路径,引用「治理文件归属见 HARNESS-RULES.md」。
++
++## 七、层级设计文档规则(design/ LN 制,2026-08-16 P2 增补)
++
++> 来源:feature-designq-digital-levels(P2 doctor 拓展先行);design-Q 数字层级制的布局侧规则,模板与协议细节见 design-Q STAGE-SKELETONS.md(层级制,P3 落地)。
++
++**命名**:`L<N>-<功能1>-<功能2>….md`——数字-功能式,尾缀 kebab-case 且**覆盖该层所有主要功能**(一眼可识);L0 固定以 `vision` 起头(如 `L0-vision-scope-acceptance.md`、`L1-contract-interface.md`、`L2-build-dod.md`)。
++
++**布局**:同一 feature 的层文件归 `design/<feature>/`;两种合法形态——① 多文件(每层一文件);② 单文件多节(小项目,文件内 `## L0-vision-…` 节标题分节,文件头做全层导览)。
++
++**头部导览块**(每层文件开头,四行):本层位置与职责 / 覆盖范围 / 上下游层依赖 / 契约项声明(本层哪些项是下层硬约束)。
++
++**豁免清单(存量合法至迁移完成)**:`VISION.md` / `HLD.md` / `LLD.md` / `hld_v2.md` / `lld_v2.md` 等旧三件命名(含大小写变体)在存量设计套中合法;存量套迁移按第八节映射表执行,迁移完成前 harness-check 不报违规。
++
++**层级顺序**:feature 目录含 L1+ 层文件而无任何 L0-* 文件 = 违规(L0 恒在);LN 文件名格式偏离 `L\d+-[a-z0-9-]+\.md` = 违规。
++
++## 八、存量结构改造流程(无 harness 文件 → 标准结构,2026-08-16 P2 增补)
++
++> 将**无 harness 文件**的项目(可能有基本构想、基本设计、散落决策文档)改造为当前方法论的标准结构。铁律:AI 只组织与映射,不代写设计(缺项标「待补」,由人后续填)。
++
++流程五步:
++
++1. **盘点**:扫描项目根/文档区,识别既有方法论工件(构想/基本设计/决策记录/问卷散件),列清单(文件 × 内容语义);
++2. **建区**:按第二节归属判据确定 harness 根,建 `harness/`(design/ + questionnaires/ + adr/ 按需懒创建);
++3. **语义映射**:按下方迁移映射表把既有内容映射到 LN 结构(或无 LLD 时代的旧三件结构——尚未启用层级制的项目按 design-Q 现行制);**最小必含核对**:以 design-Q STAGE-SKELETONS 的总览为基准逐项对照;
++4. **缺项标注**:映射后缺失的最小必含项在对应层文件中标 `<!-- 待补:xxx —— 原始信息缺失,需人补写 -->`,不代写;待补清单同步写入项目 TODO;
++5. **人确认成档**:映射结果 + 待补清单交人审查,人确认后文件落位,CHANGELOG 留痕。
++
++**DoD = 标完即成档**:改造交付 = 结构 + 缺口标注;「人填完待补设计」不计入改造验收(设计归人)。
++
++**旧档迁移映射表**(VISION/HLD/LLD 旧三件 → LN 新制;存量套迁移与存量改造共用):
++
++| 旧产物/旧档 | 新落点 | 说明 |
++|---|---|---|
++| VISION.md(目标/范围/场景/验收/风险) | `L0-vision-<…>.md` | L0 恒在;验收标准按可独立验证条目写 |
++| HLD 契约类内容(接口契约/全局选型/模块边界) | `L1-contract-<…>.md` | 契约项在导览块声明 |
++| HLD 非契约内容(部署运维等稳定架构事实) | `L1-<相应功能>.md` 自声明层 | 混合制:职责自声明 |
++| LLD.md(阶段拆分/详细设计/DoD/依赖) | `L2-build-<…>.md` | 阶段拆分是 feature 反推源(long-running) |
++| 旧坍缩 hld 档(vision→hld 两件) | L0 + L1 两层 | 语义等价映射 |
++| 旧坍缩 lld 档(vision→lld 两件) | L0 + L2 两层(契约内容并入 L0 或 L2 标注) | 语义等价映射 |
++| 旧完整档(三件) | 三层(L0/L1/L2) | 一一对应 |
++| hld_v2/lld_v2 等版本号变体 | 同上映射,版本号入尾缀或历史注记 | 历史版本本身不迁移(留原位) |
+\ No newline at end of file

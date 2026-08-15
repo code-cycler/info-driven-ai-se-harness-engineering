@@ -1,0 +1,30 @@
+--- harness/design/designq-digital-levels/global-backup/doctor-harness/SKILL.md	2026-08-16 00:29:28
++++ /Users/miao/.claude/skills/doctor-harness/SKILL.md	2026-08-16 00:34:13
+@@ -1,6 +1,6 @@
+ ---
+ name: doctor-harness
+-description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理。Use when harness file organization, migration, or layout validation is needed.
++description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理、层级改造/迁移(LN 制旧档迁移)、存量规范化(无 harness 文件项目改造为标准结构)。Use when harness file organization, migration, or layout validation is needed.
+ ---
+ 
+ <what-to-do>
+@@ -20,7 +20,7 @@
+ ### 0. 触发与定模
+ 
+ - **手动触发**:「分层一下」「校验 harness」「harness 文件怎么放」;或 harness 组织混乱(design/ 混用、命名偏离、归档膨胀)时。
+-- **判定**:本次是要① 组织规则(落到 HARNESS-RULES.md)② 迁移执行(重组目录)③ 校验(跑脚本)④ 留痕(记录变更)——可单独或组合。
++- **判定**:本次是要① 组织规则(落到 HARNESS-RULES.md)② 迁移执行(重组目录)③ 校验(跑脚本)④ 留痕(记录变更)⑤ 层级改造(旧三件 → LN 制迁移,按 HARNESS-RULES 第七/八节)⑥ 存量规范化(无 harness 文件项目 → 标准结构,按第八节五步流程)——可单独或组合。
+ 
+ ### 1. 规则权威(组织规则)
+ 
+@@ -28,7 +28,9 @@
+   - **分层定义**:design/<feature>/ 判定句(feature 级 = 会被独立引用/与其它 feature 冲突 → 子目录;全局/单文件设计裸放);
+   - **归属判据**:子模块有独立 CLAUDE.md/git/发布边界 → 独立 harness,否则归主根;
+   - **命名规范**:init/feature/grill/retro/confirm 各模式正则 + 豁免清单;
+-  - **归档规则**:新归档按 feature/主题建子目录,存量不挪,README 索引。
++  - **归档规则**:新归档按 feature/主题建子目录,存量不挪,README 索引;
++  - **层级设计文档规则(LN 制)**:`L<N>-<功能>.md` 命名 / feature 目录或单文件多节布局 / 头部导览块 / 存量旧三件豁免(第七节);
++  - **存量结构改造流程**:盘点 → 建区 → 语义映射(迁移映射表)→ 缺项标待补不代写 → 人确认成档,DoD = 标完即成档(第八节)。
+ - 规则有缺口(新场景未覆盖)→ 起草修订建议,人确认后更新 HARNESS-RULES.md + CHANGELOG 留痕。
+ 
+ ### 2. 迁移流程(重组 + 断链回归)

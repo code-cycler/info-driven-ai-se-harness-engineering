@@ -45,6 +45,44 @@ EXEMPT_PREFIXES = ("feature-skill-", "feature-skills-")
 
 ADR_RE = re.compile(r"^(\d{4})-[a-z0-9-]+\.md$")
 
+# LN 层级设计文档(HARNESS-RULES.md 第七节,2026-08-16 P2)
+LN_FILE_RE = re.compile(r"^L(\d+)-[a-z0-9-]+\.md$")
+LN_ANY_RE = re.compile(r"^L\d+-", re.IGNORECASE)
+L0_VISION_RE = re.compile(r"^L0-vision-[a-z0-9-]+\.md$")
+# 存量旧三件豁免(第七节豁免清单:合法至迁移完成)
+LEGACY_DESIGN_RE = re.compile(r"^(VISION|HLD|LLD)(_|-)?[a-z0-9_-]*\.md$", re.IGNORECASE)
+
+
+def check_ln_design(ddir: Path, violations: list) -> None:
+    """④ LN 层级设计文档校验(HARNESS-RULES.md 第七节):
+    - design/ 根裸放 LN 文件 = 违规(层文件应归 feature 子目录);
+    - feature 目录内 LN 文件名须匹配 L<N>-<功能>.md;L0 须以 vision 起头;
+    - 目录含 L1+ 而无 L0 = 违规(L0 恒在);
+    - 存量旧三件(VISION/HLD/LLD*)合法豁免;新旧混存 = 迁移中,不违规。"""
+    if not ddir.is_dir():
+        return
+    for p in sorted(ddir.glob("*.md")):
+        if LN_ANY_RE.match(p.name):
+            violations.append(f"design/{p.name}: LN 层文件应归 design/<feature>/ 子目录,不应裸放")
+    for sub in sorted(ddir.iterdir()):
+        if not sub.is_dir() or sub.name.startswith('.'):
+            continue
+        files = [f.name for f in sub.iterdir() if f.is_file() and f.suffix == ".md"]
+        ln_files = [f for f in files if LN_ANY_RE.match(f)]
+        legacy = [f for f in files if LEGACY_DESIGN_RE.match(f)]
+        has_ln = bool(ln_files)
+        for f in ln_files:
+            m = LN_FILE_RE.match(f)
+            if not m:
+                violations.append(f"design/{sub.name}/{f}: LN 文件名不符合 L<N>-<功能kebab>.md")
+            elif f.startswith("L0-") and not L0_VISION_RE.match(f):
+                violations.append(f"design/{sub.name}/{f}: L0 文件须以 vision 起头(L0-vision-…)")
+        if has_ln:
+            nums = [int(LN_FILE_RE.match(f).group(1)) for f in ln_files if LN_FILE_RE.match(f)]
+            if nums and 0 not in nums:
+                violations.append(f"design/{sub.name}/: 含 L1+ 层文件而无 L0(L0 恒在)")
+        _ = legacy  # 存量旧三件合法;新旧混存(迁移中)不违规
+
 
 def check_naming(qdir: Path, violations: list) -> None:
     """① 问卷命名正则:questionnaires/(含 archive/)下 .md 须匹配任一模式或豁免。"""
@@ -122,6 +160,7 @@ def collect(harness_root: Path) -> list:
     check_naming(harness_root / "questionnaires", violations)
     check_adr_sequence(harness_root / "adr", violations)
     check_archive_location(harness_root / "questionnaires", violations)
+    check_ln_design(harness_root / "design", violations)
     return violations
 
 
