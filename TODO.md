@@ -366,11 +366,11 @@
 - ✅ **Q9**:已在方法论 §4.3.2 与哲学 §4.6.3 建立设计、压测、dogfood / 测试、retro 间的最低失败模式交接;未覆盖边界必须显式标注并回灌为规则或验证卡。
 - ✅ **收尾**:W01/W02 已覆盖 D1–D8、原始关键声明与动态盲点;用户选择”1”后已执行本轮 canonical 正文修订与治理最小切片,不再生成 W03。剩余工作仅是首轮真实案例 dogfood / retro 验证,不能以文档存在替代验证。
 
-### 🔴 design-Q 数字层级改造(grill-Q W01 Q3-A 立项;设计套已完成,待实现)
+### ✅ design-Q 数字层级改造(grill-Q W01 Q3-A 立项;**2026-08-17 全链闭环,F027–F034 全绿**)
 
 > 来源:[grill-methodology-improvement-w01](harness/questionnaires/archive/_misc/grill-methodology-improvement-w01.md) Q3-A + 自定义 + 补充声明(2026-08-14)。参照系 = 同级对标仓库(Level 1/2/3 三阅读视角)。
 > **✅ 设计套完成(2026-08-14/16,commit 34139c0)**:[VISION](harness/design/designq-digital-levels/VISION.md)(机制要点 21 + 设计原则 4 + 验收可核验化)+ [HLD](harness/design/designq-digital-levels/HLD.md)(协议集五件/停点双模式/被否决 8)+ [LLD](harness/design/designq-digital-levels/LLD.md)(八阶段 doctor 优先序);grill 压测 10 题闭环(引擎全面修订 Q1-C/双向同步 Q2-C/⑤双签/验收可核验化;Q3 逃生舱 provisional);归档问卷 4 份。范围扩容 = design-Q + doctor-harness + long-running(默认单 agent,多 agent 拓展用 Claude Code SendMessage 通信)。
-> **⏳ 实现期待启动(用户裁决单线程串行,稍后手动发起 long-running)**:P0 双向同步 → P1 backup → **P2 doctor 先行(用户优先测试)** → P3 design-Q 主改造 → P4 引擎四副本 → P5 long-running → P6 DOGFOOD 双案例 → P7 回灌 + retro;预估 3–4 工作会话;过程信号即时留痕(压测补充声明)。
+> **✅ 实现完成(2026-08-17,单线程串行)**:P0 同步→P1 backup→P2 doctor(外部项目实测验收)→P3 design-Q→P4 引擎四副本→P5 long-running 双模式→P6(案例 1 ✅ + repo/ 套迁移演练 ✅;案例 2 用户裁决跳过——插层低频难触发,留自然回访)→P7 回灌 + [ADR-0022](harness/adr/0022-design-questionnaire-digital-levels.md) + OD-24 收口。commits: 80a18c3…a9086be(14 个);retro-Q 待跑。:P0 双向同步 → P1 backup → **P2 doctor 先行(用户优先测试)** → P3 design-Q 主改造 → P4 引擎四副本 → P5 long-running → P6 DOGFOOD 双案例 → P7 回灌 + retro;预估 3–4 工作会话;过程信号即时留痕(压测补充声明)。
 > 核验时机:改造版 DOGFOOD 实测通过(OD-24 回灌)后销项;ADR-0022(编号待实施时取)随 P2/P3 落盘。
 
 ### 🟠 dogfood 最优先 + 定义消歧(grill-Q methodology-improvement W01 Q7-A,2026-08-14)
