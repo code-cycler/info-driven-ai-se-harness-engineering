@@ -194,6 +194,17 @@
 
 - ✅ **grill-with-docs 深钻「去 AI 黑盒」立论锚点完成**(2026-08-10,6 点结晶):① 黑盒=三层次(过程不透明 / 依据不可追溯 / 结果不可独立验证);② 与第一支柱正交(独立维度);③ 风险=三坏后果(潜伏沉积 / 失控放大 / 信任劫持);④ 对策=统合已有可审计装置 + 形式化 V&V 缺口留 [OD-19](docs/OPEN-DECISIONS.md);⑤ 度=弹性边界(WAI 定底线 / WAD 留空间);⑥ 过程模型术语冲突=区分命名(STAMP 用全称「安全控制过程模型」)。结晶落 [CONTEXT「AI 黑盒」节](docs/CONTEXT.md) + [OD-19](docs/OPEN-DECISIONS.md)。
 
+
+### 🟢 retro · designq-digital-levels Action Items(2026-08-17,首份 retro)
+
+> 来源:[retro-designq-digital-levels_v1](docs/retro/designq-digital-levels_v1.md)(9 题 0 逃生舱 + 2 条规格反馈即时回修)。
+
+- ⏳ **AI-1 方法论/CONTEXT 同步 LN 词汇**:methodology_v5 §3.2 环节表 + §四 对照表仍写 vision/hld/lld 三阶段 → 补 LN 制对齐(轻量修订或并入 v6;CONTEXT「方法论文档三块」等节同查)→ 下次 canonical 修订时
+- ⏳ **AI-2 存量 5 套 + 7 裸放件迁 LN**:doctor-harness 批量迁移(repo/ 已演练)→ 完成后 harness-check 0 违规
+- ⏳ **AI-3 迁移引用扫描补相对路径模式**:HARNESS-RULES/MIGRATION-FLOW 补一句 → 下次迁移执行时核对(本仓教训:跨套 `../repo/HLD.md` 字面量漏网)
+- ⏳ **AI-4 插层协议自然回访**:已入 ADR-0022 后果节 → 首个真实插层案例出现时
+- ✅ **AI-5 LN 层内组织 + 表述充分性**:规格反馈已即时回修 STAGE-SKELETONS(两侧)——功能相近/篇幅小者合,大功能分节;完整句表述防简略语 → 后续层文件产出时核对
+
 ### 🔷 philosophy_v5 design-Q(feature-philosophy-v5,2026-08-10 进行中)
 
 > 来源:grill-Q discipline-mapping + grill-with-docs 去黑盒深钻 → design-Q v5。设计套 [harness/design/philosophy-v5/](harness/design/philosophy-v5/)。完整档 vision→hld→lld。
