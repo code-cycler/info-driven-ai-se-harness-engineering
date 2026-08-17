@@ -1,6 +1,6 @@
 ---
 name: doctor-harness
-description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理。Use when harness file organization, migration, or layout validation is needed.
+description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理、层级改造/迁移(LN 制旧档迁移)、存量规范化(无 harness 文件项目改造为标准结构)。Use when harness file organization, migration, or layout validation is needed.
 ---
 
 <what-to-do>
@@ -20,7 +20,7 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 ### 0. 触发与定模
 
 - **手动触发**:「分层一下」「校验 harness」「harness 文件怎么放」;或 harness 组织混乱(design/ 混用、命名偏离、归档膨胀)时。
-- **判定**:本次是要① 组织规则(落到 HARNESS-RULES.md)② 迁移执行(重组目录)③ 校验(跑脚本)④ 留痕(记录变更)——可单独或组合。
+- **判定**:本次是要① 组织规则(落到 HARNESS-RULES.md)② 迁移执行(重组目录)③ 校验(跑脚本)④ 留痕(记录变更)⑤ 层级改造(旧三件 → LN 制迁移,按 HARNESS-RULES 第七/八节)⑥ 存量规范化(无 harness 文件项目 → 标准结构,按第八节五步流程)——可单独或组合。
 
 ### 1. 规则权威(组织规则)
 
@@ -28,7 +28,9 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
   - **分层定义**:design/<feature>/ 判定句(feature 级 = 会被独立引用/与其它 feature 冲突 → 子目录;全局/单文件设计裸放);
   - **归属判据**:子模块有独立 CLAUDE.md/git/发布边界 → 独立 harness,否则归主根;
   - **命名规范**:init/feature/grill/retro/confirm 各模式正则 + 豁免清单;
-  - **归档规则**:新归档按 feature/主题建子目录,存量不挪,README 索引。
+  - **归档规则**:新归档按 feature/主题建子目录,存量不挪,README 索引;
+  - **层级设计文档规则(LN 制)**:`L<N>-<功能>.md` 命名 / feature 目录或单文件多节布局 / 头部导览块 / 存量旧三件豁免(第七节);
+  - **存量结构改造流程**:盘点 → 建区 → 语义映射(迁移映射表)→ 缺项标待补不代写 → 人确认成档,DoD = 标完即成档(第八节)。
 - 规则有缺口(新场景未覆盖)→ 起草修订建议,人确认后更新 HARNESS-RULES.md + CHANGELOG 留痕。
 
 ### 2. 迁移流程(重组 + 断链回归)
@@ -64,7 +66,7 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 - harness 组织权威规则(唯一 source):[HARNESS-RULES.md](./HARNESS-RULES.md)
 - 目录迁移执行流程:[MIGRATION-FLOW.md](./MIGRATION-FLOW.md)
 - 演进变更记录:[CHANGELOG.md](./CHANGELOG.md)
-- 校验脚本:`python3 scripts/harness-check.py`(仓库 `scripts/`,与 desensitize.py 并列)
+- 校验脚本:`python3 scripts/harness-check.py [harness_root]`(正主在引擎仓库 `scripts/`,与 desensitize.py 并列;被校验仓若为 git 跟踪区**勿拷入脚本**,跨仓调用时传被校验仓 harness 根路径)
 - 本 skill 设计决策记录:[DESIGN.md](./DESIGN.md) + 设计套 `harness/design/doctor-harness/`(VISION/HLD/LLD)
 - 决策依据:[ADR-0012](../../harness/adr/0012-harness-layering-rule.md)(分层规则)+ [ADR-0013](../../harness/adr/0013-harness-layering-migration.md)(迁移执行)+ [ADR-0011](../../harness/adr/0011-abandon-plan-r-hardcode-harness.md)(硬编码 harness/)
 
