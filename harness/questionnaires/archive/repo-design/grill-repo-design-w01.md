@@ -7,7 +7,7 @@ status: processed
 ---
 # 问卷 grill W01 · repo 级设计套压测(8 维度)
 
-> **压测对象**:[VISION](../../../design/repo/VISION.md + [HLD](../../../design/repo/HLD.md + [LLD](../../../design/repo/LLD.md(2026-08-05 产出)。
+> **压测对象**:[VISION](../../../design/repo/L0-vision-repo-design.md + [HLD](../../../design/repo/L1-contract-repo-architecture.md + [LLD](../../../design/repo/L2-build-repo-phases-dod.md(2026-08-05 产出)。
 > **模式**:代码库绑定(绿地子模式——纯文档仓库,D7 的「现实」= 既有文档/ADR/约束,未对照代码)。
 > **维度**:D1 未言明假设 / D2 单向门 / D3 替代方案 / D4 失败模式 / D5 可验证性 / D6 盲点 / D7 与现实矛盾 / D8 术语一致性。
 >

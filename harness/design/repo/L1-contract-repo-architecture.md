@@ -1,7 +1,13 @@
 # HLD · repo 级设计(v4 内容修订 + 架构治理)
+>
+> **导览块**(LN 制,2026-08-17 doctor 层级改造演练迁入;原 HLD.md)
+> - 本层位置:L1-contract 契约层;上游 L0-vision-repo-design(验收锚点),下游 L2-build-repo-phases-dod
+> - 覆盖:文件分区三区模型 / 术语治理 / v4 内容修订架构 / 规范优先级
+> - 上下游:继承 L0 验收;本层契约约束 L2 构建路径
+> - 契约项声明:三区物理分离(docs/ 与 harness/)、术语判定结论、规范优先级排序 = 下层硬约束
 
 > 来源:design-questionnaire hld 阶段 W00(14 条,13 采纳 / 1 留空)+ W01(5 题:Q1 自定义「harness 依赖文件与项目文件分开」,Q2–Q5 采纳推荐)+ 小波澄清(物理分离范围 = harness/questionnaires/ + harness/design/);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。
-> 上游:[repo 级 VISION](VISION.md)(2026-08-05)。本文 = 架构方案;落地规格见 LLD,详细决策按 H5 落 ADR。
+> 上游:[repo 级 VISION](L0-vision-repo-design.md)(2026-08-05)。本文 = 架构方案;落地规格见 LLD,详细决策按 H5 落 ADR。
 
 ## H1 系统架构(文档体系)
 

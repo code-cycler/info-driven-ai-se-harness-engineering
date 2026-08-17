@@ -1,6 +1,12 @@
 # LLD · repo 级设计(分阶段落地规格)
+>
+> **导览块**(LN 制,2026-08-17 doctor 层级改造演练迁入;原 LLD.md)
+> - 本层位置:L2-build 构建层;上游 L0(验收)+ L1(契约:三区/术语/优先级)
+> - 覆盖:P1–P6 阶段拆分 / 依赖链 / 每阶段 DoD / 回归验证
+> - 上下游:受 L1 契约约束;阶段拆分为 long-running feature 反推源
+> - 契约项声明:每阶段 DoD(含回归三项)= 验收硬约束
 
-> 来源:design-questionnaire lld 阶段 W00(16/16 全采纳,2026-08-05);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。上游:[VISION](VISION.md) + [HLD](HLD.md)。
+> 来源:design-questionnaire lld 阶段 W00(16/16 全采纳,2026-08-05);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。上游:[L0-vision](L0-vision-repo-design.md) + [L1-contract](L1-contract-repo-architecture.md)。
 > 本文 = 落地规格;执行时每阶段按 DoD 验证,全部完成后走 P6 发布门。
 
 ## L1 阶段计划(6 阶段,可独立交付/验证)

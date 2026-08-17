@@ -1,8 +1,14 @@
 # VISION · repo 级设计(参考「项目A」优化哲学与架构)
+>
+> **导览块**(LN 制,2026-08-17 doctor 层级改造演练迁入;原 VISION.md,git 历史可溯)
+> - 本层位置:L0-vision 目标层(恒在);同套 L1-contract-repo-architecture / L2-build-repo-phases-dod
+> - 覆盖:repo 级设计的目标与受众 / 范围 / 核心场景 / 验收标准 / 风险约束
+> - 上下游:下游 L1/L2 与实现期以本层验收为硬约束
+> - 契约项声明:验收标准(可独立验证条目)与受众边界为全链硬约束
 
 > 来源:design-questionnaire vision 阶段 W00 + W01(2026-08-05;W00 采纳 13 / 留空 6,补充声明方向修正;W01 12 题作答,含两处推翻推荐的激进选择);grill-Q 压测 12 项修订回灌(2026-08-05,正文标注「压测 Qn」)。
 > 上游决策:[ADR-0007](../../../harness/adr/0007-methodology-three-way-split.md)(三块拆分)、[OD-4](../../../docs/OPEN-DECISIONS.md)(母本标注)、[OD-1](../../../docs/OPEN-DECISIONS.md)(脱敏门)。
-> 本文件 = repo 级设计(仓库自身定位与架构)的构想层;架构方案见 HLD,落地规格见 LLD(后续阶段产出)。**与 harness/design/ 下 methodology v3 设计套(VISION.md / hld_v2 / lld_v2)无关**,后者是方法论 v3 的构建设计。
+> 本文件 = repo 级设计(仓库自身定位与架构)的构想层;架构方案见 L1-contract-repo-architecture,落地规格见 L2-build-repo-phases-dod(后续阶段产出)。**与 harness/design/ 下 methodology v3 设计套(VISION.md / hld_v2 / lld_v2)无关**,后者是方法论 v3 的构建设计。
 
 ## 目标与受众 (V1)
 

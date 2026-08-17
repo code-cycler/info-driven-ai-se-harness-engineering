@@ -88,8 +88,8 @@ status: processed
 - **小波澄清(AskUserQuestion,2 轮)**:
   - 澄清① 分置形态:**物理目录分离**(否决「职责分离」推荐选项);
   - 澄清② 分离范围(多选):**harness/questionnaires/ + harness/design/** 移入 harness 区;skills/ scripts/ .claude/ 根级入口不移动。
-- **裁决**:文件分区三区模型(项目文件区 docs/ / harness 依赖区 新目录 / 根级入口与产物),见 [HLD 1.1](../../../design/repo/HLD.md。
-- **落盘**:[harness/design/repo/HLD.md](../../../design/repo/HLD.md(H1 分区 + 规范优先级 + 入口布局 + v4 落点映射 / H2 选型 + 被否决项 / H3 契约 / H4 发布 / H5 ADR-0008~0010 + 落地动作清单 10 项)。
+- **裁决**:文件分区三区模型(项目文件区 docs/ / harness 依赖区 新目录 / 根级入口与产物),见 [HLD 1.1](../../../design/repo/L1-contract-repo-architecture.md。
+- **落盘**:[harness/design/repo/L1-contract-repo-architecture.md](../../../design/repo/L1-contract-repo-architecture.md(H1 分区 + 规范优先级 + 入口布局 + v4 落点映射 / H2 选型 + 被否决项 / H3 契约 / H4 发布 / H5 ADR-0008~0010 + 落地动作清单 10 项)。
 - **ADR**:识别三条(0008 v4 立论重构 / 0009 入口与规范优先级 / 0010 术语治理),落盘于 lld 阶段执行。
 - **逃生舱**:0。
 - **下一波**:无(骨架 H1–H5 全覆盖)→ 过阶段闸门。

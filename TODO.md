@@ -51,7 +51,7 @@
 
 - ⏳ **术语全面审计(B 方案)**(2026-08-05,repo 级设计 vision Q4 自定义入档):v4 术语折中审计落地后执行——逐术语判定保留/合并/删除/换学科标准词,CONTEXT 重写,方法论全文 + skill 规格同步(人因工程/软件工程/运筹学学科对接)
 
-### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](harness/design/repo/LLD.md))
+### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](harness/design/repo/L2-build-repo-phases-dod.md))
 
 > 来源:repo 级 design-Q(vision→hld→lld 全流程,参考「项目A」架构;设计套 = VISION/HLD/LLD + 问卷 4 份)。规格见 [harness/design/repo/](harness/design/repo/)。P1–P5 已由 long-running 执行(commit: cb68950 / cb04faf / 9686a61 / 1e2ee28 / 6bd7aed),每阶段 DoD 全绿(脱敏 0 / 断链仅豁免 / 内容不丢)。
 
