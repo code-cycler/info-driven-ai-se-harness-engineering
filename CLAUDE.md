@@ -43,7 +43,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```mermaid
 flowchart LR
     DQ["design-Q<br/>生成式设计"] -->|收尾提议| GQ["grill-Q<br/>对抗式压测(D1–D8)"]
-    GQ -->|收尾提议| LR["long-running<br/>跨会话实现"]
+    GQ -->|压测后| DOG["dogfood<br/>产物自验(正交可插入)"]
+    DOG -->|自验通过| LR["long-running<br/>跨会话实现"]
     LR --> RETRO["retro<br/>复盘"]
     RETRO -.->|新需求/经验| DQ
     DEL["delegate(横切:任意环节下放纯执行决策)"] -.-> DQ

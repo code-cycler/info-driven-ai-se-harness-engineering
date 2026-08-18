@@ -62,6 +62,8 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 ## 项目学科地图(2026-08-10 grill-Q discipline-mapping W01 产出)
 
 > 哲学正文只挂「立论核心学科」(其机制直接支撑方法论立论);本节承载**完整学科全景**——实践对应但无立论贡献的学科。挂接判据与分层策略见 [ADR-0014](../harness/adr/0014-discipline-mapping-strategy.md)。
+>
+> **性质标注(2026-08-18,grill-Q first-principles W01 Q4)**:本地图为**阐述性装饰 / 灵感来源记录**——立论逻辑不依赖本表(承重测试:删除全部学科注脚,四条立论无一逻辑塌落);表的价值 = 检索入口与启发溯源,不是论证依据,不产生验证义务。
 
 ### 立论核心学科(进哲学正文)
 
@@ -118,13 +120,13 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 ## 5 环节闭环
 
-开发工作流主路径(详见 [methodology_v5 §四](methodology/methodology_v5.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
+开发工作流主路径(详见 [methodology_v5 §三](methodology/methodology_v5.md)):design-Q → grill-Q → dogfood → long-running → retro;delegate 横切。grill-Q / dogfood / retro / delegate 是正交方法论,可任意环节插入,不锁死在线性阶段。
 
 ## Grill 家族
 
 决策引擎,分两族(详见 [methodology_v5 §4.3](methodology/methodology_v5.md)):
 
-- **批量问卷族**:design-Q / grill-Q / retro-Q / action-Q(多波次问卷,离线作答;action-Q = confirm-list 确认式分叉,复用引擎族属不变——2026-08-13 grill-Q philosophy-v5 W02 Q3 补录,对齐哲学 §7.1 成员集)。
+- **批量问卷族**:design-Q / grill-Q / retro-Q / action-Q(多波次问卷,离线作答;action-Q = confirm-list 确认式分叉,复用引擎族属不变——2026-08-13 grill-Q philosophy-v5 W02 Q3 补录,对齐哲学 §7.1 成员集;v7 起该节为 §3.1)。
 - **单点深钻族**:grill / grill-with-docs(一问一答,逐轮等待)。
 - **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族处理可预知、可离线的基础问题;单点深钻族处理依赖链深、决策未成形、需即时反馈或必须绑定现实证据的关键问题。80/20 是路由启发式,不是时间配额或统计结论;四项分流判据与交接见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02) / [§5.2](methodology/methodology_v5.md#42-演进说明从一问一答到批量问卷)。
 
@@ -143,6 +145,7 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 「方法论」一词拆分后双重含义:总称(方法论体系)vs 三块之一(方法论文件)——文档表述用「方法论文件」指具体文件,「方法论」默认指总称。
 
 - **canonical 审查**(2026-08-13 grill-Q philosophy-v5 W02 Q8 补定义——此前该词仅见于哲学顶部与 OD-18,无定义)= canonical 成员(方法论文件 + 哲学文件)修订前的必经动作:grill-Q 压测(或人逐行审)+ 用户批准;母本同步见 [OD-4](OPEN-DECISIONS.md)。当前 canonical 哲学文件为 v7;双文件交叉治理见 [ADR-0018](../harness/adr/0018-canonical-dual-challenge-governance.md)。
+- **canonical 升版判据**(2026-08-18,grill-Q first-principles W02 T5):**结构性变化才升版**——编号重组 / 章节增删 / 立论变更 / 规范优先级变化;内容同步、注记补充、措辞修正一律走**版本内修订**(文件头修订记录行留痕,不升版)。追溯标注:v5 / v7 之后的内容修订(含 2026-08-18 first-principles W01 十项、W02 五项)均为版本内修订,不追溯改号;下次升版时按 ADR-0017 做兼容映射与全库引用审查。
 
 ## Harness 术语边界
 
@@ -153,6 +156,10 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 - **本项目范围** = 本项目提供方法论 harness,不提供运行时 harness;同名不代表两者是同一实现或同一证据。
 
 ## 证据状态与范围(2026-08-13 grill-Q philosophy-v5 W04)
+
+> **N=1 单主体限定(2026-08-18,grill-Q first-principles W01 Q9)**:本仓库全部证据产自**单一作者 + AI**;哲学「独立人审」条款当前不可满足(体系内无第二人,双文件交叉挑战防漂移、不防共同盲区),以外部 issue / PR / 采用反馈为代理证据源。下列状态词标记的证据均自动继承此限定。
+
+> **已知缺口注(2026-08-18,grill-Q first-principles W02 T4)**:验收侧(人审 AI 产出)的**负荷管理无专项机制**——现有对策 = 80/20 分层 + L3 风险分层(均未量化验证);审查疲劳 → 签字走形式 = 信任劫持已知入口。重访触发 = 出现「人审通过但生产事故」实例(与 [OD-19](OPEN-DECISIONS.md) 触发②共用)。
 
 - **规范要求** = 方法论规定应当遵守的边界,不等于已经执行或验证。
 - **启发式** = 用于指导判断的经验规则或类比,不等于统计结论或学科实证。
