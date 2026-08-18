@@ -50,3 +50,10 @@
 - 🔧 **Q7 路径区分**:本 skill DESIGN.md / SKILL.md 内 `[docs/...](./docs/...)` 为 skill 自身目录内部引用(VISION / hld_v1 / 归档问卷),**不动**;配置化只改「描述宿主项目落盘路径」的字符串。
 - 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0;retro-Q 有意分叉区(RETRO-SKELETONS 四节骨架 / 不使用 preview / 调研与核实前置五源)原样保留。
 - HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 retro-Q(RETRO-SKELETONS 是方法论四节 + Action Items,性质不同)。
+
+## 引擎同步记录(2026-08-18,first-principles W01 补充声明)
+
+- QUESTIONNAIRE-FORMAT **规则 4 修正**:「✍️ 自定义」位置由「紧跟 🤔 逃生舱之后」改为「紧跟所有选项(含 ★推荐)之后、固定为题目最后一位」——消除与规则 13(选项排序:推荐居末)的顺序矛盾;该矛盾是「✍️ 行结构性遗漏」的根源(grill-Q first-principles W01 曾 10 题全漏,靠出题自检 grep 抓回)。
+- grill-Q / retro-Q 的模板示例同步更新为规则 13 选项顺序(★推荐从 A 位移至 🤔 之后的 C 位,✍️ 行标注「题目最后一位」);design-Q / action-Q 模板本已合规,仅规则 4 措辞统一。
+- 四副本 × 双侧(repo `skills/` + 全局 `~/.claude/skills/`)同批同步,无新有意分叉(OD-8/OD-11 边界不变)。
+\n

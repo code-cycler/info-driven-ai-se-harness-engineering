@@ -122,3 +122,10 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 > 缺口:FORMAT 规则 4「✍️自定义每题必有」是散文规则,**无出题后强制自检**,导致出题 agent 两次遗漏(design-Q vision W01 + grill-Q doctor-harness W01,均 10 题全漏 ✍️ 自定义行)。用户两次指出。
 > 回修:① 四副本 FORMAT 规则 4 加「出题后自检」(grep 🤔 数 == ✍️ 数);② grill-Q SKILL.md 第 2 步加「出题自检(强制)」子条,给可执行命令。机制回归可脚本化(FORMAT 规则 12「Markdown 排版」同源的「可检查 DoD」思路)。
 > 四副本同步(OD-8 重访触发①)。双向门,可回退。
+
+## 引擎同步记录(2026-08-18,first-principles W01 补充声明)
+
+- QUESTIONNAIRE-FORMAT **规则 4 修正**:「✍️ 自定义」位置由「紧跟 🤔 逃生舱之后」改为「紧跟所有选项(含 ★推荐)之后、固定为题目最后一位」——消除与规则 13(选项排序:推荐居末)的顺序矛盾;该矛盾是「✍️ 行结构性遗漏」的根源(grill-Q first-principles W01 曾 10 题全漏,靠出题自检 grep 抓回)。
+- grill-Q / retro-Q 的模板示例同步更新为规则 13 选项顺序(★推荐从 A 位移至 🤔 之后的 C 位,✍️ 行标注「题目最后一位」);design-Q / action-Q 模板本已合规,仅规则 4 措辞统一。
+- 四副本 × 双侧(repo `skills/` + 全局 `~/.claude/skills/`)同批同步,无新有意分叉(OD-8/OD-11 边界不变)。
+\n
