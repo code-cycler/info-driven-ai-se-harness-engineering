@@ -32,7 +32,7 @@
 | lld 阶段题 | harness/design/ 的 LLD 文档 |
 | 术语定义类 | CONTEXT.md(纯术语表,不放决策与实现细节) |
 | 满足 ADR 三条件的决策 | harness/adr/NNNN-<slug>.md(编号顺延现有) |
-| 🤔 逃生舱(单向门) | docs/OPEN-DECISIONS.md |
+| 🤔 逃生舱(单向门) | OPEN-DECISIONS.md(归属见 HARNESS-RULES.md 第六节) |
 | 🤔 逃生舱(双向门) | 采用 ★推荐项 **且进 OD 标注**(标「双向门 / 采用推荐项 X / provisional」+ 重访触发条件)。采用推荐项也留痕,不再「不进 OD」——2026-07-24 dogfood 补充声明(逃生舱采用推荐项也要进 OD,信息不丢失优先) |
 | 行动项(处理报告 / 复盘产出) | `<项目根>/TODO.md`(问题 → 行动 → 核验时机;懒创建) |
 

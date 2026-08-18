@@ -65,7 +65,7 @@ Work through these steps in order:
 
 Is this a **one-way door** (hard to reverse — database, public API shape, auth provider, deployment target) or a **two-way door** (cheap to reverse — a name, an internal structure, a config flag, a default value)?
 
-- **Two-way door** → take the recommended option, **and still record it in `docs/OPEN-DECISIONS.md` as provisional**(采用推荐项 + 双向门 + revisit trigger)。It's reversible by definition — tell the user it's cheap to change — but采用推荐项也留痕,不再「Nothing to defer」,信息不丢失(2026-07-24 与 questionnaire 家族逃生舱机制对齐;step 4 已覆盖 provisional → OD)。
+- **Two-way door** → take the recommended option, **and still record it in `OPEN-DECISIONS.md` as provisional**(采用推荐项 + 双向门 + revisit trigger)。It's reversible by definition — tell the user it's cheap to change — but采用推荐项也留痕,不再「Nothing to defer」,信息不丢失(2026-07-24 与 questionnaire 家族逃生舱机制对齐;step 4 已覆盖 provisional → OD)。
 - **One-way door** → continue to step 2.
 
 This single question dissolves most "I can't decide" moments: a lot of what people agonise over is actually a two-way door.
@@ -85,7 +85,7 @@ Only if the decision genuinely can't be deferred and is one-way: make a **recomm
 
 ### 4. Record it in OPEN-DECISIONS.md
 
-Every deferred or provisional decision goes into `docs/OPEN-DECISIONS.md` (create lazily on first use). A deferred decision is only safe if it stays visible and has an alarm clock — otherwise it silently fossilises into the design. Each entry captures: the question, *why* it's deferred (knowledge gap / experience gap / can't anticipate), the current reversible placeholder, the reversibility, and the **trigger condition** — the signal or information that should bring you back to settle it for real. See [OPEN-DECISIONS-FORMAT.md](./OPEN-DECISIONS-FORMAT.md).
+Every deferred or provisional decision goes into `OPEN-DECISIONS.md` (create lazily on first use). A deferred decision is only safe if it stays visible and has an alarm clock — otherwise it silently fossilises into the design. Each entry captures: the question, *why* it's deferred (knowledge gap / experience gap / can't anticipate), the current reversible placeholder, the reversibility, and the **trigger condition** — the signal or information that should bring you back to settle it for real. See [OPEN-DECISIONS-FORMAT.md](./OPEN-DECISIONS-FORMAT.md). Placement: `harness/` root in repos that have `harness/`, else `docs/` (HARNESS-RULES.md 第六节).
 
 </what-to-do>
 
@@ -126,7 +126,7 @@ If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The ma
 │       └── harness/adr/
 ```
 
-Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `harness/adr/` exists, create it when the first ADR is needed. If no `docs/OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol. Harness file layering rules: see `HARNESS-RULES.md` (doctor-harness authoritative spec — do not inline-copy).
+Create files lazily — only when you have something to write. If no `CONTEXT.md` exists, create one when the first term is resolved. If no `harness/adr/` exists, create it when the first ADR is needed. If no `OPEN-DECISIONS.md` exists, create it when the first decision is deferred via the de-risk protocol.
 
 ## During the session
 
@@ -164,6 +164,6 @@ If any of the three is missing, skip the ADR. Use the format in [ADR-FORMAT.md](
 
 ### Track open decisions
 
-When a decision is deferred or made provisionally (because the user couldn't decide and you de-risked it instead of forcing it), record it in `docs/OPEN-DECISIONS.md` **immediately** — don't batch. A deferred decision with no revisit trigger is just a forgotten decision wearing a disguise. When a later session finally resolves one, remove it from the list (and write the resolution as an ADR if it qualifies). Use the format in [OPEN-DECISIONS-FORMAT.md](./OPEN-DECISIONS-FORMAT.md).
+When a decision is deferred or made provisionally (because the user couldn't decide and you de-risked it instead of forcing it), record it in `OPEN-DECISIONS.md` **immediately** — don't batch. A deferred decision with no revisit trigger is just a forgotten decision wearing a disguise. When a later session finally resolves one, remove it from the list (and write the resolution as an ADR if it qualifies). Use the format in [OPEN-DECISIONS-FORMAT.md](./OPEN-DECISIONS-FORMAT.md).
 
 </supporting-info>

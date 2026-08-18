@@ -40,6 +40,7 @@ Decisions deferred during grilling because they couldn't be settled confidently 
 `docs/OPEN-DECISIONS.md`:
 
 - **Single context (most repos):** one file at `docs/OPEN-DECISIONS.md` at the repo root.
+- **Harness-methodology repos (2026-08-14):** place it at `harness/OPEN-DECISIONS.md` instead — governance files (OPEN-DECISIONS / TODO / CONTEXT) live at the harness root, not project `docs/` (see HARNESS-RULES.md 第六节).
 - **Multiple contexts:** alongside each context's own `CONTEXT.md` (e.g. `src/ordering/docs/OPEN-DECISIONS.md`), following the `CONTEXT-MAP.md`.
 
 Created lazily — only when the first decision is deferred via the de-risk protocol.
@@ -50,6 +51,6 @@ Created lazily — only when the first decision is deferred via the de-risk prot
 |-----|-------|----------|
 | `CONTEXT.md` | the glossary — what terms *mean* | n/a (definitions) |
 | `harness/adr/` | decisions that are *made* and worth remembering | yes — closed |
-| `docs/OPEN-DECISIONS.md` | decisions that are *not yet made* | **no — open** |
+| `docs/OPEN-DECISIONS.md`(`harness/OPEN-DECISIONS.md` in harness repos) | decisions that are *not yet made* | **no — open** |
 
 A row migrates from `OPEN-DECISIONS.md` to `harness/adr/` when it's finally settled. `CONTEXT.md` is orthogonal: it never holds decisions, only language.

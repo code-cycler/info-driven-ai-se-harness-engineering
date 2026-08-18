@@ -35,7 +35,7 @@
 | 确认结果(常规) | 问卷归档(`harness/questionnaires/archive/`,只移不删)为唯一常规留痕 |
 | 术语定义类 | CONTEXT.md(纯术语表,不放决策与实现细节) |
 | 满足 ADR 三条件的决策 | harness/adr/NNNN-<slug>.md(编号顺延现有)。**确认中揪出的决策照常记录,不因「非正式行动」而免记** |
-| 🤔 逃生舱(单向门) | docs/OPEN-DECISIONS.md |
+| 🤔 逃生舱(单向门) | OPEN-DECISIONS.md(归属见 HARNESS-RULES.md 第六节) |
 | 🤔 逃生舱(双向门) | 采用 ★推荐项 **且进 OD 标注**(标「双向门 / 采用推荐项 X / provisional」+ 重访触发条件)。采用推荐项也留痕——2026-07-24 design-Q dogfood 补充声明(逃生舱采用推荐项也要进 OD,信息不丢失优先) |
 | 行动项(处理报告产出) | `<项目根>/TODO.md`(问题 → 行动 → 核验时机;懒创建) |
 

@@ -77,7 +77,7 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 
 - 工件漏洞/盲点/单向门/缺失替代方案 → **处理报告(对话内)**,人决定是否修订工件(grill-Q 不碰工件文件)
 - 难逆转+会困惑+真权衡 → harness/adr/
-- 其余单向门 / 重大风险 / 存疑假设 → docs/OPEN-DECISIONS.md
+- 其余单向门 / 重大风险 / 存疑假设 → OPEN-DECISIONS.md(归属见 HARNESS-RULES.md 第六节,2026-08-14 修订)
 - 术语冲突 → CONTEXT.md
 - 纯逻辑模式(无项目上下文)→ 审阅报告入 `~/notes/`,不写 CONTEXT/ADR/OD
 
