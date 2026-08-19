@@ -413,3 +413,9 @@
 
 > 来源:[grill-first-principles-w02](harness/questionnaires/archive/methodology/grill-first-principles-w02.md)(5 题全 D,0 逃生舱)。用户授权「全部执行并收口」。
 > ✅ **已执行**:T1 方法论 §1.1 补 120k/400k 来源分级标注(作者经验值,无系统测量);T2 方法论 §八 + 哲学元原则表加清单证据分级注(实证/预防/经验三类);T3 方法论 §零补「小改动/配置调整」行 + 未列举类型默认兜底句;T4 CONTEXT 证据状态节补验收侧负荷已知缺口注(重访触发与 OD-19② 共用);T5 CONTEXT 立 canonical 升版判据(结构性变化才升版)+ W01/W02 追溯标注。验证:脱敏 0 / harness-check 0。第一性原理压测两波闭环,覆盖矩阵见 W02 归档尾部。
+
+### 🟣 grill 系列 skill 压测修订包(grill-with-docs grill-skills,2026-08-19)
+
+> 来源:grill-with-docs 单点深钻会话(对话内压测,无问卷文件)。压测对象 = grill / grill-with-docs / grill-questionnaire 三 skill + 家族层机制,透镜 = 第一性原理 × 项目哲学(嵌套黑盒自指 / 不可替代性验证 / 信任劫持 / 完备性 / 生态位)。5 深水区全裁决(全采 ★推荐,0 逃生舱):**A** AI 同源出题限定(CONTEXT 证据状态节)/ **B** MC-05 验证卡(governance LLD)/ **C** 分层授权门槛(grill-Q SKILL.md 双侧)/ **D** 维度集完整性重访触发(GRILL-SKELETON 双侧)/ **E** grill 生态位重估(OD-12 关闭:保留)。除下述 1 项外均已即时落盘;验证:skills-sync 0 违规 / 脱敏 0 命中 / harness-check 0。
+
+- 🔶 **MC-05 计数钩子接进 grill-Q 处理报告格式**:MC-05 最小证据要求处理报告区分「(b) 类发现」vs「一致性发现」并分别计数——该要求当前只在 governance LLD,grill-Q 的 PROCESSING-RULES(处理报告格式)未承载;涉四副本引擎(design-Q/grill-Q/retro-Q/action-Q)同步考量(OD-8/OD-11),随下次引擎修订窗口一并做,不单独动引擎。核验时机:下次 grill-Q 压测的处理报告应出现两类计数。
