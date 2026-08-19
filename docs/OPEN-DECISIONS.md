@@ -275,3 +275,12 @@
 - **重访触发条件**:① DOGFOOD 实测通过,触发回灌合并;② 实验期双副本漂移引发实际困惑/误用(用户反馈);③ 改造放弃,全局恢复与项目一致;④ 分叉持续超过 60 天未回灌(长期分叉 = 无主版本信号);⑤ 实验窗口超 2 周未收口。满足任一 → 重估实验策略或执行合并。
 - **✅ 本轮已收口(2026-08-17,commit a9086be)**:层级制改造完成回灌(F027–F034 全绿;DOGFOOD 案例 1 + 存量套迁移演练验收,案例 2 用户裁决跳过留痕);窗口耗时 3 天(≤ 2 周目标内);双向漂移实证已并入经验(先同步再实验)。**策略保留供后续结构性 skill 改造复用**,触发条件对下轮实验继续有效。
 - **关联**:[OD-8](#od-8-skill-引擎副本的开源呈现已决)(引擎副本漂移先例)、[OD-13](#od-13已决ai-双轨对照-pilot-立项影子--冠军挑战者)(DOGFOOD 落点)、TODO「design-Q 数字层级改造」块、[HLD §6](../harness/design/designq-digital-levels/HLD.md)。
+
+## OD-25 本仓库治理文件布局 vs HARNESS-RULES 第六节(双向门)
+
+- **问题**:HARNESS-RULES 第六节(2026-08-14 裁决)规定「项目已建 `harness/` 的:OPEN-DECISIONS.md / TODO.md / CONTEXT.md 归 `harness/` 根」;而本仓库自身为 OPEN-DECISIONS / CONTEXT 在 `docs/`、TODO 在仓库根——方法论生产车间自身布局与自家权威规则冲突。根源是时间序:ADR-0011(2026-08-07)「CONTEXT/OPEN-DECISIONS/TODO 为项目固有文件,路径不动」早于 §6 裁决(2026-08-14),后者未对本仓库存量布局作处置。
+- **推迟原因**:迁移涉及全库引用断链修复(README/CLAUDE.md/ADR/归档问卷 living 引用),是 doctor-harness MIGRATION-FLOW 的完整一轮,不宜在 README 压测轮顺手做;且本仓库作为规则制定者,「自迁示范」还是「生产车间豁免」是定位判断,需单独裁决。
+- **当前占位方案**:维持现状布局(README「仓库结构」段如实描述);规则 §6 对新建宿主项目照常生效。
+- **可逆性**:双向门(纯文件移动 + 引用修复,可回迁)。
+- **重访触发条件**:① 下次大规模 harness 治理/迁移轮次时一并执行 MIGRATION-FLOW;② 外部采用者对本仓库布局与 §6 不一致提出困惑;③ doctor-harness 校验脚本将 §6 纳入检查导致本仓库报违规。满足任一 → 裁决「自迁示范 vs 豁免注记」并执行。
+- **关联**:[HARNESS-RULES 第六节](../skills/doctor-harness/HARNESS-RULES.md)、[ADR-0011](../harness/adr/0011-abandon-plan-r-hardcode-harness.md)(「路径不动」原裁决)、[MIGRATION-FLOW](../skills/doctor-harness/MIGRATION-FLOW.md)。
