@@ -29,7 +29,7 @@ flowchart TD
     E --> F["📊 /retro-questionnaire<br/>复盘沉淀 + Action Items"]
     F -.->|新想法 / 经验| A
 
-    G["🎯 /grill · /grill-with-docs<br/>实现期单点深钻(一问一答)"] -.->|任意环节插入| E
+    G["🎯 /grill-with-docs<br/>实现期单点深钻(一问一答,含通用模式)"] -.->|任意环节插入| E
     H["⚙️ /delegate<br/>纯执行决策下放(横切)"] -.-> B
     H -.-> C
     H -.-> E
@@ -41,7 +41,7 @@ flowchart TD
 
 **canonical 主路径**:design-Q → grill-Q → dogfood → long-running → retro-Q;retro-Q 也可在任意环节作为横切复盘插入。
 
-衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill / grill-with-docs 与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§三](docs/methodology/methodology_v5.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
+衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill-with-docs(含通用模式)与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§三](docs/methodology/methodology_v5.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
 
 **最小采用切片**(2026-08-18,grill-Q first-principles W01 Q5):新项目从 0 跑通第一个闭环只需 3 个文件起步——① 本 README(双支柱与主路径)② [practical_v1.md §8.3](docs/methodology/practical_v1.md)(skill 使用时机表)③ `skills/`(拷入 `~/.claude/skills/` 即用)。方法论 / 哲学 / 实操三件套按需深读,不是采用前置;本仓库的治理体系(ADR / OD / 归档问卷 / CONTEXT)是方法论的生产车间,采用者无需复制。
 
@@ -71,7 +71,7 @@ flowchart TD
 | [`action-questionnaire`](skills/action-questionnaire/) | 非正式行动前的细节确认(确认式问卷,轻量前奏) |
 | [`design-questionnaire`](skills/design-questionnaire/) | 一个念头 → 层层设计(L0-vision 起,按需增层;旧 VISION/HLD/LLD 为别名兼容) |
 | [`grill-questionnaire`](skills/grill-questionnaire/) | 压测已有工件,8 维度找漏洞 |
-| [`grill`](skills/grill/) / [`grill-with-docs`](skills/grill-with-docs/) | 实现期单点二义性深钻 |
+| [`grill-with-docs`](skills/grill-with-docs/) | 实现期单点二义性深钻(绑库默认;含通用模式承载原 grill 场景,2026-08-19 grill 已退役) |
 | [`retro-questionnaire`](skills/retro-questionnaire/) | 阶段 / 项目复盘 |
 | [`long-running-agent`](skills/long-running-agent/) | 跨会话长项目约束系统 |
 | [`delegate`](skills/delegate/) | 决策下放治理(试点) |

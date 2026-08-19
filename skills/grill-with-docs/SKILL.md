@@ -1,11 +1,28 @@
 ---
 name: grill-with-docs
-description: Deep-dive engine for the 20% critical questions (80/20 judgment-cost principle): one-by-one grilling for dependency-chained, not-yet-formed decisions that need immediate feedback — the layer grill-questionnaire's batched 80% layer hands deep-water points to. Challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs, OPEN-DECISIONS.md) inline as decisions crystallise. When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan point-by-point against their project's language and documented decisions.
+description: Deep-dive engine for the 20% critical questions (80/20 judgment-cost principle): one-by-one grilling for dependency-chained, not-yet-formed decisions that need immediate feedback — the layer grill-questionnaire's batched 80% layer hands deep-water points to. Two modes: codebase-bound (default — challenges your plan against the existing domain model, sharpens terminology, updates CONTEXT.md/ADRs/OPEN-DECISIONS.md inline) and general mode (2026-08-19, absorbs grill's niche — no codebase exploration, zero auto-write, pure dialogue). When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan point-by-point against their project's language and documented decisions, or for general one-at-a-time deep-dives not tied to a codebase (general mode).
 ---
 
 <what-to-do>
 
 Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
+
+## 模式:绑库(默认)/ 通用(2026-08-19 新增,承载 grill 生态位)
+
+> 来源:grill 退役准备(retro skill-family W01 Q6 + 用户裁决「先加模式 + grill 观察期」)。让本 skill 承载 grill 的「通用问题单点深钻」场景,grill 进观察期。
+
+本 skill 默认**绑库模式**(challenge against codebase domain model + 自动写 CONTEXT/ADR/OD)。当问题是**通用型**(不绑特定代码库:非项目计划 / 纯逻辑推演 / 跨项目决策)时,切换到**通用模式**:
+
+- **判定(可操作判别,2026-08-19 深钻精确化)**:问题答案是否依赖某个具体代码库的领域模型 / 术语 / 代码事实?**否 → 通用模式**。典型适用情景:① 跨项目 / 无项目的决策(选方法论、定规划、评估未建仓的想法);② 纯逻辑 / 概念推演(权衡抽象方案、梳理不依赖现有代码的思路);③ 方法论元问题(「我该用哪个 skill」这类不针对具体代码的问题)。**反边界(必须绑库)**:答案依赖「这个项目的代码现在怎么写的 / 术语怎么定义的」——如「这个字段该不该可空」「这个模块职责是什么」。
+- **通用模式行为**:**不探索代码库、不建领域词汇表、不自动写 CONTEXT/ADR/OD**——纯对话零留痕,仅当用户明确要求才写文件(遵 `~/CLAUDE.md`:生成件入 `~/scratch/`、笔记入 `~/notes/`)。提问方法论(逐问 + 推荐 + 逃生舱 + de-risk)与绑库模式完全一致。
+- **误判兜底(两道都设,2026-08-19 用户裁决)**:
+  1. **入口确认**:判为通用 / 触发词命中(「通用问题 / 不绑库 / 别写文件 / 纯逻辑」)后,用 AskUserQuestion 确认一次「走通用模式(零留痕)?」——AI 不擅自切(通用 vs 绑库影响是否留痕,属人判);拦入口误判。
+  2. **中途切回**:通用模式下若发现其实需要对照代码库事实,提示切回绑库模式;拦中途误判。
+- **零留痕边界(AI 提议 + 人拍板,2026-08-19 用户裁决)**:通用模式下产出**可复用决策**(值得跨会话保留的结论)时,AI 用 AskUserQuestion 问一次「这个决策值得落盘吗?」,人选择写不写——防止可复用决策被零留痕悄悄丢掉,又不过度打断;用户也可随时主动要求落盘。
+
+## 中途相变:发现批量性 → 转问卷(2026-08-19,grill 边界深钻)
+
+深钻中若发现手头问题实为「**一批可离线作答的独立确认点**」(依赖链浅、答案材料已在人脑、无需即时反馈——认知状态三态之「知道·可离线答」),用 AskUserQuestion 提议转 grill-questionnaire 批量压测——**AI 提议、人拍板**,不擅自切;已结晶结论按既有交接(结晶成工件 → grill-Q 复压)。反向相变(grill-Q 阻塞性逃生舱 → 转本 skill 深钻)由 grill-Q 规格承载,此处不重复。
 
 ## How to ask questions
 

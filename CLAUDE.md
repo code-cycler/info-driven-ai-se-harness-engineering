@@ -38,18 +38,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## skill 家族协作
 
-9 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§4.3](docs/methodology/methodology_v5.md#43-两族-grill) 与各 SKILL.md「主流程」末尾;v5 连续化前的旧编号 §5.3 已映射至 §4.3):
+8 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§4.3](docs/methodology/methodology_v5.md#43-两族-grill) 与各 SKILL.md「主流程」末尾;v5 连续化前的旧编号 §5.3 已映射至 §4.3):
 
 ```mermaid
 flowchart LR
-    DQ["design-Q<br/>生成式设计"] -->|收尾提议| GQ["grill-Q<br/>对抗式压测(D1–D8)"]
+    DQ["design-Q<br/>生成式设计"] -->|收尾提议| GQ["grill-Q<br/>对抗式压测(D1–D8)<br/>①可离线答"]
     GQ -->|压测后| DOG["dogfood<br/>产物自验(正交可插入)"]
     DOG -->|自验通过| LR["long-running<br/>跨会话实现"]
     LR --> RETRO["retro<br/>复盘"]
     RETRO -.->|新需求/经验| DQ
     DEL["delegate(横切:任意环节下放纯执行决策)"] -.-> DQ
     AQ["action-Q(横切:任意环节前轻量前奏<br/>confirm-list 细节确认)"] -.-> DQ
-    GW["grill / grill-with-docs<br/>(实现期单点深钻,一问一答,正交可任意插入)"] -.-> DQ
+    GW["grill-with-docs<br/>(实现期单点深钻,一问一答,正交可任意插入<br/>含通用模式承载原 grill 场景<br/>②未成形·需即时反馈)"] -.-> DQ
     DH["doctor-harness(harness 演进治理<br/>分层/迁移/校验/留痕,横切如 delegate)"] -.-> DQ
 ```
 
@@ -64,6 +64,8 @@ flowchart LR
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 | doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕);规则权威 `skills/doctor-harness/HARNESS-RULES.md`;校验 `scripts/harness-check.py` |
+
+两族分流判据锚 = **认知状态三态**(① 知道·可离线 → 批量;② 未成形·需即时反馈 → 单点;③ 不知道自己不知道 → 对抗维度逼出),详见 [CONTEXT](docs/CONTEXT.md)「Grill 家族」节(2026-08-19,复压 grill-boundary-canonical-w01 Q8)。
 
 **引擎副本漂移(OD-8,编辑 skill 时必读)**:`QUESTIONNAIRE-FORMAT.md` / `PROCESSING-RULES.md` 在 design-Q / grill-Q / retro-Q / **action-Q** 各持一份副本(已漂移)——改一方考量**四方**,在对应 `DESIGN.md` 声明漂移关系;**禁止擅自统一 / 抽取共享文件**(已决项)。
 
@@ -99,6 +101,8 @@ flowchart LR
 **2026-08-13:grill-Q philosophy-v5 成稿压测 W01 闭环 + 发布门推送**——压测 10 题(Q1 用户裁决更名「第五→第四学科视角」:全仓同步 + ADR-0015/0014 更名注记;Q2–Q10 全 C:§八 修订 9 处——嵌套黑盒 / 黑盒被制衡 / retro 抽查代理指标 / WAD 跨主体限定 / 信任劫持循环 / 装置补 retro+long-running / ADR 链接 / WAI-WAD 全称 / 致灾语境映射),全部执行并验证(脱敏 0 / harness-check 0);OD-1 三道过后推送(7853792..f93cc8b,2 commits);F026 OD-4 母本同步用户仓库外执行销项;feature_list 校正(F002/F004/F005 补 passes)。**剩 dogfood(F006 唯一剩余)**。
 
 **2026-08-19:skill 双侧同步机制化**——2026-08-18 双侧同步(9 skill 双向合并,commit 4fece7c)暴露「项目内修、全局漏修」空隙(8/14 修订落全局漏项目、8/8 归档断链修复落项目漏全局),机制化收口:新增 [scripts/skills-sync-check.py](scripts/skills-sync-check.py)(check-only 不选边、裁决例外白名单、EXIT 码供例行)+ CLAUDE.md 铁律第 8 条 + 工具命令节扩为两条(提交前例行,暂不入发布门强制清单);问卷 [confirm-skills-sync-mechanism-w00.md](harness/questionnaires/archive/_misc/confirm-skills-sync-mechanism-w00.md)(14/14 全确认)。
+
+**2026-08-19:grill 家族边界与跑偏治理(深钻 → 复压闭环)**——grill-with-docs 深钻四分支(认知状态三态接线 / 入口+中途双检测 / 校准闸门+题级 ❌ 标注双件 / 优化回路 [OD-26](docs/OPEN-DECISIONS.md) provisional)→ 包一 skill 规格层落地(grill-Q 族间自检/校准闸门/阻塞性逃生舱分流/质量信号节 + FORMAT 规则 15 ❌ 专属分叉 + with-docs 反向相变)→ [grill-boundary-canonical-w01](harness/questionnaires/archive/_misc/grill-boundary-canonical-w01.md) 复压(9 题全采纳 + Q8 推翻推荐 → 本文件同步三态)→ canonical 版本内修订(哲学 §3.1 认知状态行;方法论 §4.1 接线 / §4.3 优先级 / §3.3.1 指针 / §八 第 25 条;两文件头修订记录行)。斯多葛视角不落盘(对话层)。OD-4 母本同步(仓库外)累计一笔。
 
 历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角);2026-08-13 philosophy_v6(治理进化);2026-08-14 philosophy_v7(连续章节与双文件交叉治理)。
 

@@ -127,12 +127,26 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 决策引擎,分两族(详见 [methodology_v5 §4.3](methodology/methodology_v5.md)):
 
 - **批量问卷族**:design-Q / grill-Q / retro-Q / action-Q(多波次问卷,离线作答;action-Q = confirm-list 确认式分叉,复用引擎族属不变——2026-08-13 grill-Q philosophy-v5 W02 Q3 补录,对齐哲学 §7.1 成员集;v7 起该节为 §3.1)。
-- **单点深钻族**:grill / grill-with-docs(一问一答,逐轮等待)。
+- **单点深钻族**:grill-with-docs(一问一答,逐轮等待;绑库模式默认 + 通用模式承载通用场景——原 grill 已于 2026-08-19 退役,生态位由通用模式承接,见 [OD-12](OPEN-DECISIONS.md))。
 - **80/20 判断成本原则**(两族分层判据;grill-Q 原初设计原则,2026-07-31 作者补述):批量问卷族处理可预知、可离线的基础问题;单点深钻族处理依赖链深、决策未成形、需即时反馈或必须绑定现实证据的关键问题。80/20 是路由启发式,不是时间配额或统计结论;四项分流判据与交接见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02) / [§5.2](methodology/methodology_v5.md#42-演进说明从一问一答到批量问卷)。
+- **认知状态三态**(2026-08-19,grill-with-docs「grill 家族边界与跑偏治理」深钻结晶)= 两族路由的**认知层判据**,按「答案材料此刻在哪里」分流,与方法论 §4.1 (a)(b) 盲区分类接线:① **知道·可离线答**(答案材料在人脑,只是没写——(a) 类)→ 批量问卷族;② **知道方向·决策未成形**(答案需依赖链逐轮推演生成、需即时反馈)→ 单点深钻族;③ **不知道自己不知道**(隐含假设——(b) 类)→ 对抗维度逼出(grill-Q D1/D5/D7,或深钻的具体场景测边界)。**跑偏的判据层定义** = AI 误判认知状态出题(把②③当①批量问,或对工件框架理解错致整卷问错对象);体系内闸门 = grill-Q 入口校准闸门 + 题级 ❌ 跑偏标注(见 grill-Q SKILL/FORMAT 规则 15)。**三条边界**(复压 grill-boundary-canonical-w01):本判据是**路由判据非真值判据**——错误认知(材料在但错误,「以为知道其实知道错」)归验证层(D7 与现实矛盾 / 先验证再出题)兜底,不进本判据(Q2);认知状态由 **AI 提议、人确认**,AI 不独立判定(Q3);人本身不具备任务知识的学习/探索场景不适用——答案材料两边都没有,走方法论 §零 任务级流程(Q3 自定义)。**接线状态**:✅ 已接线(2026-08-19,复压全采纳执行)——哲学 §3.1 已加「认知状态」行,方法论 §4.1 接线句 / §4.3 优先级句 / §3.3.1 指针注 / §八 第 25 条已落。
 
 ## skill 家族
 
-方法论的可执行载体,9 个核心 skill:design-questionnaire / grill-questionnaire / grill / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md));唯一入口路由、输入 / 输出 / 决策权 / 禁止越界 / 交接条件见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02)。
+方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。**grill 已于 2026-08-19 退役**(归 `waste/skills/grill/`;其通用×单点生态位由 grill-with-docs 通用模式承载,见 [OD-12](OPEN-DECISIONS.md))。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md));唯一入口路由、输入 / 输出 / 决策权 / 禁止越界 / 交接条件见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02)。
+
+### 提问维度速查(2026-08-19,retro skill-family W01 补充声明)
+
+> 各 skill 的提问/确认维度原本散落在各 SKILL.md,需逐个反看才能发现;此处聚合到入口,提升家族可发现性。维度细节以各 skill 骨架文件为权威,本表只作导览。
+
+| skill | 提问 / 确认维度 | 骨架出处 |
+|---|---|---|
+| design-questionnaire | 分层骨架(L0-vision 目标层恒在 + L1+/L2 按需)+ 环境现实验证 + 未验证假设台账 | [STAGE-SKELETONS.md](../skills/design-questionnaire/STAGE-SKELETONS.md) |
+| grill-questionnaire | 固定压测 8 维 D1–D8(未言明假设/单向门/替代方案/失败模式/盲点/可验证性/与现实矛盾/术语一致性) | [GRILL-SKELETON.md](../skills/grill-questionnaire/GRILL-SKELETON.md) |
+| action-questionnaire | 隐式骨架六要素(目标/输入/输出/约束/边界/依赖)+ 环境现实核实 | 各 SKILL.md「提取与核实」节 |
+| retro-questionnaire | 方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items | [RETRO-SKELETONS.md](../skills/retro-questionnaire/RETRO-SKELETONS.md) |
+| grill-with-docs | 无固定骨架(纯追问,单点深钻);绑库模式叠加领域词汇表挑战 / 代码交叉核验,通用模式零留痕纯对话 | [SKILL.md](../skills/grill-with-docs/SKILL.md) |
+| long-running / delegate / doctor-harness | 非提问类(约束系统 / 下放治理 / harness 治理) | 各 SKILL.md |
 
 ## 方法论文档三块(ADR-0007)
 

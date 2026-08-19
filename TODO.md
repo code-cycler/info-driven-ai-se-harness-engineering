@@ -15,6 +15,29 @@
 
 ## 待办(新会话 design-Q 起点)
 
+### 🟡 skill 家族形态修订(grill-Q skill-family W01 产出,2026-08-19)
+
+> 来源:[grill-skill-family-w01](harness/questionnaires/archive/_misc/grill-skill-family-w01.md)(10 题裁决;焦点 = 轻任务过度准备 / grill 合并提案 / 精炼判据 / 哲学符合度)。grill 合并提案被否(维持 [OD-12](docs/OPEN-DECISIONS.md),提问方法论第 5 份隐性副本进 [OD-8](docs/OPEN-DECISIONS.md) 治理);核心发现 = 哲学已预判过度准备风险(元原则失败模式表)但 skill 规格层未承接(无轻重分级、无轻量模式、无轻任务下限)。
+
+- [x] **轻量模式规范起草**(Q4-B + Q3/Q4 自定义):三问卷 skill(action-Q / grill-Q / design-Q)已加「轻量模式」节——调研分级(轻任务只读 CLAUDE.md + 直接涉及代码区)+「轻量执行提议」(AI 提议、人拍板,AI 无自裁权)+ 轻量管道(小波直问 / 免归档)+「初步结论先行 + 人工轻验证」条款(与 OD-13 / OD-19 同构)。✅ 2026-08-19 双侧同步完成
+- [x] **action-Q 铁律 3 措辞对齐**(Q5-C):铁律 3 已收窄至 description 三口径(多文件 / 多决策 / 涉外部依赖)+ 四判据落地细则附注(单文件 + git 可回退 + 不涉网络/付费/删除 + 无新决策,全客观才豁免)。✅ 2026-08-19 双侧同步完成
+- [x] **SKILL.md 分层迁移**(Q8-A,依据 [ADR-0023](harness/adr/0023-skill-md-layered-slimming.md)):样板迁移完成(design-Q dogfood 过程叙述收拢);**全量迁移评估为低收益、缓行**——实测 9 skill 日期注记多为规则出处不可分割,纯过程叙述 < 5%,ADR-0023 主要价值 = 升格机制 + 新增教训归位纪律。存量分层随各 skill 自然大修顺带做(顺手收敛)。✅ 2026-08-19 评估落盘 design-Q DESIGN.md
+- [x] **专门「skill 家族使用体验 retro」**(Q10-A):已完成——[skill-family-experience_v1.md](docs/retro/skill-family-experience_v1.md)(7 题解析:在用 7 / 低频 grill+delegate / 走形式=都不 / 轻任务「流程耗时>>任务」实证 / 价值最大=grill-Q / 可退役=delegate+grill 走 OD 重访 / 结论=形态合理+需裁剪并存)。✅ 2026-08-19;裁剪清单见下两条 + 补充声明(维度可见性)已落 CONTEXT
+- [ ] **轻量模式 dogfood 验证**(retro Action Item):下次轻任务自然触发时验证轻量模式是否切中「流程耗时 >> 任务」痛点 → 核验:真实轻任务后回评
+- [ ] **delegate 使用率重访**(retro Action Item):delegate 走 [OD-23](docs/OPEN-DECISIONS.md)(首批三次运行或 30 天窗口)→ 核验:OD 触发条件命中时
+- [x] **grill 退役**(2026-08-19 用户显式裁决,派生自 mattpocock grill-with-docs、适用场景少):grill 已归 `waste/skills/grill/`(双侧,可回退)+ waste.log;生态位由 grill-with-docs 通用模式承接;全仓活文档同步(CLAUDE/README/CONTEXT/方法论/哲学 §版本内修订),家族 9→8;[OD-12](docs/OPEN-DECISIONS.md) 观察期终止转正式退役。✅ 2026-08-19
+- [ ] **五处分工冗余顺手收敛**(Q7-C,不立项):任一处因其他原因修订时,顺手核对 CLAUDE.md 协作图 / CONTEXT skill 家族节 / 方法论 §3.3.1 路由表 / §4.3 两族表 / 各 SKILL.md 内嵌分工表五处对齐(铁律 7 同款策略)
+
+### 🟡 grill 边界与跑偏治理修订包(grill-with-docs 深钻,2026-08-19)
+
+> 来源:grill-with-docs 绑库深钻「grill-Q vs grill-with-docs 场景区分 / 误用切换 / 跑偏兜底 / 优化机制」。四分支裁决:**G1 认知状态三态接线**(主缺口;G2 判据自指 / G3 中途相变 / G4 冲突裁决全认并存,分别由校准闸门 / 相变协议 / 优先级句承接)+ **入口+中途双检测** + **校准闸门与题级 ❌ 标注双件** + **优化回路走既有三回路**(处理报告质量信号节 → retro 聚合 → ADR-0023 升格;[OD-26](docs/OPEN-DECISIONS.md) provisional 内嵌、台账推迟)。斯多葛视角不落盘(对话层,用户裁决)。
+> skill 规格层已授权「包一全授权」落地(2026-08-19):grill-Q SKILL(族间自检 / 入口校准闸门 / 阻塞性逃生舱分流 / 质量信号节)+ FORMAT 规则 15(❌ 专属分叉)+ PROCESSING-RULES(❌ 解析 + ≥2 停波回炉)+ DESIGN(有意分叉声明)+ with-docs SKILL(反向相变条款)+ [CONTEXT](docs/CONTEXT.md)(认知状态三态)。双侧同步 + skills-sync-check 0 违规。
+
+- ✅ **canonical 复压批次(包二)**(2026-08-19 完成,[grill-boundary-canonical-w01](harness/questionnaires/archive/_misc/grill-boundary-canonical-w01.md),9 题:8 采纳 ★推荐 + Q8 推翻推荐 → 项目 CLAUDE.md 同步三态;0 逃生舱 0 ❌;自定义 3 条 + 补充声明 2 条全处理):哲学 §3.1 加「认知状态」行(Q7 保持「两族共管」)+ 方法论 §4.1 接线句(含存疑从重·启发式·学习场景边界)/ §4.3 优先级句(门型>形态;认知状态>可预知性;AI 提议人确认)/ §3.3.1 指针注 / §八 第 25 条(三态机械分类)+ 两文件头修订记录行 + 项目 CLAUDE.md 三态落(速查表指针行 + 协作图节点注)+ CONTEXT 三态补三条边界。版本内修订不升版;OD-4 母本同步累计一笔(仓库外)
+- ✅ **dogfood 验证(首次,本波复压即首次真实使用)**:入口校准闸门执行(1 轮确认通过,本次零跑偏——机制在位,未拦到反例,有效性待更多样本)/ ❌ 标注在位未触发(0/9 被标)/ 质量信号节已进处理报告 / 族间自检执行并引用三态(输入已成形,未触发转深钻);**阻塞性分流未遇触发场景,留自然回访** → 后续核验:分流条款首次触发时回评
+- ⏳ **harness 文档治理历史分离**(复压补充声明①,用户裁决「1+2」):「L0 等设计文档的治理历史单独分离保存 + 索引指针 + LLM 上下文纯净」——转 doctor-harness 议题(与 ADR-0023 SKILL 分层同构推广到 harness/design/ 文档;用户注:需同时治理多个 skill)+ 追加 W02 专项压测(提案起草后,工件 = 治理历史分离提案)→ 核验:doctor-harness 治理轮 / W02 波次启动时
+- ⏳ **grill-with-docs 分工/命名重估**(复压补充声明②,用户裁决转单点深钻):with-docs 批量功能已被 grill-Q 取代,生态位剩单点深钻 + 通用模式,名实关系重估(触 OD-22 重访:作者主动重估,与 OD-12 grill 退役同权)→ 核验:深钻会话发起时
+
 ### 🟠 v3 设计修订项(grill-Q v3-design W01 产出)
 
 > 来源:grill-Q 压测 v3 设计套(VISION/HLD/LLD),12 题全采纳。挖出设计期盲点,回灌 HLD/LLD。

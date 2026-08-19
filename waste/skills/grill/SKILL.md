@@ -1,7 +1,9 @@
 ---
 name: grill
-description: Lightweight grilling session for GENERAL questions — relentlessly interviews the user one question at a time, walking the design tree, with a recommended answer and a "can't decide → de-risk" escape hatch on every question. Pure dialogue by default; writes a file ONLY when the user explicitly asks (placed per ~/CLAUDE.md). Use to stress-test plans/decisions NOT tied to a specific codebase. For codebase-domain work with CONTEXT.md/ADR, use /grill-with-docs instead.
+description: ⚠️ 观察期/待退役(2026-08-19 起)——通用单点深钻场景已由 grill-with-docs「通用模式」承载,本 skill 进观察期(OD-12 重访)。新会话请优先用 grill-with-docs 并声明「通用模式」。Lightweight grilling session for GENERAL questions — one question at a time, recommended answer + escape hatch. Pure dialogue by default; writes a file ONLY when the user explicitly asks. Use to stress-test plans/decisions NOT tied to a specific codebase.
 ---
+
+> **⚠️ 观察期(2026-08-19,retro skill-family W01 Q6 + 用户裁决)**:本 skill 的「通用问题单点深钻」生态位已由 **grill-with-docs 的「通用模式」**承载(不绑库 + 零留痕,行为等价)。本 skill 暂不移除,挂 [OD-12](harness 观察期重访) 观察一轮——若 with-docs 通用模式经真实使用验证能承载,本 skill 退役(移 `waste/`)。**新会话建议直接用 grill-with-docs 并声明「通用模式」**;本 skill 仅在 with-docs 通用模式实证不足时作 fallback。
 
 <what-to-do>
 

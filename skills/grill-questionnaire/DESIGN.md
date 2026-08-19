@@ -98,6 +98,7 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 | 与 design-Q feature 模式混淆 | G1 边界:design-Q 生成式(从零、固定骨架),grill-Q 对抗式(已有工件、无骨架);design-Q 收尾主动提议 grill-Q 是衔接点 |
 | 三副本引擎漂移 | G7 三方 drift 声明 + 副本头部标记;引擎极少改 |
 | 降级模式(纯逻辑)力度弱 | D7/D8 失效时明确告知用户「未对照代码库,建议在有项目上下文时复压」 |
+| 框架级理解跑偏(整卷在错误框架内自洽,题内裁决碰不到——CONTEXT「AI 同源出题限定」的出题层同构) | 入口校准闸门(SKILL 第 1 步末,轻量豁免)+ ❌ 题级跑偏标注(FORMAT 规则 15)+ 同波 ≥2 题被标 → 停波回炉(PROCESSING-RULES);跨波优化走处理报告质量信号节 → retro 聚合 → ADR-0023 升格(OD-26 provisional) |
 | 绿地项目(有 docs 无代码)D7 误判为无效 | GRILL-SKELETON D7 + SKILL 模式判定补「绿地子模式」:D7 的「现实」转为既有设计文档/ADR/约束(工件内部一致性 + 设计 vs 既有约束),D1–D8 全开。项目B dogfood Q15 实证:绿地模式 D7 抓出既有 ADR 与 LLD 数据结构选型不一致(2026-07-27) |
 
 ## 引擎同步记录(2026-08-03)
@@ -128,4 +129,11 @@ grill / grill-with-docs 的压测用途(找漏洞、找盲点、找单向门、�
 - QUESTIONNAIRE-FORMAT **规则 4 修正**:「✍️ 自定义」位置由「紧跟 🤔 逃生舱之后」改为「紧跟所有选项(含 ★推荐)之后、固定为题目最后一位」——消除与规则 13(选项排序:推荐居末)的顺序矛盾;该矛盾是「✍️ 行结构性遗漏」的根源(grill-Q first-principles W01 曾 10 题全漏,靠出题自检 grep 抓回)。
 - grill-Q / retro-Q 的模板示例同步更新为规则 13 选项顺序(★推荐从 A 位移至 🤔 之后的 C 位,✍️ 行标注「题目最后一位」);design-Q / action-Q 模板本已合规,仅规则 4 措辞统一。
 - 四副本 × 双侧(repo `skills/` + 全局 `~/.claude/skills/`)同批同步,无新有意分叉(OD-8/OD-11 边界不变)。
-\n
+
+## 引擎有意分叉声明(2026-08-19,grill 边界深钻;OD-8/OD-11 治理)
+
+- **❌ 跑偏标注(本副本专属,四副本不同步)**:QUESTIONNAIRE-FORMAT 规则 15 + 模板/填写规则/规则 4 自检/规则 13 排序 + PROCESSING-RULES ❌ 解析行与「≥2 停波回炉」+ 处理报告「质量信号」节——仅 grill-Q 副本持有,design-Q / retro-Q / action-Q 三副本不加。**声明为设计(非遗漏)**。理由:「框架跑偏」是压测场景特有失败模式(AI 出题者对工件的理解框架错误,整卷在错误框架内自洽);design-Q 对应物 = preview 留空、action-Q = confirm-list 纠正、retro-Q = 四节自由书写,无需同构行。
+- **同批 skill 层机制(非引擎副本)**:SKILL.md 第 0 步族间自检(批量 vs 单点)+ 第 1 步末入口校准闸门(轻量模式豁免)+ 第 4 步阻塞性逃生舱分流(转 with-docs 深钻,人拍板)+ 处理报告质量信号要求;grill-with-docs 侧反向相变条款(发现批量性 → 提议转 grill-Q)。
+- **来源**:grill-with-docs「grill 家族边界与跑偏治理」深钻(2026-08-19,四分支裁决:认知状态三态接线 / 入口+中途双检测 / 校准闸门+题级标注双件 / 优化回路 [OD-26](../../docs/OPEN-DECISIONS.md) provisional),用户授权「包一全授权」执行;canonical 层(哲学 §3.1 路由表加行 + 方法论 §4.1↔§4.3 接线)走 grill-Q 复压批次,见 TODO「grill 边界与跑偏治理修订包」。
+- **关联**:[ADR-0023](../../harness/adr/0023-skill-md-layered-slimming.md)(同类归因 ≥2 次升格收口)、CONTEXT「Grill 家族 · 认知状态三态」。
+- **顺手修复(同批)**:本文件尾部字面残留 `\n` 已清除;FORMAT / PROCESSING-RULES 头部「共三份」陈旧表述更正为四份(action-Q 早已是第四副本,OD-11)。

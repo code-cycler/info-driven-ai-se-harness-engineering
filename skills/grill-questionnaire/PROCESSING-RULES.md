@@ -1,7 +1,8 @@
 # 解析与落盘规则(design-questionnaire 引擎 · 复用件)
 
-> ⚠️ 本文件是 design-questionnaire 引擎的副本(2026-07-24 复制)。design-Q 为 canonical;另有 retro-questionnaire、grill-questionnaire 两份副本,共三份。修改需考量三方同步,漂移需声明(见三处 DESIGN.md)。
+> ⚠️ 本文件是 design-questionnaire 引擎的副本(2026-07-24 复制)。design-Q 为 canonical;另有 retro-questionnaire、grill-questionnaire、action-questionnaire 副本,共四份。修改需考量四方同步,漂移需声明(见 DESIGN.md)。
 > 本 skill 的落盘与 design-Q 不同:工件漏洞/盲点只进处理报告(不替改工件);具体落盘映射见 [GRILL-SKELETON.md](./GRILL-SKELETON.md) 的「落盘契约」。下表的 vision/hld/lld 行是 design-Q 词汇,本 skill 不产生阶段题。
+> grill-Q 副本有意分叉追加(2026-08-19,声明见 DESIGN.md「引擎有意分叉声明」):❌ 跑偏解析行 + 「≥2 停波回炉」+ 处理报告「质量信号」节为本副本专属。
 
 > 本文件与 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md) 共同构成问卷引擎。后续 skill(如 retro-questionnaire)复用这两个文件,只换自己的骨架模板。
 
@@ -21,6 +22,7 @@
 | 条件子问题条件不满足但被答 | 忽略该答案,处理报告中记录 |
 | 自定义文本模糊或引出新分支 | 进下一波追问(标注出处) |
 | 对话速答中「不知道/不确定/你决定/推迟/看你」 | 视同勾了 🤔 逃生舱,走降风险协议 |
+| 勾了 ❌ 跑偏标注(grill-Q 专属,FORMAT 规则 15;对话速答中「这题不对/问错了/不是这个意思」视同勾选) | 该题**不解析答案内容**(框架错则答案无效);记入处理报告「质量信号」节并归因(框架错 / 维度误用 / 事实错)。**同波 ≥2 题被标 → 停波回炉**:中断本波处理,回 SKILL 第 1 步入口校准闸门与人重对框架,修正后重出受影响题(标注「上轮跑偏回炉」);未被标的已答题保持有效 |
 
 ## 落盘映射
 
@@ -70,6 +72,7 @@ ADR 三条件(缺一不写):难逆转 + 缺上下文会让人困惑 + 经过真�
 - 逃生舱:Q4 判双向门 → 采用推荐项 B;Q8 单向门 → OD 条目,触发条件「……」
 - 下一波候选:<引出的新问题 / 深分支>
 - 本阶段覆盖度:骨架 X/Y 项已覆盖;动态盲点剩 N 个
+- 质量信号(grill-Q 专属,2026-08-19):❌ 跑偏 X/Y 题(逐题归因:框架错 / 维度误用 / 事实错);🤔 逃生舱 X/Y;✍️ 自定义 X/Y;同主题归因跨波累计计数(≥2 → 按 ADR-0023 升格写入 SKILL.md 规则本体)
 ```
 
 ## 归档
