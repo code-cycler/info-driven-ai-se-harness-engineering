@@ -25,7 +25,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) —— 待决事项 + 重访触发。改"已决"事项前先查这里与 `harness/adr/`。
 - [harness/adr/](harness/adr/) —— ADR-0001 source of truth / 0002 License / 0003 发布形态 / 0007 三块拆分 / 0008–0010 v4 落地 / 0011 硬编码 harness / 0012–0013 doctor-harness 分层 / **0014 学科挂接分层策略 / 0015 去黑盒第四学科视角独立锚点(v5)**。
 - [harness/design/](harness/design/) 与 [harness/questionnaires/](harness/questionnaires/) —— **AI 流程产物**(设计文档套 / 归档问卷),与项目文件 docs/ 物理分离(三区模型)。
-- 唯一工具命令:脱敏检查 `python3 scripts/desensitize.py .`(发布前 DoD 要求 0 命中;映射表本地 gitignored;push 前三道门 = 脚本 0 命中 + 语义人审 + 脱敏报告,见 [OD-1](docs/OPEN-DECISIONS.md);**不要在 .md 中复述映射表里的真实名**)。
+- 工具命令(两条):① 脱敏检查 `python3 scripts/desensitize.py .`(发布前 DoD 要求 0 命中;映射表本地 gitignored;push 前三道门 = 脚本 0 命中 + 语义人审 + 脱敏报告,见 [OD-1](docs/OPEN-DECISIONS.md);**不要在 .md 中复述映射表里的真实名**);② skill 双侧同步检查 `python3 scripts/skills-sync-check.py`(改任一侧 skill 后提交前跑,0 违规才提交;check-only 不选边,见铁律 8)。
 
 ## 双 License(编辑前必须知道分区)
 
@@ -78,6 +78,7 @@ flowchart LR
 5. **文件版本命名** —— `_v1` / `_v2` 递增,禁 `final` / `new` / `copy`。
 6. **不一致的设计文档比没有更危险** —— 实现与文档脱节时先更新文档。
 7. **流程图统一用 mermaid**(2026-08-14 用户裁决)—— 全仓库流程 / 架构 / 协作关系图一律 mermaid 代码块,禁 ASCII 字符画图(Git 可 diff、渲染器直出);存量 ASCII 图随所在文件下次修订时替换,skills/ 双副本文件随同步窗口统一处理。
+8. **skill 双侧同步**(2026-08-19 机制化,confirm-skills-sync-mechanism-w00 全确认)—— 改 `skills/` 或 `~/.claude/skills/` 任一侧后,提交前跑 `python3 scripts/skills-sync-check.py`(0 违规才提交);脚本 check-only 只报漂移不选边,哪侧为准是语义判断、永远由人定;裁决例外白名单内置脚本(doctor-harness/CHANGELOG.md,新增例外须改代码注明出处)。
 
 ## 仓库状态
 
@@ -96,6 +97,8 @@ flowchart LR
 **2026-08-14:methodology_v5 升级完成(章节连续化 + 契约优先 + action-Q 入族)**——grill-Q methodology-improvement W01 压测(10 题,压测对象 = 哲学 v7 + 方法论 v4 + design-Q 规格,参照 同级对标仓库 治理)产出:① 正文连续编号 §零至§九(v4 映射表在文件顶部,ADR-0017 兼容策略复用)+ 全库引用审查;② §4.3 两族表补 action-Q(修 W02 Q3 漏改)+ CLAUDE.md 协作图补节点;③ §5.3 补「时序纪律」(契约层变更先更新 canonical 设计再动工,ADR-0021 通用化);CONTEXT 补规范导航(含设计套「契约优先」裁决)与「暂定」状态词、ADR-0020 补生态位卡载体裁定、新增 OD-24(全局实验/项目 backup/DOGFOOD 实测双副本策略)。**同轮立项**:design-Q 数字层级改造(Q3-A,第 0/1/2…层动态层级)、dogfood 最优先 + 定义消歧(Q7-A,冻结新机制新增)、方法论 704 行审计优先(Q4-B)——见 [TODO.md](TODO.md)。v4 归 archive。
 
 **2026-08-13:grill-Q philosophy-v5 成稿压测 W01 闭环 + 发布门推送**——压测 10 题(Q1 用户裁决更名「第五→第四学科视角」:全仓同步 + ADR-0015/0014 更名注记;Q2–Q10 全 C:§八 修订 9 处——嵌套黑盒 / 黑盒被制衡 / retro 抽查代理指标 / WAD 跨主体限定 / 信任劫持循环 / 装置补 retro+long-running / ADR 链接 / WAI-WAD 全称 / 致灾语境映射),全部执行并验证(脱敏 0 / harness-check 0);OD-1 三道过后推送(7853792..f93cc8b,2 commits);F026 OD-4 母本同步用户仓库外执行销项;feature_list 校正(F002/F004/F005 补 passes)。**剩 dogfood(F006 唯一剩余)**。
+
+**2026-08-19:skill 双侧同步机制化**——2026-08-18 双侧同步(9 skill 双向合并,commit 4fece7c)暴露「项目内修、全局漏修」空隙(8/14 修订落全局漏项目、8/8 归档断链修复落项目漏全局),机制化收口:新增 [scripts/skills-sync-check.py](scripts/skills-sync-check.py)(check-only 不选边、裁决例外白名单、EXIT 码供例行)+ CLAUDE.md 铁律第 8 条 + 工具命令节扩为两条(提交前例行,暂不入发布门强制清单);问卷 [confirm-skills-sync-mechanism-w00.md](harness/questionnaires/archive/_misc/confirm-skills-sync-mechanism-w00.md)(14/14 全确认)。
 
 历史:2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角);2026-08-13 philosophy_v6(治理进化);2026-08-14 philosophy_v7(连续章节与双文件交叉治理)。
 
