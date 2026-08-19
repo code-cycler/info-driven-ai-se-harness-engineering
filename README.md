@@ -10,7 +10,7 @@
 - [这是什么](#这是什么)
 - [为什么是这个(差异化)](#为什么是这个差异化)
 - [工具边界(请先读)](#工具边界请先读)
-- [9 个核心 skill](#9-个核心-skill)
+- [8 个核心 skill](#8-个核心-skill)
 - [仓库结构(三区模型)](#仓库结构三区模型)
 - [License](#license)
 - [发布说明](#发布说明)
@@ -64,7 +64,7 @@ flowchart TD
 - **skill 直接运行依赖 Claude Code** 的三项机制:`AskUserQuestion`(批量问卷提问 / 逃生舱)、`subagent`(并行核实,仅 design-Q / grill-Q 使用,其余 skill 不需要)、`SKILL.md` 加载。迁移到其他工具(Cursor / Cline 等)需适配这三项(详见 [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) OD-2)。
 - 本方法论**在 Claude Code 上实践验证**;其他工具的适配尚未实测,欢迎反馈。
 
-## 9 个核心 skill
+## 8 个核心 skill
 
 | skill | 用途 |
 |---|---|
@@ -84,7 +84,7 @@ docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v5 + philosophy
 docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
 harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录:repo/ doctor-harness/ skill-spec-revamp/ 等)
 harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
-skills/              9 个核心方法论 skill(MIT)
+skills/              8 个核心方法论 skill(MIT)
 scripts/             脱敏检查 / harness 校验等工具
 ```
 
@@ -98,6 +98,14 @@ scripts/             脱敏检查 / harness 校验等工具
 ## 发布说明
 
 > **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
+
+### skill 演进(2026-08-19,grill 家族治理日:退役 + 形态修订 + 边界机制)
+
+- **grill 退役,家族 9 → 8**:`/grill` 移除(归 `waste/skills/grill/`,可回退);其「通用 × 单点深钻」生态位由 grill-with-docs 新增的**通用模式**承接(不绑库 + 零留痕;入口确认 + 中途切回双兜底)。已装 grill 的采用者:卸装,通用问题直接用 grill-with-docs。
+- **轻量模式(action-Q / grill-Q / design-Q)**:轻任务时 AI 提议、人拍板走精简管道(调研分级 / 小波直问 / 免归档),「初步结论先行 + 人工轻验证」;不假设 / 先验证铁律不因轻量豁免。
+- **grill-Q 防跑偏机制**:入口校准闸门(出题前向人确认「工件理解摘要 + 关键声明清单 + 压测焦点」)+ 每题 ❌ 跑偏标注(同波 ≥2 题被标 → 停波回炉校准框架)+ 阻塞性逃生舱可转 grill-with-docs 单点深钻 + 处理报告质量信号节。
+- **SKILL.md 分层原则确立**([ADR-0023](harness/adr/0023-skill-md-layered-slimming.md)):规则留 SKILL、教训移 DESIGN,同一错误重复 ≥2 次才升格常驻;渐进执行。
+- **canonical 版本内修订**(不升版):哲学 §3.1 路由表加「认知状态」行(两族分流判据锚);方法论 §4.1/§4.3 接线(认知状态三态 + 判据冲突优先级 + 存疑从重)。经 grill-boundary-canonical-w01 复压(9 题,[归档问卷](harness/questionnaires/archive/_misc/grill-boundary-canonical-w01.md))。
 
 ### skill 演进(2026-08-19,双侧同步机制化)
 
