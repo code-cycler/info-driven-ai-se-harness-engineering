@@ -606,9 +606,9 @@
         "验收 1:8 个 SKILL.md 纯日期治理注记 grep=0(豁免 JSON 示例时间戳);验收 6 抽查:3 条规则经索引行→CHANGELOG 条目 ≤2 跳",
         "sync-check 0 违规 + desensitize 0"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "每 skill 完成即 git 提交(增量);双侧同步 = 项目侧改完 cp 到全局侧同内容文件(FORK-NOTES 新建双侧)"
+      "passes": true,
+      "last_tested": "2026-08-20T18:40:00+08:00",
+      "notes": "P1 完成(8/8 skill):SKILL.md 注记 grep=0(long-running 3 处 JSON 示例豁免)/CHANGELOG×8 仅项目侧(类规则活体×8)/FORK-NOTES×3 双侧一致/grill-with-docs·long-running·delegate 无分叉无 FORK-NOTES/migration-map_v1 登记/验收6 抽查 ≤2 跳通/每 skill 一 commit(aaad8c3 后 7 commits)+1 遗漏修复(d053251)。DESIGN.md 收敛 ×6(项目侧);全局侧 DESIGN 删除待 P4"
     },
     {
       "id": "F041",
