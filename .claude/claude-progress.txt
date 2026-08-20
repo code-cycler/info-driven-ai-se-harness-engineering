@@ -1,4 +1,42 @@
 ================================================================================
+SESSION: governance-history-split 实现期(会话 01:P0 + P1 完成)
+时间: 2026-08-20T19:00:00+08:00
+================================================================================
+
+## 上下文重建(落盘文件)
+- design-Q L0+L1 设计套 + grill-Q 压测 10 项修订(2026-08-20,commit ee35a6e)
+- feature_list 反推:F039(P0 协议)/ F040(P1 skill 域)/ F041(P2 design 域)/ F042(P3 CLAUDE.md 域)/ F043(P4 全局侧重整+终验)
+- 收尾面板裁决:单线程串行 / 迁移即 dogfood / 压测已受并完成
+
+## 完成的任务
+- F039 ✅ P0:HARNESS-RULES 第九节 + sync-check 类规则(HISTORY_LAYER/GLOBAL_ONLY)+ doctor-harness 职责补条 + 铁律 8 语义升级(aaad8c3)
+- F040 ✅ P1:8/8 skill 迁移——SKILL.md 注记 grep=0 / CHANGELOG×8(仅项目侧,类规则活体)/ FORK-NOTES×3 双侧 / DESIGN×6 收敛 / migration-map_v1 对照表(76c1fbe…83a5208,7 commits + d053251 遗漏修复)
+- 验收 5 活体:P0–P1 自身事件已按新协议入 CHANGELOG(doctor-harness 08-20 两条等)
+- 验收 6 抽查:规则→索引行→CHANGELOG ≤2 跳 ×3 通
+
+## 修改的文件
+- skills/:8 skill × SKILL.md/DESIGN.md/引擎/FORK-NOTES/CHANGELOG(双侧同步,CHANGELOG 仅项目侧)
+- skills/doctor-harness/HARNESS-RULES.md(第九节)+ CHANGELOG 留痕
+- scripts/skills-sync-check.py(类规则升级)
+- CLAUDE.md(铁律 8 + 速查表)
+- harness/design/governance-history-split/(L0 验收 5 修订 + migration-map_v1.md 新建)
+
+## Git 提交
+- ee35a6e 设计期(design-Q+grill-Q+ADR-0024)/ aaad8c3 F039 / 76c1fbe doctor-harness / 21ed74a design-Q / d053251 同步遗漏修复 / 41a7415 grill-Q / 2367614 action-Q / 28ba3ef retro-Q / 4a54dae grill-with-docs / 12b1c16 long-running / f1fb39a delegate / 83a5208 F040 收口
+
+## 遇到的问题
+- design-Q 引擎剥日期后漏同步双侧(sync-check 抓获,d053251 修复)——类规则升级后的 sync-check 依然有效拦漂移,机制自证
+- 各 skill 头部结构不一(有无 <what-to-do> 标签),索引行锚点需逐 skill 适配
+- long-running SKILL.md 的 JSON 示例时间戳(created_at/last_tested)非治理注记,豁免
+
+## 下一步计划(会话 02 从此处续)
+- F041(P2 design 域):盘点已完成粗计——约 88 处日期行分散 16 处(裸放 7 文件 + feature 目录 9);执行判据 = 出处引用行(导览块/裁决来源指向问卷 ADR)保留、修订记录节迁;每 feature 一份 CHANGELOG + 裸放全局档共用 design/CHANGELOG.md(有可迁内容时建);本 feature 自身(governance-history-split/)9 处也要迁自己的 CHANGELOG(验收 5 载体)
+- F042(P3):CLAUDE.md 状态节 8 条迁 STATUS-LOG + ≤5 行快照 + TODO 头部压缩(Q9)
+- F043(P4):⚠ 全局侧重整——DOGFOOD-LOG(外部实证抢救)+ 逐文件 diff 前置检查删 6 DESIGN + 全局 doctor-harness/CHANGELOG + EXCEPTIONS 清空 + 根 CHANGELOG 记一条 + L0 验收六条终验
+- migration-map_v1 追加 P2/P3 行
+
+================================================================================
+================================================================================
 SESSION: readme-revamp 实现开工(会话 04)
 时间: 2026-08-20T14:53:00+08:00
 ================================================================================
