@@ -513,6 +513,70 @@
       "passes": true,
       "last_tested": "2026-08-17T10:30:00+08:00",
       "notes": "回灌五文件(design-Q 骨架+SKILL / doctor RULES[脱敏1处]+SKILL / long-running SKILL;CHANGELOG/DESIGN 私有豁免)+ ADR-0022 落盘 + OD-24 关闭 + TODO 销项;脱敏 0 + check 0;retro-Q 另行提议。"
+    },
+    {
+      "id": "F035",
+      "category": "functional",
+      "priority": "high",
+      "description": "前置消漂移:practical_v1.md §8.3 节内 3 处 grill 退役残留修复(L133 表格行拆 grill-with-docs 含通用模式 / L134 删「第 9 个」过期计数 / L145 原则段去 grill)+ CONTEXT「提问维度速查」节头一行反向指针(范围例外,L0 grill-Q W01 Q2)。先于 README 重构提交,保证 README 引用时漂移已消",
+      "steps": [
+        "grep practical_v1.md 确认 3 处残留修复:'grill / grill-with-docs' 同行不存在、'第 9 个' 不存在、原则段仅 grill-with-docs",
+        "grep CONTEXT.md 确认「提问维度速查」节头反向指针在位",
+        "改动仅限 §8.3 节内 + CONTEXT 一行(节外残留不扩范围,退回 TODO 条款)",
+        "python3 scripts/desensitize.py . 0 命中"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-20T15:00:00+08:00",
+      "notes": "来源:L0 范围条目 3 + 范围例外(grill-Q W01 Q1/Q2)。L0 原写「与 README 同 commit」,long-running 增量下改为先提交——任何 commit 点 README 引用都不指向漂移内容,约束意图更严格满足 | ✅ 2026-08-20 验证:3 处残留清零 + CONTEXT L141 指针在位 + 脱敏 0 命中"
+    },
+    {
+      "id": "F036",
+      "category": "functional",
+      "priority": "high",
+      "description": "根 CHANGELOG.md 首建:顶部「记录规则」(README 发布说明节原样迁移)+ 首条「README 重构 + 发布说明外移(2026-08-20)」+ 倒序全部现有条目迁移(内容不改写)",
+      "steps": [
+        "CHANGELOG.md 存在于仓库根,含记录规则 + 首条 + 全部迁移条目",
+        "条目一一对应核对:迁移条目数 = README 现有发布说明条目数(逐条比对)",
+        "README 发布说明节此时暂保留(F037 才替换为链接)",
+        "python3 scripts/desensitize.py . 0 命中"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "来源:L0 范围条目 2 + 实现蓝图 CHANGELOG 结构(grill-Q W01 Q5/Q7)。同名消歧:skills/doctor-harness/CHANGELOG.md 是 skill 内部日志不动"
+    },
+    {
+      "id": "F037",
+      "category": "functional",
+      "priority": "high",
+      "description": "README.md 重构:L0 实现蓝图 10 章节结构 + 8 skill 卡片(四行字段,第四行语义自适应:提问类核心维度/非提问类核心机制)+ 维度速查表(表前引导句 + 表头权威声明)+ badge 行 + 最小采用切片独立小标题 + 尾部 CHANGELOG 链接一行(去摘要)+ 发布说明节替换为链接",
+      "steps": [
+        "章节顺序核对:标题+声明+badge → 目录 → 这是什么 → 差异化 → 快速上手 → 8 skill 卡片+速查表 → 工具边界 → 仓库结构 → License → 尾部",
+        "8 个 skill 每个有卡片且四行字段齐全(触发/产物/核心维度或机制)",
+        "「核心维度」行与 CONTEXT「提问维度速查」逐 skill 一致(提问类 5);「核心机制」行与各 SKILL.md 描述一致(非提问类 3)",
+        "README 总长 ≤ 250 行(wc -l)",
+        "发布说明正文不在 README 保留多于一条",
+        "python3 scripts/desensitize.py . 0 命中"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "来源:L0 实现蓝图全节 + 验收①②③。协作图(mermaid)保留 + 图下导航句"
+    },
+    {
+      "id": "F038",
+      "category": "functional",
+      "priority": "high",
+      "description": "全链验收门:README 相对链接全通(内联 python3 核验命令)+ 速查表一致性 diff + desensitize + skills-sync-check + harness-check 全绿",
+      "steps": [
+        "内联 python3 提取 README 全部相对链接,逐个核目标存在,0 断链",
+        "README 速查表 8 行 vs CONTEXT「提问维度速查」表 skill 名+维度列逐行一致",
+        "python3 scripts/desensitize.py . 0 命中",
+        "python3 scripts/skills-sync-check.py 0 违规",
+        "python3 scripts/harness-check.py exit 0(已知 LN 正则告警 1 条豁免,TODO 在案)",
+        "wc -l README.md ≤ 250"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "来源:L0 验收 7 条中的 ①②④⑤ + 核验命令示例(W01 Q8)。验收⑦推送前 OD-1 ②③ 语义人审 = 用户推送时执行,不在本 feature 范围;验收⑥ 在 F036 已验"
     }
   ]
 }

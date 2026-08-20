@@ -130,8 +130,8 @@ Skill 家族是方法论的执行体,按用途分类:
 | **复盘** | retro-questionnaire     | 阶段/项目复盘     | "复盘这个阶段"、"这次哪里做得不好"         |
 | **长期** | long-running-agent      | 跨会话长项目      | 多会话项目、跨上下文窗口的工作             |
 | **下放** | delegate                | 决策下放(试点)    | 纯执行类决策密集时                         |
-| **单点** | grill / grill-with-docs | 实现期单点二义性  | "这个技术选型合理吗?"、绑代码库的设计评审、计划评审(逐点即时深钻) |
-| **治理** | doctor-harness          | harness 区布局/迁移/校验 | "这个文件放哪"、harness 组织混乱需要治理(2026-08-08 入库第 9 个) |
+| **单点** | grill-with-docs | 实现期单点二义性(绑库深钻默认;通用模式承载原 grill 场景)  | "这个技术选型合理吗?"、绑代码库的设计评审、计划评审(逐点即时深钻) |
+| **治理** | doctor-harness          | harness 区布局/迁移/校验 | "这个文件放哪"、harness 组织混乱需要治理 |
 | **审查** | code-review 类          | 提交前/阶段性审查 | 审查当前 diff                              |
 
 **action-Q 机制说明**(2026-08-04 补):action-questionnaire 是**确认式问卷(confirm-list)**——非正式行动(多文件写操作 / 涉外部依赖)开始前,AI 把对行动细节的理解写成清单,人核对(勾 = 理解正确、留空 = 纠正)后执行,对齐信息以规避 AI 在信息真空中的幻觉式自作主张决策(方法论文件 [§2.1](methodology_v5.md#11-第一支柱以信息为核心)机制层的直接对策,(a) 类盲区捕获器)。它是轻量前奏,不进设计期流程;feature 级行动升级转 design-Q / grill-Q / long-running。
@@ -142,7 +142,7 @@ Skill 家族是方法论的执行体,按用途分类:
 - **Web Search / Web Fetch**:查最新文档、API 参考、技术调研
 - **IDE 集成**:VS Code 诊断、Notebook 代码执行
 
-**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill/grill-with-docs。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §4.2/§4.3](methodology_v5.md#42-演进说明从一问一答到批量问卷))。
+**原则**:Skill 是为特定任务优化的快捷方式——能用 Skill 解决的事不需要在通用对话中从头描述。批量决策走问卷族(design-Q/grill-Q/retro-Q),单点深钻走 grill-with-docs(绑库默认 + 通用模式)。计划评审双头归属按二八判据分流:可离线批量 → grill-Q;依赖链深、逐点即时 → grill-with-docs(见[方法论文件 §4.2/§4.3](methodology_v5.md#42-演进说明从一问一答到批量问卷))。
 
 #### L3 独立验证最低分流
 
