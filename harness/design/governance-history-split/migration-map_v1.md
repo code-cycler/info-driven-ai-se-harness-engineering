@@ -36,3 +36,12 @@
 | CLAUDE.md#仓库状态(9 条日期条目 + 历史行) | harness/STATUS-LOG.md(新建,原文逐字迁入) | 08-05 至 08-19 内部工作状态时间线 + 历史线 |
 | CLAUDE.md#仓库状态 | 重写为 3 行快照 + 双指针(STATUS-LOG + 根 CHANGELOG)+ TODO 指针 | 验收 4(≤5 行)达标 |
 | TODO.md 头部 L4 状态长句 | 压缩为「当前状态一行 + STATUS-LOG 指针」(Q9:下一步主线活待办保留) | 建仓/升版史叙述随 STATUS-LOG 承接 |
+
+## 全局侧重整(P4,2026-08-20)
+
+| 动作 | 明细 |
+|---|---|
+| 外部实证分流 | 全局侧 doctor-harness/CHANGELOG 8 条外部实操条目 → 全局侧 DOGFOOD-LOG(真实名保真);项目侧补脱敏汇总条目;「repo/ 套 LN 迁移演练」条目回填项目侧(前置检查抓到的分流遗漏) |
+| ⚠ 删除(前置检查全过) | 全局侧 6× DESIGN.md(逐文件 diff 双侧一致)+ doctor-harness/CHANGELOG.md(14 条全分流)——全局侧自此 = 分发洁净形态 |
+| 引用修正 | 8× SKILL.md 索引行统一新模板(指向项目仓库)+ supporting-info 的 DESIGN/CHANGELOG 引用去悬空 |
+| 执行期修正 | sync-check HISTORY_LAYER 增补 DESIGN.md(Q2-A 裁决后果,P0 时漏);EXCEPTIONS 清空 |

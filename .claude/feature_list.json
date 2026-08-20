@@ -621,9 +621,9 @@
         "层文件本体留当前有效设计 + 索引行;history/ 版本子目录机制不动",
         "harness-check 0 违规 + 断链 0 新增"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "本 feature 自身设计套(governance-history-split/)的裁决出处注记也是治理历史,按同规则迁自己的 CHANGELOG(注意:验收 5 要求本 feature 事件入 CHANGELOG = 首验载体)"
+      "passes": true,
+      "last_tested": "2026-08-20T19:30:00+08:00",
+      "notes": "P2 完成(执行判据精确化):全 design/ 盘点——日期行绝大多数为出处引用/裁决出处(档案可追溯结构),可迁内容仅 1 处(L0 落点修正注记)→ 迁本 feature CHANGELOG(兼验收 5 design 侧载体);repo/readme-revamp 不建(纯空载体不预建);旧三件存量豁免(AI-2 另迁);global-backup/changesets 历史档案不动;harness-check 0 违规"
     },
     {
       "id": "F042",
@@ -636,9 +636,9 @@
         "TODO.md 头部压缩为当前状态一行+指针(「下一步主线」活待办保留)",
         "验收 4:CLAUDE.md 状态节 ≤5 行;指针链接有效"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": ""
+      "passes": true,
+      "last_tested": "2026-08-20T19:50:00+08:00",
+      "notes": "P3 完成:STATUS-LOG 新建(9 条+历史线逐字迁)/CLAUDE.md 状态节 3 行快照+双指针(验收4 ≤5 行达标)/TODO 头部压缩(活待办保留)/指针目标全在位/migration-map 补 P3 节"
     },
     {
       "id": "F043",
@@ -652,9 +652,9 @@
         "根 CHANGELOG.md 记一条(全局侧装法/SKILL.md 形态/FORK-NOTES/STATUS-LOG/DOGFOOD-LOG)",
         "L0 验收六条终验:①注记 grep=0 ②迁移对照表逐字可查 ③三脚本全绿 ④状态节≤5行 ⑤本 feature 自身事件入 CHANGELOG 抽查(ADR-0024 落盘/压测回灌/铁律8改写) ⑥检索≤2跳抽样3条"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "⚠ 单向门:全局侧无版本控制,删除不可逆——前置检查逐文件执行,不一致立即停"
+      "passes": true,
+      "last_tested": "2026-08-20T20:30:00+08:00",
+      "notes": "P4 完成:外部实证双载体分流(DOGFOOD-LOG 8 条真实名 + 项目侧脱敏汇总 + repo 演练条目回填——前置检查抓到分流遗漏)/⚠ 逐文件 diff 后删全局侧 6 DESIGN + CHANGELOG/HISTORY_LAYER 增补 DESIGN(执行期修正)/EXCEPTIONS 清空/根 CHANGELOG 记一条/终验:sync EXIT=0(15 历史层合法 + 1 全局私有合法)+ harness 0 + desensitize 0;L0 验收六条全过"
     }
   ]
 }

@@ -3,7 +3,7 @@ name: doctor-harness
 description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理、层级改造/迁移(LN 制旧档迁移)、存量规范化(无 harness 文件项目改造为标准结构)。Use when harness file organization, migration, or layout validation is needed.
 ---
 
-> 治理历史见本目录 CHANGELOG.md(本 skill 无规则本体级分叉,故无 FORK-NOTES)。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 <what-to-do>
 
@@ -50,7 +50,7 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 
 ### 4. 演进留痕
 
-- 每次迁移/规则修订,在 doctor-harness [CHANGELOG.md](./CHANGELOG.md) 追加一条(日期 + 变更 + 原因),可回溯「harness 为什么长这样」。
+- 每次迁移/规则修订,在项目仓库 skills/doctor-harness/CHANGELOG.md(仅项目侧)追加一条(日期 + 变更 + 原因),可回溯「harness 为什么长这样」。
 
 ## 与家族的分工
 
@@ -68,9 +68,9 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 
 - harness 组织权威规则(唯一 source):[HARNESS-RULES.md](./HARNESS-RULES.md)
 - 目录迁移执行流程:[MIGRATION-FLOW.md](./MIGRATION-FLOW.md)
-- 演进变更记录:[CHANGELOG.md](./CHANGELOG.md)
+- 演进变更记录(仅项目侧):项目仓库 skills/doctor-harness/CHANGELOG.md;全局侧外部实操明细 DOGFOOD-LOG.md(私有)
 - 校验脚本:`python3 scripts/harness-check.py [harness_root]`(正主在引擎仓库 `scripts/`,与 desensitize.py 并列;被校验仓若为 git 跟踪区**勿拷入脚本**,跨仓调用时传被校验仓 harness 根路径)
-- 本 skill 设计决策记录:[DESIGN.md](./DESIGN.md) + 设计套 `harness/design/doctor-harness/`(VISION/HLD/LLD)
+- 本 skill 设计决策记录(仅项目侧):项目仓库 skills/doctor-harness/DESIGN.md + 设计套 `harness/design/doctor-harness/`(VISION/HLD/LLD)
 - 决策依据:[ADR-0012](../../harness/adr/0012-harness-layering-rule.md)(分层规则)+ [ADR-0013](../../harness/adr/0013-harness-layering-migration.md)(迁移执行)+ [ADR-0011](../../harness/adr/0011-abandon-plan-r-hardcode-harness.md)(硬编码 harness/)
 
 </supporting-info>

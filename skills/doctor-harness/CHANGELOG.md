@@ -2,6 +2,20 @@
 
 > harness 组织变更(迁移/规则修订)记录于此,可回溯「harness 为什么长这样」。追加式,只增不改。
 
+## 2026-08-11 至 2026-08-19 · 外部项目实操史(脱敏汇总;明细见全局侧 DOGFOOD-LOG)
+
+- **变更**:本 skill 在多个外部项目的实操记录(真实项目名禁入公开仓库,明细存全局侧 `~/.claude/skills/doctor-harness/DOGFOOD-LOG.md`):① 某上游 SDK 封装项目(×5 批:首次 harness/ 落地 / 游离件归位 / 错位区归位 / 治理校验 + 规则三增补 + 孤儿问卷 superseded / 版本历史子目录整理与归档合并)——第八节规则的主要实战来源;② 某实验项目(首次存量改造全流程:自包含文档拆层 L0/L1/L2 + 治理文件迁移,验证第八节五步);③ 某 Unity 2D RTS 游戏项目(2326 行自包含设计文档细拆 24 个 LN 文件 + 脚本化切分零改写范式);④ 某独立工具项目(docs/ + 根治理文件 → harness/,存量治理文件迁移条款目标形态)。
+- **意义**:doctor-harness「演进是常态」假设(OD-17)的实证基础;外部实操条目曾按 2026-08-18 裁决留全局侧,ADR-0024 P4 分流为「公开脱敏时间线 + 全局侧私密明细」双载体。
+- **影响**: (外部项目,非本仓库文件)
+- **出处**: 全局侧 DOGFOOD-LOG(真实名明细)+ 2026-08-18 裁决(confirm-action-q-sync-w00)
+
+## 2026-08-20 · P4 全局侧重整(F043)
+
+- **变更**:① 外部实操史分流——全局侧 CHANGELOG 8 条外部条目迁全局侧 DOGFOOD-LOG(真实名保真)+ 项目侧补脱敏汇总条目 + 「repo/ 套 LN 迁移演练」条目回填项目侧(前置检查抓到的分流遗漏);② 全局侧删除(前置检查全过):6× DESIGN.md(diff 双侧一致)+ 全局侧 CHANGELOG.md(14 条全分流)——全局侧自此 = 分发洁净形态(无 DESIGN/无 CHANGELOG);③ sync-check 执行期修正:HISTORY_LAYER 增补 DESIGN.md(删后「仅项目侧」需类规则合法化);④ EXCEPTIONS 清空(doctor-harness/CHANGELOG 临时例外移除,该文件走类规则)。
+- **原因**:ADR-0024 P4;⚠ 全局侧无版本控制,删除经逐文件 diff 前置检查。
+- **影响**: 全局侧文件集、scripts/skills-sync-check.py、HARNESS-RULES.md#九②
+- **出处**: [L1 契约](../../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + 压测 Q1/Q2(F043/P4)
+
 ## 2026-08-20 · P1 治理历史迁移(自身收尾;F040)
 
 - **变更**:① SKILL.md 加头部索引行;② MIGRATION-FLOW 依据行日期注记压缩(先例细节留正文表);③ DESIGN.md 收敛为三节(定位/设计决策 V1–V12/已知限制)——起源节、演进记录表、家族身份状态迁本 CHANGELOG(见上条回填);④ 无 FORK-NOTES(无规则本体级分叉)。
@@ -32,7 +46,13 @@
 
 - **变更**:HARNESS-RULES 增补第七节(层级设计文档规则:LN 命名/布局/导览块/存量豁免)与第八节(存量结构改造流程五步 + 旧档迁移映射表);SKILL.md 触发词补「层级改造/迁移/存量规范化」+ 判定场景⑤⑥ + 规则清单扩两行。
 - **原因**:design-Q 数字层级改造 P2 doctor 先行(用户优先测试裁决);design-Q 产物结构 VISION/HLD/LLD → LN 制后,doctor 承载层级布局规则 + 旧档迁移 + 无 harness 项目的存量规范化(补充声明「拓展 doctor 任务范围」)。
-- **依据**:[HLD §2](项目 harness/design/designq-digital-levels/HLD.md)+ [LLD P2](同 L2);F029。
+- **依据**:[HLD §2](../../../harness/design/designq-digital-levels/HLD.md)+ [LLD P2](同 L2);F029。
+
+## 2026-08-17 · 首次存量套 LN 迁移演练(方法论仓库 repo/ 套)
+
+- **变更**:repo/ 套三件 git mv 为 LN 制——VISION.md → L0-vision-repo-design.md、HLD.md → L1-contract-repo-architecture.md、LLD.md → L2-build-repo-phases-dod.md(尾缀覆盖主要功能);各件头部插导览块(四行);内部互引 + 外部 7 文件引用(TODO + 6 归档问卷/跨套相对路径)同步;断链 248 → 248(0 新增,跨套 ../repo/ 字面量漏网 1 处当场修复);harness-check 0 违规(LN 命名 + L0 在位)。
+- **依据**:第八节迁移映射表(旧完整档 → 三层一一对应)+ MIGRATION-FLOW 7 步;导览块与契约项声明按第七节。
+- **验收意义**:层级改造⑤能力在真实存量套上完整走通(用户定模选择演练对象);同时是 LN 制首批正式产物。
 
 ## 2026-08-14 · 规则三增补 + 引擎副本同步(superseded 流转移植)
 

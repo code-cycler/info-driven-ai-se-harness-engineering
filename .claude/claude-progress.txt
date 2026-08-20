@@ -1,4 +1,29 @@
 ================================================================================
+SESSION: governance-history-split 实现完成(F039–F043 全绿,会话 02 收口)
+时间: 2026-08-20T20:40:00+08:00
+================================================================================
+
+## 完成的任务
+- F041 ✅ P2 design 域:判据精确化(出处引用 = 档案可追溯结构保留,修订记录才迁;全域仅 1 处)→ 本 feature CHANGELOG(兼验收 5 design 侧载体);旧三件存量豁免(AI-2 另迁)(30daaf8)
+- F042 ✅ P3 CLAUDE.md 域:STATUS-LOG 首建(9 条+历史线逐字迁)/状态节 25→3 行快照+双指针/TODO 头部压缩(7379811)
+- F043 ✅ P4 全局侧重整:外部实证双载体分流(DOGFOOD-LOG 8 条真实名 + 项目侧脱敏汇总 + repo 演练条目回填——⚠ 前置检查抓到分流遗漏)/逐文件 diff 后删全局侧 6 DESIGN + CHANGELOG/8× SKILL.md 索引行统一 + 引用去悬空/HISTORY_LAYER 增补 DESIGN(执行期修正)/EXCEPTIONS 清空/根 CHANGELOG 记一条
+
+## L0 验收六条终验(全过)
+1. 8 SKILL.md 注记 grep=0(JSON 示例豁免)✓ 2. migration-map_v1 三域对照全录 ✓ 3. 三脚本全绿(sync 0:15 历史层合法+1 全局私有合法;harness 0;desensitize 0)✓ 4. CLAUDE.md 状态节 3 行 ✓ 5. 本 feature 自身事件入 CHANGELOG(ADR-0024 落盘/压测回灌/P0-P4 全链)✓ 6. 检索 ≤2 跳 ✓
+
+## 修改的文件
+全局侧删除 7 文件(6 DESIGN + doctor-harness CHANGELOG);新增全局侧 DOGFOOD-LOG;项目侧 8× SKILL.md 索引行统一;sync-check(HISTORY_LAYER+DESIGN/EXCEPTIONS 清空);HARNESS-RULES 九②;根 CHANGELOG;STATUS-LOG;migration-map P2/P3/P4 节
+
+## 遇到的问题
+- ⚠ 全局侧删除前置检查抓到分流遗漏(repo 演练条目)——机制价值实证
+- P4 执行期规则缺口:DESIGN 单侧性未进类规则(P0 设计时焦点在 CHANGELOG)——HISTORY_LAYER 增补修正 + CHANGELOG 留痕
+- SKILL.md 索引行「本目录」在全局侧悬空(无 CHANGELOG)——统一新模板指向项目仓库
+
+## 下一步计划
+- 全链完成,无待续;retro 候选(governance-history-split 复盘可随时跑 retro-Q)
+
+================================================================================
+================================================================================
 SESSION: governance-history-split 实现期(会话 01:P0 + P1 完成)
 时间: 2026-08-20T19:00:00+08:00
 ================================================================================

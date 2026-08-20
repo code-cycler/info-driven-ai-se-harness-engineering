@@ -3,7 +3,7 @@ name: delegate
 description: 决策类下放机制的项目级治理。管理 per-project 下放治理文件(项目根 delegation.md:可下放决策类白名单 + 永不下放清单 + 单条目收回条件 + 整体开关);AI 仅对清单内决策类自主执行并逐例留痕(delegation-log.md 可审计队列),清单外一律问人、AI 只有建议升级权、无自分类权;判断权(产品/工程/安全/合并)永不下放;任务结束/retro 汇总回顾;preview 级文档已迁移至 design-questionnaire(单源),本 skill 只处理白名单/日志/收回。触发:新项目/新工程初始化下放清单、"下放"、"委托决策"、"delegate"、"delegation"、启用/调整/收回下放、查看 AI 自主决策日志、决策下放 dogfood 试点。
 ---
 
-> 治理历史见本目录 CHANGELOG.md(本 skill 不复用问卷引擎,无规则本体级分叉,故无 FORK-NOTES)。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 # delegate · 决策类下放
 

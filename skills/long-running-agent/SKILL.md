@@ -3,7 +3,7 @@ name: long-running-agent
 description: "长时间运行、跨多会话复杂项目的约束系统。增量工作、feature_list.json 功能列表、claude-progress.txt 进度记录、端到端测试验证(只有通过测试才标记 passes:true)、Git 整洁状态、约定式提交。默认单 agent 一次一个功能;拓展能力:准备模式(规划并行线程+任务包,人审查确认)与执行模式(多 worktree 并行,优先用 Claude Code 原生多 agent 相互通信:主会话 spawn 后台 agent 各驻 worktree + SendMessage 通信)。触发:多会话/长周期项目、需要 feature_list 跟踪、长期工程任务、跨上下文窗口的工作、design-questionnaire 层级设计(LN)收尾停点后衔接实现期、准备模式、执行模式、多 worktree 并行。Use when a project enters long-running implementation spanning multiple sessions / context windows, or after design-questionnaire hands off (single or multi-worktree modes)."
 ---
 
-> 治理历史见本目录 CHANGELOG.md(本 skill 无 DESIGN.md,无规则本体级分叉,故无 FORK-NOTES)。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 # long-running-agent (长时间运行代理约束系统)
 

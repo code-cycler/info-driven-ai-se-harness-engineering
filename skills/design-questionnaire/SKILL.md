@@ -3,7 +3,7 @@ name: design-questionnaire
 description: 项目启动初始化与重大功能设计的批量问卷式 grill。生成多波次 Markdown 问卷(选项勾选 + 逃生舱 + 自定义回答),用户离线作答后按类型落盘到 harness/design/ 层级设计文件(LN 制:L0-vision 目标层恒在,L1+/L2 按需动态增层;旧 VISION/HLD/LLD 为别名兼容)/ ADR / OPEN-DECISIONS / CONTEXT,已用问卷归档。层内循环直到再无可盘问的信息,跨层必须过用户闸门;收尾必停询问多线程开工。与一问一答的 grill / grill-with-docs 并存分工(它们管实现期单点深钻)。触发:新项目初始化、新功能设计、帮我做设计、出问卷、初始化项目设计、构想/全局设计/分阶段/层级设计阶段。Use when starting a project or feature where the layered design (L0-vision first, more levels on demand) should be completed via batched questionnaires instead of one-by-one Q&A.
 ---
 
-> 治理历史见本目录 CHANGELOG.md(本 skill 为引擎 canonical,自身无规则本体级分叉,故无 FORK-NOTES;下游副本的有意分叉见各 skill FORK-NOTES)。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 <what-to-do>
 
@@ -97,7 +97,7 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 - **可选:提议压测(grill-questionnaire 衔接)** — 见下「单次收尾面板」第 3 问(不按项目规模收窄,小项目也提议)。
 - **🛑 收尾停点:单次收尾面板(必停)** — design 链路结束后,**必须**用**一次 AskUserQuestion 多问题面板**完成四项衔接询问,不跳过、不静默(打断从 4 次降 1 次;各问裁决语义不变):
   1. **多线程开工询问(面板首问,保持必停裁决地位)**:「实现期是否多线程(worktree)同时开工?」单线程 → 直接进入衔接提议;多线程 → 提示转 long-running-agent **准备模式**(规划并行线程 + 任务包,人审查确认后开工)。防 AI 静默开 worktree 的单向门语义不变。
-  2. **dogfood 验证(可选)**:若设计产物是可自用的工具 / 流程 / 模板(skill、方法论、问卷本身),提议用产物在真实小案例上完整走一遍闭环,dogfood 发现的格式 / 流程缺口即时回修规格。用户可跳过;跳过与结果都记入 DESIGN.md(本 skill 的 dogfood 修订史见 [DESIGN.md](./DESIGN.md)「dogfood 修订」节)。
+  2. **dogfood 验证(可选)**:若设计产物是可自用的工具 / 流程 / 模板(skill、方法论、问卷本身),提议用产物在真实小案例上完整走一遍闭环,dogfood 发现的格式 / 流程缺口即时回修规格。用户可跳过;跳过与结果都记入项目仓库 DESIGN.md 的「dogfood 修订」节(仅项目侧)。
   3. **提议压测(grill-questionnaire 衔接,可选)**:提议「要不要用 grill-questionnaire 压测刚产出的设计?」,接上 write→review 闭环。用户可拒,拒绝即跳过。
   4. **提议 long-running-agent 衔接(可选)**:压测被**拒**时紧接提议「是否进入长期实现(long-running-agent)?」;压测被**接受**时,压测完成后再提议。用户可拒,拒绝即跳过,后续随时手动调用。衔接时 long-running-agent 从本 skill 产出的**层文件(LN)**反推 feature_list(规则:最低构建语义层;无构建层则从 L0 验收标准,见 long-running SKILL.md),不依赖会话上下文。设计→实现跨阶段衔接,由人决定是否进入。
 
@@ -119,6 +119,6 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 - 问卷格式规范(引擎,可被 retro-questionnaire 等复用):[QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)
 - 解析与落盘规则(引擎,可被 retro-questionnaire 等复用):[PROCESSING-RULES.md](./PROCESSING-RULES.md)
 - 层级骨架(LN 制,本 skill 的模板):[STAGE-SKELETONS.md](./STAGE-SKELETONS.md)
-- 本 skill 的设计决策记录:[DESIGN.md](./DESIGN.md)
+- 本 skill 的设计决策记录(仅项目侧):项目仓库 skills/design-questionnaire/DESIGN.md
 
 </supporting-info>

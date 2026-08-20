@@ -31,18 +31,14 @@ import sys
 from pathlib import Path
 
 # 历史层文件类(ADR-0024,2026-08-20):治理历史载体,仅项目侧存在 = 合法
-HISTORY_LAYER = {"CHANGELOG.md"}
+HISTORY_LAYER = {"CHANGELOG.md", "DESIGN.md"}
 # 全局侧私有类(ADR-0024 压测 Q2-C):外部实操日志(真实名禁入公开仓库),仅全局侧存在 = 合法
 GLOBAL_ONLY = {"DOGFOOD-LOG.md"}
 
 # 已知裁决例外:skill 相对路径 → 裁决出处(只豁免「内容不同」)
 EXCEPTIONS = {
-    # 临时保留至 P4 全局侧重整(F043):届时删全局侧文件、本条移除,项目侧文件走 HISTORY_LAYER 类规则
-    "doctor-harness/CHANGELOG.md": (
-        "2026-08-18 用户裁决:外部项目实证条目留全局、仅规则性增补进项目版,"
-        "双侧不逐字节一致(confirm-action-q-sync-w00,archive/_misc/);"
-        "ADR-0024 迁移期临时保留,P4 重整后移除(governance-history-split F043)"
-    ),
+    # 2026-08-20 P4 清空:doctor-harness/CHANGELOG 临时例外已移除(全局侧文件删除,
+    # 项目侧文件走 HISTORY_LAYER 类规则;外部实证分流 DOGFOOD-LOG,ADR-0024 F043)
 }
 
 

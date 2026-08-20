@@ -3,7 +3,7 @@ name: action-questionnaire
 description: 非正式行动前的批量细节确认——把 AI 对行动细节的理解提取为「细节确认清单(confirm-list)」问卷,用户离线核对后解析留痕,对齐信息以规避 AI 在信息真空中的幻觉式自作主张。复用 design-questionnaire 引擎(preview 改 confirm-list 语义、小波阈值 ≤3),默认 preview 清单为主、正式题波兜底。与设计期 skill 的分工:本 skill 管与设计无关的通用非正式行动;行动升级到 feature 级(值得 feature 记录、改方向、多文件结构性变更)时提醒转 design-Q / grill-Q / long-running 等专用 skill。触发:"动手前对齐一下"、"确认下细节"、"preflight"、开始一个多文件/多决策/涉外部依赖的非正式写操作前。Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
 ---
 
-> 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 <what-to-do>
 
@@ -99,6 +99,6 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
 
 - 问卷格式规范(引擎副本,design-Q 为 canonical;本 skill 有意分叉:confirm-list 语义 + 要点数建议 5–20):[QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)
 - 解析与落盘规则(引擎副本,有意分叉:小波阈值 ≤3):[PROCESSING-RULES.md](./PROCESSING-RULES.md)
-- 本 skill 设计决策记录(15 题压测裁决 + 被否决项 + 引擎漂移声明):[DESIGN.md](./DESIGN.md)
+- 本 skill 设计决策记录(15 题压测裁决 + 被否决项;仅项目侧):项目仓库 skills/action-questionnaire/DESIGN.md
 
 </supporting-info>

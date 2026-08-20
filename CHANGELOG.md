@@ -4,6 +4,12 @@
 
 > **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
 
+## skill 演进(2026-08-20,治理历史分离 + 双侧形态分工,ADR-0024)
+
+- **每个 skill 新增 `CHANGELOG.md`(治理历史,仅本仓库持有)**:SKILL.md 内带日期的裁决出处注记全部迁出,SKILL.md 只留规则现值 + 头部一行索引导向——**SKILL.md 常驻上下文密度提升**(第一支柱落到仓库自身形态);三份问卷 skill 另增 `FORK-NOTES.md`(有意分叉声明,双侧一致)。设计决策仍见各 `DESIGN.md`(收敛为纯决策表)。
+- **双侧常态性形态分工(装法变化)**:`~/.claude/skills/`(用户全局)转为**分发洁净形态**——只含 SKILL.md + 引擎/模板文件 + FORK-NOTES,不再含 DESIGN.md / CHANGELOG.md(开箱即用,无演进噪音);本仓库 `skills/` = 车间完整形态。已装用户:全局侧 DESIGN.md/CHANGELOG.md 已随升级移除,历史全部保留在本仓库(信息零丢失,doctor-harness 外部实操明细在全局侧 `DOGFOOD-LOG.md` 私有持有)。
+- **配套机制**:`skills-sync-check.py` 升级类规则(历史层文件仅项目侧存在 = 合法;DESIGN/CHANGELOG 属历史层);项目 CLAUDE.md 铁律 8 语义随之更新;`harness/STATUS-LOG.md` 新建承接仓库内部状态史(CLAUDE.md 状态节瘦身为 3 行快照)。
+
 ## README 重构 + 发布说明外移(2026-08-20)
 
 - **README 升级为对外第一印象形态**:「8 个核心 skill」由一句话表格升级为卡片式(每 skill:定位 / 触发 / 产物 / 核心维度或机制);新增「各 skill 提问/确认维度速查」表(权威 = CONTEXT「提问维度速查」节,README 为导览副本);最小采用切片升格独立小标题;章节顺序重组 + 轻量 badge。

@@ -3,7 +3,7 @@ name: grill-with-docs
 description: Deep-dive engine for the 20% critical questions (80/20 judgment-cost principle): one-by-one grilling for dependency-chained, not-yet-formed decisions that need immediate feedback — the layer grill-questionnaire's batched 80% layer hands deep-water points to. Two modes: codebase-bound (default — challenges your plan against the existing domain model, sharpens terminology, updates CONTEXT.md/ADRs/OPEN-DECISIONS.md inline) and general mode (absorbs the retired grill's niche — no codebase exploration, zero auto-write, pure dialogue). When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan point-by-point against their project's language and documented decisions, or for general one-at-a-time deep-dives not tied to a codebase (general mode).
 ---
 
-> 治理历史见本目录 CHANGELOG.md(本 skill 无 DESIGN.md,无规则本体级分叉,故无 FORK-NOTES)。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 <what-to-do>
 

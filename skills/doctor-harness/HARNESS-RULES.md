@@ -138,7 +138,7 @@
 | design 域 | `design/<feature>/CHANGELOG.md`(feature 目录内);裸放全局档内嵌历史 → `design/CHANGELOG.md`(仅有可迁内容时建) | 项目侧 |
 | 仓库内部状态史 | `harness/STATUS-LOG.md`(承 CLAUDE.md 状态节历史;根 CHANGELOG.md 保持纯对外语义) | 项目侧 |
 
-**② 历史层单侧存在规则**:CHANGELOG 类(`HISTORY_LAYER`)仅项目侧存在 = 合法,仅全局侧存在 = 违规;DOGFOOD-LOG 类(`GLOBAL_ONLY`)仅全局侧存在 = 合法——由 `scripts/skills-sync-check.py` 类规则判定(与 EXCEPTIONS 白名单正交:白名单管「内容不同的裁决例外」,类规则管「历史层单侧存在的常态」)。**双侧常态性形态分工**:全局侧 = 分发洁净形态(SKILL.md + 引擎/模板 + FORK-NOTES),无 DESIGN.md、无 CHANGELOG;项目侧 = 车间完整形态。
+**② 历史层单侧存在规则**:CHANGELOG / DESIGN 类(`HISTORY_LAYER`,DESIGN 为 2026-08-20 P4 执行期增补——Q2-A 裁决全局侧无 DESIGN 的直接后果)仅项目侧存在 = 合法,仅全局侧存在 = 违规;DOGFOOD-LOG 类(`GLOBAL_ONLY`)仅全局侧存在 = 合法——由 `scripts/skills-sync-check.py` 类规则判定(与 EXCEPTIONS 白名单正交:白名单管「内容不同的裁决例外」,类规则管「历史层单侧存在的常态」)。**双侧常态性形态分工**:全局侧 = 分发洁净形态(SKILL.md + 引擎/模板 + FORK-NOTES),无 DESIGN.md、无 CHANGELOG;项目侧 = 车间完整形态。
 
 **③ 索引指针要求**:凡历史迁出处,原位置必留一行指针;SKILL.md 索引行统一落头部(frontmatter 后首行):`> 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md`。
 

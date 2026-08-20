@@ -3,11 +3,11 @@ name: retro-questionnaire
 description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items 生成 Markdown 复盘问卷,用户离线作答后落盘宿主项目 docs/retro/<主题>_vN.md 与 TODO.md,已用问卷归档。阶段 DoD 核验后主动提议,也可随时手动触发(及时记录,类似 memory)。触发:阶段复盘、项目复盘、"复盘一下"、"做个 retro"、retro、DoD 核验通过。Use when a development stage or project is done and a structured retrospective questionnaire should be generated, answered, and sedimented.
 ---
 
-> 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md。
+> 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
 
 <what-to-do>
 
-把复盘从「靠自觉」变为「有触发、有结构、有落盘」:五源读取 → 生成 retro 问卷 → 用户作答 → 落盘 retro 文档与 TODO.md → 归档。问卷引擎为本目录内的副本(复制自 design-questionnaire,漂移需声明,见 [DESIGN.md](./DESIGN.md))。
+把复盘从「靠自觉」变为「有触发、有结构、有落盘」:五源读取 → 生成 retro 问卷 → 用户作答 → 落盘 retro 文档与 TODO.md → 归档。问卷引擎为本目录内的副本(复制自 design-questionnaire,分叉见 FORK-NOTES.md)。
 
 **作用对象是宿主项目**(被复盘的项目):出题依据从宿主项目读取,retro 文档、TODO.md、问卷归档全部落盘在宿主项目,不落本 skill 目录。
 
@@ -53,6 +53,6 @@ description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(�
 
 - retro 骨架模板(四节 + Action Items):[RETRO-SKELETONS.md](./RETRO-SKELETONS.md)
 - 引擎副本(漂移需声明):[QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)、[PROCESSING-RULES.md](./PROCESSING-RULES.md)
-- 本 skill 设计文档:[docs/VISION.md](./docs/VISION.md)、[docs/design/hld_v1.md](./docs/design/hld_v1.md)、决策索引 [DESIGN.md](./DESIGN.md)
+- 本 skill 设计文档(仅项目侧):项目仓库 skills/retro-questionnaire/docs/(VISION / hld_v1)、决策索引 DESIGN.md
 
 </supporting-info>
