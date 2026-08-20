@@ -3,6 +3,8 @@ name: retro-questionnaire
 description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items 生成 Markdown 复盘问卷,用户离线作答后落盘宿主项目 docs/retro/<主题>_vN.md 与 TODO.md,已用问卷归档。阶段 DoD 核验后主动提议,也可随时手动触发(及时记录,类似 memory)。触发:阶段复盘、项目复盘、"复盘一下"、"做个 retro"、retro、DoD 核验通过。Use when a development stage or project is done and a structured retrospective questionnaire should be generated, answered, and sedimented.
 ---
 
+> 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md。
+
 <what-to-do>
 
 把复盘从「靠自觉」变为「有触发、有结构、有落盘」:五源读取 → 生成 retro 问卷 → 用户作答 → 落盘 retro 文档与 TODO.md → 归档。问卷引擎为本目录内的副本(复制自 design-questionnaire,漂移需声明,见 [DESIGN.md](./DESIGN.md))。
@@ -30,13 +32,13 @@ description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(�
    3. `TODO.md` 未完成项
    4. 上一份 retro 的 Action Items(→ 新 retro 文档开头设「Action Items 回顾」节)
    5. 与用户交流中的有价值内容(反馈、决定、洞察)
-- **调研与核实前置(标准流程,2026-08-03 起)**:生成复盘问卷前,完成「调研现状 → 不假设 / 核实 → 多获取信息 → 及时保存」闭环——
+- **调研与核实前置(标准流程)**:生成复盘问卷前,完成「调研现状 → 不假设 / 核实 → 多获取信息 → 及时保存」闭环——
   1. **调研现状**:五源读取(上)之外,读项目现状(progress / feature_list / 最近提交),不凭记忆;
   2. **不假设 / 核实**:复盘问卷中的事实声明(如「X 已完成」「某环节顺利」)需核实(git log / 文档 / 代码)而非凭记忆;
   3. **多获取信息**:读取中发现的额外事实(未记录的问题、偏离、遗留)一并记入问卷出题依据;
   4. **及时保存信息**:证据与发现立即写入问卷 / retro 文档,不攒到处理时。
 
-2. **生成 retro 问卷**:按 [RETRO-SKELETONS.md](./RETRO-SKELETONS.md) 出题,格式按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md),写到宿主项目 `harness/questionnaires/retro-<主题>-w<NN>.md`。本波问题数 ≤ 3 时不生成文件,直接 AskUserQuestion 提问(小波阈值,上限 3 = 2026-08-08 用户裁决,原 ≤2)。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
+2. **生成 retro 问卷**:按 [RETRO-SKELETONS.md](./RETRO-SKELETONS.md) 出题,格式按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md),写到宿主项目 `harness/questionnaires/retro-<主题>-w<NN>.md`。本波问题数 ≤ 3 时不生成文件,直接 AskUserQuestion 提问(小波阈值)。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
 3. **用户作答**:文件编辑为主;对话速答逐字转写进问卷文件。用户宣布「答完了」之前不解析。
 4. **处理落盘**(按 [PROCESSING-RULES.md](./PROCESSING-RULES.md)):
    - retro 文档:宿主项目 `docs/retro/<主题>_vN.md`(_vN 递增,禁 final/new/copy),结构 = 四节 + Action Items
