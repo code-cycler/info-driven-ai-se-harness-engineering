@@ -540,9 +540,9 @@
         "README 发布说明节此时暂保留(F037 才替换为链接)",
         "python3 scripts/desensitize.py . 0 命中"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "来源:L0 范围条目 2 + 实现蓝图 CHANGELOG 结构(grill-Q W01 Q5/Q7)。同名消歧:skills/doctor-harness/CHANGELOG.md 是 skill 内部日志不动"
+      "passes": true,
+      "last_tested": "2026-08-20T15:05:00+08:00",
+      "notes": "来源:L0 范围条目 2 + 实现蓝图 CHANGELOG 结构(grill-Q W01 Q5/Q7)。同名消歧:skills/doctor-harness/CHANGELOG.md 是 skill 内部日志不动 | ✅ 2026-08-20 验证:10/10 条目逐字一致 + 规则在位 + 首条在顶 + 脱敏 0"
     },
     {
       "id": "F037",
@@ -557,9 +557,9 @@
         "发布说明正文不在 README 保留多于一条",
         "python3 scripts/desensitize.py . 0 命中"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "来源:L0 实现蓝图全节 + 验收①②③。协作图(mermaid)保留 + 图下导航句"
+      "passes": true,
+      "last_tested": "2026-08-20T15:20:00+08:00",
+      "notes": "来源:L0 实现蓝图全节 + 验收①②③。协作图(mermaid)保留 + 图下导航句 | ✅ 2026-08-20 验证:10 章节序 / 8 卡片×4 字段 / 速查表 6/6 镜像 CONTEXT / 171 行 ≤250 / 发布说明正文 0 / 脱敏 0。一致性首查发现 long-running 命名漂移 → 按权威镜像修(聚合行)"
     },
     {
       "id": "F038",
@@ -574,9 +574,9 @@
         "python3 scripts/harness-check.py exit 0(已知 LN 正则告警 1 条豁免,TODO 在案)",
         "wc -l README.md ≤ 250"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "来源:L0 验收 7 条中的 ①②④⑤ + 核验命令示例(W01 Q8)。验收⑦推送前 OD-1 ②③ 语义人审 = 用户推送时执行,不在本 feature 范围;验收⑥ 在 F036 已验"
+      "passes": true,
+      "last_tested": "2026-08-20T15:30:00+08:00",
+      "notes": "来源:L0 验收 7 条中的 ①②④⑤ + 核验命令示例(W01 Q8)。验收⑦推送前 OD-1 ②③ 语义人审 = 用户推送时执行,不在本 feature 范围;验收⑥ 在 F036 已验 | ✅ 2026-08-20 全链验收:链接 21/21 + TOC 锚点 9/9 / 速查表 6/6 / 脱敏 0 / sync 0 / harness-check exit 0 / 169 行 ≤250 / CHANGELOG 11 条。验收⑦推送前 OD-1 ②③ 归用户推送时执行"
     }
   ]
 }
