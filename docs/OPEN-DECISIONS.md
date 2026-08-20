@@ -299,3 +299,23 @@
 - **当前占位方案(provisional)**:处理报告内嵌「质量信号节」+ 归档问卷尾部留痕 + retro 跨波聚合 + 同类归因 ≥2 次走 [ADR-0023](../harness/adr/0023-skill-md-layered-slimming.md) 升格;**不立独立台账**。
 - **可逆性**:双向门(均为文档/格式层变更,git 可回退;台账是纯加法,随时可补)。
 - **重访触发条件**:① retro 聚合归因时出现「归因散落难聚合」实例 ≥1;② 同类跑偏 ≥2 次但 retro 未发现(回路失效信号);③ grill-Q 波次频率上升使人工聚合不可行。满足任一 → 重估独立台账形态。
+
+## OD-27 design-Q 问卷粒度 vs 方法论 §4.5 决策分层——init/无白名单场景的残余张力(双向门)
+
+- **问题**:方法论 v5 §4.5(canonical)明文「🟢 低 stakes 双向门 → 直接选推荐,不消耗精力;⚪ 纯执行 → 可下放 AI」;design-Q 的 W00 把「AI 有明确倾向」的决策点(多数属 🟢/⚪ 层)在 opt-in 关闭(默认)时全部逐条问人,与 canonical 张力立在纸面上。2026-08-20 grill-design-q-w01 Q5 裁决 C(接 delegate 白名单)后,张力收敛为:**init 模式与无 delegation.md 的项目仍全量问人**——该边界 canonical 未写明,B 选项主张的「§4.5 表本意是实现期分层,不覆盖设计期」是辩护而非定论。
+- **来源**:[grill-design-q-w01](../harness/questionnaires/archive/_misc/grill-design-q-w01.md) Q5(用户选 C,未采纳分节方案 A,亦未选「维持+CONTEXT 消歧」B)。
+- **推迟原因**:是否为设计期决策单立分层语义(设计期决策再小也过目 vs 对齐 §4.5 省精力)取决于用户对自身设计期判断精力的价值权衡,属经验缺口;且 delegate 接口(Q5-C)落地后的实际白名单覆盖率未知——先看接口实效再裁决残余面。
+- **当前占位方案**:维持 W00 全量逐条 + Q5-C 裁决的 delegate 白名单接口(feature 模式有 delegation.md 时白名单内决策自动采纳留痕,不进 W00;接口细则属 design-Q 规格修订,待授权执行)。
+- **可逆性**:双向门(问卷结构层变更,git 可回退)。
+- **重访触发条件**:① delegate 接口落地并经 1 个真实 feature 项目实跑后,重新评估 init/无白名单场景是否仍需全量问人;② 用户在实际项目中出现「W00 疲劳顺勾」实感(与 Q4-A 质量信号联动);③ 方法论下次修订触及 §4.5 时顺带写明「设计期 vs 实现期」分层边界。满足任一 → 裁决 A(分节)/B(CONTEXT 消歧)/维持。
+- **关联**:[methodology_v5 §4.5](../docs/methodology/methodology_v5.md)、[OD-23](#od-23-delegate-pilot-与可控性验证双向门)(delegate pilot)、design-Q DESIGN.md(接口修订落地时记决策行)。
+
+## OD-28 design-Q 规格修订自检清单——待第二次规格矛盾实锤再升格(双向门 · 观察项)
+
+- **问题**:design-Q 引擎规格(QUESTIONNAIRE-FORMAT / PROCESSING-RULES / STAGE-SKELETONS / SKILL.md)修订后无规格级自洽回归:现有 grep 自检锚「出题时」(防问卷残缺),不锚「修订时」(防规格规则交叉矛盾)。实锤先例:FORMAT 规则 4(✍️ 位置)与规则 13/14(选项排序)的顺序矛盾自引入即存在,2026-08-18 才被 first-principles W01 实跑抓出。
+- **来源**:[grill-design-q-w01](../harness/questionnaires/archive/_misc/grill-design-q-w01.md) Q10(用户选 A 补「形态 × 协议」交叉表;B「修订自检清单」按 ★推荐理由进 OD 观察,未采纳立即建立)。
+- **推迟原因**:对齐 [ADR-0023](../harness/adr/0023-skill-md-layered-slimming.md) 升格机制「教训重复 ≥2 次才常驻」——规则交叉矛盾目前实锤 1 次;自检清单每次修订多一道手续,在矛盾频率证实前建立即形式主义风险。
+- **当前占位方案**:不建清单;每次修订 skill 规格时人工留意规则交叉引用;「形态 × 协议」交叉表(Q10-A)落地后本身消除一批组合类矛盾源。
+- **可逆性**:双向门(清单是纯加法,随时可补)。
+- **重访触发条件**:第二次规格级交叉矛盾被实跑抓出(任何 skill 的 FORMAT/PROCESSING/SKILL 规则互相冲突)。触发 → 建「修订自检清单」入对应 DESIGN.md 维护节。
+- **关联**:[ADR-0023](../harness/adr/0023-skill-md-layered-slimming.md)(升格机制)、[OD-8](#od-8-引擎副本漂移)(引擎四方同步,修订时既有约束)。

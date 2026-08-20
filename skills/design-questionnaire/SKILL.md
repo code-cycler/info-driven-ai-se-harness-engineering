@@ -55,7 +55,9 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 
 ### 2. 生成问卷
 
-- **preview(每层强制,独立 wave 0)**:每层先生成一份独立的 **W00 preview 问卷**(`<层名>-w00.md`,层名如 `L0-vision` / `feature-<slug>-L1-contract`),**不与 W01 同出**。preview = 决策默认值清单,一要点一行 = 本层将盘问的决策点 + AI 默认倾向 + 来源;每条**预勾与否由 opt-in 开关决定**(2026-08-03 起,默认关:用户启动本 skill 时明确说「预勾选」才预勾 `[x]`,勾 = 采纳默认按默认落盘;未启用时全部 `[ ]` 人逐条作答),**取消勾选(留空)= 不采纳**(该要点转入 W01 单独拷问);**单向门要点永不预勾**(发布/删除/花钱/脱敏,强制显式勾选)。W00 **不用 🤔**(yes/no 二选一,无中间态;真定不了即取消勾选转 W01);底部「补充声明」栏保留。**单文件多节形态例外**:整文件一个 W00(全层决策默认值合一,按层分节列出),防小项目 W00 碎片化。W01 正式题 = W00 留空(不采纳)要点的深究 + 不适合 yes/no 的开放型骨架必答项(多选/方向题)。格式见 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)「文件结构(§ W00 preview 问卷模板)」;解析见 [PROCESSING-RULES.md](./PROCESSING-RULES.md)。后续波次(W02+)由缺口驱动,不再出 preview。
+- **入口校准闸门(2026-08-20,grill-design-q-w01 Q3-A;轻量模式豁免)**:每层生成 W00 前,用 AskUserQuestion 出示**项目理解摘要**(一段话:AI 对项目/功能的框架理解,如「CLI 工具还是库」「单进程还是多子系统」)+ **本层设计焦点**(本层将盘问的决策域)——人确认/纠正框架后才生成 W00。拦「AI 理解框架级跑偏」:误读方向时 W00 全部要点在错误框架内自洽,逐条 yes/no 只能事后纠偏、认知负担转嫁给人;此为 CONTEXT「AI 同源出题限定」的体系内闸门,与 grill-Q 入口校准闸门对称。确认/纠正内容记入处理报告;超大工件分块时每块各过一次。
+- **preview(每层强制,独立 wave 0)**:每层先生成一份独立的 **W00 preview 问卷**(`<层名>-w00.md`,层名如 `L0-vision` / `feature-<slug>-L1-contract`),**不与 W01 同出**。**时序(2026-08-20 明确,grill-design-q-w01 Q2-A)**:W00 交付 → 用户作答 → 处理产出取消清单 → **此后**才生成 W01;取消清单大时按每波上限 10 拆子波,膨胀可控。preview = 决策默认值清单,一要点一行 = 本层将盘问的决策点 + AI 默认倾向 + 来源;每条**预勾与否由 opt-in 开关决定**(2026-08-03 起,默认关:用户启动本 skill 时明确说「预勾选」才预勾 `[x]`,勾 = 采纳默认按默认落盘;未启用时全部 `[ ]` 人逐条作答),**取消勾选(留空)= 不采纳**(该要点转入 W01 单独拷问);**单向门要点永不预勾**(发布/删除/花钱/脱敏,强制显式勾选)。W00 **不用 🤔**(yes/no 二选一,无中间态;真定不了即取消勾选转 W01);底部「补充声明」栏保留。**单文件多节形态例外**:整文件一个 W00(全层决策默认值合一,按层分节列出),防小项目 W00 碎片化。W01 正式题 = W00 留空(不采纳)要点的深究 + 不适合 yes/no 的开放型骨架必答项(多选/方向题)。格式见 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)「文件结构(§ W00 preview 问卷模板)」;解析见 [PROCESSING-RULES.md](./PROCESSING-RULES.md)。后续波次(W02+)由缺口驱动,不再出 preview。
+- **delegate 白名单接口(2026-08-20,grill-design-q-w01 Q5-C ⚠ 三点细则确认)**:触发 = feature 模式 + 项目根有 `delegation.md` 且整体开关开 + **人当次会话明示「启用白名单」**(三条件与;防旧项目过时白名单静默生效)。触发后出题形态:白名单内决策**不出独立题**,合并为单题**「白名单包确认」**——列出白名单内决策点 + AI 将采取的值 + 白名单条目出处;人可整包确认(= 全部按值自动决策)或逐条挑出(挑出项转正式题深究)——保留人可见性,只降交互粒度。留痕双落:处理报告「白名单自动决策清单」(决策点/所采值/白名单条目出处)+ **逐例追加 `delegation-log.md`**(按 delegate skill 既有日志格式)。永不下放清单(安全/合并发布/层文件修订等)照常出题,与单向门永不预勾双层叠加。白名单治理/收回机制归 delegate skill,问卷侧接口归本 skill。init 模式或无 delegation.md → 维持现状(全部问人)。
 - 问题来源 = **阶段骨架**([STAGE-SKELETONS.md](./STAGE-SKELETONS.md) 当前阶段的未覆盖必问项,优先) + **动态盲点**(探索发现的矛盾/冲突/未定义边界、上轮回答引出的新问题)。
 - 格式严格按 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
 - 写到 `harness/questionnaires/<stage>-w<NN>.md`(feature 模式:`feature-<slug>-<stage>-w<NN>.md`),status: pending。目录懒创建。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
@@ -71,7 +73,7 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
 ### 4. 处理与落盘
 
 - 按 [PROCESSING-RULES.md](./PROCESSING-RULES.md) 逐题解析(含异常:单选多勾、必答未答、条件题误答)。
-- 逐题落盘:阶段文档(VISION/HLD/LLD) → `harness/design/`;ADR → `harness/adr/NNNN-<slug>.md`;**CONTEXT.md / OPEN-DECISIONS.md / TODO.md 为项目固有文件,路径不动**(各项目已定型),**本波处理完即刻写**。行动项(处理报告/复盘产出)写入 `<项目根>/TODO.md`(格式:问题 → 行动 → 核验时机)。
+- 逐题落盘:层文档(LN 制 `L<N>-<功能>.md`,旧 VISION/HLD/LLD 仅存量豁免——2026-08-20 同步,grill-design-q-w01 Q1-B) → `harness/design/`;ADR → `harness/adr/NNNN-<slug>.md`;**CONTEXT.md / OPEN-DECISIONS.md / TODO.md 为项目固有文件,路径不动**(各项目已定型),**本波处理完即刻写**。行动项(处理报告/复盘产出)写入 `<项目根>/TODO.md`(格式:问题 → 行动 → 核验时机)。
 - 生成新问卷、阶段闸门、DoD 核验、新会话恢复时,先读 TODO.md。
 - 🤔 逃生舱 → 降风险协议,绝不重问。
 - 输出**处理报告**(对话内,格式见 PROCESSING-RULES.md):每题去向、新增/更新的文件、异常处理、逃生舱处置、下一波候选、本阶段覆盖度。
@@ -89,10 +91,13 @@ description: 项目启动初始化与重大功能设计的批量问卷式 grill�
   - **闸门汇报(2026-08-07 起)**:出示覆盖清单时,一并出示「下一层将依赖的未验证信息」清单(来源:台账,见 §1「未验证假设生命周期管理」)。
 - **delegate 衔接(若项目启用决策下放)**:init 起草可在工程一开始;**激活统一定在 L0 层闸门**——闸门确认时人一并审查 delegation.md 定稿,此前按「全部问人」运行。机制与白名单治理见 delegate skill;preview 与问卷流程归本 skill,delegate 只引用。
 - 收尾:输出设计完成清单(各层 LN 文件 / ADR / OPEN-DECISIONS 链接汇总),提醒用户按方法论进入实现阶段(TDD、小步提交;实现期二义性改用 grill-with-docs 单点深钻)。
-- **可选:dogfood 验证** — 若设计产物是可自用的工具 / 流程 / 模板(skill、方法论、问卷本身),收尾前向用户提供可选项:用产物在真实小案例上完整走一遍闭环。dogfood 发现的格式 / 流程缺口即时回修规格。用户可跳过;跳过与结果都记入 DESIGN.md(本 skill 的 dogfood 修订史见 [DESIGN.md](./DESIGN.md)「dogfood 修订」节)。
-- **可选:提议压测(grill-questionnaire 衔接)** — 输出设计清单后,用 AskUserQuestion 提议「要不要用 grill-questionnaire 压测刚产出的设计?」,接上 write→review 闭环。用户可拒,拒绝即跳过。不按项目规模收窄(小项目也提议,由用户自判压测价值)——2026-07-24 grill-Q dogfood Q1=A / Q8=B。
-- **🛑 收尾停点:多线程开工询问(必停,2026-08-16)** — design 链路(含可选 grill-Q 压测)结束后,**必须**用 AskUserQuestion 停下询问「实现期是否多线程(worktree)同时开工?」:单线程 → 直接进入衔接提议;多线程 → 提示转 long-running-agent **准备模式**(规划并行线程 + 任务包,人审查确认后开工)。不跳过、不静默。
-- **可选:提议 long-running-agent 衔接** — 压测提议被**拒**时,紧接提议「是否进入长期实现(long-running-agent)?」;压测被**接受**时,压测完成后再提议(且在多线程停点之后)。用户可拒,拒绝即跳过,后续随时手动调用。衔接时 long-running-agent 从本 skill产出的**层文件(LN)**反推 feature_list(规则:最低构建语义层;无构建层则从 L0 验收标准,见 long-running SKILL.md),不依赖会话上下文。设计→实现跨阶段衔接,由人决定是否进入——2026-07-28 某 long-running 衔接压测问卷 Q11 裁决。
+- **可选:dogfood 验证** — 见下「单次收尾面板」第 2 问(机制不变,2026-08-20 并入面板)。
+- **可选:提议压测(grill-questionnaire 衔接)** — 见下「单次收尾面板」第 3 问(不按项目规模收窄,小项目也提议——2026-07-24 grill-Q dogfood Q1=A / Q8=B)。
+- **🛑 收尾停点:单次收尾面板(必停;2026-08-16 立必停 / 2026-08-20 面板化,grill-design-q-w01 Q7-A)** — design 链路结束后,**必须**用**一次 AskUserQuestion 多问题面板**完成四项衔接询问,不跳过、不静默(打断从 4 次降 1 次;各问裁决语义不变):
+  1. **多线程开工询问(面板首问,保持必停裁决地位)**:「实现期是否多线程(worktree)同时开工?」单线程 → 直接进入衔接提议;多线程 → 提示转 long-running-agent **准备模式**(规划并行线程 + 任务包,人审查确认后开工)。防 AI 静默开 worktree 的单向门语义不变。
+  2. **dogfood 验证(可选)**:若设计产物是可自用的工具 / 流程 / 模板(skill、方法论、问卷本身),提议用产物在真实小案例上完整走一遍闭环,dogfood 发现的格式 / 流程缺口即时回修规格。用户可跳过;跳过与结果都记入 DESIGN.md(本 skill 的 dogfood 修订史见 [DESIGN.md](./DESIGN.md)「dogfood 修订」节)。
+  3. **提议压测(grill-questionnaire 衔接,可选)**:提议「要不要用 grill-questionnaire 压测刚产出的设计?」,接上 write→review 闭环。用户可拒,拒绝即跳过。
+  4. **提议 long-running-agent 衔接(可选)**:压测被**拒**时紧接提议「是否进入长期实现(long-running-agent)?」;压测被**接受**时,压测完成后再提议。用户可拒,拒绝即跳过,后续随时手动调用。衔接时 long-running-agent 从本 skill 产出的**层文件(LN)**反推 feature_list(规则:最低构建语义层;无构建层则从 L0 验收标准,见 long-running SKILL.md),不依赖会话上下文。设计→实现跨阶段衔接,由人决定是否进入——2026-07-28 某 long-running 衔接压测问卷 Q11 裁决。
 
 ## 与 grill / grill-with-docs 的分工
 
