@@ -28,3 +28,11 @@
 |---|---|---|
 | governance-history-split/L0#CLAUDE.md 域修正注记 | 本 feature CHANGELOG#L0 落点修正条 | 「落点修正 2026-08-20 L1 W00-10」内嵌注记(唯一可迁修订记录) |
 | (其余 design/ 全部) | **不迁** | 判据:LN 层文件与裸放档的日期行均为出处引用/裁决出处/版本出处(档案可追溯性正当结构),非修订记录节,可迁内容 = 0 → repo/、readme-revamp/ 不建 CHANGELOG(纯空载体不预建);旧三件 = 存量豁免(待 TODO AI-2);global-backup/、changesets/ = 历史档案文件本体,不动 |
+
+## CLAUDE.md 域(P3,2026-08-20)
+
+| 源 | 目标 | 内容摘要 |
+|---|---|---|
+| CLAUDE.md#仓库状态(9 条日期条目 + 历史行) | harness/STATUS-LOG.md(新建,原文逐字迁入) | 08-05 至 08-19 内部工作状态时间线 + 历史线 |
+| CLAUDE.md#仓库状态 | 重写为 3 行快照 + 双指针(STATUS-LOG + 根 CHANGELOG)+ TODO 指针 | 验收 4(≤5 行)达标 |
+| TODO.md 头部 L4 状态长句 | 压缩为「当前状态一行 + STATUS-LOG 指针」(Q9:下一步主线活待办保留) | 建仓/升版史叙述随 STATUS-LOG 承接 |

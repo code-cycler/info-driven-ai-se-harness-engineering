@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态:**methodology_v3 已发布(2026-07-29);action-questionnaire 已入库(2026-08-03);2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计完成 + v4 落地 P1–P5 完成**(方法论 + 哲学升 v4(受众收窄 / 第二支柱机制层 / 三学科化)、harness 区物理分离、术语治理、ADR-0008/0009/0010、入口改造)**;2026-08-08 doctor-for-harness 完成(第 9 个 skill)+ harness 治理落地(分层/校验/迁移)+ 格式反馈 + 归档子目录化**。P6 发布门已执行(2026-08-13 推送 7853792..f93cc8b,OD-1 三道过);**dogfood 待执行**。
-> 下一步主线(2026-08-14 grill-Q methodology-improvement W01 裁决):**① dogfood 最优先**(Q7-A 冻结新机制新增;执行场 = 全局实验 skill + DOGFOOD 实测 + 本项目 backup,见 [OD-24](docs/OPEN-DECISIONS.md);先消歧两个 dogfood 定义);**② design-Q 数字层级改造立项**(Q3-A,走 design-Q 完整流程);③ 方法论 704 行内容审计(Q4-B,据审计证据裁决 OD-20);~~④ 方法论修订包~~ **✅ 已执行(2026-08-14,用户授权「立即执行全部」)**:升 [methodology_v5](docs/methodology/methodology_v5.md)(章节连续化 + §4.3 补 action-Q + §5.3 时序纪律)+ CLAUDE.md 图补 action-Q 节点 + 全库引用审查(v4 归 archive;ADR/归档问卷历史原貌不改);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
+> 当前状态一行:方法论双 canonical(v5/v7)+ 8 skill 稳定;governance-history-split 迁移执行中(F039–F041 绿,P4 全局侧重整待)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
+> 下一步主线(2026-08-14 grill-Q methodology-improvement W01 裁决):**① dogfood 最优先**(Q7-A 冻结新机制新增;执行场 = 全局实验 skill + DOGFOOD 实测 + 本项目 backup,见 [OD-24](docs/OPEN-DECISIONS.md);先消歧两个 dogfood 定义);**② design-Q 数字层级改造**(✅ 2026-08-17 全链闭环 F027–F034);③ 方法论 704 行内容审计(✅ audit_v1 已出,OD-20 待裁决);~~④ 方法论修订包~~ **✅ 已执行(2026-08-14)**:升 [methodology_v5](docs/methodology/methodology_v5.md);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
 
 ## 已完成(2026-07-28 建仓)
 
