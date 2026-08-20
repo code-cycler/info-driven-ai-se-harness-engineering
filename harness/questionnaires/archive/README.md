@@ -20,6 +20,7 @@
 | `philosophy-v5/` | philosophy_v5 design-Q(feature,vision/hld/lld)+设计压测 | 4 |
 | `philosophy-v6/` | philosophy_v6 成稿压测 W01/W02(连续章节与双文件治理) | 2 |
 | `philosophy-v7/` | philosophy_v7 成稿压测 W01/W02(治理主张、实践闭环与 skill 生态) | 2 |
+| `readme-revamp/` | README 优化 feature(对外第一印象重构)design-Q L0-vision W00 + grill-Q L0 压测 W01 | 2 |
 
 ## 检索说明
 

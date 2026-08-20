@@ -72,6 +72,7 @@
 
 ### 其他待办
 
+- ⏳ **harness-check.py 问卷命名正则补 LN 制支持**(2026-08-20,readme-revamp feature 首个 LN 制问卷触发):脚本 init/feature 正则仍只认 `vision|hld|lld` 旧三件,而 `feature-<slug>-L0-vision-w<NN>.md` 符合 QUESTIONNAIRE-FORMAT LN 制(ADR-0022,2026-08-16 生效)却报「命名不符合问卷模式」——LN 制落地时脚本侧漏改;→ 行动:正则加 LN 层名支持(`L\d+-[a-z0-9-]+`),与 HARNESS-RULES 第七/八节命名规则对齐 → 核验:修正后 harness-check 对 LN 制问卷 0 告警
 - ⏳ **术语全面审计(B 方案)**(2026-08-05,repo 级设计 vision Q4 自定义入档):v4 术语折中审计落地后执行——逐术语判定保留/合并/删除/换学科标准词,CONTEXT 重写,方法论全文 + skill 规格同步(人因工程/软件工程/运筹学学科对接)。**扩围(2026-08-18,grill-Q first-principles W01 Q10 用户裁决 A)**:审计对象从领域术语扩至**元词汇**(支柱/学科/视角/环节/闭环/契约/纪律/装置/锚点/层级/切片)——治术语的体系自己的元词汇零定义,「第四学科视角」更名史即歧义实害;逐元词判定保留/合并/删除,与领域术语同批出审计报告
 
 ### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](harness/design/repo/L2-build-repo-phases-dod.md))
