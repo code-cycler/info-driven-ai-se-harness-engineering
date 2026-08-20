@@ -21,3 +21,10 @@
 | delegate | SKILL.md 4 处 + DESIGN.md 表内日期与 round 详录 | CHANGELOG(新建) | 创建+round1 详录/round2/full 模式;G 表保留 round 出处 |
 
 **双侧形态**:规则本体(SKILL/引擎/FORK-NOTES)双侧逐字节一致;CHANGELOG ×8 仅项目侧(sync-check 类规则合法);DESIGN.md 6 份仅项目侧(全局侧重整待 P4);grill-with-docs/long-running/delegate 无 FORK-NOTES(无规则本体级分叉)。
+
+## design 域(P2,2026-08-20)
+
+| 源 | 目标 | 内容摘要 |
+|---|---|---|
+| governance-history-split/L0#CLAUDE.md 域修正注记 | 本 feature CHANGELOG#L0 落点修正条 | 「落点修正 2026-08-20 L1 W00-10」内嵌注记(唯一可迁修订记录) |
+| (其余 design/ 全部) | **不迁** | 判据:LN 层文件与裸放档的日期行均为出处引用/裁决出处/版本出处(档案可追溯性正当结构),非修订记录节,可迁内容 = 0 → repo/、readme-revamp/ 不建 CHANGELOG(纯空载体不预建);旧三件 = 存量豁免(待 TODO AI-2);global-backup/、changesets/ = 历史档案文件本体,不动 |
