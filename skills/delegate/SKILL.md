@@ -3,10 +3,12 @@ name: delegate
 description: 决策类下放机制的项目级治理。管理 per-project 下放治理文件(项目根 delegation.md:可下放决策类白名单 + 永不下放清单 + 单条目收回条件 + 整体开关);AI 仅对清单内决策类自主执行并逐例留痕(delegation-log.md 可审计队列),清单外一律问人、AI 只有建议升级权、无自分类权;判断权(产品/工程/安全/合并)永不下放;任务结束/retro 汇总回顾;preview 级文档已迁移至 design-questionnaire(单源),本 skill 只处理白名单/日志/收回。触发:新项目/新工程初始化下放清单、"下放"、"委托决策"、"delegate"、"delegation"、启用/调整/收回下放、查看 AI 自主决策日志、决策下放 dogfood 试点。
 ---
 
+> 治理历史见本目录 CHANGELOG.md(本 skill 不复用问卷引擎,无规则本体级分叉,故无 FORK-NOTES)。
+
 # delegate · 决策类下放
 
 > 把「简单决策下放给 AI,人专注判断权」做成可治理、可留痕、可收回的机制。
-> 来源:宿主项目「决策下放」OD 条目(grill-questionnaire W01,2026-07-25)。当前为 dogfood 试点版,反馈回该 OD 条目。
+> 来源:宿主项目「决策下放」OD 条目(grill-questionnaire 压测产出,时间线见 CHANGELOG)。当前为 dogfood 试点版,反馈回该 OD 条目。
 
 ## 铁律(不可违反)
 
@@ -57,7 +59,7 @@ description: 决策类下放机制的项目级治理。管理 per-project 下放
 
 ### 5. preview 级阶段文档(已迁移至 design-questionnaire)
 
-preview 自 2026-07-25 起迁移为 design-questionnaire 的**强制阶段步骤**(每阶段 W01 头部节、预答层形态),规格以 design-questionnaire 的 QUESTIONNAIRE-FORMAT.md「preview 预答层」为单源;delegate 不再自维护 preview 流程。非 design-Q 场景如需 preview,参照 design-Q 规格手工执行。迁移原因(dogfood 全程零触发:「可选 + 模糊触发 = 从不发生」)见 DESIGN.md「Dogfood round 1」。
+preview 已迁移为 design-questionnaire 的**强制阶段步骤**(现为独立 W00 波,规格单源在 design-Q 的 QUESTIONNAIRE-FORMAT.md);delegate 不再自维护 preview 流程。非 design-Q 场景如需 preview,参照 design-Q 规格手工执行。迁移原因与过程见 CHANGELOG。
 
 ## 清单变更治理
 
@@ -67,13 +69,13 @@ preview 自 2026-07-25 起迁移为 design-questionnaire 的**强制阶段步骤
 
 ## 全权模式(mode: full)
 
-2026-08-01 grill-Q 压测产出(OD-13):供「AI 全权自治」双轨对照(影子 / 冠军挑战者)使用的宽松模式。
+grill-Q 压测产出(OD-13):供「AI 全权自治」双轨对照(影子 / 冠军挑战者)使用的宽松模式。
 
 - **开关**:delegation.md frontmatter `mode: full`(`strict` 为默认);切换只能人发起,记 Changelog。
 - **语义**:`mode: full` 开启时,白名单语义反转为**排除集**——「未列入禁区(永不下放清单)即默认可执行」;`strict` 下保持原白名单语义。
 - **底线不变**:禁区清单、**发布 / 付费 / 对外传播 / 删除数据四类永不自动执行**、判断权(产品/工程/安全/合并)永不下放——三者在 `full` 下同样有效。
 - **留痕不变**:每条自主决策仍写 delegation-log.md(只增不改)。
-- **实测条款(新纪律,2026-08-01)**:「AI 先实测(只读:工具 / 脚本 / bash 命令)可自主执行;实测后的决策归类仍交人,或归入 `full` 模式排除集」——解决「AI 先实测再判定」与「AI 无自分类权」的张力。实测动作自主**只限只读**;写操作仍在白名单/排除集框架内。
+- **实测条款(新纪律)**:「AI 先实测(只读:工具 / 脚本 / bash 命令)可自主执行;实测后的决策归类仍交人,或归入 `full` 模式排除集」——解决「AI 先实测再判定」与「AI 无自分类权」的张力。实测动作自主**只限只读**;写操作仍在白名单/排除集框架内。
 - **收回优先**:`full` 下同样适用——收回条件命中即停,不辩解。
 
 ## 与家族 skill 的关系
