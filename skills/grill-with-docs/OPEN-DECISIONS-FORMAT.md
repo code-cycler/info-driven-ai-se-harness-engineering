@@ -40,7 +40,7 @@ Decisions deferred during grilling because they couldn't be settled confidently 
 `docs/OPEN-DECISIONS.md`:
 
 - **Single context (most repos):** one file at `docs/OPEN-DECISIONS.md` at the repo root.
-- **Harness-methodology repos (2026-08-14):** place it at `harness/OPEN-DECISIONS.md` instead — governance files (OPEN-DECISIONS / TODO / CONTEXT) live at the harness root, not project `docs/` (see HARNESS-RULES.md 第六节).
+- **Harness-methodology repos:** place it at `harness/OPEN-DECISIONS.md` instead — governance files (OPEN-DECISIONS / TODO / CONTEXT) live at the harness root, not project `docs/` (see HARNESS-RULES.md 第六节).
 - **Multiple contexts:** alongside each context's own `CONTEXT.md` (e.g. `src/ordering/docs/OPEN-DECISIONS.md`), following the `CONTEXT-MAP.md`.
 
 Created lazily — only when the first decision is deferred via the de-risk protocol.
