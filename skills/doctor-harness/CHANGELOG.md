@@ -2,6 +2,14 @@
 
 > harness 组织变更(迁移/规则修订)记录于此,可回溯「harness 为什么长这样」。追加式,只增不改。
 
+## 2026-08-20 · 第九节「治理历史布局」(ADR-0024 P0)
+
+- **变更**:新增第九节——① 载体命名与粒度(skill CHANGELOG 仅项目侧/FORK-NOTES 双侧一致/DOGFOOD-LOG 仅全局侧/design 域 CHANGELOG/STATUS-LOG);② 历史层单侧存在规则 + sync-check 类规则引用(HISTORY_LAYER/GLOBAL_ONLY,与 EXCEPTIONS 白名单正交);③ 索引指针要求(SKILL.md 头部统一一行);④ 增量记录规则(五类触发 + 节标题改名时的锚点更新义务);⑤ CHANGELOG/FORK-NOTES 等非 LN 文件不受第七节命名正则约束;另「规则本体」判定词定义。doctor-harness SKILL.md 补治理历史职责条;项目 CLAUDE.md 铁律 8 语义改写。
+- **原因**:治理历史分离 feature(design-Q governance-history-split,L0+L1 设计套 + grill-Q 压测 10 项修订)——三域治理历史「移层不删除」,双侧常态性形态分工(全局 = 分发洁净开箱,项目 = 车间完整)。
+- **依据**:[ADR-0024](../../../harness/adr/0024-governance-history-split-dual-form.md) + [L1 契约](../../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + [grill-gov-history-split-w01](../../../harness/questionnaires/archive/governance-history-split/grill-gov-history-split-w01.md)(F039/P0)。
+- **影响**: HARNESS-RULES.md#九、治理历史布局、SKILL.md#主流程、CLAUDE.md#铁律
+- **出处**: ADR-0024 + 归档问卷(同上)
+
 ## 2026-08-16 · 第八节补「存量治理文件迁移」+「自包含大文档映射策略」
 
 - **变更**:第八节新增两条:① 存量治理文件迁移(CONTEXT → harness 根;docs/adr/ 整体迁 harness/adr/ 保留原编号、新建续号;断链走 MIGRATION-FLOW);② 自包含大文档(构想+架构+实现合一)映射二选一(单文件多节保整体 / 拆层多文件利演进,判据 = 是否仍频繁整体修订,原文件均保留不删)。

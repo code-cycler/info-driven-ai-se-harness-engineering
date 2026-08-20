@@ -577,6 +577,84 @@
       "passes": true,
       "last_tested": "2026-08-20T15:30:00+08:00",
       "notes": "来源:L0 验收 7 条中的 ①②④⑤ + 核验命令示例(W01 Q8)。验收⑦推送前 OD-1 ②③ 语义人审 = 用户推送时执行,不在本 feature 范围;验收⑥ 在 F036 已验 | ✅ 2026-08-20 全链验收:链接 21/21 + TOC 锚点 9/9 / 速查表 6/6 / 脱敏 0 / sync 0 / harness-check exit 0 / 169 行 ≤250 / CHANGELOG 11 条。验收⑦推送前 OD-1 ②③ 归用户推送时执行"
+    },
+    {
+      "id": "F039",
+      "category": "functional",
+      "priority": "high",
+      "description": "P0 协议落盘:HARNESS-RULES 第九节「治理历史布局」+ sync-check 类规则升级(HISTORY_LAYER 反向豁免/DOGFOOD-LOG 白名单/doctor-harness CHANGELOG 临时例外保留至 P4)+ doctor-harness SKILL.md 职责补条 + 项目 CLAUDE.md 铁律 8 语义改写(L1 契约 Q1/Q2/Q4/Q6/Q7 落地)",
+      "steps": [
+        "HARNESS-RULES.md 新增第九节(五内容:载体命名与粒度/历史层仅项目侧存在规则+类规则引用/索引指针要求/增量记录规则五类/CHANGELOG 与 LN 命名关系注记)且 CHANGELOG.md 留痕",
+        "scripts/skills-sync-check.py 升级:HISTORY_LAYER={\"CHANGELOG.md\"} 类规则(仅项目侧存在=合法输出提示;仅全局侧=违规;共有且不一致=违规)+ 白名单加 DOGFOOD-LOG.md + 保留 doctor-harness/CHANGELOG.md 临时例外(注 P4 移除)",
+        "skills/doctor-harness/SKILL.md 补治理历史职责条(载体维护/迁移触发/增量记录)并双侧同步(~/.claude/skills/doctor-harness/SKILL.md)",
+        "项目 CLAUDE.md 铁律 8 改写(规则本体双侧逐字节一致;历史层仅项目侧)+ 落盘路径速查表 doctor-harness 行补治理历史载体",
+        "三脚本验证:harness-check 0 / desensitize 0 / skills-sync-check 0 违规"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-20T17:05:00+08:00",
+      "notes": "P0 完成:第九节五内容+规则本体定义落 HARNESS-RULES;sync-check 升级类规则(HISTORY_LAYER/GLOBAL_ONLY+临时例外);doctor-harness SKILL 职责补条+双侧同步;铁律8语义改写+速查表补行;三脚本全绿(sync 0/harness 0/desensitize 0);CHANGELOG 留痕 = 验收5首个活体事件"
+    },
+    {
+      "id": "F040",
+      "category": "functional",
+      "priority": "high",
+      "description": "P1 skill 域迁移(8 skill):SKILL.md 日期注记全迁双侧同形 + 6× DESIGN.md 收敛三节 + 8× CHANGELOG.md 建立(五类条目+反向指针) + FORK-NOTES.md 抽取(DESIGN 分叉节 + 引擎头部条目,双侧一致) + 头部索引行统一 + 迁移对照表登记",
+      "steps": [
+        "逐 skill(一次一个,先 doctor-harness 收尾自身,再 design-Q/grill-Q/action-Q/retro-Q/grill-with-docs/long-running/delegate):① 建 CHANGELOG 迁入 SKILL.md 注记(原文逐字保留+反向指针节锚点)② SKILL.md 加头部索引行 ③ DESIGN.md 历史节迁 CHANGELOG+分叉声明抽 FORK-NOTES(引擎文件头部条目同迁,留一行副本标记)④ 双侧同步(SKILL.md/引擎/FORK-NOTES 一致)",
+        "grill-with-docs/long-running 无 DESIGN.md 维持不新建;其历史从 SKILL.md 迁 CHANGELOG",
+        "migration-map_v1.md 登记(源文件#节 → 目标载体#条目)",
+        "验收 1:8 个 SKILL.md 纯日期治理注记 grep=0(豁免 JSON 示例时间戳);验收 6 抽查:3 条规则经索引行→CHANGELOG 条目 ≤2 跳",
+        "sync-check 0 违规 + desensitize 0"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "每 skill 完成即 git 提交(增量);双侧同步 = 项目侧改完 cp 到全局侧同内容文件(FORK-NOTES 新建双侧)"
+    },
+    {
+      "id": "F041",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P2 harness/design/ 域迁移:层文件/设计文档内嵌治理历史迁 design/<feature>/CHANGELOG.md;裸放全局档(hld_v2 等)内嵌历史迁 design/CHANGELOG.md(仅有可迁内容时建);本体留当前设计+一行索引",
+      "steps": [
+        "盘点 design/ 全部 md(9 子目录 + 7 裸放)的内嵌治理历史(日期注记/修订记录/裁决出处叙述)",
+        "各 feature 建 CHANGELOG 迁入(条目格式同 L1;迁移对照表登记)",
+        "层文件本体留当前有效设计 + 索引行;history/ 版本子目录机制不动",
+        "harness-check 0 违规 + 断链 0 新增"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "本 feature 自身设计套(governance-history-split/)的裁决出处注记也是治理历史,按同规则迁自己的 CHANGELOG(注意:验收 5 要求本 feature 事件入 CHANGELOG = 首验载体)"
+    },
+    {
+      "id": "F042",
+      "category": "functional",
+      "priority": "medium",
+      "description": "P3 CLAUDE.md 域:状态节 8 条历史迁 harness/STATUS-LOG.md + 状态节重写为 ≤5 行快照+双指针(STATUS-LOG+根 CHANGELOG) + TODO 头部压缩(Q9:活待办留,纯历史叙述迁 STATUS-LOG)",
+      "steps": [
+        "harness/STATUS-LOG.md 建立,CLAUDE.md 仓库状态节 8 条历史条目逐字迁入",
+        "CLAUDE.md 状态节重写 ≤5 行快照 + 双指针",
+        "TODO.md 头部压缩为当前状态一行+指针(「下一步主线」活待办保留)",
+        "验收 4:CLAUDE.md 状态节 ≤5 行;指针链接有效"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": ""
+    },
+    {
+      "id": "F043",
+      "category": "functional",
+      "priority": "high",
+      "description": "P4 全局侧重整+终验:doctor-harness 外部实证条目脱敏并入项目侧 CHANGELOG + 全局侧 DOGFOOD-LOG.md 建立(真实名保真) + 全局侧删除(每删前 diff 前置检查⚠) + sync-check EXCEPTIONS 清空 + 根 CHANGELOG 记一条 + L0 验收六条终验",
+      "steps": [
+        "全局侧 doctor-harness/CHANGELOG 外部实证条目:规则性内容脱敏泛化并入项目侧 CHANGELOG(注「实操明细见全局侧日志」);真实名明细迁 ~/.claude/skills/doctor-harness/DOGFOOD-LOG.md",
+        "全局侧删除(⚠ 每删前 diff):6× DESIGN.md + doctor-harness/CHANGELOG.md——双侧一致才删;不一致先抢救",
+        "sync-check EXCEPTIONS 清空(doctor-harness/CHANGELOG 临时例外移除;doctor-harness/CHANGELOG.md 项目侧存在走类规则合法)",
+        "根 CHANGELOG.md 记一条(全局侧装法/SKILL.md 形态/FORK-NOTES/STATUS-LOG/DOGFOOD-LOG)",
+        "L0 验收六条终验:①注记 grep=0 ②迁移对照表逐字可查 ③三脚本全绿 ④状态节≤5行 ⑤本 feature 自身事件入 CHANGELOG 抽查(ADR-0024 落盘/压测回灌/铁律8改写) ⑥检索≤2跳抽样3条"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "⚠ 单向门:全局侧无版本控制,删除不可逆——前置检查逐文件执行,不一致立即停"
     }
   ]
 }

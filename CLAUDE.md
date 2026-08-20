@@ -63,7 +63,7 @@ flowchart LR
 | retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `harness/questionnaires/retro-<主题>-w<NN>.md` |
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
-| doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕);规则权威 `skills/doctor-harness/HARNESS-RULES.md`;校验 `scripts/harness-check.py` |
+| doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕)+ **治理历史载体维护**(CHANGELOG/FORK-NOTES/STATUS-LOG 布局与增量记录,ADR-0024);规则权威 `skills/doctor-harness/HARNESS-RULES.md`(第九节 = 治理历史布局);校验 `scripts/harness-check.py` |
 
 两族分流判据锚 = **认知状态三态**(① 知道·可离线 → 批量;② 未成形·需即时反馈 → 单点;③ 不知道自己不知道 → 对抗维度逼出),详见 [CONTEXT](docs/CONTEXT.md)「Grill 家族」节(2026-08-19,复压 grill-boundary-canonical-w01 Q8)。
 
@@ -80,7 +80,7 @@ flowchart LR
 5. **文件版本命名** —— `_v1` / `_v2` 递增,禁 `final` / `new` / `copy`。
 6. **不一致的设计文档比没有更危险** —— 实现与文档脱节时先更新文档。
 7. **流程图统一用 mermaid**(2026-08-14 用户裁决)—— 全仓库流程 / 架构 / 协作关系图一律 mermaid 代码块,禁 ASCII 字符画图(Git 可 diff、渲染器直出);存量 ASCII 图随所在文件下次修订时替换,skills/ 双副本文件随同步窗口统一处理。
-8. **skill 双侧同步**(2026-08-19 机制化,confirm-skills-sync-mechanism-w00 全确认)—— 改 `skills/` 或 `~/.claude/skills/` 任一侧后,提交前跑 `python3 scripts/skills-sync-check.py`(0 违规才提交);脚本 check-only 只报漂移不选边,哪侧为准是语义判断、永远由人定;裁决例外白名单内置脚本(doctor-harness/CHANGELOG.md,新增例外须改代码注明出处)。
+8. **skill 双侧同步**(2026-08-19 机制化;**2026-08-20 ADR-0024 语义升级:双侧常态性形态分工**)—— **规则本体**(SKILL.md/引擎文件/FORK-NOTES.md)双侧逐字节一致;**历史层**(CHANGELOG.md,治理历史)仅项目侧存在;**全局侧私有类**(DOGFOOD-LOG.md)仅全局侧存在。改 `skills/` 或 `~/.claude/skills/` 任一侧后,提交前跑 `python3 scripts/skills-sync-check.py`(0 违规才提交;类规则 HISTORY_LAYER/GLOBAL_ONLY + 裁决例外白名单内置脚本,新增例外须改代码注明出处);脚本 check-only 只报漂移不选边,哪侧为准是语义判断、永远由人定。全局侧无版本控制(非 git)——**删除全局侧文件前必跑 diff 前置检查**(双侧一致才可删,不一致先抢救)。布局权威 = [HARNESS-RULES.md 第九节](skills/doctor-harness/HARNESS-RULES.md)。
 
 ## 仓库状态
 

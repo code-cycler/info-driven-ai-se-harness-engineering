@@ -123,3 +123,27 @@
 | 旧坍缩 lld 档(vision→lld 两件) | L0 + L2 两层(契约内容并入 L0 或 L2 标注) | 语义等价映射 |
 | 旧完整档(三件) | 三层(L0/L1/L2) | 一一对应 |
 | hld_v2/lld_v2 等版本号变体 | 同上映射,版本号入尾缀或历史注记 | 历史版本本身不迁移(留原位) |
+
+## 九、治理历史布局(2026-08-20 P0 增补,[ADR-0024](../../harness/adr/0024-governance-history-split-dual-form.md))
+
+> 治理历史(裁决出处注记/修订史/dogfood 记录/同步记录/漂移历史)与规则本体分离——「移层不删除」,换 LLM 上下文纯净与单一检索去处。规格全文见 [L1-contract-gov-history-split](../../harness/design/governance-history-split/L1-contract-gov-history-split.md);本节为布局侧权威摘要。
+
+**① 载体命名与粒度**:
+
+| 域 | 载体 | 存在侧 |
+|---|---|---|
+| skill 域 | `skills/<skill>/CHANGELOG.md`(每 skill 一份,追加式条目:日期+五类枚举[裁决/修订/dogfood/同步/升格]+反向指针`影响:<文件>#<节标题锚点>`+出处) | **仅项目侧** |
+| skill 域 | `skills/<skill>/FORK-NOTES.md`(有意分叉声明,条目级精简一行一条,不设数字上限) | 双侧逐字节一致 |
+| skill 域(特例) | `~/.claude/skills/doctor-harness/DOGFOOD-LOG.md`(外部项目实操明细,含真实名,禁入公开仓库) | **仅全局侧** |
+| design 域 | `design/<feature>/CHANGELOG.md`(feature 目录内);裸放全局档内嵌历史 → `design/CHANGELOG.md`(仅有可迁内容时建) | 项目侧 |
+| 仓库内部状态史 | `harness/STATUS-LOG.md`(承 CLAUDE.md 状态节历史;根 CHANGELOG.md 保持纯对外语义) | 项目侧 |
+
+**② 历史层单侧存在规则**:CHANGELOG 类(`HISTORY_LAYER`)仅项目侧存在 = 合法,仅全局侧存在 = 违规;DOGFOOD-LOG 类(`GLOBAL_ONLY`)仅全局侧存在 = 合法——由 `scripts/skills-sync-check.py` 类规则判定(与 EXCEPTIONS 白名单正交:白名单管「内容不同的裁决例外」,类规则管「历史层单侧存在的常态」)。**双侧常态性形态分工**:全局侧 = 分发洁净形态(SKILL.md + 引擎/模板 + FORK-NOTES),无 DESIGN.md、无 CHANGELOG;项目侧 = 车间完整形态。
+
+**③ 索引指针要求**:凡历史迁出处,原位置必留一行指针;SKILL.md 索引行统一落头部(frontmatter 后首行):`> 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md`。
+
+**④ 增量记录规则(五类触发,处理事件的 agent 同事件写入,不批处理)**:① skill 规格修订 ② 裁决产生(问卷处理落盘同时)③ dogfood 轮次 ④ 双侧同步动作 ⑤ 教训升格(同类 ≥2 条按 [ADR-0023](../../harness/adr/0023-skill-md-layered-slimming.md) 升格回规则本体,条目标「已升格」)。附:修订节标题时同事件更新指向该文件的「影响:」锚点。
+
+**⑤ 与 LN 命名规则的关系**:CHANGELOG.md / FORK-NOTES.md / DOGFOOD-LOG.md / STATUS-LOG.md 非 LN 层文件,**不受第七节 `L\d+-` 命名正则约束**,harness-check 不报违规。
+
+**「规则本体」判定词**(sync-check 与铁律 8 用词):= skill 文件中去除治理历史后的现行有效内容,含 frontmatter、机制条款、自检命令、索引导向行;FORK-NOTES.md 整体属规则本体(分叉是现行状态声明)。
