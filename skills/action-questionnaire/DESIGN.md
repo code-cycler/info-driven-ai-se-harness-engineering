@@ -1,6 +1,7 @@
 # DESIGN — action-questionnaire 设计决策记录
 
-> 本 skill 的工件性质:它不是独立拍脑袋产物,是 **grill-questionnaire 对「行动前细节确认 skill」提案 15 题压测的裁决落地**(2026-07-30,仓库内归档问卷 `harness/questionnaires/archive/preaction-confirm/grill-preaction-confirm-skill-w01.md` + OD-11)。本文记录全部裁决、被否决项、引擎漂移声明与 dogfood 范围决策。
+> 本 skill 的设计决策记录(定位 / 压测裁决 Q1–Q15+W02 / 被否决项 / 已知限制);治理历史(创建起源/dogfood 案例/引擎同步时间线)见 [CHANGELOG.md](./CHANGELOG.md);有意分叉见 [FORK-NOTES.md](./FORK-NOTES.md)。
+> 工件性质:它不是独立拍脑袋产物,是 grill-questionnaire 对「行动前细节确认 skill」提案 15 题压测的裁决落地(归档问卷见 CHANGELOG 创建条 + OD-11)。
 
 ## 定位(一句话)
 
@@ -11,20 +12,20 @@
 | # | 问题 | 裁决 | 落实位置 |
 |---|---|---|---|
 | Q1 | 独立新 skill vs 扩展现有 | 独立新 skill | 本目录;被否决项见下节 |
-| Q2 | 问卷族 × §5.2 一问一答保留场景 | 不矛盾:阈值 ≤3 兜小波(2026-08-08 由 ≤4 收紧),≥4 题批量省串行 | SKILL.md 第 2 步小波阈值 |
-| Q3 | 阈值 4 的依据 | 经验估值,双向门,待真实使用数据校准(design-Q 的 ≤2 亦如此来) | PROCESSING-RULES.md 头部分叉声明 |
+| Q2 | 问卷族 × 一问一答保留场景 | 不矛盾:阈值 ≤3 兜小波,≥4 题批量省串行 | SKILL.md 第 2 步小波阈值 |
+| Q3 | 阈值依据 | 经验估值,双向门,待真实使用数据校准 | FORK-NOTES 分叉 3 |
 | Q4 | preview × 阈值涌现形态 | 预期形态:confirm-list 为主、正式题波兜底,反形式主义 | SKILL.md 第 2 步;FORMAT 文件结构节 |
 | Q5 | 环境现实验证 | 含:涉代码事实/外部依赖先核实,证据入出题依据 | SKILL.md 铁律 2 + 第 1 步;FORMAT 规则 7 |
-| Q6 | 第 4 份引擎副本 × OD-8 | 不触发重议:从 design-Q canonical 复制(含 W00 节),声明有意分叉 | 仓库 OD-11;两引擎文件头部 |
+| Q6 | 第 4 份引擎副本 × OD-8 | 不触发重议:从 design-Q canonical 复制(含 W00 节),声明有意分叉 | OD-11;FORK-NOTES.md |
 | Q7 | 落盘形态 | 归档问卷唯一常规留痕 + 三条件升格 ADR/OD | PROCESSING-RULES.md 落盘映射 |
-| Q8 | 触发范围 | 自定义:与设计无关的非正式 action、通用行为,避免 design-Q 式重决策 | SKILL.md 第 0 步 |
+| Q8 | 触发范围 | 与设计无关的非正式 action、通用行为,避免 design-Q 式重决策 | SKILL.md 第 0 步 |
 | Q9 | 与 delegate 边界 | 确认优先:写操作默认确认,除非**显式声明**继承 delegate 白名单 | SKILL.md 铁律 3 + 第 0 步豁免检查 |
 | Q10 | 终止判据 | 隐式骨架六要素:目标/输入/输出/约束/边界/依赖 | SKILL.md 第 1/5 步;FORMAT W00 模板 |
-| Q11 | 与 long-running 接口 | 自定义:不嵌入;行动升级到 feature 级(改方向/多文件/值得 feature 记录)→ 提醒转专用 skill;ADR/OD 正常记录 | SKILL.md 铁律 7 + 第 5 步升级转出 |
+| Q11 | 与 long-running 接口 | 不嵌入;行动升级到 feature 级 → 提醒转专用 skill;ADR/OD 正常记录 | SKILL.md 铁律 7 + 第 5 步升级转出 |
 | Q12 | dogfood | 不做正式 dogfood(≥2 案例) | 见「dogfood 范围决策」节 |
 | Q13 | canonical 同步时机 | 先过门槛后同步(7→8 六文件七处) | 仓库 TODO.md |
-| Q14 | 命名 | 自定义「action *」→ 定 `action-questionnaire`(Markdown 吞字嫌疑已排除:用户确认方向为 action 前缀 + 问卷族后缀) | 本目录名 |
-| Q15 | preview 术语漂移 | 更名「细节确认清单(confirm-list)」,语义改确认式,引擎副本头部声明 | FORMAT 头部 + 规则 13 |
+| Q14 | 命名 | 定 `action-questionnaire`(action 前缀 + 问卷族后缀) | 本目录名 |
+| Q15 | preview 术语漂移 | 更名「细节确认清单(confirm-list)」,语义改确认式 | FORK-NOTES 分叉 1 |
 | W02 | Q12×Q13 矛盾(不做 dogfood 但门槛是 dogfood 过关) | 补 1 个轻量 dogfood 案例作 canonical 同步门槛 | 下节 |
 
 ## 被否决项(Q1,为什么不是扩展现有 skill)
@@ -33,65 +34,15 @@
 |---|---|
 | design-Q 加 confirm 模式 | design-Q 是设计期生成式(阶段坍缩/闸门/preview=决策默认值);确认是行动前对齐式,混入要分叉其阶段机制,且触发词互相污染 |
 | grill-Q 阈值参数化 | grill-Q 是对抗压测(D1–D8 找漏洞),本 skill 是生成式对齐,目标相反,硬合并语义混乱 |
-| grill / grill-with-docs 扩展批量模式 | 破坏单点深钻族「一问一答、即时反馈」定位(方法论 §5.3) |
-
-## 引擎副本漂移声明(OD-8 / OD-11 治理)
-
-本 skill 的 QUESTIONNAIRE-FORMAT.md / PROCESSING-RULES.md 是 design-Q 引擎的**第 4 份副本**(2026-07-30 从 design-Q canonical 复制,含 W00 preview 节——grill-Q / retro-Q 副本无此节,diff 实证)。
-
-**有意分叉清单**(区别于既有三份的意外漂移):
-
-1. W00 = confirm-list(细节确认清单),语义:决策默认值+AI 默认倾向(生成式)→ 行动细节+AI 的理解(确认式);要点数建议 10–25 → 5–20。
-2. 命名 `confirm-<slug>-w<NN>.md`,stage 恒 `confirm`,mode 恒 `feature`。
-3. 小波阈值 ≤2 → **≤4**(2026-08-08 用户裁决**收紧为 ≤3**,与四副本统一;原经验估值待真实数据校准)。
-4. 落盘无阶段文档;常规留痕 = 归档问卷。
-5. 规则 7 强化:涉代码事实/外部依赖必须附核实证据(本 skill 铁律 2 的格式侧落地)。
-6. 补充声明第四类「用户先验结论 → 待验证假设(分析中显式检验,不预设为结论,处理报告标注)」——2026-07-31 dogfood D-1 回修,落实于 PROCESSING-RULES 解析规则 3 + FORMAT 规则 12;**仅本副本**(2026-07-31 用户小波裁决「只改 action-Q」,canonical 跟进与否由 design-Q 上下文另决)。
-
-**同步义务**:design-Q 引擎升级时,四份(非三份)一并评估(OD-11 重访触发);本副本的有意分叉不在同步范围内(永久分叉),其余节漂移需声明。
+| grill / grill-with-docs 扩展批量模式 | 破坏单点深钻族「一问一答、即时反馈」定位 |
 
 ## dogfood 范围决策(Q12 + W02)
 
-- **不做正式 dogfood**(≥2 真实案例 + 计数)——用户裁决 Q12=C。
-- **canonical 同步门槛 = 1 个轻量 dogfood 案例**(W02 裁决,解 Q12×Q13 矛盾):用一个真实非正式行动完整走一遍本 skill 流程(confirm-list → 处理 → 归档),记录缺口即时回修规格;案例与结果记入本节。
-- **状态(2026-07-31):已执行(首案例通过,门槛过关)**。案例 = **skill 家族生态位重叠分析**(真实非正式行动,产物 = 对话内分析报告),归档问卷 `harness/questionnaires/archive/_misc/confirm-skill-niche-overlap-w00.md`。流程全走:定界(非 feature 级 + 无 delegation.md)→ 核实(8 份 SKILL.md + v3 + 归档问卷)→ W00 confirm-list(六要素 14 条)→ 用户全勾一轮终结 → 处理报告 → 执行分析 → 归档(尾部双摘要)→ 小波问答(2 题,逐字转写进归档问卷尾部)。
-  - **D-1(规格缺口,已回修)**:补充声明出现第四类内容「用户先验结论」,原三类去向(新需求/答案补遗/格式反馈)未覆盖 → 本副本规则补第四类「待验证假设,不预设为结论」;按「只改 action-Q」裁决声明为有意分叉 #6。
-  - **D-2(顺畅)**:分析类行动 14 条全勾、零正式题、一轮终结,confirm-list 形态对「先核实再动手」场景有效;铁律 2(先核实再列清单)可执行。
-  - **D-3(摩擦,轻,未改)**:「答完前不解析」+「处理报告无异议才归档」对全勾零异常的 W00 构成两次串行等待;本次按规格执行,是否优化留后续使用数据(阈值校准同理,Q3)。
-  - 门槛过关 → **canonical 同步(7→8)解锁**(仓库 TODO.md,6 文件 7 处,另起行动执行)。
-- **第二案例(2026-07-31 补记)**:「生态位区分」行动(归档问卷 `harness/questionnaires/archive/_misc/confirm-grill-niche-distinguish-w00.md`)。新观察:① 补充声明作「留空项纠偏答案」通道有效——用户一句话(#8「作废 W01」)完成纠偏,免重出题;② 小波直接问(1 题)处理开放型确认项(漂移清单)有效,多选 + 自由书写组合,用户自定义纠偏成为分析关键输入;③ 类目边界校准:第一案例的补充声明属「用户先验」(第四类,D-1 已修),本次属「答案补遗」(既有映射)——第四类未误伤既有规则。
+- **不做正式 dogfood**(≥2 真实案例 + 计数)。
+- **canonical 同步门槛 = 1 个轻量 dogfood 案例**(W02 裁决,解 Q12×Q13 矛盾):用一个真实非正式行动完整走一遍本 skill 流程,记录缺口即时回修规格。**门槛已过关**(首案例 = skill 家族生态位重叠分析,过程与发现见 CHANGELOG);canonical 同步(7→8)已解锁并执行。
 
 ## 已知限制(设计期自认)
 
 1. 只对齐 (a) 类幻觉的一半:用户确认对齐用户脑中的背景;AI 误读现实靠铁律 2 兜,核实深度有限(SKILL.md「已知限制」节)。
-2. 阈值 4 无数据支撑(Q3),可能在真实使用中调整。
+2. 阈值现值 ≤3 无数据支撑(Q3),可能在真实使用中调整。
 3. 与 delegate 的「显式声明继承」豁免机制尚无具体声明格式——首个使用项目需在 delegation.md 里给出写法(届时回修 SKILL.md 第 0 步)。
-
-## 引擎同步记录(2026-08-03)
-
-- **预勾选开关化 + 选项排序统一**(OD-14 修订,用户裁决,action-Q 确认清单 confirm-pregou-switch-w00 全确认):
-  - 预勾选 = **opt-in 开关,默认关**——仅当用户启动 skill 时明确说「预勾选」才预勾推荐选项;未启用时全部 `[ ]`;
-  - **选项排序(非推荐在前 → 逃生舱倒数第二 → 推荐最后)= 默认行为,不依赖开关**;
-  - **单向门题(发布/删除/花钱/脱敏)永不预勾**;预勾设防(取消率 / 确认点 / 3 波零取消警告)开关开启时适用;
-  - 本 skill 与 design-Q / grill-Q / retro-Q / action-Q **四份副本同步**(OD-8 重访触发①命中);问题级排序仅 design-Q 保留。
-- **实测与调研前置标准流程**(2026-08-03,action-Q 确认清单 confirm-testing-preflight-w00 全确认):SKILL.md「生成问卷」前新增标准步骤「实测与调研前置」(调研现状 / 不假设 / 多实测 / 多获取信息 / 及时保存);retro-Q 版为「调研与核实前置」(五源读取的补齐);既有铁律段(环境现实现证 / 先验证再出题 / 先核实再列清单)保留引用。
-
-## skill-spec-revamp 同步记录(2026-08-06/07,OD-8 重访触发①)
-
-> **2026-08-07 superseded**:本节描述的「落盘路径配置化(方案 R)」同步已随 ADR-0011 放弃——action-Q 落盘路径回归硬编码 `harness/`(见 SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。本节文字保留作历史叙述;末条「HLD/LLD 判别法则不扩散」与路径无关,继续有效。
-
-- **落盘路径配置化同步**:本 skill(PROCESSING-RULES 落盘映射 + 落盘根定义 + SKILL 路径决定 + QUESTIONNAIRE-FORMAT 文件约定)已与 design-Q canonical 同步——路径配置化为 `<根>` / `<落盘根>`,四 skill(design-Q / grill-Q / retro-Q / action-Q)沿用同一根约定(方案 R)。
-- 🔧 **Q5 同步范围**:仅「落盘映射节」diff 0(路径 + 落盘根定义机制一致);action-Q 有意分叉区(小波阈值 ≤3(2026-08-08 由 ≤4 收紧) / confirm-list 语义 / 无阶段文档 / 补充声明第四类)原样保留。
-- 🔧 **Q7 路径区分**:本 DESIGN.md 内 dogfood 案例叙述出现的 `harness/questionnaires/archive/...` 为**历史案例记录**(2026-07-31 dogfood 归档问卷路径,非运行时落盘指令),保留为历史叙述;配置化只改「描述宿主项目落盘路径」的运行时字符串(SKILL/PROCESSING-RULES/QUESTIONNAIRE-FORMAT)。
-- HLD/LLD 判别法则 + 最小必含 = design-Q 专属骨架,**不扩散**到 action-Q(本 skill 无内容骨架,隐式六要素 confirm-list)。
-
-## 复用前重验扩散(2026-08-07,design-Q 未验证假设生命周期管理 D30)
-
-> 来源:design-Q confirm-list(confirm-design-q-unverified-assumptions-w00 小波裁决:用户选「扩散到 action-Q」)。design-Q 台账 + 阶段闸门汇报**不扩散**(本 skill 无阶段概念、无跨波演进);仅「复用前重验」扩散——confirm-list 引用之前确认过但从未实测的信息时,先重验再列入。落 SKILL.md 第 1 步;与有意分叉 #6(用户先验结论 → 待验证假设)衔接:复用前重验把「先验结论」从「分析中显式检验」前移到「列入清单前重验」。
-
-## 引擎同步记录(2026-08-18,first-principles W01 补充声明)
-
-- QUESTIONNAIRE-FORMAT **规则 4 修正**:「✍️ 自定义」位置由「紧跟 🤔 逃生舱之后」改为「紧跟所有选项(含 ★推荐)之后、固定为题目最后一位」——消除与规则 13(选项排序:推荐居末)的顺序矛盾;该矛盾是「✍️ 行结构性遗漏」的根源(grill-Q first-principles W01 曾 10 题全漏,靠出题自检 grep 抓回)。
-- grill-Q / retro-Q 的模板示例同步更新为规则 13 选项顺序(★推荐从 A 位移至 🤔 之后的 C 位,✍️ 行标注「题目最后一位」);design-Q / action-Q 模板本已合规,仅规则 4 措辞统一。
-- 四副本 × 双侧(repo `skills/` + 全局 `~/.claude/skills/`)同批同步,无新有意分叉(OD-8/OD-11 边界不变)。
-\n
