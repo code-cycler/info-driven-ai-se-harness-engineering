@@ -3,6 +3,8 @@ name: long-running-agent
 description: "长时间运行、跨多会话复杂项目的约束系统。增量工作、feature_list.json 功能列表、claude-progress.txt 进度记录、端到端测试验证(只有通过测试才标记 passes:true)、Git 整洁状态、约定式提交。默认单 agent 一次一个功能;拓展能力:准备模式(规划并行线程+任务包,人审查确认)与执行模式(多 worktree 并行,优先用 Claude Code 原生多 agent 相互通信:主会话 spawn 后台 agent 各驻 worktree + SendMessage 通信)。触发:多会话/长周期项目、需要 feature_list 跟踪、长期工程任务、跨上下文窗口的工作、design-questionnaire 层级设计(LN)收尾停点后衔接实现期、准备模式、执行模式、多 worktree 并行。Use when a project enters long-running implementation spanning multiple sessions / context windows, or after design-questionnaire hands off (single or multi-worktree modes)."
 ---
 
+> 治理历史见本目录 CHANGELOG.md(本 skill 无 DESIGN.md,无规则本体级分叉,故无 FORK-NOTES)。
+
 # long-running-agent (长时间运行代理约束系统)
 
 > 基于 Anthropic 官方文章《Effective harnesses for long-running-agents》
@@ -170,20 +172,20 @@ feature_list.json 不存在时,先创建它:
 
 **会话上下文可能被压缩(Claude Code `/compact`)而丢失设计期决策细节**。本 skill 不依赖会话上下文重建项目认知,而是从落盘文件:
 
-- **有 design-Q 产物(LN 制,2026-08-16 P5)**:读层文件(`L0-vision-*` 恒在 + 各层)+ `harness/questionnaires/archive/` 归档问卷。**feature 反推规则**:从「最低**构建语义层**」(L2-build 或自声明的构建/阶段内容层)的阶段拆分反推;无构建层(单层交付)→ 从 L0 验收标准逐条反推(L0 写法约束「验收按可独立验证条目写」为此保证)。旧 VISION/HLD/LLD 三件 = L0/L1/L2 别名,同规则。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
+- **有 design-Q 产物(LN 制)**:读层文件(`L0-vision-*` 恒在 + 各层)+ `harness/questionnaires/archive/` 归档问卷。**feature 反推规则**:从「最低**构建语义层**」(L2-build 或自声明的构建/阶段内容层)的阶段拆分反推;无构建层(单层交付)→ 从 L0 验收标准逐条反推(L0 写法约束「验收按可独立验证条目写」为此保证)。旧 VISION/HLD/LLD 三件 = L0/L1/L2 别名,同规则。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
 - **无 design-Q 产物**:读 claude-progress.txt + feature_list.json + git log,从历史会话与代码现状重建。
 
 机制自洽:无论上下文是否被压缩,落盘文件都是 source of truth。
 
 ### 5.4 与 design-questionnaire 的衔接
 
-design-Q 在末层收尾、grill-questionnaire 压测之后,经**多线程停点询问**后触发本 skill(衔接实现期,2026-08-16 P5 更新)。停点两分支:
+design-Q 在末层收尾、grill-questionnaire 压测之后,经**多线程停点询问**后触发本 skill(衔接实现期)。停点两分支:
 
 - 单线程分支 → 直接进入实现(本文默认路径);多线程分支 → 进入**准备模式**(见 §5.5)。
 - design-Q 产出的层文件(LN)是 feature_list 的 source of truth。
 - 用户可拒绝衔接,随后随时手动调用本 skill(见 §7 触发契约)。
 
-### 5.5 准备模式与执行模式(多线程拓展能力,2026-08-16 P5)
+### 5.5 准备模式与执行模式(多线程拓展能力)
 
 > 定位:**默认 = 单 agent**(本 skill 主体路径,一次一个功能);多 worktree 多 agent = **拓展能力**,可选启用;实现优先用 **Claude Code 原生多 agent 相互通信**——主会话作协调者(spawn 后台 agent 各驻一个 worktree;SendMessage 派发任务包与线程间通信;task-notification 收完成信号);人开多个独立会话是合法 fallback。**模式切换由人确认,AI 不自行开工。**
 
@@ -195,7 +197,7 @@ design-Q 在末层收尾、grill-questionnaire 压测之后,经**多线程停点
 
 ## 6. 增量工作原则
 
-### 一次只处理一个功能(限定式,2026-08-16 P5 修订 provisional)
+### 一次只处理一个功能(限定式,provisional)
 
 **单 worktree 会话内**一次只处理一个功能;多 worktree 并行仅在执行模式 + 人确认的任务包边界内(§5.5)。**必须严格遵守**:
 
