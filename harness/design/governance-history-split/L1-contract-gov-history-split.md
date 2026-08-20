@@ -64,6 +64,8 @@ frontmatter 后首行统一:
 > 治理历史见本目录 CHANGELOG.md;有意分叉见 FORK-NOTES.md
 ```
 
+变体(P1 执行时定):无规则本体级分叉的 skill(如 doctor-harness)用 `> 治理历史见本目录 CHANGELOG.md(本 skill 无规则本体级分叉,故无 FORK-NOTES)`——不指向不存在的文件,不为「无分叉」预建空 FORK-NOTES。
+
 8 个 skill 迁移时统一落位;与 HARNESS-RULES「头部导览块」风格一致(导览前置)。
 
 ### STATUS-LOG.md(harness/ 根,仅项目侧)
