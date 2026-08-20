@@ -32,3 +32,8 @@ SKILL.md 是每次触发即加载进上下文的**常驻 token 成本**(9 skill 
 
 - 来源:[grill-skill-family-w01](../questionnaires/archive/_misc/grill-skill-family-w01.md) Q8-A + 补充声明(2026-08-19)。
 - 相关:[OD-10](../../docs/OPEN-DECISIONS.md)(分发洁净,本 ADR 为其机制化路径)、[OD-8](../../docs/OPEN-DECISIONS.md)(副本漂移治理)、CLAUDE.md 铁律 8(skill 双侧同步)。
+
+## 后续演进(2026-08-20)
+
+- **「渐进执行缓行」被推翻**:2026-08-19 的「全量迁移低收益、缓行」评估被 [ADR-0024](0024-governance-history-split-dual-form.md) 推翻——用户立项治理历史分离 feature(design-Q governance-history-split L0 W01-Q1 裁决 C:注记全迁,两侧同形),渐进策略由「一次 long-running 收口 P0–P4」取代。本 ADR 的分层原则(决策 1/2)与升格机制(决策 2)不变,且被 ADR-0024 全量承接(升格衔接 = 同类 ≥2 条回常驻层,条目标「已升格」)。
+- **「移 DESIGN.md」的去处修订**:出处/教训的迁出落点由 DESIGN.md 改为 **skill 目录内 CHANGELOG.md(仅项目侧)**;DESIGN.md 收敛为「设计决策 + 已知限制」,分叉声明另抽 FORK-NOTES.md(双侧一致)。

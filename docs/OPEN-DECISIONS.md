@@ -86,6 +86,7 @@
 - **重访触发条件**:漂移引发困惑 / issue;或 design-Q 引擎升级后评估同步另两份。
 - **2026-08-03 重访触发①命中**:design-Q 引擎升级(预勾开关化 + 选项排序统一,OD-14 修订),已按重访条件评估并**同步四份副本**(design-Q / grill-Q / retro-Q / action-Q 的 QUESTIONNAIRE-FORMAT / PROCESSING-RULES 统一;SKILL.md 仅 design-Q 需同步);漂移记录已更新至各 DESIGN.md「引擎同步记录(2026-08-03)」节。
 - **2026-08-19 范围扩展(grill-Q skill-family W01 Q2-C)**:grill 与 grill-with-docs 的「提问方法论」(How to ask questions / 逃生舱 / de-risk 协议,约 60 行)为四份问卷引擎之外的**第 5 份隐性副本**(两 skill 各持一份,近乎逐字同构)——纳入本条漂移治理:修订任一 skill 的提问方法论时同步核对另一方,漂移声明写各自 DESIGN.md。同轮压测否决「grill 被 grill-with-docs 模式开关吸收」合并提案,[OD-12](#od-12已决grill通用零留痕的处置) 维持。
+- **2026-08-20 载体迁移注记([ADR-0024](../harness/adr/0024-governance-history-split-dual-form.md),执行待 P1)**:各 skill 漂移/分叉声明的载体从 DESIGN.md 抽出为独立 **FORK-NOTES.md(双侧逐字节一致)**,全局侧可见性由「不可见(DESIGN.md 不进全局)」改善为「可见」;漂移记录历史部分迁各 skill CHANGELOG.md(仅项目侧)。
 
 ---
 
@@ -105,6 +106,7 @@
 - **目标状态**:skill 准备正式分发时,清洗非必要声明(历史信息、dogfood 过程记录),只留分发必需规格。
 - **可逆性**:双向门(清洗可回退,有 Git 历史)。
 - **重访触发条件**:① 某 skill dogfood 收尾;② skill 准备正式分发/打包;③ 与分发前脱敏检查(OD-1)一并做。
+- **2026-08-20 设计裁决([ADR-0024](../harness/adr/0024-governance-history-split-dual-form.md),执行待 P0–P4 迁移)**:双侧常态性形态分工——全局侧(`~/.claude/skills/`)转为**分发洁净形态**(开箱即用:SKILL.md + 引擎/模板 + FORK-NOTES,无 DESIGN.md/无 CHANGELOG),分发洁净目标态在全局侧**提前达成**;项目侧保留完整演进历史。重访触发①「dogfood 收尾」语义更新为「迁移执行 P4(全局侧重整)完成后」一并评估。
 
 ---
 
@@ -280,6 +282,7 @@
 - **可逆性**:双向门(实验分支可回滚合并)。
 - **重访触发条件**:① DOGFOOD 实测通过,触发回灌合并;② 实验期双副本漂移引发实际困惑/误用(用户反馈);③ 改造放弃,全局恢复与项目一致;④ 分叉持续超过 60 天未回灌(长期分叉 = 无主版本信号);⑤ 实验窗口超 2 周未收口。满足任一 → 重估实验策略或执行合并。
 - **✅ 本轮已收口(2026-08-17,commit a9086be)**:层级制改造完成回灌(F027–F034 全绿;DOGFOOD 案例 1 + 存量套迁移演练验收,案例 2 用户裁决跳过留痕);窗口耗时 3 天(≤ 2 周目标内);双向漂移实证已并入经验(先同步再实验)。**策略保留供后续结构性 skill 改造复用**,触发条件对下轮实验继续有效。
+- **2026-08-20 语义扩展([ADR-0024](../harness/adr/0024-governance-history-split-dual-form.md),2026-08-20 设计裁决,执行待 P0–P4)**:「有意分叉」从**实验期临时态**升为**常态性形态分工**——全局侧 = 分发洁净形态(开箱即用,无演进历史),项目侧 = 车间完整形态;同步语义由「双侧逐字节一致」改为「规则本体(SKILL.md/引擎/FORK-NOTES)一致 + 历史层(CHANGELOG)仅项目侧」(sync-check 类规则,EXCEPTIONS 清空)。本条「先同步再实验」原则在常态分工下仍适用(实验仍从一致起点出发)。
 - **关联**:[OD-8](#od-8-skill-引擎副本的开源呈现已决)(引擎副本漂移先例)、[OD-13](#od-13已决ai-双轨对照-pilot-立项影子--冠军挑战者)(DOGFOOD 落点)、TODO「design-Q 数字层级改造」块、[HLD §6](../harness/design/designq-digital-levels/HLD.md)。
 
 ## OD-25 本仓库治理文件布局 vs HARNESS-RULES 第六节(双向门)
