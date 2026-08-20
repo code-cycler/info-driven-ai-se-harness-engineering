@@ -3,6 +3,8 @@ name: doctor-harness
 description: harness 演进治理 skill——处理「项目根/harness/」区(design/ + questionnaires/ + adr/)的组织规则权威化、迁移工具/流程、布局合规校验与演进留痕。harness 文件**严格**归 `harness/` 父级 + 父级下子文件夹分层,不污染项目根;分层规则见 HARNESS-RULES.md(唯一权威源)。触发:harness 分层/重组、harness 文件迁移、校验 harness 布局、「harness 怎么放」「这个文件放哪」、harness 组织混乱需要治理、层级改造/迁移(LN 制旧档迁移)、存量规范化(无 harness 文件项目改造为标准结构)。Use when harness file organization, migration, or layout validation is needed.
 ---
 
+> 治理历史见本目录 CHANGELOG.md(本 skill 无规则本体级分叉,故无 FORK-NOTES)。
+
 <what-to-do>
 
 处理 harness 区(`项目根/harness/`)的**演进治理**:组织规则权威化 + 迁移 + 校验 + 留痕。harness 文件**严格**归 `harness/` 父级,内部按 feature/主题分层子文件夹,**不污染项目目录结构**。

@@ -1,7 +1,7 @@
 # MIGRATION-FLOW · harness 目录迁移流程
 
 > harness 区(design/ + questionnaires/ + adr/)目录重组的**可跟随执行流程**。逐步手动执行 + 校验脚本验证,不自动化。
-> 依据:[ADR-0013](../../harness/adr/0013-harness-layering-migration.md)(迁移执行)+ [ADR-0012](../../harness/adr/0012-harness-layering-rule.md)(分层规则)+ 2026-08-05 / 2026-08-08 两次迁移先例。
+> 依据:[ADR-0013](../../harness/adr/0013-harness-layering-migration.md)(迁移执行)+ [ADR-0012](../../harness/adr/0012-harness-layering-rule.md)(分层规则)+ 历次迁移先例(见下表与 CHANGELOG)。
 
 ## 何时用
 

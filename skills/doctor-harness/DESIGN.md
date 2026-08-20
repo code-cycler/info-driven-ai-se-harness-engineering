@@ -1,13 +1,9 @@
 # doctor-harness · 设计文档
 
-> 本 skill 的设计决策记录 + 演进留痕索引。
+> 本 skill 的设计决策记录(定位 / 设计决策 / 已知限制三节);治理历史见 [CHANGELOG.md](./CHANGELOG.md)。
 > 设计套:harness/design/doctor-harness/(VISION / HLD / LLD);决策依据:ADR-0012 / ADR-0013 / ADR-0011 + OD-15。
 
-## 起源(2026-08-08)
-
-压测 [grill-harness-file-mgmt-w01](../../harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md) 发现:harness 文件管理规格「简单未考虑实际情况」——无层次化设计、feature/子项目无单独文件夹、边缘与实际工程场景未覆盖。用户裁决(补充声明):harness 文件**严格**归 `harness/` 父级 + 子文件夹分层,不污染项目根;设计 skill 处理演进。立项 [OD-15](../../docs/OPEN-DECISIONS.md)。
-
-## 关键决策记录(W00/W01 全采纳)
+## 设计决策
 
 | # | 决策点 | 裁定 | 出处 |
 |---|---|---|---|
@@ -21,23 +17,10 @@
 | V8 | 迁移方式 | 一次性完整迁移 + 断链回归,不自动化脚本 | ADR-0013 |
 | V9 | 规范落点 | HARNESS-RULES.md 独立文档,各 SKILL.md 引用不复制 | VISION W01 Q10 |
 | V10 | 脚本双副本 | 脚本进仓库 scripts/,~/.claude 引用或复制同字节 | VISION W01 Q8 |
+| V11 | 「dogfood 通过」定义 | = 用 doctor-harness 的 HARNESS-RULES(判定句核对)+ harness-check(脚本校验)+ MIGRATION-FLOW(迁移流程)完整走通一次真实 harness 场景(F019 分层迁移符合即通过) | grill-Q Q7 回灌 |
+| V12 | 治理历史职责 | 载体(CHANGELOG/FORK-NOTES/DOGFOOD-LOG/STATUS-LOG)布局与增量记录归本 skill 第七职责面(HARNESS-RULES 第九节) | ADR-0024 |
 
-## 演进记录
+## 已知限制
 
-| 日期 | 变更 | 原因 |
-|---|---|---|
-| 2026-08-08 | 设计套完成(VISION/HLD/LLD + ADR-0012/0013) | 压测产出 direction,用户裁决先设计后实现 |
-| 2026-08-08 | P1 规则权威:HARNESS-RULES.md 起草 + 6 skill 引用句 | LLD P1 |
-| 2026-08-08 | P2 校验脚本:harness-check.py 实现 + 现状跑通/违规样本验证 | LLD P2 |
-| 2026-08-08 | P3 分层迁移:design/ 天然分层确认 + 归档 9 处层级链接修复 | LLD P3(dogfood) |
-| 2026-08-08 | P4 双副本 + 家族表述(本 DESIGN) | LLD P4;家族表述待迁移验证通过后落第 9 个 |
-
-## 未验证假设台账
-
-- 无(纯 Markdown + 纯 Python 标准库脚本,无外部依赖;压测/设计期关键事实已核实)。
-
-## 家族身份状态
-
-**done**:先 dogfood 后入家族(OD-15 重访触发②)。F020 已同步「第 9 个」(CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表)。
-
-**「dogfood 通过」定义**(grill-Q Q7 回灌):= 用 doctor-harness 的 HARNESS-RULES(判定句核对)+ harness-check(脚本校验)+ MIGRATION-FLOW(迁移流程)完整走通一次真实 harness 场景。F019 分层迁移符合:用了规则核对归属 + 脚本校验 0 违规 + 链接重算断链回归 → dogfood 通过 → 入家族合理。
+- 未验证假设台账:无(纯 Markdown + 纯 Python 标准库脚本,无外部依赖;压测/设计期关键事实已核实)。
+- 本 skill 无规则本体级分叉,故无 FORK-NOTES(双侧差异仅 CHANGELOG 历史层,由 sync-check 类规则管)。
