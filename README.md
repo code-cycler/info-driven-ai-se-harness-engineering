@@ -4,17 +4,37 @@
 
 > ⚠️ **experimental · 个人维护 · 不保证响应**。这是一套个人开发经验的整理分享,不是官方框架。方法论与 skill 都在迭代中。欢迎 issue,但响应不保证。
 
+![License](https://img.shields.io/badge/license-CC--BY%204.0%20(docs)%20+%20MIT%20(skills%2Fscripts)-lightgrey) ![Claude Code](https://img.shields.io/badge/runs%20on-Claude%20Code-purple) ![Status](https://img.shields.io/badge/status-experimental-orange)
+
 ## 目录
 
-- [快速上手:skill 使用流程](#快速上手skill-使用流程)
 - [这是什么](#这是什么)
 - [为什么是这个(差异化)](#为什么是这个差异化)
-- [工具边界(请先读)](#工具边界请先读)
+- [快速上手:skill 使用流程](#快速上手skill-使用流程)
 - [8 个核心 skill](#8-个核心-skill)
+- [工具边界(请先读)](#工具边界请先读)
 - [仓库结构(三区模型)](#仓库结构三区模型)
 - [License](#license)
-- [发布说明](#发布说明)
+- [更新日志](#更新日志)
 - [备注](#备注)
+
+## 这是什么
+
+一套面向 **个人开发者** 的 AI native 开发方法论,以及把它落地为可执行流程的 **Claude Code skill 家族**。
+
+两大支柱(相乘,缺一为零):
+
+1. **以信息为核心** —— 与 AI 协作的本质是信息流转;瓶颈在有效上下文的质与量,以及对抗 AI 在信息真空中的幻觉式自作主张决策。整个工作流围绕信息管理设计:精准投喂、及时沉淀、绝不丢失。
+2. **驾驭工程 = AI × 软件工程** —— AI 是加速器,软件工程纪律(设计先行、TDD、Code Review、ADR、复盘)是骨架。AI 让纪律更便宜,纪律让 AI 更可靠。
+
+## 为什么是这个(差异化)
+
+同类内容多是「只有文章」或「只有框架」:
+
+- **只有文章**:讲得清道理,但没有可直接运行的执行体——知其然,不知怎么跑;
+- **只有框架**:跑得起来,但不告诉你为什么这样设计——能跑,但不知边界在哪。
+
+本仓库是 **方法论 + 可直接运行的 skill 执行体** 一体化——文章讲为什么,skill 让你能直接跑。(此差异化定位待市场验证,见 [OD-6](docs/OPEN-DECISIONS.md)。)
 
 ## 快速上手:skill 使用流程
 
@@ -37,45 +57,88 @@ flowchart TD
     J["🩺 /doctor-harness<br/>harness 演进治理(分层/迁移/校验/留痕)"] -.->|设计产物落盘治理| B
 ```
 
-**更新**:软链安装 → `git pull` 即自动跟进;拷贝安装 → 重新拷贝覆盖(本地有定制先 diff 再覆盖)。`skills/` 是否变更、何时需要重拷,看下方[发布说明](#发布说明)。
-
-**canonical 主路径**:design-Q → grill-Q → dogfood → long-running → retro-Q;retro-Q 也可在任意环节作为横切复盘插入。
+**主路径 = 5 环节闭环**:design-Q → grill-Q → dogfood → long-running → retro-Q;grill-with-docs / delegate / action-Q / doctor-harness 为横切,可任意环节插入。
 
 衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill-with-docs(含通用模式)与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§三](docs/methodology/methodology_v5.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
 
-**最小采用切片**(2026-08-18,grill-Q first-principles W01 Q5):新项目从 0 跑通第一个闭环只需 3 个文件起步——① 本 README(双支柱与主路径)② [practical_v1.md §8.3](docs/methodology/practical_v1.md)(skill 使用时机表)③ `skills/`(拷入 `~/.claude/skills/` 即用)。方法论 / 哲学 / 实操三件套按需深读,不是采用前置;本仓库的治理体系(ADR / OD / 归档问卷 / CONTEXT)是方法论的生产车间,采用者无需复制。
+**更新**:软链安装 → `git pull` 即自动跟进;拷贝安装 → 重新拷贝覆盖(本地有定制先 diff 再覆盖)。`skills/` 是否变更、何时需要重拷,看 [CHANGELOG.md](CHANGELOG.md)。
 
-## 这是什么
+### 最小采用切片
 
-一套面向 **个人开发者** 的 AI native 开发方法论,以及把它落地为可执行流程的 **Claude Code skill 家族**。
+新项目从 0 跑通第一个闭环只需 3 个文件起步——① 本 README(双支柱与主路径)② [practical_v1.md §8.3](docs/methodology/practical_v1.md)(skill 使用时机表)③ `skills/`(拷入 `~/.claude/skills/` 即用)。方法论 / 哲学 / 实操三件套按需深读,不是采用前置;本仓库的治理体系(ADR / OD / 归档问卷 / CONTEXT)是方法论的生产车间,采用者无需复制。
 
-两大支柱(相乘,缺一为零):
+## 8 个核心 skill
 
-1. **以信息为核心** —— 与 AI 协作的本质是信息流转;瓶颈在有效上下文的质与量,以及对抗 AI 在信息真空中的幻觉式自作主张决策。整个工作流围绕信息管理设计:精准投喂、及时沉淀、绝不丢失。
-2. **驾驭工程 = AI × 软件工程** —— AI 是加速器,软件工程纪律(设计先行、TDD、Code Review、ADR、复盘)是骨架。AI 让纪律更便宜,纪律让 AI 更可靠。
+8 个 skill 构成 5 环节闭环 + 横切(见上方协作图)。每张卡片:定位 / 触发 / 产物 / 核心维度或机制。
 
-## 为什么是这个(差异化)
+### /action-questionnaire —— 非正式行动前的细节确认(确认式问卷,轻量前奏)
 
-同类内容多是「只有文章」或「只有框架」。本仓库是 **方法论 + 可直接运行的 skill 执行体** 一体化——文章讲为什么,skill 让你能直接跑。(此差异化定位待市场验证,见 [OD-6](docs/OPEN-DECISIONS.md)。)
+- **触发**:「对齐一下」「确认细节」「preflight」;多文件写操作 / 涉外部依赖的行动前
+- **产物**:确认结果归档 `harness/questionnaires/archive/`;满足三条件升 ADR;单向门 / 重大风险 → OPEN-DECISIONS;术语冲突 → CONTEXT
+- **核心维度**:隐式骨架六要素(目标 / 输入 / 输出 / 约束 / 边界 / 依赖)+ 环境现实核实
+
+### /design-questionnaire —— 一个念头 → 层层设计(生成式设计)
+
+- **触发**:「帮我做设计」「初始化项目设计」「新功能设计」
+- **产物**:LN 层级设计文件(L0-vision 目标层恒在,L1+ 按需增层;旧 VISION/HLD/LLD 为别名兼容)+ ADR + OPEN-DECISIONS + CONTEXT
+- **核心维度**:分层骨架(L0-vision 恒在 + L1+/L2 按需)+ 环境现实验证 + 未验证假设台账
+
+### /grill-questionnaire —— 压测已有工件,8 维度对抗找漏洞
+
+- **触发**:「压测」「审一下」「找漏洞」;压测计划 / ADR / 设计草稿
+- **产物**:发现 → 处理报告(工件修订须人授权,不替改);可沉淀的决策 / 风险 / 术语 → ADR / OPEN-DECISIONS / CONTEXT
+- **核心维度**:固定压测 8 维——D1 未言明假设 / D2 单向门 / D3 替代方案 / D4 失败模式 / D5 盲点 / D6 可验证性 / D7 与现实矛盾 / D8 术语一致性
+
+### /grill-with-docs —— 实现期单点二义性深钻(一问一答)
+
+- **触发**:实现期单点深钻:「这个技术选型合理吗?」、绑代码库的设计评审、计划评审(逐点即时)
+- **产物**:绑库模式 → CONTEXT / ADR / OPEN-DECISIONS 更新;通用模式(承载原 grill 场景)→ 零留痕纯对话
+- **核心维度**:无固定骨架(纯追问);绑库模式叠加领域词汇表挑战 / 代码交叉核验,通用模式零留痕
+
+### /retro-questionnaire —— 阶段 / 项目复盘沉淀
+
+- **触发**:「复盘这个阶段」「做个 retro」;DoD 核验通过后主动提议
+- **产物**:`docs/retro/<主题>_vN.md` 复盘文档 + TODO.md 行动项
+- **核心维度**:方法论四节(进展顺利 / 出问题与原因假设 / 架构偏离 / 学到什么)+ Action Items
+
+### /long-running-agent —— 跨会话长项目约束系统
+
+- **触发**:多会话 / 长周期项目、跨上下文窗口的工作;design-Q 收尾衔接实现期
+- **产物**:`.claude/feature_list.json`(功能跟踪)+ `.claude/claude-progress.txt`(跨会话进度)
+- **核心机制**:feature_list 跟踪(端到端测试通过才 `passes:true`)+ 进度文件对抗会话失忆 + git 整洁状态
+
+### /delegate —— 纯执行决策下放治理(试点)
+
+- **触发**:「下放」「委托决策」;纯执行类决策密集时
+- **产物**:项目根 `delegation.md`(白名单 / 禁区 / 开关)+ `delegation-log.md`(追加式留痕)
+- **核心机制**:白名单 + 禁区清单 + 单条目收回条件 + 逐例留痕;判断性决策永不下放
+
+### /doctor-harness —— harness 演进治理(分层 / 迁移 / 校验 / 留痕)
+
+- **触发**:「这个文件放哪」、harness 布局 / 迁移 / 校验、LN 制旧档迁移
+- **产物**:harness/ 区组织 + [HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md)(规则权威)+ [harness-check.py](scripts/harness-check.py) 校验
+- **核心机制**:分层规则权威化 + 迁移工具 / 流程 + 布局合规校验 + 演进留痕
+
+### 各 skill 提问 / 确认维度速查
+
+维度 = 各 skill 向你提问 / 确认的角度;名称与权威定义见 CONTEXT。
+
+> **权威 = [CONTEXT「提问维度速查」](docs/CONTEXT.md),此处为导览,漂移以 CONTEXT 为准。**
+
+| skill | 核心维度 | 骨架出处 |
+|---|---|---|
+| design-questionnaire | 分层骨架(L0-vision 目标层恒在 + L1+/L2 按需)+ 环境现实验证 + 未验证假设台账 | [STAGE-SKELETONS.md](skills/design-questionnaire/STAGE-SKELETONS.md) |
+| grill-questionnaire | 固定压测 8 维 D1–D8(未言明假设/单向门/替代方案/失败模式/盲点/可验证性/与现实矛盾/术语一致性) | [GRILL-SKELETON.md](skills/grill-questionnaire/GRILL-SKELETON.md) |
+| action-questionnaire | 隐式骨架六要素(目标/输入/输出/约束/边界/依赖)+ 环境现实核实 | 各 SKILL.md「提取与核实」节 |
+| retro-questionnaire | 方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items | [RETRO-SKELETONS.md](skills/retro-questionnaire/RETRO-SKELETONS.md) |
+| grill-with-docs | 无固定骨架(纯追问,单点深钻);绑库模式叠加领域词汇表挑战 / 代码交叉核验,通用模式零留痕纯对话 | [SKILL.md](skills/grill-with-docs/SKILL.md) |
+| long-running / delegate / doctor-harness | 非提问类(约束系统 / 下放治理 / harness 治理) | 各 SKILL.md |
 
 ## 工具边界(请先读)
 
 - **方法论理念**(双支柱 / 5 环节闭环 / Grill 决策法)工具无关,**可迁移**到任意 AI 编程工作流。
 - **skill 直接运行依赖 Claude Code** 的三项机制:`AskUserQuestion`(批量问卷提问 / 逃生舱)、`subagent`(并行核实,仅 design-Q / grill-Q 使用,其余 skill 不需要)、`SKILL.md` 加载。迁移到其他工具(Cursor / Cline 等)需适配这三项(详见 [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) OD-2)。
 - 本方法论**在 Claude Code 上实践验证**;其他工具的适配尚未实测,欢迎反馈。
-
-## 8 个核心 skill
-
-| skill | 用途 |
-|---|---|
-| [`action-questionnaire`](skills/action-questionnaire/) | 非正式行动前的细节确认(确认式问卷,轻量前奏) |
-| [`design-questionnaire`](skills/design-questionnaire/) | 一个念头 → 层层设计(L0-vision 起,按需增层;旧 VISION/HLD/LLD 为别名兼容) |
-| [`grill-questionnaire`](skills/grill-questionnaire/) | 压测已有工件,8 维度找漏洞 |
-| [`grill-with-docs`](skills/grill-with-docs/) | 实现期单点二义性深钻(绑库默认;含通用模式承载原 grill 场景,2026-08-19 grill 已退役) |
-| [`retro-questionnaire`](skills/retro-questionnaire/) | 阶段 / 项目复盘 |
-| [`long-running-agent`](skills/long-running-agent/) | 跨会话长项目约束系统 |
-| [`delegate`](skills/delegate/) | 决策下放治理(试点) |
-| [`doctor-harness`](skills/doctor-harness/) | harness 演进治理(分层 / 迁移 / 校验 / 留痕) |
 
 ## 仓库结构(三区模型)
 
@@ -86,6 +149,7 @@ harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录
 harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
 skills/              8 个核心方法论 skill(MIT)
 scripts/             脱敏检查 / harness 校验等工具
+CHANGELOG.md         仓库级对外变更记录(原 README「发布说明」节,2026-08-20 外移)
 ```
 
 分区规则:**内容 = 项目文件(docs/);决策记录与流程产物(ADR / 设计文档 / 问卷)= harness 文件;执行体与工具(skills/ scripts/)= 根级产物**。入口文件(CLAUDE.md / AGENTS.md / README)因工具约定留在仓库根,只做路由。
@@ -95,69 +159,9 @@ scripts/             脱敏检查 / harness 校验等工具
 - `docs/`(方法论文字): **CC-BY 4.0**(署名转载,见 [docs/LICENSE](docs/LICENSE))
 - `skills/` `scripts/`(配置 / 代码): **MIT**(见 [LICENSE](LICENSE))
 
-## 发布说明
+## 更新日志
 
-> **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
-
-### skill 演进(2026-08-19,grill 家族治理日:退役 + 形态修订 + 边界机制)
-
-- **grill 退役,家族 9 → 8**:`/grill` 移除(归 `waste/skills/grill/`,可回退);其「通用 × 单点深钻」生态位由 grill-with-docs 新增的**通用模式**承接(不绑库 + 零留痕;入口确认 + 中途切回双兜底)。已装 grill 的采用者:卸装,通用问题直接用 grill-with-docs。
-- **轻量模式(action-Q / grill-Q / design-Q)**:轻任务时 AI 提议、人拍板走精简管道(调研分级 / 小波直问 / 免归档),「初步结论先行 + 人工轻验证」;不假设 / 先验证铁律不因轻量豁免。
-- **grill-Q 防跑偏机制**:入口校准闸门(出题前向人确认「工件理解摘要 + 关键声明清单 + 压测焦点」)+ 每题 ❌ 跑偏标注(同波 ≥2 题被标 → 停波回炉校准框架)+ 阻塞性逃生舱可转 grill-with-docs 单点深钻 + 处理报告质量信号节。
-- **SKILL.md 分层原则确立**([ADR-0023](harness/adr/0023-skill-md-layered-slimming.md)):规则留 SKILL、教训移 DESIGN,同一错误重复 ≥2 次才升格常驻;渐进执行。
-- **canonical 版本内修订**(不升版):哲学 §3.1 路由表加「认知状态」行(两族分流判据锚);方法论 §4.1/§4.3 接线(认知状态三态 + 判据冲突优先级 + 存疑从重)。经 grill-boundary-canonical-w01 复压(9 题,[归档问卷](harness/questionnaires/archive/_misc/grill-boundary-canonical-w01.md))。
-
-### skill 演进(2026-08-19,双侧同步机制化)
-
-- **skill 双侧同步检查上线**:新增 [scripts/skills-sync-check.py](scripts/skills-sync-check.py)——改 `skills/`(本仓库)或 `~/.claude/skills/`(用户全局)任一侧后,提交前跑检查,**0 违规才提交**;脚本 check-only 不选边,哪侧为准是语义判断、永远由人定(裁决例外白名单内置)。背景:2026-08-18 双向合并(9 skill 核对 + 8/14 修订回灌)暴露「项目内修、全局漏修」空隙,机制化收口。
-
-### skill 演进(2026-08-16/17,design-Q 层级制 LN 改造)
-
-- **design-Q 产物结构升 LN 制**:VISION/HLD/LLD 三件套 → **LN 分层设计**——L0-vision(目标层)恒在,L1+/L2 按需动态增层,旧三件套降为别名兼容;骨架增强(HLD/LLD 判别法则 + 反简化最小必含 + 坍缩分档)保留,见 [ADR-0022](harness/adr/0022-design-questionnaire-digital-levels.md)。
-- **doctor-harness 承接层级治理**:HARNESS-RULES 新增第七节(LN 布局/导览/存量豁免)与第八节(存量结构改造流程 + 旧档迁移映射表);本仓库存量设计套(repo/ 三件)git mv 迁 LN 化演练完成。
-- **全链闭环**:F027–F034 全绿(端到端测试通过);DOGFOOD 案例 1 用户实测确认;首份 retro 文档产出(retro-questionnaire 首跑)。
-
-### methodology_v5(2026-08-14,方法论章节连续化与契约优先)
-
-- **方法论文件升 v5**:正文连续编号 §零至§九(v4 映射表在文件顶部)+ 全库引用审查;§4.3(旧 §5.3)两族表补 action-Q 入族;§5.3(旧 §7.3)补「时序纪律」——契约层变更必须**先更新 canonical 设计、再继续不可逆动作**(ADR-0021 通用化)。
-- **伴随项**:CONTEXT 补规范导航与「暂定」状态词;同轮立项 design-Q 数字层级改造、dogfood 定义消歧、方法论 704 行审计(见 [TODO.md](TODO.md))。
-- **版本处置**:v4 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本。
-
-### v7(2026-08-14,哲学独立文章与双文件治理)
-
-- **哲学文件升 v7**:正文统一为连续章节 §一至§五,增加独立阅读入口,保留 v3 旧章节映射、兼容别名 / 重定向说明与历史问卷/ADR 回溯;补方法论 harness 与运行时 harness 的术语边界。
-- **治理边界诚实化**:补 current 已知缺口状态、前三学科最小进入/退出模板,并将返工与去黑盒代理指标明确为反思提示而非效果验证或自动验收门。
-- **版本处置**:v6 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本,v7 成为 current canonical;哲学与 methodology(同日升 v5)按 [ADR-0018](harness/adr/0018-canonical-dual-challenge-governance.md) 作为对等 canonical 双文件交叉治理。
-
-### v6(2026-08-13,哲学治理进化)
-
-- **哲学文件升 v6**:在 v5 的安全科学第四学科视角与「去 AI 黑盒」基础上,补全文阅读路线与章节过渡;§8.6 明确为「方法论自身的治理闭环」,加入统一主张状态模板与学科治理路线图。
-- **治理进化路径**:将系统/需求工程、认识论与测量科学、配置管理/QMS、认知科学/HCI、知识管理/组织学习、信息安全/威胁建模、形式化方法、控制论/决策理论映射到治理机制、最小产物与进入条件;不把它们变成个人项目的强制流程。
-- **版本处置**:v5 保留在 [`docs/methodology/archive/`](docs/methodology/archive/) 作为历史母本,v6 曾成为 current canonical,现由 v7 接替并一并归档。
-
-### v5(2026-08-11,philosophy 立论重构)
-
-- **哲学文件升 v5**:新增 **§八 安全科学视角:去 AI 黑盒**(第四学科视角;黑盒三层次定义 + 与第一支柱正交 + 三风险 + 统合已有可审计装置对策 + 弹性边界 WAI/WAD);顶部学科挂接扩为四(人因 / 软工 / 运筹 / 安全科学);元原则失败模式表加「黑盒信任劫持」。v4 归 archive。
-- **学科挂接分层**([ADR-0014](harness/adr/0014-discipline-mapping-strategy.md)):哲学正文只挂「立论核心学科」,CONTEXT「项目学科地图」承载全景(系统工程 / CM / QMS / PM / KM / 认知科学 + 安全 / 可靠性 / 韧性术语三分)。
-- **完整 write→review→implement 闭环**:grill-Q philosophy-v4(W01/W02,18 处修订)→ discipline-mapping → grill-with-docs(去黑盒 6 点结晶)→ design-Q(VISION/HLD/LLD + [ADR-0015](harness/adr/0015-deblackbox-anchor.md))→ 设计套压测(10 项修订)→ long-running 起草(commit 530d0f4)。
-
-### skill 演进(2026-08-08,doctor-harness 第 9 个 skill)
-
-- **harness 演进治理 skill 上线**:组织 harness 区(分层 / 迁移 / 校验 / 留痕),规则权威 [HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md)(ADR-0012/0013);校验脚本 [scripts/harness-check.py](scripts/harness-check.py)(命名正则 / ADR 编号连续 / 归档位置三检查)。
-- **归档子目录化**:41 份归档问卷按 feature/主题迁入 `harness/questionnaires/archive/` 下 10 个子目录,附 [README 索引](harness/questionnaires/archive/README.md)。
-- **格式反馈落地**:问卷单波次上限 10、小波(直接问答)阈值 3,四副本(design-Q / grill-Q / retro-Q / action-Q)统一;新增 [MIGRATION-FLOW](skills/doctor-harness/MIGRATION-FLOW.md) 迁移流程文档。
-
-### skill 演进(2026-08-07,design-Q 规格整理)
-
-- **落盘路径回归硬编码 `harness/`**(2026-08-07 撤销方案 R,看 [ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)):design-Q + grill-Q/retro-Q/action-Q + long-running 的问卷/ADR 落盘路径**一律硬编码 `项目根/harness/`**(design/ + questionnaires/ + adr/);CONTEXT/OPEN-DECISIONS/TODO 为项目固有文件,路径不动。
-- **design-Q 骨架增强**:HLD/LLD 判别法则(phase-invariant vs incremental + 两句判别问句)+ 反简化最小必含(H1–H5/L1–L5 共 10 项,约束内容非仅结构)+ 坍缩分档。仅 design-Q 骨架,不扩散到 grill/retro/action。
-
-### v4(2026-08-05)
-
-- **方法论 + 哲学升 v4**:受众收窄为**个人开发者**;第二支柱补机制层立论(「无护栏 → AI 产出悄悄劣化」);哲学文件学科化(人因工程 / 软件工程 / 运筹学三视角)。
-- **术语版本注**:8 术语**全保留**(未换词),新增学科参照注记 + 新词引入三条件门槛(见 [CONTEXT 术语治理节](docs/CONTEXT.md));旧版 skill 副本无需术语迁移,但落盘路径(harness/)与规范优先级以本仓库为准。
-- **仓库结构**:harness/(设计文档 + 归档问卷)与 docs/(项目文件)物理分离;新增 AGENTS.md(Codex 入口路由)。
-- **规范优先级**:方法论主张(canonical)> ADR > CONTEXT 术语 > skill 规格 > 实操(见 [CLAUDE.md](CLAUDE.md));v3 保留作历史母本。
+仓库级对外变更记录见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 备注
 
