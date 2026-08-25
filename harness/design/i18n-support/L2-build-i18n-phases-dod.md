@@ -11,7 +11,7 @@
 | 1 | 技术栈 | 纯 python3 标准库(pathlib / hashlib / re),零第三方依赖,约 250 行,中文输出(与既有三脚本同栈同风格) |
 | 2 | 输出 | 逐行违规 `[类别] 文件: 说明`(五类:缺镜像 / 孤儿 / 过期 / 缺标记 / 断链)+ 分类小计 + 末行汇总 + EXIT 0/1;白名单 / EN_NATIVE 合法存在打注记行(不算违规) |
 | 3 | hash 口径 | zh 源文本 `\r\n → \n` 归一后 SHA-256 hexdigest **前 12 位**;en 的 zh-hash 字段同口径(防编辑器换行差异假报过期;代价 = 与原始字节不一致,注记于脚本 docstring) |
-| 4 | --stamp 模式 | `python3 scripts/i18n-check.py --stamp en/<相对路径>` = 更新该 en 文件 zh-hash 为当前 zh 源 hash;**只单文件粒度,无批量**(过期标记是漂移证据,只能逐文件回译后显式消除);check 默认模式零写入 |
+| 4 | --stamp 模式 | `python3 scripts/i18n-check.py --stamp en/<相对路径>` = 更新该 en 文件 zh-hash 为当前 zh 源 hash;**只单文件粒度,无批量**(过期标记是漂移证据,只能逐文件回译后显式消除);**前置校验**(grill-Q Q2 裁决 A,程序防御):en 文件 mtime 晚于 zh 源 mtime 才放行,否则拒绝(防「先盖戳后忘回译」消红;启发式可被 touch 绕过,最后防线仍是人审);check 默认模式零写入 |
 | 5 | frontmatter 解析 | 手写行式 KV:正则提取 `lang:` / `en-source:` / `zh-hash:` 三行(限文件头 frontmatter 块内),不引 PyYAML;SKILL.md 型既有 frontmatter 追加三字段,其余文件新建 frontmatter |
 
 ## §2 首期五阶段拆分与 DoD
@@ -33,25 +33,26 @@
 ### P3 methodology + CONTEXT 阶段(最重:1,555 行)
 
 - **内容**:methodology_v5(800 行)/ philosophy_v7(346)/ practical_v1(207)+ CONTEXT(202,含术语对照节英文呈现)翻译;术语表首批随翻随补。
-- **退出判据**:四文件 i18n-check 绿;门面必审;术语表首批补齐。
+- **退出判据**:四文件 i18n-check 绿;门面必审;术语表首批补齐;**翻译义务清单扩容**(TRANSLATABLE 加五件,代码注明出处)+ 复检绿(grill-Q Q3)。
 - **依赖**:P1;P2 的首批术语(无则空启)。
 
 ### P4 SKILL.md 阶段
 
-- **内容**:8 个 SKILL.md 翻译(frontmatter 的 name 保留原值、description 译英);引擎 / CHANGELOG / DESIGN 链接保持指中文原文(L1 §1.4)。
-- **退出判据**:八文件 i18n-check 绿;AI 自查 + 人抽查。
+- **内容**:8 个 SKILL.md 翻译(frontmatter 的 name 保留原值、description 译英);引擎 / CHANGELOG / DESIGN 链接保持指中文原文(L1 §1.4)。**特例条款**(grill-Q Q6):grill-with-docs 的 SKILL.md 本已英文为主(约 8% 行含中文),其 en 镜像 = 仅译残留中文部分(模式节 / 相变节),其余原样,仍走三字段标记与 hash。
+- **退出判据**:八文件 i18n-check 绿;AI 自查 + 人抽查;**翻译义务清单扩容**(TRANSLATABLE 加 skills/*/SKILL.md 模式)+ 复检绿(grill-Q Q3)。
 - **依赖**:P1;术语表(术语优先复用)。
 
 ### P5 CHANGELOG 阶段 + 终验收
 
 - **内容**:CHANGELOG 现条目全译(append-only 镜像);L0 验收七条终验(L1 §6.1 映射表逐条跑);收口三件(CHANGELOG「i18n 首期完成」条目 / STATUS-LOG 里程碑 / TODO i18n 块更新为「首期完成,扩面另立」)。
-- **退出判据**:i18n-check 全绿(五类 0)+ L0 验收七条全过。
+- **退出判据**:i18n-check 全绿(五类 0,无「已翻未入册」note)+ **翻译义务清单扩容**(TRANSLATABLE 加 CHANGELOG.md)+ L0 验收七条全过(grill-Q Q3)。
 - **依赖**:P1–P4 全部。
 
 ## §3 翻译流程模板(逐文件七步,执行期照走)
 
 1. 读 zh 源全文;
-2. 新术语提名(人当次确认入 CONTEXT 对照节;**不过夜**,人不在场则暂停于此步);
+2. 新术语提名(**按文件批量**:整文件翻完出提名表,人审环节一次勾认,与步骤⑤合并——grill-Q Q7 粒度裁决;同一会话内确认,不留欠账);
+   2.5. **发现 zh 源缺陷**(笔误/断链/表述缺陷)→ 停该文件翻译,报人修 zh(canonical 先行,英文永不回灌中文)→ hash 变 → 基于新版重算再翻(grill-Q Q5;zh 修复走既有修订路径,canonical 双件另有压测门);
 3. 翻译(占位符 / 代码块 / 公式 / URL / 路径原样保持;**mermaid 图内文本标签译英、结构与节点 ID 不动**——L1 §3.4 硬约束,2026-08-23 dogfood 修订);
 4. 写 en 文件(frontmatter 三字段:lang / en-source / zh-hash 占位);
 5. 分级人审(门面必审:README / methodology 三件 / CONTEXT;非门面 AI 自查 + 人抽查);
@@ -84,4 +85,4 @@
 | 2 | L1 §1.2 根 README 切换行原文 `**English** · [中文](./README.md)` 链接指向自身(笔误) | 按对称语义更正:`**中文** · [English](en/README.md)` / en 侧 `[中文](../README.md) · **English**` |
 | 3 | 「mermaid 原样不译」(L0 #12 / L1 §3.4)两条理由复核:「防图漂移」不成立(图在文件内,文件级 zh-hash 已覆盖),仅语法风险真实且可控;README 协作图是承重件,英文读者在图处断线 | L1 §3.4 修订:**图内文本标签译英,结构与节点 ID 不动**,渲染验证人审兜底;en/README.md 协作图已重译;触发 = 人审质询,用户裁决「修订并译图」(2026-08-23) |
 
-**流程观察**(不改规格,记档):① 七步流程可走通,步骤②(术语提名)与步骤⑤(人审)在人审环节自然合并为一次交互——流程成立;② ~~mermaid 中文标签保持原样后,英文读者从协作图获取的信息有限~~(已升级为缺口 #3 修订,图内标签译英);③ en/README.md frontmatter 在 GitHub 渲染为顶部表格——已知代价确认在案,等用户裁决是否换载体。
+**流程观察**(不改规格,记档):① 七步流程可走通,步骤②(术语提名)与步骤⑤(人审)在人审环节自然合并为一次交互——流程成立;② ~~mermaid 中文标签保持原样后,英文读者从协作图获取的信息有限~~(已升级为缺口 #3 修订,图内标签译英);③ en/README.md frontmatter 在 GitHub 渲染为顶部表格——**已裁决维持 frontmatter 载体**(2026-08-23 grill-Q Q10:字段机器可查、语义标准,视觉代价可忍;换 HTML 注释需改解析器 + 全部 en 文件,不值)。

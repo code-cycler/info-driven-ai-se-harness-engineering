@@ -209,6 +209,7 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 |---|---|---|
 | 镜像(发布镜像) | release mirror | [OD-10](OPEN-DECISIONS.md)——skill 发布分发副本语义;与下行「英文镜像」不同义,**禁混用**(2026-08-23 消歧裁决) |
 | 英文镜像 | translation mirror | [ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md)——本仓库 `en/` 翻译镜像树(i18n-support feature);中文源为唯一 canonical,英文单向派生 |
+| 翻译义务清单 | TRANSLATABLE | [i18n-check.py](../scripts/i18n-check.py)——en 镜像漂移检查的承诺集(「进清单即负翻译义务」,随阶段扩容);旧称「翻译白名单」。与 delegate「下放白名单」、sync-check「EXCEPTIONS 例外白名单」**不同义**,文档表述弃用裸「白名单」(2026-08-23 grill-Q Q8 消歧) |
 | 双支柱 | two pillars | 本文件「双支柱」节 |
 | 以信息为核心 | Information as the Core | 本文件「双支柱」节(第一支柱) |
 | 驾驭工程 = AI × 软件工程 | Engineering Mastery = AI × Software Engineering | 本文件「双支柱」节(第二支柱) |

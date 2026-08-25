@@ -153,6 +153,12 @@ def main() -> int:
         if not zh_file.is_file():
             print(f"[错误] zh 源不存在: {fields['en-source']}(先处理孤儿)")
             return 2
+        # 前置校验(grill-Q Q2 裁决 A,程序防御):en mtime 早于 zh 源 → 译文可能未基于
+        # 最新源回译,拒绝盖戳。启发式(可被 touch 绕过),最后一道防线仍是人审。
+        if en_file.stat().st_mtime < zh_file.stat().st_mtime:
+            print(f"[拒绝] en/{stamp} 的 mtime 早于 zh 源 {fields['en-source']}——"
+                  f"译文可能未基于最新源回译;先完成回译再 stamp(不能为消红直接盖戳)。")
+            return 2
         new_hash = norm_hash(zh_file)
         content = en_file.read_text(encoding="utf-8")
         content, n = re.subn(rf"({re.escape('zh-hash')}:\s*)\S+",
@@ -201,6 +207,17 @@ def main() -> int:
             violations["过期"].append(
                 f"[过期] en/{rel}: zh 源 {zh_rel} 已变(记录 {fields['zh-hash']} ≠ 当前),待回译")
         check_links(en_file, rel, violations["断链"])
+
+    # 「已翻未入册」提示(grill-Q Q3 裁决 C:翻完忘扩 TRANSLATABLE = 漂移检查静默
+    # 缺口;note 行非违规,漏扩容兜底)
+    listed = set(expand_translatable(repo))
+    for rel in collect_en_files(en_root):
+        if rel in EN_NATIVE:
+            continue
+        f2 = parse_frontmatter((en_root / rel).read_text(encoding="utf-8", errors="replace"))
+        if f2 and f2.get("en-source") and f2["en-source"] not in listed:
+            notes.append(f"en/{rel}: 已翻但 zh 源 {f2['en-source']} 不在翻译义务清单"
+                         f"(TRANSLATABLE)——漏扩容?(grill-Q Q3 note)")
 
     # 输出(仿 skills-sync-check 风格)
     total = 0
