@@ -200,3 +200,33 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 ## 脱敏
 
 本仓库内容已去除作者项目名 / 路径 / 个人标识(发布门槛见 [OD-1](OPEN-DECISIONS.md),检查脚本 [scripts/desensitize.py](../scripts/desensitize.py))。归档问卷中的「项目A / 项目B …」为脱敏占位。
+
+## 英文术语对照(English Glossary)(2026-08-23,i18n-support L1 契约)
+
+> 英文镜像(`en/`)翻译的唯一术语事实源([ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md));新译名 = agent 起草 + 人确认后入本表,翻译以本表为准,**禁各文件自译**。首批高频术语随首期翻译逐文件提取补齐;中文定义以「定义锚点」指向的既有中文定义为权威,本表只加译名列,不改中文定义。与哲学文档「关键术语中英并置」(WAI/WAD)裁决先例一致。
+
+| 术语 | EN | 定义锚点 |
+|---|---|---|
+| 镜像(发布镜像) | release mirror | [OD-10](OPEN-DECISIONS.md)——skill 发布分发副本语义;与下行「英文镜像」不同义,**禁混用**(2026-08-23 消歧裁决) |
+| 英文镜像 | translation mirror | [ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md)——本仓库 `en/` 翻译镜像树(i18n-support feature);中文源为唯一 canonical,英文单向派生 |
+| 双支柱 | two pillars | 本文件「双支柱」节 |
+| 以信息为核心 | Information as the Core | 本文件「双支柱」节(第一支柱) |
+| 驾驭工程 = AI × 软件工程 | Engineering Mastery = AI × Software Engineering | 本文件「双支柱」节(第二支柱) |
+| 信息流转 | information flow | 本文件「第一支柱术语分层」节 |
+| 有效上下文 | effective context | 本文件「第一支柱术语分层」节 |
+| 信息真空 | information vacuum | 本文件「第一支柱术语分层」节 |
+| 幻觉式自作主张决策 | hallucinated self-directed decisions | 本文件「第一支柱术语分层」节(背景缺失条目) |
+| 5 环节闭环 | five-stage loop | 本文件「5 环节闭环」节 |
+| skill 家族 | skill family | 本文件「skill 家族」节 |
+| 横切 | cross-cutting | 本文件「5 环节闭环」节 |
+| 对抗压测 | adversarial stress test | 本文件「Grill 家族」节(grill-Q D1–D8) |
+| 逃生舱 | escape hatch | 各 SKILL.md 作答规则(🤔 降风险协议) |
+| 单点深钻 | single-point deep dive | 本文件「Grill 家族」节(单点深钻族) |
+| 单向门 | one-way door | 各问卷「单向门要点永不预勾」规则 |
+| 三区模型 | three-zone model | README「仓库结构(三区模型)」节 |
+| 最小采用切片 | minimal adoption slice | README「最小采用切片」节 |
+| 生产车间 | production workshop | README「最小采用切片」节 / CLAUDE.md「仓库定位」 |
+| 复盘 | retrospective | 本文件「5 环节闭环」节(retro-Q) |
+| 脱敏 | desensitization | 本文件「脱敏」节 |
+
+> 首批 18 条(上表第 3 行起)随 P2 README 翻译提取,人审通过(2026-08-23);后续文件翻译时随翻随补(七步流程第②步,提名不过夜)。

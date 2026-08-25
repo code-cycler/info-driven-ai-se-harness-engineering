@@ -1,5 +1,7 @@
 # info-driven-ai-se-harness-engineering
 
+**中文** · [English](en/README.md)
+
 > **以信息为核心 × 驾驭工程(AI + 软件工程)** —— 个人 AI native 开发方法论 + 可直接运行的 skill 执行体。
 
 > ⚠️ **experimental · 个人维护 · 不保证响应**。这是一套个人开发经验的整理分享,不是官方框架。方法论与 skill 都在迭代中。欢迎 issue,但响应不保证。
