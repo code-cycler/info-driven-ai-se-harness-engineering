@@ -15,6 +15,15 @@
 
 ## 待办(新会话 design-Q 起点)
 
+### 🔶 i18n 支持(英文镜像,design-Q feature 设计执行中,2026-08-22 立项)
+
+> 来源:用户发起「本仓库 i18n 支持:首选语言中文、支持英语、单独文件夹治理、与中文同步、重点关注漂移治理,接轨既有漂移治理资产(铁律 8 / OD-8 / OD-24 / ADR-0024 / skills-sync-check),范围全仓库,镜像翻译」。全库纯中文(230 .md / 23,576 行),无任何 i18n 基础设施。= 重访 readme-revamp「不做英文 README(未来可选项)」已决项。
+
+- ⏳ **设计 · 三层全链完成(2026-08-23)+ dogfood 微闭环(P1+P2)已过**:L0 23/23 + L1 21/21 + L2 17/17 全采纳(设计套 [harness/design/i18n-support/](harness/design/i18n-support/):L0-vision / L1-contract / L2-build 三件 + [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md) + CONTEXT 英文术语对照节)。dogfood 微闭环(收尾面板裁决)= P1 机制 + P2 README 英译已交付并四门全绿;**剩余 P3–P5 待 long-running 推进**:P3 methodology 三件+CONTEXT → P4 8 SKILL.md → P5 CHANGELOG+终验收 → 核验:各阶段 DoD + L0 验收七条(L1 §6.1 映射表)
+- ✅ **既有已决项重访留痕**(L0 #22,P1 已落,2026-08-23):① readme-revamp L0 设计文档该行重访注记 ✓;② 根 CHANGELOG「i18n 立项」条目 ✓ → 核验:两处 grep 命中各 1
+- ✅ **scripts/i18n-check.py**(L0 #14 + L1 §2 硬约束,P1 已落,2026-08-23):三检查五类输出 + TRANSLATABLE 随阶段扩容白名单 + EN_NATIVE 豁免;T1–T7 自测全绿(含 L0 验收⑥ 检出可演示);四门全绿
+- ✅ **L1 判定项已关闭**(2026-08-23):archive 未进白名单 = 当前无翻译义务(后续迭代纳入须改白名单 + 同批交付);同步标记 = 内容 hash(SHA-256 前 12 位)
+
 ### 🟡 skill 家族形态修订(grill-Q skill-family W01 产出,2026-08-19)
 
 > 来源:[grill-skill-family-w01](harness/questionnaires/archive/_misc/grill-skill-family-w01.md)(10 题裁决;焦点 = 轻任务过度准备 / grill 合并提案 / 精炼判据 / 哲学符合度)。grill 合并提案被否(维持 [OD-12](docs/OPEN-DECISIONS.md),提问方法论第 5 份隐性副本进 [OD-8](docs/OPEN-DECISIONS.md) 治理);核心发现 = 哲学已预判过度准备风险(元原则失败模式表)但 skill 规格层未承接(无轻重分级、无轻量模式、无轻任务下限)。

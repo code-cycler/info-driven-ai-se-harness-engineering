@@ -2,6 +2,10 @@
 
 > 承接原 CLAUDE.md「仓库状态」节的历史条目(ADR-0024 P3 迁移,2026-08-20,原文逐字保留)。**只记内部工作状态时间线**;对外可感知变更见仓库根 [CHANGELOG.md](../CHANGELOG.md)(其记录规则明确排除内部治理);当前状态快照见 [CLAUDE.md](../CLAUDE.md)。追加式,只增不改。
 
+## 2026-08-23:i18n-support 设计三层全链 + dogfood 微闭环(P1+P2)
+
+design-Q feature i18n-support(用户发起,重访 readme-revamp「不做英文 README」已决项)三层问卷全采纳(L0 23 / L1 21 / L2 17,61 条零取消零逃生舱)→ 设计套 [harness/design/i18n-support/](../harness/design/i18n-support/) + [ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md)(英文镜像第三轴:顶级 en/ 镜像树 + en 文件头三字段 + i18n-check 五类漂移检查 + 第四道手动提交门,与双侧同步正交零侵入)+ [CONTEXT「英文术语对照」节](../docs/CONTEXT.md)(镜像消歧 2 条 + 首批 18 条)。收尾面板裁决:单线程 / 先 dogfood / 压测 / 衔接 long-running。dogfood 微闭环:P1 机制([i18n-check.py](../scripts/i18n-check.py) T1–T7 自测全绿)+ P2 README 英译(含 mermaid 图内标签译英——人审质询触发 L1 §3.4 修订)+ 规格缺口 3 处回修(白名单随阶段扩容 / 切换行笔误 / mermaid 译图,记 [L2 §6](../harness/design/i18n-support/L2-build-i18n-phases-dod.md));四门全绿(脱敏 0 / 双侧同步 0 / harness 0 / i18n 0)。P3–P5 留 long-running。
+
 ## 2026-08-19:grill 家族边界与跑偏治理(深钻 → 复压闭环)
 
 grill-with-docs 深钻四分支(认知状态三态接线 / 入口+中途双检测 / 校准闸门+题级 ❌ 标注双件 / 优化回路 [OD-26](../docs/OPEN-DECISIONS.md) provisional)→ 包一 skill 规格层落地(grill-Q 族间自检/校准闸门/阻塞性逃生舱分流/质量信号节 + FORMAT 规则 15 ❌ 专属分叉 + with-docs 反向相变)→ [grill-boundary-canonical-w01](../harness/questionnaires/archive/_misc/grill-boundary-canonical-w01.md) 复压(9 题全采纳 + Q8 推翻推荐 → 本文件同步三态)→ canonical 版本内修订(哲学 §3.1 认知状态行;方法论 §4.1 接线 / §4.3 优先级 / §3.3.1 指针 / §八 第 25 条;两文件头修订记录行)。斯多葛视角不落盘(对话层)。OD-4 母本同步(仓库外)累计一笔。
