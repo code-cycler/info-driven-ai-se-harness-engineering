@@ -19,7 +19,7 @@
 
 **明确不做**:
 - 不动 CLAUDE.md / CONTEXT.md / 方法论三块 / skills(README 与 CLAUDE.md 分工维持:README = 对外门面,CLAUDE.md = 会话工作指令)。**例外**(2026-08-20 grill-Q W01 Q2):CONTEXT「提问维度速查」节头部加一行反向指针(「本表修订时 README 维度速查表必同步」)——同步义务必须挂在触发现场(CONTEXT 修订者读 CONTEXT 自身)才有效,一行机械改动,非范围蔓延;
-- 不做英文 README(列为未来可选项,外部反馈出现需求时再议,在 CHANGELOG 记一笔留痕);
+- 不做英文 README(列为未来可选项,外部反馈出现需求时再议,在 CHANGELOG 记一笔留痕);**〔已重访推翻,2026-08-23〕**用户发起 i18n 立项(feature-i18n-support,重访触发条件满足)——英文 README 随英文镜像树落地,见 [ADR-0025](../../adr/0025-english-mirror-drift-governance-integration.md) + [i18n-support 设计套](../i18n-support/L0-vision-i18n-support.md)(L0 #22 裁决);
 - 不加「端到端使用叙事」长节(一天开发走全环节的完整故事)——该需求由协作图 + 卡片触发场景 + 实操 §8.3 时机表链接覆盖;
 - 不做装饰性 badge 堆砌(只引入要点 13 的 2–3 枚)。
 

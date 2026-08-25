@@ -4,6 +4,11 @@
 
 > **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
 
+## i18n 立项:英文镜像启动(2026-08-23,ADR-0025)
+
+- **本条 = 重访留痕**:readme-revamp(2026-08-20)曾决「不做英文 README(列为未来可选项,外部反馈出现需求时再议)」——本次用户发起 i18n 立项(feature-i18n-support),触发条件满足,该决正式推翻(见 [readme-revamp 设计文档注记](harness/design/readme-revamp/L0-vision-readme-first-impression.md)与 [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md))。
+- **采用者可感知的变化**:仓库新增顶级 `en/` 英文镜像目录(中文为唯一权威源,英文单向派生);根 README 顶部新增语言切换行;新增 `scripts/i18n-check.py`(英文镜像漂移检查:缺镜像 / 孤儿 / 过期 / 缺标记 / 断链五类,提交前手动门第四道)。翻译分阶段推进:首期已覆盖 README,methodology 三件 / CONTEXT / OPEN-DECISIONS / 8 个 SKILL.md / CHANGELOG 随后分批;历史版本(archive/)与内部治理产物不翻译。
+
 ## skill 演进(2026-08-20,治理历史分离 + 双侧形态分工,ADR-0024)
 
 - **每个 skill 新增 `CHANGELOG.md`(治理历史,仅本仓库持有)**:SKILL.md 内带日期的裁决出处注记全部迁出,SKILL.md 只留规则现值 + 头部一行索引导向——**SKILL.md 常驻上下文密度提升**(第一支柱落到仓库自身形态);三份问卷 skill 另增 `FORK-NOTES.md`(有意分叉声明,双侧一致)。设计决策仍见各 `DESIGN.md`(收敛为纯决策表)。
