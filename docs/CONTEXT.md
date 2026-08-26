@@ -229,5 +229,36 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 | 生产车间 | production workshop | README「最小采用切片」节 / CLAUDE.md「仓库定位」 |
 | 复盘 | retrospective | 本文件「5 环节闭环」节(retro-Q) |
 | 脱敏 | desensitization | 本文件「脱敏」节 |
+| 信息断层 | information gap | 本文件「第一支柱术语分层」节 |
+| 机制层 / 度量层 / 症状层 | mechanism layer / metric layer / symptom layer | 本文件「第一支柱术语分层」节 |
+| 判断性决策 | judgment-type decision | 本文件「人机分工术语」节 |
+| 纯执行类决策 | pure-execution decision | 本文件「人机分工术语」节 |
+| 决策分层 | decision tiering | 方法论 §4.5 |
+| 认知状态三态 | three cognitive states | 本文件「Grill 家族」节 |
+| 批量问卷族 | batch questionnaire family | 本文件「Grill 家族」节 |
+| 单点深钻族 | single-point deep-dive family | 本文件「Grill 家族」节 |
+| 层闸门 | layer gate | design-Q 层闸门协议 |
+| 环节 | stage(主路径) | 方法论 §三 |
+| 正交(可插入) | orthogonal (insertable) | 方法论 §3.3 |
+| 降风险协议 | de-risking protocol | 方法论 §4.4 |
+| 双向门 | two-way door | 方法论 §4.4 门型表 |
+| 爆炸半径 | blast radius | grill-Q D4 |
+| 失败模式 | failure mode | 方法论 §八 / 哲学 §五 |
+| 治理性偏差 | governance-level deviation | [ADR-0021](../harness/adr/0021-design-implementation-deviation-governance.md) |
+| 契约优先 | contract-first | 方法论 §5.3 时序纪律 |
+| 时序纪律 | sequencing discipline | 方法论 §5.3 |
+| 证据前置 | evidence-first | 方法论 §3.3.2 |
+| 未验证假设台账 | unverified-assumption ledger | design-Q STAGE-SKELETONS §1 |
+| 验证卡 | verification card | [ADR-0016](../harness/adr/0016-method-claim-assurance-contract.md) |
+| 不可裁剪治理核心 | non-negotiable governance core | [ADR-0019](../harness/adr/0019-methodology-nonnegotiable-guardrails.md) |
+| 元原则 | meta-principles | 哲学 §五 |
+| 嵌套黑盒 | nested black box | 本文件「AI 黑盒」节(L3) |
+| 信任劫持 | trust hijacking | 本文件「AI 黑盒」节 |
+| 潜伏沉积 | latent accumulation | 哲学 §4.3 |
+| 失控放大 | loss-of-control amplification | 哲学 §4.3 |
+| 潜伏条件 | latent conditions | 哲学 §4.3(Reason) |
+| 影子模式 | shadow mode | 哲学 §3.2([OD-13](OPEN-DECISIONS.md)) |
+| 情境意识 | situation awareness | 哲学 §一(Endsley) |
+| 认知负荷 | cognitive load | 哲学 §一(与有效上下文不可换算) |
 
-> 首批 18 条(上表第 3 行起)随 P2 README 翻译提取,人审通过(2026-08-23);后续文件翻译时随翻随补(七步流程第②步,提名不过夜)。
+> 首批 18 条(上表第 3–20 行)随 P2 README 翻译提取,人审通过(2026-08-23);第二批 31 条随 P3 四件翻译批量提名,人审通过(2026-08-25);后续文件翻译时随翻随补(七步流程第②步,按文件批量)。

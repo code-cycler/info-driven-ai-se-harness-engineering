@@ -1,0 +1,14 @@
+Translation notice (EN_NATIVE file — no Chinese source; see ADR-0025 / L1-contract-en-mirror-governance.md §2.4)
+
+The English files under en/docs/ are translations of the Chinese originals under docs/
+(the methodology articles). The Chinese text is canonical; in case of conflict, the
+Chinese version governs.
+
+License: the originals under docs/ are licensed CC-BY 4.0 (see docs/LICENSE for the
+full legal code). These translations are derivatives of those originals and carry the
+same CC-BY 4.0 terms: attribution to this repository (info-driven-ai-se-harness-
+engineering), with a note of translation changes. The CC-BY 4.0 legal code itself is
+not translated here; the English original at docs/LICENSE is authoritative.
+
+Files under en/skills/ translate materials under skills/ and carry that directory's
+MIT license (see the repository root LICENSE).
