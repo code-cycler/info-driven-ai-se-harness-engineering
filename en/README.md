@@ -186,4 +186,5 @@ English translations live under `en/`, mirroring the Chinese paths one-to-one (`
 
 - ✅ `en/README.md` — this file
 - ✅ `en/docs/CONTEXT.md`, `en/docs/OPEN-DECISIONS.md`, `en/docs/methodology/` (methodology_v5 / philosophy_v7 / practical_v1) — done (2026-08-25)
-- ⏳ `en/CHANGELOG.md`, `en/skills/*/SKILL.md` — in progress
+- ✅ `en/skills/*/SKILL.md` (8 files; grill-with-docs = special case, English body carried verbatim + residual Chinese translated) — done (2026-08-26)
+- ⏳ `en/CHANGELOG.md` — in progress

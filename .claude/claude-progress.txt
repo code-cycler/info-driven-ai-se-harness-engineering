@@ -1,4 +1,30 @@
 ================================================================================
+SESSION: i18n 实现期会话 02(F047/P4 完成,F048 待续)
+时间: 2026-08-26T16:40:00+08:00
+================================================================================
+
+## 完成的任务
+- F047 ✅ P4 八件 SKILL.md en 镜像(1,151 行 en):action/delegate/design/doctor/grill/gwd(特例)/long-running/retro;name 保留原值、description 译英;引擎/ADR 链接重指中文原文,OD-13 指 en 镜像
+- 术语第三批 28 条入 zh CONTEXT 对照节(累计 80 条)+ en CONTEXT 英文侧同步
+- 人审面板四裁决:术语全收 / 裁决 A(文档型围栏块中文文案译出)认可 / 裁决 B(gwd 特例加标准头部)认可 / 免抽查直收
+- AI 自查全绿:frontmatter 8/8、漏译 0(12 处 CJK 均为有意保留:切换行标签×8/项目B 占位符/grep 命令串/引述 UI 标签)、断链 0、结构保真(标题数 8/8 相等、表格/铁律条数相等)
+
+## 修改的文件
+- en/skills/{8 skill}/SKILL.md(新建)、docs/CONTEXT.md(+28 条)、en/docs/CONTEXT.md(英文侧+28 条)、en/README.md(镜像树 P4 转实)、scripts/i18n-check.py(TRANSLATABLE 扩容 skills/*/SKILL.md)、TODO.md、.claude/{feature_list.json,claude-progress.txt}
+
+## Git 提交
+- b6c7c37(design)/ 00b4eef(grill)/ 78c1902(action)/ de72eb3(retro)/ bf4733c(long-running)/ 026a9b1(delegate)/ b10cde2(doctor)/ 71e7795(gwd)+ 本收口 commit
+
+## 遇到的问题
+- 裁决 A:L1 §3.4「代码块原样」字面 vs 文档型围栏块(checklist/JSON 模板)——人审认可译出(可执行代码仍原样)
+- 裁决 B:特例条款「其余原样」最小学面 vs 镜像家族头部统一——人审认可加头部
+- 术语一致性:翻译前 grep 既有 en 译文(land/artifact/stress test/whitelist/mode: full/task package/iron rule/processing report),新译名全部对齐已审渲染
+
+## 下一步计划
+- F048(P5):en/CHANGELOG.md 现条目全译 + TRANSLATABLE 扩容 + L0 验收七条终验(L1 §6.1)+ 收口三件(根 CHANGELOG 条目/STATUS-LOG 里程碑/TODO 块「首期完成,扩面另立」)
+
+================================================================================
+================================================================================
 SESSION: i18n 实现期会话 01(F046/P3 完成,F047–F048 待续)
 时间: 2026-08-25T23:30:00+08:00
 ================================================================================

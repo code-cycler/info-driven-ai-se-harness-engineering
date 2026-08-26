@@ -713,9 +713,9 @@
         "AI 自查 + 人抽查记录",
         "TRANSLATABLE 扩容加 skills/*/SKILL.md 模式 + 复检绿"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "依赖 F046(术语优先复用)"
+      "passes": true,
+      "last_tested": "2026-08-26T16:30:00+08:00",
+      "notes": "八件全绿(action 111/delegate 91/design 131/doctor 83/grill 121/gwd 195/long-running 354/retro 65 行);人审=AI 自查+免抽查直收(2026-08-26 面板四裁决:术语第三批 28 条全收/裁决 A 认可/裁决 B 认可);TRANSLATABLE 扩容+复检绿;四门全绿;commits b6c7c37…71e7795"
     },
     {
       "id": "F048",

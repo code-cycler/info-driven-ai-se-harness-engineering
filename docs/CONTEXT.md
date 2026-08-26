@@ -260,5 +260,33 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 | 影子模式 | shadow mode | 哲学 §3.2([OD-13](OPEN-DECISIONS.md)) |
 | 情境意识 | situation awareness | 哲学 §一(Endsley) |
 | 认知负荷 | cognitive load | 哲学 §一(与有效上下文不可换算) |
+| 铁律(不可违反) | iron rules (inviolable) | 各 SKILL.md「铁律」节 |
+| 工件 | artifact | grill-Q SKILL「术语」节 |
+| 主流程 | main flow | 各 SKILL.md「主流程」节 |
+| 处理报告 | processing report | 各 SKILL.md 第 4 步 |
+| 小波阈值 | small-wave threshold | design-Q / grill-Q / action-Q / retro-Q SKILL.md |
+| 落盘 | land (write to disk) | 全 SKILL.md 高频(与「即时沉淀」配套) |
+| 压测 | stress test | grill-Q SKILL.md(D1–D8) |
+| 关键声明清单 | key-claim list | grill-Q SKILL.md 第 1 步 |
+| 绿地子模式 | greenfield submode | grill-Q SKILL.md 第 0 步 |
+| 代码库绑定模式 | codebase-bound mode | grill-Q / grill-with-docs SKILL.md |
+| 纯逻辑模式 | pure-logic mode | grill-Q SKILL.md 第 0 步 |
+| 判断权 | judgment rights | delegate SKILL.md 铁律 1 |
+| 全权模式 | full-authority mode (`mode: full`) | delegate SKILL.md「全权模式」节 / OD-13 |
+| 排除集 | exclusion set | delegate SKILL.md「全权模式」节 |
+| 建议升级(权) | escalation-proposal right | delegate SKILL.md 铁律 2 |
+| 只增不改 | append-only, never edited | delegate SKILL.md 铁律 4 |
+| 治理历史 | governance history | 各 SKILL.md 头部索引行 / ADR-0024 |
+| 有意分叉 | intentional fork | 各 SKILL.md 头部索引行 / FORK-NOTES.md |
+| 引擎副本 | engine copy | 各 SKILL.md supporting-info(OD-8) |
+| 旧三件 | legacy trio (VISION/HLD/LLD) | design-Q / long-running SKILL.md |
+| 层文件(LN 制) | layer files (LN naming) | design-Q / long-running SKILL.md |
+| 五源读取 | five-source reading | retro-Q SKILL.md 第 1 步 |
+| 架构偏离 | architectural deviation | retro-Q SKILL.md(四节之一) |
+| 一次一个功能 | one feature at a time | long-running SKILL.md §6 |
+| 单次收尾面板 | single closing panel | design-Q SKILL.md 第 5 步 |
+| 收尾停点 | closing stop point | design-Q / long-running SKILL.md |
+| 入口校准闸门 | entry-calibration gate | design-Q / grill-Q SKILL.md |
+| 环境现实验证 | environment reality verification | design-Q / action-Q SKILL.md |
 
-> 首批 18 条(上表第 3–20 行)随 P2 README 翻译提取,人审通过(2026-08-23);第二批 31 条随 P3 四件翻译批量提名,人审通过(2026-08-25);后续文件翻译时随翻随补(七步流程第②步,按文件批量)。
+> 首批 18 条(上表第 3–20 行)随 P2 README 翻译提取,人审通过(2026-08-23);第二批 31 条随 P3 四件翻译批量提名,人审通过(2026-08-25);第三批 28 条随 P4 八件 SKILL.md 翻译批量提名,人审通过(2026-08-26,免抽查直收),累计 80 条;后续文件翻译时随翻随补(七步流程第②步,按文件批量)。

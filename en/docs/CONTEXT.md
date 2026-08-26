@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: 98c28097cddf
+zh-hash: 20578677de6f
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -269,5 +269,33 @@ This repository's content has had the author's project names / paths / personal 
 | 不可裁剪治理核心 | non-negotiable governance core | [ADR-0019](../../harness/adr/0019-methodology-nonnegotiable-guardrails.md) |
 | 影子模式 | shadow mode | philosophy §3.2 ([OD-13](OPEN-DECISIONS.md)) |
 | 决策分层 | decision tiering | methodology §4.5 |
+| 铁律(不可违反) | iron rules (inviolable) | each SKILL.md's "Iron rules" section |
+| 工件 | artifact | grill-Q SKILL.md "Terms" section |
+| 主流程 | main flow | each SKILL.md's "Main flow" section |
+| 处理报告 | processing report | each SKILL.md step 4 |
+| 小波阈值 | small-wave threshold | design-Q / grill-Q / action-Q / retro-Q SKILL.md |
+| 落盘 | land (write to disk) | high-frequency across all SKILL.md (paired with "sediment immediately") |
+| 压测 | stress test | grill-Q SKILL.md (D1–D8) |
+| 关键声明清单 | key-claim list | grill-Q SKILL.md step 1 |
+| 绿地子模式 | greenfield submode | grill-Q SKILL.md step 0 |
+| 代码库绑定模式 | codebase-bound mode | grill-Q / grill-with-docs SKILL.md |
+| 纯逻辑模式 | pure-logic mode | grill-Q SKILL.md step 0 |
+| 判断权 | judgment rights | delegate SKILL.md iron rule 1 |
+| 全权模式 | full-authority mode (`mode: full`) | delegate SKILL.md "Full-authority mode" section / OD-13 |
+| 排除集 | exclusion set | delegate SKILL.md "Full-authority mode" section |
+| 建议升级(权) | escalation-proposal right | delegate SKILL.md iron rule 2 |
+| 只增不改 | append-only, never edited | delegate SKILL.md iron rule 4 |
+| 治理历史 | governance history | each SKILL.md's header index line / ADR-0024 |
+| 有意分叉 | intentional fork | each SKILL.md's header index line / FORK-NOTES.md |
+| 引擎副本 | engine copy | each SKILL.md's supporting-info (OD-8) |
+| 旧三件 | legacy trio (VISION/HLD/LLD) | design-Q / long-running SKILL.md |
+| 层文件(LN 制) | layer files (LN naming) | design-Q / long-running SKILL.md |
+| 五源读取 | five-source reading | retro-Q SKILL.md step 1 |
+| 架构偏离 | architectural deviation | retro-Q SKILL.md (one of the four sections) |
+| 一次一个功能 | one feature at a time | long-running SKILL.md §6 |
+| 单次收尾面板 | single closing panel | design-Q SKILL.md step 5 |
+| 收尾停点 | closing stop point | design-Q / long-running SKILL.md |
+| 入口校准闸门 | entry-calibration gate | design-Q / grill-Q SKILL.md |
+| 环境现实验证 | environment reality verification | design-Q / action-Q SKILL.md |
 
-> Second batch, 31 entries (from the methodology/philosophy/practical/OPEN-DECISIONS/CONTEXT translations): proposed per file batch and **confirmed by human review (2026-08-25)**; landed in the zh table above (single source) and mirrored here.
+> Second batch, 31 entries (from the methodology/philosophy/practical/OPEN-DECISIONS/CONTEXT translations): proposed per file batch and **confirmed by human review (2026-08-25)**; landed in the zh table above (single source) and mirrored here. Third batch, 28 entries (from the 8 SKILL.md translations): **confirmed by human review (2026-08-26, spot-check waived)**; cumulative 80 entries.
