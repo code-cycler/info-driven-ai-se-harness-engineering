@@ -7,7 +7,7 @@
 
 ## 快速上手:skill 使用流程一图
 
-本文阐述方法论内核;9 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
+本文阐述方法论内核;8 个 Claude Code skill 是它的执行体。单个功能从念头到交付的典型用法:
 
 ```mermaid
 flowchart TD
@@ -18,7 +18,7 @@ flowchart TD
     E --> F["📊 /retro-questionnaire<br/>复盘沉淀 + Action Items"]
     F -.->|新想法 / 经验| A
 
-    G["🎯 /grill · /grill-with-docs<br/>实现期单点深钻(一问一答)"] -.->|任意环节插入| E
+    G["🎯 /grill-with-docs<br/>实现期单点深钻(一问一答,含通用模式)"] -.->|任意环节插入| E
     H["⚙️ /delegate<br/>纯执行决策下放(横切)"] -.-> B
     H -.-> C
     H -.-> E
