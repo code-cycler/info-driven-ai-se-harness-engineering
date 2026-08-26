@@ -655,6 +655,82 @@
       "passes": true,
       "last_tested": "2026-08-20T20:30:00+08:00",
       "notes": "P4 完成:外部实证双载体分流(DOGFOOD-LOG 8 条真实名 + 项目侧脱敏汇总 + repo 演练条目回填——前置检查抓到分流遗漏)/⚠ 逐文件 diff 后删全局侧 6 DESIGN + CHANGELOG/HISTORY_LAYER 增补 DESIGN(执行期修正)/EXCEPTIONS 清空/根 CHANGELOG 记一条/终验:sync EXIT=0(15 历史层合法 + 1 全局私有合法)+ harness 0 + desensitize 0;L0 验收六条全过"
+    },
+    {
+      "id": "F044",
+      "category": "functional",
+      "priority": "high",
+      "description": "i18n P1 机制:scripts/i18n-check.py 五类漂移检查(缺镜像/孤儿/过期/缺标记/断链)+ 第四道手动提交门 + readme-revamp 重访留痕两处 + CLAUDE.md 工具命令③(ADR-0025 / L2 §2 P1)",
+      "steps": [
+        "python3 scripts/i18n-check.py 可运行且 check-only 零写入",
+        "伪造样例分别触发五类(T1–T9 自测)",
+        "python3 scripts/skills-sync-check.py 0 违规(en/ 不入扫描面)",
+        "readme-revamp 设计文档重访注记与根 CHANGELOG 条目各 grep 命中"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-23T22:30:00+08:00",
+      "notes": "T1–T9 全绿(含 CRLF 容差/mtime 防御/未入册 note);commit 8243b4d + grill-Q 加固 33fb967;四门全绿"
+    },
+    {
+      "id": "F045",
+      "category": "functional",
+      "priority": "high",
+      "description": "i18n P2 README 英文镜像:en/README.md 全文译(含 mermaid 图内标签译英)+ zh README 切换行 + 首批术语 18 条入 CONTEXT 对照节(L2 §2 P2)",
+      "steps": [
+        "en/README.md 存在且 frontmatter 三字段齐全",
+        "python3 scripts/i18n-check.py --stamp 后该文件绿(0 违规)",
+        "python3 scripts/desensitize.py . 0 命中",
+        "人审记录(门面必审,Translated/Reviewed 注记在 commit c313b4e)"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-23T22:30:00+08:00",
+      "notes": "人审通过(含 mermaid 译图裁决);术语 18 条 + 消歧 3 条已入 CONTEXT;commit c313b4e"
+    },
+    {
+      "id": "F046",
+      "category": "functional",
+      "priority": "high",
+      "description": "i18n P3 methodology+CONTEXT 翻译:methodology_v5(800 行)/philosophy_v7(346)/practical_v1(207)/CONTEXT(202,含术语对照节英文呈现)四件 en 镜像 + 术语随翻随补 + 翻译义务清单扩容(L2 §2 P3)",
+      "steps": [
+        "四个 en 文件存在且 frontmatter 三字段齐全",
+        "python3 scripts/i18n-check.py 四文件绿(逐文件 --stamp 后)",
+        "门面必审:四文件人审记录(git 注记)",
+        "CONTEXT 对照节新增术语批量勾认(七步②)",
+        "TRANSLATABLE 扩容加五件(代码注明出处)+ 复检绿"
+      ],
+      "passes": true,
+      "last_tested": "2026-08-25T23:30:00+08:00",
+      "notes": "五件全绿(methodology_v5 788/philosophy_v7 352/practical_v1 230/OPEN-DECISIONS 333/CONTEXT 273 行 en);门面必审通过+OD 抽查(2026-08-25 均通过);术语第二批 31 条入表;七步②.5 实证(practical zh 源缺陷停翻报修);TRANSLATABLE 扩容+复检绿;四门全绿;commits 290b2c1…484e24a"
+    },
+    {
+      "id": "F047",
+      "category": "functional",
+      "priority": "medium",
+      "description": "i18n P4 8 个 SKILL.md 翻译:name 保留原值/description 译英;引擎链接指中文原文;grill-with-docs 特例(仅译残留中文部分)(L2 §2 P4)",
+      "steps": [
+        "8 个 en/skills/*/SKILL.md 存在且三字段齐全",
+        "i18n-check 八文件绿",
+        "AI 自查 + 人抽查记录",
+        "TRANSLATABLE 扩容加 skills/*/SKILL.md 模式 + 复检绿"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "依赖 F046(术语优先复用)"
+    },
+    {
+      "id": "F048",
+      "category": "functional",
+      "priority": "high",
+      "description": "i18n P5 CHANGELOG 翻译 + 终验收:en/CHANGELOG.md 现条目全译 + TRANSLATABLE 扩容 + L0 验收七条终验(L1 §6.1 映射表)+ 收口三件(CHANGELOG 条目/STATUS-LOG/TODO 块)(L2 §2 P5)",
+      "steps": [
+        "en/CHANGELOG.md 存在且绿",
+        "i18n-check 全绿(五类 0 + 无「已翻未入册」note)",
+        "L0 验收七条逐条跑通(①②③⑥=i18n-check;④=desensitize;⑤=sync-check;⑦=白名单全集)",
+        "收口三件落盘"
+      ],
+      "passes": false,
+      "last_tested": null,
+      "notes": "依赖 F046+F047"
     }
   ]
 }

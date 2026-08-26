@@ -19,7 +19,7 @@
 
 > 来源:用户发起「本仓库 i18n 支持:首选语言中文、支持英语、单独文件夹治理、与中文同步、重点关注漂移治理,接轨既有漂移治理资产(铁律 8 / OD-8 / OD-24 / ADR-0024 / skills-sync-check),范围全仓库,镜像翻译」。全库纯中文(230 .md / 23,576 行),无任何 i18n 基础设施。= 重访 readme-revamp「不做英文 README(未来可选项)」已决项。
 
-- ⏳ **设计 · 三层全链 + dogfood(P1+P2)+ grill-Q 压测回灌全部完成(2026-08-23),P3–P5 手动启动**:设计套 [harness/design/i18n-support/](harness/design/i18n-support/)(L0/L1/L2 + [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md),含压测 8 修订)+ CONTEXT 英文术语对照节(消歧 3 条 + 首批 18 条)。P1 机制 + P2 README 英译已交付(commits d44a622…33fb967,四门全绿)。**剩余 = 手动调用 /long-running-agent 从 L2 反推 feature_list 推进**:P3 methodology 三件+CONTEXT(最重 1,555+202 行)→ P4 8 SKILL.md(含 grill-with-docs 特例)→ P5 CHANGELOG+终验收 → 核验:各阶段 DoD + L0 验收七条(L1 §6.1 映射表)
+- ⏳ **实现期(long-running 已启动,F044–F046 全绿;剩 F047/F048)**:设计套 [harness/design/i18n-support/](harness/design/i18n-support/)+ [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md)。已交付:P1 机制 + P2 README(d44a622…33fb967)+ **P3 五件 en 镜像**(290b2c1…484e24a,2026-08-25,四门全绿;术语累计 52 条;七步②.5 实证)。**剩:F047(P4)8 个 SKILL.md**(grill-with-docs 特例 = 仅译残留中文)→ **F048(P5)CHANGELOG + L0 验收七条终验 + 收口三件** → 核验:各阶段 DoD(L1 §6.1 映射表)
 - ✅ **既有已决项重访留痕**(L0 #22,P1 已落,2026-08-23):① readme-revamp L0 设计文档该行重访注记 ✓;② 根 CHANGELOG「i18n 立项」条目 ✓ → 核验:两处 grep 命中各 1
 - ✅ **scripts/i18n-check.py**(L0 #14 + L1 §2 硬约束,P1 已落,2026-08-23):三检查五类输出 + TRANSLATABLE 随阶段扩容白名单 + EN_NATIVE 豁免;T1–T7 自测全绿(含 L0 验收⑥ 检出可演示);四门全绿
 - ✅ **L1 判定项已关闭**(2026-08-23):archive 未进白名单 = 当前无翻译义务(后续迭代纳入须改白名单 + 同批交付);同步标记 = 内容 hash(SHA-256 前 12 位)

@@ -185,4 +185,5 @@ Repository-level external changes: see [CHANGELOG.md](../CHANGELOG.md) (Chinese)
 English translations live under `en/`, mirroring the Chinese paths one-to-one (`en/<path>` ↔ `<path>`). The Chinese originals are canonical; each mirror file records the source fingerprint (`zh-hash`) checked by [scripts/i18n-check.py](../scripts/i18n-check.py). Current coverage (expanding per phase, [ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md)):
 
 - ✅ `en/README.md` — this file
-- ⏳ `en/CHANGELOG.md`, `en/docs/CONTEXT.md`, `en/docs/OPEN-DECISIONS.md`, `en/docs/methodology/` (three current files), `en/skills/*/SKILL.md` — in progress
+- ✅ `en/docs/CONTEXT.md`, `en/docs/OPEN-DECISIONS.md`, `en/docs/methodology/` (methodology_v5 / philosophy_v7 / practical_v1) — done (2026-08-25)
+- ⏳ `en/CHANGELOG.md`, `en/skills/*/SKILL.md` — in progress

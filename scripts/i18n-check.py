@@ -42,15 +42,16 @@ from pathlib import Path
 
 # TRANSLATABLE 白名单:zh 相对路径(glob 模式),进白名单即负翻译义务。
 # 出处:ADR-0025 决策 4 + L1 §2.3;首期采用随阶段扩容(dogfood 修订 2026-08-23)。
-# 当前进度:P2(README 已交付)。
+# 当前进度:P3 完成(README + docs 五件已交付)。
 TRANSLATABLE = [
     "README.md",
-    # P5 后加入: "CHANGELOG.md",
-    # P3 后加入: "docs/CONTEXT.md", "docs/OPEN-DECISIONS.md",
-    #            "docs/methodology/methodology_v5.md",
-    #            "docs/methodology/philosophy_v7.md",
-    #            "docs/methodology/practical_v1.md",
+    # P3 扩容(2026-08-25,F046 交付,出处 L1 §2.3 + L2 §2 P3):
+    "docs/CONTEXT.md", "docs/OPEN-DECISIONS.md",
+    "docs/methodology/methodology_v5.md",
+    "docs/methodology/philosophy_v7.md",
+    "docs/methodology/practical_v1.md",
     # P4 后加入: "skills/*/SKILL.md",
+    # P5 后加入: "CHANGELOG.md",
 ]
 
 # EN_NATIVE:en/ 下原生声明件(相对 en/ 的路径),无 zh 源,豁免孤儿/缺标记/过期。

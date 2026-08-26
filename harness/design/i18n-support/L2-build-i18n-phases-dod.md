@@ -32,8 +32,8 @@
 
 ### P3 methodology + CONTEXT 阶段(最重:1,555 行)
 
-- **内容**:methodology_v5(800 行)/ philosophy_v7(346)/ practical_v1(207)+ CONTEXT(202,含术语对照节英文呈现)翻译;术语表首批随翻随补。
-- **退出判据**:四文件 i18n-check 绿;门面必审;术语表首批补齐;**翻译义务清单扩容**(TRANSLATABLE 加五件,代码注明出处)+ 复检绿(grill-Q Q3)。
+- **内容**:methodology_v5(800 行)/ philosophy_v7(346)/ practical_v1(207)/ OPEN-DECISIONS(324,非门面:AI 自查 + 人抽查)+ CONTEXT(202,含术语对照节英文呈现)五件翻译;术语表随翻随补。〔2026-08-23 实现期修正:L1 §2.3 与 L0 #20 均含 OPEN-DECISIONS,原文「四文件」系计数笔误,按契约优先对齐为五件〕
+- **退出判据**:五文件 i18n-check 绿;门面必审(OD 抽查);术语表补齐;**翻译义务清单扩容**(TRANSLATABLE 加五件,代码注明出处)+ 复检绿(grill-Q Q3)。
 - **依赖**:P1;P2 的首批术语(无则空启)。
 
 ### P4 SKILL.md 阶段
