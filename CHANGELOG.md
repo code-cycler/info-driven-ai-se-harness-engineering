@@ -4,6 +4,12 @@
 
 > **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
 
+## i18n 首期完成:英文镜像全链交付(2026-08-26,ADR-0025)
+
+- **首期翻译面收官**:顶级 `en/` 镜像树 15 个文件全绿(README + methodology 三件 + CONTEXT + OPEN-DECISIONS + 8 个 SKILL.md + 本 CHANGELOG;docs/LICENSE 为 en 原生声明件不计);`en/skills/` 链接策略 = 引擎/治理历史文件指中文原文(L1 §1.4),grill-with-docs 走特例条款(英文主体原样,仅译残留中文)。
+- **采用者可感知的变化**:仓库可整树英文阅读(中文仍为唯一权威源,冲突以中文为准);`scripts/i18n-check.py` 的 TRANSLATABLE 义务清单随阶段扩容收官(README → docs 五件 → skills/*/SKILL.md → CHANGELOG.md);英文侧增量协议 = 新 CHANGELOG 条目发布时同步补 en 对应条目(append-only,本条即首笔双落)。
+- **术语对照**:CONTEXT「英文术语对照」节累计 80 条(首批 18 / 第二批 31 / 第三批 28),英文翻译以该节为准,禁各文件自译。
+
 ## i18n 立项:英文镜像启动(2026-08-23,ADR-0025)
 
 - **本条 = 重访留痕**:readme-revamp(2026-08-20)曾决「不做英文 README(列为未来可选项,外部反馈出现需求时再议)」——本次用户发起 i18n 立项(feature-i18n-support),触发条件满足,该决正式推翻(见 [readme-revamp 设计文档注记](harness/design/readme-revamp/L0-vision-readme-first-impression.md)与 [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md))。
