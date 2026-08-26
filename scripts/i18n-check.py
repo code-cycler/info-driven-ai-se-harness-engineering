@@ -42,7 +42,7 @@ from pathlib import Path
 
 # TRANSLATABLE 白名单:zh 相对路径(glob 模式),进白名单即负翻译义务。
 # 出处:ADR-0025 决策 4 + L1 §2.3;首期采用随阶段扩容(dogfood 修订 2026-08-23)。
-# 当前进度:P4 完成(README + docs 五件 + 8 个 SKILL.md 已交付)。
+# 当前进度:P5 完成 = 首期收官(README + docs 五件 + 8 个 SKILL.md + CHANGELOG,15 件全集)。
 TRANSLATABLE = [
     "README.md",
     # P3 扩容(2026-08-25,F046 交付,出处 L1 §2.3 + L2 §2 P3):
@@ -52,7 +52,8 @@ TRANSLATABLE = [
     "docs/methodology/practical_v1.md",
     # P4 扩容(2026-08-26,F047 交付,出处 L1 §2.3 + L2 §2 P4):
     "skills/*/SKILL.md",
-    # P5 后加入: "CHANGELOG.md",
+    # P5 扩容(2026-08-26,F048 交付,出处 L1 §2.3 + L2 §2 P5;首期收官 = 全集 15 件):
+    "CHANGELOG.md",
 ]
 
 # EN_NATIVE:en/ 下原生声明件(相对 en/ 的路径),无 zh 源,豁免孤儿/缺标记/过期。

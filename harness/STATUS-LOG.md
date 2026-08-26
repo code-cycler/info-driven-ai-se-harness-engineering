@@ -2,6 +2,10 @@
 
 > 承接原 CLAUDE.md「仓库状态」节的历史条目(ADR-0024 P3 迁移,2026-08-20,原文逐字保留)。**只记内部工作状态时间线**;对外可感知变更见仓库根 [CHANGELOG.md](../CHANGELOG.md)(其记录规则明确排除内部治理);当前状态快照见 [CLAUDE.md](../CLAUDE.md)。追加式,只增不改。
 
+## 2026-08-26:i18n-support 实现期收官(P3–P5 全绿,首期完成)
+
+long-running 三会话接力:**F046/P3**(五件 en 镜像 1,976 行 + 术语第二批 31 条;七步②.5 首次实证——practical_v1 zh 源缺陷停翻报修;mermaid 转义引号人审实锤 → L1 §3.4 标签引号规则)→ **F047/P4**(八件 SKILL.md en 镜像 1,151 行 + 术语第三批 28 条累计 80;gwd 特例落地;人审裁决 A「文档型围栏块中文文案译出」/ 裁决 B「特例加标准头部」均认可)→ **F048/P5**(CHANGELOG 全译双落(含首期完成条目 append-only 首笔)+ TRANSLATABLE 终扩 + **L0 验收七条终验全过**——⑥ 过期检出二次实测、⑦ en 清点 = 白名单全集 15 件集合相等;收口三件 = 根 CHANGELOG 条目 / 本条 / TODO 块「首期完成,扩面另立」)。en 镜像树 15 件,四门全绿贯穿(i18n 0 / 脱敏 0 / sync 0 / harness 0);术语对照节 80 条为英文翻译唯一事实源。首期后扩面(retro / OD 全量 / archive)另立 TODO,不并入首期;CHANGELOG 逐条追译长期负担回访点在案(L1 §4.3)。
+
 ## 2026-08-23:i18n-support 设计三层全链 + dogfood 微闭环(P1+P2)
 
 design-Q feature i18n-support(用户发起,重访 readme-revamp「不做英文 README」已决项)三层问卷全采纳(L0 23 / L1 21 / L2 17,61 条零取消零逃生舱)→ 设计套 [harness/design/i18n-support/](../harness/design/i18n-support/) + [ADR-0025](../harness/adr/0025-english-mirror-drift-governance-integration.md)(英文镜像第三轴:顶级 en/ 镜像树 + en 文件头三字段 + i18n-check 五类漂移检查 + 第四道手动提交门,与双侧同步正交零侵入)+ [CONTEXT「英文术语对照」节](../docs/CONTEXT.md)(镜像消歧 2 条 + 首批 18 条)。收尾面板裁决:单线程 / 先 dogfood / 压测 / 衔接 long-running。dogfood 微闭环:P1 机制([i18n-check.py](../scripts/i18n-check.py) T1–T7 自测全绿)+ P2 README 英译(含 mermaid 图内标签译英——人审质询触发 L1 §3.4 修订)+ 规格缺口 3 处回修(白名单随阶段扩容 / 切换行笔误 / mermaid 译图,记 [L2 §6](../harness/design/i18n-support/L2-build-i18n-phases-dod.md));四门全绿(脱敏 0 / 双侧同步 0 / harness 0 / i18n 0)。**grill-Q 压测轮**([grill-i18n-support-w01](../harness/questionnaires/archive/i18n-support/grill-i18n-support-w01.md),10 题:8 采推荐 + 2 推翻——Q2 程序防御 mtime 拒绝、Q9 维持四道门):8 修订全授权执行(锚点降路径级 / --stamp mtime 前置校验 / DoD 清单扩容子项 + 未入册 note 行 / 场景三范围补注 / 七步 ②.5 停翻报修 / grill-with-docs 特例 / 术语按文件批量 / frontmatter 终裁维持),CONTEXT 加「翻译义务清单(TRANSLATABLE)」消歧行;T8/T8b/T9 自测全过,四门复跑全绿。P3–P5 留 long-running。

@@ -15,11 +15,12 @@
 
 ## 待办(新会话 design-Q 起点)
 
-### 🔶 i18n 支持(英文镜像,design-Q feature 设计执行中,2026-08-22 立项)
+### ✅ i18n 支持(英文镜像首期完成:2026-08-22 立项 → 2026-08-26 收官;扩面另立)
 
 > 来源:用户发起「本仓库 i18n 支持:首选语言中文、支持英语、单独文件夹治理、与中文同步、重点关注漂移治理,接轨既有漂移治理资产(铁律 8 / OD-8 / OD-24 / ADR-0024 / skills-sync-check),范围全仓库,镜像翻译」。全库纯中文(230 .md / 23,576 行),无任何 i18n 基础设施。= 重访 readme-revamp「不做英文 README(未来可选项)」已决项。
 
-- ⏳ **实现期(long-running 已启动,F044–F047 全绿;剩 F048)**:设计套 [harness/design/i18n-support/](harness/design/i18n-support/)+ [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md)。已交付:P1 机制 + P2 README(d44a622…33fb967)+ P3 五件 en 镜像(290b2c1…484e24a,2026-08-25,四门全绿;七步②.5 实证)+ **P4 八件 SKILL.md en 镜像**(b6c7c37…71e7795,2026-08-26,四门全绿;grill-with-docs 特例落地;术语第三批 28 条累计 80 条;裁决 A 文档型围栏块译出/裁决 B 特例标准头部均人审认可)。**剩:F048(P5)CHANGELOG + L0 验收七条终验 + 收口三件** → 核验:各阶段 DoD(L1 §6.1 映射表)
+- ✅ **首期收官(F044–F048 全绿)**:设计套 [harness/design/i18n-support/](harness/design/i18n-support/)+ [ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md)。全链:P1 机制 + P2 README(d44a622…33fb967)→ P3 五件 en 镜像(290b2c1…484e24a;七步②.5 实证)→ P4 八件 SKILL.md(b6c7c37…71e7795;gwd 特例 + 裁决 A/B)→ **P5 CHANGELOG 全译 + L0 验收七条终验全过**(①②③ = i18n 五类 0;④ 脱敏 0;⑤ sync 0;⑥ 过期检出二次实测;⑦ en 清点 = TRANSLATABLE 全集 15 件集合相等)。**en 镜像树 15 件 / 术语对照 80 条 / 四门全绿贯穿**;增量协议生效(新 CHANGELOG 条目双落)。
+- ⏭ **首期后扩面另立(用户发起时新开块)**:retro 文档 / OD 全量 / archive 翻译纳入 = 改 TRANSLATABLE 白名单 + 同批交付翻译(L2 §4);长期负担回访点 = CHANGELOG 逐条追译(L1 §4.3,W00 #15 已显式暴露)。
 - ✅ **既有已决项重访留痕**(L0 #22,P1 已落,2026-08-23):① readme-revamp L0 设计文档该行重访注记 ✓;② 根 CHANGELOG「i18n 立项」条目 ✓ → 核验:两处 grep 命中各 1
 - ✅ **scripts/i18n-check.py**(L0 #14 + L1 §2 硬约束,P1 已落,2026-08-23):三检查五类输出 + TRANSLATABLE 随阶段扩容白名单 + EN_NATIVE 豁免;T1–T7 自测全绿(含 L0 验收⑥ 检出可演示);四门全绿
 - ✅ **L1 判定项已关闭**(2026-08-23):archive 未进白名单 = 当前无翻译义务(后续迭代纳入须改白名单 + 同批交付);同步标记 = 内容 hash(SHA-256 前 12 位)
