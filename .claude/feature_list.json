@@ -728,9 +728,9 @@
         "L0 验收七条逐条跑通(①②③⑥=i18n-check;④=desensitize;⑤=sync-check;⑦=白名单全集)",
         "收口三件落盘"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "依赖 F046+F047"
+      "passes": true,
+      "last_tested": "2026-08-26T17:20:00+08:00",
+      "notes": "全绿:en/CHANGELOG 148 行(11 条历史全译 + 首期完成条目双落 = append-only 首笔);i18n 15 件 0 违规 0 note;L0 七条全过(⑥ 二次实测:改 zh README→报过期→还原复绿;⑦ 15=15 集合相等);术语无新增提名(全复用 80 条);收口三件落盘(根 CHANGELOG/STATUS-LOG/TODO✅块+扩面另立)"
     }
   ]
 }

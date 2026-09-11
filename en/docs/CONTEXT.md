@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: 20578677de6f
+zh-hash: fc861e7068ba
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -33,6 +33,14 @@ The layer membership of pillar-one terms (details in the methodology file [§1.1
 - **Mechanism layer / metric layer / symptom layer** = the three-layer thesis model (a causal chain, not peer categories): mechanism layer (AI's hallucinated self-directed decisions, root cause) → metric layer (effective context) → symptom layer (rework).
 - **vibe coding** = coding without briefing background or setting constraints, AI improvising; the methodology's primary governance target.
 - **(a)(b) blind spots** = the two classes of background absence: (a) known but unwritten → captured by preview / questionnaires; (b) not even known to yourself (implicit assumptions) → forced out by adversarial grilling.
+
+## Progression-stall spectrum (2026-09-09, grill-with-docs deep-dive crystallization)
+
+> Source: the deep dive on Challenge 1 of the philosophy v7 challenge report (free-floating): "rework has no operational definition → the core causal chain is immune to testing". The user adjudicated across four questions: spectrum + anchored subclass / three-field event scheme / post-hoc death snapshot / full sedimentation. Challenge 1 is thereby downgraded from "epistemologically fatal" to "high — repaired, pending field testing" (residue: the individual developer's structural lack of control/baseline; only self time-series revisit signals can accumulate).
+
+- **Progression stall (推进受挫)** = the symptom layer's top-level concept (author's original intent, retroactively stated; the gap vs the written "rework" is a live example of class-(a) blind spots): a progression obstacle caused by the mechanism layer, with a three-outcome spectrum — **shelving / abandonment** (project-level death) / **rework** (the observable symptom while the project keeps moving). Passes the three-condition neologism gate: project-management abandonment/stalled has no counterpart for the unified three-outcome spectrum; author-specific structure.
+- **Rework (返工)** = progression stall's **measurable anchored subclass**, continuing to serve as the symptom layer of the three-layer model (the top-level concept does not replace it). Operational definition (**three-field event scheme**): a **rework event** = output once considered "done/usable" whose core assumption is overturned and which requires renewed investment to resume progression — attribution is not asked at event level; attribution is carried by a field. Three fields collected at retro: ① **depth**: **structural rework** (a contract-layer assumption overturned — interface / architecture / data model / technology choice; the change radius crosses module boundaries) / **patch rework** (contract untouched, local implementation repair); ② **rough attribution**, pick one of four: information gap / capability boundary / requirement drift / integration surprise (not seeking precision, seeking MC-01's "counterexamples appearing consecutively" becoming identifiable); ③ effort estimate (optional, not mandatory). Status: normatively defined, not yet field-tested (upgrades to "tested in this repository" after the first retro collection).
+- **Frustrated death / natural death (受挫死/自然死)** = the death-state dichotomy of the shelving/abandonment outcome: **frustrated death** = unresolved rework backlog at death (stuck feature_list items / an unfixable bug chain / stalled TODO); **natural death** = clean wrap-up or clean hand-off (an individual project's normal metabolism, unrelated to the causal chain). All determination material is objective repository state, enabling the **post-hoc death snapshot** (determined retroactively from feature_list/TODO/git at any time after death, no deathbed cooperation needed; the retro-Q triggering scenarios include "upon project shelving/abandonment (suggested, not mandatory)"); only the free-text cause of death is unreconstructable (lowest signal value, loss accepted).
 
 ## Human-machine division-of-labor terms
 
@@ -187,6 +195,8 @@ After the split, "方法论" (methodology) is double-meaninged: the umbrella (th
 
 > **Known-gap note (2026-08-18, grill-Q first-principles W02 T4)**: the acceptance side's (humans reviewing AI output) **load management has no dedicated mechanism** — current countermeasures = 80/20 tiering + L3 risk tiering (both unquantified); review fatigue → rubber-stamping = the known entry point of trust hijacking. Revisit trigger = an instance of "human review passed, production incident" (shared with [OD-19](OPEN-DECISIONS.md) trigger ②).
 
+> **Survivorship-bias qualifier (2026-09-09, grill-with-docs Challenge-1 deep dive)**: progression stall of the shelving/abandonment type is a known measurement blind spot — for gradual-bleed shelving, the observation window often closes before data should have been collected. Countermeasure = the post-hoc death snapshot (frustrated/natural death determinable retroactively from objective repository state; see the "Progression-stall spectrum" section), but snapshot compliance is expected to be low (human factors: no one wants to do a retro when a project dies); expected destination = the blind spot persists, labeled only, not pretending to be measurable. Revisit trigger = the first post-hoc death snapshot actually happening, or a formal downgrade to "acknowledged blind spot, zero apparatus" when ≥2 project deaths pass with zero snapshots.
+
 - **Normative requirement** = a boundary the methodology says should be followed; not equal to having been executed or verified.
 - **Heuristic** = an empirical rule or analogy guiding judgment; not a statistical conclusion or discipline empiricism.
 - **Pilot** = limited-scope exploration begun, results still to be re-checked against preset conditions; not a stable mechanism.
@@ -297,5 +307,11 @@ This repository's content has had the author's project names / paths / personal 
 | 收尾停点 | closing stop point | design-Q / long-running SKILL.md |
 | 入口校准闸门 | entry-calibration gate | design-Q / grill-Q SKILL.md |
 | 环境现实验证 | environment reality verification | design-Q / action-Q SKILL.md |
+| 推进受挫 | progression stall | 本文件「推进受挫谱系」节(2026-09-09 起草,译名待人确认) |
+| 返工事件 | rework event | 本文件「推进受挫谱系」节(三字段事件制) |
+| 三字段事件制 | three-field event scheme | 本文件「推进受挫谱系」节 |
+| 重构型 / 缝补型 | structural rework / patch rework | 本文件「推进受挫谱系」节 |
+| 受挫死 / 自然死 | frustrated death / natural death | 本文件「推进受挫谱系」节 |
+| 补测式死亡快照 | post-hoc death snapshot | 本文件「推进受挫谱系」节 |
 
 > Second batch, 31 entries (from the methodology/philosophy/practical/OPEN-DECISIONS/CONTEXT translations): proposed per file batch and **confirmed by human review (2026-08-25)**; landed in the zh table above (single source) and mirrored here. Third batch, 28 entries (from the 8 SKILL.md translations): **confirmed by human review (2026-08-26, spot-check waived)**; cumulative 80 entries.
