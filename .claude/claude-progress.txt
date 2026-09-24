@@ -1,4 +1,35 @@
 ================================================================================
+SESSION: human-project-view 实现期会话 01(F049/P0 完成;基线修复三项)
+时间: 2026-09-25T11:35:00+08:00
+================================================================================
+
+## 完成的任务
+- 前置基线修复三项:①design-Q SKILL.md L60 双侧同步(全局侧为准,人拍板;MDreader 教训补丁回灌项目侧)+ en 镜像回译 + --stamp;②harness-check.py LN 正则修复(TODO 既存待修项,11 条命名告警全消);③挑战报告头部真实路径脱敏
+- F049 ✅ P0:skills/proj-overview/ 三文件入库(SKILL.md 53 行<100 硬约束/DESIGN.md 指针/CHANGELOG.md)+ 全局侧分发洁净同步(系统已识别 skill)
+- feature_list 反推:F049(P0 ✅)/F050(P1 待)/F051(P2 待),源自 L2 三阶段
+- 四门全绿贯穿:desensitize 0 / sync 0 / i18n 0 / harness-check 0
+
+## 修改的文件
+- skills/proj-overview/{SKILL.md,DESIGN.md,CHANGELOG.md}: 新增(F049)
+- ~/.claude/skills/proj-overview/SKILL.md: 全局侧同步(分发洁净)
+- scripts/harness-check.py: init/feature 正则加 LN 层名支持
+- skills/design-questionnaire/SKILL.md + en 镜像: 双侧同步 + 回译(stamp 8268f84e1cd3)
+- .claude/feature_list.json: F049-F051 追加,F049 passes:true
+
+## Git 提交
+- (设计期) feat(human-project-view): 设计期闭环——L0-L2 三层全链 + grill-Q 压测修订 + ADR-0026
+- (基线) fix(harness): 实现期基线三项修复——design-Q SKILL.md 双侧同步 + en 回译 + harness-check LN 正则
+- (P0) feat(skill): proj-overview 入库(P0)——见本会话末次提交
+
+## 遇到的问题
+- i18n --stamp 参数语法:需 `--stamp en/<相对路径>`(单独传模式会报用法错误),首次调用错写已纠正
+- harness-check LN 正则缺陷在基线暴露(4 条新告警同既存 7 条根因),按启动 checklist「发现问题优先修复」顺手修( TODO 待修项),全消
+
+## 下一步计划
+- F050(P1):以本仓库为对象执行 proj-overview 四步,生成 harness/PROJECT-OVERVIEW.md + 一次性自检(含逐图渲染验证)+ TODO 失忆测试预约;BFS 分层生成期判断,DFS 候选 = 推进受挫谱系/governance-history-split P4/human-project-view 自身
+- F051(P2):十处联动 + HARNESS-RULES §六新类目 + §3.3.1 版本内修订(含记录行)+ en 首译 + 全局侧 DOGFOOD-LOG(人过目后写入)+ 四门终验
+
+================================================================================
 SESSION: i18n 实现期会话 03(F048/P5 完成,首期收官)
 时间: 2026-08-26T17:25:00+08:00
 ================================================================================
