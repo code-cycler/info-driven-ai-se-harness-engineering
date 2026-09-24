@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态一行:方法论双 canonical(v5/v7)+ 8 skill 稳定;governance-history-split 迁移执行中(F039–F041 绿,P4 全局侧重整待)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
-> 下一步主线(2026-08-14 grill-Q methodology-improvement W01 裁决):**① dogfood 最优先**(Q7-A 冻结新机制新增;执行场 = 全局实验 skill + DOGFOOD 实测 + 本项目 backup,见 [OD-24](docs/OPEN-DECISIONS.md);先消歧两个 dogfood 定义);**② design-Q 数字层级改造**(✅ 2026-08-17 全链闭环 F027–F034);③ 方法论 704 行内容审计(✅ audit_v1 已出,OD-20 待裁决);~~④ 方法论修订包~~ **✅ 已执行(2026-08-14)**:升 [methodology_v5](docs/methodology/methodology_v5.md);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
+> 当前状态一行:方法论双 canonical(v5/v7)+ 9 skill(proj-overview 本期入库,P0 绿);governance-history-split 全链收口(F039–F043);i18n 英文镜像首期完成(en 16 件)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
+> 下一步主线(2026-09-25 更新):**① human-project-view 实现**(F050 首生成 dogfood 进行中 → F051 十处联动 + 四门终验);② 哲学挑战一修复包 canonical 修订候选待审查;③ 失忆测试预约(≥3 天);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -33,7 +33,7 @@
 - [x] **grill-Q 压测设计套**(收尾面板③;2026-09-23 完成,[grill-human-project-view-w01](harness/questionnaires/archive/human-project-view/grill-human-project-view-w01.md) 10 题全采纳:D1–D8 全覆盖,两处 D7 硬矛盾实锤——HTML「L2 可选」无落点 / 快照源未通用化;产出 [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)(推翻设计期「不立 ADR」)+ 9 项修订建议全授权执行完毕,零逃生舱零跑偏)→ 核验:✅ 处理报告产出,修订项全处理
 - [ ] **P0 skill 编写**(L2:SKILL.md < 100 行 + 文风术语表 20 词 + DESIGN/CHANGELOG + 全局侧分发洁净同步)→ 核验:L2 P0 DoD 全绿(wc/grep/sync-check 0)
 - [ ] **P1 首次生成 dogfood**(本仓库 `harness/PROJECT-OVERVIEW.md` + 一次性规格自检命令,不立常驻脚本)→ 核验:L2 P1 DoD 全绿(≤250 行 / 五段 / 三件套 / 图 ≥2 且 ≤12 / harness-check 无新增)
-- [ ] **失忆测试(P1 预约,隔 ≥3 天用户执行)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD → 核验:结果回写 skills/proj-overview/DESIGN.md「dogfood 修订」节
+- [ ] **失忆测试(P1 预约,隔 ≥3 天用户执行)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD。**2026-09-25 视图已生成(F050),测试窗自即日起算(≥09-28 可测)** → 核验:结果回写 skills/proj-overview/DESIGN.md「dogfood 修订」节
 - [ ] **P2 全仓联动同步**(HARNESS-RULES §六新类目 → README/CLAUDE/CONTEXT/方法论 §3.3.1 加行 → TRANSLATABLE + en 镜像首译 → 根 CHANGELOG → 四门终验)→ 核验:L2 P2 DoD 全绿(「8 个核心 skill」0 命中 / 四门 0 违规)
 - [ ] **canonical 修订候选(缓行项)**:「harness 文件人读/AI 读职责分野」论述进哲学/方法论 → 核验:独立 canonical 审查(grill-Q 压测或人逐行审 + 用户批准)通过后执行;重访触发 = P1 失忆测试通过(实践证据成立)
 
