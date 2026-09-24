@@ -760,9 +760,9 @@
         "逐图渲染验证(临时 HTML + mermaid CDN 浏览器验证后删)",
         "TODO 失忆测试核验项已建;harness-check 无新增告警;自检证据入 P1 commit"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "BFS 分层生成期判断+依据注记;DFS 候选=推进受挫谱系/governance-history-split P4/human-project-view 自身"
+      "passes": true,
+      "last_tested": "2026-09-25T12:15:00+08:00",
+      "notes": "P1 DoD 全绿:135 行≤250/五段 5/5/三件套齐/4 图(≥2≤12)/逐图渲染验证 4 SVG 全过(临时 HTML+CDN 后删)/漂移自检命中→TODO 头部人拍板更新(口述草案转写)/harness-check 无新增;BFS 四层分解(理念/流程/执行/治理)+分层依据注记;DFS 三链=human-project-view/governance-history-split/推进受挫谱系"
     },
     {
       "id": "F051",
