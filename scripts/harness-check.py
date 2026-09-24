@@ -22,10 +22,10 @@ from pathlib import Path
 # 问卷命名模式(HARNESS-RULES.md 三节;archive/ 内文件同为命名检查对象)
 NAME_PATTERNS = {
     "init": re.compile(
-        r"^(vision|hld|lld)-w\d{2}(a|b)?\.md$"
+        r"^(vision|hld|lld|L\d+-[a-z0-9-]+)-w\d{2}(a|b)?\.md$"
     ),
     "feature": re.compile(
-        r"^feature-[a-z0-9-]+-(vision|hld|lld)-w\d{2}(a|b)?\.md$"
+        r"^feature-[a-z0-9-]+-(vision|hld|lld|L\d+-[a-z0-9-]+)-w\d{2}(a|b)?\.md$"
     ),
     "grill": re.compile(
         r"^grill-[a-z0-9-]+-w\d{2}(a|b)?\.md$"

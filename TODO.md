@@ -25,6 +25,18 @@
 - [ ] **三字段事件制首次实测**(依赖 canonical 修订或直接以 CONTEXT 定义为准):下次本项目/宿主项目 retro 时按三字段采集返工事件,验证字段可判定性 → 核验:首份含三字段采集的 retro 文档存在
 - [ ] **英文译名确认**:CONTEXT 对照表 2026-09-09 新增 5 条译名(agent 起草:progression stall / rework event / three-field event scheme / frustrated death / natural death / post-hoc death snapshot)→ 核验:用户确认或改译后删「待人确认」注
 
+### 🟢 human-project-view:proj-overview skill(人读项目掌控视图,design-Q 三层全链完成 2026-09-23)
+
+> 来源:哲学 v7 挑战报告挑战三(元系统膨胀)正面回应——用户发起 design-Q feature(动机 = harness 文件人读/AI 读双职责冲突:AI 读需严谨详细,人读需认知友好)。设计套 [L0](harness/design/human-project-view/L0-vision-human-project-view.md) + [L1](harness/design/human-project-view/L1-contract-proj-overview.md) + [L2](harness/design/human-project-view/L2-build-proj-overview-phases-dod.md);问卷四份归档 [human-project-view/](harness/questionnaires/archive/human-project-view/);挑战报告 #三 反馈行已填。核心定位 = 只读派生视图层(不减文件、不加权威源,判据「减的负荷 > 加的负荷」)。
+> 收尾面板裁决(2026-09-23):单线程串行;dogfood 内建(P1 = 本仓库首生成 + 失忆测试);**先 grill-Q 压测设计套再实现**;压测完成 → long-running 衔接(从 L2 反推 feature_list)。
+
+- [x] **grill-Q 压测设计套**(收尾面板③;2026-09-23 完成,[grill-human-project-view-w01](harness/questionnaires/archive/human-project-view/grill-human-project-view-w01.md) 10 题全采纳:D1–D8 全覆盖,两处 D7 硬矛盾实锤——HTML「L2 可选」无落点 / 快照源未通用化;产出 [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)(推翻设计期「不立 ADR」)+ 9 项修订建议全授权执行完毕,零逃生舱零跑偏)→ 核验:✅ 处理报告产出,修订项全处理
+- [ ] **P0 skill 编写**(L2:SKILL.md < 100 行 + 文风术语表 20 词 + DESIGN/CHANGELOG + 全局侧分发洁净同步)→ 核验:L2 P0 DoD 全绿(wc/grep/sync-check 0)
+- [ ] **P1 首次生成 dogfood**(本仓库 `harness/PROJECT-OVERVIEW.md` + 一次性规格自检命令,不立常驻脚本)→ 核验:L2 P1 DoD 全绿(≤250 行 / 五段 / 三件套 / 图 ≥2 且 ≤12 / harness-check 无新增)
+- [ ] **失忆测试(P1 预约,隔 ≥3 天用户执行)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD → 核验:结果回写 skills/proj-overview/DESIGN.md「dogfood 修订」节
+- [ ] **P2 全仓联动同步**(HARNESS-RULES §六新类目 → README/CLAUDE/CONTEXT/方法论 §3.3.1 加行 → TRANSLATABLE + en 镜像首译 → 根 CHANGELOG → 四门终验)→ 核验:L2 P2 DoD 全绿(「8 个核心 skill」0 命中 / 四门 0 违规)
+- [ ] **canonical 修订候选(缓行项)**:「harness 文件人读/AI 读职责分野」论述进哲学/方法论 → 核验:独立 canonical 审查(grill-Q 压测或人逐行审 + 用户批准)通过后执行;重访触发 = P1 失忆测试通过(实践证据成立)
+
 ### ✅ i18n 支持(英文镜像首期完成:2026-08-22 立项 → 2026-08-26 收官;扩面另立)
 
 > 来源:用户发起「本仓库 i18n 支持:首选语言中文、支持英语、单独文件夹治理、与中文同步、重点关注漂移治理,接轨既有漂移治理资产(铁律 8 / OD-8 / OD-24 / ADR-0024 / skills-sync-check),范围全仓库,镜像翻译」。全库纯中文(230 .md / 23,576 行),无任何 i18n 基础设施。= 重访 readme-revamp「不做英文 README(未来可选项)」已决项。
@@ -92,7 +104,7 @@
 
 ### 其他待办
 
-- ⏳ **harness-check.py 问卷命名正则补 LN 制支持**(2026-08-20,readme-revamp feature 首个 LN 制问卷触发):脚本 init/feature 正则仍只认 `vision|hld|lld` 旧三件,而 `feature-<slug>-L0-vision-w<NN>.md` 符合 QUESTIONNAIRE-FORMAT LN 制(ADR-0022,2026-08-16 生效)却报「命名不符合问卷模式」——LN 制落地时脚本侧漏改;→ 行动:正则加 LN 层名支持(`L\d+-[a-z0-9-]+`),与 HARNESS-RULES 第七/八节命名规则对齐 → 核验:修正后 harness-check 对 LN 制问卷 0 告警
+- ✅ **harness-check.py 问卷命名正则补 LN 制支持**(2026-08-20,readme-revamp feature 首个 LN 制问卷触发;2026-09-25 随 human-project-view 实现期基线修复执行):init/feature 正则已加 LN 层名支持(`L\d+-[a-z0-9-]+`),11 条既存告警全消 → 核验:✅ 修正后 harness-check 对 LN 制问卷 0 告警(exit=0)
 - ⏳ **术语全面审计(B 方案)**(2026-08-05,repo 级设计 vision Q4 自定义入档):v4 术语折中审计落地后执行——逐术语判定保留/合并/删除/换学科标准词,CONTEXT 重写,方法论全文 + skill 规格同步(人因工程/软件工程/运筹学学科对接)。**扩围(2026-08-18,grill-Q first-principles W01 Q10 用户裁决 A)**:审计对象从领域术语扩至**元词汇**(支柱/学科/视角/环节/闭环/契约/纪律/装置/锚点/层级/切片)——治术语的体系自己的元词汇零定义,「第四学科视角」更名史即歧义实害;逐元词判定保留/合并/删除,与领域术语同批出审计报告
 
 ### 🔴 repo 级设计落地执行(2026-08-05 设计完成,规格 = [LLD](harness/design/repo/L2-build-repo-phases-dod.md))
