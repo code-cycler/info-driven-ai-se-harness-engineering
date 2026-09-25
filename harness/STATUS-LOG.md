@@ -2,6 +2,10 @@
 
 > 承接原 CLAUDE.md「仓库状态」节的历史条目(ADR-0024 P3 迁移,2026-08-20,原文逐字保留)。**只记内部工作状态时间线**;对外可感知变更见仓库根 [CHANGELOG.md](../CHANGELOG.md)(其记录规则明确排除内部治理);当前状态快照见 [CLAUDE.md](../CLAUDE.md)。追加式,只增不改。
 
+## 2026-09-25:proj-overview 入库与全链收官(F049–F051,第 9 个 skill)
+
+skill 家族 8→9:skills/proj-overview/(SKILL.md 53 行 + DESIGN + CHANGELOG)+ 全局侧分发洁净同步 + en 首译同批(TRANSLATABLE skills/* 通配实测生效——入库即负翻译义务,欠账窗口 <1 会话即消)。F050 首次 dogfood:harness/PROJECT-OVERVIEW.md 135 行(四层 BFS 分解 + 三条 DFS 关键链),漂移自检分支首次真实触发(TODO 头部滞后 3 处 → 人拍板口述草案转写);逐图渲染验证 4 SVG 过。F051 十处联动:HARNESS-RULES §六新类目(人读派生视图)+ 方法论 §3.3.1 加行(版本内修订 + 记录行)+ README/CLAUDE/CONTEXT 9-skill 表述 + 根 CHANGELOG 中英双落 + CONTEXT 术语「人读派生视图」(译名待人确认)。全局侧 DOGFOOD-LOG 登记(人过目后写入)。四门全绿贯穿。失忆测试窗口自 09-25 起算(≥09-28 人判,结果回写 skills/proj-overview/DESIGN.md)。设计套 [human-project-view/](../design/human-project-view/) + [ADR-0026](../adr/0026-proj-overview-derived-view-route.md)。
+
 ## 2026-09-23:human-project-view 设计三层全链(proj-overview skill,挑战三正面回应)
 
 design-Q feature(用户发起:哲学 v7 挑战报告挑战三「元系统膨胀」+ 实践感受「harness 文件人读/AI 读双职责冲突——AI 读要严谨详细重建上下文,人读要认知友好,现状 238 md 致人的注意力不足」)三层问卷 53 要点采纳 50 / 深究 3(L0 W01 十题全采推荐),零逃生舱 → 设计套 [harness/design/human-project-view/](../harness/design/human-project-view/):L0 视图层(只读派生、核心判据「减的负荷 > 加的负荷」、验收锚 = 失忆测试人判非 AI 自评)、L1 契约层(输入·处理·输出三层硬约束 + 选型 14 项含被否决列 + HARNESS-RULES §六新类目 + 联动九处含方法论 §3.3.1 版本内修订加行)、L2 构建层(P0 skill 编写 → P1 本仓库首生成 dogfood → P2 全仓联动,DoD 全脚本化 + 回归项);问卷四份归档 [human-project-view/](../harness/questionnaires/archive/human-project-view/)。skill 定名 **proj-overview**(产物 `harness/PROJECT-OVERVIEW.md`;md+mermaid 首期单格式;BFS 层次分解图 + DFS 每功能逻辑链,混合类型学节点两类边三类;≤250 行 / 图 ≤30 节点 / 图数 ≤12;TODO 头部 = 快照唯一权威源 + 漂移自检提示;完全抽象 + 实例外置;人因四原则 + 文风术语表 20 词内嵌 SKILL.md < 100 行)。挑战报告 #三 反馈行已填;canonical「人读/AI 读分野」论述缓行走独立审查(TODO 在案)。收尾面板裁决:单线程 / dogfood 内建(P1) / **先 grill-Q 压测设计套再实现** / 压测后 long-running 衔接。环境实测:mermaid CDN 可达(jsdelivr 200)+ HTML+mermaid@11 浏览器渲染通过(2026-09-22)。

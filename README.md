@@ -13,7 +13,7 @@
 - [这是什么](#这是什么)
 - [为什么是这个(差异化)](#为什么是这个差异化)
 - [快速上手:skill 使用流程](#快速上手skill-使用流程)
-- [8 个核心 skill](#8-个核心-skill)
+- [9 个核心 skill](#9-个核心-skill)
 - [工具边界(请先读)](#工具边界请先读)
 - [仓库结构(三区模型)](#仓库结构三区模型)
 - [License](#license)
@@ -58,9 +58,10 @@ flowchart TD
     H -.-> E
     I["📋 /action-questionnaire<br/>行动前细节确认<br/>(大流程轻量前奏 + 独立小行动入口)"] -.->|进入实现前| E
     J["🩺 /doctor-harness<br/>harness 演进治理(分层/迁移/校验/留痕)"] -.->|设计产物落盘治理| B
+    K["🗺️ /proj-overview<br/>人读项目掌控视图<br/>(只读派生,横切)"] -.->|迷失恢复 / 重新定向| A
 ```
 
-**主路径 = 5 环节闭环**:design-Q → grill-Q → dogfood → long-running → retro-Q;grill-with-docs / delegate / action-Q / doctor-harness 为横切,可任意环节插入。
+**主路径 = 5 环节闭环**:design-Q → grill-Q → dogfood → long-running → retro-Q;grill-with-docs / delegate / action-Q / doctor-harness / proj-overview 为横切,可任意环节插入。
 
 衔接协议:design-Q 收尾主动提议 grill-Q 压测;grill-Q 收尾提议 long-running 进入实现;grill-with-docs(含通用模式)与 delegate 在任意环节可插入;action-Q 为轻量前奏——design-Q 收尾的设计进入实现前、grill-Q / retro-Q 处理的行动项落地前,可先对齐动作细节。各环节产物与触发时机详见方法论文件 [§三](docs/methodology/methodology_v5.md)、实操文件 [§8.3](docs/methodology/practical_v1.md)。
 
@@ -70,9 +71,9 @@ flowchart TD
 
 新项目从 0 跑通第一个闭环只需 3 个文件起步——① 本 README(双支柱与主路径)② [practical_v1.md §8.3](docs/methodology/practical_v1.md)(skill 使用时机表)③ `skills/`(拷入 `~/.claude/skills/` 即用)。方法论 / 哲学 / 实操三件套按需深读,不是采用前置;本仓库的治理体系(ADR / OD / 归档问卷 / CONTEXT)是方法论的生产车间,采用者无需复制。
 
-## 8 个核心 skill
+## 9 个核心 skill
 
-8 个 skill 构成 5 环节闭环 + 横切(见上方协作图)。每张卡片:定位 / 触发 / 产物 / 核心维度或机制。
+9 个 skill 构成 5 环节闭环 + 横切(见上方协作图)。每张卡片:定位 / 触发 / 产物 / 核心维度或机制。
 
 ### /action-questionnaire —— 非正式行动前的细节确认(确认式问卷,轻量前奏)
 
@@ -122,6 +123,12 @@ flowchart TD
 - **产物**:harness/ 区组织 + [HARNESS-RULES.md](skills/doctor-harness/HARNESS-RULES.md)(规则权威)+ [harness-check.py](scripts/harness-check.py) 校验
 - **核心机制**:分层规则权威化 + 迁移工具 / 流程 + 布局合规校验 + 演进留痕
 
+### /proj-overview —— 人读项目掌控视图(横切工具型,只读派生)
+
+- **触发**:「项目地图」「项目全景」「我迷失了」「重新定向」「重新生成项目视图」
+- **产物**:`harness/PROJECT-OVERVIEW.md`(单份只读派生视图:五段式线性 + BFS 层次分解图 / DFS 功能逻辑链;≤250 行,覆盖式重生成)
+- **核心机制**:harness 文件人读 / AI 读职责分野——AI 重建上下文靠源文件,人恢复掌控靠派生视图;快照 = 状态追踪文件头部唯一权威源(AI 不代写);不新增权威源、以源文件为准
+
 ### 各 skill 提问 / 确认维度速查
 
 维度 = 各 skill 向你提问 / 确认的角度;名称与权威定义见 CONTEXT。
@@ -135,7 +142,7 @@ flowchart TD
 | action-questionnaire | 隐式骨架六要素(目标/输入/输出/约束/边界/依赖)+ 环境现实核实 | 各 SKILL.md「提取与核实」节 |
 | retro-questionnaire | 方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items | [RETRO-SKELETONS.md](skills/retro-questionnaire/RETRO-SKELETONS.md) |
 | grill-with-docs | 无固定骨架(纯追问,单点深钻);绑库模式叠加领域词汇表挑战 / 代码交叉核验,通用模式零留痕纯对话 | [SKILL.md](skills/grill-with-docs/SKILL.md) |
-| long-running / delegate / doctor-harness | 非提问类(约束系统 / 下放治理 / harness 治理) | 各 SKILL.md |
+| long-running / delegate / doctor-harness / proj-overview | 非提问类(约束系统 / 下放治理 / harness 治理 / 人读视图生成) | 各 SKILL.md |
 
 ## 工具边界(请先读)
 

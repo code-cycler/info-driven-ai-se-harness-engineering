@@ -141,7 +141,7 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 
 ## skill 家族
 
-方法论的可执行载体,8 个核心 skill:design-questionnaire / grill-questionnaire / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)。**grill 已于 2026-08-19 退役**(归 `waste/skills/grill/`;其通用×单点生态位由 grill-with-docs 通用模式承载,见 [OD-12](OPEN-DECISIONS.md))。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md));唯一入口路由、输入 / 输出 / 决策权 / 禁止越界 / 交接条件见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02)。
+方法论的可执行载体,9 个核心 skill:design-questionnaire / grill-questionnaire / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire**(确认式问卷:非正式行动写操作前的细节确认清单,轻量前奏,2026-08-01 入库)+ **doctor-harness**(harness 演进治理:分层/迁移/校验/留痕,横切如 delegate,2026-08-08 入库)+ **proj-overview**(人读项目掌控视图生成器:只读派生,回应元系统膨胀的视图派生路线,[ADR-0026](../harness/adr/0026-proj-overview-derived-view-route.md),2026-09-25 入库)。**grill 已于 2026-08-19 退役**(归 `waste/skills/grill/`;其通用×单点生态位由 grill-with-docs 通用模式承载,见 [OD-12](OPEN-DECISIONS.md))。本仓库为其唯一 source of truth([ADR-0001](../harness/adr/0001-source-of-truth.md));唯一入口路由、输入 / 输出 / 决策权 / 禁止越界 / 交接条件见 [methodology_v5 §3.3.1](methodology/methodology_v5.md#331-skill-生态位路由与跨-skill-最小契约v7-w02)。
 
 ### 提问维度速查(2026-08-19,retro skill-family W01 补充声明)
 
@@ -304,5 +304,6 @@ methodology_v3 单文件拆分为三块独立文件,各块可独立修订(拆分
 | 重构型 / 缝补型 | structural rework / patch rework | 本文件「推进受挫谱系」节 |
 | 受挫死 / 自然死 | frustrated death / natural death | 本文件「推进受挫谱系」节 |
 | 补测式死亡快照 | post-hoc death snapshot | 本文件「推进受挫谱系」节 |
+| 人读派生视图 | human-readable derived view | [ADR-0026](../harness/adr/0026-proj-overview-derived-view-route.md)——proj-overview 产物语义(只读派生、以源文件为准);译名 agent 起草待人确认 |
 
 > 首批 18 条(上表第 3–20 行)随 P2 README 翻译提取,人审通过(2026-08-23);第二批 31 条随 P3 四件翻译批量提名,人审通过(2026-08-25);第三批 28 条随 P4 八件 SKILL.md 翻译批量提名,人审通过(2026-08-26,免抽查直收),累计 80 条;后续文件翻译时随翻随补(七步流程第②步,按文件批量)。

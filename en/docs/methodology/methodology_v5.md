@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/methodology/methodology_v5.md
-zh-hash: 74e45d918e4f
+zh-hash: 8d1047c4660b
 ---
 [中文](../../../docs/methodology/methodology_v5.md) · **English**
 
@@ -12,6 +12,7 @@ zh-hash: 74e45d918e4f
 > **Version lineage**: v1 single pillar (Information as the Core) → v2 dual pillars (+ Engineering Mastery = AI × Software Engineering) → v3 completed the first pillar's mechanism layer (elevating "countering AI's hallucinated self-directed decisions" from an implicit aside to an explicit thesis) → v4 narrowed the audience + symmetrized the second pillar's mechanism layer + terminology governance (referencing human factors engineering / software engineering / operations research perspectives) → **v5 continuous section numbering + contract-first adjudication + action-Q joins the family** (2026-08-14, grill-Q methodology-improvement W01; following philosophy v7's ADR-0017 compatibility strategy and the peer-benchmark repo's inter-layer adjudication).
 >
 > **Revision log** (committed or released versions only, one line per level; added 2026-08-19, aligned with philosophy v7's traceability pattern): **2026-08-19 in-version revision: §4.1 cognitive-state wiring sentence + §4.3 criterion-conflict priority sentence + §3.3.1 criterion-anchor pointer note + §8 failure mode #25 (grill boundary deep dive + grill-boundary-canonical-w01 re-stress; content revision, not structural change — per the canonical version-bump criteria, no version bump)**.
+> **2026-09-25 in-version revision: §3.3.1 routing table gains a proj-overview row + family count 8→9 (member-set sync, same pattern as the grill-retirement precedent, [ADR-0026](../../../harness/adr/0026-proj-overview-derived-view-route.md); content revision, not structural change, no version bump)**.
 >
 > **Section numbering (v5)**: the body uses continuous numbering "§0–§9 + Appendix C/D". Mapping from old v4 numbers: §二→§一, §三→§二, §四→§三, §五→§四, §七→§五, §九→§六, §十→§七, §十一→§八, §十二→§九 (subsections follow: e.g. §4.3.1→§3.3.1, §5.3→§4.3, §7.3→§5.3; §7.4–7.6 belong to the practice file, numbering unchanged). Missing numbers §一/§六/§八 (v4 and earlier) moved into the philosophy file (§一/§六 → philosophy §1/§2) and the practice file (§8) respectively. Historical documents and archived questionnaires keep their original numbering; compatibility strategy follows [ADR-0017](../../../harness/adr/0017-philosophy-section-compatibility.md).
 >
@@ -314,7 +315,7 @@ Where v1 locked retrospectives to the end and Grill to the vision and implementa
 
 #### 3.3.1 Skill niche routing and the minimal cross-skill contract (v7 W02)
 
-The eight skills stay independent; no umbrella-control skill for now. The single authoritative routing table follows; it answers "when to enter, what is produced, who holds decision power, where the hard boundaries are, when to hand off". Every time a real case reveals repeated mis-triggering or handoff ambiguity, update the routing evidence first — do not rush to merge entry points or rename things. (2026-08-19: grill retired and merged into grill-with-docs general mode; the family shrank from 9 to 8, see [OD-12](../OPEN-DECISIONS.md))
+The nine skills stay independent; no umbrella-control skill for now. The single authoritative routing table follows; it answers "when to enter, what is produced, who holds decision power, where the hard boundaries are, when to hand off". Every time a real case reveals repeated mis-triggering or handoff ambiguity, update the routing evidence first — do not rush to merge entry points or rename things. (2026-08-19: grill retired and merged into grill-with-docs general mode; the family shrank from 9 to 8, see [OD-12](../OPEN-DECISIONS.md); 2026-09-25: proj-overview admitted, the family grew from 8 to 9, see [ADR-0026](../../../harness/adr/0026-proj-overview-derived-view-route.md))
 
 | Entry | Trigger / input | Minimal output | Decision power | Must not overstep | Handoff condition |
 |---|---|---|---|---|---|
@@ -326,6 +327,7 @@ The eight skills stay independent; no umbrella-control skill for now. The single
 | `delegate` | explicitly enabled whitelist of pure-execution decisions | delegation-log, revocable execution results | the human reviews whitelist, forbidden zones, revocation conditions | never make judgment-type decisions, one-way doors, or self-classify | anomaly → global off / per-class revoke → `retro-questionnaire` |
 | `action-questionnaire` | an informal action about to run; action details unconfirmed | confirm-list, user confirmation record | the user confirms action details and one-way doors | never replace architecture design, risk trade-offs, or authorization | confirmed → execute; design change found → back to `design-questionnaire` / `grill-questionnaire` |
 | `doctor-harness` | harness layout, migration, archiving, or compliance validation | rules, migration records, validation results | rules and canonical authority confirmed by the human | never replace methodology-claim judgment or business design | content conflict found → the corresponding canonical / ADR; layout done → return to the invoking skill |
+| `proj-overview` | mastery recovery / re-orientation; the project's structural, governance, and status file surfaces | `harness/PROJECT-OVERVIEW.md` (human-readable derived view: five sections + BFS/DFS graphs) | the human decides whether to update the status-tracking file and the view; the AI never ghost-writes the snapshot | adds no source of authority, does not participate in norm-priority adjudication, never proxies one-way-door decisions | view stale and a one-way door involved → verify against the source files; view misleading → revise the artifact spec |
 
 > Note (2026-08-19, re-stress grill-boundary-canonical-w01 Q1): the criterion anchor for routing between the two families = the **three cognitive states**; see [§4.3](#43-two-grill-families) and [philosophy §3.1](philosophy_v7.md). This table is the contract layer and does not duplicate criterion content.
 

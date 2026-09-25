@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: CHANGELOG.md
-zh-hash: f0493fe41f5f
+zh-hash: 3cf9171138ea
 ---
 
 [中文](../CHANGELOG.md) · **English**
@@ -13,6 +13,13 @@ zh-hash: f0493fe41f5f
 > The single record of repository-level, externally visible changes (migrated from the README's "release notes" section, 2026-08-20).
 
 > **Recording rules**: this file is the single record of repository-level, externally visible changes — every change **perceivable to adopters** (skill behavior / artifact structure / methodology content) must be recorded; purely internal repository governance (questionnaire archiving, link repairs, etc.) is not. Reverse-chronological. Skills carry no independent version numbers; this file is the only window for perceiving `skills/` changes.
+
+## 9th skill added: proj-overview, the human-readable project-mastery view (2026-09-25, ADR-0026)
+
+- **New `skills/proj-overview/`** (cross-cutting tool type; pure generation, no interaction): scans the project's structural / governance / functional file surfaces (three-tier graded reading) and generates a single read-only derived view, `harness/PROJECT-OVERVIEW.md` — five linear sections (positioning / structural panorama / decision threads / status snapshot / DFS deep chains) + mermaid relationship graphs (one BFS hierarchical-decomposition pass + one DFS functional logic-chain pass), ≤ 250 lines, overwrite-style regeneration. **The positioning adopters will notice**: harness files previously carried a dual duty, human-read and AI-read — AI context rebuilding needs rigorous, detailed source files, while a human entering from a different point in time needs a cognition-friendly view; this skill derives the "human-read" duty into a one-page mastery view (adds no source of authority; the source files govern).
+- **Snapshot contract**: the current-status snapshot = the project's status-tracking file header (the TODO header) as the single authoritative source; the AI never ghost-writes it; when the header clearly disagrees with recent git activity, the human is prompted to update first.
+- **Governance linkage**: HARNESS-RULES section 6 gains the "human-readable derived view" artifact category (loose drift, not covered by checks); the methodology §3.3.1 routing table gains a row (in-version revision); the en mirror ships in the same batch; all "8 core skills" wording repo-wide updated to 9.
+- **First validation of the artifact**: this repository's first view has been generated (135 lines, 4 graphs render-verified); final acceptance = the amnesia test (human-judged, ≥ 3-day window).
 
 ## i18n first phase complete: full English-mirror chain delivered (2026-08-26, ADR-0025)
 

@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: README.md
-zh-hash: d34bd6d18404
+zh-hash: cc8ddbb96e3c
 ---
 [中文](../README.md) · **English**
 
@@ -20,7 +20,7 @@ zh-hash: d34bd6d18404
 - [What this is](#what-this-is)
 - [Why this one (differentiation)](#why-this-one-differentiation)
 - [Quick start: the skill workflow](#quick-start-the-skill-workflow)
-- [The 8 core skills](#the-8-core-skills)
+- [The 9 core skills](#the-9-core-skills)
 - [Tool boundaries (read this first)](#tool-boundaries-read-this-first)
 - [Repository structure (three-zone model)](#repository-structure-three-zone-model)
 - [License](#license)
@@ -66,9 +66,10 @@ flowchart TD
     H -.-> E
     I["📋 /action-questionnaire<br/>detail confirmation before actions<br/>(lightweight prelude + standalone small-action entry)"] -.->|before implementation| E
     J["🩺 /doctor-harness<br/>harness evolution governance (layering/migration/validation/traceability)"] -.->|governance of design products| B
+    K["🗺️ /proj-overview<br/>human-readable project-mastery view<br/>(read-only derived, cross-cutting)"] -.->|lost-and-recover / re-orient| A
 ```
 
-**Main path = five-stage loop**: design-Q → grill-Q → dogfood → long-running → retro-Q; grill-with-docs / delegate / action-Q / doctor-harness are cross-cutting and can be inserted at any stage.
+**Main path = five-stage loop**: design-Q → grill-Q → dogfood → long-running → retro-Q; grill-with-docs / delegate / action-Q / doctor-harness / proj-overview are cross-cutting and can be inserted at any stage.
 
 Handoff protocol: design-Q proactively proposes a grill-Q stress test at its close; grill-Q proposes entering long-running for implementation at its close; grill-with-docs (including general mode) and delegate can be inserted at any stage; action-Q is a lightweight prelude — before a design produced by design-Q enters implementation, and before action items from grill-Q / retro-Q land, you can first align on action details. Products and trigger timing of each stage: methodology file [§3](../docs/methodology/methodology_v5.md), practice file [§8.3](../docs/methodology/practical_v1.md).
 
@@ -78,9 +79,9 @@ Handoff protocol: design-Q proactively proposes a grill-Q stress test at its clo
 
 To run your first loop on a new project from zero, you only need 3 things — ① this README (two pillars and the main path) ② [practical_v1.md §8.3](../docs/methodology/practical_v1.md) (skill timing table) ③ `skills/` (copy into `~/.claude/skills/` and go). The methodology / philosophy / practice trio is for deeper reading on demand, not a prerequisite for adoption; this repository's governance system (ADRs / ODs / archived questionnaires / CONTEXT) is the production workshop of the methodology — adopters do not need to replicate it.
 
-## The 8 core skills
+## The 9 core skills
 
-The 8 skills form a five-stage loop plus cross-cutting members (see the diagram above). Each card: positioning / triggers / products / core dimensions or mechanisms.
+The 9 skills form a five-stage loop plus cross-cutting members (see the diagram above). Each card: positioning / triggers / products / core dimensions or mechanisms.
 
 ### /action-questionnaire — detail confirmation before informal actions (confirmation list, lightweight prelude)
 
@@ -130,6 +131,12 @@ The 8 skills form a five-stage loop plus cross-cutting members (see the diagram 
 - **Products**: harness/ zone organization + [HARNESS-RULES.md](../skills/doctor-harness/HARNESS-RULES.md) (rules authority) + [harness-check.py](../scripts/harness-check.py) validation
 - **Core mechanism**: layering rules as the authority + migration tools / flows + layout compliance validation + evolution traceability
 
+### /proj-overview — human-readable project-mastery view (cross-cutting tool type, read-only derived)
+
+- **Triggers**: "project map", "project panorama", "I'm lost", "re-orient", "regenerate project view"
+- **Products**: `harness/PROJECT-OVERVIEW.md` (a single read-only derived view: five linear sections + a BFS hierarchical-decomposition graph / DFS functional logic chains; ≤ 250 lines, overwrite-style regeneration)
+- **Core mechanism**: splitting the dual duty of harness files, human-read vs AI-read — AI context rebuilding relies on the source files; human mastery recovery relies on the derived view. The snapshot = the status-tracking file header as the single authoritative source (the AI never ghost-writes); adds no source of authority; the source files govern
+
 ### Skill question / confirmation dimensions at a glance
 
 Dimensions = the angles at which each skill questions or confirms with you; names and authoritative definitions live in CONTEXT.
@@ -144,7 +151,7 @@ Dimensions = the angles at which each skill questions or confirms with you; name
 | action-questionnaire                     | implicit six-element skeleton (goal / input / output / constraints / boundaries / dependencies) + real-environment verification                                                              | each SKILL.md, "提取与核实" section                                     |
 | retro-questionnaire                      | methodology's four sections (what went well / what went wrong and hypothesized causes / architectural drift / what was learned) + Action Items                                               | [RETRO-SKELETONS.md](../skills/retro-questionnaire/RETRO-SKELETONS.md)  |
 | grill-with-docs                          | no fixed skeleton (pure follow-up questioning, single-point deep dive); codebase-bound mode adds domain-vocabulary challenge / code cross-verification; general mode is pure dialogue        | [SKILL.md](../skills/grill-with-docs/SKILL.md)                          |
-| long-running / delegate / doctor-harness | non-questioning (constraint system / delegation governance / harness governance)                                                                                                             | each SKILL.md                                                           |
+| long-running / delegate / doctor-harness / proj-overview | non-questioning (constraint system / delegation governance / harness governance / human-readable view generation)                                         | each SKILL.md                                                           |
 
 ## Tool boundaries (read this first)
 

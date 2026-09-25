@@ -2,6 +2,13 @@
 
 > harness 组织变更(迁移/规则修订)记录于此,可回溯「harness 为什么长这样」。追加式,只增不改。
 
+## 2026-09-25 · §六新增「人读派生视图」类目(PROJECT-OVERVIEW.md)
+
+- **变更**:第六节治理文件归属新增一类——`PROJECT-OVERVIEW.md`(人读派生视图)归 `harness/` 根,特性四条(只读派生 / 手动重生成 / 宽松漂移不进校验 / 新鲜度三件套自声明)。
+- **意义**:proj-overview skill(F051/P2 联动,第 9 个 skill)的产物在布局规则中获得类目地位;与 STATUS-LOG 同级归 harness/ 根。
+- **影响**: [HARNESS-RULES.md](HARNESS-RULES.md) 第六节(+1 条)
+- **出处**: [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md) + human-project-view 设计套(L1 联动清单第 5 处)
+
 ## 2026-08-11 至 2026-08-19 · 外部项目实操史(脱敏汇总;明细见全局侧 DOGFOOD-LOG)
 
 - **变更**:本 skill 在多个外部项目的实操记录(真实项目名禁入公开仓库,明细存全局侧 `~/.claude/skills/doctor-harness/DOGFOOD-LOG.md`):① 某上游 SDK 封装项目(×5 批:首次 harness/ 落地 / 游离件归位 / 错位区归位 / 治理校验 + 规则三增补 + 孤儿问卷 superseded / 版本历史子目录整理与归档合并)——第八节规则的主要实战来源;② 某实验项目(首次存量改造全流程:自包含文档拆层 L0/L1/L2 + 治理文件迁移,验证第八节五步);③ 某 Unity 2D RTS 游戏项目(2326 行自包含设计文档细拆 24 个 LN 文件 + 脚本化切分零改写范式);④ 某独立工具项目(docs/ + 根治理文件 → harness/,存量治理文件迁移条款目标形态)。

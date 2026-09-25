@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: fc861e7068ba
+zh-hash: 8ddc0b96e12b
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -150,7 +150,7 @@ The decision engine, in two branches (details in [methodology_v5 §4.3](methodol
 
 ## The skill family
 
-The methodology's executable carriers, 8 core skills: design-questionnaire / grill-questionnaire / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire** (the confirm-list questionnaire: a detail-confirmation list before informal write actions, a lightweight prelude, admitted 2026-08-01) + **doctor-harness** (harness evolution governance: layering/migration/validation/traces, cross-cutting like delegate, admitted 2026-08-08). **grill retired 2026-08-19** (to `waste/skills/grill/`; its general × single-point niche is carried by grill-with-docs general mode, see [OD-12](OPEN-DECISIONS.md)). This repository is its single source of truth ([ADR-0001](../../harness/adr/0001-source-of-truth.md)); the single entry routing, inputs / outputs / decision power / hard boundaries / handoff conditions are in [methodology_v5 §3.3.1](methodology/methodology_v5.md).
+The methodology's executable carriers, 9 core skills: design-questionnaire / grill-questionnaire / grill-with-docs / retro-questionnaire / long-running-agent / delegate + **action-questionnaire** (the confirm-list questionnaire: a detail-confirmation list before informal write actions, a lightweight prelude, admitted 2026-08-01) + **doctor-harness** (harness evolution governance: layering/migration/validation/traces, cross-cutting like delegate, admitted 2026-08-08) + **proj-overview** (human-readable project-mastery view generator: read-only derived, the derived-view route responding to metasystem bloat, [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md), admitted 2026-09-25). **grill retired 2026-08-19** (to `waste/skills/grill/`; its general × single-point niche is carried by grill-with-docs general mode, see [OD-12](OPEN-DECISIONS.md)). This repository is its single source of truth ([ADR-0001](../../harness/adr/0001-source-of-truth.md)); the single entry routing, inputs / outputs / decision power / hard boundaries / handoff conditions are in [methodology_v5 §3.3.1](methodology/methodology_v5.md).
 
 ### Question dimensions quick reference (2026-08-19, retro skill-family W01 supplementary statement)
 
@@ -313,5 +313,6 @@ This repository's content has had the author's project names / paths / personal 
 | 重构型 / 缝补型 | structural rework / patch rework | 本文件「推进受挫谱系」节 |
 | 受挫死 / 自然死 | frustrated death / natural death | 本文件「推进受挫谱系」节 |
 | 补测式死亡快照 | post-hoc death snapshot | 本文件「推进受挫谱系」节 |
+| 人读派生视图 | human-readable derived view | [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md)——proj-overview 产物语义(只读派生、以源文件为准);译名 agent 起草待人确认 |
 
 > Second batch, 31 entries (from the methodology/philosophy/practical/OPEN-DECISIONS/CONTEXT translations): proposed per file batch and **confirmed by human review (2026-08-25)**; landed in the zh table above (single source) and mirrored here. Third batch, 28 entries (from the 8 SKILL.md translations): **confirmed by human review (2026-08-26, spot-check waived)**; cumulative 80 entries.

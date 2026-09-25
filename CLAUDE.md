@@ -38,7 +38,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## skill 家族协作
 
-8 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§4.3](docs/methodology/methodology_v5.md#43-两族-grill) 与各 SKILL.md「主流程」末尾;v5 连续化前的旧编号 §5.3 已映射至 §4.3):
+9 个 skill 构成 **5 环节闭环 + 横切**(衔接协议详见方法论 [§4.3](docs/methodology/methodology_v5.md#43-两族-grill) 与各 SKILL.md「主流程」末尾;v5 连续化前的旧编号 §5.3 已映射至 §4.3;proj-overview 2026-09-25 入库,见 [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)):
 
 ```mermaid
 flowchart LR
@@ -51,6 +51,7 @@ flowchart LR
     AQ["action-Q(横切:任意环节前轻量前奏<br/>confirm-list 细节确认)"] -.-> DQ
     GW["grill-with-docs<br/>(实现期单点深钻,一问一答,正交可任意插入<br/>含通用模式承载原 grill 场景<br/>②未成形·需即时反馈)"] -.-> DQ
     DH["doctor-harness(harness 演进治理<br/>分层/迁移/校验/留痕,横切如 delegate)"] -.-> DQ
+    PO["proj-overview(人读项目掌控视图生成<br/>只读派生,横切)"] -.-> DQ
 ```
 
 **落盘路径速查**(产物均落**宿主项目** `项目根/harness/`,硬编码不配置化——方案 R 已于 2026-08-07 放弃、回归硬编码,见 [ADR-0011](harness/adr/0011-abandon-plan-r-hardcode-harness.md)):
@@ -64,6 +65,7 @@ flowchart LR
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 | doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕)+ **治理历史载体维护**(CHANGELOG/FORK-NOTES/STATUS-LOG 布局与增量记录,ADR-0024);规则权威 `skills/doctor-harness/HARNESS-RULES.md`(第九节 = 治理历史布局);校验 `scripts/harness-check.py` |
+| proj-overview | 人读掌控视图 → `harness/PROJECT-OVERVIEW.md`(只读派生,五段式 + BFS/DFS 图,≤250 行,覆盖式重生成;以源文件为准,不新增权威源——[ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)) |
 
 两族分流判据锚 = **认知状态三态**(① 知道·可离线 → 批量;② 未成形·需即时反馈 → 单点;③ 不知道自己不知道 → 对抗维度逼出),详见 [CONTEXT](docs/CONTEXT.md)「Grill 家族」节(2026-08-19,复压 grill-boundary-canonical-w01 Q8)。
 

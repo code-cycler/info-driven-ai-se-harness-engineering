@@ -776,9 +776,9 @@
         "全局侧 DOGFOOD-LOG 写入内容人过目后写入",
         "TRANSLATABLE 登记+en 镜像存在;四门全绿(脱敏/sync/i18n/harness-check 0 新增)"
       ],
-      "passes": false,
-      "last_tested": null,
-      "notes": "来源 L2 P2 十处联动;grill W01 Q8/Q9 修订项含其中"
+      "passes": true,
+      "last_tested": "2026-09-25T13:30:00+08:00",
+      "notes": "P2 DoD 全绿:HARNESS-RULES §六新类目+doctor CHANGELOG 留痕/全仓「8 个核心 skill」0 残留(grep)/方法论 §3.3.1 加行+文件头修订记录行/全局侧 DOGFOOD-LOG 人过目后写入/CONTEXT 术语行+译名人确认/TRANSLATABLE 通配确认/四门全绿(脱敏 0/sync 0/i18n 0(en 16)/harness exit=0);en 镜像 4 份回译+stamp,CONTEXT 链接层级修正一次"
     }
   ]
 }
