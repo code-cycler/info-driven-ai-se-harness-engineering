@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: CHANGELOG.md
-zh-hash: 3cf9171138ea
+zh-hash: 68095ce6d051
 ---
 
 [中文](../CHANGELOG.md) · **English**
@@ -13,6 +13,12 @@ zh-hash: 3cf9171138ea
 > The single record of repository-level, externally visible changes (migrated from the README's "release notes" section, 2026-08-20).
 
 > **Recording rules**: this file is the single record of repository-level, externally visible changes — every change **perceivable to adopters** (skill behavior / artifact structure / methodology content) must be recorded; purely internal repository governance (questionnaire archiving, link repairs, etc.) is not. Reverse-chronological. Skills carry no independent version numbers; this file is the only window for perceiving `skills/` changes.
+
+## proj-overview v2: first-reading entry + governance-file summary (2026-09-26, ADR-0026 revision note)
+
+- **Skill spec upgrade** (two-layer design-Q + nine-question grill-Q stress loop): audience widened from "the owner's amnesia recovery" to "any developer"; the artifact's positioning upgraded to the **first-reading entry** (where a human's context reload begins; with CLAUDE.md leaning AI sessions and README leaning external adoption, the three entries each have an emphasis); a **governance-file summary duty** added (every ADR/OD entry on one line with a source link — ADR summaries = direct quote or tight paraphrase of the decision section's first sentence, no cross-section synthesis; OD status read directly from the source field, AI classification forbidden); the ≤ 250-line hard cap abolished (the derived nature is the constraint: line count grows linearly with the source-file surface + typed self-check); all mermaid graphs forced vertical TD; a three-tier reading guide (3-minute recovery / 15-minute framework / lookup); DFS chains switched to dynamic selection (mainline/backlog/just-closed, 3–5 chains).
+- **Supporting governance**: all 29 OD entries gained a status field (open 8 / watching 11 / closed 10; status now mandatory when writing ODs); methodology §3.3.1 routing-row description synced + revision-log line (canonical in-version revision); README / CLAUDE.md existing descriptions synced + two en mirrors retranslated; CONTEXT gains the term "first-reading entry" (认读第一入口). View regenerated: 230 lines, eight sections (full tables of 26 ADRs + 29 ODs).
+- **Acceptance**: the amnesia test now targets v2 (window recalculated from 09-26; the three questions ride the 3-minute reading tier); the v2 dogfood feedback template's three questions pre-seeded in DESIGN.md.
 
 ## 9th skill added: proj-overview, the human-readable project-mastery view (2026-09-25, ADR-0026)
 

@@ -1,8 +1,8 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态一行:方法论双 canonical(v5/v7)+ 9 skill(proj-overview 本期入库,P0 绿);governance-history-split 全链收口(F039–F043);i18n 英文镜像首期完成(en 16 件)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
-> 下一步主线(2026-09-25 更新):**① human-project-view 实现**(F050 首生成 dogfood 进行中 → F051 十处联动 + 四门终验);② 哲学挑战一修复包 canonical 修订候选待审查;③ 失忆测试预约(≥3 天);其余:CONTRIBUTING + issue 模板(OD-3);git author 身份决策;术语全面审计(B 方案)。
+> 当前状态一行:方法论双 canonical(v5/v7)+ 9 skill(proj-overview v2 规格升级中);governance-history-split 收口(F039–F043);i18n 英文镜像首期完成(en 16 件)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
+> 下一步主线(2026-09-26 更新):**① proj-overview v2 实现**(F052:skill 修订✅ → 产物重生成 → 治理收尾);② 失忆测试以 v2 为准(窗口自 v2 生成日 ≥3 天);③ 哲学挑战一修复包 canonical 修订候选待审查;其余:CONTRIBUTING/git author/术语审计 B 方案/OD-29 信息衰减轻量切片。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -25,17 +25,20 @@
 - [ ] **三字段事件制首次实测**(依赖 canonical 修订或直接以 CONTEXT 定义为准):下次本项目/宿主项目 retro 时按三字段采集返工事件,验证字段可判定性 → 核验:首份含三字段采集的 retro 文档存在
 - [ ] **英文译名确认**:CONTEXT 对照表 2026-09-09 新增 5 条译名(agent 起草:progression stall / rework event / three-field event scheme / frustrated death / natural death / post-hoc death snapshot)→ 核验:用户确认或改译后删「待人确认」注
 
-### 🟢 human-project-view:proj-overview skill(实现全链收官 2026-09-25:F049–F051 全绿;唯一遗留 = 失忆测试)
+### 🟢 human-project-view:proj-overview skill(F049–F051 全绿 2026-09-25;**v2 规格升级 2026-09-26——设计+压测闭环,F052 实现中**;失忆测试以 v2 为准)
 
 > 来源:哲学 v7 挑战报告挑战三(元系统膨胀)正面回应——用户发起 design-Q feature(动机 = harness 文件人读/AI 读双职责冲突:AI 读需严谨详细,人读需认知友好)。设计套 [L0](harness/design/human-project-view/L0-vision-human-project-view.md) + [L1](harness/design/human-project-view/L1-contract-proj-overview.md) + [L2](harness/design/human-project-view/L2-build-proj-overview-phases-dod.md);问卷四份归档 [human-project-view/](harness/questionnaires/archive/human-project-view/);挑战报告 #三 反馈行已填。核心定位 = 只读派生视图层(不减文件、不加权威源,判据「减的负荷 > 加的负荷」)。
 > 收尾面板裁决(2026-09-23):单线程串行;dogfood 内建(P1 = 本仓库首生成 + 失忆测试);**先 grill-Q 压测设计套再实现**;压测完成 → long-running 衔接(从 L2 反推 feature_list)。
 
 - [x] **grill-Q 压测设计套**(收尾面板③;2026-09-23 完成,[grill-human-project-view-w01](harness/questionnaires/archive/human-project-view/grill-human-project-view-w01.md) 10 题全采纳:D1–D8 全覆盖,两处 D7 硬矛盾实锤——HTML「L2 可选」无落点 / 快照源未通用化;产出 [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)(推翻设计期「不立 ADR」)+ 9 项修订建议全授权执行完毕,零逃生舱零跑偏)→ 核验:✅ 处理报告产出,修订项全处理
-- [ ] **P0 skill 编写**(L2:SKILL.md < 100 行 + 文风术语表 20 词 + DESIGN/CHANGELOG + 全局侧分发洁净同步)→ 核验:L2 P0 DoD 全绿(wc/grep/sync-check 0)
-- [ ] **P1 首次生成 dogfood**(本仓库 `harness/PROJECT-OVERVIEW.md` + 一次性规格自检命令,不立常驻脚本)→ 核验:L2 P1 DoD 全绿(≤250 行 / 五段 / 三件套 / 图 ≥2 且 ≤12 / harness-check 无新增)
-- [ ] **失忆测试(P1 预约,隔 ≥3 天用户执行)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD。**2026-09-25 视图已生成(F050),测试窗自即日起算(≥09-28 可测)** → 核验:结果回写 skills/proj-overview/DESIGN.md「dogfood 修订」节
+- [x] **P0 skill 编写**(2026-09-25 F049 ✅:SKILL.md 53 行 + 文风术语表 + DESIGN/CHANGELOG + 全局侧分发洁净同步)→ 核验:✅ L2 P0 DoD 全绿(wc/grep/sync-check 0)
+- [x] **P1 首次生成 dogfood**(2026-09-25 F050 ✅:v1 视图 135 行 + 一次性规格自检 + 漂移自检分支首次触发)→ 核验:✅ L2 P1 DoD 全绿
+- [ ] **失忆测试(隔 ≥3 天用户执行,以 v2 为准)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD。**测试窗自 v2 生成日重算(v1 的 ≥09-28 预约作废;三分钟导读档覆盖三问)** → 核验:结果回写 skills/proj-overview/DESIGN.md「v2 修订」节(含反馈模板三问)
 - [x] **P2 全仓联动同步**(2026-09-25 完成,F051:十处联动全落地——HARNESS-RULES 新类目/方法论 §3.3.1 加行+修订记录行/README 六处/CLAUDE 三处/CONTEXT 两处/根 CHANGELOG 中英双落/STATUS-LOG/双侧同步/en 四份回译 stamp;四门终验全绿)→ 核验:✅「8 个核心 skill」全仓 0 命中 / 脱敏 0 / sync 0 / i18n 0(en 16)/ harness exit=0
-- [ ] **canonical 修订候选(缓行项)**:「harness 文件人读/AI 读职责分野」论述进哲学/方法论 → 核验:独立 canonical 审查(grill-Q 压测或人逐行审 + 用户批准)通过后执行;重访触发 = P1 失忆测试通过(实践证据成立)
+- [x] **proj-overview-v2 设计 + grill-Q 压测闭环**(2026-09-26:L0+L1 两层,设计套 [harness/design/proj-overview-v2/](harness/design/proj-overview-v2/);grill W01 九题([归档](harness/questionnaires/archive/proj-overview-v2/))——8 采推荐 + Q7 推翻(「认读第一入口」进 CONTEXT)+ Q4 自定义(OD 状态字段修源);13 项修订全执行含 ⚠ 两项:方法论 §3.3.1 行同步 / OD 29 条状态补齐;核心裁决 = 受众任何开发者 / 认读第一入口 / 行数无上限+派生性质即约束 / summary 全量(ADR 摘要取材约束+OD 状态直读)/ 导读三档 / 八段式 / 全竖向图)→ 核验:✅ 处理报告 + 修订全落盘
+- [ ] **F052 v2 实现四步**(L1 契约:① SKILL.md 五处修订 + en 回译 + 双侧同步 → ② ADR-0026 修订注记 + 挑战报告 #三 v2 注记 → ③ 产物八段式重生成 + 分型自检 + ADR 摘要抽 3 条人快审 + 逐图渲染验证 → ④ 治理收尾(根 CHANGELOG 中英双落 / README:129·CLAUDE.md:68·en 两镜像描述同步 / skill CHANGELOG / STATUS-LOG)+ 四门终验)→ 核验:L1 DoD 全绿
+- [ ] **v2 观察项**:① 新人视角测试(失忆测试通过后评估是否升正式验收);② 规模重访触发(ADR>50 或视图>800 行 → 评估年代折叠) → 核验:触发命中时
+- [ ] **canonical 修订候选(缓行项)**:「harness 文件人读/AI 读职责分野」论述进哲学/方法论 → 核验:独立 canonical 审查(grill-Q 压测或人逐行审 + 用户批准)通过后执行;重访触发 = v2 失忆测试通过(实践证据成立;v2 已实证到「入口级对称」,证据链 +1)
 
 ### ✅ i18n 支持(英文镜像首期完成:2026-08-22 立项 → 2026-08-26 收官;扩面另立)
 

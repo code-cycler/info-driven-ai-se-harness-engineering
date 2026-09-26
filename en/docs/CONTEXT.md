@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: 8ddc0b96e12b
+zh-hash: dee44f356519
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -41,6 +41,15 @@ The layer membership of pillar-one terms (details in the methodology file [§1.1
 - **Progression stall (推进受挫)** = the symptom layer's top-level concept (author's original intent, retroactively stated; the gap vs the written "rework" is a live example of class-(a) blind spots): a progression obstacle caused by the mechanism layer, with a three-outcome spectrum — **shelving / abandonment** (project-level death) / **rework** (the observable symptom while the project keeps moving). Passes the three-condition neologism gate: project-management abandonment/stalled has no counterpart for the unified three-outcome spectrum; author-specific structure.
 - **Rework (返工)** = progression stall's **measurable anchored subclass**, continuing to serve as the symptom layer of the three-layer model (the top-level concept does not replace it). Operational definition (**three-field event scheme**): a **rework event** = output once considered "done/usable" whose core assumption is overturned and which requires renewed investment to resume progression — attribution is not asked at event level; attribution is carried by a field. Three fields collected at retro: ① **depth**: **structural rework** (a contract-layer assumption overturned — interface / architecture / data model / technology choice; the change radius crosses module boundaries) / **patch rework** (contract untouched, local implementation repair); ② **rough attribution**, pick one of four: information gap / capability boundary / requirement drift / integration surprise (not seeking precision, seeking MC-01's "counterexamples appearing consecutively" becoming identifiable); ③ effort estimate (optional, not mandatory). Status: normatively defined, not yet field-tested (upgrades to "tested in this repository" after the first retro collection).
 - **Frustrated death / natural death (受挫死/自然死)** = the death-state dichotomy of the shelving/abandonment outcome: **frustrated death** = unresolved rework backlog at death (stuck feature_list items / an unfixable bug chain / stalled TODO); **natural death** = clean wrap-up or clean hand-off (an individual project's normal metabolism, unrelated to the causal chain). All determination material is objective repository state, enabling the **post-hoc death snapshot** (determined retroactively from feature_list/TODO/git at any time after death, no deathbed cooperation needed; the retro-Q triggering scenarios include "upon project shelving/abandonment (suggested, not mandatory)"); only the free-text cause of death is unreconstructable (lowest signal value, loss accepted).
+
+## Two types of drift (2026-09-25, grill-with-docs deep-dive crystallization)
+
+> Source: the "performance in large projects" deep dive: the user's "files drift out of date" intuition, sharpened against the codebase into two types — existing mechanisms (iron rules / three sync scripts / OD-8) cover only the first type; the second has principle but no process — a genuine methodology gap (governed by OD-29).
+
+- **File-to-file drift (文件-文件漂移)** = the same fact written in multiple places falling out of sync (single-source failure). v5 §11.17 "engine drift" / §11.22 "standard-wording divergence" are both instances; existing governance = core-definition substrings identical across copies (ADR-0005) + per-file-pair scripts (skills-sync-check / i18n-check) + OD-8's keep-and-declare stance. Discipline reference: sync debt from violating single source of truth.
+- **File-to-reality drift (文件-现实漂移)** = sedimented documents lagging behind the code and the project's actual state (documentation rot). Existing countermeasures are only iron rule 6 "update the docs first when they diverge from the implementation" (principle-level self-discipline) and proj-overview's "stale view → check the source" (downstream fallback); there is no detection / refreshing process. Distinct from the first type: eliminating duplication (single-sourcing) does not eliminate it — a single source can also lag behind reality.
+- **Entangled drift (纠缠态)** = the failure threshold when both types co-occur: multiple copies mutually out of sync and all lagging reality, so no reader (human or AI) can tell which to trust — information assets flip into information liabilities.
+- Boundary: the retro rough-attribution field "requirement drift" refers to external requirement change and is not one of this section's two types (internal document drift).
 
 ## Human-machine division-of-labor terms
 
@@ -313,6 +322,11 @@ This repository's content has had the author's project names / paths / personal 
 | 重构型 / 缝补型 | structural rework / patch rework | 本文件「推进受挫谱系」节 |
 | 受挫死 / 自然死 | frustrated death / natural death | 本文件「推进受挫谱系」节 |
 | 补测式死亡快照 | post-hoc death snapshot | 本文件「推进受挫谱系」节 |
-| 人读派生视图 | human-readable derived view | [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md)——proj-overview 产物语义(只读派生、以源文件为准);译名 agent 起草待人确认 |
+| 人读派生视图 | human-readable derived view | [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md)——proj-overview 产物语义(只读派生、以源文件为准);human-confirmed 2026-09-25 |
+| 认读第一入口 | first-reading entry (translated name pending human confirmation) | [ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md)——PROJECT-OVERVIEW.md 定位语义:人重载上下文的第一入口;与 CLAUDE.md(偏 AI 会话)、README(偏对外采用)三入口各有侧重、允许重叠(2026-09-26 grill-proj-overview-v2 W01 Q7-B 入表) |
+| 两类漂移 | two types of drift | this file's "Two types of drift" section (2026-09-25 grill-with-docs deep-dive crystallization) |
+| 文件-文件漂移 | file-to-file drift | this file's "Two types of drift" section — the same fact written in multiple places falling out of sync |
+| 文件-现实漂移 | file-to-reality drift | this file's "Two types of drift" section — documents lagging behind code/the project's actual state; single-sourcing does not eliminate it |
+| 纠缠态 | entangled drift | this file's "Two types of drift" section — both types co-occurring, no way to tell which to trust; translated name adjudicated by the user 2026-09-25 |
 
 > Second batch, 31 entries (from the methodology/philosophy/practical/OPEN-DECISIONS/CONTEXT translations): proposed per file batch and **confirmed by human review (2026-08-25)**; landed in the zh table above (single source) and mirrored here. Third batch, 28 entries (from the 8 SKILL.md translations): **confirmed by human review (2026-08-26, spot-check waived)**; cumulative 80 entries.

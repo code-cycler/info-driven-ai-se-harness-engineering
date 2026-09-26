@@ -779,6 +779,20 @@
       "passes": true,
       "last_tested": "2026-09-25T13:30:00+08:00",
       "notes": "P2 DoD 全绿:HARNESS-RULES §六新类目+doctor CHANGELOG 留痕/全仓「8 个核心 skill」0 残留(grep)/方法论 §3.3.1 加行+文件头修订记录行/全局侧 DOGFOOD-LOG 人过目后写入/CONTEXT 术语行+译名人确认/TRANSLATABLE 通配确认/四门全绿(脱敏 0/sync 0/i18n 0(en 16)/harness exit=0);en 镜像 4 份回译+stamp,CONTEXT 链接层级修正一次"
+    },
+    {
+      "id": "F052",
+      "name": "proj-overview v2 规格升级实现(认读第一入口 + 治理文件 summary)",
+      "steps": [
+        "SKILL.md 五处修订(54 行)+ DESIGN v2 节 + en 回译 stamp + 双侧同步",
+        "ADR-0026 修订注记 + 挑战报告 #三 v2 注记",
+        "产物八段式重生成 + 分型自检 + ADR 摘要抽 3 条人快审 + 逐图渲染验证",
+        "治理收尾(CHANGELOG 中英双落/描述同步×5/skill CHANGELOG/STATUS-LOG)+ 四门终验"
+      ],
+      "passes": true,
+      "notes": "四步全绿:①SKILL.md 54 行五处修订+DESIGN v2 节(含抽审留痕)+en 回译 stamp 9926b5712b94+双侧 sync 0;②ADR-0026 修订注记+挑战报告注记;③产物 230 行八段式(ADR 26/OD 29 表=源实数,direction LR 0,5 图全 TD,静态校验+浏览器渲染人验通过,分型自检+抽审 3 条人快审通过);④四门终验全绿(desensitize 0/sync 0/i18n 0 en16/harness exit=0)。失忆测试以 v2 为准(≥09-29)",
+      "created_at": "2026-09-26T00:00:00+08:00",
+      "last_tested": null
     }
   ]
 }

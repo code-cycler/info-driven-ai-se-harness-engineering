@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/OPEN-DECISIONS.md
-zh-hash: 0d76542fbb8e
+zh-hash: 15143289f806
 ---
 [中文](../../docs/OPEN-DECISIONS.md) · **English**
 
@@ -9,13 +9,15 @@ zh-hash: 0d76542fbb8e
 
 # OPEN-DECISIONS — Pending decisions
 
-> Deferred decisions + revisit triggers. Each entry must state: problem / deferral reason / current placeholder / reversibility / **revisit trigger** (a concrete signal — "later" is forbidden).
+> Deferred decisions + revisit triggers. Each entry must state: **status** (open / watching / closed) / problem / deferral reason / current placeholder / reversibility / **revisit trigger** (a concrete signal — "later" is forbidden).
+> Status field backfill: 2026-09-26 (grill-proj-overview-v2 W01 Q4 fix — all 29 legacy entries backfilled; from now on, every skill writing or editing an OD must fill the status and keep it in sync with adjudications).
 > First created: 2026-07-28, output of the pre-repository grill-questionnaire stress test.
 
 ---
 
 ## OD-1 Desensitization release gate (one-way door · requires line-by-line human review)
 
+- **Status**: open
 - **Problem**: once open-sourced, content forked / cached cannot truly be withdrawn; incomplete desensitization = permanent leakage. How to guarantee "desensitized clean"?
 - **Deferral reason**: a script can be written, but "semantic leakage" (identifiable without project names) can only be human-reviewed — it cannot be fully automated up front.
 - **Current placeholder**: push only when all three DoD items are green —
@@ -30,6 +32,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-2 "The methodology ports to general tools" is an unverified assumption
 
+- **Status**: open
 - **Problem**: the claim "skills were practiced on Claude Code, but the methodology ports". Yet the skills depend heavily on Claude Code mechanisms (AskUserQuestion / subagent / SKILL.md loading) and have never actually been verified on other tools.
 - **Deferral reason**: experience gap — never trial-run on Cursor / Cline / other LLM CLIs.
 - **Current placeholder**: the README states "the methodology's ideas are tool-agnostic and portable; the skills' direct execution depends on three Claude Code mechanisms — AskUserQuestion, subagent, SKILL.md; porting to other tools requires adapting these".
@@ -41,6 +44,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-3 Maintenance-commitment hedge (one-way door)
 
+- **Status**: open
 - **Problem**: open-sourcing = a public maintenance commitment. The skills still iterate (delegate pilot, just bumped to v2); unanswered issues / PRs → the repository becomes a graveyard.
 - **Deferral reason**: maintenance energy cannot be predicted.
 - **Current placeholder**: README labeled `experimental / maintained by one person / no guarantee of response` + CONTRIBUTING + issue templates; if energy runs short, fall back to "articles only".
@@ -51,6 +55,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-4 Master-copy sync of the methodology articles
 
+- **Status**: open
 - **Problem**: before this repository, the methodology articles had copies in several of the author's locations; this repository introduces the master. Leaving the source undecided invites drift.
 - **Deferral reason**: historical copies are scattered.
 - **Current placeholder**: **this repository's methodology_v5 + philosophy_v7 are canonical** (2026-08-14, methodology v4→v5 upgrade completed — continuous sections + contract-first adjudication + action-Q joining the family (grill-Q methodology-improvement W01); philosophy v7 the current canonical, with continuous sections, historical-number compatibility, and dual-file cross-governance — copies elsewhere are annotated per the corresponding canonical version). **The practice file is non-canonical**, revised via the lightweight process (small commits, exempt from master-copy sync).
@@ -62,12 +67,14 @@ zh-hash: 0d76542fbb8e
 
 ## OD-5 (completed) ADR / OD landing
 
+- **Status**: closed
 - This batch of ADR-0001 / 0002 / 0003 + this OD file landed in this repository with its creation (2026-07-28). The original "migration" pending item is closed.
 
 ---
 
 ## OD-6 Differentiation claim awaits market validation
 
+- **Status**: open
 - **Problem**: the differentiation = "methodology + ready-to-run skill executables" in one — a claim, not yet verified.
 - **Deferral reason**: needs post-release feedback.
 - **Current placeholder**: stated up front in the README.
@@ -78,6 +85,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-7 Exposure surface of the early non-desensitized copy (already occurred)
 
+- **Status**: open
 - **Problem**: skills / archived questionnaires that once appeared in another public project of the author's contained project names — public and irreversible.
 - **Deferral reason**: the other project has its own review process.
 - **Current placeholder**: that copy stays untouched; this repository's README notes "the author has an earlier, non-desensitized copy".
@@ -88,6 +96,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-8 Open-source presentation of the skill engine copies (decided)
 
+- **Status**: closed
 - **Problem**: QUESTIONNAIRE-FORMAT / PROCESSING-RULES are held one copy each by the three questionnaire skills (design-Q / grill-Q / retro-Q), each self-labeled "design-Q engine reuse"; diff confirmed the design-Q and grill-Q engine files **have drifted** — a living specimen of methodology item 17, "engine drift".
 - **Decision**: keep the copies as-is + declare the drift relationships in DESIGN.md. No unifying, no extracting a shared file.
 - **Rationale**: faithfully present the status quo; unifying / extracting would change the skills' internal organization — cost off the value main line. Copyright is the author's original work; MIT-izing is unobstructed.
@@ -101,6 +110,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-9 (decided) Repository name
 
+- **Status**: closed
 - **Decision**: the repository name = `info-driven-ai-se-harness-engineering`, expressing the dual pillars (information-driven × AI + software engineering = Engineering Mastery).
 - **Reversibility**: two-way door (GitHub rename redirects).
 - **Revisit trigger**: if branding changes.
@@ -109,6 +119,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-10 Skill family "distribution-clean" vs keeping during dogfood
 
+- **Status**: watching
 - **Problem**: under skills/, each skill's SKILL.md / DESIGN.md carry dogfood records, historical process statements, and other non-essential information; an ideal distribution copy would be clean (noise removed for distribution), but we are in the dogfood stage and need to keep them.
 - **Deferral reason**: dogfood unfinished — cleaning time not ripe; and the v3 thesis rebuild explicitly left skills untouched (W00 #6 adopted).
 - **Current placeholder**: during dogfood, keep all historical / dogfood statements (the skills are living, iterating bodies).
@@ -121,6 +132,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-11 (decided) Fork governance of the 4th questionnaire-engine copy
 
+- **Status**: closed
 - **Problem**: the new "detail confirmation before actions" skill (naming pending, leaning `action-questionnaire`) reuses the design-Q engine = a 4th copy; it carries two **intentional** forks (small-wave threshold ≤2→4; preview renamed/re-purposed as the "detail-confirmation list / confirm-list"). Does this trigger an OD-8 re-debate?
 - **Decision** (2026-07-30, grill-Q W01 Q6=A): **no re-debate**. The 4th copy copies the design-Q **canonical** engine (including the W00 preview section — the grill-Q / retro-Q copies lack it, diff-verified); the copy header self-labels "design-Q engine reuse"; the new skill's DESIGN.md declares the intentional-fork list.
 - **Rationale**: fits OD-8's governance frame (keep as-is + declare drift); intentional forks with stated provenance are more controllable than the accidental drift of the existing three.
@@ -131,6 +143,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-12 (decided) Disposition of grill (general, zero-trace)
 
+- **Status**: closed
 - **Problem**: after the "merge the single-point deep-dive family" frame was dropped (grill-merge-grill-family-w01, user ruling 2026-07-31), grill's keep / retire / archive was suspended.
 - **Decision** (2026-08-19, grill-with-docs grill-skills dive E, after revisit trigger ① hit, re-estimated and executed via this stress round): **keep**. Reasons: ① in the 2×2 niche matrix (general/bound × single-point/batch), grill uniquely occupies the "general × single-point" cell (dives not bound to a codebase, with deep chains, needing instant feedback — e.g. non-project plans / pure logical reasoning) — the other three cells are covered by grill-Q pure-logic mode / grill-Q default mode / grill-with-docs; retiring = an empty cell; ② near-zero maintenance cost (shares the questioning methodology with grill-with-docs); ③ zero-trace is a design feature ruled by the user on 2026-07-24, not a defect.
 - **Structural note**: the original trigger ② "3 consecutive months of zero use" is **unverifiable** at the system level — grill is zero-trace = no usage records; the trigger can never be falsified from inside the system; usage monitoring downgrades to **author self-reflection**; the system sets no unverifiable fake triggers (ritualism devices).
@@ -146,6 +159,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-13 (decided) AI dual-track comparison pilot (shadow + champion-challenger)
 
+- **Status**: closed
 - **Problem**: "90% of AI suggestions are right, but only 10% are important decisions — human productivity not fully freed; granting AI all decision power risks the solution space missing the right answer" — should a "full AI autonomy" skill be added, running dual branches at suitable decision nodes (full AI vs human-led) and comparing in retro? Maps to the systems-engineering/OR models: shadow mode + champion-challenger.
 - **Decision** (2026-08-01, grill-Q ai-autonomy W01 stress; **W02 corrected**): **approve the pilot, but keep it out of the skill family for now** (the family stays at 7; the CLAUDE.md "7 core skills" wording unchanged — 2026-08-03 revision: the family has since updated to 8 with action-Q's admission, canonical synced — "unchanged" means not changed for shadow; this "shadow does not join the family" ruling stands), dogfood first. Key points:
   - Execution form: **shadow first, then real** (W02 Q1); **shadow = automated dogfood, run routinely, no N cap** (W02 Q1 custom — shadow runs on every task, accumulating comparison data); real execution upgrades on demand, judged by shadow data; subagent judgment applies only to shadow / champion-challenger dual-track mode; normal mode keeps human decision power
@@ -168,6 +182,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-14 (decided) design-Q questionnaire default-tick pilot (pre-authorization mechanism)
 
+- **Status**: closed
 - **Problem**: does default-ticking the recommended option violate the iron rule "AI never decides for the human"? A direction for solving "low decision efficiency".
 - **Decision** (2026-08-01, grill-Q ai-autonomy W01 stress): characterized as a **pre-authorization mechanism** (same semantics as delegate's whitelist — a recommendation remains a recommendation; the human keeps veto), with four guardrails:
   1. **One-way-door items (release / delete / spend / desensitize) are never default-ticked — mandatory answers**;
@@ -194,6 +209,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-15 (completed) doctor-for-harness skill — harness evolution governance
 
+- **Status**: closed
 - **Problem**: the harness file-management spec (ADR-0011 hardcoding + each SKILL.md's write paths) was a **static flat** design (design/ + questionnaires/ + adr/; filename prefixes), not covering:
   - **Hierarchization**: design/ had no feature-aggregation directories (the status quo mixed repo/, skill-spec-revamp/ subdirectories with bare VISION.md / hld_v2.md; the spec undefined when to create directories);
   - **Sub-project boundaries**: no criterion for harness ownership in multi-subproject repositories;
@@ -207,6 +223,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-16 Harness tiering optional tracks (questionnaires/adr) revisit trigger
 
+- **Status**: watching
 - **Problem**: ADR-0013's optional tracks (questionnaires/ new archives into subdirectories + adr/ tiering) marked TBD with no revisit trigger — to what degree of flat-archive bloat (questionnaires/archive already 30+ files) do we act? Without a quantified signal, it's permanent suspension or random deciding.
 - **Source**: [grill-doctor-harness-w01](../../harness/questionnaires/archive/doctor-harness/grill-doctor-harness-w01.md) Q5 (2026-08-08, all accepted).
 - **Current placeholder** (updated 2026-08-08): **the questionnaires optional track is executed** — archive sub-directoryization landed: 41 legacy files migrated into 10 subdirectories by feature/topic + the [archive/README.md](../../harness/questionnaires/archive/README.md) index (commit c825e75; HARNESS-RULES §4 "legacy stays" → "wholesale migration allowed"). **adr/ tiering still TBD** (currently 13 files; not yet needed).
@@ -217,6 +234,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-17 doctor-harness's "evolution is the norm" assumption — usage verification
 
+- **Status**: watching
 - **Problem**: VISION Q1's motivation "evolution is the norm → establish a governance skill". But this repository (the methodology repo) evolves its harness at low frequency (4 feature-level designs: repo / v4 / skill-spec-revamp / doctor-harness, across weeks). If cross-project use is also absent, doctor-harness may degenerate into "a one-off migration tool + static docs" — in tension with its "standing governance-skill" positioning.
 - **Source**: [grill-doctor-harness-w01](../../harness/questionnaires/archive/doctor-harness/grill-doctor-harness-w01.md) Q9 (2026-08-08, the doubtful assumption acknowledged).
 - **Current placeholder**: doctor-harness is in the family (9th, F020), positioned as a governance skill; minimal-usable constraint (only four duties: rules / migration / validation / traces).
@@ -227,6 +245,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-18 Discipline-anchoring completeness review trigger (two-way door)
 
+- **Status**: watching
 - **Problem**: the philosophy canonical's discipline anchoring is a thesis claim, but "is it complete?" had no proactive review mechanism — this round ([grill-discipline-mapping-w01](../../harness/questionnaires/archive/methodology/grill-discipline-mapping-w01.md), 2026-08-10) only found the omissions (safety science + a whole swath: CM/QMS/PM/KM/systems engineering/cognitive science) because the user asked. No completeness review = long-lived anonymous omissions.
 - **Deferral reason**: anchoring completeness must be checked against practice evolution (e.g. discipline mappings newly found in bridge-building research); cannot be fixed once.
 - **Current placeholder**: tiering strategy + mechanism criteria set ([ADR-0014](../../harness/adr/0014-discipline-mapping-strategy.md)) — the philosophy anchors thesis-core disciplines; CONTEXT's "project discipline map" section carries the panorama; safety science entered the philosophy in v5; v7 inherits v6's governance-evolution roadmap and adds the first-three-disciplines minimal entry/exit template.
@@ -237,6 +256,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-19 The formal-V&V gap — the black box's "results independently verifiable" countermeasure is missing (two-way door)
 
+- **Status**: open
 - **Problem**: among the de-blackboxing layers ([CONTEXT AI black box](CONTEXT.md)), "results independently verifiable" (confirming output correct independent of AI self-assessment) lacks a systematic countermeasure — the project relies on human review + dogfood (manual V&V), lacking formal methods (coverage matrices / measurable assurance / model checking). [OD-13](OPEN-DECISIONS.md) already evidenced "AI self-assessed playable ≠ human-usable".
 - **Deferral reason**: formal V&V may overload an individual-developer methodology (bridge-building research #3 also noted formal methods as too heavy for individuals); timing depends on the AI-code ratio and risk profile.
 - **Current placeholder**: consolidate the existing auditable instruments (delegation-log / ADRs / code-review humans / dogfood) into the de-blackboxing thesis; "results independently verifiable" leans on human review + dogfood as backstop; the gap explicitly acknowledged (non-formal, non-systematic coverage).
@@ -246,6 +266,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-20 Core-document tiering depth — full Level 1/2/3 or the minimal governance slice (two-way door)
 
+- **Status**: watching
 - **Problem**: in grill-Q philosophy-v5 W04, Q1 chose "copy Level 1/2/3 wholesale"; Q10 chose "the minimal slice of A+B+D, not copying the full Level 1/2/3". The two represent structural rebuild vs cost-controlled minimal governance — they cannot be silently merged into one conclusion.
 - **Source**: [grill-philosophy-v5-w04](../../harness/questionnaires/archive/philosophy-v5/grill-philosophy-v5-w04.md) Q1/Q10 (2026-08-13).
 - **Current placeholder**: do not move or rename the existing three files; first establish the core claims' minimal verification/change contract per [ADR-0016](../../harness/adr/0016-method-claim-assurance-contract.md); whether full Level 1/2/3 holds awaits a separate ruling.
@@ -255,6 +276,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-21 (decided · two-way door) Dual-file governance focus of philosophy / methodology — does the practice file exit structural evolution
 
+- **Status**: closed
 - **Problem**: W01's supplementary statement noted the three files' structure is bloated and proposed "narrow to philosophy and methodology, letting the two evolve separately yet challenge each other". That wording could mean narrowing the canonical governance focus, or physical merging / removing the practice file — migration costs and boundaries completely different; cannot be silently merged.
 - **Source**: [grill-philosophy-v6-w01](../../harness/questionnaires/archive/philosophy-v6/grill-philosophy-v6-w01.md) supplementary statement (2026-08-14).
 - **Deferral reason**: whether "narrowing" changes governance scope or file structure was undefined; nor how the two canonical files challenge each other, who carries the practice content, how versioning and release gates change.
@@ -265,6 +287,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-22 Skill niche and naming routing table (two-way door)
 
+- **Status**: watching
 - **Problem**: the nine skills' responsibilities are locally divided, but `grill`, `grill-with-docs`, `grill-questionnaire`, and the two questionnaire entry types can still be mis-triggered by name alone; there is no single authoritative routing table of inputs, outputs, decision power, hard boundaries, and handoff conditions.
 - **Source**: [grill-philosophy-v7-w02](../../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q1/Q3. Q3 took the escape hatch; the recommendation was adopted provisionally per the de-risking protocol.
 - **Deferral reason**: no repeated mis-triggers or real handoff-failure samples yet; immediate renaming would break historical trigger words, references, and usage habits — migration cost above the evidence-supported benefit.
@@ -274,6 +297,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-23 delegate pilot and controllability verification (two-way door)
 
+- **Status**: watching
 - **Problem**: this repository has no project-level `delegation.md` / `delegation-log.md` instance; low usage cannot distinguish "low-frequency but valuable" from "mechanism ineffective"; the post-enable revocation and log loop are also untested.
 - **Source**: [grill-philosophy-v7-w02](../../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q5/Q6.
 - **Deferral reason**: lacking real usage, human-correction, revocation, and log-completeness evidence; forced enabling would create ritualistic usage and widen the permission surface.
@@ -284,6 +308,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-24 Skill dual-copy experimentation strategy — global experiments / project backup / DOGFOOD field-testing (two-way door)
 
+- **Status**: closed
 - **Problem**: structural skill rebuilds such as the design-Q digital-levels revamp (grill-Q methodology-improvement W01 Q3-A) should not directly modify this project's stable version; the user ruled the experiment-site strategy as "this project's skills/ as backup, the global `~/.claude/skills/` as the experiment, dogfood field-testing under the peer DOGFOOD project" (W01 supplementary statement, 2026-08-14). The strategy turns the dual copies from "rebuilt-identical (2026-08-07, desensitization diff only)" into an **intentional fork** — the drift risk needs explicit governance.
 - **Deferral reason**: during the fork, both copies' responsibilities and feed-back timing evolve with the experiment; merge-back conditions depend on DOGFOOD evidence.
 - **Current placeholder**: global = experimental version (structural changes land there first); this project's skills/ = backup stable baseline (the distribution surface); the DOGFOOD project = field-test site (same domain as OD-13's pilot site). Experiment validated → feed back into the project version and restore identity; experiment failed → roll the global side back to the project version.
@@ -296,6 +321,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-25 This repository's governance-file layout vs HARNESS-RULES §6 (two-way door)
 
+- **Status**: watching
 - **Problem**: HARNESS-RULES §6 (ruled 2026-08-14) states "for projects with a `harness/`: OPEN-DECISIONS.md / TODO.md / CONTEXT.md belong at the `harness/` root"; this repository itself keeps OPEN-DECISIONS / CONTEXT under `docs/` and TODO at the repository root — the methodology's own production workshop conflicts with its own authoritative rule. Root cause is chronology: ADR-0011 (2026-08-07) "CONTEXT/OPEN-DECISIONS/TODO are project-inherent files; paths unchanged" predates the §6 ruling (2026-08-14), which made no disposition for this repository's legacy layout.
 - **Deferral reason**: migration means repository-wide reference-repair (README/CLAUDE.md/ADR/archived-questionnaire living references) — a full MIGRATION-FLOW round; not appropriate to do in passing during a README stress round; and whether this repository, as rule-maker, should "self-migrate as demonstration" or claim a "production-workshop exemption" is a positioning judgment needing its own ruling.
 - **Current placeholder**: keep the current layout (the README's "repository structure" section describes it truthfully); rule §6 takes effect as usual for new host projects.
@@ -305,6 +331,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-26 grill-Q questionnaire quality data-pipeline form — embedded in processing reports vs an independent ledger (two-way door · provisional)
 
+- **Status**: watching
 - **Problem**: the aggregation form for grill-Q item-level quality signals (❌ mis-routing rate / 🤔 escape-hatch rate / ✍️ custom rate + mis-routed-item attribution): a "quality signals" section embedded in processing reports, or an independent quality ledger under harness/?
 - **Source**: 2026-08-19 grill-with-docs "grill family boundary and mis-routing governance" dive Branch D (user triggered the escape hatch → de-risking protocol step 1 judged a two-way door → adopted the recommended minimal slice + provisional trace).
 - **Deferral reason**: the benefit difference between the two forms depends on real cross-wave aggregation frequency; this repository has no instance data; an independent ledger is in tension with the rulings "no ex-ante gates" (grill-skill-family W01 Q6-B) and "no global criteria" (W01 Q9-C) — needs instances to justify.
@@ -314,6 +341,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-27 design-Q questionnaire granularity vs methodology §4.5 decision tiering — residual tension in init / no-whitelist scenarios (two-way door)
 
+- **Status**: watching
 - **Problem**: methodology v5 §4.5 (canonical) states explicitly "🟢 low-stakes two-way door → take the recommendation directly, spend no energy; ⚪ pure execution → delegable to AI"; design-Q's W00, with opt-in off (default), asks the human item-by-item for every decision point "with a clear AI lean" (mostly 🟢/⚪ tier) — the tension with canonical sits on paper. After the 2026-08-20 grill-design-q-w01 Q5 ruling C (delegate whitelist interface), the tension narrows to: **init mode and projects without delegation.md still ask the human for everything** — that boundary is unwritten in canonical; option B's claim that "§4.5's table intends implementation-phase tiering, not design-phase" is advocacy, not conclusion.
 - **Source**: [grill-design-q-w01](../../harness/questionnaires/archive/_misc/grill-design-q-w01.md) Q5 (user chose C; neither the split-section scheme A nor "keep + CONTEXT disambiguation" B).
 - **Deferral reason**: whether to give design-phase decisions their own tiering semantics (every design decision, however small, is eyeballed vs aligning with §4.5 to save energy) depends on the user's value trade-off on their own design-phase judgment energy — an experience gap; and the delegate interface's (Q5-C) actual whitelist coverage is unknown — judge the residual surface after seeing the interface's real effect.
@@ -324,6 +352,7 @@ zh-hash: 0d76542fbb8e
 
 ## OD-28 design-Q spec-revision self-check list — await a second spec-contradiction instance before promoting (two-way door · watch item)
 
+- **Status**: watching
 - **Problem**: after revising design-Q's engine specs (QUESTIONNAIRE-FORMAT / PROCESSING-RULES / STAGE-SKELETONS / SKILL.md), there is no spec-level self-consistency regression: the existing grep self-check anchors "at question-posing time" (against questionnaire incompleteness), not "at revision time" (against cross-rule contradictions). Precedent: the ordering contradiction between FORMAT rule 4 (✍️ position) and rules 13/14 (option ordering) existed from introduction and was only caught in real use on 2026-08-18 by first-principles W01.
 - **Source**: [grill-design-q-w01](../../harness/questionnaires/archive/_misc/grill-design-q-w01.md) Q10 (user chose A, adding the "form × protocol" cross table; B's "revision self-check list" enters OD as a watch item per the ★recommendation's rationale — not adopted for immediate creation).
 - **Deferral reason**: aligning with [ADR-0023](../../harness/adr/0023-skill-md-layered-slimming.md)'s promotion mechanism "a lesson repeats ≥ 2 times before becoming standing" — cross-rule contradictions have 1 confirmed instance so far; a self-check list adds a procedure to every revision; creating it before the contradiction frequency is confirmed risks ritualism.
@@ -331,3 +360,14 @@ zh-hash: 0d76542fbb8e
 - **Reversibility**: two-way door (a list is pure addition, addable anytime).
 - **Revisit trigger**: a second spec-level cross-rule contradiction caught in real use (any skill's FORMAT/PROCESSING/SKILL rules conflicting). Triggered → create a "revision self-check list" in the corresponding DESIGN.md's maintenance section.
 - **Related**: [ADR-0023](../../harness/adr/0023-skill-md-layered-slimming.md) (promotion mechanism), OD-8 (engine four-way sync — an existing constraint at revision time).
+
+## OD-29 The information lifecycle only ever grows — a refreshing/compaction/retirement gap (two-way door)
+
+- **Status**: open
+- **Problem**: the methodology's §2 information lifecycle ends at "sediment → look-back"; look-back = Git history / archiving (solving "findable again"), with no refreshing / compaction / retirement stage (no promise of "not going stale" or "not bloating"). In single-person · large-project practice, three symptoms amplify from the same root: ① file-to-reality drift has no process governance (iron rule 6 is principle only); ② the harness grows without shrinking (this repository's evidence: 15,863 lines of governance md / 26 ADRs / 19 features' archived questionnaires); ③ the two drift types entangle to "no way to tell which source to trust". Pillar one has "production of quantity" and "initial quality gating" (verify before writing) but lacks "continuous quality governance" and "capacity governance of quantity".
+- **Source**: the 2026-09-25 grill-with-docs deep dive "performance in large projects" (session adjudication: evidence = gradual lived experience [experience-grade] + small-scale evidence in this repository, no case anchor).
+- **Deferral reason**: the evidence does not support a methodology-grade refactor; moreover "AI can retrieve on demand, humans cannot" is an unverified hypothesis (zero observation of AI-side retrieval quality) — if the AI side also degrades, the solution layer moves from the human-readable layer to the information-architecture layer; big moves before the direction is settled = blind moves.
+- **Current placeholder**: ① the two-types-of-drift term distinction has entered the CONTEXT "Two types of drift" section (2026-09-25); ② candidate lightweight slices recorded but not implemented in the deep-dive session: add a harness checkup section to the retro questionnaire (a skill-spec change, needs the formal process + two-sided sync) / an OD·ADR reconciliation trigger (can take effect as a convention first: every retro sweeps once for decided-but-unlogged items, this entry being the first applicable object) / extend doctor-harness's checkup mandate; ③ the multi-person (large-team) scenario's "expected to be bad" is a purely theoretical judgment (zero practice), parked and linked to this entry — once the single-person line concludes, re-evaluate whether to escalate it into a multi-person extension topic (the v4 audience narrowing is not thereby automatically overturned).
+- **Reversibility**: two-way door (mechanisms are pure addition, git-revertible; the methodology master files v5 / philosophy untouched).
+- **Revisit trigger**: ① in the next large-project practice, hard evidence of AI-side retrieval degradation observed (an erroneous decision traced to hitting a stale document); ② a concrete "no way to tell which to trust" event, or the harness scale doubles again; ③ after proj-overview v2 lands, the sense of losing control is not relieved; ④ ≥2 concrete failure events accumulated (experience-grade → evidence-grade). Any one met → evaluate escalating to a design-Q project (information decay governance / capacity governance) or landing the lightweight slices directly.
+- **Related**: methodology_v5 §2 information lifecycle, the CONTEXT "Two types of drift" section, the proj-overview v2 feature (in progress), OD-8 / OD-23 (existing governance of file-to-file drift).

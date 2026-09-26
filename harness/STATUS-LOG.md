@@ -2,6 +2,10 @@
 
 > 承接原 CLAUDE.md「仓库状态」节的历史条目(ADR-0024 P3 迁移,2026-08-20,原文逐字保留)。**只记内部工作状态时间线**;对外可感知变更见仓库根 [CHANGELOG.md](../CHANGELOG.md)(其记录规则明确排除内部治理);当前状态快照见 [CLAUDE.md](../CLAUDE.md)。追加式,只增不改。
 
+## 2026-09-26:proj-overview v2 规格升级(认读第一入口 + summary 职责,F052)
+
+用户对 v1 产物两不满(mermaid 横向可读性差 / 内容不足以一篇掌握)→ design-Q L0+L1 两层(W00 两波 24 采纳 1 取消;补充声明「不设行数硬性上限」+「认读第一入口:人重载上下文从此开始」)+ grill-Q 九题压测(8 采推荐 + Q7 推翻推荐「认读第一入口」进 CONTEXT + Q4 自定义扩展:OD 加状态字段修源,同类问题全仓检查结论 = 唯 OD 缺)单波收口;13 项修订全执行含 ⚠ 两项(方法论 §3.3.1 行同步 + 修订记录行 / OD 29 条状态字段补齐 open 8·观察中 11·已收口 10,OD 文件头格式说明此后状态必填)。F052 四步:① SKILL.md 五处修订 54 行 + en 回译(stamp 9926b5712b94)+ 双侧同步 0 违规;② ADR-0026 修订注记 + 挑战报告 #三 v2 注记;③ 产物八段式重生成 230 行(ADR 26 / OD 29 全量表,全竖向 5 图,分型自检留痕;TODO 头部漂移自检二次触发 → 人拍板草案转写);④ 治理收尾(根 CHANGELOG 中英双落 / README:129·CLAUDE.md:68·en 两镜像描述同步 / skill CHANGELOG / 本条)+ 四门终验。CONTEXT 新词「认读第一入口」(first-reading entry 待人确认)+「人读派生视图」译名尾注清理。失忆测试窗口自 09-26 重算(≥09-29,三问走三分钟导读档;v2 反馈模板三问预置 DESIGN.md)。设计套 [proj-overview-v2/](../design/proj-overview-v2/)。
+
 ## 2026-09-25:proj-overview 入库与全链收官(F049–F051,第 9 个 skill)
 
 skill 家族 8→9:skills/proj-overview/(SKILL.md 53 行 + DESIGN + CHANGELOG)+ 全局侧分发洁净同步 + en 首译同批(TRANSLATABLE skills/* 通配实测生效——入库即负翻译义务,欠账窗口 <1 会话即消)。F050 首次 dogfood:harness/PROJECT-OVERVIEW.md 135 行(四层 BFS 分解 + 三条 DFS 关键链),漂移自检分支首次真实触发(TODO 头部滞后 3 处 → 人拍板口述草案转写);逐图渲染验证 4 SVG 过。F051 十处联动:HARNESS-RULES §六新类目(人读派生视图)+ 方法论 §3.3.1 加行(版本内修订 + 记录行)+ README/CLAUDE/CONTEXT 9-skill 表述 + 根 CHANGELOG 中英双落 + CONTEXT 术语「人读派生视图」(译名待人确认)。全局侧 DOGFOOD-LOG 登记(人过目后写入)。四门全绿贯穿。失忆测试窗口自 09-25 起算(≥09-28 人判,结果回写 skills/proj-overview/DESIGN.md)。设计套 [human-project-view/](../design/human-project-view/) + [ADR-0026](../adr/0026-proj-overview-derived-view-route.md)。
