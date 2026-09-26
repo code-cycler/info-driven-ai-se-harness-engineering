@@ -63,7 +63,7 @@
 2026-08-14 用户裁决(openorbbecsdk dogfood 触发):
 
 - 项目已建 `harness/` 的:**OPEN-DECISIONS.md / TODO.md / CONTEXT.md 归 `harness/` 根**;ADR 归 `harness/adr/`(懒创建,0001 起编号)。治理文件是 harness 内部组织形态,不污染项目根 `docs/`(与 ADR-0011/0012 同一精神)。
-- **人读派生视图**(2026-09-25,proj-overview skill 入库新增,[ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md)):`PROJECT-OVERVIEW.md` 归 `harness/` 根。特性四条:只读派生(以源文件为准,不新增权威源)/ 手动重生成(覆盖式,git 历史即版本)/ 宽松漂移(不进 harness-check 校验、无强制同步义务)/ 新鲜度三件套自声明(生成时间戳 + 源清单 + 派生声明)。
+- **人读派生视图**(2026-09-25,proj-overview skill 入库新增,[ADR-0026](../../harness/adr/0026-proj-overview-derived-view-route.md);**2026-09-26 落点修订:归项目根,不归 harness/**——认读第一入口可发现性优先,与 README/CLAUDE/TODO 同级,用户裁决):`PROJECT-OVERVIEW.md` 归项目根。特性四条:只读派生(以源文件为准,不新增权威源)/ 手动重生成(覆盖式,git 历史即版本)/ 宽松漂移(不进 harness-check 校验、无强制同步义务)/ 新鲜度三件套自声明(生成时间戳 + 源清单 + 派生声明)。
 - 项目无 `harness/` 的:沿用各 skill 原约定(grill-with-docs:`docs/OPEN-DECISIONS.md` 或 CONTEXT 旁)。
 - 各 skill 文档不内联复制本条路径,引用「治理文件归属见 HARNESS-RULES.md」。
 

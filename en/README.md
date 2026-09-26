@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: README.md
-zh-hash: 303791fbf64a
+zh-hash: 9b6fb5e8867b
 ---
 [中文](../README.md) · **English**
 
@@ -134,7 +134,7 @@ The 9 skills form a five-stage loop plus cross-cutting members (see the diagram 
 ### /proj-overview — human-readable project-mastery view (cross-cutting tool type, read-only derived)
 
 - **Triggers**: "project map", "project panorama", "I'm lost", "re-orient", "regenerate project view"
-- **Products**: `harness/PROJECT-OVERVIEW.md` (a single read-only derived view, the first-reading entry: eight sections + a governance-file summary (every ADR/OD entry) + all-vertical BFS/DFS graphs; overwrite-style regeneration)
+- **Products**: `PROJECT-OVERVIEW.md` (repo root, alongside README/CLAUDE/TODO; a single read-only derived view, the first-reading entry: eight sections + a governance-file summary (every ADR/OD entry) + all-vertical BFS/DFS graphs; overwrite-style regeneration)
 - **Core mechanism**: splitting the dual duty of harness files, human-read vs AI-read — AI context rebuilding relies on the source files; human mastery recovery relies on the derived view. The snapshot = the status-tracking file header as the single authoritative source (the AI never ghost-writes); adds no source of authority; the source files govern
 
 ### Skill question / confirmation dimensions at a glance

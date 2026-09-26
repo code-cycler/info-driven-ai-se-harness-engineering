@@ -65,7 +65,7 @@ flowchart LR
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
 | doctor-harness | 组织 harness/ 区(分层/迁移/校验/留痕)+ **治理历史载体维护**(CHANGELOG/FORK-NOTES/STATUS-LOG 布局与增量记录,ADR-0024);规则权威 `skills/doctor-harness/HARNESS-RULES.md`(第九节 = 治理历史布局);校验 `scripts/harness-check.py` |
-| proj-overview | 人读掌控视图(认读第一入口)→ `harness/PROJECT-OVERVIEW.md`(只读派生,八段式 + 治理文件 summary + 竖向 BFS/DFS 图,覆盖式重生成;以源文件为准,不新增权威源——[ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)) |
+| proj-overview | 人读掌控视图(认读第一入口)→ 项目根 `PROJECT-OVERVIEW.md`(只读派生,八段式 + 治理文件 summary + 竖向 BFS/DFS 图,覆盖式重生成;以源文件为准,不新增权威源——[ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)) |
 
 两族分流判据锚 = **认知状态三态**(① 知道·可离线 → 批量;② 未成形·需即时反馈 → 单点;③ 不知道自己不知道 → 对抗维度逼出),详见 [CONTEXT](docs/CONTEXT.md)「Grill 家族」节(2026-08-19,复压 grill-boundary-canonical-w01 Q8)。
 

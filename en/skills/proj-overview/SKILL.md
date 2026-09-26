@@ -1,9 +1,9 @@
 ---
 name: proj-overview
-description: Human-readable project-mastery view generator (cross-cutting tool type, 9th in the skill family). Scans the project's structural/governance/functional file surfaces and generates a single read-only derived view harness/PROJECT-OVERVIEW.md — the first-reading entry: where a human's context reload begins (audience = any developer): eight sections (positioning / reading guide / structural panorama / governance-file summary / decision threads / status snapshot / DFS deep chains / lookup index) + a governance-file summary (every ADR/OD entry on one line) + mermaid relationship graphs (all vertical; BFS hierarchical decomposition + DFS functional logic chains). Adds no new source of authority; the source files govern. Triggers: "project map", "project overview", "regenerate project view", "regain mastery", "re-orient", "I'm lost".
+description: Human-readable project-mastery view generator (cross-cutting tool type, 9th in the skill family). Scans the project's structural/governance/functional file surfaces and generates a single read-only derived view at the repo root (PROJECT-OVERVIEW.md) — the first-reading entry: where a human's context reload begins (audience = any developer): eight sections (positioning / reading guide / structural panorama / governance-file summary / decision threads / status snapshot / DFS deep chains / lookup index) + a governance-file summary (every ADR/OD entry on one line) + mermaid relationship graphs (all vertical; BFS hierarchical decomposition + DFS functional logic chains). Adds no new source of authority; the source files govern. Triggers: "project map", "project overview", "regenerate project view", "regain mastery", "re-orient", "I'm lost".
 lang: en
 en-source: skills/proj-overview/SKILL.md
-zh-hash: 9926b5712b94
+zh-hash: 4dfa724d5a94
 ---
 
 [中文](../../../skills/proj-overview/SKILL.md) · **English**
@@ -32,7 +32,7 @@ Generate a project-mastery view **for humans** — the first-reading entry: wher
 
 ## Output specification (hard constraints)
 
-- Target `harness/PROJECT-OVERVIEW.md`; manually triggered, overwrite-style regeneration (git history is the versioning).
+- Target the **repo root** `PROJECT-OVERVIEW.md` (alongside README/CLAUDE/TODO — first-reading-entry discoverability first; moved out of harness/ by user adjudication 2026-09-26; AI-process artifacts stay in harness/); manually triggered, overwrite-style regeneration (git history is the versioning).
 - File-header trio: timestamp + information-source list (source files listed per summary section; path + one-line summary per file) + "the source files govern; this is a derived view; the first-reading entry" declaration.
 - **Reading-guide section, 3–5 lines, one line per tier pointing to section numbers**: 3-minute recovery (①⑥⑤) / 15-minute framework (first four sections + summary-table skim) / lookup (⑧⑦ + tables beside graphs).
 - **Summary-section specification** (top warning line: "the source files govern; never make one-way-door decisions from a stale summary"): ADR table, 3 columns (number·with source link / title / one-sentence decision summary — sourcing = direct quote or tight paraphrase of the first sentence of the ADR's decision section, **no cross-section synthesis**; at generation, sample 3 entries for quick human review); OD table, 3 columns (number·with source link / topic / status — **read directly from the OD status field; AI classification forbidden**; in projects without that field, quote the title's gate-type annotation directly); TODO/STATUS-LOG/CHANGELOG headers as narrative + bullets; **each table's row count = the source's actual entry count**.

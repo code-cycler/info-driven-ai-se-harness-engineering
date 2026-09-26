@@ -2,6 +2,13 @@
 
 > harness 组织变更(迁移/规则修订)记录于此,可回溯「harness 为什么长这样」。追加式,只增不改。
 
+## 2026-09-26 · §六「人读派生视图」类目落点修订(移出 harness/)
+
+- **变更**:该类目落点由「归 `harness/` 根」改为「**归项目根**(与 README/CLAUDE/TODO 同级)」;特性四条不变。
+- **理由**:产物定位 v2 升级为「认读第一入口」——入口文件可发现性优先,置于根目录;用户裁决(2026-09-26,proj-overview-v2 收尾时)。
+- **影响**:[HARNESS-RULES.md](HARNESS-RULES.md) 第六节(1 条修订)/ [方法论 §3.3.1 路由行路径](../../docs/methodology/methodology_v5.md) / README·CLAUDE·en 镜像描述 / 产物本体 git mv + 链接重算。
+- **边界**:仅此一类目例外——其余 harness 类目(design/questionnaires/adr/STATUS-LOG)落点不变;AI 流程产物仍归 harness/。
+
 ## 2026-09-25 · §六新增「人读派生视图」类目(PROJECT-OVERVIEW.md)
 
 - **变更**:第六节治理文件归属新增一类——`PROJECT-OVERVIEW.md`(人读派生视图)归 `harness/` 根,特性四条(只读派生 / 手动重生成 / 宽松漂移不进校验 / 新鲜度三件套自声明)。

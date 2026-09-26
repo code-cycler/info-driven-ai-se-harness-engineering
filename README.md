@@ -126,7 +126,7 @@ flowchart TD
 ### /proj-overview —— 人读项目掌控视图(横切工具型,只读派生)
 
 - **触发**:「项目地图」「项目全景」「我迷失了」「重新定向」「重新生成项目视图」
-- **产物**:`harness/PROJECT-OVERVIEW.md`(单份只读派生视图,认读第一入口:八段式 + 治理文件 summary(ADR/OD 全量)+ 全竖向 BFS/DFS 图;覆盖式重生成)
+- **产物**:`PROJECT-OVERVIEW.md`(项目根,与 README/CLAUDE/TODO 同级;单份只读派生视图,认读第一入口:八段式 + 治理文件 summary(ADR/OD 全量)+ 全竖向 BFS/DFS 图;覆盖式重生成)
 - **核心机制**:harness 文件人读 / AI 读职责分野——AI 重建上下文靠源文件,人恢复掌控靠派生视图;快照 = 状态追踪文件头部唯一权威源(AI 不代写);不新增权威源、以源文件为准
 
 ### 各 skill 提问 / 确认维度速查
