@@ -44,4 +44,4 @@ created: YYYY-MM-DD
 
 | 日期 | 变更 | 发起 | 原因 |
 |------|------|------|------|
-| YYYY-MM-DD | 初始枚举定稿(D1–D5) | 人 | 工程启动初始枚举(delegate skill init) |
+| YYYY-MM-DD | 初始枚举定稿(D1–D7) | 人 | 工程启动初始枚举(delegate skill init) |

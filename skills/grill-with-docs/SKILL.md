@@ -116,12 +116,12 @@ During codebase exploration, also look for existing documentation:
 
 ### File structure
 
-Most repos have a single context:
+本 skill 默认绑库模式,以下为 harness 制布局。Most repos have a single context:
 
 ```
 /
 ├── CONTEXT.md
-├── docs/
+├── harness/
 │   ├── adr/
 │   │   ├── 0001-event-sourced-orders.md
 │   │   └── 0002-postgres-for-write-model.md
@@ -129,17 +129,19 @@ Most repos have a single context:
 └── src/
 ```
 
+OPEN-DECISIONS.md 位置按 HARNESS-RULES 第六节:已建 `harness/` 的仓库归 `harness/` 根;无 `harness/` 的沿用原约定(`docs/OPEN-DECISIONS.md` 或 CONTEXT 旁)。
+
 If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
 
 ```
 /
 ├── CONTEXT-MAP.md
-├── docs/
-│   └── adr/                          ← system-wide decisions
+├── harness/
+│   └── adr/                          ← system-wide decisions(系统级决策 → 顶层 harness/adr/)
 ├── src/
 │   ├── ordering/
 │   │   ├── CONTEXT.md
-│   │   └── harness/adr/                 ← context-specific decisions
+│   │   └── harness/adr/              ← context-specific decisions
 │   └── billing/
 │       ├── CONTEXT.md
 │       └── harness/adr/

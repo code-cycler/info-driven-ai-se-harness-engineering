@@ -3,7 +3,7 @@ name: grill-with-docs
 description: Deep-dive engine for the 20% critical questions (80/20 judgment-cost principle): one-by-one grilling for dependency-chained, not-yet-formed decisions that need immediate feedback — the layer grill-questionnaire's batched 80% layer hands deep-water points to. Two modes: codebase-bound (default — challenges your plan against the existing domain model, sharpens terminology, updates CONTEXT.md/ADRs/OPEN-DECISIONS.md inline) and general mode (absorbs the retired grill's niche — no codebase exploration, zero auto-write, pure dialogue). When the user can't decide a question, de-risks it — defers or makes it reversible instead of forcing a choice. Use when user wants to stress-test a plan point-by-point against their project's language and documented decisions, or for general one-at-a-time deep-dives not tied to a codebase (general mode).
 lang: en
 en-source: skills/grill-with-docs/SKILL.md
-zh-hash: 1b41c6cdc2cb
+zh-hash: fa0c58676598
 ---
 
 [中文](../../../skills/grill-with-docs/SKILL.md) · **English**
@@ -123,12 +123,12 @@ During codebase exploration, also look for existing documentation:
 
 ### File structure
 
-Most repos have a single context:
+This skill defaults to codebase-bound mode; the layouts below follow the harness convention. Most repos have a single context:
 
 ```
 /
 ├── CONTEXT.md
-├── docs/
+├── harness/
 │   ├── adr/
 │   │   ├── 0001-event-sourced-orders.md
 │   │   └── 0002-postgres-for-write-model.md
@@ -136,17 +136,19 @@ Most repos have a single context:
 └── src/
 ```
 
+OPEN-DECISIONS.md placement follows HARNESS-RULES.md section 6: repos with a `harness/` zone keep it at the `harness/` root; repos without one follow the original convention (`docs/OPEN-DECISIONS.md` or next to the CONTEXT).
+
 If a `CONTEXT-MAP.md` exists at the root, the repo has multiple contexts. The map points to where each one lives:
 
 ```
 /
 ├── CONTEXT-MAP.md
-├── docs/
-│   └── adr/                          ← system-wide decisions
+├── harness/
+│   └── adr/                          ← system-wide decisions (system-level → top-level harness/adr/)
 ├── src/
 │   ├── ordering/
 │   │   ├── CONTEXT.md
-│   │   └── harness/adr/                 ← context-specific decisions
+│   │   └── harness/adr/              ← context-specific decisions
 │   └── billing/
 │       ├── CONTEXT.md
 │       └── harness/adr/

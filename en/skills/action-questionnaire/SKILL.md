@@ -1,9 +1,9 @@
 ---
 name: action-questionnaire
-description: Batch detail-confirmation before informal actions — extracts the AI's understanding of an action's details into a "detail-confirmation list (confirm-list)" questionnaire; the user checks it offline, then it is parsed and archived, aligning information to ward off the AI's hallucinated self-directed decisions in an information vacuum. Reuses the design-questionnaire engine (preview re-purposed to confirm-list semantics; small-wave threshold ≤ 3), with the preview list as the default and formal question waves as backstop. Division of labor with design-phase skills: this skill handles generic informal actions unrelated to design; when an action escalates to feature level (worth a feature record, changes direction, multi-file structural change), it reminds you to switch to the dedicated skill — design-Q / grill-Q / long-running etc. Triggers: "align before we start", "confirm the details", "preflight", before starting an informal write operation that is multi-file / multi-decision / touches external dependencies. Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
+description: Batch detail-confirmation before informal actions — extracts the AI's understanding of an action's details into a "detail-confirmation list (confirm-list)" questionnaire; the user checks it offline, then it is parsed and archived, aligning information to ward off the AI's hallucinated self-directed decisions in an information vacuum. Reuses the design-questionnaire engine (preview re-purposed to confirm-list semantics; small-wave threshold ≤ 3), with the confirm-list as the default and formal question waves as backstop. Division of labor with design-phase skills: this skill handles generic informal actions unrelated to design; when an action escalates to feature level (worth a feature record, changes direction, multi-file structural change), it reminds you to switch to the dedicated skill — design-Q / grill-Q / long-running etc. Triggers: "align before we start", "confirm the details", "preflight", before starting an informal write operation that is multi-file / multi-decision / touches external dependencies. Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
 lang: en
 en-source: skills/action-questionnaire/SKILL.md
-zh-hash: f3ac1863a088
+zh-hash: be61e67f7fb3
 ---
 
 [中文](../../../skills/action-questionnaire/SKILL.md) · **English**
@@ -55,7 +55,7 @@ Replace "confirming a few things by feel before starting" with "multi-wave quest
 ### 2. Generate the questionnaire
 
 - **confirm-list (default first wave, independent wave 0)**: generate `confirm-<slug>-w00.md` — a detail-confirmation list, one point per line = detail point + the AI's understanding + source. Each item `[ ]`: **tick `[x]` = understood correctly** (execute on that understanding), **blank = misunderstood or needs changing** (turns into a formal question for probing, or asked directly under the small-wave threshold). W00 **uses no 🤔** (a binary correct/incorrect, no middle state); the "supplementary declarations" field at the bottom is kept. Format per [QUESTIONNAIRE-FORMAT.md](../../../skills/action-questionnaire/QUESTIONNAIRE-FORMAT.md).
-- **Formal question waves (W01+, backstop)**: **preview as primary with formal question waves as backstop is this skill's intended shape** — most confirmation flows = W00 list + small-wave direct asking; W01 questionnaire files rarely appear; never force questions out just to "use the questionnaire file" (anti-formalism). W01 = deeper probing of blank W00 points + open-ended confirmation items unsuited to yes/no.
+- **Formal question waves (W01+, backstop)**: **confirm-list as primary with formal question waves as backstop is this skill's intended shape** — most confirmation flows = W00 list + small-wave direct asking; W01 questionnaire files rarely appear; never force questions out just to "use the questionnaire file" (anti-formalism). W01 = deeper probing of blank W00 points + open-ended confirmation items unsuited to yes/no.
 - **Small-wave threshold**: if the formal questions number ≤ 3, generate no questionnaire file; ask directly with AskUserQuestion instead (still with ★recommendations and the 🤔 escape hatch); questions, answers, and the processing summary are recorded verbatim into the processing report, appended to the tail of the most recent archived questionnaire.
 - Question volume: formal waves capped at 10 per wave, split into sub-waves beyond that; the confirm-list is not bound by this cap (point count suggested 5–20 — the action is lightweight, so keep it simple).
 
@@ -82,7 +82,7 @@ Replace "confirming a few things by feel before starting" with "multi-wave quest
   - Still some → wave+1, back to step 2.
   - None → present the coverage list (six elements × confirmation status), **and only then start the action**.
 - **Escalation handoff**: if during confirmation (or after it, before starting) the action turns out to be feature-level → immediately remind the user to switch to the dedicated skill (design-Q / grill-Q / long-running); this skill's confirmation record stays on file as input, not as a replacement for the design flow.
-- Close: confirmation done → execute the action on the confirmed understanding; after the action completes, append the processing-report summary to the tail of the archived questionnaire (single-file traceability).
+- Close: confirmation done → execute the action on the confirmed understanding; after the action completes, append the execution-result summary to the tail of the archived questionnaire (single-file traceability).
 
 ## Division of labor within the family
 

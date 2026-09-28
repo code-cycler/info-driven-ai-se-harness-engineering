@@ -1,6 +1,6 @@
 ---
 name: action-questionnaire
-description: 非正式行动前的批量细节确认——把 AI 对行动细节的理解提取为「细节确认清单(confirm-list)」问卷,用户离线核对后解析留痕,对齐信息以规避 AI 在信息真空中的幻觉式自作主张。复用 design-questionnaire 引擎(preview 改 confirm-list 语义、小波阈值 ≤3),默认 preview 清单为主、正式题波兜底。与设计期 skill 的分工:本 skill 管与设计无关的通用非正式行动;行动升级到 feature 级(值得 feature 记录、改方向、多文件结构性变更)时提醒转 design-Q / grill-Q / long-running 等专用 skill。触发:"动手前对齐一下"、"确认下细节"、"preflight"、开始一个多文件/多决策/涉外部依赖的非正式写操作前。Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
+description: 非正式行动前的批量细节确认——把 AI 对行动细节的理解提取为「细节确认清单(confirm-list)」问卷,用户离线核对后解析留痕,对齐信息以规避 AI 在信息真空中的幻觉式自作主张。复用 design-questionnaire 引擎(preview 改 confirm-list 语义、小波阈值 ≤3),默认 confirm-list 清单为主、正式题波兜底。与设计期 skill 的分工:本 skill 管与设计无关的通用非正式行动;行动升级到 feature 级(值得 feature 记录、改方向、多文件结构性变更)时提醒转 design-Q / grill-Q / long-running 等专用 skill。触发:"动手前对齐一下"、"确认下细节"、"preflight"、开始一个多文件/多决策/涉外部依赖的非正式写操作前。Use when about to take an informal (non-design) action whose details should be aligned with the user first to prevent hallucination-driven rework.
 ---
 
 > 治理历史见项目仓库本 skill 目录 CHANGELOG.md(仅项目侧持有);有意分叉见本目录 FORK-NOTES.md(无此文件 = 无规则本体级分叉)。
@@ -48,7 +48,7 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
 ### 2. 生成问卷
 
 - **confirm-list(默认首波,独立 wave 0)**:生成 `confirm-<slug>-w00.md`——细节确认清单,一要点一行 = 细节点 + AI 的理解 + 来源。每条 `[ ]`:**勾 `[x]` = 理解正确**(按该理解执行)、**留空 = 理解有误或要改**(转正式题深究,或按小波阈值直接问)。W00 **不用 🤔**(对/不对二选一,无中间态);底部「补充声明」栏保留。格式见 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md)。
-- **正式题波(W01+,兜底)**:**preview 为主、正式题波为兜底是本 skill 的预期形态**——多数确认流程 = W00 清单 + 小波直接问,W01 问卷文件很少出现;不为「用上问卷文件」而硬出题(反形式主义)。W01 = W00 留空要点的深究 + 不适合 yes/no 的开放型确认项。
+- **正式题波(W01+,兜底)**:**confirm-list 为主、正式题波为兜底是本 skill 的预期形态**——多数确认流程 = W00 清单 + 小波直接问,W01 问卷文件很少出现;不为「用上问卷文件」而硬出题(反形式主义)。W01 = W00 留空要点的深究 + 不适合 yes/no 的开放型确认项。
 - **小波阈值**:若正式题数 ≤ 3,不生成问卷文件,改用 AskUserQuestion 直接提问(仍给 ★推荐与 🤔 逃生舱);问答与处理摘要逐字记入处理报告,追加到最近一份归档问卷尾部。
 - 题量:正式题波每波上限 10 题,超出拆子波;confirm-list 不受此限(要点数建议 5–20,行动轻量故从简)。
 
@@ -75,7 +75,7 @@ description: 非正式行动前的批量细节确认——把 AI 对行动细节
   - 还有 → wave+1,回第 2 步。
   - 没了 → 出示覆盖清单(六要素 × 确认状态),**然后才动手**。
 - **升级转出**:确认中(或确认后动手前)发现行动实为 feature 级 → 立即提醒用户转专用 skill(design-Q / grill-Q / long-running),本 skill 的确认记录作为输入留档,不替代设计流程。
-- 收尾:确认完成 → 按确认的理解执行行动;行动完成后把处理报告摘要追加进归档问卷尾部(单文件可回溯)。
+- 收尾:确认完成 → 按确认的理解执行行动;行动完成后把执行结果摘要追加进归档问卷尾部(单文件可回溯)。
 
 ## 与家族的分工
 

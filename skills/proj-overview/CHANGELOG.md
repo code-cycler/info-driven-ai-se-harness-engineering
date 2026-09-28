@@ -2,9 +2,14 @@
 
 > 治理历史（仅项目侧持有，ADR-0024 历史层）；全局侧为分发洁净形态（仅 SKILL.md）。
 
+## 2026-09-27 · skill-audit 修复批(仅历史条目笔误,无规则本体变更)
+
+- 历史条目笔误修正:「问卷五份归档」→「问卷 4 份」(实测归档 4 份)。规则本体本次未改;全局侧错位写入 DESIGN.md 的外部项目生成留痕已抢救迁移至全局侧 DOGFOOD-LOG.md 并删除该错位文件(详见 [归档问卷处理报告](../../harness/questionnaires/archive/))。
+- 出处:[修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 C(C14)+ 主会话收尾发现。
+
 ## 2026-09-26 · v2 规格升级(认读第一入口 + summary 职责)
 
-- 来源:proj-overview-v2 feature(design-Q L0+L1 两层 + grill-Q 九题压测闭环,设计套 [proj-overview-v2/](../../harness/design/proj-overview-v2/);问卷五份归档 [proj-overview-v2/](../../harness/questionnaires/archive/proj-overview-v2/))。
+- 来源:proj-overview-v2 feature(design-Q L0+L1 两层 + grill-Q 九题压测闭环,设计套 [proj-overview-v2/](../../harness/design/proj-overview-v2/);问卷 4 份归档 [proj-overview-v2/](../../harness/questionnaires/archive/proj-overview-v2/))。
 - SKILL.md 五处修订(图方向全 TD / summary 规格(ADR 摘要取材约束 + OD 状态直读)/ 行数条款替换(派生性质即约束 + 分型自检)/ 导读三档 / description 认读第一入口),54 行守 <100;en 镜像回译 + 双侧同步。
 - DESIGN.md 加「v2 修订」节(裁决摘要 + dogfood 反馈模板三问);ADR-0026 版本内修订注记;产物八段式重生成(230 行)。
 - 同日落点修订:产物移至项目根 `PROJECT-OVERVIEW.md`(用户裁决,认读第一入口可发现性;HARNESS-RULES §六同步;链接重算断链 0)。

@@ -38,13 +38,13 @@ description: harness 演进治理 skill——处理「项目根/harness/」区(d
 
 ### 2. 迁移流程(重组 + 断链回归)
 
-有目录重组需求时(如本次分层落地),执行 [MIGRATION-FLOW.md](./MIGRATION-FLOW.md) 的 7 步流程:
+有目录重组需求时(如 design/ 分层落地),执行 [MIGRATION-FLOW.md](./MIGRATION-FLOW.md) 的 7 步流程:
 
 1. **设计新布局**(判定句逐条核对归属)→ 2. **挪文件**(git mv 只移不删)→ 3. **相对链接重算**(归档问卷层级)→ 4. **断链回归**(本次引入 0)→ 5. **跑校验**(harness-check.py 0 违规)→ 6. **规格同步**(SKILL.md 引用)→ 7. **留痕**(CHANGELOG)。
 
 ### 3. 布局合规校验
 
-- **脚本**:`python3 scripts/harness-check.py [harness_root]`——三检查(问卷命名正则 / ADR 编号连续 / 归档位置),0 违规时无输出(误报门)。
+- **脚本**:`python3 scripts/harness-check.py [harness_root]`——四检查(问卷命名正则 / ADR 编号连续 / 归档位置 / LN 分层 check_ln_design);0 违规时仍有 design/ 分层报告输出(无条件打印,供人工核对 ADR-0012 判定句,不计入违规)。
 - **触发**:迁移作为 DoD 强制跑;之后手动/发布前可选;不进任何 skill 每次流程。
 - 违规清单 → 人决定是否修(agent 给修订方向,不擅自改)。
 

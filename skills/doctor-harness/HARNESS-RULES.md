@@ -14,7 +14,7 @@
 
 示例判例(本仓库现状):
 - feature 级(子目录):`repo/`、`skill-spec-revamp/`、`feature-skills-harness-consistency/`、`doctor-harness/`;
-- 全局设计(裸放):`VISION.md`(methodology v3 设计套)、`hld_v2.md`、`lld_v2.md`、`hld-methodology-separation.md`。
+- 全局设计(裸放):`VISION.md`(methodology v3 设计套)、`hld_v1.md`、`lld_v1.md`、`hld_v2.md`、`lld_v2.md`、`hld-methodology-separation.md`、`methodology-audit_v1.md`。
 
 **版本历史子目录**(2026-08-17 增补,外部项目 dogfood 触发):feature 目录内被新版本取代的工件版本(如 `roadmap_v1`、`report_v1` 等历史版本)移入 `design/<feature>/history/`——只移不删、文件名不变、当前版本留 feature 根;迁移走 MIGRATION-FLOW(相对链接重算 + 断链回归 + 校验);`history/` 内文件的区外相对链接同步重算(如 `../evidence/`)。
 
@@ -54,9 +54,9 @@
 
 ## 五、布局合规校验
 
-`python3 scripts/harness-check.py [harness_root]` 检查:问卷命名正则 / ADR 编号连续(0001 起无跳号)/ 归档位置(processed/archived 问卷在 archive/)。违规清单输出,0 违规时无输出。分层迁移后跑 0 违规 + 0 断链。
+`python3 scripts/harness-check.py [harness_root]` 四检查:① 问卷命名正则 / ② ADR 编号连续(0001 起无跳号)/ ③ 归档位置(processed/archived 问卷在 archive/)/ ④ LN 分层(check_ln_design:LN 层文件不裸放 design/ 根、L0 须 vision 起头、含 L1+ 必有 L0)。违规清单输出;**0 违规时仍有报告输出**——design/ 分层报告无条件打印(供人工核对 ADR-0012 判定句,不计入违规)。分层迁移后跑 0 违规 + 0 断链。
 
-**「布局合规」定义**(grill-Q Q10 回灌):= 命名/ADR 编号/归档位置三检查(**脚本可查**,harness-check.py 覆盖)+ design/ 分层(**人工判据**,脚本 report 模式列出供人审,判定句见第一节)。分层判定句需语义判断(可独立引用/冲突),非纯格式,故脚本不强校验分层对错,只报告现状。
+**「布局合规」定义**(grill-Q Q10 回灌):= 四检查(**脚本可查**,harness-check.py 覆盖,含 LN 分层)+ design/ 分层(**人工判据**,脚本每次运行无条件打印 design/ 分层报告供人核对,判定句见第一节)。分层判定句需语义判断(可独立引用/冲突),非纯格式,故脚本不强校验分层对错,只打印现状报告。
 
 ## 六、治理文件归属(OPEN-DECISIONS / TODO / CONTEXT / ADR)
 

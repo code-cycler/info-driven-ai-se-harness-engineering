@@ -2,6 +2,20 @@
 
 > 本 skill 治理历史(创建起源/引擎同步与漂移时间线)。追加式,只增不改;设计决策见 [DESIGN.md](./DESIGN.md),有意分叉见 [FORK-NOTES.md](./FORK-NOTES.md)。
 
+## 2026-09-27 · skill-audit 修复批(副本侧,confirm-skill-audit-fix 裁决 Q1/Q2/Q5③ + 中-8)
+
+- **变更**:① 归档规则同步为 D34「处理报告全文制」;② PROCESSING-RULES 新增「修订前置检查(OD-8 执行步骤)」节;③ FORMAT 命名行 LN 旧词清除(改 `retro-<主题>-w<NN>`);④ PR 落盘映射表 pre-LN 旧词三行(vision/hld/lld → VISION.md 等)按 RETRO-SKELETONS 契约替换为 retro 实际落盘(docs/retro/ + TODO.md);⑤ SKILL 归档表述「摘要→全文」;⑥ 主流程末尾补下游衔接(Action Items feature 级新需求 → design-Q/grill-Q,落地前可过 action-Q——补协作图 RETRO→DQ 边的协议缺位);⑦ SKILL 日期注记剥离(见 09-11 条);⑧ FORK-NOTES 登记 ×2。
+- **原因**:2026-09-27 skill 体系全量审查([报告 01](../../harness/design/skill-audit/01-report-questionnaire-skills.md) 高-1/高-2/中-6/中-7/中-8/低-2);D34/D38 未同步本副本且零声明。
+- **影响**:PROCESSING-RULES/SKILL/FORMAT/FORK-NOTES(已双侧同步);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 B。
+
+## 2026-09-11 · 项目搁置/放弃触发(补测式死亡快照)
+
+- **变更**:触发节新增「项目搁置/放弃」——补测式死亡快照:受挫死/自然死从仓库客观状态(feature_list/TODO/git)补判,两行记录(死时状态 + 一句话死因),死后任意时刻可补测(术语见本仓库 CONTEXT「推进受挫谱系」节)。原挂 SKILL.md 规则本体的「(建议非强制,2026-09-09 挑战一深钻)」日期注记,2026-09-27 skill-audit 修复批剥离迁入本条,规则本体只留语义。
+- **原因**:2026-09-09 挑战一深钻裁决——项目死亡也需 retro 入口,以补测式死亡快照承载(建议非强制,不阻断正常流程)。
+- **影响**: SKILL.md#触发
+- **出处**: commit 08580eb
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:① SKILL.md 2 处日期剥离 + 头部索引行;② 引擎 FORMAT 6 处 + PROCESSING 5 处日期剥离,头部标记剥日期;③ DESIGN.md 收敛为决策索引 + 现行副本声明——三个历史事件条目、引擎同步记录 ×2、skill-spec-revamp superseded 节迁本 CHANGELOG;④ 新建 FORK-NOTES.md(双侧一致,5 条分叉)。

@@ -3,7 +3,7 @@ name: doctor-harness
 description: harness evolution-governance skill — handles the authoritatizing of organization rules, migration tooling/flows, layout compliance validation, and evolution record-keeping for the project's "project-root/harness/" zone (design/ + questionnaires/ + adr/). Harness files go strictly under the `harness/` parent plus subfolder layering within it, never polluting the project root; layering rules live in HARNESS-RULES.md (the single authoritative source). Triggers: harness layering / reorganization, harness file migration, validating the harness layout, "how should harness files be laid out", "where does this file go", harness organization chaos needing governance, layer reform / migration (LN-naming legacy-set migration), legacy normalization (restructuring a project without harness files into the standard layout). Use when harness file organization, migration, or layout validation is needed.
 lang: en
 en-source: skills/doctor-harness/SKILL.md
-zh-hash: 41ca5410a4d3
+zh-hash: aade27db2d19
 ---
 
 [中文](../../../skills/doctor-harness/SKILL.md) · **English**
@@ -45,13 +45,13 @@ Handle the **evolution governance** of the harness zone (`<project root>/harness
 
 ### 2. Migration flow (restructuring + broken-link regression)
 
-When there is a directory-restructuring need (e.g. this layering landing), execute the 7-step flow of [MIGRATION-FLOW.md](../../../skills/doctor-harness/MIGRATION-FLOW.md):
+When there is a directory-restructuring need (e.g. the design/ layering landing), execute the 7-step flow of [MIGRATION-FLOW.md](../../../skills/doctor-harness/MIGRATION-FLOW.md):
 
 1. **Design the new layout** (check ownership item-by-item against the predicates) → 2. **Move files** (git mv, move-only-never-delete) → 3. **Recompute relative links** (archived-questionnaire depth) → 4. **Broken-link regression** (0 introduced this time) → 5. **Run validation** (harness-check.py, 0 violations) → 6. **Spec sync** (SKILL.md references) → 7. **Leave a trace** (CHANGELOG).
 
 ### 3. Layout compliance validation
 
-- **Script**: `python3 scripts/harness-check.py [harness_root]` — three checks (questionnaire naming regex / ADR number continuity / archive location); zero output when 0 violations (the false-positive gate).
+- **Script**: `python3 scripts/harness-check.py [harness_root]` — four checks (questionnaire naming regex / ADR number continuity / archive location / LN layering via check_ln_design); when there are 0 violations the design/ layering report is still printed (unconditional output, for human cross-checking against the ADR-0012 predicates; not counted as violations).
 - **Trigger**: mandatory as a migration's DoD; afterwards manual / pre-release optional; never wired into any skill's every-run flow.
 - Violation list → the human decides whether to fix (the agent offers a fix direction, never fixes unilaterally).
 

@@ -43,7 +43,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```mermaid
 flowchart LR
     DQ["design-Q<br/>生成式设计"] -->|收尾提议| GQ["grill-Q<br/>对抗式压测(D1–D8)<br/>①可离线答"]
-    GQ -->|压测后| DOG["dogfood<br/>产物自验(正交可插入)"]
+    GQ -->|压测后| DOG["dogfood<br/>产物自验(非 skill·内嵌机制,正交可插入)"]
     DOG -->|自验通过| LR["long-running<br/>跨会话实现"]
     LR --> RETRO["retro<br/>复盘"]
     RETRO -.->|新需求/经验| DQ
@@ -61,6 +61,7 @@ flowchart LR
 | action-Q | 确认结果 → 问卷归档 `harness/questionnaires/archive/`(只移不删);ADR 三条件 → `harness/adr/`;单向门/重大风险 → `docs/OPEN-DECISIONS.md`;术语冲突 → `CONTEXT.md` |
 | design-Q | VISION / `harness/design/` HLD·LLD / `harness/adr/` / `docs/OPEN-DECISIONS.md` / `CONTEXT.md`;问卷 `harness/questionnaires/<stage>-w<NN>.md` → 归档 `archive/` |
 | grill-Q | 发现 → `CONTEXT`/`adr`/`OPEN-DECISIONS`;**工件修订建议只进处理报告,绝不替改工件** |
+| grill-with-docs | 绑库模式:CONTEXT 词条即时更新 / `harness/adr/`(三条件)/ OPEN-DECISIONS(位置按 HARNESS-RULES 第六节);通用模式零留痕(人要求才写) |
 | retro-Q | `docs/retro/<主题>_vN.md` + `TODO.md`;问卷 `harness/questionnaires/retro-<主题>-w<NN>.md` |
 | long-running | `.claude/feature_list.json`(passes 只能端到端测试通过才 true)+ `.claude/claude-progress.txt`(写顶部) |
 | delegate | `<项目根>/delegation.md`(白名单·禁区·开关)+ `delegation-log.md`(追加式,只增不改) |
@@ -86,6 +87,6 @@ flowchart LR
 
 ## 仓库状态
 
-**当前(2026-08-20)**:方法论双 canonical(methodology_v5 + philosophy_v7)+ 8 skill 体系稳定;**governance-history-split 治理历史分离迁移执行中**([ADR-0024](harness/adr/0024-governance-history-split-dual-form.md):F039 协议 / F040 skill 域 / F041 design 域全绿,P4 全局侧重整待执行)。
+**当前(2026-09-27)**:方法论双 canonical(methodology_v5 + philosophy_v7)+ 9 skill 体系稳定;governance-history-split 治理历史分离已收口([ADR-0024](harness/adr/0024-governance-history-split-dual-form.md),F039–F043 全 passes);i18n 英文镜像首期完成(en 16 件,[ADR-0025](harness/adr/0025-english-mirror-drift-governance-integration.md));proj-overview v2 完成(F052:认读第一入口 + 治理文件 summary,[ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md))。
 **历史时间线**:内部工作状态见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md);对外可感知变更见 [CHANGELOG.md](CHANGELOG.md)。
 **下一步主线**:见 [TODO.md](TODO.md)。

@@ -2,6 +2,13 @@
 
 > harness 组织变更(迁移/规则修订)记录于此,可回溯「harness 为什么长这样」。追加式,只增不改。
 
+## 2026-09-27 · skill-audit 修复批(confirm-skill-audit-fix 裁决)
+
+- **变更**:① 本 CHANGELOG 相对链接断链修复 8 处(7 处 `../../../harness/` + 1 处 `../../../docs/`,均应为 `../../`);② HARNESS-RULES 第五节「三检查/0 违规无输出/只报告不强校验」表述更新为实测行为(四检查 + 分层报告无条件打印);③ 第一节裸放判例清单 4 件补全为 7 件(+hld_v1/lld_v1/methodology-audit_v1);④ SKILL §3 与 §2 表述同步(含「如本次分层落地」现场措辞泛化);⑤ scripts/harness-check.py 模块 docstring 同步(仅注释)。历史条目存在内容日期与记录日期混排(如 08-16/08-17 条),自本条起统一按记录日期新在上,存量不重排。
+- **原因**:2026-09-27 skill 体系全量审查([报告 02](../../harness/design/skill-audit/02-report-impl-governance-skills.md) 中-2/中-4/低-3/低-4/低-6);治理者自身文档与脚本行为脱节。
+- **影响**:HARNESS-RULES/SKILL(已双侧同步)、DESIGN V7、本文件;明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 C。
+
 ## 2026-09-26 · §六「人读派生视图」类目落点修订(移出 harness/)
 
 - **变更**:该类目落点由「归 `harness/` 根」改为「**归项目根**(与 README/CLAUDE/TODO 同级)」;特性四条不变。
@@ -28,20 +35,20 @@
 - **变更**:① 外部实操史分流——全局侧 CHANGELOG 8 条外部条目迁全局侧 DOGFOOD-LOG(真实名保真)+ 项目侧补脱敏汇总条目 + 「repo/ 套 LN 迁移演练」条目回填项目侧(前置检查抓到的分流遗漏);② 全局侧删除(前置检查全过):6× DESIGN.md(diff 双侧一致)+ 全局侧 CHANGELOG.md(14 条全分流)——全局侧自此 = 分发洁净形态(无 DESIGN/无 CHANGELOG);③ sync-check 执行期修正:HISTORY_LAYER 增补 DESIGN.md(删后「仅项目侧」需类规则合法化);④ EXCEPTIONS 清空(doctor-harness/CHANGELOG 临时例外移除,该文件走类规则)。
 - **原因**:ADR-0024 P4;⚠ 全局侧无版本控制,删除经逐文件 diff 前置检查。
 - **影响**: 全局侧文件集、scripts/skills-sync-check.py、HARNESS-RULES.md#九②
-- **出处**: [L1 契约](../../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + 压测 Q1/Q2(F043/P4)
+- **出处**: [L1 契约](../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + 压测 Q1/Q2(F043/P4)
 
 ## 2026-08-20 · P1 治理历史迁移(自身收尾;F040)
 
 - **变更**:① SKILL.md 加头部索引行;② MIGRATION-FLOW 依据行日期注记压缩(先例细节留正文表);③ DESIGN.md 收敛为三节(定位/设计决策 V1–V12/已知限制)——起源节、演进记录表、家族身份状态迁本 CHANGELOG(见上条回填);④ 无 FORK-NOTES(无规则本体级分叉)。
 - **原因**:governance-history-split P1(ADR-0024)——本 skill 作为零注记先例反向收尾:历史从 DESIGN 迁 CHANGELOG,DESIGN 收敛为纯设计决策。
 - **影响**: SKILL.md#头部、DESIGN.md#全部、MIGRATION-FLOW.md#头部
-- **出处**: [L1 契约](../../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + ADR-0024(F040/P1)
+- **出处**: [L1 契约](../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + ADR-0024(F040/P1)
 
 ## 2026-08-20 · 第九节「治理历史布局」(ADR-0024 P0)
 
 - **变更**:新增第九节——① 载体命名与粒度(skill CHANGELOG 仅项目侧/FORK-NOTES 双侧一致/DOGFOOD-LOG 仅全局侧/design 域 CHANGELOG/STATUS-LOG);② 历史层单侧存在规则 + sync-check 类规则引用(HISTORY_LAYER/GLOBAL_ONLY,与 EXCEPTIONS 白名单正交);③ 索引指针要求(SKILL.md 头部统一一行);④ 增量记录规则(五类触发 + 节标题改名时的锚点更新义务);⑤ CHANGELOG/FORK-NOTES 等非 LN 文件不受第七节命名正则约束;另「规则本体」判定词定义。doctor-harness SKILL.md 补治理历史职责条;项目 CLAUDE.md 铁律 8 语义改写。
 - **原因**:治理历史分离 feature(design-Q governance-history-split,L0+L1 设计套 + grill-Q 压测 10 项修订)——三域治理历史「移层不删除」,双侧常态性形态分工(全局 = 分发洁净开箱,项目 = 车间完整)。
-- **依据**:[ADR-0024](../../../harness/adr/0024-governance-history-split-dual-form.md) + [L1 契约](../../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + [grill-gov-history-split-w01](../../../harness/questionnaires/archive/governance-history-split/grill-gov-history-split-w01.md)(F039/P0)。
+- **依据**:[ADR-0024](../../harness/adr/0024-governance-history-split-dual-form.md) + [L1 契约](../../harness/design/governance-history-split/L1-contract-gov-history-split.md) + [grill-gov-history-split-w01](../../harness/questionnaires/archive/governance-history-split/grill-gov-history-split-w01.md)(F039/P0)。
 - **影响**: HARNESS-RULES.md#九、治理历史布局、SKILL.md#主流程、CLAUDE.md#铁律
 - **出处**: ADR-0024 + 归档问卷(同上)
 
@@ -60,7 +67,7 @@
 
 - **变更**:HARNESS-RULES 增补第七节(层级设计文档规则:LN 命名/布局/导览块/存量豁免)与第八节(存量结构改造流程五步 + 旧档迁移映射表);SKILL.md 触发词补「层级改造/迁移/存量规范化」+ 判定场景⑤⑥ + 规则清单扩两行。
 - **原因**:design-Q 数字层级改造 P2 doctor 先行(用户优先测试裁决);design-Q 产物结构 VISION/HLD/LLD → LN 制后,doctor 承载层级布局规则 + 旧档迁移 + 无 harness 项目的存量规范化(补充声明「拓展 doctor 任务范围」)。
-- **依据**:[HLD §2](../../../harness/design/designq-digital-levels/HLD.md)+ [LLD P2](同 L2);F029。
+- **依据**:[HLD §2](../../harness/design/designq-digital-levels/HLD.md)+ [LLD P2](同 L2);F029。
 
 ## 2026-08-17 · 首次存量套 LN 迁移演练(方法论仓库 repo/ 套)
 
@@ -87,7 +94,7 @@
 - **依据**:HARNESS-RULES 第四节(2026-08-08 修订)+ MIGRATION-FLOW 7 步;断链回归 0 新增。
 ## 2026-08-08 · skill 创建(起源 + 设计实现 + 入家族;历史回填自 DESIGN.md)
 
-- **变更**:① 设计套完成(VISION/HLD/LLD + ADR-0012/0013)——起源:压测 [grill-harness-file-mgmt-w01](../../../harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md) 发现 harness 文件管理规格「简单未考虑实际情况」(无层次化设计、feature/子项目无单独文件夹、边缘与实际工程场景未覆盖),用户裁决 harness 文件**严格**归 `harness/` 父级 + 子文件夹分层、不污染项目根,设计 skill 处理演进,立项 [OD-15](../../../docs/OPEN-DECISIONS.md);② P1 规则权威:HARNESS-RULES.md 起草 + 6 skill 引用句;③ P2 校验脚本:harness-check.py 实现 + 现状跑通/违规样本验证;④ P3 分层迁移:design/ 天然分层确认 + 归档 9 处层级链接修复(LLD P3 dogfood);⑤ P4 双副本 + 家族表述;⑥ **家族身份 done**:先 dogfood 后入家族(OD-15 重访触发②),F020 已同步「第 9 个」(CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表)——F019 分层迁移符合「dogfood 通过」定义(规则核对 + 脚本 0 违规 + 断链回归)。
+- **变更**:① 设计套完成(VISION/HLD/LLD + ADR-0012/0013)——起源:压测 [grill-harness-file-mgmt-w01](../../harness/questionnaires/archive/harness-file-mgmt/grill-harness-file-mgmt-w01.md) 发现 harness 文件管理规格「简单未考虑实际情况」(无层次化设计、feature/子项目无单独文件夹、边缘与实际工程场景未覆盖),用户裁决 harness 文件**严格**归 `harness/` 父级 + 子文件夹分层、不污染项目根,设计 skill 处理演进,立项 [OD-15](../../docs/OPEN-DECISIONS.md);② P1 规则权威:HARNESS-RULES.md 起草 + 6 skill 引用句;③ P2 校验脚本:harness-check.py 实现 + 现状跑通/违规样本验证;④ P3 分层迁移:design/ 天然分层确认 + 归档 9 处层级链接修复(LLD P3 dogfood);⑤ P4 双副本 + 家族表述;⑥ **家族身份 done**:先 dogfood 后入家族(OD-15 重访触发②),F020 已同步「第 9 个」(CLAUDE.md 家族图 / CONTEXT skill 家族节 / 落盘速查表)——F019 分层迁移符合「dogfood 通过」定义(规则核对 + 脚本 0 违规 + 断链回归)。
 - **原因**:压测产出 direction,用户裁决先设计后实现。
 - **影响**: DESIGN.md#设计决策(V1–V12 决策表留在 DESIGN,本条为其时间线背景)
 - **出处**: VISION/HLD/LLD 设计套 + grill-harness-file-mgmt-w01

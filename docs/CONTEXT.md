@@ -165,6 +165,7 @@ repo 级设计 P2 术语折中审计(2026-08-05):按判定方向(替换有学科
 | retro-questionnaire | 方法论四节(进展顺利/出问题与原因假设/架构偏离/学到什么)+ Action Items | [RETRO-SKELETONS.md](../skills/retro-questionnaire/RETRO-SKELETONS.md) |
 | grill-with-docs | 无固定骨架(纯追问,单点深钻);绑库模式叠加领域词汇表挑战 / 代码交叉核验,通用模式零留痕纯对话 | [SKILL.md](../skills/grill-with-docs/SKILL.md) |
 | long-running / delegate / doctor-harness | 非提问类(约束系统 / 下放治理 / harness 治理) | 各 SKILL.md |
+| proj-overview | 非提问类(只读派生人读视图生成;无问卷无对抗维度) | [SKILL.md](../skills/proj-overview/SKILL.md) |
 
 ## 方法论文档三块(ADR-0007)
 

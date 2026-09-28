@@ -3,7 +3,7 @@ name: grill-questionnaire
 description: Batch-questionnaire stress-testing of existing plans / decisions / architecture proposals / ADR drafts / design documents. Converts grill's one-by-one stress-testing use into multi-wave Markdown questionnaires: eight fixed stress-test dimensions (unstated assumptions / one-way doors / alternatives / failure modes / blind spots / verifiability / contradictions with reality / terminology consistency) are fitted onto every key claim of the artifact; after the user answers offline, holes and blind spots go into the processing report, and sedimentable decisions / risks / terminology land in CONTEXT / ADR / OPEN-DECISIONS. Codebase-bound by default (specializes in contradictions between the artifact and existing code / decisions); degrades to pure-logic stress-testing with a review report when there is no project context. Produces findings only — never patches the artifact itself. Orthogonal to design-questionnaire (generative). Layer position (80/20 judgment-cost principle): the questionnaire-ized evolution of grill-with-docs — the 80% of predictable basic questions are stress-tested in batch (the human spends 20% of the time); the 20% of critical deep-water points (deep dependency chains, needing instant feedback) go to grill-with-docs one-by-one deep dives (the human spends 80% of the time). Triggers: stress-test the plan / review this ADR / pick holes in this design / find the holes / stress-test, "stress test", "review this", "pick holes", plus one proactive proposal after design-questionnaire produces a design draft at its close. Use when an existing plan/decision/architecture/ADR/design artifact should be stress-tested via a batched questionnaire instead of one-by-one Q&A.
 lang: en
 en-source: skills/grill-questionnaire/SKILL.md
-zh-hash: a298a3fcc957
+zh-hash: 3ad8d35e665b
 ---
 
 [中文](../../../skills/grill-questionnaire/SKILL.md) · **English**
@@ -83,7 +83,7 @@ Replace "one-by-one grill stress-testing" with "multi-wave questionnaire stress-
 - Pure-logic mode: all findings go into a review report in `~/notes/` (following `~/CLAUDE.md` naming rules); nothing is written into the project's CONTEXT/ADR/OD.
 - 🤔 escape hatch → de-risking protocol; never re-ask. **Blocking diversion**: if the item is a dependency prerequisite for later items (until it is settled, later items cannot be effectively processed), do not silently defer — AskUserQuestion has the human rule: ① defer into an OD (the current de-risking protocol); ② **switch on the spot to a grill-with-docs single-point deep dive** of that point, then return to this wave's processing once it crystallizes. Non-blocking items keep the standard protocol; the diversion choice and the dive's crystallization are recorded verbatim into the processing report.
 - Output the **processing report** (in conversation; format per PROCESSING-RULES.md): each item's destination, new/updated files, anomaly handling, escape-hatch dispositions, next-wave candidates, coverage (8 dimensions + the artifact's key-claim review status), **quality signals** (❌ misframe rate / 🤔 escape-hatch rate / ✍️ custom rate + attribution of ❌-marked questions — wrong frame / dimension misuse / wrong fact; same-topic attribution cumulating ≥ 2 times → per [ADR-0023](../../../harness/adr/0023-skill-md-layered-slimming.md), promoted into this file's rule body; data-pipeline shape provisional, see OD-26).
-- No user objection → questionnaire status: processed → archived, moved into `harness/questionnaires/archive/`, with the processing-report summary appended at the tail.
+- No user objection → questionnaire status: processed → archived, moved into `harness/questionnaires/archive/`, with the processing report in full appended at the tail.
 
 ### 5. Loop and termination
 
@@ -102,7 +102,7 @@ Replace "one-by-one grill stress-testing" with "multi-wave questionnaire stress-
 | scenario | stress-testing existing artifacts (adversarial) | implementation-phase single-point ambiguity, plan review (single-point deep dive) | project initialization, feature design (generative) | stage / project retrospective |
 | interaction | multi-wave questionnaires, answered offline | one-by-one, waiting each round | multi-wave questionnaires, answered offline | multi-wave questionnaires, answered offline |
 | skeleton | fixed stress-test dimensions D1–D8 (no content skeleton) | none | vision/hld/lld fixed skeleton | four sections + Action Items |
-| landing | CONTEXT/ADR/OD + artifact revision suggestions (processing report) | CONTEXT/ADR/OD | VISION/HLD/LLD/ADR/OD/CONTEXT | retro document + TODO.md |
+| landing | CONTEXT/ADR/OD + artifact revision suggestions (processing report) | CONTEXT/ADR/OD | layer documents (LN naming)/ADR/OD/CONTEXT | retro document + TODO.md |
 | artifact | findings only, never patches | — | generates artifacts | records only, never decides |
 
 **Closed loop**: design-questionnaire produces the design draft → grill-questionnaire stress-tests → gaps feed back (OD/ADR/artifact revisions) → implementation. Both write→review steps are batched.

@@ -21,6 +21,11 @@ check-only:只报告差异,绝不修改文件、不做自动选边——哪侧�
 新增例外必须改代码并注明裁决出处,保持例外显式、可追溯。例外项若两侧重新一致,
 输出提示建议移除白名单。
 
+双向扫描(2026-09-27 skill-audit 修复批 Q5④):原逻辑以项目侧 skills/ 为遍历锚,
+全局侧独有的 skill 完全不在扫描范围——「全局新增、项目未入库」方向的单侧漂移
+无法检出。现补:全局侧独有 skill 目录 → 已登记例外(GLOBAL_SKILL_EXEMPT)仅提示;
+未登记 → 违规(新增例外同样必须改代码注明裁决出处)。
+
 用法:
   python3 scripts/skills-sync-check.py                 # repo 根 = 脚本上级目录
   python3 scripts/skills-sync-check.py /path/to/repo   # 显式指定 repo 根
@@ -34,6 +39,19 @@ from pathlib import Path
 HISTORY_LAYER = {"CHANGELOG.md", "DESIGN.md"}
 # 全局侧私有类(ADR-0024 压测 Q2-C):外部实操日志(真实名禁入公开仓库),仅全局侧存在 = 合法
 GLOBAL_ONLY = {"DOGFOOD-LOG.md"}
+
+# 全局侧独有 skill 例外(2026-09-27 skill-audit Q5④):skill 名 → 裁决出处
+GLOBAL_SKILL_EXEMPT = {
+    "shadow": "OD-13:pilot 期不入 skill 家族、不进入分发面(TODO.md 明文仓库 skills/ 暂不放置)",
+}
+# 家族特征文件:全局独有目录若含任一 → 疑似家族 skill 项目侧缺失(违规);
+# 不含 → 用户个人安装的无关 skill(汇总一条提示,不算违规——Q5④ 裁决语义为 warning)
+FAMILY_MARKERS = [
+    "FORK-NOTES.md", "QUESTIONNAIRE-FORMAT.md", "PROCESSING-RULES.md",
+    "HARNESS-RULES.md", "GRILL-SKELETON.md", "RETRO-SKELETONS.md",
+    "STAGE-SKELETONS.md", "MIGRATION-FLOW.md", "ADR-FORMAT.md",
+    "CONTEXT-FORMAT.md", "OPEN-DECISIONS-FORMAT.md",
+]
 
 # 已知裁决例外:skill 相对路径 → 裁决出处(只豁免「内容不同」)
 EXCEPTIONS = {
@@ -107,6 +125,24 @@ def main() -> int:
         if p_file.is_file() and g_file.is_file():
             if p_file.read_bytes() == g_file.read_bytes():
                 stale_exceptions.append(f"{key}: 例外项两侧已一致,可考虑移除白名单")
+
+    # 双向扫描(Q5④,2026-09-27):补「全局侧独有 skill」方向盲区。
+    # 分流:含家族特征文件 → 疑似家族 skill 漂移(违规);否则个人无关 skill(提示);
+    # 已登记 GLOBAL_SKILL_EXEMPT → 不输出。
+    repo_skill_names = {p.name for p in repo_skills.iterdir() if p.is_dir()}
+    global_skill_names = {p.name for p in global_skills.iterdir() if p.is_dir()}
+    unrelated: list[str] = []
+    for gname in sorted(global_skill_names - repo_skill_names):
+        if gname in GLOBAL_SKILL_EXEMPT:
+            continue
+        gdir = global_skills / gname
+        gfiles = {p.name for p in gdir.rglob("*") if p.is_file()}
+        if gfiles & set(FAMILY_MARKERS):
+            violations.append(f"[skill] {gname}: 全局侧独有且含家族特征文件,疑似家族 skill 项目侧缺失——入库或在 GLOBAL_SKILL_EXEMPT 登记出处")
+        else:
+            unrelated.append(gname)
+    if unrelated:
+        layer_notes.append(f"[skill] {', '.join(unrelated)}: 全局侧独有(个人安装的无关 skill,{len(unrelated)} 个,正常)")
 
     for line in violations:
         print(line)

@@ -3,7 +3,7 @@ name: delegate
 description: Project-level governance of decision-class delegation. Manages the per-project delegation governance file (project-root delegation.md: the delegable decision-class whitelist + never-delegate list + per-entry revocation conditions + master switch); the AI autonomously executes only decision classes inside the list and logs every case (delegation-log.md, an auditable queue); anything outside the list always goes to the human — the AI has only an escalation-proposal right, no self-classification right; judgment rights (product / engineering / security / merge) are never delegated; end-of-task / retro summarizes and reviews; preview-grade documents have migrated to design-questionnaire (single source), and this skill handles only the whitelist / log / revocation. Triggers: initializing the delegation list for a new project / new engineering effort, "delegate", "delegate decisions", "delegate", "delegation", enabling / adjusting / revoking delegation, viewing the AI autonomous-decision log, decision-delegation dogfood pilot.
 lang: en
 en-source: skills/delegate/SKILL.md
-zh-hash: d023b615851f
+zh-hash: d27ee12ddbf1
 ---
 
 [中文](../../../skills/delegate/SKILL.md) · **English**
@@ -15,7 +15,7 @@ zh-hash: d023b615851f
 # delegate · decision-class delegation
 
 > Makes "delegate simple decisions to the AI, keep the human focused on judgment" a governable, traceable, revocable mechanism.
-> Origin: the host project's "decision delegation" OD entry (produced by a grill-questionnaire stress test; timeline in the CHANGELOG). Currently a dogfood pilot; feedback returns to that OD entry.
+> Origin: the host project's OD-23 (delegate pilot and controllability verification) (produced by a grill-questionnaire stress test; timeline in the CHANGELOG). Currently a dogfood pilot; feedback returns to that OD entry.
 
 ## Iron rules (inviolable)
 
@@ -62,7 +62,7 @@ Both files are version-controlled. Templates in [templates/](../../../skills/del
 - **Log existence check (mandatory)**: first confirm delegation-log.md exists. A missing file = a process gap (logging went unexecuted); it must be explicitly flagged in the review report and the file re-created (recoverable entries back-filled, marked "restored after the fact"); never continue silently.
 - Summarize this period's delegation-log.md: total entries, distribution across decision classes, escalation-to-human count, misjudgment / revocation events. **Zero entries** must be explicitly explained as "no AI autonomous decisions this period" (zero entries is itself a fact that must be explained, not a default success).
 - After the human's review, decide: keep, adjust the list (via change), or revoke.
-- Dogfood pilot projects: bring the summary data (escalation-to-human rate, post-hoc veto / rollback rate, misjudgment count, subjective fatigue before/after) back to the host project's "decision delegation" OD entry.
+- Dogfood pilot projects: bring the summary data (escalation-to-human rate, post-hoc veto / rollback rate, misjudgment count, subjective fatigue before/after) back to the host project's OD-23 (delegate pilot and controllability verification).
 
 ### 5. preview-grade stage documents (migrated to design-questionnaire)
 

@@ -47,7 +47,7 @@
 flowchart TD
     A["💡 一个想法"] --> B["🏗️ /design-questionnaire<br/>多波次问卷生成设计<br/>→ LN 层级设计(L0-vision 起,按需增层)/ ADR"]
     B --> C["🔍 /grill-questionnaire<br/>8 维度对抗压测,找漏洞"]
-    C --> D["🐶 dogfood 自验<br/>(工具/流程类产物,嵌于各环节收尾)"]
+    C --> D["🐶 dogfood 自验<br/>(非 skill·内嵌机制,工具/流程类产物,嵌于各环节收尾)"]
     D --> E["⚡ /long-running-agent<br/>跨会话实现 → feature_list 全绿"]
     E --> F["📊 /retro-questionnaire<br/>复盘沉淀 + Action Items"]
     F -.->|新想法 / 经验| A
@@ -157,7 +157,7 @@ docs/methodology/    方法论文章(CC-BY 4.0)——methodology_v5 + philosophy
 docs/CONTEXT.md      术语表 / harness/adr/ 架构决策记录 / docs/OPEN-DECISIONS.md 待决事项
 harness/design/      AI 流程产物:设计文档套(按 feature/主题子目录:repo/ doctor-harness/ skill-spec-revamp/ 等)
 harness/questionnaires/ 已用问卷归档区(archive/ 按 feature/主题子目录 + README 索引)
-skills/              8 个核心方法论 skill(MIT)
+skills/              9 个核心方法论 skill(MIT)
 scripts/             脱敏检查 / harness 校验等工具
 CHANGELOG.md         仓库级对外变更记录(原 README「发布说明」节,2026-08-20 外移)
 ```

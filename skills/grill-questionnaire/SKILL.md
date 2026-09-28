@@ -76,7 +76,7 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 - 纯逻辑模式:全部发现写审阅报告入 `~/notes/`(遵 `~/CLAUDE.md` 命名规范),不写项目 CONTEXT/ADR/OD。
 - 🤔 逃生舱 → 降风险协议,绝不重问。**阻塞性分流**:若该题是后续题的依赖前提(它不定,后续题无法有效处理),不静默推迟——AskUserQuestion 让人拍板:① 推迟进 OD(现行降风险协议);② **当场转 grill-with-docs 单点深钻**该点,结晶后回本波继续处理。非阻塞题维持原协议;分流选择与深钻结晶逐字记入处理报告。
 - 输出**处理报告**(对话内,格式见 PROCESSING-RULES.md):每题去向、新增/更新文件、异常处理、逃生舱处置、下一波候选、覆盖度(8 维度 + 工件关键声明审视情况)、**质量信号**(❌ 跑偏率 / 🤔 逃生舱率 / ✍️ 自定义率 + 被标 ❌ 题的归因——框架错 / 维度误用 / 事实错;同主题归因累计 ≥2 次 → 按 [ADR-0023](../../harness/adr/0023-skill-md-layered-slimming.md) 升格写入本文件规则本体;数据管道形态 provisional 见 OD-26)。
-- 用户无异议 → 问卷 status: processed → archived,移入 `harness/questionnaires/archive/`,尾部附处理报告摘要。
+- 用户无异议 → 问卷 status: processed → archived,移入 `harness/questionnaires/archive/`,尾部附处理报告全文。
 
 ### 5. 循环与终止
 
@@ -94,8 +94,8 @@ description: 已有计划/决策/架构提案/ADR 草稿/设计文档的批量�
 |---|---|---|---|---|
 | 场景 | 压测已有工件(对抗式) | 实现期单点二义性、计划评审(单点深钻) | 启动初始化、功能设计(生成式) | 阶段/项目复盘 |
 | 交互 | 多波次问卷,离线作答 | 一问一答,逐轮等待 | 多波次问卷,离线作答 | 多波次问卷,离线作答 |
-| 骨架 | 固定压测维度 D1–D8(无内容骨架) | 无 | vision/hld/lld 固定骨架 | 四节 + Action Items |
-| 落盘 | CONTEXT/ADR/OD + 工件修订建议(处理报告) | CONTEXT/ADR/OD | VISION/HLD/LLD/ADR/OD/CONTEXT | retro 文档 + TODO.md |
+| 骨架 | 固定压测维度 D1–D8(无内容骨架) | 无 | LN 层固定骨架 | 四节 + Action Items |
+| 落盘 | CONTEXT/ADR/OD + 工件修订建议(处理报告) | CONTEXT/ADR/OD | 层文档(LN 制)/ADR/OD/CONTEXT | retro 文档 + TODO.md |
 | 工件 | 只产出发现,不替改 | — | 生成工件 | 只记录,不决策 |
 
 **闭环**:design-questionnaire 产设计草稿 → grill-questionnaire 压测 → 缺口回灌(OD/ADR/工件修订)→ 实现。write→review 两步都批量化。

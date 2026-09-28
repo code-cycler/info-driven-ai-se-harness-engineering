@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """harness 布局合规校验脚本(doctor-harness 场景 C)。
 
-检查 harness/ 区三件(design/ + questionnaires/ + adr/)的布局合规:
+检查 harness/ 区三件(design/ + questionnaires/ + adr/)的布局合规,四检查:
   ① 问卷命名正则(init/feature/grill/retro/confirm 各模式)
   ② ADR 编号连续(0001 起,无跳号)
   ③ 归档位置(processed/archived 状态的问卷在 archive/)
+  ④ LN 分层(check_ln_design:LN 层文件不裸放 design/ 根、L0 须 vision 起头、含 L1+ 必有 L0)
 
-输出违规清单(逐条「路径: 违规类型」);0 违规时无输出(误报门)。
+输出违规清单(逐条「路径: 违规类型」);0 违规时仍有 design/ 分层报告输出
+(无条件打印,供人工核对 ADR-0012 判定句,不计入违规)。
 保守实现:只报格式偏离,不报内容语义(如不判断 slug 是否合理)。
 
 用法:

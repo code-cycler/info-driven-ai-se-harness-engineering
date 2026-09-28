@@ -2,6 +2,20 @@
 
 > 本 skill 治理历史(创建起源/裁决时间线/引擎同步/压测修订)。追加式,只增不改;规则现值见 SKILL.md 与各引擎文件,设计决策见 [DESIGN.md](./DESIGN.md)。
 
+## 2026-09-27 · skill-audit 修复批(canonical 侧,confirm-skill-audit-fix 裁决 Q1/Q2/Q5③)
+
+- **变更**:① D34 归档规则「处理报告全文制」四方同步收口(本 skill 为 canonical,grill/retro/action 三副本跟进);② PROCESSING-RULES 新增「修订前置检查(OD-8 执行步骤)」节(改引擎前强制 grep 三副本,同步或声明二选一);③ 落盘映射表结构修复(LN 表后悬空五行并回单表);④ 落盘路径四处补 `<feature>/` 段(SKILL + PR,对齐 STAGE-SKELETONS/HARNESS-RULES 第七节);⑤ FORMAT 规则编号引用修正 ×2(「见规则 15」→13、「按规则 13」→14);⑥ 分工表旧三件命名 LN 化;⑦ 「dogfood 修订」节名引用按 DESIGN 实际节名修正;⑧ 「阶段」残留改「层」(SKILL ×3 + PR ×1);⑨ SKILL 日期注记剥离(见 09-25 条)。
+- **原因**:2026-09-27 skill 体系全量审查([报告 01](../../harness/design/skill-audit/01-report-questionnaire-skills.md) 高-1/高-2/中-1/中-2/中-3/中-5/低-1/低-4/低-5);08-20 两笔 canonical 修订(D34/D38)未走 OD-8 四方考量。
+- **影响**:PROCESSING-RULES/SKILL/FORMAT 规则本体(已双侧同步);逐条明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 B。
+
+## 2026-09-25 · 入口校准闸门补内容语料画像(MDreader 教训补丁)
+
+- **变更**:入口校准闸门必出示项扩为三项——项目理解摘要 + **内容语料画像**(用户核心内容形态及占比,如「数学笔记:公式约 20% + 表格 + 流程图」「技术文档:代码块为主」;直接决定渲染域范围与选型粒度)+ 本层设计焦点。教训:MDreader 项目入口校准漏问语料画像,数学场景迟至验收期才补范围,拖出 F009 全链返工(教训日期 2026-08-26)。原挂 SKILL.md 规则本体的「MDreader 教训 2026-08-26:……拖出 F009 全链返工」日期注记,2026-09-27 skill-audit 修复批剥离迁入本条,规则本体只留语义。
+- **原因**:MDreader 教训——入口校准漏问语料画像,渲染域错配迟至验收期才暴露,返工成本前轻后重。
+- **影响**: SKILL.md#生成问卷(入口校准闸门)
+- **出处**: commit d024d3c
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:① SKILL.md 17 处带日期治理注记剥离(规则现值保留;无日期判例论证保留);头部加索引行;② DESIGN.md 收敛为「定位/设计决策 D1–D38/已知限制」三节——引擎同步记录 ×3、SKILL.md 分层迁移评估、引擎复制声明内同步事件、格式反馈事件叙述迁本 CHANGELOG;③ 无 FORK-NOTES(本 skill 为引擎 canonical,自身无规则本体级分叉)。

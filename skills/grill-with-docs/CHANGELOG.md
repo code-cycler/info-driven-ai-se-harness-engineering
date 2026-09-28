@@ -2,6 +2,13 @@
 
 > 本 skill 治理历史。本 skill 无 DESIGN.md(决策直接进 SKILL.md 规则本体与 CONTEXT/ADR/OD);无规则本体级双侧分叉(非引擎副本),故无 FORK-NOTES。追加式,只增不改。
 
+## 2026-09-27 · skill-audit 修复批(confirm-skill-audit-fix 裁决 Q3)
+
+- **变更**:① SKILL.md File structure 双示例(单/多 context)由 `docs/adr/` + `docs/OPEN-DECISIONS.md` 统一为 harness 制(`harness/adr/` + OPEN-DECISIONS 位置按 HARNESS-RULES 第六节),消除与 ADR-FORMAT.md/L148 的双说(疑为 mattpocock 上游原文适配残留);② OPEN-DECISIONS-FORMAT 补「本仓例外见 OD-25」交叉引用。
+- **原因**:2026-09-27 skill 体系全量审查([报告 02](../../harness/design/skill-audit/02-report-impl-governance-skills.md) 高-1/低-7)——规则本体内 ADR 落点两套并存。
+- **影响**:SKILL/OPEN-DECISIONS-FORMAT(已双侧同步,含 en 镜像);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 C。
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:SKILL.md 7 处日期注记剥离(含 description)+ 头部索引行;OPEN-DECISIONS-FORMAT 1 处剥离;新建本 CHANGELOG(此前历史散在 SKILL.md 注记,现集中于此);维持无 DESIGN.md(历史迁 CHANGELOG 后不新建)。

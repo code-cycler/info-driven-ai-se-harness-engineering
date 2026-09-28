@@ -2,6 +2,13 @@
 
 > 本 skill 治理历史。本 skill 无 DESIGN.md;无规则本体级双侧分叉,故无 FORK-NOTES。追加式,只增不改。
 
+## 2026-09-27 · skill-audit 修复批(confirm-skill-audit-fix 裁决 Q5②)
+
+- **变更**:① §10 会话结束检查清单后新增「治理收尾固定项(不可裁剪)」:TODO 勾销 + 根 CHANGELOG/STATUS-LOG 追加 + 本 skill CHANGELOG——F052 教训(DoD 漏列 TODO 勾销致主线状态滞后)机制化;② §5.3 HARNESS-RULES 引用补定位路径(doctor-harness skill 内,本仓库路径);③ 历史条目笔误「Effective harnesss」→「harnesses」。
+- **原因**:2026-09-27 skill 体系全量审查([报告 02](../../harness/design/skill-audit/02-report-impl-governance-skills.md) 中-5 根因/低-5/低-8)。
+- **影响**:SKILL.md(已双侧同步,含 en 镜像);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 C + 根因文档 04 §二漏洞 2。
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:SKILL.md 4 处日期注记剥离(「2026-08-16 P5」系出处)+ 头部索引行;新建本 CHANGELOG;维持无 DESIGN.md。JSON 示例中的时间戳字面量非治理注记,保留。
@@ -16,5 +23,5 @@
 
 ## 2026-03(初版)· 创建
 
-- **变更**:基于 Anthropic《Effective harnesss for long-running-agents》建 skill——增量工作/清晰工件/整洁状态/端到端验证四理念;feature_list.json + claude-progress.txt 两核心文件;会话启动 checklist;测试验证要求(passes:true 只在端到端通过后)。
+- **变更**:基于 Anthropic《Effective harnesses for long-running-agents》建 skill——增量工作/清晰工件/整洁状态/端到端验证四理念;feature_list.json + claude-progress.txt 两核心文件;会话启动 checklist;测试验证要求(passes:true 只在端到端通过后)。
 - **出处**: Anthropic 工程文章(文首链接)

@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/methodology/methodology_v5.md
-zh-hash: 2b87a501b8af
+zh-hash: 543e5f4919b5
 ---
 [中文](../../../docs/methodology/methodology_v5.md) · **English**
 
@@ -173,7 +173,7 @@ Every stage's information must have a place on disk, ensuring:
 
 ## §3 Development workflow
 
-> This is the document's core chapter. v2 upgraded v1's linear 6 stages (idea → vision → global design → staged design → implementation → retro) into a **five-stage loop + cross-cutting members**; every stage has a corresponding skill execution body, and grill-Q / dogfood / retro / delegate are **orthogonally insertable** methodologies, not locked into fixed positions.
+> This is the document's core chapter. v2 upgraded v1's linear 6 stages (idea → vision → global design → staged design → implementation → retro) into a **five-stage loop + cross-cutting members**; each stage has a corresponding methodology carrier (stage 3 dogfood is a built-in self-verification mechanism, not a standalone skill), and grill-Q / dogfood / retro / delegate are **orthogonally insertable** methodologies, not locked into fixed positions.
 
 ### 3.1 The overall loop
 

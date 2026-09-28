@@ -23,7 +23,7 @@ description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(�
 
 - **主动提议**:检测到宿主项目某阶段 DoD 核验通过 → 用 AskUserQuestion 提议复盘,人确认后执行。
 - **手动**:用户说「复盘一下」「做个 retro」等,随时触发,及时记录(类似 memory)。
-- **项目搁置/放弃**(建议非强制,2026-09-09 挑战一深钻):补测式死亡快照——受挫死/自然死从仓库客观状态(feature_list/TODO/git)补判,两行记录(死时状态 + 一句话死因),死后任意时刻可补测(术语见本仓库 CONTEXT「推进受挫谱系」节)。
+- **项目搁置/放弃**:补测式死亡快照——受挫死/自然死从仓库客观状态(feature_list/TODO/git)补判,两行记录(死时状态 + 一句话死因),死后任意时刻可补测(术语见本仓库 CONTEXT「推进受挫谱系」节)。
 
 ## 主流程
 
@@ -45,8 +45,9 @@ description: 项目/阶段复盘的批量问卷式回顾。按方法论四节(�
    - retro 文档:宿主项目 `docs/retro/<主题>_vN.md`(_vN 递增,禁 final/new/copy),结构 = 四节 + Action Items
    - 行动项 → 宿主项目 `TODO.md`(问题 → 行动 → 核验时机)
    - 处理报告(对话内)
-   - 问卷归档 `harness/questionnaires/archive/`,尾部附处理报告摘要
+   - 问卷归档 `harness/questionnaires/archive/`,尾部附处理报告全文
 5. **终止**:一份 retro 通常一波完成;答案引出的新问题按「再无可盘问的信息」判断是否出补充波。
+6. **衔接**:Action Items 中出现 feature 级新需求 → 提议转 design-Q(需设计)或 grill-Q(有工件压测);行动项落地前细节可过 action-Q——新需求/经验回流设计入口(协作图 RETRO→DQ 边)。
 
 </what-to-do>
 

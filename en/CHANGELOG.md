@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: CHANGELOG.md
-zh-hash: bb3b4f154e96
+zh-hash: c5490ba3c66f
 ---
 
 [中文](../CHANGELOG.md) · **English**
@@ -13,6 +13,16 @@ zh-hash: bb3b4f154e96
 > The single record of repository-level, externally visible changes (migrated from the README's "release notes" section, 2026-08-20).
 
 > **Recording rules**: this file is the single record of repository-level, externally visible changes — every change **perceivable to adopters** (skill behavior / artifact structure / methodology content) must be recorded; purely internal repository governance (questionnaire archiving, link repairs, etc.) is not. Reverse-chronological. Skills carry no independent version numbers; this file is the only window for perceiving `skills/` changes.
+
+## Skill-system audit fix batch: unified full-text archival across four skills, etc. (2026-09-27, skill-audit)
+
+- **Questionnaire-engine D34 closure (adopter-visible change to archival artifacts)**: design-Q / grill-Q / retro-Q / action-Q now uniformly append the **full processing report** (per-question destinations / anomalies / escape-hatch handling / next-wave candidates / coverage) to archived questionnaires, with a summary section retained at the top — the 2026-08-20 single-sided revision is now synchronized across all four copies; archival retrospection granularity is consistent.
+- **grill-with-docs file-structure examples unified to the harness layout** (single/multi-context trees moved from `docs/adr/` to `harness/adr/`, matching ADR-FORMAT; OPEN-DECISIONS placement per HARNESS-RULES §6 with the OD-25 exception noted).
+- **long-running-agent gains a fixed governance-closeout block** (non-trimmable: TODO checkbox + CHANGELOG/STATUS-LOG entries) — mechanizing the F052 lesson against stale mainline status.
+- **retro-questionnaire gains downstream handoff** (feature-level new needs from Action Items → propose design-Q / grill-Q; action-Q before landing).
+- **Questionnaire engines gain a "pre-revision check" section** (all four PROCESSING-RULES: before editing an engine file, diff the other three copies — synchronize or declare, never silently diverge).
+- **action-questionnaire drops the deprecated "preview" wording** (×3, residue of ruling Q15's rename to confirm-list).
+- Accompanying internal governance in one line: seven count/status drifts fixed (CLAUDE.md status section / README zh+en / philosophy_v7 / practical_v1 / CONTEXT table), new gate `scripts/audit-check.py`, bidirectional scanning in `skills-sync-check.py`, new OD-30/31; per-item detail in the archived questionnaire processing report and [harness/design/skill-audit/](../harness/design/skill-audit/).
 
 ## proj-overview v2: first-reading entry + governance-file summary (2026-09-26, ADR-0026 revision note)
 

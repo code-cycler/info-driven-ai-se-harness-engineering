@@ -5,6 +5,10 @@
 
 > 本文件与 [QUESTIONNAIRE-FORMAT.md](./QUESTIONNAIRE-FORMAT.md) 共同构成问卷引擎。后续 skill(如 retro-questionnaire)复用这两个文件,只换自己的骨架模板。
 
+## 修订前置检查(OD-8 执行步骤)
+
+修改本文件或 QUESTIONNAIRE-FORMAT.md 前,必须先比对其余三方副本(design-Q / grill-Q / retro-Q / action-Q 的同名引擎文件)的对应节:差异属于应同步的修订 → 四方同步;属于本 skill 有意分叉 → 在本 skill DESIGN.md 与 FORK-NOTES.md 声明。二选一并留痕,不允许无声单方修改。
+
 ## 解析
 
 用户宣布「答完了」之后:
@@ -36,7 +40,7 @@
 | lld 阶段题 | `harness/design/` 的 LLD 文档 |
 | 术语定义类 | CONTEXT.md(项目固有,路径不动;纯术语表,不放决策与实现细节) |
 | 满足 ADR 三条件的决策 | `harness/adr/NNNN-<slug>.md`(编号顺延现有) |
-| 🤔 逃生舱(单向门) | OPEN-DECISIONS.md(项目固有,路径不动) |
+| 🤔 逃生舱(单向门) | OPEN-DECISIONS.md(归属见 HARNESS-RULES.md 第六节) |
 | 🤔 逃生舱(双向门) | 采用 ★推荐项 **且进 OD 标注**(标「双向门 / 采用推荐项 X / provisional」+ 重访触发条件)。采用推荐项也留痕,不再「不进 OD」(信息不丢失优先) |
 | 行动项(处理报告 / 复盘产出) | `<项目根>/TODO.md`(项目固有,路径不动;问题 → 行动 → 核验时机;懒创建) |
 
@@ -77,6 +81,6 @@ ADR 三条件(缺一不写):难逆转 + 缺上下文会让人困惑 + 经过真�
 ## 归档
 
 1. 处理报告输出且用户无异议 → 问卷 status:`processed` → `archived`,移入 `harness/questionnaires/archive/`,文件名不变。
-2. 归档前在文件尾部追加处理报告摘要(落盘文件链接列表),保证单文件可回溯。
+2. 归档前在文件尾部追加**处理报告全文**(每题去向 / 异常 / 逃生舱处置 / 下一波候选 / 覆盖度),顶部保留摘要节(落盘文件链接列表速览)——「原始信息不丢失」覆盖解析产物(决策的「为什么」),跨会话恢复(回退协议重开层 / long-running 反推)依赖此留存。
 3. 只移不删。
 4. 提问波(≤3 题,未生成问卷文件)的问答与处理摘要,追加到最近一份归档问卷尾部,标注「提问波」。

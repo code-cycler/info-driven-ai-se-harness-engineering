@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: dee44f356519
+zh-hash: 87ca220deecf
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -174,6 +174,7 @@ The methodology's executable carriers, 9 core skills: design-questionnaire / gri
 | retro-questionnaire | methodology four sections (what went well / what went wrong and hypothesized causes / architectural drift / what was learned) + Action Items | [RETRO-SKELETONS.md](../../skills/retro-questionnaire/RETRO-SKELETONS.md) |
 | grill-with-docs | no fixed skeleton (pure follow-up questioning, single-point dive); codebase-bound mode adds domain-vocabulary challenge / code cross-verification; general mode is zero-trace pure dialogue | [SKILL.md](../../skills/grill-with-docs/SKILL.md) |
 | long-running / delegate / doctor-harness | non-questioning (constraint system / delegation governance / harness governance) | each SKILL.md |
+| proj-overview | non-questioning (read-only derived human-readable overview generation; no questionnaire, no adversarial dimensions) | [SKILL.md](../../skills/proj-overview/SKILL.md) |
 
 ## The methodology's three documents (ADR-0007)
 

@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: README.md
-zh-hash: 9b6fb5e8867b
+zh-hash: a0131b589b4f
 ---
 [中文](../README.md) · **English**
 
@@ -55,7 +55,7 @@ Install: copy (or symlink) `skills/<skill-name>/` into `~/.claude/skills/` (user
 flowchart TD
     A["💡 An idea"] --> B["🏗️ /design-questionnaire<br/>multi-wave questionnaire → design<br/>→ LN layered design (L0-vision first, layers on demand) / ADRs"]
     B --> C["🔍 /grill-questionnaire<br/>8-dimension adversarial stress test, find the holes"]
-    C --> D["🐶 dogfood self-verification<br/>(tool/process products, embedded at each stage's close)"]
+    C --> D["🐶 dogfood self-verification<br/>(not a skill · built-in mechanism, tool/process products, embedded at each stage's close)"]
     D --> E["⚡ /long-running-agent<br/>cross-session implementation → feature_list all green"]
     E --> F["📊 /retro-questionnaire<br/>retrospective sedimentation + Action Items"]
     F -.->|new ideas / lessons| A
@@ -166,7 +166,7 @@ docs/methodology/    methodology articles (CC-BY 4.0) — methodology_v5 + philo
 docs/CONTEXT.md      glossary / harness/adr/ architecture decision records / docs/OPEN-DECISIONS.md open decisions
 harness/design/      AI-process products: design doc suites (per feature/topic subdirectories: repo/ doctor-harness/ skill-spec-revamp/ etc.)
 harness/questionnaires/ used-questionnaire archive (archive/ per feature/topic subdirectories + README index)
-skills/              the 8 core methodology skills (MIT)
+skills/              the 9 core methodology skills (MIT)
 scripts/             desensitization check / harness validation and other tools
 CHANGELOG.md         repository-level external change log (moved out of the README "release notes" section, 2026-08-20)
 ```

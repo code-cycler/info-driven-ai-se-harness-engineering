@@ -2,6 +2,13 @@
 
 > 本 skill 治理历史(创建起源/引擎同步与漂移/分叉裁决时间线)。追加式,只增不改;规则现值见 SKILL.md 与引擎文件,设计决策见 [DESIGN.md](./DESIGN.md),有意分叉见 [FORK-NOTES.md](./FORK-NOTES.md)。
 
+## 2026-09-27 · skill-audit 修复批(副本侧,confirm-skill-audit-fix 裁决 Q1/Q2/Q5③)
+
+- **变更**:① 归档规则同步为 D34「处理报告全文制」(与 canonical 一致);② PROCESSING-RULES 新增「修订前置检查(OD-8 执行步骤)」节;③ FORMAT 命名行 LN 枚举清除(L4/L12 同文件矛盾修复:改 `grill-<slug>-w<NN>`);④ SKILL 归档表述「摘要→全文」;⑤ 分工表 design-Q 列旧三件命名 LN 化 ×2(含骨架行);⑥ FORK-NOTES 登记 ×3(全文制收口/命名本地化/结构分叉声明补全)。
+- **原因**:2026-09-27 skill 体系全量审查([报告 01](../../harness/design/skill-audit/01-report-questionnaire-skills.md) 高-1/高-2/中-9 涉本 skill/低-1/低-2);D38 LN 制修订单方落在 design-Q 未同步本副本。
+- **影响**:PROCESSING-RULES/SKILL/FORMAT/FORK-NOTES(已双侧同步);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 B。
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:① SKILL.md 11 处日期注记剥离 + 头部索引行;② 引擎 FORMAT/PROCESSING 15 处日期剥离 + 头部拆分(副本标记留头部剥日期,有意分叉声明迁 FORK-NOTES.md 双侧);③ GRILL-SKELETON 2 处剥离;④ DESIGN.md 收敛三节——引擎复制声明内三个事件、引擎同步记录 ×3、dogfood 教训叙述、引擎有意分叉声明迁本 CHANGELOG / FORK-NOTES;⑤ 新建 FORK-NOTES.md(双侧一致)。

@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/methodology/practical_v1.md
-zh-hash: ab1723c6ea08
+zh-hash: 2bb263f82f0f
 ---
 [中文](../../../docs/methodology/practical_v1.md) · **English**
 
@@ -16,7 +16,7 @@ zh-hash: ab1723c6ea08
 
 ## Quick start: the skill workflow in one diagram
 
-This document expounds the methodology's core; the 8 Claude Code skills are its execution bodies. The typical path of a single feature from idea to delivery:
+This document expounds the methodology's core; the 9 Claude Code skills are its execution bodies. The typical path of a single feature from idea to delivery:
 
 ```mermaid
 flowchart TD
@@ -137,6 +137,7 @@ The skill family is the methodology's execution bodies, classified by use:
 | **Delegate** | delegate | decision delegation (pilot) | when pure-execution decisions pile up |
 | **Single-point** | grill-with-docs | implementation-phase single-point ambiguity (codebase-bound dive default; general mode carries the original grill scenarios) | "is this technical choice sound?"; codebase-bound design review; plan review (point-by-point, instant) |
 | **Govern** | doctor-harness | harness layout / migration / validation | "where does this file go"; harness organization chaos needing governance |
+| **Master** | proj-overview | generate the human-readable mastery view when reloading context / feeling lost | "project map", "I'm lost", "re-orient" |
 | **Review** | code-review class | pre-commit / stage review | reviewing the current diff |
 
 **action-Q mechanism note** (added 2026-08-04): action-questionnaire is a **confirmation-list questionnaire (confirm-list)** — before an informal action (multi-file write / external dependencies involved) starts, the AI writes its understanding of the action's details into a list; the human checks it (tick = understood correctly, blank = correct me) before execution — aligning information to prevent AI's hallucinated self-directed decisions in an information vacuum (the direct countermeasure at the methodology file's [§1.1](methodology_v5.md) mechanism layer; an (a)-type blind-spot catcher). It is a lightweight prelude, not part of the design-phase flow; feature-level actions escalate to design-Q / grill-Q / long-running.

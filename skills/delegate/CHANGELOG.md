@@ -2,6 +2,13 @@
 
 > 本 skill 治理历史。本 skill 不复用问卷引擎,无规则本体级分叉,故无 FORK-NOTES。追加式,只增不改。
 
+## 2026-09-27 · skill-audit 修复批(confirm-skill-audit-fix 裁决)
+
+- **变更**:① 反馈回路落点「『决策下放』OD 条目」悬空引用改显式「OD-23(delegate pilot 与可控性验证)」×6 处(SKILL ×2/DESIGN ×3/本文件 ×1)——核实结论:skill 本体出自宿主项目 grill-questionnaire 压测(2026-07-25),OD-23 出自 grill-philosophy-v7-w02 Q5/Q6,两条来源各自成立,OD-23 侧已补注;② delegation-template Changelog 示例「D1–D5」→「D1–D7」(与白名单实数一致);③ SKILL 引号错配修复。
+- **原因**:2026-09-27 skill 体系全量审查([报告 02](../../harness/design/skill-audit/02-report-impl-governance-skills.md) 中-3/低-1/低-2);按名解析不到的 OD 引用。
+- **影响**:SKILL/DESIGN/templates(已双侧同步);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 C + A13 核实结论。
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:SKILL.md 4 处日期剥离(来源行/preview 迁移节压缩为现行规则/full 模式出处/实测条款)+ 头部索引行;DESIGN.md 表内日期剥为 round 出处、round 1 详录压缩、漂移声明历史更新条迁本 CHANGELOG。
@@ -22,4 +29,4 @@
 ## 2026-07-25 · 创建 + dogfood round 1(项目C 设计期)
 
 - **变更**:① 创建:宿主项目 grill-questionnaire W01 压测用户提案「下放部分简单决策权给 AI」的产物——G1–G5(白名单机制/治理文件与日志分离/项目根位置/双层收回/禁区优先);② round 1 关键发现:delegation-log 0 条(根因 = 决策面错位:设计期判断在问卷作答,白名单覆盖实现期,尚未被真正测试)/「触发流程不确定」属实(design-Q 0 处 delegate 引用 → G9 契约化 + G10 放权时机定 vision 闸门)/preview 全程零触发(→ G6 superseded,迁移为 design-Q 强制步骤)/design-Q 缺环境现实验证步骤(→ design-Q 增补);③ 下轮度量四项(判断轮次数/preview 预答率/log 条数/逃生舱使用率)。
-- **出处**: 宿主项目归档问卷 + 「决策下放」OD 条目
+- **出处**: 宿主项目归档问卷 + OD-23(delegate pilot 与可控性验证)

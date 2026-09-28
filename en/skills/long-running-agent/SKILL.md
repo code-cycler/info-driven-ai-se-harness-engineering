@@ -3,7 +3,7 @@ name: long-running-agent
 description: "Constraint system for long-running, multi-session complex projects. Incremental work, the feature_list.json feature list, claude-progress.txt progress records, end-to-end test verification (a feature is marked passes:true only after passing tests), clean Git state, conventional commits. Single agent working one feature at a time by default; extension capability: preparation mode (planning parallel threads + task packages, human review and confirmation) and execution mode (multi-worktree parallelism, preferring Claude Code's native multi-agent inter-communication: the main session spawns background agents each resident in a worktree + SendMessage communication). Triggers: multi-session / long-horizon projects, feature_list tracking needed, long engineering tasks, work spanning context windows, design-questionnaire layered-design (LN) close stop-point handing off into the implementation phase, preparation mode, execution mode, multi-worktree parallelism. Use when a project enters long-running implementation spanning multiple sessions / context windows, or after design-questionnaire hands off (single or multi-worktree modes)."
 lang: en
 en-source: skills/long-running-agent/SKILL.md
-zh-hash: ab01c35af597
+zh-hash: ba1f318b931d
 ---
 
 [中文](../../../skills/long-running-agent/SKILL.md) · **English**
@@ -179,7 +179,7 @@ When feature_list.json does not exist, create it first:
 
 **Session context may be compacted (Claude Code `/compact`) and lose design-phase decision detail**. This skill does not rebuild project understanding from session context, but from files on disk:
 
-- **With design-Q products (LN naming)**: read the layer files (`L0-vision-*` always + all layers) + `harness/questionnaires/archive/` archived questionnaires. **Feature reverse-derivation rule**: from the **lowest build-semantics layer**'s phase split (L2-build or a self-declared build/phase-content layer); with no build layer (single-layer delivery) → reverse-derive item-by-item from the L0 acceptance criteria (the L0 writing constraint "acceptance written as independently verifiable items" exists for this). The legacy trio VISION/HLD/LLD = aliases of L0/L1/L2, same rule. **Harness file layering: see HARNESS-RULES.md** (doctor-harness is the normative authority; not inlined here).
+- **With design-Q products (LN naming)**: read the layer files (`L0-vision-*` always + all layers) + `harness/questionnaires/archive/` archived questionnaires. **Feature reverse-derivation rule**: from the **lowest build-semantics layer**'s phase split (L2-build or a self-declared build/phase-content layer); with no build layer (single-layer delivery) → reverse-derive item-by-item from the L0 acceptance criteria (the L0 writing constraint "acceptance written as independently verifiable items" exists for this). The legacy trio VISION/HLD/LLD = aliases of L0/L1/L2, same rule. **Harness file layering: see the doctor-harness skill's HARNESS-RULES.md (in this repo: `skills/doctor-harness/HARNESS-RULES.md`)** (doctor-harness is the normative authority; not inlined here).
 - **Without design-Q products**: read claude-progress.txt + feature_list.json + git log; rebuild from historical sessions and the code's current state.
 
 The mechanism is self-consistent: whether or not context is compacted, the files on disk are the source of truth.
@@ -342,6 +342,8 @@ When the code is in a bad state:
 [ ] 5. Git commit (the project's existing conventions)
 [ ] 6. Report to the user
 ```
+
+**Fixed governance close-out items (not trimmable)**: ① tick off the corresponding feature block in TODO.md; ② append entries to the root CHANGELOG (for externally visible changes) and STATUS-LOG; ③ this skill's own CHANGELOG (if the skill itself changed). F052 lesson: the DoD omitted the TODO tick-off, leaving the mainline status stale.
 
 ### Mandatory enforcement
 

@@ -172,7 +172,7 @@ feature_list.json 不存在时,先创建它:
 
 **会话上下文可能被压缩(Claude Code `/compact`)而丢失设计期决策细节**。本 skill 不依赖会话上下文重建项目认知,而是从落盘文件:
 
-- **有 design-Q 产物(LN 制)**:读层文件(`L0-vision-*` 恒在 + 各层)+ `harness/questionnaires/archive/` 归档问卷。**feature 反推规则**:从「最低**构建语义层**」(L2-build 或自声明的构建/阶段内容层)的阶段拆分反推;无构建层(单层交付)→ 从 L0 验收标准逐条反推(L0 写法约束「验收按可独立验证条目写」为此保证)。旧 VISION/HLD/LLD 三件 = L0/L1/L2 别名,同规则。**harness 文件分层见 HARNESS-RULES.md**(doctor-harness 规范权威,不内联复制)。
+- **有 design-Q 产物(LN 制)**:读层文件(`L0-vision-*` 恒在 + 各层)+ `harness/questionnaires/archive/` 归档问卷。**feature 反推规则**:从「最低**构建语义层**」(L2-build 或自声明的构建/阶段内容层)的阶段拆分反推;无构建层(单层交付)→ 从 L0 验收标准逐条反推(L0 写法约束「验收按可独立验证条目写」为此保证)。旧 VISION/HLD/LLD 三件 = L0/L1/L2 别名,同规则。**harness 文件分层见 doctor-harness skill 的 HARNESS-RULES.md(本仓库路径 `skills/doctor-harness/HARNESS-RULES.md`)**(doctor-harness 规范权威,不内联复制)。
 - **无 design-Q 产物**:读 claude-progress.txt + feature_list.json + git log,从历史会话与代码现状重建。
 
 机制自洽:无论上下文是否被压缩,落盘文件都是 source of truth。
@@ -334,6 +334,8 @@ type:`feat` / `fix` / `refactor` / `test` / `docs` / `chore`。
 [ ] 5. Git 提交(项目既有约定)
 [ ] 6. 向用户报告
 ```
+
+**治理收尾固定项(不可裁剪)**:① TODO.md 对应 feature 块勾销 ② 根 CHANGELOG(涉对外可感知变更)与 STATUS-LOG 追加条目 ③ 本 skill 自身 CHANGELOG(若 skill 有变更)——F052 教训:DoD 漏列 TODO 勾销导致主线状态滞后。
 
 ### 强制执行
 

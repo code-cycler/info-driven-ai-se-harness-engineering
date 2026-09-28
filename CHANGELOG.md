@@ -4,6 +4,16 @@
 
 > **记录规则**:本节是仓库级对外变更的唯一记录——凡**采用者可感知**的变更(skill 行为 / 产物结构 / 方法论内容)必记,纯仓库内部治理(问卷归档、链接修复等)不记。倒序排列。skill 无独立版本号,这里是感知 `skills/` 变更的唯一窗口。
 
+## skill 体系审查修复批:四 skill 归档规则统一全文制等(2026-09-27,skill-audit)
+
+- **问卷引擎 D34 收口(采用者可感知的归档产物变化)**:design-Q / grill-Q / retro-Q / action-Q 四 skill 归档规则统一为「尾部追加**处理报告全文**(每题去向 / 异常 / 逃生舱处置 / 下一波候选 / 覆盖度),顶部保留摘要节」——此前 design-Q 单方修订(2026-08-20)未同步三副本,归档文件的可回溯粒度四 skill 从此一致。
+- **grill-with-docs 文件结构示例 ADR/OD 落点统一 harness 制**(单/多 context 双示例由 `docs/adr/` 改 `harness/adr/`,与 ADR-FORMAT 规则一致;OPEN-DECISIONS 位置按 HARNESS-RULES 第六节并注本仓 OD-25 例外)。
+- **long-running-agent 新增「治理收尾固定项」**(不可裁剪:TODO 勾销 + CHANGELOG/STATUS-LOG 追加)——F052 教训机制化,防主线状态滞后。
+- **retro-questionnaire 补下游衔接**(Action Items 中 feature 级新需求 → 提议转 design-Q / grill-Q,落地前可过 action-Q)。
+- **问卷引擎新增「修订前置检查」节**(四方 PROCESSING-RULES:改引擎文件前强制比对三副本,同步或声明二选一)——OD-8 协议步骤化。
+- **action-questionnaire 清除废弃「preview」称谓**(×3,裁决 Q15 更名 confirm-list 的残留)。
+- 配套(内部治理,摘要一行):全仓计数/状态失真 7 处修复(CLAUDE.md 状态节 / README 中英 / philosophy_v7 / practical_v1 / CONTEXT 维度表等)、新门禁 `scripts/audit-check.py`、`skills-sync-check.py` 双向扫描、新 OD-30/31;逐条明细见归档问卷处理报告与 [harness/design/skill-audit/](harness/design/skill-audit/)。
+
 ## proj-overview v2:认读第一入口 + 治理文件 summary(2026-09-26,ADR-0026 修订注记)
 
 - **skill 规格升级**(design-Q 两层 + grill-Q 九题压测闭环):受众从「本人失忆恢复」扩展为「任何开发者」;产物定位升级为**认读第一入口**(人重载上下文从此开始;与 CLAUDE.md 偏 AI 会话、README 偏对外采用构成三入口各有侧重);新增**治理文件 summary 职责**(ADR/OD 全量每条一行带源链接——ADR 摘要 = 决策节首句直引/紧缩转述禁跨节综合,OD 状态直读源字段禁 AI 归纳);行数硬上限 ≤250 废除(派生性质即约束:行数随源文件面线性增长 + 分型自检);所有 mermaid 图强制竖向 TD;导读三档读法(3 分钟恢复 / 15 分钟框架 / 检索);DFS 链改动态选取(主线/挂账/收口 3–5 条)。

@@ -3,7 +3,7 @@ name: retro-questionnaire
 description: Batch-questionnaire retrospective for projects / stages. Generates a Markdown retrospective questionnaire per the methodology's four sections (what went well / problems and cause hypotheses / architecture deviations / lessons learned) + Action Items; after the user answers offline, results land in the host project's docs/retro/<topic>_vN.md and TODO.md, and used questionnaires are archived. Proactively proposed after a stage's DoD verification; can also be manually triggered anytime (record promptly, like memory). Triggers: stage retrospective, project retrospective, "retro this", "do a retro", retro, DoD verification passed. Use when a development stage or project is done and a structured retrospective questionnaire should be generated, answered, and sedimented.
 lang: en
 en-source: skills/retro-questionnaire/SKILL.md
-zh-hash: e40f07243915
+zh-hash: 508ce6a3811c
 ---
 
 [中文](../../../skills/retro-questionnaire/SKILL.md) · **English**
@@ -30,7 +30,7 @@ Turn retrospectives from "relying on self-discipline" into "triggered, structure
 
 - **Proactive proposal**: on detecting that a stage of the host project passed its DoD verification → propose a retrospective with AskUserQuestion; execute after the human confirms.
 - **Manual**: the user says "retro this" / "do a retro" etc. — triggered anytime, recorded promptly (like memory).
-- **Project shelving/abandonment** (suggested, not mandatory; 2026-09-09 Challenge-1 deep dive): post-hoc death snapshot — frustrated/natural death determined retroactively from objective repository state (feature_list/TODO/git); a two-line record (state at death + one-line cause of death), determinable at any time after death (terms: this repository's CONTEXT "Progression-stall spectrum" section).
+- **Project shelving/abandonment**: post-hoc death snapshot — frustrated/natural death determined retroactively from objective repository state (feature_list/TODO/git); a two-line record (state at death + one-line cause of death), determinable at any time after death (terms: this repository's CONTEXT "Progression-stall spectrum" section).
 
 ## Main flow
 
@@ -52,8 +52,9 @@ Turn retrospectives from "relying on self-discipline" into "triggered, structure
    - Retro document: host project `docs/retro/<topic>_vN.md` (_vN increments; final/new/copy forbidden), structure = four sections + Action Items
    - Action items → host project `TODO.md` (problem → action → verification timing)
    - Processing report (in conversation)
-   - Questionnaire archived to `harness/questionnaires/archive/`, with the processing-report summary appended at the tail
+   - Questionnaire archived to `harness/questionnaires/archive/`, with the processing report in full appended at the tail
 5. **Termination**: one retro usually completes in a single wave; for new questions raised by the answers, judge "no more information to interrogate" to decide whether a supplementary wave is needed.
+6. **Handoff**: if feature-level new requirements appear in the Action Items → propose switching to design-Q (design needed) or grill-Q (an artifact to stress-test); before action items land, their details can pass through action-Q — new requirements/lessons flow back to the design entry (collaboration-graph RETRO→DQ edge).
 
 </what-to-do>
 

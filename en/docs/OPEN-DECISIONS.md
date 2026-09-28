@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/OPEN-DECISIONS.md
-zh-hash: 15143289f806
+zh-hash: 50b09d0cc358
 ---
 [中文](../../docs/OPEN-DECISIONS.md) · **English**
 
@@ -37,6 +37,7 @@ zh-hash: 15143289f806
 - **Deferral reason**: experience gap — never trial-run on Cursor / Cline / other LLM CLIs.
 - **Current placeholder**: the README states "the methodology's ideas are tool-agnostic and portable; the skills' direct execution depends on three Claude Code mechanisms — AskUserQuestion, subagent, SKILL.md; porting to other tools requires adapting these".
 - **Dependency boundary inventoried**: across the 8 core skills' SKILL.md files, AskUserQuestion appears 18 times, subagent 4 (re-measured 2026-08-03, including action-questionnaire) — those two + SKILL.md frontmatter triggering are the main dependencies. (2026-08-08 note: doctor-harness, the 9th skill's SKILL.md, has no AskUserQuestion / subagent dependency — pure script + document validation; does not affect the counts above)
+- **2026-09-27 note (skill-audit measurement)**: proj-overview has no subagent and no AskUserQuestion.
 - **Reversibility**: two-way door (README wording).
 - **Revisit trigger**: ① a user reports success / failure adapting to another tool; ② someone attempts a port; ③ a "can't install" issue appears.
 
@@ -299,7 +300,7 @@ zh-hash: 15143289f806
 
 - **Status**: watching
 - **Problem**: this repository has no project-level `delegation.md` / `delegation-log.md` instance; low usage cannot distinguish "low-frequency but valuable" from "mechanism ineffective"; the post-enable revocation and log loop are also untested.
-- **Source**: [grill-philosophy-v7-w02](../../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q5/Q6.
+- **Source**: [grill-philosophy-v7-w02](../../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q5/Q6. (2026-09-27 note: the delegate skill proper has one earlier source — a host-project grill-questionnaire stress test (2026-07-25, see the delegate CHANGELOG); the two do not conflict — different-era sources: the skill proper carries the host-project stress-test output, this entry (the pilot-and-controllability mechanism) carries W02 Q5/Q6)
 - **Deferral reason**: lacking real usage, human-correction, revocation, and log-completeness evidence; forced enabling would create ritualistic usage and widen the permission surface.
 - **Current placeholder**: delegate defaults off, explicitly enabled; pilot with 1–2 low-risk, reversible, countable execution-decision classes. Record per-class usage, revocations, human corrections, and log completeness; keep per-class revocation conditions, the global kill switch, and the append-only per-case log; complete one failure-injection / revocation drill. No scope or default-path expansion before the pilot and retro complete.
 - **Reversibility**: two-way door. Closing the pilot or revoking a class is immediate; expansion needs re-evaluation.
@@ -371,3 +372,29 @@ zh-hash: 15143289f806
 - **Reversibility**: two-way door (mechanisms are pure addition, git-revertible; the methodology master files v5 / philosophy untouched).
 - **Revisit trigger**: ① in the next large-project practice, hard evidence of AI-side retrieval degradation observed (an erroneous decision traced to hitting a stale document); ② a concrete "no way to tell which to trust" event, or the harness scale doubles again; ③ after proj-overview v2 lands, the sense of losing control is not relieved; ④ ≥2 concrete failure events accumulated (experience-grade → evidence-grade). Any one met → evaluate escalating to a design-Q project (information decay governance / capacity governance) or landing the lightweight slices directly.
 - **Related**: methodology_v5 §2 information lifecycle, the CONTEXT "Two types of drift" section, the proj-overview v2 feature (in progress), OD-8 / OD-23 (existing governance of file-to-file drift).
+
+## OD-30 Converging the multi-written family count / mainline status — single-source direction (two-way door · 2026-09-27 skill-audit)
+
+- **Status**: open
+- **Problem**: "skill family size + project mainline status" facts are written in five places: the CLAUDE.md status section and skill-family section, the TODO.md header, philosophy_v7 (canonical count sentence), practical_v1 (executor count + §8.3 table), and the README.md structure tree — any linkage checklist that misses an item drifts. The 2026-09-27 skill audit found that at least 7 of its 41 findings were produced directly by this (the CLAUDE.md "8 skills + P4 pending" staleness, the README zh/en "8 core" residue, philosophy stuck at "eight", practical missing the 9th skill, etc.) — isomorphic to the file-to-file drift pathology described in the CONTEXT "Two types of drift" section.
+- **Source**: [harness/design/skill-audit/03-report-global-docs.md](../../harness/design/skill-audit/03-report-global-docs.md) common root cause 1; questionnaire confirm-skill-audit-fix-w01 Q4=C adjudication (single-sourcing not mixed into the fix batch; recorded in this OD).
+- **Deferral reason**: converging to a single source = touching the canonical philosophy file's wording structure + the README tree structure, one-way-door grade; mixing it into the 41-item fix batch is high-risk. Q4 adjudication: structural change is left to a dedicated feature.
+- **Current placeholder**: ① machine assertion shipped first — `scripts/audit-check.py` (added 2026-09-27) scans seven files' count wordings vs the skills/ actual count with loose patterns + TODO header vs feature_list passes; run routinely before commits; ② the five double-written places are kept for now; linkage checklists are aware of this OD.
+- **Reversibility**: two-way door (converge/rollback are both git-revertible; skill rule bodies untouched).
+- **Revisit trigger**: ① audit-check reports count drift again (the machine line of defense also failing = double-writing cost now exceeds benefit); ② the next family-size change (a 10th skill entering or a retirement); ③ the next large-scale linkage revision (a natural window to converge along the way). Any one met → evaluate a design-Q project "count single-sourcing".
+- **Related**: [harness/design/skill-audit/04-root-cause-and-governance.md](../../harness/design/skill-audit/04-root-cause-and-governance.md) §2 leak 5, `scripts/audit-check.py`, OD-8.
+
+## OD-31 Forced cross-session handoff — a "no loose ends" session-boundary gate (two-way door · 2026-09-27 skill-audit)
+
+- **Status**: open
+- **Problem**: the repository already has four cross-session carriers (long-running's `feature_list.json` + `claude-progress.txt`, TODO.md, STATUS-LOG, PROJECT-OVERVIEW as the first-reading entry), but **all depend on "remembering to write" — there is no forced gate at the session boundary** — at least 5 of the skill audit's 41 findings were direct products of "session loose ends" (TODO F052 staleness, two CHANGELOG bypasses, PROJECT-OVERVIEW same-day staleness, STATUS-LOG missing the P4-closure entry).
+- **Source**: questionnaire confirm-skill-audit-fix-w01 supplementary declaration (user asked: "is there a mechanism or process to force cross-session information transfer or handoff, so each session leaves no loose ends").
+- **Candidate directions** (undecided; not implemented in this batch):
+  - A. **Claude Code Stop/SessionEnd hooks**: fire a script at session end asserting "if feature_list has passes=false, TODO must have unchecked items; whether the CHANGELOG corresponding to files changed this session has been appended" — turning closeout into an exit-code interception (machine gate, strongest).
+  - B. **Session-close DoD checklist**: before any session ends, three fixed questions (TODO checked? CHANGELOG recorded? derivative view due for refresh?) — a process gate, weaker than A.
+  - C. **pre-commit hook**: "changing a SKILL.md must also change its CHANGELOG" intercepted at the git layer — covers only the commit surface, not the "changed but uncommitted" loose end.
+  - Leaning A+C (session boundary + commit boundary double gate, B as the fallback in hook-less environments); implementation involves hooks config and scripts — a new feature.
+- **Current placeholder**: ① Q5② landed in the long-running SKILL as a "fixed governance-closeout block" (TODO checkbox + CHANGELOG/STATUS-LOG append, non-trimmable) — the process gate inside long-running mode ships first; ② `scripts/audit-check.py`'s TODO-vs-feature_list assertion covers its mechanizable subset.
+- **Reversibility**: two-way door (hooks are pure incremental config, removable).
+- **Revisit trigger**: ① session-loose-ends drift observed again (any of TODO/CHANGELOG/derivative view lagging, hard evidence); ② the user decides to configure Claude Code hooks for this repository (a natural implementation window); ③ the long-running "fixed governance-closeout block" proves insufficient (sessions skipping long-running mode still leave loose ends). Any one met → design-Q project "session-boundary gate".
+- **Related**: [harness/design/skill-audit/04-root-cause-and-governance.md](../../harness/design/skill-audit/04-root-cause-and-governance.md) §5, OD-30 (same root: assertion vs self-discipline).

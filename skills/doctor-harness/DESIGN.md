@@ -13,7 +13,7 @@
 | V4 | 分层判定句 | feature 级(可独立引用/冲突)建 design/<feature>/,全局设计裸放 | ADR-0012 |
 | V5 | 归属判据 | 独立 CLAUDE.md/git/发布边界 → 独立 harness,否则归主根 | ADR-0012 |
 | V6 | 归档规则 | 新归档按 feature/主题建子目录;存量不挪;README 索引 | VISION W01 Q3 |
-| V7 | 校验脚本 | scripts/harness-check.py,三检查(命名/ADR 编号/归档位置),0 违规 0 输出 | VISION W01 Q5 |
+| V7 | 校验脚本 | scripts/harness-check.py,四检查(命名/ADR 编号/归档位置/LN 分层 check_ln_design)+ design/ 分层报告无条件打印——0 违规时仍有报告输出,供人工核对 ADR-0012 判定句(初始裁定「三检查、0 违规 0 输出」,LN 检查增补后语义更新) | VISION W01 Q5 |
 | V8 | 迁移方式 | 一次性完整迁移 + 断链回归,不自动化脚本 | ADR-0013 |
 | V9 | 规范落点 | HARNESS-RULES.md 独立文档,各 SKILL.md 引用不复制 | VISION W01 Q10 |
 | V10 | 脚本双副本 | 脚本进仓库 scripts/,~/.claude 引用或复制同字节 | VISION W01 Q8 |

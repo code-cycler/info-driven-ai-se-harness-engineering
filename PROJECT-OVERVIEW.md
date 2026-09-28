@@ -134,8 +134,8 @@ flowchart TD
 ### TODO / STATUS-LOG / CHANGELOG 头部转述
 
 - **TODO**([头部](TODO.md),2026-09-26):主线 = ① proj-overview v2 实现(F052)② 失忆测试以 v2 为准(≥3 天)③ 哲学挑战一修复包 canonical 修订候选;块级:哲学挑战一修复包 🟡 / human-project-view+v2 🟢 / i18n 扩面 ⏭ / skill 家族形态修订 🟡(轻量 dogfood 待验)/ grill 边界治理 ✅ / 术语审计 B ⏳ 等。
-- **STATUS-LOG**([顶部](harness/STATUS-LOG.md)):09-25 proj-overview 入库与 F049–F051 收官 / 09-23 human-project-view 设计三层全链 / 08-26 i18n 首期收官。
-- **CHANGELOG**([近 5 条](CHANGELOG.md)):第 9 个 skill 入库(09-25)/ i18n 首期完成(08-26)/ i18n 立项(08-23)/ 治理历史分离(08-20)/ README 重构(08-20)。
+- **STATUS-LOG**([顶部](harness/STATUS-LOG.md)):09-26 proj-overview v2 规格升级(F052,认读第一入口 + summary)/ 09-25 proj-overview 入库与 F049–F051 收官 / 09-23 human-project-view 设计三层全链 / 08-26 i18n 首期收官。
+- **CHANGELOG**([近 5 条](CHANGELOG.md)):proj-overview v2(09-26)/ 第 9 个 skill 入库(09-25)/ i18n 首期完成(08-26)/ i18n 立项(08-23)/ 治理历史分离(08-20)。
 
 ## ⑤ 决策脉络(关键决策时间线)
 

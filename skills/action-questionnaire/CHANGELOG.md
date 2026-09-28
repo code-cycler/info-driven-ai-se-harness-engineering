@@ -2,6 +2,13 @@
 
 > 本 skill 治理历史(创建起源/dogfood 案例/引擎同步时间线)。追加式,只增不改;规则现值见 SKILL.md 与引擎文件,设计决策见 [DESIGN.md](./DESIGN.md),有意分叉见 [FORK-NOTES.md](./FORK-NOTES.md)。
 
+## 2026-09-27 · skill-audit 修复批(副本侧,confirm-skill-audit-fix 裁决 Q1/Q5③ + 中-9)
+
+- **变更**:① 归档规则同步为 D34「处理报告全文制」(保留「行动完成后追加执行结果摘要」附加句);② PROCESSING-RULES 新增「修订前置检查(OD-8 执行步骤)」节;③ FORMAT 规则 4 编号引用修正(「按规则 13」→14);④ 「preview」废弃称谓清除 ×3 处(SKILL 主流程 1 + FORMAT 1 + description 1,含 en 镜像)——裁决 Q15 更名 confirm-list 的残留。
+- **原因**:2026-09-27 skill 体系全量审查([报告 01](../../harness/design/skill-audit/01-report-questionnaire-skills.md) 高-1/中-4/中-9);D34 未同步本副本。
+- **影响**:PROCESSING-RULES/SKILL/FORMAT(已双侧同步);明细 = [归档问卷处理报告](../../harness/questionnaires/archive/)。
+- **出处**:问卷 confirm-skill-audit-fix-w00/w01 + [修复计划 05](../../harness/design/skill-audit/05-fix-plan.md) 批次 B。
+
 ## 2026-08-20 · P1 治理历史迁移(governance-history-split F040)
 
 - **变更**:① SKILL.md 8 处日期注记剥离(含 description 内 1 处)+ 头部索引行 + 分工表阈值过时值 ≤4→≤3 顺手修正;② DESIGN.md 收敛(定位/裁决表 Q1–Q15+W02/被否决项/dogfood 范围决策/已知限制)——dogfood 案例两例详录、引擎同步记录 ×3、skill-spec-revamp 同步(superseded)、复用前重验扩散叙述迁本 CHANGELOG;③ 有意分叉清单(6 条)从 DESIGN 迁 FORK-NOTES.md(双侧一致);④ 引擎 FORMAT/PROCESSING 日期剥离 + 头部拆分。

@@ -28,6 +28,7 @@
 - **推迟原因**:经验缺口——没有在 Cursor / Cline / 其他 LLM CLI 上试跑过。
 - **当前占位方案**:README 表述为「方法论理念工具无关、可迁移;skill 直接运行依赖 Claude Code 的三项机制——AskUserQuestion、subagent、SKILL.md;迁移到其他工具需适配」。
 - **依赖边界已盘**:8 个核心 skill 的 SKILL.md 中,AskUserQuestion 出现 18 处、subagent 4 处(2026-08-03 重测,含 action-questionnaire)——这两项 + SKILL.md frontmatter 触发是主要依赖。(2026-08-08 补注:doctor-harness 第 9 个 skill 的 SKILL.md 无 AskUserQuestion / subagent 依赖,纯脚本 + 文档校验,不影响上述计数结论)
+- **2026-09-27 补注(skill-audit 实测)**:proj-overview 无 subagent、无 AskUserQuestion。
 - **可逆性**:双向门(README 措辞)。
 - **重访触发条件**:① 有用户在其他工具适配成功 / 失败反馈;② 有人尝试移植;③ 出现「装不上」issue。
 
@@ -290,7 +291,7 @@
 
 - **状态**:观察中
 - **问题**:本仓库尚无项目级 `delegation.md` / `delegation-log.md` 实例,低使用率不能区分“低频但有价值”与“机制无效”;启用后的收回与日志闭环也尚未实测。
-- **来源**:[grill-philosophy-v7-w02](../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q5/Q6。
+- **来源**:[grill-philosophy-v7-w02](../harness/questionnaires/archive/philosophy-v7/grill-philosophy-v7-w02.md) Q5/Q6。(2026-09-27 补注:delegate skill 本体另有一条更早来源——宿主项目 grill-questionnaire 压测(2026-07-25,见 delegate CHANGELOG);两者不矛盾,属不同时期两条来源:skill 本体承宿主项目压测产出,本条目(pilot 与可控性验证机制)承 W02 Q5/Q6)
 - **推迟原因**:缺少真实使用、人工纠正、收回和日志完整度证据;强制启用会制造形式主义使用并扩大权限面。
 - **当前占位方案**:delegate 默认关闭、显式启用,先选择 1–2 类低风险、可逆、可计数的执行决策 pilot。逐类记录使用率、收回次数、人工纠正和日志完整度;保留每类收回条件、全局关闭开关和只增不改的逐例日志,并完成一次故障注入 / 撤销演练。未完成 pilot 与 retro 前不扩展权限或默认路径。
 - **可逆性**:双向门。关闭 pilot 或收回单类权限可立即执行,扩展权限需重新评估。
@@ -362,3 +363,29 @@
 - **可逆性**:双向门(机制纯加法,git 可回退;不动方法论主文件 v5 / philosophy)。
 - **重访触发条件**:①下次大项目实践观察到 AI 侧检索劣化实锤(错误决策溯源至过时文档命中);②出现「无从判断哪个可信」的具体事件或 harness 规模再翻倍;③ proj-overview v2 落地后人失控感未缓解;④积累 ≥2 个具体翻车事件(经验条→实证条)。满足任一 → 评估升格 design-Q 立项(信息衰减治理 / 容量治理)或直接落轻量切片。
 - **关联**:[methodology_v5 §二 信息生命周期](methodology/methodology_v5.md)、[CONTEXT](CONTEXT.md)「两类漂移」节、proj-overview v2 feature(进行中)、OD-8 / OD-23(文件-文件漂移既有治理)。
+
+## OD-30 家族计数/主线状态多写收敛——单源化方向(双向门 · 2026-09-27 skill-audit)
+
+- **状态**:open
+- **问题**:「skill 家族规模 + 项目主线状态」类事实在五处双写:CLAUDE.md 状态节(L90 区)与 skill 家族节(L41 区)、TODO.md 头部、philosophy_v7(canonical 计数句)、practical_v1(执行体计数 + §8.3 表)、README.md 结构树——任何联动清单(如 F051 十处)漏项即漂移。2026-09-27 skill-audit 审查出 41 条发现中至少 7 条直接由此产生(CLAUDE.md「8 skill + P4 待执行」过期、README 中英残留「8 个」、philosophy 止步「八个」、practical 未收录第 9 skill 等),与 [CONTEXT](CONTEXT.md)「两类漂移」节自述的文件-文件漂移病理同构。
+- **来源**:[harness/design/skill-audit/03-report-global-docs.md](../harness/design/skill-audit/03-report-global-docs.md) 共性根因 1;问卷 [confirm-skill-audit-fix-w01](../harness/questionnaires/archive/) Q4=C 裁决(单源化不混批、落本 OD)。
+- **推迟原因**:收敛单源 = 动 canonical 哲学文件表述结构 + README 目录树结构,单向门级;与 41 条修复混批风险高。Q4 裁决:结构性变更留给专门 feature。
+- **当前占位方案**:①机器断言已先行——`scripts/audit-check.py`(2026-09-27 新增)宽松模式扫七文件计数表述 vs skills/ 实数 + TODO 头部 vs feature_list passes,提交前例行跑;②五处双写暂维持,联动清单已知悉本 OD。
+- **可逆性**:双向门(收敛/回退均 git 可回退;不动 skill 规则本体)。
+- **重访触发条件**:①audit-check 再次报计数漂移(机器防线也拦不住 = 双写成本已超收益);②下次家族规模变化(第 10 个 skill 入库/退役);③下次大规模联动修订(自然窗口顺势收敛)。满足任一 → 评估 design-Q 立项「计数单源化」。
+- **关联**:[harness/design/skill-audit/04-root-cause-and-governance.md](../harness/design/skill-audit/04-root-cause-and-governance.md) §二漏洞 5、`scripts/audit-check.py`、OD-8。
+
+## OD-31 跨会话强制 handoff——「不留尾巴」会话边界关卡(双向门 · 2026-09-27 skill-audit)
+
+- **状态**:open
+- **问题**:仓库已有四个跨会话载体(long-running 的 `feature_list.json` + `claude-progress.txt`、TODO.md、STATUS-LOG、PROJECT-OVERVIEW 认读第一入口),但**全部依赖「记得写」,没有会话边界的强制关卡**——skill-audit 41 条中至少 5 条是「会话尾巴」直接产物(TODO F052 滞后、两笔 CHANGELOG 绕过、PROJECT-OVERVIEW 当日过期、STATUS-LOG 漏记 P4 收口)。
+- **来源**:问卷 confirm-skill-audit-fix-w01 补充声明(用户提出:「是否有机制或流程可以强制跨会话信息传递或 Handoff,使每次会话不留尾巴」)。
+- **候选方向**(未决,不混批实施):
+  - A. **Claude Code Stop/SessionEnd 钩子**:会话结束触发脚本,断言「feature_list 有 passes=false 则 TODO 必有未勾项;本会话改动文件对应 CHANGELOG 是否已追加」——把收尾变成 exit code 拦截(机器闸,最强)。
+  - B. **会话收尾 DoD 清单化**:任何会话结束前固定三问(TODO 勾了吗/CHANGELOG 记了吗/派生视图该刷新吗)——流程闸,弱于 A。
+  - C. **pre-commit hook**:「改 SKILL.md 必同时改 CHANGELOG」git 层拦截——只覆盖提交面,覆盖不了「改了没提交」的尾巴。
+  - 倾向 A+C 组合(会话边界 + 提交边界双闸,B 作无钩子环境兜底);实施涉 hooks 配置与脚本,属新 feature。
+- **当前占位方案**:①Q5② 已落 long-running SKILL「治理收尾固定项」(TODO 勾销 + CHANGELOG/STATUS-LOG 追加,不可裁剪)——long-running 模式内的流程闸先行;②`scripts/audit-check.py` 的 TODO-vs-feature_list 断言覆盖其可机器化子集。
+- **可逆性**:双向门(hook 纯增量配置,可移除)。
+- **重访触发条件**:①再次观察到会话尾巴漂移(TODO/CHANGELOG/派生视图任一滞后实锤);②用户决定给本仓库配 Claude Code hooks(自然实施窗口);③ long-running「治理收尾固定项」被证明不够(跳过 long-running 模式的会话仍留尾巴)。满足任一 → design-Q 立项「会话边界关卡」。
+- **关联**:[harness/design/skill-audit/04-root-cause-and-governance.md](../harness/design/skill-audit/04-root-cause-and-governance.md) §五、OD-30(同源根因:断言化 vs 自觉)。
