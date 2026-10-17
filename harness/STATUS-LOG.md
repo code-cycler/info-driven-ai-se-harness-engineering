@@ -68,4 +68,4 @@ design-Q 三阶段 + grill-Q 压测 12 项回灌(设计套 [harness/design/repo/
 
 ## 历史线(2026-07-29 起)
 
-2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角);2026-08-13 philosophy_v6(治理进化);2026-08-14 philosophy_v7(连续章节与双文件交叉治理)。
+2026-07-29 methodology_v3 完成(ADR-0004/5/6);2026-08-01 action-Q 入库(第 8 个 skill)+ 首次推送;2026-08-04 三块拆分(ADR-0007);2026-08-05 repo 级设计 + v4 + harness 迁移;2026-08-08 doctor-harness 完成(第 9 个 skill);2026-08-11 philosophy_v5(安全科学第四视角);2026-08-13 philosophy_v6(治理进化);2026-08-14 philosophy_v7(连续章节与双文件交叉治理)。2026-10-18 howtospeak 双波压测(Winston 透镜 × 可读性六学科透镜,W01+W02 20 题全闭环):README 承诺式改造 / 方法论阅读路线 + 介质自觉 / OD-32 可读性治理 + OD-33 冷读者轻量机制化 / 冷 AI 双试点通过;问卷归档 howtospeak/。

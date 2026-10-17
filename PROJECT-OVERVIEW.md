@@ -1,17 +1,17 @@
 # PROJECT-OVERVIEW · 人读派生视图(认读第一入口)
 
-> ⏱ **生成时间**:2026-09-26 · 📌 **以源文件为准,本文件为派生视图;认读第一入口——人重载上下文从此开始**(只读派生,不新增权威源;发布/删除/花钱/脱敏等单向门决策前必回源文件核对)。
+> ⏱ **生成时间**:2026-10-18 · 📌 **以源文件为准,本文件为派生视图;认读第一入口——人重载上下文从此开始**(只读派生,不新增权威源;发布/删除/花钱/脱敏等单向门决策前必回源文件核对)。
 >
 > **信息源清单**(按段分列,分级读取):
 > - 结构类·全读:[README.md](README.md) / [CLAUDE.md](CLAUDE.md) / 目录树(ls 实测)
-> - 治理类·全量条目读:[harness/adr/](harness/adr/) 26 份(标题+决策节首句)/ [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) 29 条(标题+状态字段)
+> - 治理类·全量条目读:[harness/adr/](harness/adr/) 26 份(标题+决策节首句)/ [docs/OPEN-DECISIONS.md](docs/OPEN-DECISIONS.md) 33 条(标题+状态字段)
 > - 治理类·头读:[docs/CONTEXT.md](docs/CONTEXT.md) 节标题 / [harness/design/](harness/design/) 索引 / [HARNESS-RULES](skills/doctor-harness/HARNESS-RULES.md)
-> - 状态类·头读:[TODO.md](TODO.md) 头部(快照唯一权威源,2026-09-26 更新)/ [harness/STATUS-LOG.md](harness/STATUS-LOG.md) 顶部 / [CHANGELOG.md](CHANGELOG.md) 近 5 条 / git log 近 6
-> - 关键选读:[proj-overview-v2 设计套](harness/design/proj-overview-v2/)(本次主线)/ [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)
+> - 状态类·头读:[TODO.md](TODO.md) 头部(快照唯一权威源,2026-10-18 更新)/ [harness/STATUS-LOG.md](harness/STATUS-LOG.md) 顶部 / [CHANGELOG.md](CHANGELOG.md) 近 5 条 / git log 近 6
+> - 关键选读:[howtospeak 双波归档问卷](harness/questionnaires/archive/howtospeak/)(本次主线)/ [OD-32](docs/OPEN-DECISIONS.md) / [OD-33](docs/OPEN-DECISIONS.md)
 
 ## ① 项目定位
 
-面向个人开发者的 AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体(9 skill);双支柱 = **以信息为核心 × 驾驭工程(AI × 软件工程)**,相乘缺一为零。本仓库为唯一规范源(ADR-0001),双 License 分区(方法论文字 CC-BY 4.0 / skill 与脚本 MIT,ADR-0002)。
+面向个人开发者的 AI native 开发方法论 + 可直接运行的 Claude Code skill 执行体(9 skill);双支柱 = **以信息为核心 × 驾驭工程(AI × 软件工程)**,相乘缺一为零。**一句话(salient)**:AI 返工的根子是信息断层;把信息管起来——对齐、沉淀、绝不丢失——返工消失,纪律变便宜。本仓库为唯一规范源(ADR-0001),双 License 分区(方法论文字 CC-BY 4.0 / skill 与脚本 MIT,ADR-0002)。
 
 **三入口各有侧重、允许重叠**:CLAUDE.md 偏 AI 会话上下文重建 / README 偏对外介绍与采用起步 / **本文件偏人的全面掌握**(人重载上下文的第一入口)。
 
@@ -48,8 +48,8 @@ flowchart TD
     subgraph LD["L4 治理产物层(怎么留痕)"]
         D1["设计套 ×19"]
         D2["ADR ×26"]
-        D3["CONTEXT + OD ×29"]
-        D4["问卷归档 ×6 组"]
+        D3["CONTEXT + OD ×33"]
+        D4["问卷归档 ×19 组"]
         D5["提交前四门"]
         D6["英文镜像 en ×16"]
     end
@@ -97,7 +97,7 @@ flowchart TD
 | [0025](harness/adr/0025-english-mirror-drift-governance-integration.md) | 英文镜像接轨 | 顶级 en/ 单向派生第三轴 + i18n 漂移检查 |
 | [0026](harness/adr/0026-proj-overview-derived-view-route.md) | proj-overview 视图派生路线 | 不删文件加派生视图层;v2 升级认读第一入口(09-26 修订注记) |
 
-### OD 全量(29 条;状态直读 [OPEN-DECISIONS](docs/OPEN-DECISIONS.md) 状态字段)
+### OD 全量(33 条;状态直读 [OPEN-DECISIONS](docs/OPEN-DECISIONS.md) 状态字段)
 
 | OD | 主题 | 状态 |
 |---|---|---|
@@ -130,12 +130,16 @@ flowchart TD
 | [OD-27](docs/OPEN-DECISIONS.md) | design-Q 粒度 vs §4.5 决策分层 | 观察中 |
 | [OD-28](docs/OPEN-DECISIONS.md) | design-Q 修订自检清单(观察项) | 观察中 |
 | [OD-29](docs/OPEN-DECISIONS.md) | 信息生命周期单向只增缺口 | open |
+| [OD-30](docs/OPEN-DECISIONS.md) | 家族计数/主线状态多写收敛(单源化) | open |
+| [OD-31](docs/OPEN-DECISIONS.md) | 跨会话强制 handoff(会话边界关卡) | open |
+| [OD-32](docs/OPEN-DECISIONS.md) | AI 生成文件文字可读性治理 | open |
+| [OD-33](docs/OPEN-DECISIONS.md) | 冷读者/冷 AI 验证试点(轻量机制化) | 已收口 |
 
 ### TODO / STATUS-LOG / CHANGELOG 头部转述
 
-- **TODO**([头部](TODO.md),2026-09-26):主线 = ① proj-overview v2 实现(F052)② 失忆测试以 v2 为准(≥3 天)③ 哲学挑战一修复包 canonical 修订候选;块级:哲学挑战一修复包 🟡 / human-project-view+v2 🟢 / i18n 扩面 ⏭ / skill 家族形态修订 🟡(轻量 dogfood 待验)/ grill 边界治理 ✅ / 术语审计 B ⏳ 等。
-- **STATUS-LOG**([顶部](harness/STATUS-LOG.md)):09-26 proj-overview v2 规格升级(F052,认读第一入口 + summary)/ 09-25 proj-overview 入库与 F049–F051 收官 / 09-23 human-project-view 设计三层全链 / 08-26 i18n 首期收官。
-- **CHANGELOG**([近 5 条](CHANGELOG.md)):proj-overview v2(09-26)/ 第 9 个 skill 入库(09-25)/ i18n 首期完成(08-26)/ i18n 立项(08-23)/ 治理历史分离(08-20)。
+- **TODO**([头部](TODO.md),2026-10-18):主线 = ① 失忆测试(PO 已重生成,三问走三分钟导读档)② W02 执行包(定义前置存量补齐 / 句长信号 / proj-overview 文风锚试点 / 难懂三通道)③ skill 主观能动性条款立项评估 + 哲学挑战一修复包;新增维护纪律两条(验证拖欠治理 / 已完成块滚动归档);块级:howtospeak 产出 🟣(大部分 ✅)/ 哲学挑战一 🟡 / human-project-view 🟢(失忆测试待执行)/ i18n 扩面 ⏭ / 术语审计 B ⏳ 等。
+- **STATUS-LOG**([顶部](harness/STATUS-LOG.md)):10-18 howtospeak 双波压测全闭环 / 09-27 skill-audit 修复批 / 09-26 proj-overview v2(F052)/ 09-25 proj-overview 入库 / 08-26 i18n 首期收官。
+- **CHANGELOG**([近 5 条](CHANGELOG.md)):howtospeak 压测修订批(10-18:README 承诺式改造 + 阅读路线 + 介质自觉 + 可读性治理)/ skill-audit 修复批(09-27)/ proj-overview v2(09-26)/ 第 9 个 skill 入库(09-25)/ i18n 首期完成(08-26)。
 
 ## ⑤ 决策脉络(关键决策时间线)
 
@@ -154,60 +158,72 @@ flowchart TD
 | 09-09 | 哲学挑战报告(8 条)+ 挑战一深钻:推进受挫谱系 | CONTEXT 谱系节 |
 | 09-23→25 | human-project-view:设计三层 + 压测 + ADR-0026 + 第 9 skill 入库 | 设计套 + F049–F051 |
 | 09-26 | proj-overview v2:认读第一入口 + summary 职责 + OD 状态字段制 | 设计套 v2 + 本文件 |
+| 09-27 | skill-audit 修复批(41+1 条;audit-check 门禁 + OD-30/31) | 设计套 skill-audit |
+| 10-18 | howtospeak 双波压测:README 承诺式改造 + salient 高亮 + 阅读路线/介质自觉(canonical)+ 可读性治理首批 + 冷读者轻量机制化 | 归档问卷 howtospeak/ + OD-32/33 |
 
 ## ⑥ 当前状态快照
 
-数据源:[TODO.md](TODO.md) 头部(2026-09-26 更新,唯一权威源转述):
+数据源:[TODO.md](TODO.md) 头部(2026-10-18 更新,唯一权威源转述):
 
-- **当前状态**:方法论双 canonical(v5/v7)+ 9 skill(proj-overview v2 规格升级中);governance-history-split 收口;i18n 英文镜像首期完成(en 16 件)。
-- **下一步主线**:① proj-overview v2 实现(F052:skill 修订 ✅ → 产物重生成(本文件)→ 治理收尾);② 失忆测试以 v2 为准(窗口自 v2 生成日 ≥3 天);③ 哲学挑战一修复包 canonical 修订候选待审查;其余:CONTRIBUTING / git author / 术语审计 B 方案 / OD-29 信息衰减轻量切片。
-- 近期提交:38e276b(P0 入库)→ 10bc9a7(P1 首生成)→ 5629fbc(P2 全仓联动收官)→ v2 会话(设计+压测+F052)。
+- **现在做**:主线按序推进——① 失忆测试(进行中;本视图 §2 三分钟档即其载体)→ 完成后 ② W02 执行包首项「定义前置存量补齐」→ ③ skill 主观能动性条款立项评估。(转述 TODO 主线排序)
+- **当前状态**:方法论双 canonical(v5/v7)+ 9 skill(proj-overview v2 完成);howtospeak 双波压测闭环(2026-10-18):README 承诺式改造落地 + 可读性治理首批(OD-32)+ 冷读者测试轻量机制化(OD-33 收口)。
+- **下一步主线**:① 失忆测试(PROJECT-OVERVIEW 已重生成,三问走三分钟导读档,结果回填 DESIGN.md 预留位);② W02 执行包(定义前置存量补齐 / 句长信号 / proj-overview 文风锚试点 / 难懂三通道);③ skill 主观能动性条款立项评估 + 哲学挑战一修复包 canonical 修订候选;其余:CONTRIBUTING / git author / 术语审计 B / OD-29。
+- 近期提交:920f5fa(skill-audit 修复批)→ 10-18 howtospeak 会话(双波压测 + 修订执行 + PO 重生成,未提交)。
 
 ## ⑦ DFS 深链视图(关键功能逻辑链)
 
-### DFS-1 主线:proj-overview v2(本视图的来源)
+### DFS-1 主线:howtospeak 双波压测全链(2026-10-18)
 
 ```mermaid
 flowchart TD
-    S1["用户两不满<br/>横向图可读性差 / 内容不足"] --> S2["design-Q L0+L1<br/>两层 25 决策点"]
-    S2 --> S3["grill-Q 九题压测<br/>8 采 + 1 推翻 + 1 扩展"]
-    S3 --> S4["13 项修订<br/>含 ⚠2:方法论行同步 / OD 状态字段"]
-    S4 --> S5["F052①skill 修订✅<br/>SKILL 54 行 + en + 双侧"]
-    S5 --> S6["F052③本文件<br/>八段式 v2 重生成"]
-    S6 --> S7["F052④治理收尾<br/>联动 + 四门终验"]
-    S7 --> S8["失忆测试<br/>≥3 天人判(三分钟档)"]
+    H1["用户发起<br/>课程 PDF 挑战优化本项目"] --> H2["W01 Winston 透镜<br/>10 题:表达/验证/介质"]
+    H2 --> H3["补充声明新需求<br/>AI 生成文件可读性"]
+    H3 --> H4["W02 六学科透镜<br/>10 题:可读性治理"]
+    H4 --> H5["修订执行<br/>README 承诺式 + canonical 双修"]
+    H5 --> H6["冷 AI 双试点通过<br/>OD-33 轻量机制化"]
+    H6 --> H7["PO 重生成<br/>失忆测试待执行"]
 ```
 
-链路说明:动机(用户实践反馈)→ 设计([设计套 v2](harness/design/proj-overview-v2/),压测闭环)→ 实现([skills/proj-overview/SKILL.md](skills/proj-overview/SKILL.md) v2 规格 54 行)→ 本文件 → 终验 = 失忆测试(≥09-29 可测,三问走 §2 三分钟档)。
+链路说明:透镜压测(归档 [howtospeak/](harness/questionnaires/archive/howtospeak/) 两波 20 题)→ 修订落地(README / [methodology_v5](docs/methodology/methodology_v5.md) 阅读路线 + 介质自觉 / [CONTEXT](docs/CONTEXT.md) 可读性基线)→ 验证(冷 AI 试点 + 本文件刷新)→ 终验 = 失忆测试(三问走 §2 三分钟档)。
 
-### DFS-2 挂账:哲学挑战一修复包(推进受挫谱系,canonical 待审)
+### DFS-2 挂账:W02 执行包(可读性治理落地,OD-32)
+
+```mermaid
+flowchart TD
+    R1["W02 裁决<br/>Q3/Q4/Q5/Q8 四执行项"] --> R2["定义前置存量补齐<br/>对外件分批"]
+    R2 --> R3["audit-check 句长信号<br/>>120 字提示"]
+    R3 --> R4["proj-overview 文风锚试点<br/>句式三约束"]
+    R4 --> R5["难懂三通道<br/>issue/retro/冷读者"]
+```
+
+### DFS-3 挂账:哲学挑战一修复包(推进受挫谱系,canonical 待审)
 
 ```mermaid
 flowchart TD
     P1c["挑战一<br/>返工不可证伪"] --> P2c["深钻裁决<br/>谱系化+三字段事件制"]
     P2c --> P3c["CONTEXT<br/>推进受挫谱系节"]
     P3c --> P4c["retro-Q<br/>触发场景扩展"]
-    P4c --> P5c["canonical 修订 ×3<br/>待审查(TODO ③)"]
+    P4c --> P5c["canonical 修订 ×3<br/>待审查"]
 ```
 
-### DFS-3 挂账:OD-29 信息生命周期缺口(2026-09-25 新立)
+### DFS-4 挂账:OD-29 信息生命周期缺口
 
 ```mermaid
 flowchart TD
     O1["深钻:大项目实践表现<br/>漂移无治理 / harness 只增不减"] --> O2["CONTEXT 两类漂移节"]
     O2 --> O3["候选轻量切片<br/>retro 体检节 / 清账触发器"]
-    O3 --> O4["重访触发<br/>v2 落地后失控感未缓解 等"]
+    O3 --> O4["重访触发<br/>失控感未缓解 等"]
 ```
 
-### DFS-4 收口:human-project-view v1 全链(09-23→25)
+### DFS-5 收口:proj-overview v2 全链(09-23→10-18)
 
 ```mermaid
 flowchart TD
     V1c["挑战三 元系统膨胀"] --> V2c["设计三层 + grill 压测"]
     V2c --> V3c["ADR-0026 视图派生路线"]
-    V3c --> V4c["F049-F051 全绿<br/>第 9 skill 入库"]
-    V4c --> V5c["v1 视图(09-25)"]
-    V5c --> V6c["用户反馈两不满<br/>→ 升级 v2(DFS-1)"]
+    V3c --> V4c["F049-F052 全绿<br/>v2 + 治理收尾"]
+    V4c --> V5c["10-18 内容刷新<br/>主线切 howtospeak"]
+    V5c --> V6c["失忆测试<br/>人判待执行"]
 ```
 
 ## ⑧ 检索索引(我想找 X → 去 Y)
@@ -219,6 +235,7 @@ flowchart TD
 | 某个架构决策的内容与理由 | §4 ADR 表 → 点击编号 |
 | 某个悬置事项定了没有 | §4 OD 表 → 状态列 |
 | 某个术语的定义 | [CONTEXT](docs/CONTEXT.md)(术语表 + 英文对照) |
+| AI 生成文件的可读性规范 | [CONTEXT「可读性基线」](docs/CONTEXT.md)(三判据 + 两档 + 变通条款) |
 | 某功能/机制怎么运转 | §7 DFS 深链;各 [SKILL.md](skills/) |
 | 文件该放哪 / 命名规范 | [HARNESS-RULES](skills/doctor-harness/HARNESS-RULES.md) |
 | 历史某天做了什么 | [STATUS-LOG](harness/STATUS-LOG.md)(内部)/ [CHANGELOG](CHANGELOG.md)(对外) |
@@ -227,4 +244,4 @@ flowchart TD
 
 ---
 
-*视图过期自判:对照文件头生成时间与 git log;本视图不进校验脚本,无强制同步义务。分型自检留痕:事实段(§4/§5/§6)已逐段溯源(见信息源清单);结构段(§1/§2/§8)按八段规格核对;ADR 摘要抽 3 条人快审记录见 [skills/proj-overview/DESIGN.md](skills/proj-overview/DESIGN.md)。*
+*视图过期自判:对照文件头生成时间与 git log;本视图不进校验脚本,无强制同步义务。分型自检留痕:事实段(§4/§5/§6)已逐段溯源(见信息源清单;OD 33 条实测、ADR 26 条实测、归档 19 组实测);结构段(§1/§2/§8)按八段规格核对;ADR 摘要抽 3 条人快审记录见 [skills/proj-overview/DESIGN.md](skills/proj-overview/DESIGN.md)。*

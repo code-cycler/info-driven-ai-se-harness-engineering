@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/methodology/methodology_v5.md
-zh-hash: 543e5f4919b5
+zh-hash: 673cbc3cf0e3
 ---
 [中文](../../../docs/methodology/methodology_v5.md) · **English**
 
@@ -27,6 +27,8 @@ zh-hash: 543e5f4919b5
 ---
 
 > **Problem teaser**: in traditional vibe coding, incomplete background briefing → AI presumes and makes self-directed decisions → hallucination → rework — the entire methodology of this document fights this causal chain (§4's questionnaire-driven, stepwise requirement alignment is the direct countermeasure). The full failure-mode and two-type information-gap analysis is in [philosophy §1](philosophy_v7.md).
+
+> **Reading route** (2026-10-18, howtospeak W02 Q7-B): §0 check whether this fits you → §1/§2 core ideas and the information lifecycle (why) → §3/§4 the development workflow and the Grill decision method (how) → §5/§6 information management and requirement execution norms (operations) → §7 the traditional-process comparison → §8/§9 failure modes and self-check (validation). Want operations only: read the [practice file](practical_v1.md) directly.
 
 ## §0 Applicable scenarios
 
@@ -521,6 +523,14 @@ Missing any one → no ADR. Most decisions don't deserve an ADR.
 ## §5 Information management discipline
 
 > Old §7.4 context management / §7.5 context layer system / §7.6 session recovery strategy (operation chains) have moved to the [practice file](practical_v1.md); numbering follows v3 (from v5 the body of this file is continuously numbered; practice section numbers unchanged).
+
+**Media awareness: different media get different repetition strategies** (2026-10-18, howtospeak W01 Q7-B) — how information is consumed in a medium decides its repetition strategy:
+
+- **Random-access medium (documents)**: readers can re-read → single source of truth per fact + derived views; no multi-place duplication (synchronization-drift hard evidence in [methodology-audit_v1](../../../harness/design/methodology-audit_v1.md));
+- **Linear medium (conversation / sessions)**: information decays with context compression → restate key constraints and decisions at long-session checkpoints (the engineered form of cycling: say the important thing three times, at checkpoints);
+- **Derived medium (views)**: snapshots go stale → source files are authoritative; regenerate rather than hand-edit.
+
+Existing practices mapped: persist to disk first, then /compact (practice §7.6), the long-running progress file, the PROJECT-OVERVIEW derived view — this section gathers the three into one teachable principle.
 
 ### 5.1 Document carriers
 

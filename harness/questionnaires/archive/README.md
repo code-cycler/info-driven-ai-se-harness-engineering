@@ -21,6 +21,7 @@
 | `philosophy-v6/` | philosophy_v6 成稿压测 W01/W02(连续章节与双文件治理) | 2 |
 | `philosophy-v7/` | philosophy_v7 成稿压测 W01/W02(治理主张、实践闭环与 skill 生态) | 2 |
 | `readme-revamp/` | README 优化 feature(对外第一印象重构)design-Q L0-vision W00 + grill-Q L0 压测 W01 | 2 |
+| `howtospeak/` | Winston《How to Speak》透镜压测 W01(表达/验证/介质)+ W02(可读性六学科透镜) | 2 |
 
 ## 检索说明
 

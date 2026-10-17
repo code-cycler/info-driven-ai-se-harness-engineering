@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: README.md
-zh-hash: a0131b589b4f
+zh-hash: b80c3f8f1425
 ---
 [中文](../README.md) · **English**
 
@@ -24,6 +24,7 @@ zh-hash: a0131b589b4f
 - [Tool boundaries (read this first)](#tool-boundaries-read-this-first)
 - [Repository structure (three-zone model)](#repository-structure-three-zone-model)
 - [License](#license)
+- [What you now have](#what-you-now-have)
 - [Changelog](#changelog)
 - [Notes](#notes)
 - [English mirror tree](#english-mirror-tree)
@@ -31,6 +32,10 @@ zh-hash: a0131b589b4f
 ## What this is
 
 An AI-native development methodology for **individual developers**, plus a **family of Claude Code skills** that turns it into an executable process.
+
+> **In one sentence**: the root of AI rework is the information gap; manage the information — align, persist, never lose — and rework disappears while discipline gets cheap.
+
+> **Empowerment promise**: after reading this page and running your first loop via the "minimal adoption slice", you will have — a complete workflow that counters "self-directed AI rework", plus the 9 ready-to-run skills that drive it.
 
 Two pillars (multiplied together — either one at zero makes the product zero):
 
@@ -76,6 +81,8 @@ Handoff protocol: design-Q proactively proposes a grill-Q stress test at its clo
 **Updating**: symlink install → `git pull` follows automatically; copy install → re-copy and overwrite (diff first if you have local customizations). To see whether `skills/` changed and when to re-copy, check [CHANGELOG.md](../CHANGELOG.md).
 
 ### Minimal adoption slice
+
+> What you get after running your first loop: the full path from idea to delivery (design → stress test → implementation → retrospective) genuinely walked through once, with every decision leaving a trace.
 
 To run your first loop on a new project from zero, you only need 3 things — ① this README (two pillars and the main path) ② [practical_v1.md §8.3](../docs/methodology/practical_v1.md) (skill timing table) ③ `skills/` (copy into `~/.claude/skills/` and go). The methodology / philosophy / practice trio is for deeper reading on demand, not a prerequisite for adoption; this repository's governance system (ADRs / ODs / archived questionnaires / CONTEXT) is the production workshop of the methodology — adopters do not need to replicate it.
 
@@ -181,6 +188,10 @@ Zoning rule: **content = project files (docs/); decision records and process pro
 ## Changelog
 
 Repository-level external changes: see [CHANGELOG.md](../CHANGELOG.md) (Chinese).
+
+## What you now have
+
+> A portable AI-native development methodology (two pillars) + 9 install-and-go skills + a minimal adoption path starting from 3 files. Next step: go back to "Quick start" and run one loop on a real, small requirement.
 
 ## Notes
 

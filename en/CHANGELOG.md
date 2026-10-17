@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: CHANGELOG.md
-zh-hash: c5490ba3c66f
+zh-hash: 13c9e3b7cc80
 ---
 
 [中文](../CHANGELOG.md) · **English**
@@ -13,6 +13,14 @@ zh-hash: c5490ba3c66f
 > The single record of repository-level, externally visible changes (migrated from the README's "release notes" section, 2026-08-20).
 
 > **Recording rules**: this file is the single record of repository-level, externally visible changes — every change **perceivable to adopters** (skill behavior / artifact structure / methodology content) must be recorded; purely internal repository governance (questionnaire archiving, link repairs, etc.) is not. Reverse-chronological. Skills carry no independent version numbers; this file is the only window for perceiving `skills/` changes.
+
+## howtospeak stress-test revision batch: README promise-style rework + methodology reading route and media awareness (2026-10-18, grill-howtospeak)
+
+- **README promise-style rework** (W01 Q1/Q5/Q10, approved drafts): the "What this is" section gains a salient one-sentence quote block ("the root of AI rework is the information gap; manage the information — align, persist, never lose — and rework disappears while discipline gets cheap") and an empowerment-promise line; the "minimal adoption slice" section gains a what-you-get line up front; a "What you now have" closing section + TOC line is added before "Notes" — opening promise and closing takeaway now mirror each other.
+- **Methodology v5 two version-internal revisions** (canonical, human-review + user-approval channel): a "Reading route" added at the top (W02 Q7-B); a "media awareness" block added after the §5 intro (random medium → single source of truth / linear medium → checkpoint restatement / derived medium → source wins, W01 Q7-B; gathers persisting / progress files / derived views into one teachable principle).
+- **Readability governance first batch landed** (W02, OD-32): CONTEXT gains a "readability baseline" section (three criteria as an ISO-informed borrowing + two-tier applicability + a variation clause allowing clarifying restatement at critical points) + terminology-governance extensions (three style principles + a definition-first hard rule for terms); OD-32 gains the ownership map and the one-vote-out rule.
+- **Cold-reader test lightly institutionalized** (OD-33 closed): run the methodology retelling before canonical version bumps and the entry test after major README changes, as a checklist reminder rather than a hard DoD gate; both cold-AI pilots (README entry + methodology retelling) passed with zero information loss.
+- Supporting (internal governance, one-line summary): new OD-32/OD-33, the CONTEXT "extrinsic-lens concept separation" section, two TODO maintenance disciplines (validation-overdue / rolling archive), W01 archived under howtospeak/; details in the archived questionnaire's processing report.
 
 ## Skill-system audit fix batch: unified full-text archival across four skills, etc. (2026-09-27, skill-audit)
 

@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: docs/CONTEXT.md
-zh-hash: 87ca220deecf
+zh-hash: 78479b3b683b
 ---
 [中文](../../docs/CONTEXT.md) · **English**
 
@@ -84,6 +84,29 @@ Repo-level design P2 terminology compromise audit (2026-08-05): each word was ad
 | (a)(b) 盲区 ((a)(b) blind spots) | none | retained | the author's core distinction |
 
 **Three-condition gate for new words** (mandatory for future terms): ① no discipline-standard counterpart; ② necessary to the methodology (not expressible with existing words); ③ clearly defined (in this table or at first definition in the body).
+
+**Three style principles** (2026-10-18, howtospeak W02 Q6-B; two-tier applicability boundary and variation clause in the "Readability baseline" section): ① **no unregistered new metaphors land on disk** — complementary to the three-condition gate: the gate governs "entering the glossary", the ban governs "don't use it if it isn't in the glossary"; ② **one assertion per sentence** — a sentence carries one claim; clarifying restatement at critical points is a legitimate variation (see readability baseline · variation clause); ③ **layered statement first** — data / claims / operations listed in layers, preferred over nested long sentences.
+
+**Definition-first for terms** (2026-10-18, Q3-B hard rule): in external files, every controlled term's **first occurrence** must carry a one-line inline gloss or an adjacent link (existing stock backfilled in batches, see TODO); new files comply as they are written.
+
+## Extrinsic-lens concept separation (howtospeak, 2026-10-18 grill-Q W01)
+
+> Source: [grill-howtospeak-w01](../../harness/questionnaires/archive/howtospeak/grill-howtospeak-w01.md) (lens = MIT OCW "How To Speak", Patrick Winston). Extrinsic concepts are triaged by the new-word three-condition gate: the three terms below pass the gate (① no discipline-standard counterpart ② necessary for methodology landing ③ clearly defined); purely decorative extrinsic concepts (empowerment promise / fence / cycling / hapax legomenon etc.) are not registered — cite the source where used.
+
+- **salient idea** = the project/document's master proposition — the one-sentence protruding statement of "what it is about"; distinct from slogan (how it is remembered) and symbol (the visual anchor). W01 Q5 ruling: this project's salient idea = the "information gap → rework; Q&A alignment is the countermeasure" chain (**landed sentence, approved 2026-10-18** = the README "What this is" quote block: "the root of AI rework is the information gap; manage the information — align, persist, never lose — and rework disappears while discipline gets cheap.")
+- **cold-reader test** = uninformed validation: a reader with zero project context (AI pilot version = a fresh-session cold AI; original version = a person unfamiliar with the project) reads the target document within a time limit, then retells the key claims, compared against author intent. Course basis: "people who know what you're doing will hallucinate material that isn't there" — informed reviewers (including the building AI) cannot self-test readability/persuasiveness. Two variants: the entry-persuasion layer (README 5 minutes) / the claim-fidelity layer (methodology retelling). **Destination (2026-10-18 OD-33 ruling) = light institutionalization**: run the methodology retelling before canonical version bumps and the entry test after major README changes, as a revision-checklist reminder, not a hard DoD gate.
+- **media awareness** = choosing the information-repetition strategy by medium type: random-access medium (documents) → single source of truth + derived views; linear medium (conversation/sessions) → key constraints restated at checkpoints (the engineered form of cycling); derived medium (views) → source files are authoritative. Methodology-section candidate (Q7-B, ⚠ under canonical review).
+- **slogan / symbol (communication handles)** = a one-sentence memory handle / a visual memory anchor; separated from salient idea (W01 Q6 ruled concept separation to prevent conflation). Not established now; deferred to the OD-6 revisit (market-validation signal) to be done together.
+
+## Readability baseline (2026-10-18, grill-Q howtospeak W02)
+
+> Source: [grill-howtospeak-w02](../../harness/questionnaires/archive/howtospeak/grill-howtospeak-w02.md) (Q1-C / Q2-B / Q4-D + custom / Q6-B + supplementary statement). The three criteria are an **expository borrowing from ISO 24495-1:2023 (Plain Language), not a certification, not a verified method** (consistent with the discipline-attachment honesty-note precedent).
+
+- **Three criteria**: the reader can **find** (navigation / anchors / tiered guides), **understand** (definition-first terms / sentence constraints), and **use** (minimal adoption slice / operating norms) the information they need.
+- **Two-tier applicability** (Q1-C, exemption boundary fixed): **external files** (README / methodology_v5 / philosophy_v7 / practical_v1 / skill SKILL.md / CHANGELOG / en mirrors) get all readability rules; **internal files** (TODO / ODs / CONTEXT entries / STATUS-LOG / archived questionnaires) are exempt from enforcement and bound only by "no unregistered new metaphors land on disk".
+- **Variation clause** (supplementary statement + Q4 custom): "one assertion per sentence / short sentences first" allows and encourages **clarifying short-sentence restatement at critical, obscure, misreading-prone points** ("in other words…" style, the written counterpart of spoken just to confirm / does that mean); **the root purpose = accurate communication; preventing misunderstanding takes priority over preventing redundancy** — local cycling in written media at critical points, complementary to the "media awareness" entry.
+- **Overlong-sentence signal** (Q4-D): audit-check reports >120-character continuous sentences for the external-file set (excluding structural sentences containing semicolons / parentheticals), as a hint, not a gate.
+- The three style principles and the definition-first hard rule are in the "Terminology governance" section; the skill output style anchor is in proj-overview (piloting).
 
 ## Project discipline map (2026-08-10, grill-Q discipline-mapping W01 output)
 
@@ -257,6 +280,10 @@ This repository's content has had the author's project names / paths / personal 
 | 最小采用切片 | minimal adoption slice | README's "Minimal adoption slice" section |
 | 生产车间 | production workshop | README's "Minimal adoption slice" section / CLAUDE.md's repository positioning |
 | 复盘 | retrospective | this file's "Five-stage loop" section (retro-Q) |
+| 凸出想法 | salient idea | this file's "Extrinsic-lens concept separation" section (translation pending confirmation) |
+| 冷读者测试 | cold-reader test | this file's "Extrinsic-lens concept separation" section (translation pending confirmation) |
+| 介质自觉 | media awareness | this file's "Extrinsic-lens concept separation" section (translation pending confirmation) |
+| 传播把手 | slogan / symbol | this file's "Extrinsic-lens concept separation" section (translation pending confirmation) |
 | 脱敏 | desensitization | this file's "Desensitization" section |
 | 信息断层 | information gap | this file's "Pillar-one terminology layering" section |
 | 机制层 / 度量层 / 症状层 | mechanism layer / metric layer / symptom layer | this file's "Pillar-one terminology layering" section |

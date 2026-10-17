@@ -1,8 +1,9 @@
 # TODO
 
 > 追踪文件。建仓:2026-07-28(建仓前经 grill-questionnaire 两波压测驱动筹建)。
-> 当前状态一行:方法论双 canonical(v5/v7)+ 9 skill(proj-overview v2 完成,F052);governance-history-split 收口(F039–F043);i18n 英文镜像首期完成(en 16 件)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
-> 下一步主线(2026-09-27 更新):**① 失忆测试**以 v2 为准(窗口自 v2 生成日 ≥3 天);② 哲学挑战一修复包 canonical 修订候选待审查;其余:CONTRIBUTING/git author/术语审计 B 方案/OD-29 信息衰减轻量切片。
+> 维护纪律(2026-10-18,howtospeak W01 Q3-D/Q9-C):① **验证拖欠治理**——验收类条目(带时间窗的测试/验收)超窗 >30 天 → 条目标注「已超窗 N 天」并降级记 OD;② **已完成块滚动归档**——✅ 块满 5 条(默认,可调)即压缩入 STATUS-LOG/归档,主文件只留活动项与索引。
+> 当前状态一行:方法论双 canonical(v5/v7)+ 9 skill(proj-overview v2 完成,F052);howtospeak 双波压测闭环(2026-10-18,Winston 透镜 + 可读性六学科透镜):README 承诺式改造落地 + 可读性治理首批(OD-32)+ 冷读者测试轻量机制化(OD-33 收口)——历史状态时间线见 [harness/STATUS-LOG.md](harness/STATUS-LOG.md)。
+> 下一步主线(2026-10-18 更新):**① 失忆测试**(PROJECT-OVERVIEW 已重生成,三问走三分钟导读档,结果回填 skills/proj-overview/DESIGN.md 预留位);② **W02 执行包**(W02-Q3 定义前置存量补齐 / Q4 句长信号 / Q5 proj-overview 文风锚试点 / Q8 难懂三通道,见 🟣 块);③ W02-Q9 skill 主观能动性条款 design-Q 立项评估 + 哲学挑战一修复包 canonical 修订候选;其余:CONTRIBUTING / git author / 术语审计 B 方案 / OD-29 信息衰减轻量切片。
 
 ## 已完成(2026-07-28 建仓)
 
@@ -14,6 +15,25 @@
 - ✅ ADR-0001/0002/0003 + OD-1～9 + CONTEXT 迁移(脱敏重写、重编号)
 
 ## 待办(新会话 design-Q 起点)
+
+### 🟣 Winston《How to Speak》透镜压测产出(grill-Q howtospeak W01,2026-10-18)
+
+> 来源:[grill-howtospeak-w01](harness/questionnaires/archive/howtospeak/grill-howtospeak-w01.md)(透镜 = MIT OCW《How to Speak》;表达/验证/介质三组攻击面,D1–D8 全开;10 题:9 采 ★推荐 + Q8 推翻推荐选 D 推迟;0 逃生舱 0 跑偏)。补充声明新需求(AI 生成文件文字可读性治理)已立 [OD-32](docs/OPEN-DECISIONS.md);冷验证试点立 [OD-33](docs/OPEN-DECISIONS.md);课程概念已入 [CONTEXT「外源透镜概念分立」节](docs/CONTEXT.md)(译名待人确认)。⚠ 项 = 措辞裁量 / canonical 审查,批量授权不含、须逐条确认。
+
+- [x] **README 赋能承诺 + 贡献式收尾**(Q1-D + Q10-B①;2026-10-18 用户批准草案执行):「这是什么」加 salient 引用块 + 赋能承诺句;最小采用切片节首加承诺句;「备注」前加「你现在拿到了什么」节 + 目录行 → 核验:✅ 三处 grep 命中(en 镜像同步本批执行)
+- [x] **salient idea README 高亮**(Q5-B;2026-10-18 用户批准草案执行):「这是什么」双支柱前引用块「AI 返工的根子是信息断层;把信息管起来——对齐、沉淀、绝不丢失——返工消失,纪律变便宜。」;CONTEXT 词条已指向落地句 → 核验:✅ README 高亮句与 CONTEXT 词条一致
+- [x] **失忆测试立即执行**(Q3-D·C 部分;**2026-10-18 完成收口:首轮三问两达 = 部分过**(主线 ✓ / ADR-0011 ✓ / 下一步 △)→ 一轮迭代(PO §6 加「现在做」行)→ 复验通过 = **两轮迭代内通过**;结果与发现全录 [skills/proj-overview/DESIGN.md](skills/proj-overview/DESIGN.md)「dogfood 修订」节;v2 唯一实证锚获首份人判证据) → 核验:✅ DESIGN.md 回填 + 复验结论 + 超窗销项
+- [x] **验证拖欠治理规则**(Q3-D·B 部分,2026-10-18 落地):TODO 维护纪律①「验收类条目超窗 >30 天 → 标注超窗天数并降级记 OD」已落文件头;失忆测试条目已标注超窗 22 天 → 核验:✅ 纪律句在位 + 条目带超窗标注(执行部分 = 规则;立即执行部分见失忆测试条目,人执行)
+- [ ] **TODO 已完成块滚动归档纪律**(Q9-C;纪律句已落头部 2026-10-18,N=5 默认可调,待首次执行):✅ 块满 5 条即压缩入 STATUS-LOG/归档,主文件只留活动项与索引 → 核验:首次滚动归档执行后 TODO 行数下降且索引在位
+- [ ] **W02-Q3 术语定义前置存量补齐**(Q3-B 硬规则,规则已落 CONTEXT 术语治理节):对外件每术语首现处内联括注——分批:先 README + methodology_v5,再 philosophy_v7 + practical_v1;en 镜像同批 → 核验:抽 10 术语首现处均带括注/链接;i18n 0 违规
+- [ ] **W02-Q4 audit-check 句长信号**:对外件集报告 >120 字连续句(排除含分号/括注结构句),标注「提示非门禁」 → 核验:audit-check 输出含句长信号行且不阻断
+- [ ] **W02-Q5 proj-overview 输出文风锚试点**(Q5-E,✍️ 裁决):SKILL.md 加「输出文风约束」——句式三约束(短句优先 / 一句一义 / 禁未登记隐喻)+ 指针引用 CONTEXT 文风三原则(防双写)+ 关键处短句重述变通;双侧同步;dogfood 一轮后评估扩散到 design-Q / grill-Q / retro-Q → 核验:sync-check 0 违规 + 下次生成 PROJECT-OVERVIEW 时文风约束被遵守
+- [ ] **W02-Q8 难懂采集三通道**(Q8-B):① issue 模板加「哪部分难懂」可选问(随 CONTRIBUTING 立项最小建);② retro 骨架「出问题与原因假设」候选原因加「文档难懂」(retro-q SKILL + RETRO-SKELETONS 双侧同步);③ 冷读者通道常态化(与 OD-33 裁决联动) → 核验:三通道各自在位
+- [ ] **W02-Q9 skill 主观能动性条款候选**(✍️ 新诉求,超出可读性范围):「各司其职 + 主动发现问题上报 + 突发情况兜底」是否为 9 skill 通用条款 → design-Q 立项评估(涉及全部 SKILL.md 双侧同步,大改) → 核验:立项裁决记录
+- [ ] **W02-Q7 方法论阅读路线**(Q7-B,⚠ canonical):顶部补「阅读路线」≤6 行(主线一段 + 各章一句);与介质自觉小节(W01 Q7)同批过 canonical 审查 → 核验:方法论顶部阅读路线在位 + 修订记录行
+- [x] **冷 AI 双试点**(Q2-E/Q4-E,[OD-33](docs/OPEN-DECISIONS.md);2026-10-18 两份试点均通过,结果回填 OD-33;**三选一裁决 = 轻量机制化**(canonical 升版前跑复述 / README 大改后跑入口测试,checklist 提醒级,非硬 DoD 门)) → 核验:✅ 结果回填 + 裁决落 OD-33 + CONTEXT 词条更新
+- [x] **方法论「介质自觉」小节**(W01 Q7-B,⚠ canonical;2026-10-18 用户批准草案执行:落 §五 引言后粗体标题段,不动 5.1–5.5 编号;随机介质单点权威 / 线性介质节点重申 / 派生介质以源为准 + 对应实践收拢;修订记录行已加,人审 + 用户批准 = canonical 审查通道) → 核验:✅ 方法论 grep「介质自觉」命中 + 修订记录行在位
+- [ ] **案例叙事层评估**(Q8-D 推迟 + ✍️ 自定义「记TODO」):等三文件层级化治理落定(OD-20 裁决 + B3/C5/C7 收敛)后评估是否加「三个真实返工故事」助记层(标注「助记层,非证据」保三区分野) → 核验:三文件层级化收口时本条显式回访
 
 ### 🟡 哲学 v7 挑战一修复包(推进受挫谱系,grill-with-docs 深钻,2026-09-09)
 
@@ -33,7 +53,7 @@
 - [x] **grill-Q 压测设计套**(收尾面板③;2026-09-23 完成,[grill-human-project-view-w01](harness/questionnaires/archive/human-project-view/grill-human-project-view-w01.md) 10 题全采纳:D1–D8 全覆盖,两处 D7 硬矛盾实锤——HTML「L2 可选」无落点 / 快照源未通用化;产出 [ADR-0026](harness/adr/0026-proj-overview-derived-view-route.md)(推翻设计期「不立 ADR」)+ 9 项修订建议全授权执行完毕,零逃生舱零跑偏)→ 核验:✅ 处理报告产出,修订项全处理
 - [x] **P0 skill 编写**(2026-09-25 F049 ✅:SKILL.md 53 行 + 文风术语表 + DESIGN/CHANGELOG + 全局侧分发洁净同步)→ 核验:✅ L2 P0 DoD 全绿(wc/grep/sync-check 0)
 - [x] **P1 首次生成 dogfood**(2026-09-25 F050 ✅:v1 视图 135 行 + 一次性规格自检 + 漂移自检分支首次触发)→ 核验:✅ L2 P1 DoD 全绿
-- [ ] **失忆测试(隔 ≥3 天用户执行,以 v2 为准)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD。**测试窗自 v2 生成日重算(v1 的 ≥09-28 预约作废;三分钟导读档覆盖三问)** → 核验:结果回写 skills/proj-overview/DESIGN.md「v2 修订」节(含反馈模板三问)
+- [ ] **失忆测试(隔 ≥3 天用户执行,以 v2 为准)**:只读 PROJECT-OVERVIEW,≤15 分钟答三问(当前主线/关键决策所在文件/下一步),全达=过、两达=部分过记回评;失败路径 = 两轮迭代内通过,否则降级定位并记 OD。**测试窗自 v2 生成日重算(v1 的 ≥09-28 预约作废;三分钟导读档覆盖三问)** ⏰ **已超窗 22 天(2026-10-18 标注;>30 天降级记 OD,维护纪律①首次适用)** → 核验:结果回写 skills/proj-overview/DESIGN.md「v2 修订」节(含反馈模板三问)
 - [x] **P2 全仓联动同步**(2026-09-25 完成,F051:十处联动全落地——HARNESS-RULES 新类目/方法论 §3.3.1 加行+修订记录行/README 六处/CLAUDE 三处/CONTEXT 两处/根 CHANGELOG 中英双落/STATUS-LOG/双侧同步/en 四份回译 stamp;四门终验全绿)→ 核验:✅「8 个核心 skill」全仓 0 命中 / 脱敏 0 / sync 0 / i18n 0(en 16)/ harness exit=0
 - [x] **proj-overview-v2 设计 + grill-Q 压测闭环**(2026-09-26:L0+L1 两层,设计套 [harness/design/proj-overview-v2/](harness/design/proj-overview-v2/);grill W01 九题([归档](harness/questionnaires/archive/proj-overview-v2/))——8 采推荐 + Q7 推翻(「认读第一入口」进 CONTEXT)+ Q4 自定义(OD 状态字段修源);13 项修订全执行含 ⚠ 两项:方法论 §3.3.1 行同步 / OD 29 条状态补齐;核心裁决 = 受众任何开发者 / 认读第一入口 / 行数无上限+派生性质即约束 / summary 全量(ADR 摘要取材约束+OD 状态直读)/ 导读三档 / 八段式 / 全竖向图)→ 核验:✅ 处理报告 + 修订全落盘
 - [x] **F052 v2 实现四步**(L1 契约:① SKILL.md 五处修订 + en 回译 + 双侧同步 → ② ADR-0026 修订注记 + 挑战报告 #三 v2 注记 → ③ 产物八段式重生成 + 分型自检 + ADR 摘要抽 3 条人快审 + 逐图渲染验证 → ④ 治理收尾(根 CHANGELOG 中英双落 / README:129·CLAUDE.md:68·en 两镜像描述同步 / skill CHANGELOG / STATUS-LOG)+ 四门终验)→ 核验:L1 DoD 全绿 ✅(2026-09-26 四步全链,见 STATUS-LOG/commit 654e489)
