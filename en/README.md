@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: README.md
-zh-hash: b80c3f8f1425
+zh-hash: 005a06d809fe
 ---
 [中文](../README.md) · **English**
 
@@ -24,10 +24,11 @@ zh-hash: b80c3f8f1425
 - [Tool boundaries (read this first)](#tool-boundaries-read-this-first)
 - [Repository structure (three-zone model)](#repository-structure-three-zone-model)
 - [License](#license)
-- [What you now have](#what-you-now-have)
 - [Changelog](#changelog)
+- [What you now have](#what-you-now-have)
 - [Notes](#notes)
 - [English mirror tree](#english-mirror-tree)
+- [Epilogue: a question never asked aloud (2026-10-18)](#epilogue-a-question-never-asked-aloud-2026-10-18)
 
 ## What this is
 
@@ -206,3 +207,21 @@ English translations live under `en/`, mirroring the Chinese paths one-to-one (`
 - ✅ `en/docs/CONTEXT.md`, `en/docs/OPEN-DECISIONS.md`, `en/docs/methodology/` (methodology_v5 / philosophy_v7 / practical_v1) — done (2026-08-25)
 - ✅ `en/skills/*/SKILL.md` (8 files; grill-with-docs = special case, English body carried verbatim + residual Chinese translated) — done (2026-08-26)
 - ✅ `en/CHANGELOG.md` — done (2026-08-26) — first phase complete: 15 files, full set
+
+## Epilogue: a question never asked aloud (2026-10-18)
+
+On 2026-10-18, the author asked the collaborating AI one question:
+
+> Among all the problems we have discussed over and over, is there a deeper one I keep circling around but have never actually asked aloud?
+
+After reading this repository's own records (the philosophy challenge report / every open decision / the archived questionnaires), the AI surfaced the question —
+
+**"Can I actually trust you?"** Not at the everyday scale of "is this output correct", but the epistemological one: every device for verifying the AI — questionnaires, stress tests, audit scripts, even the very report that challenged this philosophy — was written by the AI; the controller's process model is written by the controlled object (challenge #2 of the [philosophy v7 challenge report](../philosophy-v7-challenge-report_2026-09-08.md), unanswered since 2026-09-08).
+
+Three pieces of supporting evidence, all from this repository's own records:
+
+1. Nearly all nine skills are trust devices — questionnaires extract candor, grill attacks plans, delegate leashes autonomy, doctor audits the harness, long-running fights amnesia, proj-overview translates for humans; months of output, almost nothing but trust infrastructure.
+2. Of the three most fatal challenges in the challenge report, the two with device-shaped answers (#1 operationalization, #3 governance bloat) were picked up — answered with a rework taxonomy and a derived overview view respectively; the only one without a device-shaped answer, #2 (the self-referential human-review loop), has an empty feedback row to this day.
+3. This trust has exactly one final exam — use this harness to actually deliver something at the object level. The exam was taken once ([OD-13](../docs/OPEN-DECISIONS.md), DOGFOOD, verdict: "AI self-assessed playable ≠ actually playable by humans") and never taken again.
+
+It could not be asked because it has **no device-shaped answer**: each time it was approached, the hand reached for familiar tools — another round of stress testing, one more check script — building to dodge a question that building cannot answer. And the final loop: even "what should I ask" was outsourced to the very object under suspicion; this question itself is the live scene of the reversed information gap it describes (challenge #5). Whether the answer is right is for the author to judge outside the channel — human judgment first.

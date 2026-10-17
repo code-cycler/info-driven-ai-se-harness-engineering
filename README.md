@@ -17,9 +17,10 @@
 - [工具边界(请先读)](#工具边界请先读)
 - [仓库结构(三区模型)](#仓库结构三区模型)
 - [License](#license)
-- [你现在拿到了什么](#你现在拿到了什么)
 - [更新日志](#更新日志)
+- [你现在拿到了什么](#你现在拿到了什么)
 - [备注](#备注)
+- [插曲:一个没问出口的问题(2026-10-18)](#插曲一个没问出口的问题2026-10-18)
 
 ## 这是什么
 
@@ -188,3 +189,21 @@ CHANGELOG.md         仓库级对外变更记录(原 README「发布说明」节
 
 - 本仓库是这套方法论与 skill 的**唯一规范源**。作者另有早期开发副本(未脱敏),以本仓库为准(ADR-0001)。
 - 方法论完整阐述拆为三块([ADR-0007](harness/adr/0007-methodology-three-way-split.md)):[methodology_v5.md](docs/methodology/methodology_v5.md)(方法论 · 怎么做,自包含)/ [philosophy_v7.md](docs/methodology/philosophy_v7.md)(哲学 · 为什么,v7 连续章节与双文件治理)/ [practical_v1.md](docs/methodology/practical_v1.md)(实操 · 怎么用,非 canonical 轻量修订);methodology_v5 + philosophy_v7 为 current,[methodology_v4](docs/methodology/archive/methodology_v4.md) / [methodology_v3](docs/methodology/archive/methodology_v3.md) / [v2](docs/methodology/archive/methodology_v2.md) / [philosophy_v4](docs/methodology/archive/philosophy_v4.md) / [philosophy_v5](docs/methodology/archive/philosophy_v5.md) / [philosophy_v6](docs/methodology/archive/philosophy_v6.md) 保留作历史版本。
+
+## 插曲:一个没问出口的问题(2026-10-18)
+
+2026-10-18,作者向协作 AI 提了一个问题:
+
+> 在我们反复讨论过的所有问题中,有没有一个更深层次的问题,是我一直在围绕着它打转,但是始终没有真正问出口的?
+
+AI 通读本仓库自己的档案(哲学挑战报告 / 全部开放决策 / 归档问卷)后,把那个问题翻了出来——
+
+**「我到底能不能信你?」** 不是「这段输出对不对」的日常尺度,而是认识论尺度:验证 AI 的一切装置——问卷、压测、审计脚本、连挑战本哲学的那份报告本身——都是 AI 写的;控制器的过程模型,由被控对象写入([哲学 v7 挑战报告](philosophy-v7-challenge-report_2026-09-08.md)挑战二,2026-09-08 至今悬置未答)。
+
+三条旁证,全部出自本仓库自己的记录:
+
+1. 9 个 skill 几乎全部是信任装置——问卷逼真话、grill 攻计划、delegate 拴自主权、doctor 查 harness、long-running 抗失忆、proj-overview 翻译给人;数月产出,几乎只有信任基础设施。
+2. 挑战报告最致命的三条中,两条(挑战一操作化、挑战三治理膨胀)先后被接住——分别以谱系化定义与 proj-overview 派生视图回应;唯一没有装置解的挑战二(人审回路自指),反馈区空到今天。
+3. 这门信任只有一种考法——用这套 harness 真正交付一个对象层的东西。考试考过一次([OD-13](docs/OPEN-DECISIONS.md) DOGFOOD,判词「AI 自评可玩 ≠ 人类实际可玩」),之后再没考过。
+
+它问不出口,因为**没有装置解**:每次逼近,手会伸向熟悉的工具——再压测一轮,再加一个检查脚本——用建造回避一个无法用建造回答的问题。而最后一重回环是:连「该问什么」也是外包给被怀疑的对象完成的,这个问题本身,就是它所描述的断层(挑战五:断层方向逆转)的现场。答案对不对,由作者在通道之外裁决——人判优先。

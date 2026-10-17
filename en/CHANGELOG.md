@@ -1,7 +1,7 @@
 ---
 lang: en
 en-source: CHANGELOG.md
-zh-hash: 13c9e3b7cc80
+zh-hash: a37a9c05e98f
 ---
 
 [中文](../CHANGELOG.md) · **English**
@@ -13,6 +13,11 @@ zh-hash: 13c9e3b7cc80
 > The single record of repository-level, externally visible changes (migrated from the README's "release notes" section, 2026-08-20).
 
 > **Recording rules**: this file is the single record of repository-level, externally visible changes — every change **perceivable to adopters** (skill behavior / artifact structure / methodology content) must be recorded; purely internal repository governance (questionnaire archiving, link repairs, etc.) is not. Reverse-chronological. Skills carry no independent version numbers; this file is the only window for perceiving `skills/` changes.
+
+## README gains an "Epilogue" section: a question never asked aloud (2026-10-18)
+
+- **A closing "Epilogue" section added to the README** (README content change): in a 2026-10-18 session the author asked the AI "is there a deeper question I keep circling but have never asked aloud"; the AI answered from this repository's own records (challenge report / ODs / archived questionnaires), and the answer — condensed at the author's direction — now closes the front page: the core question "Can I actually trust you?" (the epistemological scale: every device for verifying the AI was written by the AI) + three pieces of supporting evidence (nearly all nine skills are trust devices / challenge #2 of the challenge report unanswered since 2026-09-08 / the OD-13 DOGFOOD object-level exam taken exactly once) + the closing loop (the question itself is the live scene of challenge #5's reversed information gap; human judgment first). The en mirror ships in the same batch.
+- Incidental stock fix: the zh/en README TOC lines for "What you now have" / "Changelog" reordered to match the body.
 
 ## howtospeak stress-test revision batch: README promise-style rework + methodology reading route and media awareness (2026-10-18, grill-howtospeak)
 
